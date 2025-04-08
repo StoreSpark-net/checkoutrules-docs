@@ -3,9 +3,13 @@
   "theme": "mint",
   "name": "BeSure Checkout Rules Docs",
   "colors": {
-    "primary": "#ad67dd",
-    "light": "#ad67dd",
-    "dark": "#ad67dd"
+    "primary": "#1b8adb",
+    "light": "#1b8adb",
+    "dark": "#1567a4"
+  },
+  "appearance": {
+    "default": "light",
+    "strict": false
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -15,71 +19,49 @@
         "groups": [
           {
             "group": "Get Started",
-            "pages": ["introduction", "quickstart", "development", "changelog"]
+            "pages": [
+              "guides/get-started/introduction",
+              "guides/get-started/quickstart"
+            ]
           },
           {
             "group": "Essentials",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "guides/essentials/markdown",
+              "guides/essentials/code",
+              "guides/essentials/images",
+              "guides/essentials/settings",
+              "guides/essentials/navigation",
+              "guides/essentials/reusable-snippets"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Blog",
         "groups": [
           {
-            "group": "API Documentation",
-            "pages": ["api-reference/introduction"]
-          },
+            "group": "2025",
+            "pages": ["blog/2025/post1"]
+          }
+        ]
+      },
+      {
+        "tab": "Updates",
+        "groups": [
           {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "Changelog",
+            "pages": ["updates/2025", "updates/2024"]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
@@ -87,10 +69,28 @@
     }
   },
   "footer": {
+    "links": [
+      {
+        "header": "Footer",
+        "items": [
+          {
+            "label": "Made by StoreSpark",
+            "href": "https://storespark.net"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "https://storespark.net/checkoutrules/privacy-policy"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "https://storespark.net/checkoutrules/terms-of-service"
+          }
+        ]
+      }
+    ],
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/CheckoutRules",
+      "website": "https://storespark.net"
     }
   }
 }
