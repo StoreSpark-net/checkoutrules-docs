@@ -84,13 +84,18 @@
           {
             "label": "Terms of Service",
             "href": "https://storespark.net/checkoutrules/terms-of-service"
+          },
+          {
+            "label": "Contact Us",
+            "href": "https://calendly.com/storespark/15min"
           }
         ]
       }
     ],
     "socials": {
       "x": "https://x.com/CheckoutRules",
-      "website": "https://storespark.net"
+      "linkedin": "https://www.linkedin.com/showcase/besure-checkout-rules",
+      "website": "https://checkoutrules.com"
     }
   }
 }
