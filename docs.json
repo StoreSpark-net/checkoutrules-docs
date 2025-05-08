@@ -11,7 +11,7 @@
     "default": "light",
     "strict": false
   },
-  "favicon": "/favicon.ico",
+  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
