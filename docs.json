@@ -64,8 +64,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get app",
+      "href": "https://apps.shopify.com/checkout-rules?utm_medium=mintlify&utm_source=docs_website&utm_campaign=docs"
     }
   },
   "footer": {
