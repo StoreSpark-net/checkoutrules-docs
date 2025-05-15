@@ -18,14 +18,14 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "✨ Get Started",
             "pages": [
               "guides/get-started/introduction",
               "guides/get-started/quickstart"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "✔️ Essentials",
             "pages": [
               "guides/essentials/markdown",
               "guides/essentials/code",
