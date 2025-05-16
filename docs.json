@@ -19,7 +19,7 @@
         "groups": [
           {
             "group": "Getting Started",
-            "icon": "rocket",
+            "icon": "code",
             "pages": [
               "guides/get-started/introduction",
               "guides/get-started/quickstart"
