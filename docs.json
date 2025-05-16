@@ -18,7 +18,8 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "🌟 Get Started",
+            "group": "Getting Started",
+            "icon": "rocket",
             "pages": [
               "guides/get-started/introduction",
               "guides/get-started/quickstart"
@@ -26,6 +27,7 @@
           },
           {
             "group": "Essentials",
+            "icon": "book",
             "pages": [
               "guides/essentials/markdown",
               "guides/essentials/code",
