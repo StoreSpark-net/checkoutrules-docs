@@ -22,6 +22,7 @@
             "icon": "code",
             "pages": [
               "guides/get-started/introduction",
+              "guides/get-started/installation",
               "guides/get-started/quickstart"
             ]
           },
