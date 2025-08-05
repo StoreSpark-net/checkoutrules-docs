@@ -1,0 +1,102 @@
+---
+title: 'Reorder payment methods'
+description: 'Rearrange how payment methods are displayed at the checkout using given conditions.'
+icon: 'shuffle'
+---
+
+## Rule overview
+
+This rule allows you to automatically change the order in which payment methods appear at checkout. You can prioritize specific payment options based on conditions such as cart total, billing country, or product tags.
+
+This helps streamline the customer experience by displaying the most preferred or relevant payment methods first.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Reorder Payment Methods** rule using the app.
+
+### Create a new rule
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Payment" → select a checkout rule type "Reorder Payment Methods" →  click “Select Rule”_.
+
+<img
+  src="/images/essentials/payment/select-reorder-payment-methods.webp"
+  alt="Select Reorder Methods Methods"
+/>
+
+Then, a **template selection** popup will appear. Choose an option based on your requirements. In most cases, you can choose the empty rule as a starting point and modify it to your needs. Even if you choose a prefilled template, you will be able to modify it later.
+<img
+  src="/images/essentials/payment/select-rule-template-reorder-payment-methods.webp"
+  alt="Select Rule Template"
+/>
+Next, you’ll land on the **Create new reorder payment methods rule** screen, where you can configure your rule.
+
+### Rule configuration
+To configure the rule, first optionally we can add a name such as "Reorder payment methods" to describe what it does. Then, select the [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated. 
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+<img
+  src="/images/essentials/payment/rule-configure-1-reorder-payment-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what). 
+
+>As an example, we are going to choose the default Condition set 1, set the rule to always run, and select the operation **Alphabetical order** by selecting **Name A to Z (Ascending)** to reorder the payment methods.
+
+<img
+  src="/images/essentials/payment/condition-set-reorder-payment-methods.webp"
+  alt="Condition Set"
+/>
+
+In the action section, you have two options to choose from:
+
+- **Alphabetical order** – This allows you to reorder the payment methods alphabetically. You can choose either **Name A-Z (Ascending)** or **Name Z-A (Descending)**.
+
+<img
+  src="/images/essentials/payment/action-alphabetical-order-reorder-payment-methods.webp"
+  alt="Action Alphabetical Order"
+/>
+
+- **Fixed ranking** – This option lets you manually set the order of payment methods by assigning a fixed rank (e.g., 1, 2, 3, etc.) to each method, so you can control exactly which method appears in which **position**.
+
+<img
+  src="/images/essentials/payment/action-fixed-ranking-reorder-payment-methods.webp"
+  alt="Action Fixed Ranking Reorder"
+/>
+
+
+
+Finally, click the Save button at the top to configure and create your rule.
+<img
+  src="/images/shared/save-rule.webp"
+  alt="Rule Save"
+/>
+
+## Test the rule
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+As an example, after setting the email, the checkout rule runs, and the **payment methods are reordered**. We can verify that the method starting with the earliest letter alphabetically now appears at the top, as shown below.
+<img
+  src="/images/essentials/payment/after-rule-apply-reorder-payment-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+Rule activation is only available on paid plans.
+If you haven't upgraded your plan yet, follow the instructions [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-reorder-payment-methods.webp"
+  alt="Activate The Rule"
+/>
