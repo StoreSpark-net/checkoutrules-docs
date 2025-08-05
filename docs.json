@@ -23,6 +23,7 @@
             "pages": [
               "guides/get-started/introduction",
               "guides/get-started/installation",
+              "guides/get-started/concepts",
               "guides/get-started/quickstart"
             ]
           },
