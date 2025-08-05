@@ -15,6 +15,30 @@
   "navigation": {
     "tabs": [
       {
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Website",
+              "href": "https://checkoutrules.com",
+              "icon": "globe"
+            },
+            {
+              "anchor": "Help Center",
+              "href": "https://help.checkoutrules.com",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Roadmap",
+              "href": "https://roadmap.checkoutrules.com",
+              "icon": "clipboard-list"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://checkoutrules.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
         "tab": "Guides",
         "groups": [
           {
