@@ -32,7 +32,7 @@ Condition set selection is only avaiable at rule creation time. You can not chan
   alt="Condition Set"
 />
 
-### Conditions (the "when")
+### Conditions (when)
 Conditions are based on the selected condition set and define the criteria that must be met to trigger the rule. Use AND (all must be true), OR (any one is true), to group related logic for complex cases. 
 
 > See example below - here rule will run under any of the 2 circumstances: when date is 4 August 2025, and that day is Monday, then the rule will run, OR, everyday when time is 00:00 which basically means every day at midnight.
@@ -42,7 +42,7 @@ Conditions are based on the selected condition set and define the criteria that 
   alt="Condition"
 />
 
-### Action (the "what")
+### Action (what)
 When the conditions in the "when" section are true, the system will perform the action you define. Each action is executed only if its specific criteria (action condition and operations) are also met.
 
 > See example below - here the action is set to reorder shipping methods in a fixed way, by placing 'Next Day Delivery' at the top and putting all the other shipping methods below it.
@@ -94,5 +94,15 @@ Specifies which step will trigger the rule (e.g., when the customer is interacti
 Defines what happens in the rare circumstance, when the app has an issue on the checkout (e.g., allow or block checkout). Used only in **Validate or Block Checkout** rule.
 <img
   src="/images/concepts/fallback.webp"
+  alt="Fallback"
+/>
+
+### Maximum discount uses
+Defines the **total number of times** the discount can be used across all customers. Optionally, can also restrict usage to **one time per customer**. Only applicable when using discount codes, not automatic discounts. Used only in **Discount** rules.
+
+> For example, if usage limit **set to 1** and **"Limit to one use per customer"** is unchecked, only one customer will be able to use the discount code. After that, the code becomes invalid for everyone else.
+
+<img
+  src="/images/concepts/maximum-discount-uses.webp"
   alt="Fallback"
 />
