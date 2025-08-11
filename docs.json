@@ -1,111 +1,112 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
-  "name": "BeSure Checkout Rules Docs",
-  "colors": {
-    "primary": "#1b8adb",
-    "light": "#1b8adb",
-    "dark": "#1567a4"
-  },
-  "appearance": {
-    "default": "light",
-    "strict": false
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "tabs": [
-      {
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "maple",
+    "name": "BeSure Checkout Rules Docs",
+    "colors": {
+        "primary": "#1b8adb",
+        "light": "#1b8adb",
+        "dark": "#1567a4"
+    },
+    "appearance": {
+        "default": "light",
+        "strict": false
+    },
+    "favicon": "/favicon.svg",
+    "navigation": {
         "global": {
-          "anchors": [
-            {
-              "anchor": "Website",
-              "href": "https://checkoutrules.com",
-              "icon": "globe"
-            },
-            {
-              "anchor": "Help Center",
-              "href": "https://help.checkoutrules.com",
-              "icon": "book-open-cover"
-            },
-            {
-              "anchor": "Roadmap",
-              "href": "https://roadmap.checkoutrules.com",
-              "icon": "clipboard-list"
-            },
-            {
-              "anchor": "Blog",
-              "href": "https://checkoutrules.com/blog",
-              "icon": "newspaper"
-            }
-          ]
+            "anchors": [
+                {
+                    "anchor": "Website",
+                    "href": "https://checkoutrules.com",
+                    "icon": "globe"
+                },
+                {
+                    "anchor": "Help Center",
+                    "href": "https://help.checkoutrules.com",
+                    "icon": "book-open-cover"
+                },
+                {
+                    "anchor": "Roadmap",
+                    "href": "https://roadmap.checkoutrules.com",
+                    "icon": "clipboard-list"
+                },
+                {
+                    "anchor": "Blog",
+                    "href": "https://checkoutrules.com/blog",
+                    "icon": "newspaper"
+                }
+            ]
         },
-        "tab": "Guides",
         "groups": [
-          {
-            "group": "Getting Started",
-            "icon": "code",
-            "pages": [
-              "guides/get-started/introduction",
-              "guides/get-started/installation",
-              "guides/get-started/concepts",
-              "guides/get-started/quickstart"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "icon": "book",
-            "pages": [
-              "guides/essentials/markdown",
-              "guides/essentials/code",
-              "guides/essentials/images",
-              "guides/essentials/settings",
-              "guides/essentials/navigation",
-              "guides/essentials/reusable-snippets"
-            ]
-          }
+            {
+                "group": "Getting Started",
+                "icon": "code",
+                "pages": [
+                    "guides/get-started/introduction",
+                    "guides/get-started/installation",
+                    "guides/get-started/concepts",
+                    "guides/get-started/quickstart"
+                ]
+            },
+            {
+                "group": "Essentials",
+                "icon": "book",
+                "pages": [
+                    {
+                        "group": "Condition Sets",
+                        "icon": "filter",
+                        "pages": [
+                            "guides/essentials/condition-sets/introduction",
+                            "guides/essentials/condition-sets/condition-set-1",
+                            "guides/essentials/condition-sets/condition-set-2",
+                            "guides/essentials/condition-sets/condition-set-3",
+                            "guides/essentials/condition-sets/condition-set-4",
+                            "guides/essentials/condition-sets/condition-set-5"
+                        ]
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Get BeSure Checkout Rules",
-      "href": "https://apps.shopify.com/checkout-rules?utm_medium=mintlify&utm_source=docs_website&utm_campaign=docs"
-    }
-  },
-  "footer": {
-    "links": [
-      {
-        "header": "Footer",
-        "items": [
-          {
-            "label": "App Listing",
+    },
+    "logo": {
+        "light": "/logo/light.svg",
+        "dark": "/logo/dark.svg"
+    },
+    "navbar": {
+        "primary": {
+            "type": "button",
+            "label": "Get BeSure Checkout Rules",
             "href": "https://apps.shopify.com/checkout-rules?utm_medium=mintlify&utm_source=docs_website&utm_campaign=docs"
-          },
-          {
-            "label": "Privacy Policy",
-            "href": "https://checkoutrules.com/privacy"
-          },
-          {
-            "label": "Terms of Service",
-            "href": "https://checkoutrules.com/terms-of-service"
-          },
-          {
-            "label": "Contact Us",
-            "href": "https://checkoutrules.com/contact"
-          }
-        ]
-      }
-    ],
-    "socials": {
-      "x": "https://x.com/CheckoutRules",
-      "linkedin": "https://www.linkedin.com/showcase/besure-checkout-rules",
-      "website": "https://checkoutrules.com"
+        }
+    },
+    "footer": {
+        "links": [
+            {
+                "header": "Footer",
+                "items": [
+                    {
+                        "label": "App Listing",
+                        "href": "https://apps.shopify.com/checkout-rules?utm_medium=mintlify&utm_source=docs_website&utm_campaign=docs"
+                    },
+                    {
+                        "label": "Privacy Policy",
+                        "href": "https://checkoutrules.com/privacy"
+                    },
+                    {
+                        "label": "Terms of Service",
+                        "href": "https://checkoutrules.com/terms-of-service"
+                    },
+                    {
+                        "label": "Contact Us",
+                        "href": "https://checkoutrules.com/contact"
+                    }
+                ]
+            }
+        ],
+        "socials": {
+            "x": "https://x.com/CheckoutRules",
+            "linkedin": "https://www.linkedin.com/showcase/besure-checkout-rules",
+            "website": "https://checkoutrules.com"
+        }
     }
-  }
 }
