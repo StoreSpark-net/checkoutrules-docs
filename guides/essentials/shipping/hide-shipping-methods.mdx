@@ -1,0 +1,107 @@
+---
+title: "Hide shipping methods"
+description: "Hide certain shipping or pickup methods at the checkout under given conditions."
+icon: "eye-slash"
+---
+
+## Rule overview
+
+This rule allows you to automatically hide specific shipping or pickup methods at the checkout based on defined conditions. You can control visibility using criteria such as cart total, shipping address, customer tags, or product details, etc.
+
+This helps streamline the checkout experience by removing irrelevant or unavailable delivery options, reducing confusion and improving conversion rates.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Hide Shipping Methods** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Hide Shipping Methods" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/shipping/select-hide-shipping-methods.webp"
+  alt="Select Hide Shipping Methods"
+/>
+
+Then, in the **template selection**, choose an option based on your requirements. In most cases, you can choose the empty rule as a starting point and modify it to your needs. Even if you choose a prefilled template, you will be able to modify it later.
+
+<img
+  src="/images/essentials/shipping/select-rule-template-hide-shipping-methods.webp"
+  alt="Select Rule Template"
+/>
+Next, you’ll land on the **Create new hide shipping methods rule** screen, where
+you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Hide shipping methods" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-hide-shipping-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, on the same screen, select the appropriate [Target](/guides/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to hide shipping methods shown after a **shipping address** is entered. Then, we can select:
+
+- **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
+
+- **All shipments** – applies the rule to every order, including those with subscription items.
+
+Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to pickup methods shown when a customer selects **"Pickup in store"** during checkout.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Select Target" />
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example, here we are using the default **Condition set 1**, setting the rule to run **Always**, and configuring it to **hide shipping methods** that contain **"Express Worldwide"**.
+
+<img
+  src="/images/essentials/shipping/condition-set-hide-shipping-methods.webp"
+  alt="Condition Set Hide Shipping Methods"
+/>
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the <i>DHL Express Worldwide</i> shipping method
+  is available.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and hides the specified shipping methods. We can verify that the **"Express Worldwide"** shipping method is no longer visible, as shown below.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-hide-shipping-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-hide-shipping-methods.webp"
+  alt="Activate The Rule"
+/>

@@ -13,54 +13,71 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
-      {
-        "global": {
-          "anchors": [
-            {
-              "anchor": "Website",
-              "href": "https://checkoutrules.com",
-              "icon": "globe"
-            },
-            {
-              "anchor": "Help Center",
-              "href": "https://help.checkoutrules.com",
-              "icon": "book-open-cover"
-            },
-            {
-              "anchor": "Roadmap",
-              "href": "https://roadmap.checkoutrules.com",
-              "icon": "clipboard-list"
-            },
-            {
-              "anchor": "Blog",
-              "href": "https://checkoutrules.com/blog",
-              "icon": "newspaper"
-            }
-          ]
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Website",
+          "href": "https://checkoutrules.com",
+          "icon": "globe"
         },
-        "tab": "Guides",
-        "groups": [
+        {
+          "anchor": "Roadmap",
+          "href": "https://roadmap.checkoutrules.com",
+          "icon": "clipboard-list"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://checkoutrules.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    },
+    "groups": [
+      {
+        "group": "Getting Started",
+        "icon": "code",
+        "pages": [
+          "guides/get-started/introduction",
+          "guides/get-started/installation",
+          "guides/get-started/concepts",
+          "guides/get-started/quickstart"
+        ]
+      },
+      {
+        "group": "Essentials",
+        "icon": "book",
+        "pages": [
           {
-            "group": "Getting Started",
-            "icon": "code",
+            "group": "Shipping",
+            "icon": "truck",
             "pages": [
-              "guides/get-started/introduction",
-              "guides/get-started/installation",
-              "guides/get-started/concepts",
-              "guides/get-started/quickstart"
+              "guides/essentials/shipping/reorder-shipping-methods",
+              "guides/essentials/shipping/hide-shipping-methods",
+              "guides/essentials/shipping/rename-shipping-methods",
+              "guides/essentials/shipping/discount-shipping-methods"
             ]
           },
           {
-            "group": "Essentials",
-            "icon": "book",
+            "group": "Payment",
+            "icon": "credit-card",
             "pages": [
-              "guides/essentials/markdown",
-              "guides/essentials/code",
-              "guides/essentials/images",
-              "guides/essentials/settings",
-              "guides/essentials/navigation",
-              "guides/essentials/reusable-snippets"
+              "guides/essentials/payment/hide-express-checkout-options",
+              "guides/essentials/payment/reorder-payment-methods",
+              "guides/essentials/payment/hide-payment-methods",
+              "guides/essentials/payment/rename-payment-methods"
+            ]
+          },
+          {
+            "group": "Validation",
+            "icon": "shield-check",
+            "pages": ["guides/essentials/validation/validate-block-checkout"]
+          },
+          {
+            "group": "Discount",
+            "icon": "tag",
+            "pages": [
+              "guides/essentials/discount/discount-order-amount",
+              "guides/essentials/discount/discount-shipping-methods"
             ]
           }
         ]

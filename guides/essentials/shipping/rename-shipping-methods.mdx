@@ -1,0 +1,105 @@
+---
+title: "Rename shipping methods"
+description: "Rename/Translate or add a message to the selected shipping methods at the checkout under given conditions."
+icon: "pencil"
+---
+
+## Rule overview
+
+This rule allows you to rename or translate shipping and pickup method labels at checkout based on specific conditions. You can customize the displayed names using criteria such as cart value, customer tags, shipping address, or product details, etc.
+
+This helps enhance clarity for customers, support localization, and improve the overall checkout experience.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Rename Shipping Methods** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Rename Shipping Methods" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/shipping/select-rename-shipping-methods.webp"
+  alt="Select Rename Shipping Methods"
+/>
+
+Next, you’ll land on the **Create new rename shipping methods rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Rename shipping methods" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-rename-shipping-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, on the same screen, select the appropriate [Target](/guides/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to rename shipping methods shown after a **shipping address** is entered. Then, we can select:
+
+- **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
+
+- **All shipments** – applies the rule to every order, including those with subscription items.
+
+The choice of _"Pick Up"_ is not available for this rule type at the moment, due to Shopify limitations.
+
+<img
+  src="/images/essentials/shipping/select-target-2.webp"
+  alt="Select Target"
+/>
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example, we are using **Condition set 1**, setting the rule to run **Always**, and configuring it to rename shipping methods that contain **"International Shipping"** to **"Local Shipping"**.
+
+Alternatively, we can change the “Rename to” option to “Add message” to append a custom message to the shipping method name instead of fully renaming it.
+
+<img
+  src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"
+  alt="Condition Set Rename Shipping Methods"
+/>
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the <i>International Shipping</i> shipping
+  method is available and not yet renamed.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and renames the specified shipping methods. We can verify that the **"International Shipping"** method is now displayed as **"Local Shipping"**, as shown below.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-rename-shipping-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-rename-shipping-methods.webp"
+  alt="Activate The Rule"
+/>

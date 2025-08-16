@@ -1,7 +1,7 @@
 ---
-title: 'Concepts'
-description: 'Learn the key concepts behind how BeSure Checkout Rules works to customize and control your Shopify checkout experience.'
-icon: 'puzzle-piece'
+title: "Concepts"
+description: "Learn the key concepts behind how BeSure Checkout Rules works to customize and control your Shopify checkout experience."
+icon: "puzzle-piece"
 ---
 
 ## What is a rule?
@@ -9,90 +9,89 @@ icon: 'puzzle-piece'
 A **checkout rule** is a set of logic that defines **what** should happen during the checkout process and **when**.
 
 ## Rule essentials
+
 These are the essential parts of every rule that define its purpose, when it should run, what it should do, and how those actions are organized.
 
 ### Status
+
 Indicates the current state of the rule, whether it’s in testing, active, or deactivated. This helps control when the rule takes effect.
-<img
-  src="/images/concepts/rule-status.webp"
-  alt="Rule Status"
-/>
+
+<img src="/images/concepts/rule-status.webp" alt="Rule Status" />
 
 ### Condition set
+
 You can use any condition set that suits your needs, if you are unsure you can either start by just using condition set 1 or by using the search box to search which condition set has that condition which you need and switching to it.
 
 > For example, if you want to hide a shipping method based on the product metafield, then you should switch to the condition set 4, then you will be able to use the product metafield condition.
 
 <Warning>
-Condition set selection is only avaiable at rule creation time. You can not change the condition set after the rule is created. You will have to create a new rule for that, if you need to use a different condition set.
+  Condition set selection is only avaiable at rule creation time. You can not
+  change the condition set after the rule is created. You will have to create a
+  new rule for that, if you need to use a different condition set.
 </Warning>
 
-<img
-  src="/images/concepts/condition-set.webp"
-  alt="Condition Set"
-/>
+<img src="/images/concepts/condition-set.webp" alt="Condition Set" />
 
 ### Conditions (the "when")
-Conditions are based on the selected condition set and define the criteria that must be met to trigger the rule. Use AND (all must be true), OR (any one is true), to group related logic for complex cases. 
+
+Conditions are based on the selected condition set and define the criteria that must be met to trigger the rule. Use AND (all must be true), OR (any one is true), to group related logic for complex cases.
 
 > See example below - here rule will run under any of the 2 circumstances: when date is 4 August 2025, and that day is Monday, then the rule will run, OR, everyday when time is 00:00 which basically means every day at midnight.
 
-<img
-  src="/images/concepts/condition.webp"
-  alt="Condition"
-/>
+<img src="/images/concepts/condition.webp" alt="Condition" />
 
 ### Action (the "what")
+
 When the conditions in the "when" section are true, the system will perform the action you define. Each action is executed only if its specific criteria (action condition and operations) are also met.
 
 > See example below - here the action is set to reorder shipping methods in a fixed way, by placing 'Next Day Delivery' at the top and putting all the other shipping methods below it.
 
-<img
-  src="/images/concepts/action.webp"
-  alt="Action"
-/>
+<img src="/images/concepts/action.webp" alt="Action" />
 
 ### Block
+
 Together, **conditions** (the "when"), and the **action** (the "what") make up a **rule block**. You can use **multiple blocks** within a rule to handle complex scenarios easily.
-<img
-  src="/images/concepts/block.webp"
-  alt="Block"
-/>
+
+<img src="/images/concepts/block.webp" alt="Block" />
 
 ## Additional options (for some rules)
+
 These optional parts appear in specific rule types and add more control over how and where the rule applies or behaves under special conditions.
 
 ### Target
+
 Defines where the rule applies (e.g., shipping or pickup). Used only in shipping rules.
-<img
-  src="/images/concepts/target.webp"
-  alt="Target"
-/>
+
+<img src="/images/concepts/target.webp" alt="Target" />
 
 ### Combinations
+
 Controls whether the rule discount can be combined with product, order, or shipping discounts. Used only in **Discount** rules.
-<img
-  src="/images/concepts/combinations.webp"
-  alt="Combinations"
-/>
+
+<img src="/images/concepts/combinations.webp" alt="Combinations" />
 
 ### Strategy
+
 If the discount rule has multiple blocks, then strategy selection comes into play. It determines how those rule blocks are applied (e.g., first valid one or highest value). Used only in **Discount Order Amount** rule.
-<img
-  src="/images/concepts/strategy.webp"
-  alt="Strategy"
-/>
+
+<img src="/images/concepts/strategy.webp" alt="Strategy" />
 
 ### Trigger
+
 Specifies which step will trigger the rule (e.g., when the customer is interacting with the checkout or completing the checkout, or both). Used only in **Validate or Block Checkout** rule.
-<img
-  src="/images/concepts/trigger.webp"
-  alt="Trigger"
-/>
+
+<img src="/images/concepts/trigger.webp" alt="Trigger" />
 
 ### Fallback
+
 Defines what happens in the rare circumstance, when the app has an issue on the checkout (e.g., allow or block checkout). Used only in **Validate or Block Checkout** rule.
-<img
-  src="/images/concepts/fallback.webp"
-  alt="Fallback"
-/>
+
+<img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+### Maximum discount uses
+
+Defines the **total number of times** the discount can be used across all customers. Optionally, can also restrict usage to **one time per customer**. Only applicable when using discount codes, not automatic discounts. Used only in **Discount** rules.
+
+> For example, if usage limit **set to 1** and **"Limit to one use per customer"** is unchecked, only one customer will be able to use the discount code. After that, the code becomes invalid for everyone else.
+
+<img src="/images/concepts/maximum-discount-uses.webp" alt="Fallback" />

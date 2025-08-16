@@ -1,0 +1,129 @@
+---
+title: "Discount shipping methods"
+description: "Discount specific shipping rates based on the given conditions."
+icon: "badge-percent"
+---
+
+## Rule overview
+
+This rule allows you to discount specific shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like cart total, shipping address, customer tags, or product attributes, etc.
+
+Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the selected shipping methods based on the configured conditions.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Discount Shipping Methods** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Discount Shipping Methods" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
+  alt="Select Discount Shipping Methods"
+/>
+
+Next, you’ll land on the **Create new discount shipping methods rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally add a name such as "Discount shipping methods" to describe what it does if you want to apply an **"Automatic discount"**.
+
+<img
+  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
+  alt="Automatic Discount Name"
+/>
+
+Or, if you prefer to apply the discount using a discount code, click **"Discount code"** and enter your desired code or generate one randomly by clicking **"Generate random code"**.
+
+<img
+  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
+  alt="Discount Code"
+/>
+
+Next, on the same screen, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated. Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Rule Status"
+/>
+
+Next, on the same screen, configure the [Combinations](/guides/get-started/concepts#combinations) settings to control how this shipping discount interacts with other discounts. You can choose to allow it to combine with:
+
+- **Product discounts** – This lets the shipping discount be used alongside any product level discounts. Make sure product discounts are also configured to combine with shipping discounts.
+
+- **Order discounts** – This enables the shipping discount to work together with overall order level discounts. Make sure order discounts are also set to allow combinations with shipping discounts.
+
+<img
+  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
+  alt="Combinations Disount Shipping Methods"
+/>
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example, here we are using the default **Condition set 1**, setting the rule to run **Always**, and configuring it to apply a **10% discount** to all shipping methods using the **Percentage** option. The discount message **"10% OFF"** will be shown to customers at checkout.
+
+<img
+  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
+  alt="Condition Set Discount Shipping Methods"
+/>
+
+In the Action section, you can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, or Set all shipping free** based on your requirements.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Action Type Discount"
+/>
+
+The discount can also be applied only to specific shipping methods by selecting **"Apply this discount to only these shipping methods"** instead of "Apply this discount to all shipping methods", and then by entering the **names** of the shipping methods you want the discount to apply to.
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Action Shipping Methods Selection"
+/>
+
+Next, on the same screen, in the [Maximum Discount Uses](/guides/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note all shipping options have not yet been
+  discounted.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and applies the configured shipping discount. We can verify that the **10% discount** is visible for the selected shipping methods at checkout, as shown below.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
+  alt="Activate The Rule"
+/>

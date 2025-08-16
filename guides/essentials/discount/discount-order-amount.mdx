@@ -1,0 +1,130 @@
+---
+title: "Discount order amount"
+description: "Discount order subtotal amount based on the given conditions."
+icon: "badge-percent"
+---
+
+## Rule overview
+
+This rule allows you to apply a discount to the order subtotal based on the defined conditions. You can offer discounts as a percentage, fixed amount off, percentage excluding specific products, percentage for only specific products, fixed amount off excluding specific products, or fixed amount off for only specific products using criteria such as cart total, customer tags, shipping address, or product attributes, etc.
+
+Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the order subtotal based on the configured conditions. This helps incentivize purchases, reward specific customers, and drive higher conversion rates.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Discount Order Amount** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Discount" → select checkout rule type "Discount Order Amount" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/discount/select-discount-amount.webp"
+  alt="Select Discount"
+/>
+
+Next, you’ll land on the **Create new discount order amount rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally add a name such as "Discount order amount" to describe what it does if you want to apply an **"Automatic discount"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-order-amount.webp"
+  alt="Automatic Discount Name"
+/>
+
+Or, if you prefer to apply the discount using a discount code, click **"Discount code"** and enter your desired code or generate one randomly by clicking **"Generate random code"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-order-amount.webp"
+  alt="Discount Code"
+/>
+
+Next, on the same screen, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated. Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Rule Status"
+/>
+
+Next, on the same screen, configure the [Combinations](/guides/get-started/concepts#combinations) settings to control how this order discount interacts with **other discounts**. You can choose to allow it to combine with:
+
+- **Product discounts** – This lets the order discount be used alongside any product level discounts. Make sure product discounts are also configured to combine with order discounts.
+
+- **Order discounts** – This enables multiple order level discounts to be applied together. Ensure the other order discounts are also set to combine with order discounts.
+
+- **Shipping discounts** – This allows the order discount to be used together with shipping level discounts. Confirm that shipping discounts are also set to combine with order discounts.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinations"
+/>
+
+Next, on the same screen, configure the [Strategy](/guides/get-started/concepts#strategy) settings to control how the system handles multiple discount blocks. You can choose **First**, which applies only the first discount that meets the conditions, ignoring any better discounts that may come later, or **Maximum**, which evaluates all discount blocks and applies the one with the highest reduction.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Strategy Order Discount"
+/>
+
+Next, on the same screen, select the relevant [condition](/guides/get-started/concepts#conditions-when) and [action](/guides/get-started/concepts#action-what).
+
+> As an example, here we are setting the rule to run Always and configuring it to apply a **10% discount** using the Percentage option. The discount message **"10% OFF"** will be shown to customers at checkout.
+
+<img
+  src="/images/essentials/discount/condition-set-discount-order-amount.webp"
+  alt="Condition Set Discount"
+/>
+
+In the Action section, you can choose to apply the discount using **Percentage** or **Fixed amount off** without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Action Type Discount"
+/>
+
+Next, on the same screen, in the [Maximum Discount Uses](/guides/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note there is no discount applied yet.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and applies the configured **10% discount** using the Percentage option. We can verify that the **"10% OFF"** discount message is visible at the checkout, as shown below.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order-amount.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-order-amount.webp"
+  alt="Activate The Rule"
+/>

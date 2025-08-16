@@ -1,0 +1,130 @@
+---
+title: "Validate/block checkout"
+description: "Show errors or block invalid (or not allowed) checkout under given conditions."
+icon: "ban"
+---
+
+## Rule overview
+
+This rule allows you to validate or block the checkout process based on defined conditions. You can show custom error messages or completely prevent checkout when certain criteria is met, such as invalid cart contents, restricted shipping regions, customer tags, or missing product attributes, etc.
+
+This helps enforce business rules, prevent unsupported orders, and guide customers to resolve issues before completing the checkout.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Validate/Block Checkout** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Validation " → select checkout rule type "Validate/Block Checkout" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/validation/select-validation-block-rule.webp"
+  alt="Select Validation Block Rule"
+/>
+
+Next, you’ll land on the **Create new validate/block checkout rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Validate/block checkout" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/validation/rule-configure-1-validation-block-rule.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, on the same screen, select at least one option under [Trigger this rule](/guides/get-started/concepts#trigger). You can choose **Interacting with the checkout**, which runs the rule while the customer is in the checkout process, and **Completing the checkout** which runs the rule when the customer finishes the checkout. By default, you should select both options to ensure the rule always runs when it needs to.
+
+<Info>
+  If you are unsure about what to choose for any rule settings, many times the
+  default preselected option is the best choice. You can always start with the
+  default option and modify it later.
+</Info>
+
+<img src="/images/concepts/trigger.webp" alt="Trigger" />
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example, here we are using the default **Condition set 1**, setting the rule to trigger when the **"Address line 2 (Apartment, suite, etc)"** field is **empty**, and configuring it to block checkout. The error message **"Enter complete address"** will be displayed under the **Address line 2** field at the checkout, requiring customers to provide their complete address before proceeding.
+
+<img
+  src="/images/essentials/validation/condition-set-validation-block-rule.webp"
+  alt="Condition Set"
+/>
+
+In the **Action** section, you can choose the **target location** where your custom error message will appear on the checkout page. The dropdown menu provides a list of placement options:
+
+- Under the **General** category, you can select **"Top of the checkout page"** to display the action at the very top.
+
+- Under **Below these Input fields**, you can select to show the action below specific input fields, such as: Email, Customer phone number, Country, First name, Last name, Company, Address (Address line 1), Apartment, City, Province / state, Zip code / Postal code, Shipping phone number.
+
+This gives you control over where the error message appears, helping you place it in the most relevant section of the checkout form.
+
+<img
+  src="/images/essentials/validation/action-target-dropdown.webp"
+  alt="Action Target Dropdown"
+/>
+
+Next, on the same screen, select how the system should behave in the rare case, if the app fails or experiences a problem during checkout. This is a fallback option, and in most cases you would want to allow the customer to complete the checkout, which is the default option. You’ll find two options:
+
+- **Allow customer to complete checkout** : This ensures that even if the app encounters an issue, the customer can still proceed with their purchase without interruption.
+
+- **Block customer from completing checkout**: This will stop the customer from checking out if the app fails, potentially preventing transactions.
+
+Choose the option that aligns best with your desired customer experience and risk tolerance.
+
+<img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the error message is not yet displayed.
+</Warning>
+
+<img
+  src="/images/essentials/validation/before-rule-apply-validation-block-rule.webp"
+  alt="Before Rule Apply"
+/>
+
+<Note>
+  Please ensure to fill out all the required fields in the shipping address.
+  Shopify will only run the rule if all the required fields are filled out and
+  the customer is actually ready to checkout, to prevent running the rule on
+  every keystroke.
+</Note>
+
+After leaving the Address line 2 (Apartment, suite, etc) field **empty**, the checkout rule runs and blocks the checkout process. We can verify that the error message **"Enter complete address"** is displayed under the **Address line 2** field at the checkout, as shown below.
+
+<img
+  src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+
+<img
+  src="/images/essentials/validation/activate-the-rule-validation-block-rule.webp"
+  alt="Activate The Rule"
+/>

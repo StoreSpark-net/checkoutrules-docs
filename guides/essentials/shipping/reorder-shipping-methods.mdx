@@ -1,0 +1,112 @@
+---
+title: "Reorder shipping methods"
+description: "Rearrange how shipping or pickup methods are displayed at the checkout under given conditions."
+icon: "shuffle"
+---
+
+## Rule overview
+
+This rule allows you to automatically change the order in which shipping methods appear at checkout.
+You can prioritize specific shipping options based on conditions like cart total, delivery address, or product tags, etc.
+
+This helps streamline the customer experience by showing the most relevant or cost effective shipping methods first.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Reorder Shipping Methods** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Reorder Shipping Methods" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/shipping/select-reorder-shipping-methods.webp"
+  alt="Select Reorder Shipping Methods"
+/>
+
+Then, in the **template selection**, choose an option based on your requirements. In most cases, you can choose the empty rule as a starting point and modify it to your needs. Even if you choose a prefilled template, you will be able to modify it later.
+
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Select Rule Template"
+/>
+Next, you’ll land on the **Create new reorder shipping methods rule** screen, where
+you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Reorder shipping methods" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here, as an example, we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Rule Configure 1" />
+
+Next, on the same screen, select the appropriate [Target](/guides/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to reorder shipping methods shown after a **shipping address** is entered. Then, we can select:
+
+- **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
+
+- **All shipments** – applies the rule to every order, including those with subscription items.
+
+Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to pickup methods shown when a customer selects **"Pickup in store"** during checkout.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Select Target" />
+
+<Info>
+  If you are unsure about what to choose for any rule settings, many times the
+  default preselected option is the best choice. You can always start with the
+  default option and modify it later.
+</Info>
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example here we are going to choose the default condition set, then set the rule to always run, and select the operation to reorder the shipping methods from shipping prices highest to lowest.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Rule Configure 2" />
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the order of the shipping methods.
+</Warning>
+
+<img src="/images/shared/before-rule-apply.webp" alt="Before Rule Apply" />
+
+After setting the email, the checkout rule runs and you'll see the shipping methods are reordered. We can verify the most expensive shipping method is now at the top, as shown below.
+
+<img src="/images/shared/after-rule-apply.webp" alt="After Rule Apply" />
+
+## Setting the default preselected shipping method
+
+By default, Shopify will always make the top shipping method the default preselected shipping method. So, using this rule, you can change the default preselected shipping method to any shipping method which you want, by making it the top shipping method.
+
+To do this, as an example, you can use the **Fixed ranking** option, and set the rank to 1 for the shipping method you want to be the default preselected shipping method. Please make sure, "All other shipping methods will appear here after the above" is set to "Show in end".
+
+<Warning>
+  Please note, to test this, you will need to activate the rule, and then clear
+  out the cookies/cache of the browser, so the default preselected shipping
+  method is not your previously selected shipping method (Shopify can save this
+  selection in cache for your browser). Or you can use a different brwoser as
+  well to see what your customers will see.
+</Warning>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img src="/images/shared/activate-the-rule.webp" alt="Activate The Rule" />
