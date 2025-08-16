@@ -1,10 +1,11 @@
 ---
-title: 'Quickstart'
-description: 'This quickstart will guide you through creating a sample rule, demonstrating how it works, and how it can be used to customize your Shopify checkout.'
-icon: 'rocket'
+title: "Quickstart"
+description: "This quickstart will guide you through creating a sample rule, demonstrating how it works, and how it can be used to customize your Shopify checkout."
+icon: "rocket"
 ---
 
 ## Create a sample rule
+
 To create a rule, navigate to _BSure Checkout Rules → Rules → click "Create Rule"_.
 
 <img
@@ -12,68 +13,67 @@ To create a rule, navigate to _BSure Checkout Rules → Rules → click "Create 
   alt="Create Checkout Rule"
 />
 
-You’ll then be redirected to the **Select checkout rule type** screen. Choose a category (Shipping, Payment, Validation, or Discount) → select a checkout rule type (e.g., Reorder Shipping Methods) → click “Select Rule”. Here we are selecting *Reorder Shipping Methods* as the checkout rule type for demo purpose.
+You’ll then be redirected to the **Select checkout rule type** screen. Choose a category (Shipping, Payment, Validation, or Discount) → select checkout rule type (e.g., Reorder Shipping Methods) → click “Select Rule”.
+
+<Warning>
+  Here we are selecting *Reorder Shipping Methods* as the checkout rule type for
+  demo purpose.
+</Warning>
 
 <img
   src="/images/quickstart/create-checkout-rule-2.webp"
   alt="Create Checkout Rule 2"
 />
-Then, a **template selection** popup will appear. Choose an option based on your requirements. In most cases, you can choose the empty rule as a starting point and modify it to your needs. Even if you choose a prefilled template, you will be able to modify it later.
+Then, a **template selection** popup will appear. Choose an option based on your
+requirements. In most cases, you can choose the empty rule as a starting point and
+modify it to your needs. Even if you choose a prefilled template, you will be able
+to modify it later.
 <img
-  src="/images/quickstart/select-rule-template.webp"
+  src="/images/shared/select-rule-template.webp"
   alt="Select Rule Template"
 />
 
-Next, you’ll land on the **Create Reorder Shipping Methods Rule** screen, where you can configure your rule.
+Next, you’ll land on the **Create new reorder shipping methods rule** screen, where you can configure your rule.
 
 ### Rule configuration
-To configure the rule, first optionally we can add a name such as "Reorder Shipping Methods" to describe what it does. Then, select the status: Testing, Active, or Deactivated. 
+
+To configure the rule, first optionally we can add a name such as "Reorder Shipping Methods" to describe what it does. Then, select the status: Testing, Active, or Deactivated.
 
 Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
-<img
-  src="/images/quickstart/rule-configure-1.webp"
-  alt="Rule Configure 1"
-/>
+
+<img src="/images/shared/rule-configure-1.webp" alt="Rule Configure 1" />
 
 Next, on the same screen, select the relevant condition set, condition, and operation. As an example here we are going to choose the default condition set, then set the rule to always run, and select the operation to reorder the shipping methods from shipping prices highest to lowest.
 
-<img
-  src="/images/quickstart/rule-configure-2.webp"
-  alt="Rule Configure 2"
-/>
-Finally, click the Save button at the top to configure and create your rule.
-<img
-  src="/images/quickstart/save-rule.webp"
-  alt="Rule Save"
-/>
+<img src="/images/shared/rule-configure-2.webp" alt="Rule Configure 2" />
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
 
 ## Test the rule
-Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout. Let's make this change.
 
-<img
-  src="/images/quickstart/before-rule-apply.webp"
-  alt="Before Rule Apply"
-/>
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
 
-After setting the email, the checkout rule runs and you'll see the shipping methods are reordered. We can verify the most expensive shipping method is now at the top, as shown below.
-<img
-  src="/images/quickstart/after-rule-apply.webp"
-  alt="After Rule Apply"
-/>
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the order of the shipping methods.
+</Warning>
+<img src="/images/shared/before-rule-apply.webp" alt="Before Rule Apply" />
+
+After using the testing email address, the checkout rule runs and you'll see the shipping methods are reordered. We can verify the most expensive shipping method is now at the top, as shown below.
+
+<img src="/images/shared/after-rule-apply.webp" alt="After Rule Apply" />
 
 ## Activate the rule
+
 Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
 
 Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
 
 <Warning>
-Rule activation is only available on paid plans.
-If you haven't upgraded your plan yet, follow the instructions [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
 </Warning>
-<img
-  src="/images/quickstart/activate-the-rule.webp"
-  alt="Activate The Rule"
-/>
-
+<img src="/images/shared/activate-the-rule.webp" alt="Activate The Rule" />
 
 Similarly, you can create multiple rules based on your requirements by following the process described above.

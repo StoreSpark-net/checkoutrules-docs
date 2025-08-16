@@ -1,0 +1,119 @@
+---
+title: "Hide express checkout options"
+description: "Hide express checkout payment options at the top of the checkout page."
+icon: "eye-slash"
+---
+
+## Rule overview
+
+This rule allows you to hide express checkout buttons such as PayPal, Apple Pay, Google Pay, or Shop Pay at the top of the checkout page based on given conditions.
+
+<Warning>
+  You can <i>always</i> hide these express buttons, <b>only</b> if you are on
+  Shopify plus plan due to Shopify restrictions. If you are on any other Shopify
+  plan, then this rule will hide all express checkout buttons, only when the
+  shipping address is not filled in. When the shipping address is filled in,
+  then the express checkout buttons will become visible again. This mechanism
+  ensures that at least the customer will always input their shipping address.
+</Warning>
+
+## Sample configuration
+
+The following steps show how to create and configure a **Hide Express Checkout Options** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Payment" → select checkout rule type "Hide Express Checkout Options" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/payment/select-hide-express-checkout-options.webp"
+  alt="Select Rule"
+/>
+
+Then, a **checkout layout selection** popup will appear. Choose an option based on your store setup, either **1 page checkout** or **3 page checkout**. If you are using one page checkout on your store, then you should select **1 page checkout**. If you are using 3 page checkout, then you should select **3 page checkout**.
+
+<img
+  src="/images/essentials/payment/select-rule-template-hide-express-checkout-options.webp"
+  alt="Select Rule Template"
+/>
+
+Next, you’ll land on the **Create new hide express checkout options rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Hide express checkout options" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-express-checkout-options.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, if you selected **1 page checkout** in the previous step, you will need to set up your payment methods as required in the rule setup. Click **Mark as done** for each method once you have followed the instructions to configure it. Optionally, you can add conditions if you want to control when the rule should execute.
+
+<Note>
+  You can watch the provided setup videos and follow along, if you are unsure
+  how to configure a manual payment method as required in the rule setup.
+</Note>
+
+<img
+  src="/images/essentials/payment/setup-hide-payment-methods-options.webp"
+  alt="Setup"
+/>
+
+<Info>
+  You only need to configure these manual payment methods, if you are not on
+  Shopify plus. If you are on Shopify plus, then there is no need to configure
+  these manual payment methods.
+</Info>
+
+Or, if you selected **3 page checkout** in the previous step, you will need to choose whether to hide or show the payment methods listed in the screen below for both the **Checkout information page** and the **Checkout payment page**. Optionally, you can add conditions if you want to control when the rule should execute for both pages.
+
+<img
+  src="/images/essentials/payment/setup-3-page-checkout-hide-express-checkout-options.webp"
+  alt="Setup"
+/>
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the PayPal express payment button is visible.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-hide-express-checkout-options.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and you’ll see the PayPal express payment button is **hidden**, as shown below.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-express-checkout-options.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-express-checkout-options.webp"
+  alt="Activate The Rule"
+/>

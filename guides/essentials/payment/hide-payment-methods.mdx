@@ -1,0 +1,113 @@
+---
+title: "Hide payment methods"
+description: "Hide certain payment methods at the checkout under given conditions."
+icon: "eye-slash"
+---
+
+## Rule overview
+
+This rule allows you to automatically hide specific payment methods at the checkout based on defined conditions. You can control visibility using criteria such as cart total, shipping address, customer tags, or product details, etc.
+
+This helps streamline the checkout process by removing irrelevant or unavailable payment options, reducing customer friction and improving conversion rates.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Hide Payment Methods** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Payment" → select checkout rule type "Hide Payment Methods" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/payment/select-hide-payment-methods.webp"
+  alt="Select Hide Payment Methods"
+/>
+
+Next, you’ll land on the **Create new hide payment methods rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally we can add a name such as "Hide payment methods" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+
+Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-payment-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+
+> As an example, here we are using the default **Condition set 1**, setting the rule to run **Always**, and configuring it to hide the payment method **"Cash on Delivery (COD)"**.
+
+<img
+  src="/images/essentials/payment/condition-set-hide-payment-methods.webp"
+  alt="Condition Set Hide Payment Methods"
+/>
+
+In the **action section**, you have three options to manage payment methods at checkout:
+
+- **Hide these payment methods** – Hides only the payment methods you specify when the condition matches.
+
+<img
+  src="/images/essentials/payment/action-hide-these-payment-methods-hide-payment-methods.webp"
+  alt="Action Hide These Payment Methods"
+/>
+
+- **Hide all payment methods** – Hides all available payment methods when the condition matches.
+
+<img
+  src="/images/essentials/payment/action-hide-all-payment-methods.webp"
+  alt="Action Hide All Payment"
+/>
+
+- **Only show these payment methods** – Shows only the specified payment methods when the condition matches and hides all others.
+
+<img
+  src="/images/essentials/payment/action-only-show-these-payment-methods-hide-payment-methods.webp"
+  alt="Action Only Show These Payment Methods"
+/>
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note the Cash on Delivery (COD) payment method is
+  visible.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and hides the specified payment methods. We can verify that the **Cash on Delivery (COD)** payment method is no longer visible, as shown below.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-payment-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-payment-methods.webp"
+  alt="Activate The Rule"
+/>
