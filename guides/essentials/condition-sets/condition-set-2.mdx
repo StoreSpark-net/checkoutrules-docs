@@ -1,0 +1,1332 @@
+---
+title: "Condition Set 2"
+description: "Learn about each condition available inside _Condition Set 2_."
+icon: "sliders"
+---
+
+## Always
+
+If you don’t want to set any condition, select _Always_. The rule will run every time for everyone, without checking any conditions.
+
+<img src="/images/essentials/condition-sets/always.webp" alt="Always" />
+
+## Previous all conditions invalid
+
+When all previous conditions are invalid in the previous [rule block](/guides/get-started/concepts#block), i-e the previous rule block did not run, this condition becomes true, ensuring the action is triggered only if none of the earlier conditions are met.
+
+<Note>Available only when at least one previous rule block exists.</Note>
+
+<img
+  src="/images/essentials/condition-sets/previous-all-conditions-invalid.webp"
+  alt="Previous All Conditions Invalid"
+/>
+
+## Customer
+
+### Customer is logged in
+
+Matches if the customer has an active account session and is currently logged in to their store account at the time of checkout.
+
+<img
+  src="/images/essentials/condition-sets/customer-logged-in.webp"
+  alt="Customer is Logged In"
+/>
+
+### Customer is not logged in
+
+Matches if the customer does not have an active account session and is checking out as a guest.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-logged-in.webp"
+  alt="Customer is Not Logged In"
+/>
+
+### Email address
+
+This condition checks the customer’s **email address** against specific criteria, based on one of the following sub-conditions:
+
+- **contains** (The email address includes the entered value)
+- **does not contain** (The email address does not include the entered value)
+- **is empty** (No email address is provided)
+- **is not empty** (An email address is provided)
+- **is** (The email address exactly matches the entered value)
+- **is not** (The email address does not exactly match the entered value)
+
+For **contains**, **does not contain**, **is**, and **is not**, type a value in the text box to compare against the customer’s email address.
+
+> For example, `contains @gmail.com` → Matches any email address ending with “@gmail.com”.
+
+<img
+  src="/images/essentials/condition-sets/email-contains.webp"
+  alt="Email Contains"
+/>
+
+For **is empty** and **is not empty**, no value entry is required.
+
+> For example, `is empty` → Matches when the email field is blank.
+
+<img
+  src="/images/essentials/condition-sets/email-empty.webp"
+  alt="Email Empty"
+/>
+
+### Customer total number of previous orders
+
+This condition checks the **total number of previous orders placed by the customer** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the customer’s total previous orders are greater than or equal to the entered number)
+- **is less than or equals** (Matches when the customer’s total previous orders are less than or equal to the entered number)
+
+To set these conditions, enter the number in the field and choose the appropriate comparison from the dropdown.
+
+> For example, `is greater than or equals 5` → Matches customers who have placed 5 or more orders in the past.
+
+<img
+  src="/images/essentials/condition-sets/customer-total-number-of-previous-orders.webp"
+  alt="Customer Total Number of Previous Orders"
+/>
+
+## Order Details
+
+### Order total amount
+
+This condition checks the **order’s total amount** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s total amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s total amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 600` → Matches orders with a total amount of 600 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-total-amount.webp"
+  alt="Order Total Amount"
+/>
+
+### Order subtotal amount
+
+This condition checks the **order’s subtotal amount** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s subtotal amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s subtotal amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 699` → Matches orders with a subtotal amount of 699 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount.webp"
+  alt="Order Subtotal Amount"
+/>
+
+### Order total quantity
+
+This condition checks the **total quantity of items in an order** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total quantity of items is greater than or equal to the entered number)
+- **is less than or equals** (Matches when the total quantity of items is less than or equal to the entered number)
+- **is multiple of** (Matches when the total quantity is an exact multiple of the entered number)
+- **is not multiple of** (Matches when the total quantity is not a multiple of the entered number)
+
+To set these conditions, enter a quantity in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  The quantity refers to the **sum of all item quantities** in the order, not
+  the number of distinct products.
+</Note>
+
+> **Example for “is multiple of”**:  
+> `is multiple of 5` → Matches orders with total quantities like 5, 10, 15, 20, etc.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-order-total.webp"
+  alt="Is Multiple Of Order Total"
+/>
+
+> **Example for “is greater than or equals”**:  
+> `is greater than or equals 3` → Matches orders with 3 or more total items.
+
+<img
+  src="/images/essentials/condition-sets/order-total-is-greater-value.webp"
+  alt="Order Total Is Greater Value"
+/>
+
+### Order total weight
+
+This condition checks the **order’s total weight** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s total weight is greater than or equal to the entered weight)
+- **is less than or equals** (Matches when the order’s total weight is less than or equal to the entered weight)
+
+To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
+
+> For example, `is less than or equals 5 kg` → Matches orders with a total weight of 5 kilograms or less.
+
+<img
+  src="/images/essentials/condition-sets/order-total-weight.webp"
+  alt="Order Total Weight"
+/>
+
+### Order total one time purchase weight
+
+This condition checks the **total weight of one-time purchase items** in the order against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total one-time purchase weight is greater than or equal to the entered weight)
+- **is less than or equals** (Matches when the total one-time purchase weight is less than or equal to the entered weight)
+
+To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
+
+> For example, `is greater than or equals 10 lb` → Matches orders where the total weight of one-time purchase items is 10 pounds or more.
+
+<img
+  src="/images/essentials/condition-sets/order-total-one-time-purchase-weight.webp"
+  alt="Order Total One-Time Purchase Weight"
+/>
+
+### Order total subscription weight
+
+This condition checks the **total weight of subscription items** in the order against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total subscription weight is greater than or equal to the entered weight)
+- **is less than or equals** (Matches when the total subscription weight is less than or equal to the entered weight)
+
+To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
+
+> For example, `is greater than or equals 5 kg` → Matches orders where the total weight of subscription items is 5 kilograms or more.
+
+<img
+  src="/images/essentials/condition-sets/order-total-subscription-weight.webp"
+  alt="Order Total Subscription Weight"
+/>
+
+## Cart Details
+
+### Cart attribute
+
+This condition checks the **attributes attached to the cart** against specific criteria, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches when the specified cart attribute contains any of the entered values)
+- **Does not have any of these values** (Matches when the specified cart attribute does not contain any of the entered values)
+- **Has empty value** (Matches when the specified cart attribute exists but has no value)
+- **Does not have empty value** (Matches when the specified cart attribute exists and contains a value)
+
+To set these conditions:
+
+1. Enter the **attribute key** in the “Enter key” field.
+2. Enter the **value(s)** to match (where applicable).
+3. Choose the comparison option from the dropdown.
+
+For **Has any of these values** and **Does not have any of these values**, enter one or more values into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial values. For example, value* will match
+  value123, VALUETEST etc.
+</Note>
+> **Example for “Has any of these values”**: > Key: `delivery_method` > Values: `express,
+pickup` > → Matches carts where the `delivery_method` attribute is either `express`
+or `pickup`.
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
+  alt="Cart Attribute Has Any Values"
+/>
+
+For **Has empty value** and **Does not have empty value**, no value entry is required.
+
+> **Example for “Does not have empty value”**:  
+> Key: `gift_message`  
+> → Matches carts where a `gift_message` attribute exists and contains some text (e.g., “Happy Birthday!”).
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-not-empty-value.webp"
+  alt="Cart Attribute Not Empty Value"
+/>
+
+### Product quantity per SKU
+
+This condition checks the **quantity of a specific product (by SKU)** in the order against defined criteria, based on one of the following sub-conditions:
+
+- **quantity is greater than or equals** (Matches when the quantity of the specified SKU is greater than or equal to the entered number)
+- **quantity is less than or equals** (Matches when the quantity of the specified SKU is less than or equal to the entered number)
+- **quantity is divisible by** (Matches when the quantity of the specified SKU is an exact multiple of the entered number)
+- **quantity is not divisible by** (Matches when the quantity of the specified SKU is not a multiple of the entered number)
+
+To set these conditions:
+
+1. Enter the **SKU** in the “Enter SKU” field.
+2. Enter the **quantity** in the “Enter quantity” field.
+3. Select the comparison option from the dropdown.
+
+> **Example for “quantity is greater than or equals”**:  
+> SKU: `ABC123`  
+> Quantity: `3`  
+> → Matches orders where there are 3 or more units of product `ABC123`.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-has-greater-value.webp"
+  alt="Product Quantity per SKU Has Greater Value"
+/>
+
+> **Example for “quantity is divisible by”**:  
+> SKU: `ABC123`  
+> Quantity: `2`  
+> → Matches orders where the quantity of product `ABC123` is 2, 4, 6, 8, etc.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-divisible-by.webp"
+  alt="Product Quantity per SKU Divisible By"
+/>
+
+### Total quantity – Product quantity of SKU
+
+This condition checks the **total quantity of all products in the order except a specific product (by SKU)** against defined criteria, based on one of the following sub-conditions:
+
+- **quantity is greater than or equals** (Matches when the total quantity excluding the specified SKU is greater than or equal to the entered number)
+- **quantity is less than or equals** (Matches when the total quantity excluding the specified SKU is less than or equal to the entered number)
+- **quantity is divisible by** (Matches when the total quantity excluding the specified SKU is an exact multiple of the entered number)
+- **quantity is not divisible by** (Matches when the total quantity excluding the specified SKU is not a multiple of the entered number)
+
+To set these conditions:
+
+1. Enter the **SKU** to exclude in the “Enter SKU” field.
+2. Enter the **quantity** in the “Enter quantity” field.
+3. Select the comparison option from the dropdown.
+
+> **Example for “quantity is greater than or equals”**:  
+> SKU: `ABC123`  
+> Quantity: `5`  
+> → Matches orders where the total quantity of all products except `ABC123` is 5 or more.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-has-greater-value.webp"
+  alt="Total Quantity – Product Quantity of SKU Has Greater Value"
+/>
+
+> **Example for “quantity is divisible by”**:  
+> SKU: `ABC123`  
+> Quantity: `3`  
+> → Matches orders where the total quantity of all products except `ABC123` is 3, 6, 9, etc.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-divisible-by.webp"
+  alt="Total Quantity – Product Quantity of SKU Divisible By"
+/>
+
+## Cart Has Any Items
+
+### SKU
+
+This condition checks the **SKU** of the products in the cart against specific criteria. It will become true if **any** product in the cart has the entered SKU value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the SKU has at least one of the entered values)
+- **Does not have any of these values** (Matches if the SKU has none of the entered values)
+- **Has any other value besides these values** (Matches if the SKU has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the SKU has only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of SKUs is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of SKUs is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more SKU values into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match multiple SKU values. For example, SKU* will match
+  SKU12, sku-new-1 etc.
+</Note>
+
+> For example, `Has any of these values: SKU1, SKU2` → Matches if the SKU is either “SKU1” or “SKU2”.
+
+<img src="/images/essentials/condition-sets/skus.webp" alt="SKUs" />
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the SKU count.
+
+> For example, `Has number of values greater than or equals 3` → Matches if there are three or more SKUs.
+
+<img src="/images/essentials/condition-sets/count-sku.webp" alt="SKU Count" />
+
+### Collection
+
+This condition checks the **collection** in the order against specific criteria. It will become true if **any** of the product in the cart belongs to the entered Collection value, based on one of the following sub-conditions:
+
+- **has value of** (Matches when the collection has the specified value)
+- **does not have value of** (Matches when the collection does not have the specified value)
+- **has any other value besides** (Matches when the collection has any value except the entered one)
+- **does not have any other value besides** (Matches when the collection has only the entered value and no other)
+
+To set these conditions, click on the “Enter value” field to open the collection selection popup, then search for or directly select the desired collection, and choose the appropriate comparison from the dropdown.
+
+<img
+  src="/images/essentials/condition-sets/collection-selection-popup.webp"
+  alt="Collection Selection Popup"
+/>
+
+> For example, `has value of Summer2025` → Matches when any product in cart belongs to the collection **Summer2025**.
+
+<img
+  src="/images/essentials/condition-sets/collection-has-value-of.webp"
+  alt="Collection Condition"
+/>
+
+### Collections
+
+This condition checks the **Collections** against specific criteria. It will become true if **any** product in the cart belongs to the entered Collection value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the Collection has at least one of the entered values)
+- **Does not have any of these values** (Matches if the Collection has none of the entered values)
+- **Has any other value besides these values** (Matches if the Collection has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the Collection has only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of Collections is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of Collections is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more Collection values into the field.
+
+> For example, `Has any other value besides these values: Summer2025, Winter2025` → Matches if the Collection includes at least one value that is not “Summer2025” or “Winter2025”.
+
+<img
+  src="/images/essentials/condition-sets/collections.webp"
+  alt="Collections"
+/>
+
+From the popup, select one or multiple collections from the already created collections in your store.
+
+<img
+  src="/images/essentials/condition-sets/popup-collections.webp"
+  alt="Popup Collections"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the Collection count.
+
+> For example, `Has number of values less than or equals 7` → Matches if there are seven or fewer Collections.
+
+<img
+  src="/images/essentials/condition-sets/count-collections.webp"
+  alt="Collections Count"
+/>
+
+### Line item property
+
+This condition checks the **properties attached to a line item** against specific criteria, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches when the specified line item property contains any of the entered values)
+- **Does not have any of these values** (Matches when the specified line item property does not contain any of the entered values)
+- **Has empty value** (Matches when the specified line item property exists but has no value)
+- **Does not have empty value** (Matches when the specified line item property exists and contains a value)
+- **Has number of values greater than or equals** (Matches when the specified line item property contains a number of values greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches when the specified line item property contains a number of values less than or equal to the entered number)
+
+To set these conditions:
+
+1. Enter the **property key** in the “Enter key” field.
+2. Enter the **value(s)** to match (where applicable).
+3. Choose the comparison option from the dropdown.
+
+For **Has any of these values** and **Does not have any of these values**, enter one or more values into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial values. For example, value* will match
+  value123, VALUETEST etc.
+</Note>
+> **Example for “Has any of these values”**: > Key: `color` > Values: `red, blue`
+> → Matches line items where the `color` property is either `red` or `blue`.
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="Line Item Property Has Any Values"
+/>
+
+For **Has empty value** and **Does not have empty value**, no value entry is required.
+
+> **Example for “Does not have empty value”**:  
+> Key: `engraving`  
+> → Matches line items where the `engraving` property exists and contains some text (e.g., “Happy Anniversary”).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="Line Item Property Not Empty Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter the threshold number into the field.
+
+> **Example for “Has number of values less than or equals”**:  
+> Key: `size`  
+> Number: `2`  
+> → Matches line items where the `size` property has 2 or fewer distinct values (e.g., `S, M`).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="Line Item Property Values Less Than"
+/>
+
+### Cart has shipping product (requires delivery)
+
+This condition checks whether the cart contains at least one product that requires shipping (delivery). If present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-shipping-product.webp"
+  alt="Cart has shipping product (requires delivery)"
+/>
+
+### Cart has no shipping product
+
+This condition checks whether the cart does not contain any product that requires shipping (delivery). If no such product is present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-no-shipping-product.webp"
+  alt="Cart has no shipping product"
+/>
+
+### Cart has digital product
+
+This condition checks whether the cart contains at least one digital product (A product that does not require shipping). If present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-digital-product.webp"
+  alt="Cart has digital product"
+/>
+
+### Cart has no digital product
+
+This condition checks whether the cart does not contain any digital product (i-e All products require shipping). If no such product is present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-no-digital-product.webp"
+  alt="Cart has no digital product"
+/>
+
+### Cart has one time purchase product
+
+This condition checks whether the cart contains at least one product that is a one time purchase. If present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-one-time-purchase-product.webp"
+  alt="Cart has one time purchase product"
+/>
+
+### Cart has no one time purchase product
+
+This condition checks whether the cart contains no products that are one time purchases. If no one time purchase products are present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-no-one-time-purchase-product.webp"
+  alt="Cart has no one time purchase product"
+/>
+
+### Cart has subscription product
+
+This condition checks whether the cart contains at least one product that is part of a subscription. If a subscription product is present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-subscription-product.webp"
+  alt="Cart has subscription product"
+/>
+
+### Cart has no subscription product
+
+This condition checks whether the cart contains no products that are part of a subscription. If no subscription products are present, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/cart-has-no-subscription-product.webp"
+  alt="Cart has no subscription product"
+/>
+
+## Product Metafield
+
+### Product variant metafield
+
+This condition checks a **product variant metafield** you specify by **namespace** and **key**, then evaluates it using one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the metafield has at least one of the entered values)
+- **Does not have any of these values** (Matches if the metafield has none of the entered values)
+- **Has any other value besides these values** (Matches if the metafield has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the metafield has only the entered values and no others)
+- **Has empty value** (Matches if the metafield has no value)
+- **Does not have empty value** (Matches if the metafield contains any value)
+- **Has number greater than or equal to** (Matches if the metafield’s numeric value is greater than or equal to the entered number)
+- **Has number less than or equal to** (Matches if the metafield’s numeric value is less than or equal to the entered number)
+- **Has number of values greater than or equals** (Matches if the **count** of values in the metafield is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of values in the metafield is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas.
+
+> For example, `Namespace: shipping` · `Key: allowed_regions` · `Does not have any of these values: CA, TX` → Matches if neither “CA” nor “TX” appears in the metafield.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-does-not-contains.webp"
+  alt="Product Variant Metafield Does Not Contains"
+/>
+
+For **Has number greater than or equal to** and **Has number less than or equal to**, enter a single numeric value in the field to match against the metafield’s numeric value.
+
+> For example, `Namespace: specs` · `Key: length_mm` · `Has number greater than or equal to 50` → Matches if the metafield’s numeric value is 50 or more.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value.webp"
+  alt="Product Variant Metafield Greater Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match against the count of values in the metafield.
+
+> For example, `Namespace: custom` · `Key: available_colors` · `Has number of values greater than or equals 3` → Matches if there are three or more values in the metafield.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value-or-equals.webp"
+  alt="Product Variant Metafield Greater Value Or Equals"
+/>
+
+## Shipping
+
+### Selected shipping method
+
+This condition checks the customer’s **selected shipping method** against specific criteria, based on one of the following sub-conditions:
+
+- **contains** (The selected shipping method includes the entered value)
+- **does not contain** (The selected shipping method does not include the entered value)
+
+- **is** (The selected shipping method exactly matches the entered value)
+- **is not** (The selected shipping method does not exactly match the entered value)
+
+To set these conditions, enter the value in the field and choose the appropriate comparison from the dropdown.
+
+> For example, `contains Express` → Matches any selected shipping method that includes “Express”.
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-contains.webp"
+  alt="Selected Shipping Method Contains"
+/>
+
+### Shipping methods available
+
+Used to check if the given shipping methods are actually available on the checkout page, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the checkout page contains at least one of the listed shipping methods)
+- **Does not have any of these values** (Matches if the checkout page does not contain any of the listed shipping methods)
+- **Has any other value besides these values** (Matches if the checkout page contains shipping methods other than the listed ones)
+- **Does not have any other value besides these values** (Matches if the checkout page contains only the listed shipping methods and no others)
+- **Has number of values greater than or equals** (Matches if the number of shipping methods available on the checkout page is greater than or equal to the specified number)
+- **Has number of values less than or equals** (Matches if the number of shipping methods available on the checkout page is less than or equal to the specified number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial shipping method names. For example, Stand*
+  will match Standard, standard shipping etc.
+</Note>
+
+> For example, `Has any of these values: Express Delivery, Standard Shipping` → Matches if at least one of the selected shipping methods is available.
+
+<img
+  src="/images/essentials/condition-sets/multiple-shipping-methods.webp"
+  alt="Multiple Shipping Methods"
+/>
+
+For **Has number of values greater than or equals** or **Has number of values less than or equals**, enter the count threshold.
+
+> For example, `Has number of values greater than or equals 3` → Matches if three or more shipping methods are available.
+
+<img
+  src="/images/essentials/condition-sets/count-shipping-methods.webp"
+  alt="Count Shipping Methods"
+/>
+
+### Selected shipping type (Ship/Pickup)
+
+This condition checks the "Ship vs Pickup in store" selection on the checkout page, as shown below.
+
+<img
+  src="/images/essentials/condition-sets/shipping-pickup-type.webp"
+  alt="Checkout Page Shipping vs Pickup Type Selection"
+/>
+
+It will become true if the selected shipping type is the same as the entered value, based on one of the following sub-conditions:
+
+- **is** (Matches if the Delivery selection is exactly as the entered value)
+- **is not** (Matches if the Delivery selection is different from the entered value)
+
+For any of the above options, choose one shipping type from the list: **Pickup**, **Local delivery**, **Shipping**, **Pickup point**, **Retail**, or **None**.
+
+> **Example:** `is not: Pickup` → Matches if the selected shipping type is anything other than “Pickup”, i-e it is "Ship".
+
+<img
+  src="/images/essentials/condition-sets/select-shipping-type.webp"
+  alt="Select Shipping Type"
+/>
+
+## Localization
+
+### User language
+
+This condition checks the language selected by the customer, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the customer language is from the given list)
+- **Does not have any of these values** (Matches if the customer language is not from the given list)
+- **Has any other value besides these values** (Matches if the customer language is not from the given list)
+- **Does not have any other value besides these values** (Matches if the customer language is from the given list and no others)
+
+For any of the above options, search and select one or more languages from the list. You can also use the **Paste**, **Copy all**, or **Clear all** options for quick selection.
+
+> For example, `Does not have any of these values: English, French` → Matches if the field does not contain “English” or “French”.
+
+<img src="/images/essentials/condition-sets/languages.webp" alt="Languages" />
+
+## Shipping Address
+
+### Shipping address is empty
+
+This condition becomes true if the shipping address fields are empty.
+
+<img
+  src="/images/essentials/condition-sets/shipping-address-is-empty.webp"
+  alt="Shipping Address Is Empty"
+/>
+
+### Shipping address is not empty
+
+This condition becomes true if the shipping address fields are not empty.
+
+<img
+  src="/images/essentials/condition-sets/shipping-address-is-not-empty.webp"
+  alt="Shipping Address Is Not Empty"
+/>
+
+### Full name (First name + Last name)
+
+Used to compare the customer’s full name with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the full name contains the specified value or partial value)
+- **Does not contain** (Matches if the full name does not contain the specified value or partial value)
+- **Is empty** (Matches if no name is entered)
+- **Is not empty** (Matches if any value is entered in the name field)
+- **Is** (Matches if the full name exactly matches the specified value)
+- **Is not** (Matches if the full name is not exactly the specified value)
+- **Has no of characters greater than or equals** (Matches if the total character count in the name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total character count in the name is less than or equal to the specified number)
+- **Has only** (Matches if the full name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the full name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Does not contain: Test` → Matches if the name does not contain “Test” anywhere.
+
+<img
+  src="/images/essentials/condition-sets/full-name-does-not-contain.webp"
+  alt="Full Name Does Not Contain"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `has only: english characters` → Matches if the customer’s name contains english characters only.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-only-english-chars.webp"
+  alt="Full Name Has Only English Chars"
+/>
+
+For **Has no of characters greater than or equals** or **Has no of characters less than or equals**, enter the character count threshold.
+
+> For example, `Has no of characters greater than or equals 10` → Matches if the full name contains 10 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-greater-value.webp"
+  alt="Full Name Has Greater Value"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the full name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/full-name-is-empty.webp"
+  alt="Full Name Is Empty"
+/>
+
+### First name
+
+Used to compare the customer’s first name with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the first name contains the specified value or partial value)
+- **Does not contain** (Matches if the first name does not contain the specified value or partial value)
+- **Is empty** (Matches if no first name is entered)
+- **Is not empty** (Matches if any value is entered in the first name field)
+- **Is** (Matches if the first name exactly matches the specified value)
+- **Is not** (Matches if the first name is not exactly the specified value)
+- **Has no of characters greater than or equals** (Matches if the total character count in the first name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total character count in the first name is less than or equal to the specified number)
+- **Has only** (Matches if the first name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the first name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Is not: Jane` → Matches if the first name is anything except “Jane”.
+
+<img
+  src="/images/essentials/condition-sets/first-name-is-not.webp"
+  alt="First Name Is Not"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `has only: english characters` → Matches if the first name contains english characters only.
+
+<img
+  src="/images/essentials/condition-sets/first-name-has-only.webp"
+  alt="First Name Has Only"
+/>
+
+For **Has no of characters greater than or equals** or **Has no of characters less than or equals**, enter the character count threshold.
+
+> For example, `Has no of characters greater than or equals 5` → Matches if the first name contains 5 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/first-name-has-greater-value.webp"
+  alt="First Name Has Greater Value"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the first name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/first-name-is-empty.webp"
+  alt="First Name Is Empty"
+/>
+
+### Last name
+
+Used to compare the customer’s last name with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the last name contains the specified value or partial value)
+- **Does not contain** (Matches if the last name does not contain the specified value or partial value)
+- **Is empty** (Matches if no last name is entered)
+- **Is not empty** (Matches if any value is entered in the last name field)
+- **Is** (Matches if the last name exactly matches the specified value)
+- **Is not** (Matches if the last name is not exactly the specified value)
+- **Has no of characters greater than or equals** (Matches if the total character count in the last name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total character count in the last name is less than or equal to the specified number)
+- **Has only** (Matches if the last name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the last name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Is not: Smith` → Matches if the last name is anything except “Smith”.
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-not.webp"
+  alt="Last Name Is Not"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if the last name contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-only.webp"
+  alt="Last Name Has Only"
+/>
+
+For **Has no of characters greater than or equals** or **Has no of characters less than or equals**, enter the character count threshold.
+
+> For example, `Has no of characters greater than or equals 5` → Matches if the last name contains 5 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-greater-value.webp"
+  alt="Last Name Has Greater Value"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the last name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-empty.webp"
+  alt="Last Name Is Empty"
+/>
+
+### P.O. box address
+
+The selected condition is based on whether the customer's address includes a P.O. Box. This condition can be used to trigger specific actions, such as restricting certain shipping methods or applying special handling rules for orders going to P.O. Box addresses.
+
+<Note>
+  When you use the 'P.O. box address' condition in the rule, then all kind of
+  entries in the shipping address like P.O. box or P O box or P.o b o x etc are
+  detected by the app automatically. If you want to also detect a custom word or
+  phrase, you can do that by using the 'Address line' condition within which you
+  can specify the word or phrase you want to detect.
+</Note>
+
+<Info>
+  If you want to detect PO Box words or phrase in other languages, you can do
+  that by using the 'Address (line1 + line2)' condition within which you can
+  specify the words or phrase you want to detect. For example, 'Packstation' in
+  German. You can add mulitple of these conditions for each word using the OR
+  operator in between them.
+</Info>
+
+<img
+  src="/images/essentials/condition-sets/p.o-box-address.webp"
+  alt="P.O. box address"
+/>
+
+### Not P.O. box address
+
+This condition becomes true if the customer’s address does not contain a P.O. Box.
+
+<img
+  src="/images/essentials/condition-sets/not-p.o-box-address.webp"
+  alt="Not P.O. box address"
+/>
+
+### Address (line 1 + line 2)
+
+Used to compare the customer’s full address (combined from Address Line 1 and Address Line 2) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the address contains the specified value or partial value)
+- **Does not contain** (Matches if the address does not contain the specified value or partial value)
+- **Is empty** (Matches if no address is entered in both lines)
+- **Is not empty** (Matches if any value is entered in either line)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in the address is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in the address is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in the address is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in the address is less than or equal to the specified number)
+- **Has no of words greater than or equals** (Matches if the total number of words in the address is greater than or equal to the specified number)
+- **Has no of words less than or equals** (Matches if the total number of words in the address is less than or equal to the specified number)
+- **Has only** (Matches if the address contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the address contains characters other than the allowed character type from the dropdown)
+
+For **Contains** and **Does not contain**, enter the value to match.
+
+> For example, `Contains: Street` → Matches if the address contains the word “Street”.
+
+<img
+  src="/images/essentials/condition-sets/address-contains.webp"
+  alt="Address Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if the address contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/address-has-only.webp"
+  alt="Address Has Only"
+/>
+
+For **Has no of digits/characters/words greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of words greater than or equals 5` → Matches if the address contains 5 or more words.
+
+<img
+  src="/images/essentials/condition-sets/address-greater-than.webp"
+  alt="Address Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if both Address Line 1 and Address Line 2 are blank.
+
+<img
+  src="/images/essentials/condition-sets/address-is-empty.webp"
+  alt="Address Is Empty"
+/>
+
+### Address line 1
+
+Used to compare the customer’s address from Address Line 1 with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if Address Line 1 contains the specified value or partial value)
+- **Does not contain** (Matches if Address Line 1 does not contain the specified value or partial value)
+- **Is empty** (Matches if no value is entered in Address Line 1)
+- **Is not empty** (Matches if any value is entered in Address Line 1)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in Address Line 1 is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in Address Line 1 is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in Address Line 1 is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in Address Line 1 is less than or equal to the specified number)
+- **Has no of words greater than or equals** (Matches if the total number of words in Address Line 1 is greater than or equal to the specified number)
+- **Has no of words less than or equals** (Matches if the total number of words in Address Line 1 is less than or equal to the specified number)
+- **Has only** (Matches if Address Line 1 contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if Address Line 1 contains characters other than the allowed character type from the dropdown)
+
+For **Contains** and **Does not contain**, enter the value to match.
+
+> For example, `Contains: Street` → Matches if Address Line 1 contains the word “Street”.
+
+<img
+  src="/images/essentials/condition-sets/address1-contains.webp"
+  alt="Address Line 1 Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if Address Line 1 contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/address1-has-only.webp"
+  alt="Address Line 1 Has Only"
+/>
+
+For **Has no of digits/characters/words greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of words greater than or equals 5` → Matches if Address Line 1 contains 5 or more words.
+
+<img
+  src="/images/essentials/condition-sets/address1-greater-than.webp"
+  alt="Address Line 1 Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if Address Line 1 is left blank.
+
+<img
+  src="/images/essentials/condition-sets/address1-is-empty.webp"
+  alt="Address Line 1 Is Empty"
+/>
+
+### Address line 2 (Apartment, suite, etc)
+
+Used to compare the customer’s address from Address Line 2 (Apartment, suite, unit, building, floor, etc.) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if Address Line 2 contains the specified value or partial value)
+- **Does not contain** (Matches if Address Line 2 does not contain the specified value or partial value)
+- **Is empty** (Matches if no value is entered in Address Line 2)
+- **Is not empty** (Matches if any value is entered in Address Line 2)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in Address Line 2 is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in Address Line 2 is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in Address Line 2 is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in Address Line 2 is less than or equal to the specified number)
+- **Has no of words greater than or equals** (Matches if the total number of words in Address Line 2 is greater than or equal to the specified number)
+- **Has no of words less than or equals** (Matches if the total number of words in Address Line 2 is less than or equal to the specified number)
+- **Has only** (Matches if Address Line 2 contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if Address Line 2 contains characters other than the allowed character type from the dropdown)
+
+For **Contains** and **Does not contain**, enter the value to match.
+
+> For example, `Contains: Apt` → Matches if Address Line 2 contains the word “Apt”.
+
+<img
+  src="/images/essentials/condition-sets/address2-contains.webp"
+  alt="Address Line 2 Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters + accent variants` → Matches if Address Line 2 contains English characters and accented characters.
+
+<img
+  src="/images/essentials/condition-sets/address2-has-only.webp"
+  alt="Address Line 2 Has Only"
+/>
+
+For **Has no of digits/characters/words greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of words greater than or equals 3` → Matches if Address Line 2 contains 3 or more words.
+
+<img
+  src="/images/essentials/condition-sets/address2-greater-than.webp"
+  alt="Address Line 2 Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if Address Line 2 is left blank.
+
+<img
+  src="/images/essentials/condition-sets/address2-is-empty.webp"
+  alt="Address Line 2 Is Empty"
+/>
+
+### Company
+
+Used to compare the customer’s company name (The company name field on the checkout page) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the company name contains the specified value or partial value)
+- **Does not contain** (Matches if the company name does not contain the specified value or partial value)
+- **Is empty** (Matches if no company name is entered)
+- **Is not empty** (Matches if any value is entered in the company name field)
+- **Is** (Matches if the company name exactly matches the specified value)
+- **Is not** (Matches if the company name is not exactly the specified value)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in the company name is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in the company name is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in the company name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in the company name is less than or equal to the specified number)
+- **Has only** (Matches if the company name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the company name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Contains: Tech` → Matches if the company name contains the word “Tech”.
+
+<img
+  src="/images/essentials/condition-sets/company-contains.webp"
+  alt="Company Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if the company name contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/company-has-only.webp"
+  alt="Company Has Only"
+/>
+
+For **Has no of digits/characters greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of characters greater than or equals 10` → Matches if the company name contains 10 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/company-greater-than.webp"
+  alt="Company Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the company name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/company-is-empty.webp"
+  alt="Company Is Empty"
+/>
+
+### Phone number
+
+Used to compare the customer’s phone number (The phone number field on the checkout page in shipping address) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the phone number contains the specified value or partial value)
+- **Does not contain** (Matches if the phone number does not contain the specified value or partial value)
+- **Is empty** (Matches if no phone number is entered)
+- **Is not empty** (Matches if any value is entered in the phone number field)
+- **Is** (Matches if the phone number exactly matches the specified value)
+- **Is not** (Matches if the phone number is not exactly the specified value)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in the phone number is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in the phone number is less than or equal to the specified number)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Contains: 123` → Matches if the phone number contains “123” anywhere.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-contains.webp"
+  alt="Phone Number Contains"
+/>
+
+For **Has no of digits greater than or equals** or **Has no of digits less than or equals**, enter the threshold value.
+
+> For example, `Has no of digits greater than or equals 10` → Matches if the phone number contains 10 or more digits.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-greater-than.webp"
+  alt="Phone Number Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the phone number field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-is-empty.webp"
+  alt="Phone Number Is Empty"
+/>
+
+### Province code / State code
+
+Used to compare the Province / State (The Province/State field on the checkout page in shipping address) values with one or more specific values or states, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the province field contains at least one of the listed values)
+
+- **Does not have any of these values** (Matches if the province field does not contain any of the listed values)
+
+- **Has any other value besides these values** (Matches if the province field contains values other than the listed ones)
+
+- **Does not have any other value besides these values** (Matches if the province field contains only the listed values and no others)
+
+- **Is empty** (Matches if the province field has no value)
+
+- **Is not empty** (Matches if the province field contains any value)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+
+<Note>
+  Add 2 or 3 letter province/state code abbreviation in "ISO_3166-2" format
+  only.
+</Note>
+
+> For example, `Does not have any other value besides these values: CA, TX` → Matches if the field contains only “CA” or “TX” and no other values.
+
+<img
+  src="/images/essentials/condition-sets/multiple-provinces.webp"
+  alt="Multiple Provinces or States"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is not empty` → Matches if any value is entered for the field.
+
+<img
+  src="/images/essentials/condition-sets/province-not-available.webp"
+  alt="Province or State Not Available"
+/>
+
+### Country
+
+Used to compare the Country (The Country field on the checkout page in shipping address) values with one or more specific countries, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the country field contains at least one of the selected countries)
+- **Does not have any of these values** (Matches if the country field does not contain any of the selected countries)
+- **Has any other value besides these values** (Matches if the country field contains countries other than the selected ones)
+- **Does not have any other value besides these values** (Matches if the country field contains only the selected countries and no others)
+
+For any of the above options, search and select one or more countries from the list. You can also use the **Paste**, **Copy all**, or **Clear all** options for quick selection.
+
+> For example, `Does not have any other value besides these values: Portugal, Poland` → Matches if the field contains only “Portugal” or “Poland” and no other countries.
+
+<img
+  src="/images/essentials/condition-sets/select-countries.webp"
+  alt="Multiple Countries"
+/>
+
+### Zip code / Postal code
+
+Used to compare the Zip code / Postal code (The Zip/Postal Code field on the checkout page in shipping address) values with one or more specific zip or postal codes, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the zip/postal code field contains at least one of the listed values)
+- **Does not have any of these values** (Matches if the zip/postal code field does not contain any of the listed values)
+- **Has value in between these values** (Matches if the zip/postal code field value falls within the specified range)
+- **Does not have value in between these values** (Matches if the zip/postal code field value does not fall within the specified range)
+- **Has any other value besides these values** (Matches if the zip/postal code field contains values other than the listed ones)
+- **Does not have any other value besides these values** (Matches if the zip/postal code field contains only the listed values and no others)
+- **Has only digits** (Matches if the zip/postal code field contains only numeric characters)
+- **Does not have only digits** (Matches if the zip/postal code field contains any non-numeric characters)
+- **Has number of digits in between** (Matches if the number of digits falls within the specified range)
+- **Does not have number of digits in between** (Matches if the number of digits does not fall within the specified range)
+- **Is empty** (Matches if the zip/postal code field has no value)
+- **Is not empty** (Matches if the zip/postal code field contains any value)
+
+Use **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values** to match against one or more specific zip/postal codes. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match multiple zip codes. For example, BT* will match BT12,
+  bt-590 etc. Use ? to match to any single character.
+</Note>
+
+> For example, `Has any of these values: BT*` → Matches all zip/postal codes starting with “BT”.
+
+<img
+  src="/images/essentials/condition-sets/have-zipcodes.webp"
+  alt="Have Zipcodes"
+/>
+
+> Another example, `Does not have any of these values: 12345, 67890` → Matches if the code is not “12345” or “67890”.
+
+<img
+  src="/images/essentials/condition-sets/dont-have-zipcodes.webp"
+  alt="Dont Have Zipcodes"
+/>
+
+Use **Has value in between these values** or **Does not have value in between these values** to match zip/postal codes within or outside a numeric range.
+
+<Note>
+  Enter numbers only. All values ranging in between starting value until the
+  last value will be matched, including the starting and last value.
+</Note>
+
+> For example, `Has value in between these values: 10000 – 20000` → Matches if the code is between “10000” and “20000”.
+
+<img
+  src="/images/essentials/condition-sets/in-between-value-zipcodes.webp"
+  alt="In Between Value Zipcodes"
+/>
+
+Use **Has only digits** or **Does not have only digits** to match zip/postal codes that contain only numeric characters (0–9) or those that include any non-numeric characters, such as letters, spaces, or symbols.
+
+> For example, `Has only digits` → Matches digits only (0–9).
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field-digits.webp"
+  alt="Zipcode No Field Digits"
+/>
+
+Use **Has number of digits in between** or **Does not have number of digits in between** to match based on the count of digits in the code.
+
+<Note>
+  Enter numbers only. All values ranging in between given number of digits will
+  be matched.
+</Note>
+
+> For example, `Has number of digits in between: 4 – 6` → Matches codes that contain between 4 and 6 digits.
+
+<img
+  src="/images/essentials/condition-sets/in-between-digits-zipcodes.webp"
+  alt="In Between Digits Zipcodes"
+/>
+
+Use **Is empty** or **Is not empty** when you only need to check whether the field is filled in.
+
+> For example, `Is not empty` → Matches if any value is entered in the field
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field.webp"
+  alt="Zipcode No Field"
+/>
+
+## Comparisons
+
+### Product quantity per SKU vs Product quantity per SKU
+
+This condition compares the **product quantity of one SKU** with the **product quantity of another SKU**, based on one of the following sub-conditions:
+
+- **has quantity which is equal to** (Matches if the quantity of SKU1 is exactly equal to the quantity of SKU2)
+- **has quantity which is not equal to** (Matches if the quantity of SKU1 is different from the quantity of SKU2)
+- **has quantity which is greater than or equals to** (Matches if the quantity of SKU1 is greater than or equal to the quantity of SKU2)
+- **has quantity which is less than or equals to** (Matches if the quantity of SKU1 is less than or equal to the quantity of SKU2)
+- **has quantity which is multiple of** (Matches if the quantity of SKU1 is an exact multiple of the quantity of SKU2)
+- **has quantity which is not multiple of** (Matches if the quantity of SKU1 is not an exact multiple of the quantity of SKU2)
+
+To set these conditions:
+
+1. Enter the **SKU code** for the first product in the **Enter SKU1** field.
+2. Enter the **SKU code** for the second product in the **Enter SKU2** field.
+3. Choose the comparison option from the dropdown.
+
+> **Example for “has quantity which is greater than or equals to”**:  
+> SKU1: `SKU-ABC`  
+> SKU2: `SKU-XYZ`  
+> → Matches when the quantity of `SKU-ABC` in the cart is greater than or equal to the quantity of `SKU-XYZ`.
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-greater-equals.webp"
+  alt="SKU Quantity Greater Equals"
+/>
+
+> **Example for “has quantity which is multiple of”**:  
+> SKU1: `SKU-A`  
+> SKU2: `SKU-B`  
+> Multiple: `2`  
+> → Matches when the quantity of `SKU-A` is exactly 2×, 4×, 6×, etc., the quantity of `SKU-B` (e.g., `SKU-A` has 6 units and `SKU-B` has 3 units).
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-multiple.webp"
+  alt="SKU Quantity Multiple"
+/>

@@ -1,0 +1,97 @@
+---
+title: "Introduction"
+description: "Understand what condition sets are and how to use them."
+icon: "book-open"
+---
+
+## What is a condition set?
+
+A **condition set** is a group of predefined conditions that can be used to control when a checkout rule should run. These conditions are available in the [When](/guides/get-started/concepts#conditions-the-“when”) selector in the rule setup.
+
+Each condition set lists how many conditions are available within it compared to the total. For example, **Condition set 1** `22 / 143` means there are 22 conditions available in Condition set 1 out of 143 total conditions. Here, 143 is the total number of conditions available in all condition sets.
+
+<img
+  src="/images/essentials/condition-sets/introduction/total-availibility-condition-set-example.webp"
+  alt="Condition Sets Example"
+/>
+
+<Info>
+  You can hover over the condition set name to see all the conditions available
+  in that condition set. You can also search for a condition using the search
+  bar to find a specific condition.
+</Info>
+
+Conditions from a selected **condition set** appear in the [When](/guides/get-started/concepts#conditions-the-“when”) selector below inside the rule [block](/guides/get-started/concepts#block). You can switch between condition sets and then open the condition selector in the "When" selector below, to see the conditions available in the selected condition set.
+
+> For example, here we are using the default **Condition set 1**, which has 22 conditions available, setting the rule to run if the **Order total** is greater than or equal to **$50** and the **Shipping country** is the **United States**, since these conditions are available in Condition set 1.
+
+<img
+  src="/images/essentials/condition-sets/introduction/condition-sets-example.webp"
+  alt="Condition Sets Example"
+/>
+
+## Why condition sets exist
+
+Not all conditions can be placed in the same rule due to size limits, so we provide different condition sets. Each set contains a portion of the total available conditions. You can create multiple rules with different condition sets to control your customers checkout experience.
+
+## How to use condition sets
+
+### Choose condition set
+
+In the Condition Sets section, click on the desired condition set. If you are unsure which condition set to choose, you can search for a condition using the search bar or hover over the condition set name to see all the conditions available in that condition set.
+
+> For example, here we selected _Condition set 3_.
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-set-condition.webp"
+  alt="Condition Set Selection"
+/>
+
+#### Search for a Condition (Optional)
+
+You can click on the search in the top right corner of the condition sets section.
+
+<img
+  src="/images/essentials/condition-sets/introduction/search-condition-set.webp"
+  alt="Search Condition Set"
+/>
+
+Then, type the condition you want into the search bar and click the search button.
+
+<img
+  src="/images/essentials/condition-sets/introduction/type-in-search-condition.webp"
+  alt="Type In Search Condition"
+/>
+
+Then, the matching condition sets will be displayed. Click on the condition set that contains your desired condition to switch to it.
+
+<img
+  src="/images/essentials/condition-sets/introduction/sorted-condition-sets.webp"
+  alt="Sorted Condition Sets"
+/>
+
+### Select conditions
+
+Once you have selected the condition set, choose the condition(s) you want to apply. You can add multiple conditions within the same set to create powerful rules.
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-condition.webp"
+  alt="Select Condition"
+/>
+
+### Example usage
+
+For example, here we are using _Condition set 4_, setting the rule to hide shipping methods if _**Any product discount amount**_ is _less than or equal_ to _300_ or the _**Order subtotal amount**_ is _less than or equal_ to _1500_. Then, hide all shipping methods.
+
+<img
+  src="/images/essentials/condition-sets/introduction/example-usage.webp"
+  alt="Example Usage"
+/>
+
+## Tips for using condition sets
+
+- Start by identifying the main condition that triggers your rule.
+- Check different sets to see where your needed condition is located.
+- Use the search function to find the condition set more easily.
+
+By using condition sets effectively, you can precisely control **when** your checkout rules are executed, improving your store’s flexibility and checkout experience.
