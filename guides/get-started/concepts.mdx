@@ -16,7 +16,19 @@ These are the essential parts of every rule that define its purpose, when it sho
 
 Indicates the current state of the rule, whether it’s in testing, active, or deactivated. This helps control when the rule takes effect.
 
+<Tip>
+  It is recommended to start with a rule in testing mode, to ensure that the
+  rule is working as expected without affecting your customers. You can switch
+  to active mode after testing.
+</Tip>
+
 <img src="/images/concepts/rule-status.webp" alt="Rule Status" />
+
+Here is an example of how to turn on the testing mode on the checkout page.
+
+<Frame>
+  <img src="/images/concepts/testing.webp" alt="Testing Mode" />
+</Frame>
 
 ### Condition set
 
@@ -25,12 +37,59 @@ You can use any condition set that suits your needs, if you are unsure you can e
 > For example, if you want to hide a shipping method based on the product metafield, then you should switch to the condition set 4, then you will be able to use the product metafield condition.
 
 <Warning>
-  Condition set selection is only avaiable at rule creation time. You can not
-  change the condition set after the rule is created. You will have to create a
-  new rule for that, if you need to use a different condition set.
+  Condition set selection is only available at rule creation time. You cannot
+  change the condition set after the rule is created. If you need a different
+  condition set, create a new rule.
 </Warning>
 
 <img src="/images/concepts/condition-set.webp" alt="Condition Set" />
+
+Get more information about condition sets [here](/guides/essentials/condition-sets/introduction) or learn more about each condition set below.
+
+<CardGroup cols={3}>
+  <Card
+    title="Condition Set 1"
+    icon="1"
+    href="/guides/essentials/condition-sets/condition-set-1"
+  >
+    Learn more about condition set 1.
+  </Card>
+  <Card
+    title="Condition Set 2"
+    icon="2"
+    href="/guides/essentials/condition-sets/condition-set-2"
+  >
+    Learn more about condition set 2.
+  </Card>
+  <Card
+    title="Condition Set 3"
+    icon="3"
+    href="/guides/essentials/condition-sets/condition-set-3"
+  >
+    Learn more about condition set 3.
+  </Card>
+  <Card
+    title="Condition Set 4"
+    icon="4"
+    href="/guides/essentials/condition-sets/condition-set-4"
+  >
+    Learn more about condition set 4.
+  </Card>
+  <Card
+    title="Condition Set 5"
+    icon="5"
+    href="/guides/essentials/condition-sets/condition-set-5"
+  >
+    Learn more about condition set 5.
+  </Card>
+  <Card
+    title="Condition Set 6"
+    icon="6"
+    href="/guides/essentials/condition-sets/condition-set-6"
+  >
+    Learn more about condition set 6.
+  </Card>
+</CardGroup>
 
 ### Conditions (the "when")
 
