@@ -16,6 +16,9 @@
       "measurementId": "G-P67EHSKK65"
     }
   },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "global": {
@@ -37,79 +40,86 @@
         }
       ]
     },
-    "groups": [
+    "languages": [
       {
-        "group": "Getting Started",
-        "icon": "code",
-        "pages": [
-          "guides/get-started/introduction",
-          "guides/get-started/installation",
-          "guides/get-started/concepts",
-          "guides/get-started/quickstart"
-        ]
-      },
-      {
-        "group": "Essentials",
-        "icon": "book",
-        "pages": [
+        "language": "en",
+        "groups": [
           {
-            "group": "Condition Sets",
-            "icon": "filter",
+            "group": "Getting Started",
+            "icon": "code",
             "pages": [
-              "guides/essentials/condition-sets/introduction",
-              "guides/essentials/condition-sets/condition-set-1",
-              "guides/essentials/condition-sets/condition-set-2",
-              "guides/essentials/condition-sets/condition-set-3",
-              "guides/essentials/condition-sets/condition-set-4",
-              "guides/essentials/condition-sets/condition-set-5",
-              "guides/essentials/condition-sets/condition-set-6"
+              "guides/en/get-started/introduction",
+              "guides/en/get-started/installation",
+              "guides/en/get-started/concepts",
+              "guides/en/get-started/quickstart"
             ]
           },
           {
-            "group": "Shipping",
-            "icon": "truck",
+            "group": "Essentials",
+            "icon": "book",
             "pages": [
-              "guides/essentials/shipping/reorder-shipping-methods",
-              "guides/essentials/shipping/hide-shipping-methods",
-              "guides/essentials/shipping/rename-shipping-methods",
-              "guides/essentials/shipping/discount-shipping-methods"
+              {
+                "group": "Condition Sets",
+                "icon": "filter",
+                "pages": [
+                  "guides/en/essentials/condition-sets/introduction",
+                  "guides/en/essentials/condition-sets/condition-set-1",
+                  "guides/en/essentials/condition-sets/condition-set-2",
+                  "guides/en/essentials/condition-sets/condition-set-3",
+                  "guides/en/essentials/condition-sets/condition-set-4",
+                  "guides/en/essentials/condition-sets/condition-set-5",
+                  "guides/en/essentials/condition-sets/condition-set-6"
+                ]
+              },
+              {
+                "group": "Shipping",
+                "icon": "truck",
+                "pages": [
+                  "guides/en/essentials/shipping/reorder-shipping-methods",
+                  "guides/en/essentials/shipping/hide-shipping-methods",
+                  "guides/en/essentials/shipping/rename-shipping-methods",
+                  "guides/en/essentials/shipping/discount-shipping-methods"
+                ]
+              },
+              {
+                "group": "Payment",
+                "icon": "credit-card",
+                "pages": [
+                  "guides/en/essentials/payment/hide-express-checkout-options",
+                  "guides/en/essentials/payment/reorder-payment-methods",
+                  "guides/en/essentials/payment/hide-payment-methods",
+                  "guides/en/essentials/payment/rename-payment-methods"
+                ]
+              },
+              {
+                "group": "Validation",
+                "icon": "shield-check",
+                "pages": [
+                  "guides/en/essentials/validation/validate-block-checkout"
+                ]
+              },
+              {
+                "group": "Discount",
+                "icon": "tag",
+                "pages": [
+                  "guides/en/essentials/discount/discount-order-amount",
+                  "guides/en/essentials/discount/discount-shipping-methods"
+                ]
+              }
             ]
           },
           {
-            "group": "Payment",
-            "icon": "credit-card",
+            "group": "Advanced",
+            "icon": "grid",
             "pages": [
-              "guides/essentials/payment/hide-express-checkout-options",
-              "guides/essentials/payment/reorder-payment-methods",
-              "guides/essentials/payment/hide-payment-methods",
-              "guides/essentials/payment/rename-payment-methods"
-            ]
-          },
-          {
-            "group": "Validation",
-            "icon": "shield-check",
-            "pages": ["guides/essentials/validation/validate-block-checkout"]
-          },
-          {
-            "group": "Discount",
-            "icon": "tag",
-            "pages": [
-              "guides/essentials/discount/discount-order-amount",
-              "guides/essentials/discount/discount-shipping-methods"
+              "guides/en/advanced/branching",
+              "guides/en/advanced/concurrency",
+              "guides/en/advanced/translations",
+              "guides/en/advanced/multi-store-support",
+              "guides/en/advanced/rule-duplication",
+              "guides/en/advanced/block-replication"
             ]
           }
-        ]
-      },
-      {
-        "group": "Advanced",
-        "icon": "grid",
-        "pages": [
-          "guides/advanced/branching",
-          "guides/advanced/concurrency",
-          "guides/advanced/translations",
-          "guides/advanced/multi-store-support",
-          "guides/advanced/rule-duplication",
-          "guides/advanced/block-replication"
         ]
       }
     ]
@@ -117,13 +127,6 @@
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Get BeSure Checkout Rules",
-      "href": "https://apps.shopify.com/checkout-rules?utm_medium=mintlify&utm_source=docs_website&utm_campaign=docs"
-    }
   },
   "footer": {
     "links": [
