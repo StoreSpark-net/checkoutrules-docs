@@ -99,6 +99,18 @@
             ]
           }
         ]
+      },
+      {
+        "group": "Advanced",
+        "icon": "grid",
+        "pages": [
+          "guides/advanced/branching",
+          "guides/advanced/concurrency",
+          "guides/advanced/translations",
+          "guides/advanced/multi-store-support",
+          "guides/advanced/rule-duplication",
+          "guides/advanced/block-replication"
+        ]
       }
     ]
   },

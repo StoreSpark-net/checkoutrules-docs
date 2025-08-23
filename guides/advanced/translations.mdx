@@ -1,0 +1,115 @@
+---
+title: Translations
+description: "Learn how to set up validation rules that display error messages in different languages based on the customer’s language, with a default fallback option."
+icon: "globe"
+---
+
+## Overview  
+
+Translations allow you to localize validation error messages for different customer languages. By combining the **User language** condition with your rule logic, you can show error messages in the customer’s preferred language, and also define a default fallback message in any language which you prefer.  
+
+<Note>
+  User langauge condition is the key to the translations. Using it, we can create multiple blocks inside the rule to handle different languages.
+</Note>
+
+## How to set up
+### Create a validation rule
+Start by creating a rule with the condition(s) of your choice.
+
+> For example, Order total amount less than or equal $100
+
+<img
+  src="/images/advanced/translations/set-order-amount.webp"
+  alt="Set Order Amount"
+/>
+
+### Add language condition 
+Add the **User language** as a sub-condition and select the desired language in which you want to translate the error message.
+
+> For example, we want to translate the error message to "French" so we choose the **User language** as "French".
+
+<img
+  src="/images/advanced/translations/set-user-language.webp"
+  alt="Set User Language"
+/>
+
+### Localize the error message
+Set **Target** for where the error message appears on the checkout (either at the top of the checkout page or on a specific field like Address line 1) and write the error message in the selected language so customers see it localized.
+
+> For example, set **Target** to **Top of the checkout page** and set the error message in French: "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+<img
+  src="/images/advanced/translations/set-error-message.webp"
+  alt="Set Error Message"
+/>
+
+### Duplicate for additional languages  
+If you want to show the error message in other languages, copy the rule block (The "Copy block" button in top the top right) and paste it below, then update the **User language** condition to another language (for example, **German**), and replace the error message with the translated version.
+
+> For example, here we added the pasted block and updated the **User language** condition to "German" with the translated error message.
+
+<img
+  src="/images/advanced/translations/example-german-translation.webp"
+  alt="Example German Translation"
+/>
+
+### Add fallback block with default message
+Finally, add a final block with the condition **Previous all conditions invalid** along with any other condition(s) you had. In this block, write the default error message (usually in English). This ensures customers who don’t match the other language rules still see a defaultmessage.  
+
+> For example, here we added the fallback block with the condition **Previous all conditions invalid** along with the **Order total amount** condition and set the error message to "Order amount is less than the required minimum order amount of $100".
+
+<img
+  src="/images/advanced/translations/example-fallback-english-translation.webp"
+  alt="Example Fallback English Translation"
+/>
+
+## Summary
+Here is a summary of the rule we created in the example above:
+
+### Block 1 (French)
+- Add the **Order total amount** condition and set it to **less than or equal to 99.99** to trigger an error if the order amount is under 100.  
+- AND sub-condition **User language** is **French**.  
+- Set the error message:  
+  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+### Block 2 (German)
+- Add the **Order total amount** condition and set it to **less than or equal to 99.99** to trigger an error if the order amount is under 100.  
+- AND sub-condition **User language** is **German**.  
+- Set the error message:  
+  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+
+### Block 3 (Default fallback – English)
+- Add the **Order total amount** condition and set it to **less than or equal to 99.99** to trigger an error if the order amount is under 100.  
+- For the **else / fallback condition**, AND sub-condition **Previous all conditions invalid**.   
+- Set the error message:  
+  > "Order amount is less than the required minimum order amount of $100"
+
+Here is how the rule looks like:
+
+<img
+  src="/images/advanced/translations/full-rule.webp"
+  alt="Full Rule"
+/>
+
+### What happens at checkout
+- If the customer’s **language is French** and the **order amount is less than $100**, they will see the **French error message** at the checkout.  
+
+<img
+  src="/images/advanced/translations/example-french-error-message.webp"
+  alt="Example French Error Message"
+/>
+
+- If the customer’s **language is German** and the **order amount is less than $100**, they will see the **German error message** at the checkout.  
+
+<img
+  src="/images/advanced/translations/example-german-error-message.webp"
+  alt="Example German Error Message"
+/>
+
+- If the customer’s **language is any other language** and the **order amount is less than $100**, they will see the default **English message** at the checkout.
+
+<img
+  src="/images/advanced/translations/example-english-error-message.webp"
+  alt="Example English Error Message"
+/>
