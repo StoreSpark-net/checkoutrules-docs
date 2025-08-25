@@ -1,0 +1,118 @@
+---
+title: "Preguntas Frecuentes"
+description: "Encuentra respuestas a las preguntas más frecuentes sobre el uso de la aplicación **BeSure Checkout Rules** en tu tienda Shopify."
+icon: "info"
+---
+
+Si no puedes encontrar lo que buscas, [contáctanos](https://checkoutrules.com/contact/).
+
+<AccordionGroup>
+  <Accordion title="¿Qué es una regla de checkout?">
+    Es una forma de personalizar la experiencia de checkout para tus clientes. Por ejemplo, una regla de envío te ayudará a modificar las opciones de envío que se muestran en el checkout. De manera similar, una regla de pago te ayudará a modificar las opciones de pago que se muestran en el checkout.
+  </Accordion>
+
+  <Accordion title="¿Cómo crear una regla de checkout?">
+    Puedes crear una regla de checkout haciendo clic en el botón **Crear regla** en la página de reglas. Luego puedes seleccionar el tipo de regla que deseas crear y seguir las instrucciones.
+
+    <img src="/images/faqs/create_rule-Bjcq8flN.webp" alt="Cómo crear una regla" />
+  </Accordion>
+
+  <Accordion title="¿Debo elegir una regla vacía?">
+    A veces, cuando seleccionas una regla, puede mostrarte una selección de **'regla vacía'** vs **'plantillas predefinidas'**. Puedes seleccionar **'regla vacía'** si no encuentras una plantilla adecuada para usar. Esto te permitirá crear una regla donde puedes personalizar el comportamiento exactamente según tus necesidades. También puedes seleccionar cualquiera de las **'plantillas predefinidas'** si encuentras una que se ajuste a tus necesidades. Esto te permitirá crear una regla a partir de la plantilla, pero aún puedes personalizarla según tus necesidades.
+    <img src="/images/faqs/empty_rule_templates-DlBCQK7n.webp" alt="Regla vacía o plantillas" />
+  </Accordion>
+
+  <Accordion title="¿Cómo probar una regla de checkout?">
+    Puedes probar una regla de checkout configurándola en estado **PRUEBAS**. Esto te permitirá ver cómo la regla cambia tu checkout sin afectar a tus clientes.  
+    Después de crear la regla, simplemente abre la página de checkout de tu tienda y usa una dirección de correo electrónico de prueba para ver los cambios.
+
+    <img src="/images/faqs/rule_testing-Dp4kiMTw.webp" alt="Probando una regla" />
+  </Accordion>
+
+  <Accordion title="¿Qué conjunto de condiciones debo usar?">
+   Puedes usar cualquier conjunto de condiciones que se ajuste a tus necesidades. Si no estás seguro, puedes empezar usando solo el **conjunto de condiciones 1** o usar la caja de búsqueda para encontrar qué conjunto de condiciones tiene esa condición y cambiar a él. Por ejemplo, si deseas ocultar un método de envío basado en el metafield del producto, puedes usar el conjunto de condiciones 4. La selección del conjunto de condiciones solo está disponible al crear la regla. No puedes cambiar el conjunto de condiciones después de que la regla esté creada.
+
+    <img src="/images/faqs/condition_set_selection-jOo749bC.webp" alt="Selección de conjunto de condiciones" />
+  </Accordion>
+
+  <Accordion title="¿Cuál es la estructura básica de una regla de checkout?">
+    Una regla de checkout consiste en una condición (o un conjunto de condiciones) y una acción (o múltiples acciones). La condición se usa para verificar si la regla debe aplicarse o no. La acción se usa para modificar el checkout. Por ejemplo, si establecemos una regla para ocultar UPS si el total del pedido es menor a \$50, la condición verificará si el total del pedido es menor a $50. Si la condición se cumple durante el checkout, entonces se aplicará la acción. La acción ocultará UPS del checkout.
+    <img src="/images/faqs/basic_rule_structure-LbDRaUUy.webp" alt="Estructura básica de la regla" />
+  </Accordion>
+
+  <Accordion title="¿Qué son los bloques dentro de una regla de checkout?">
+    Un bloque se compone de condiciones de bloque con la acción del bloque. Cuando comienzas a crear una nueva regla vacía, el primer bloque ya está agregado para ti. Puedes agregar múltiples bloques en una regla. Cada bloque puede tener su propio conjunto de condiciones y una acción. Los bloques se evalúan en el orden en que se agregan. Si las condiciones del bloque son verdaderas, se aplicará la acción correspondiente. Luego se evalúa el siguiente bloque y así sucesivamente.
+    <img src="/images/faqs/rule_blocks-DkeFb4UF.webp" alt="Bloques de la regla" />
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+<AccordionGroup>
+  <Accordion title="¿Esta app funciona para checkout de 1 página?">
+    Sí, la app funciona bien tanto para checkouts de **1 página** como de **3 páginas**, ya que utiliza APIs nativas de Shopify.
+  </Accordion>
+
+  <Accordion title="¿Esta app solo funciona para Shopify Plus?">
+    No, esta app funciona para todos los planes de Shopify. Puedes usarla para personalizar el checkout en cualquier plan.
+  </Accordion>
+
+  <Accordion title="¿Esta app funciona para checkout desde factura (cuando el cliente abre el checkout desde la factura)?">
+   Sí, esta app funciona con checkout basado en facturas. Solo las reglas de descuento no son compatibles con checkout desde factura por el momento, pero puedes aplicar manualmente las reglas de descuento automático en la orden de borrador antes de enviar la factura.
+    <img src="/images/faqs/draft_order_apply_discounts-Bzc-zA93.webp" alt="Checkout desde factura" />
+  </Accordion>
+
+  <Accordion title="¿Puedo personalizar qué reglas se aplican en el checkout desde factura (cuando el cliente abre el checkout desde la factura)?">
+    Sí, hay opciones disponibles que permiten habilitar/deshabilitar reglas para esa factura. Por ejemplo, puedes elegir 'ignorar las reglas de validación' antes de compartir el enlace de checkout o enviar la factura. Las reglas de descuento automático no se aplican automáticamente en el checkout desde factura, pero puedes aplicarlas manualmente en la orden de borrador antes de enviar la factura. Si seleccionas una opción de envío para el cliente antes de enviar la factura, las reglas de envío no se ejecutarán en ese checkout. Si seleccionas la opción 'Pago posterior' y luego envías la factura, las reglas de pago se ejecutarán en ese checkout.
+    <img src="/images/faqs/invoice_admin_view-C9KJI8JV.webp" alt="Personalización de factura" />
+  </Accordion>
+
+  <Accordion title="¿Esta app funciona para órdenes de borrador (creadas desde el admin)?">
+    Funciona para algunas categorías de reglas. Las reglas de validación funcionarán, pero hay una opción que puedes usar para ignorarlas si es necesario. Las reglas de descuento automático se pueden aplicar manualmente a la orden de borrador. Al hacer clic en el botón 'agregar descuento', se mostrará la opción 'Aplicar todos los descuentos automáticos elegibles' que, al seleccionarla, puede aplicar las reglas de descuento automático. Las reglas de envío y pago no funcionarán en el admin de órdenes de borrador.
+    <img src="/images/faqs/admin_view_draft_orders-BQ3pRIeY.webp" alt="Órdenes de borrador" />
+  </Accordion>
+
+  <Accordion title="¿Puedo usar comodines como * para seleccionar métodos de envío o pago?">
+    Puedes usar un * para seleccionar todos los métodos de envío o pago. También puedes usar * o ? de estas maneras: por ejemplo, para seleccionar todos los métodos que comienzan con 'Standard', puedes usar 'Standard*'. Para seleccionar todos los métodos que terminan con 'Standard', puedes usar '*Standard'. Para seleccionar todos los métodos que comienzan con 'New' y terminan con 'Way', puedes usar 'New*Way'. De manera similar, puedes usar ? para coincidir con un solo carácter.
+  </Accordion>
+
+  <Accordion title="¿Cuál es la diferencia entre 'is' y 'contains' usadas en diferentes reglas?">
+    La condición 'is' se usa para coincidir con el valor exacto. La condición 'contains' se usa para coincidir parcialmente con el valor. Por ejemplo, 'is' coincidirá 'Standard' solo con 'Standard', mientras que 'contains' coincidirá 'Standard' con 'Standard Shipping' o 'Standard Delivery'.
+  </Accordion>
+
+  <Accordion title="¿Cómo agregar una nota o modificar el texto que se muestra en el checkout?">
+    Puedes agregar una nota o modificar el texto que se muestra en el checkout siguiendo los pasos mencionados [aquí](https://checkoutrules.com/blog/shopify-easily-customize-checkout-text/?utm_source=app&utm_medium=help_page&utm_campaign=app_help).
+  </Accordion>
+</AccordionGroup>
+
+## Reordenar Métodos de Envío
+
+<AccordionGroup>
+  <Accordion title="¿Cómo establecer el método de envío preseleccionado por defecto?">
+   Puedes establecer el método de envío preseleccionado por defecto colocándolo como el primer método de envío en el checkout. Entonces se seleccionará automáticamente para tus clientes. Ten en cuenta que si has iniciado un checkout antes, Shopify almacena en caché tu selección previa de método de envío y seleccionará esa por defecto. Puedes limpiar la caché usando el modo incógnito del navegador, usando otro navegador, o iniciando un nuevo checkout con diferente contenido del carrito. Tus clientes no tendrán este problema.
+  </Accordion>
+</AccordionGroup>
+
+## Reordenar Métodos de Pago
+
+<AccordionGroup>
+  <Accordion title="¿Cómo establecer el método de pago preseleccionado por defecto?">
+    Puedes establecer el método de pago preseleccionado por defecto colocándolo como el primer método de pago en el checkout. Entonces se seleccionará automáticamente para tus clientes (esto no siempre es cierto, por favor lee el FAQ siguiente). Ten en cuenta que si has iniciado un checkout antes, Shopify almacena en caché tu selección previa de método de pago y seleccionará esa por defecto. Puedes limpiar la caché usando modo incógnito, usando otro navegador, o iniciando un nuevo checkout con diferente contenido del carrito. Tus clientes no tendrán este problema.
+  </Accordion>
+
+  <Accordion title="¿Por qué el método de pago más alto no se establece como método preseleccionado por defecto?">
+    Generalmente funciona cuando reordenas el método de pago al primer lugar, luego se convierte en el método preseleccionado, pero esta preselección por defecto la controla Shopify y el proveedor de pago que estás usando. Esta app solo te permite reordenar los métodos de pago. Algunos gateways de pago, como Klarna e iDeal, siempre quieren ser seleccionados primero, sin importar qué. En ese caso, tu única opción es usar una solución como mostrar estos gateways solo en una región específica y ocultarlos en todas las demás. Una vez ocultos, podría ser posible establecer el método de pago más alto como el preseleccionado por defecto.
+  </Accordion>
+</AccordionGroup>
+
+## Validar / Bloquear Checkout
+
+<AccordionGroup>
+  <Accordion title="¿Cómo detecta la app las direcciones de apartados postales?">
+    Cuando utilizas la condición 'Dirección de P.O. box' en la regla, todos los tipos de entradas en la dirección de envío como P.O. box, P O box, o P.o b o x, etc., son detectados automáticamente por la app. Si deseas detectar una palabra o frase personalizada, puedes hacerlo usando la condición 'Línea de dirección', dentro de la cual puedes especificar la palabra o frase que deseas detectar.
+  </Accordion>
+
+  <Accordion title="¿Cómo detectar direcciones de apartados postales en otros idiomas?">
+    Si deseas detectar palabras o frases de P.O. box en otros idiomas, puedes hacerlo usando la condición 'Dirección (línea1 + línea2)', dentro de la cual puedes especificar las palabras o frases que deseas detectar. Por ejemplo, 'Packstation' en alemán. Puedes agregar múltiples de estas condiciones para cada palabra usando el operador OR entre ellas.
+  </Accordion>
+</AccordionGroup>

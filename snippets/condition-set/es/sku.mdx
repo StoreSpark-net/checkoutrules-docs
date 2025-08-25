@@ -1,0 +1,28 @@
+### SKU
+
+Esta condición verifica el **SKU** de los productos en el carrito frente a criterios específicos. Se volverá verdadera si **algún** producto en el carrito tiene el valor de SKU ingresado, en función de una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el SKU tiene al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si el SKU no tiene ninguno de los valores ingresados)  
+- **Tiene cualquier otro valor además de estos valores** (Coincide si el SKU tiene un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si el SKU solo tiene los valores ingresados y ningún otro)  
+- **Tiene un número de valores mayor o igual que** (Coincide si el **conteo** de SKUs es mayor o igual que el número ingresado)  
+- **Tiene un número de valores menor o igual que** (Coincide si el **conteo** de SKUs es menor o igual que el número ingresado)  
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingrese uno o más valores de SKU en el campo. Separe múltiples valores con comas.
+
+<Note>
+  Use * como comodín para coincidir con múltiples valores de SKU. Por ejemplo, SKU* coincidirá con
+  SKU12, sku-new-1, etc.
+</Note>
+
+> Por ejemplo, `Tiene alguno de estos valores: SKU1, SKU2` → Coincide si el SKU es
+“SKU1” o “SKU2”.
+
+<img src="/images/essentials/condition-sets/skus.webp" alt="SKUs" />
+
+Para **Tiene un número de valores mayor o igual que** y **Tiene un número de valores menor o igual que**, ingrese un solo valor numérico en el campo para coincidir con el conteo de SKU.
+
+> Por ejemplo, `Tiene un número de valores mayor o igual que 3` → Coincide si hay tres o más SKUs.
+
+<img src="/images/essentials/condition-sets/count-sku.webp" alt="Conteo de SKU" />

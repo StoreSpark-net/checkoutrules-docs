@@ -1,0 +1,263 @@
+---
+title: "Conjunto de Condiciones 3"
+description: "Aprende sobre cada condición disponible dentro de _Conjunto de <br />Condiciones 3_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/es/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/es/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/es/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/es/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/es/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/es/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/es/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/es/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/es/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/es/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/es/product-tags.mdx";
+import Collection from "/snippets/condition-set/es/collection.mdx";
+import Collections from "/snippets/condition-set/es/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/es/cart-has-shipping-product-requires-delivery.mdx";
+import cartHasNoShippingProduct from "/snippets/condition-set/es/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/es/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/es/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/es/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/es/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/es/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
+import Market from "/snippets/condition-set/es/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/es/first-name.mdx";
+import LastName from "/snippets/condition-set/es/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/es/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/es/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/es/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/es/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/es/address-line2.mdx";
+import Company from "/snippets/condition-set/es/company.mdx";
+import PhoneNumber from "/snippets/condition-set/es/phone-number.mdx";
+import CityArea from "/snippets/condition-set/es/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/es/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Cliente
+
+<EmailAddress />
+<CustomerTag />
+
+## Detalles del pedido
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Subtotal del pedido de compra única
+
+Esta condición verifica el **subtotal del pedido de compra única** (El monto subtotal de productos que no son productos de suscripción) contra criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando el subtotal del pedido de compra única es mayor o igual al monto ingresado)
+- **es menor o igual que** (Coincide cuando el subtotal del pedido de compra única es menor o igual al monto ingresado)
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la
+  tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual que 700` → Coincide con pedidos con un subtotal de compra única de 700 o más.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="Subtotal del Pedido de Compra Única"
+/>
+
+### Subtotal del pedido de suscripción
+
+Esta condición verifica el **subtotal del pedido de suscripción** (El monto subtotal de productos que son productos de suscripción) contra criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando el subtotal del pedido de suscripción es mayor o igual al monto ingresado)
+- **es menor o igual que** (Coincide cuando el subtotal del pedido de suscripción es menor o igual al monto ingresado)
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la
+  tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual que 1200` → Coincide con pedidos con un subtotal de suscripción de 1200 o más.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="Subtotal del Pedido de Suscripción"
+/>
+
+### Subtotal del pedido digital
+
+Esta condición verifica el **subtotal del pedido digital** (El monto subtotal de productos que son productos digitales) contra criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando el subtotal del pedido digital es mayor o igual al monto ingresado)
+- **es menor o igual que** (Coincide cuando el subtotal del pedido digital es menor o igual al monto ingresado)
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la
+  tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es menor o igual que 398` → Coincide con pedidos con un subtotal digital de 398 o menos.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="Subtotal del Pedido Digital"
+/>
+
+### Subtotal del pedido físico
+
+Esta condición verifica el **subtotal del pedido físico** (El monto subtotal de productos que son productos físicos) contra criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando el subtotal del pedido físico es mayor o igual al monto ingresado)
+- **es menor o igual que** (Coincide cuando el subtotal del pedido físico es menor o igual al monto ingresado)
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la
+  tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual que 299` → Coincide con pedidos con un subtotal físico de 299 o más.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="Subtotal del Pedido Físico"
+/>
+
+<OrderTotalQuantity />
+
+## Detalles del carrito
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### Cantidad por etiqueta de producto
+
+Esta condición verifica la **cantidad de productos con una etiqueta de producto específica** en el pedido contra criterios definidos, basándose en una de las siguientes subcondiciones:
+
+- **la cantidad es mayor o igual que** (Coincide cuando la cantidad de productos con la etiqueta de producto especificada es mayor o igual al número ingresado)
+- **la cantidad es menor o igual que** (Coincide cuando la cantidad de productos con la etiqueta de producto especificada es menor o igual al número ingresado)
+- **la cantidad es divisible por** (Coincide cuando la cantidad de productos con la etiqueta de producto especificada es un múltiplo exacto del número ingresado)
+- **la cantidad no es divisible por** (Coincide cuando la cantidad de productos con la etiqueta de producto especificada no es un múltiplo del número ingresado)
+
+Para establecer estas condiciones:
+
+<Steps>
+  <Step title="Ingresar etiqueta de producto">
+    Ingresa la <strong>etiqueta de producto</strong> en el campo “Ingresar etiqueta de producto”.
+  </Step>
+
+  <Step title="Ingresar cantidad">
+    Ingresa la <strong>cantidad</strong> en el campo “Ingresar cantidad”.
+  </Step>
+
+  <Step title="Seleccionar opción de comparación">
+    Selecciona la opción de comparación del menú desplegable.
+  </Step>
+</Steps>
+
+> **Ejemplo para “la cantidad es mayor o igual que”**:  
+> Etiqueta de producto: `SummerCollection`  
+> Cantidad: `3`  
+> → Coincide con pedidos donde hay 3 o más unidades de productos etiquetados como `SummerCollection`.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="Cantidad por Etiqueta de Producto Mayor o Igual"
+/>
+
+> **Ejemplo para “la cantidad es divisible por”**:  
+> Etiqueta de producto: `SummerCollection`  
+> Cantidad: `2`  
+> → Coincide con pedidos donde la cantidad de productos etiquetados como `SummerCollection` es 2, 4, 6, 8, etc.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="Cantidad por Etiqueta de Producto Divisible Por"
+/>
+
+## El Carrito Tiene Algún Artículo
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<cartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### Costo por cantidad de cualquier producto
+
+Esta condición verifica el **costo por cantidad de cualquier producto en el pedido** contra criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando el costo por cantidad de cualquier producto es mayor o igual al monto ingresado)
+- **es menor o igual que** (Coincide cuando el costo por cantidad de cualquier producto es menor o igual al monto ingresado)
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la
+  tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual que 200` → Coincide cuando el costo por cantidad de cualquier producto es de 200 o más.
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="Costo por Cantidad de Cualquier Producto"
+/>
+
+## Envío
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localización
+<UserLanguage />
+<Market />
+
+## Dirección de envío
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

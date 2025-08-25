@@ -1,0 +1,39 @@
+### Phone number
+
+Used to compare the customer’s phone number (The phone number field on the checkout page in shipping address) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the phone number contains the specified value or partial value)
+- **Does not contain** (Matches if the phone number does not contain the specified value or partial value)
+- **Is empty** (Matches if no phone number is entered)
+- **Is not empty** (Matches if any value is entered in the phone number field)
+- **Is** (Matches if the phone number exactly matches the specified value)
+- **Is not** (Matches if the phone number is not exactly the specified value)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in the phone number is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in the phone number is less than or equal to the specified number)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Contains: 123` → Matches if the phone number contains “123” anywhere.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-contains.webp"
+  alt="Phone Number Contains"
+/>
+
+For **Has no of digits greater than or equals** or **Has no of digits less than or equals**, enter the threshold value.
+
+> For example, `Has no of digits greater than or equals 10` → Matches if the phone number contains 10 or more digits.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-greater-than.webp"
+  alt="Phone Number Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the phone number field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-is-empty.webp"
+  alt="Phone Number Is Empty"
+/>

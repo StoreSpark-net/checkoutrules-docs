@@ -1,0 +1,54 @@
+### Compañía
+
+Se utiliza para comparar el nombre de la compañía del cliente (el campo de nombre de la compañía en la página de pago) con uno o más valores específicos, conteos o estados, en función de una de las siguientes subcondiciones:
+
+- **Contiene** (Coincide si el nombre de la compañía contiene el valor especificado o un valor parcial)
+- **No contiene** (Coincide si el nombre de la compañía no contiene el valor especificado o un valor parcial)
+- **Está vacío** (Coincide si no se ingresa ningún nombre de compañía)
+- **No está vacío** (Coincide si se ingresa algún valor en el campo de nombre de la compañía)
+- **Es** (Coincide si el nombre de la compañía coincide exactamente con el valor especificado)
+- **No es** (Coincide si el nombre de la compañía no es exactamente el valor especificado)
+- **Tiene un número de dígitos mayor o igual** (Coincide si el número total de dígitos en el nombre de la compañía es mayor o igual al número especificado)
+- **Tiene un número de dígitos menor o igual** (Coincide si el número total de dígitos en el nombre de la compañía es menor o igual al número especificado)
+- **Tiene un número de caracteres mayor o igual** (Coincide si el número total de caracteres en el nombre de la compañía es mayor o igual al número especificado)
+- **Tiene un número de caracteres menor o igual** (Coincide si el número total de caracteres en el nombre de la compañía es menor o igual al número especificado)
+- **Tiene solo** (Coincide si el nombre de la compañía contiene solo el tipo de carácter permitido del menú desplegable)
+- **No tiene solo** (Coincide si el nombre de la compañía contiene caracteres distintos al tipo de carácter permitido del menú desplegable)
+
+Para **Contiene**, **No contiene**, **Es** y **No es**, ingrese el valor a coincidir.
+
+> Por ejemplo, `Contiene: Tech` → Coincide si el nombre de la compañía contiene la palabra “Tech”.
+
+<img
+  src="/images/essentials/condition-sets/company-contains.webp"
+  alt="La compañía contiene"
+/>
+
+Para **Tiene solo** y **No tiene solo**, seleccione el tipo de carácter en el menú desplegable:
+
+- **Caracteres en inglés** (Permite solo A–Z y a–z)
+- **Caracteres en inglés + variantes con acentos** (Permite A–Z, a–z, más caracteres acentuados como é, ñ, ö)
+  > Por ejemplo, `Tiene solo: caracteres en inglés` → Coincide si el nombre de la compañía contiene solo caracteres en inglés.
+
+<img
+  src="/images/essentials/condition-sets/company-has-only.webp"
+  alt="La compañía tiene solo"
+/>
+
+Para **Tiene un número de dígitos/caracteres mayor o igual** o **menor o igual**, ingrese el valor límite.
+
+> Por ejemplo, `Tiene un número de caracteres mayor o igual a 10` → Coincide si el nombre de la compañía contiene 10 o más caracteres.
+
+<img
+  src="/images/essentials/condition-sets/company-greater-than.webp"
+  alt="La compañía mayor que"
+/>
+
+Para **Está vacío** y **No está vacío**, no es necesario ingresar un valor.
+
+> Por ejemplo, `Está vacío` → Coincide si el campo del nombre de la compañía está en blanco.
+
+<img
+  src="/images/essentials/condition-sets/company-is-empty.webp"
+  alt="La compañía está vacía"
+/>

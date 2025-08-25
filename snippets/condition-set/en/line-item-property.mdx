@@ -1,0 +1,63 @@
+### Line item property
+
+This condition checks the **properties attached to a line item** against specific criteria, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches when the specified line item property contains any of the entered values)
+- **Does not have any of these values** (Matches when the specified line item property does not contain any of the entered values)
+- **Has empty value** (Matches when the specified line item property exists but has no value)
+- **Does not have empty value** (Matches when the specified line item property exists and contains a value)
+- **Has number of values greater than or equals** (Matches when the specified line item property contains a number of values greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches when the specified line item property contains a number of values less than or equal to the entered number)
+
+To set these conditions:
+
+<Steps>
+  <Step title="Enter property key">
+    Enter the <strong>property key</strong> in the “Enter key” field.
+  </Step>
+
+  <Step title="Enter value(s)">
+    Enter the <strong>value(s)</strong> to match (where applicable).
+  </Step>
+
+  <Step title="Choose comparison option">
+    Choose the comparison option from the dropdown.
+  </Step>
+</Steps>
+
+For **Has any of these values** and **Does not have any of these values**, enter one or more values into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial values. For example, value* will match
+  value123, VALUETEST etc.
+</Note>
+> **Example for “Has any of these values”**: > Key: `color` > Values: `red, blue`
+> → Matches line items where the `color` property is either `red` or `blue`.
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="Line Item Property Has Any Values"
+/>
+
+For **Has empty value** and **Does not have empty value**, no value entry is required.
+
+> **Example for “Does not have empty value”**:  
+> Key: `engraving`  
+> → Matches line items where the `engraving` property exists and contains some text (e.g., “Happy Anniversary”).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="Line Item Property Not Empty Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter the threshold number into the field.
+
+> **Example for “Has number of values less than or equals”**:  
+> Key: `size`  
+> Number: `2`  
+> → Matches line items where the `size` property has 2 or fewer distinct values (e.g., `S, M`).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="Line Item Property Values Less Than"
+/>

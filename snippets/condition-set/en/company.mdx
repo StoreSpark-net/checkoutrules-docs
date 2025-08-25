@@ -1,0 +1,54 @@
+### Company
+
+Used to compare the customer’s company name (The company name field on the checkout page) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the company name contains the specified value or partial value)
+- **Does not contain** (Matches if the company name does not contain the specified value or partial value)
+- **Is empty** (Matches if no company name is entered)
+- **Is not empty** (Matches if any value is entered in the company name field)
+- **Is** (Matches if the company name exactly matches the specified value)
+- **Is not** (Matches if the company name is not exactly the specified value)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in the company name is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in the company name is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in the company name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in the company name is less than or equal to the specified number)
+- **Has only** (Matches if the company name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the company name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Contains: Tech` → Matches if the company name contains the word “Tech”.
+
+<img
+  src="/images/essentials/condition-sets/company-contains.webp"
+  alt="Company Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if the company name contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/company-has-only.webp"
+  alt="Company Has Only"
+/>
+
+For **Has no of digits/characters greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of characters greater than or equals 10` → Matches if the company name contains 10 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/company-greater-than.webp"
+  alt="Company Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the company name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/company-is-empty.webp"
+  alt="Company Is Empty"
+/>

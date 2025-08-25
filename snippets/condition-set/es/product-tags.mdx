@@ -1,0 +1,32 @@
+### Etiquetas de producto
+
+Esta condición verifica las **Etiquetas de Producto** frente a criterios específicos. Se volverá verdadera si **algún** producto en el carrito tiene el valor de etiqueta de producto ingresado, en función de una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si las etiquetas de producto tienen al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si las etiquetas de producto no tienen ninguno de los valores ingresados)  
+- **Tiene cualquier otro valor además de estos valores** (Coincide si las etiquetas de producto tienen un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si las etiquetas de producto solo tienen los valores ingresados y ningún otro)  
+- **Tiene un número de valores mayor o igual que** (Coincide si el **conteo** de etiquetas de producto es mayor o igual que el número ingresado)  
+- **Tiene un número de valores menor o igual que** (Coincide si el **conteo** de etiquetas de producto es menor o igual que el número ingresado)  
+
+<Warning>
+  Solo puede usar esta condición con los mismos valores en toda la regla. Si desea usar valores diferentes en distintos bloques de reglas, debe cambiar al conjunto de condiciones 3, 5 o 6 que permiten mayor flexibilidad.
+</Warning>
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingrese uno o más valores de etiquetas de producto en el campo. Separe múltiples valores con comas.
+
+> Por ejemplo, `No tiene ninguno de estos valores: verano, liquidación` → Coincide si la etiqueta de producto no incluye “verano” o “liquidación”.
+
+<img
+  src="/images/essentials/condition-sets/product-tags.webp"
+  alt="Etiquetas de Producto"
+/>
+
+Para **Tiene un número de valores mayor o igual que** y **Tiene un número de valores menor o igual que**, ingrese un solo valor numérico en el campo para coincidir con el conteo de etiquetas de producto.
+
+> Por ejemplo, `Tiene un número de valores menor o igual que 4` → Coincide si hay cuatro o menos etiquetas de producto.
+
+<img
+  src="/images/essentials/condition-sets/count-product-tags.webp"
+  alt="Conteo de Etiquetas de Producto"
+/>

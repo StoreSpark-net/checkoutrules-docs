@@ -1,0 +1,54 @@
+### Address line 1
+
+Used to compare the customer’s address from Address Line 1 with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if Address Line 1 contains the specified value or partial value)
+- **Does not contain** (Matches if Address Line 1 does not contain the specified value or partial value)
+- **Is empty** (Matches if no value is entered in Address Line 1)
+- **Is not empty** (Matches if any value is entered in Address Line 1)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in Address Line 1 is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in Address Line 1 is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in Address Line 1 is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in Address Line 1 is less than or equal to the specified number)
+- **Has no of words greater than or equals** (Matches if the total number of words in Address Line 1 is greater than or equal to the specified number)
+- **Has no of words less than or equals** (Matches if the total number of words in Address Line 1 is less than or equal to the specified number)
+- **Has only** (Matches if Address Line 1 contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if Address Line 1 contains characters other than the allowed character type from the dropdown)
+
+For **Contains** and **Does not contain**, enter the value to match.
+
+> For example, `Contains: Street` → Matches if Address Line 1 contains the word “Street”.
+
+<img
+  src="/images/essentials/condition-sets/address1-contains.webp"
+  alt="Address Line 1 Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if Address Line 1 contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/address1-has-only.webp"
+  alt="Address Line 1 Has Only"
+/>
+
+For **Has no of digits/characters/words greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of words greater than or equals 5` → Matches if Address Line 1 contains 5 or more words.
+
+<img
+  src="/images/essentials/condition-sets/address1-greater-than.webp"
+  alt="Address Line 1 Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if Address Line 1 is left blank.
+
+<img
+  src="/images/essentials/condition-sets/address1-is-empty.webp"
+  alt="Address Line 1 Is Empty"
+/>
