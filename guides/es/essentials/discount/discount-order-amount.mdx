@@ -16,7 +16,7 @@ Los siguientes pasos muestran cómo crear y configurar una regla **Descontar Can
 
 ### Crear una nueva regla
 
-Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+Desde tu [admin de Shopify](/guides/es/get-started/installation#ir-a-la-aplicación), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#crear-una-regla-de-ejemplo) y haz clic en _"Crear Regla"_.
 
 Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Descuento" → selecciona tipo de regla de checkout "Descontar Cantidad del Pedido" → haz clic en "Seleccionar Regla"_.
 
@@ -43,14 +43,14 @@ O, si prefieres aplicar el descuento usando un código de descuento, haz clic en
   alt="Discount Code"
 />
 
-A continuación, en la misma pantalla, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado. Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+A continuación, en la misma pantalla, selecciona el [estado](/guides/es/get-started/concepts#estado) de la regla: Prueba, Activo o Desactivado. Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
 
 <img
   src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
   alt="Rule Status"
 />
 
-A continuación, en la misma pantalla, configura las configuraciones de [Combinaciones](/guides/es/get-started/concepts#combinations) para controlar cómo este descuento de pedido interactúa con **otros descuentos**. Puedes elegir permitir que se combine con:
+A continuación, en la misma pantalla, configura las configuraciones de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento de pedido interactúa con **otros descuentos**. Puedes elegir permitir que se combine con:
 
 - **Descuentos de producto** – Esto permite que el descuento de pedido se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de producto también estén configurados para combinarse con descuentos de pedido.
 
@@ -63,14 +63,14 @@ A continuación, en la misma pantalla, configura las configuraciones de [Combina
   alt="Combinations"
 />
 
-A continuación, en la misma pantalla, configura las configuraciones de [Estrategia](/guides/es/get-started/concepts#strategy) para controlar cómo el sistema maneja múltiples bloques de descuento. Puedes elegir **Primero**, que aplica solo el primer descuento que cumple las condiciones, ignorando cualquier mejor descuento que pueda venir después, o **Máximo**, que evalúa todos los bloques de descuento y aplica el que tiene la mayor reducción.
+A continuación, en la misma pantalla, configura las configuraciones de [Estrategia](/guides/es/get-started/concepts#estrategia) para controlar cómo el sistema maneja múltiples bloques de descuento. Puedes elegir **Primero**, que aplica solo el primer descuento que cumple las condiciones, ignorando cualquier mejor descuento que pueda venir después, o **Máximo**, que evalúa todos los bloques de descuento y aplica el que tiene la mayor reducción.
 
 <img
   src="/images/essentials/discount/strategy-order-discount.webp"
   alt="Strategy Order Discount"
 />
 
-A continuación, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#conditions-when) y [acción](/guides/es/get-started/concepts#action-what) relevantes.
+A continuación, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes.
 
 > Como ejemplo, aquí estamos configurando la regla para ejecutarse Siempre y configurándola para aplicar un **descuento del 10%** usando la opción Porcentaje. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
 
@@ -86,7 +86,7 @@ En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaj
   alt="Action Type Discount"
 />
 
-A continuación, en la misma pantalla, en la sección [Usos Máximos de Descuento](/guides/es/get-started/concepts#maximum-discount-uses), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
+A continuación, en la misma pantalla, en la sección [Usos Máximos de Descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
 
 Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
 
@@ -122,7 +122,7 @@ Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona
 <Warning>
   La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
   plan aún, sigue las instrucciones
-  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+  [aquí](/guides/es/get-started/installation#actualizar-tu-plan) para actualizar.
 </Warning>
 <img
   src="/images/essentials/discount/activate-the-rule-discount-order-amount.webp"
