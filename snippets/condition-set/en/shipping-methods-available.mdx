@@ -1,0 +1,33 @@
+### Shipping methods available
+
+Used to check if the given shipping methods are actually available on the checkout page, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the checkout page contains at least one of the listed shipping methods)
+- **Does not have any of these values** (Matches if the checkout page does not contain any of the listed shipping methods)
+- **Has any other value besides these values** (Matches if the checkout page contains shipping methods other than the listed ones)
+- **Does not have any other value besides these values** (Matches if the checkout page contains only the listed shipping methods and no others)
+- **Has number of values greater than or equals** (Matches if the number of shipping methods available on the checkout page is greater than or equal to the specified number)
+- **Has number of values less than or equals** (Matches if the number of shipping methods available on the checkout page is less than or equal to the specified number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial shipping method names. For example, Stand*
+  will match Standard, standard shipping etc.
+</Note>
+
+> For example, `Has any of these values: Express Delivery, Standard Shipping` → Matches if at least one of the selected shipping methods is available.
+
+<img
+  src="/images/essentials/condition-sets/multiple-shipping-methods.webp"
+  alt="Multiple Shipping Methods"
+/>
+
+For **Has number of values greater than or equals** or **Has number of values less than or equals**, enter the count threshold.
+
+> For example, `Has number of values greater than or equals 3` → Matches if three or more shipping methods are available.
+
+<img
+  src="/images/essentials/condition-sets/count-shipping-methods.webp"
+  alt="Count Shipping Methods"
+/>

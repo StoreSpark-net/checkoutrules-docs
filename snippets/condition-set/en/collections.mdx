@@ -1,0 +1,41 @@
+### Collections
+
+This condition checks the **Collections** against specific criteria. It will become true if **any** product in the cart belongs to the entered Collection value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the Collection has at least one of the entered values)
+- **Does not have any of these values** (Matches if the Collection has none of the entered values)
+- **Has any other value besides these values** (Matches if the Collection has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the Collection has only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of Collections is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of Collections is less than or equal to the entered number)
+
+<Warning>
+  You can only use this condition with the same values throughout the rule. If
+  you want to use different values in different rule blocks, you should switch
+  to condition set 3 which allows more flexibility.
+</Warning>
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more Collection values into the field.
+
+> For example, `Has any other value besides these values: Summer2025, Winter2025` → Matches if the Collection includes at least one value that is not “Summer2025” or “Winter2025”.
+
+<img
+  src="/images/essentials/condition-sets/collections.webp"
+  alt="Collections"
+/>
+
+From the popup, select one or multiple collections from the already created collections in your store.
+
+<img
+  src="/images/essentials/condition-sets/popup-collections.webp"
+  alt="Popup Collections"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the Collection count.
+
+> For example, `Has number of values less than or equals 7` → Matches if there are seven or fewer Collections.
+
+<img
+  src="/images/essentials/condition-sets/count-collections.webp"
+  alt="Collections Count"
+/>

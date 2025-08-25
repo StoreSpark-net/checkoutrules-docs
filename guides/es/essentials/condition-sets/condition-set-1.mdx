@@ -1,0 +1,241 @@
+---
+title: "Conjunto de Condiciones 1"
+description: "Aprende sobre cada condición disponible dentro de _Conjunto de <br />Condiciones 1_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/es/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/es/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/es/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/es/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/es/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/es/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/es/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/es/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/es/order-subtotal-amount.mdx";
+import SKU from "/snippets/condition-set/es/sku.mdx";
+import ProductTags from "/snippets/condition-set/es/product-tags.mdx";
+import Collections from "/snippets/condition-set/es/collections.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/es/first-name.mdx";
+import LastName from "/snippets/condition-set/es/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/es/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/es/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/es/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/es/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/es/address-line2.mdx";
+import Company from "/snippets/condition-set/es/company.mdx";
+import PhoneNumber from "/snippets/condition-set/es/phone-number.mdx";
+import CityArea from "/snippets/condition-set/es/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/es/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Fecha y Hora
+
+### Configuración adicional requerida
+
+Al configurar cualquier condición de **Fecha y Hora**, se requiere una configuración adicional. Sigue estos pasos para completarla.
+
+<Steps>
+  <Step title="Elige tu zona horaria">
+    En el menú desplegable <strong>Por favor elige tu zona horaria</strong>, selecciona la zona horaria de tu tienda y haz clic en <strong>"Guardar"</strong> para aplicarla.
+    
+    > Por ejemplo, selecciona <strong>Vancouver</strong> si quieres la Hora del Pacífico (PT).
+
+    <img
+      src="/images/essentials/condition-sets/select-timezone.webp"
+      alt="Seleccionar Zona Horaria"
+    />
+  </Step>
+
+  <Step title="Habilita el bloque BeSure Embed en tu tema">
+    - Haz clic en el enlace <strong>BeSure Embed Block</strong> para habilitar el bloque en tu tema.
+    
+    <img
+      src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
+      alt="Clic en BeSure Embed Block"
+    />
+
+    - En el editor de temas, localiza el <strong>BeSure Embed Block</strong> en <em>App embeds</em> y habilítalo.
+    
+    <img
+      src="/images/essentials/condition-sets/locate-and-enable-block.webp"
+      alt="Localizar y habilitar bloque"
+    />
+  </Step>
+
+  <Step title="Guarda tu tema">
+    Después de habilitar el bloque, guarda tu tema. El botón <strong>Guardar</strong> se encuentra en la esquina superior derecha.
+    
+    <img
+      src="/images/essentials/condition-sets/save-theme.webp"
+      alt="Guardar Tema"
+    />
+  </Step>
+
+  <Step title="Marcar como hecho (Opcional)">
+    Haz clic en <strong>"Marcar como hecho"</strong> cuando todos los pasos estén completados, luego guarda la regla.
+    
+    <img
+      src="/images/essentials/condition-sets/mark-as-done.webp"
+      alt="Marcar como Hecho"
+    />
+  </Step>
+
+  <Step title="Prueba tu regla">
+    Ahora, después de crear la regla, vacía primero tu carrito. Luego, agrega un nuevo producto al carrito y procede al checkout para probar si la regla funciona como se espera.
+  </Step>
+</Steps>
+
+### Fecha
+
+Se utiliza para comparar la fecha del checkout del cliente con una fecha seleccionada o un rango de fechas, en base a una de las siguientes sub-condiciones:
+
+- **es** (La fecha del checkout coincide con la fecha seleccionada)  
+- **no es** (La fecha del checkout no coincide con la fecha seleccionada)  
+- **es antes de** (La fecha del checkout es anterior a la fecha seleccionada)  
+- **es después de** (La fecha del checkout es posterior a la fecha seleccionada)  
+- **está entre** (La fecha del checkout está dentro del rango de fechas seleccionadas)  
+- **no está entre** (La fecha del checkout está fuera del rango de fechas seleccionadas)
+
+Para **es**, **no es**, **es antes de** y **es después de**, selecciona una sola fecha en el calendario.
+
+> Por ejemplo, `es antes de 11 de agosto de 2025` → Coincide con fechas anteriores al 11 de agosto de 2025.
+
+<img
+  src="/images/essentials/condition-sets/single-date.webp"
+  alt="Fecha Única"
+/>
+
+Para **está entre** y **no está entre**, selecciona tanto una fecha de inicio como una fecha de fin en el calendario.
+
+> Por ejemplo, `está entre 11 de agosto de 2025 y 19 de agosto de 2025` → Coincide con fechas entre el 11 y el 19 de agosto de 2025.
+
+<img
+  src="/images/essentials/condition-sets/multiple-dates.webp"
+  alt="Fechas Múltiples"
+/>
+
+### Día de la semana
+
+Se utiliza para comparar el día del checkout del cliente con un día o rango de días seleccionados, en base a una de las siguientes sub-condiciones:
+
+- **es** (El día del checkout coincide con el día seleccionado)  
+- **no es** (El día del checkout no coincide con el día seleccionado)  
+- **está entre** (El día del checkout cae entre los días seleccionados de inicio y fin)  
+- **no está entre** (El día del checkout no cae entre los días seleccionados de inicio y fin)
+
+Para **es** y **no es**, selecciona un solo día del menú desplegable.
+
+> Por ejemplo, `es lunes` → Coincide con el día lunes.
+
+<img src="/images/essentials/condition-sets/single-day.webp" alt="Día Único" />
+
+Para **está entre** y **no está entre**, selecciona un día de inicio y un día de fin del menú desplegable.
+
+> Por ejemplo, `está entre lunes y viernes` → Coincide con los días entre lunes y viernes.
+
+<img
+  src="/images/essentials/condition-sets/multiple-days.webp"
+  alt="Días Múltiples"
+/>
+
+### Hora del día
+
+Se utiliza para comparar la hora del checkout del cliente con una hora o rango de horas seleccionadas, en base a una de las siguientes sub-condiciones:
+
+- **es** (La hora del checkout coincide con la hora seleccionada)  
+- **no es** (La hora del checkout no coincide con la hora seleccionada)  
+- **está entre** (La hora del checkout cae entre las horas seleccionadas de inicio y fin)  
+- **no está entre** (La hora del checkout no cae entre las horas seleccionadas de inicio y fin)
+
+Para **es** y **no es**, selecciona una sola hora del menú desplegable.
+
+> Por ejemplo, `es 02:30` → Coincide exactamente con las 2:30 AM.
+
+<img
+  src="/images/essentials/condition-sets/single-time.webp"
+  alt="Hora Única"
+/>
+
+Para **está entre** y **no está entre**, selecciona tanto una hora de inicio como una hora de fin del menú desplegable.
+
+> Por ejemplo, `no está entre 01:30 y 05:00` → Coincide con horas fuera de 1:30 AM y 5:00 AM.
+
+<img
+  src="/images/essentials/condition-sets/multiple-times.webp"
+  alt="Horas Múltiples"
+/>
+
+### Día de la semana y hora del día
+
+Se utiliza para comparar el día y la hora del checkout del cliente con un rango seleccionado, en base a una de las siguientes condiciones:
+
+- **está entre** (Coincide cuando el día y la hora del checkout están dentro del rango seleccionado)  
+- **no está entre** (Coincide cuando el día y la hora del checkout no están dentro del rango seleccionado)
+
+Para configurar estas condiciones, selecciona un día y hora como punto de inicio y otro día y hora como punto final en los menús desplegables.
+
+> Por ejemplo, `está entre lunes 00:00 y miércoles 12:00` → Coincide con checkouts realizados entre el lunes a medianoche y el miércoles al mediodía.
+
+<img
+  src="/images/essentials/condition-sets/range-day-and-time.webp"
+  alt="Días y Horas"
+/>
+
+## Cliente
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTags />
+
+## Detalles del Pedido
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+## El carrito tiene algún artículo
+
+<SKU />
+<ProductTags />
+<Collections />
+
+## Envío
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Localización
+
+<UserLanguage />
+
+## Dirección de Envío
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

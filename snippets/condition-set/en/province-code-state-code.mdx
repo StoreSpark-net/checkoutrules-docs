@@ -1,0 +1,38 @@
+### Province code / State code
+
+Used to compare the Province / State (The Province/State field on the checkout page in shipping address) values with one or more specific values or states, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the province field contains at least one of the listed values)
+
+- **Does not have any of these values** (Matches if the province field does not contain any of the listed values)
+
+- **Has any other value besides these values** (Matches if the province field contains values other than the listed ones)
+
+- **Does not have any other value besides these values** (Matches if the province field contains only the listed values and no others)
+
+- **Is empty** (Matches if the province field has no value)
+
+- **Is not empty** (Matches if the province field contains any value)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+
+<Note>
+  Add 2 or 3 letter province/state code abbreviation in "ISO_3166-2" format
+  only.
+</Note>
+
+> For example, `Does not have any other value besides these values: CA, TX` → Matches if the field contains only “CA” or “TX” and no other values.
+
+<img
+  src="/images/essentials/condition-sets/multiple-provinces.webp"
+  alt="Multiple Provinces or States"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is not empty` → Matches if any value is entered for the field.
+
+<img
+  src="/images/essentials/condition-sets/province-not-available.webp"
+  alt="Province or State Not Available"
+/>

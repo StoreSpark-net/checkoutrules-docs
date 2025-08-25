@@ -1,0 +1,33 @@
+### Métodos de envío disponibles
+
+Se utiliza para comprobar si los métodos de envío indicados están realmente disponibles en la página de pago, según una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si la página de pago contiene al menos uno de los métodos de envío listados)
+- **No tiene ninguno de estos valores** (Coincide si la página de pago no contiene ninguno de los métodos de envío listados)
+- **Tiene cualquier otro valor además de estos valores** (Coincide si la página de pago contiene métodos de envío distintos a los listados)
+- **No tiene ningún otro valor además de estos valores** (Coincide si la página de pago contiene solo los métodos de envío listados y ningún otro)
+- **Tiene un número de valores mayor o igual que** (Coincide si el número de métodos de envío disponibles en la página de pago es mayor o igual al número especificado)
+- **Tiene un número de valores menor o igual que** (Coincide si el número de métodos de envío disponibles en la página de pago es menor o igual al número especificado)
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, o **No tiene ningún otro valor además de estos valores**, introduce uno o más valores para que coincidan. Separa varios valores con comas.
+
+<Note>
+  Usa el comodín * para coincidir con nombres parciales de métodos de envío.  
+  Por ejemplo, Stand* coincidirá con Standard, standard shipping, etc.
+</Note>
+
+> Por ejemplo, `Tiene alguno de estos valores: Express Delivery, Standard Shipping` → Coincide si al menos uno de los métodos de envío seleccionados está disponible.
+
+<img
+  src="/images/essentials/condition-sets/multiple-shipping-methods.webp"
+  alt="Múltiples métodos de envío"
+/>
+
+Para **Tiene un número de valores mayor o igual que** o **Tiene un número de valores menor o igual que**, introduce el umbral de conteo.
+
+> Por ejemplo, `Tiene un número de valores mayor o igual que 3` → Coincide si hay tres o más métodos de envío disponibles.
+
+<img
+  src="/images/essentials/condition-sets/count-shipping-methods.webp"
+  alt="Contar métodos de envío"
+/>

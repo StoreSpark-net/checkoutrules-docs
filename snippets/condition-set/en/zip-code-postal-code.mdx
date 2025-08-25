@@ -1,0 +1,83 @@
+### Zip code / Postal code
+
+Used to compare the Zip code / Postal code (The Zip/Postal Code field on the checkout page in shipping address) values with one or more specific zip or postal codes, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the zip/postal code field contains at least one of the listed values)
+- **Does not have any of these values** (Matches if the zip/postal code field does not contain any of the listed values)
+- **Has value in between these values** (Matches if the zip/postal code field value falls within the specified range)
+- **Does not have value in between these values** (Matches if the zip/postal code field value does not fall within the specified range)
+- **Has any other value besides these values** (Matches if the zip/postal code field contains values other than the listed ones)
+- **Does not have any other value besides these values** (Matches if the zip/postal code field contains only the listed values and no others)
+- **Has only digits** (Matches if the zip/postal code field contains only numeric characters)
+- **Does not have only digits** (Matches if the zip/postal code field contains any non-numeric characters)
+- **Has number of digits in between** (Matches if the number of digits falls within the specified range)
+- **Does not have number of digits in between** (Matches if the number of digits does not fall within the specified range)
+- **Is empty** (Matches if the zip/postal code field has no value)
+- **Is not empty** (Matches if the zip/postal code field contains any value)
+
+Use **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values** to match against one or more specific zip/postal codes. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match multiple zip codes. For example, BT* will match BT12,
+  bt-590 etc. Use ? to match to any single character.
+</Note>
+
+> For example, `Has any of these values: BT*` → Matches all zip/postal codes starting with “BT”.
+
+<img
+  src="/images/essentials/condition-sets/have-zipcodes.webp"
+  alt="Have Zipcodes"
+/>
+
+> Another example, `Does not have any of these values: 12345, 67890` → Matches if the code is not “12345” or “67890”.
+
+<img
+  src="/images/essentials/condition-sets/dont-have-zipcodes.webp"
+  alt="Dont Have Zipcodes"
+/>
+
+Use **Has value in between these values** or **Does not have value in between these values** to match zip/postal codes within or outside a numeric range.
+
+<Note>
+  Enter numbers only. All values ranging in between starting value until the
+  last value will be matched, including the starting and last value.
+</Note>
+
+> For example, `Has value in between these values: 10000 – 20000` → Matches if the code is between “10000” and “20000”.
+
+<img
+  src="/images/essentials/condition-sets/in-between-value-zipcodes.webp"
+  alt="In Between Value Zipcodes"
+/>
+
+Use **Has only digits** or **Does not have only digits** to match zip/postal codes that contain only numeric characters (0–9) or those that include any non-numeric characters, such as letters, spaces, or symbols.
+
+> For example, `Has only digits` → Matches digits only (0–9).
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field-digits.webp"
+  alt="Zipcode No Field Digits"
+/>
+
+Use **Has number of digits in between** or **Does not have number of digits in between** to match based on the count of digits in the code.
+
+<Note>
+  Enter numbers only. All values ranging in between given number of digits will
+  be matched.
+</Note>
+
+> For example, `Has number of digits in between: 4 – 6` → Matches codes that contain between 4 and 6 digits.
+
+<img
+  src="/images/essentials/condition-sets/in-between-digits-zipcodes.webp"
+  alt="In Between Digits Zipcodes"
+/>
+
+Use **Is empty** or **Is not empty** when you only need to check whether the field is filled in.
+
+> For example, `Is not empty` → Matches if any value is entered in the field
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field.webp"
+  alt="Zipcode No Field"
+/>

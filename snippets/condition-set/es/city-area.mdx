@@ -1,0 +1,51 @@
+### Ciudad / Área
+
+Se utiliza para comparar los valores de Ciudad / Área (el campo de Ciudad/Área en la página de pago en la dirección de envío) con uno o más valores específicos, conteos o estados, en función de una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el campo de ciudad contiene al menos uno de los valores listados)
+
+- **No tiene ninguno de estos valores** (Coincide si el campo de ciudad no contiene ninguno de los valores listados)
+
+- **Tiene cualquier otro valor además de estos valores** (Coincide si el campo de ciudad contiene valores distintos a los listados)
+
+- **No tiene ningún otro valor además de estos valores** (Coincide si el campo de ciudad contiene solo los valores listados y ningún otro)
+
+- **Tiene un número de dígitos mayor o igual** (Coincide si el número de dígitos en el campo de ciudad es mayor o igual al número especificado)
+
+- **Tiene un número de dígitos menor o igual** (Coincide si el número de dígitos en el campo de ciudad es menor o igual al número especificado)
+
+- **Está vacío** (Coincide si el campo de ciudad no tiene valor)
+
+- **No está vacío** (Coincide si el campo de ciudad contiene algún valor)
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, **No tiene ningún otro valor además de estos valores**, ingrese uno o más valores para coincidir. Separe múltiples valores con comas.
+
+<Note>
+  Use el comodín * para coincidir con nombres de ciudades parciales.  
+  Por ejemplo, Santo* coincidirá con santo domingo, santodomngo, etc.
+</Note>
+
+> Por ejemplo, `Tiene alguno de estos valores: Lahore, Karachi` → Coincide si el campo contiene “Lahore” o “Karachi”.
+
+<img
+  src="/images/essentials/condition-sets/multiple-cities.webp"
+  alt="Múltiples Ciudades"
+/>
+
+Para **Tiene un número de dígitos mayor o igual** o **Tiene un número de dígitos menor o igual**, ingrese el límite de conteo de dígitos.
+
+> Por ejemplo, `Tiene un número de dígitos mayor o igual a 5` → Coincide si el valor del campo tiene cinco o más dígitos.
+
+<img
+  src="/images/essentials/condition-sets/count-cities.webp"
+  alt="Contar Ciudades"
+/>
+
+Para **Está vacío** y **No está vacío**, no es necesario ingresar un valor.
+
+> Por ejemplo, `Está vacío` → Coincide si no se ingresa ningún valor en el campo.
+
+<img
+  src="/images/essentials/condition-sets/city-available.webp"
+  alt="Ciudad Disponible"
+/>

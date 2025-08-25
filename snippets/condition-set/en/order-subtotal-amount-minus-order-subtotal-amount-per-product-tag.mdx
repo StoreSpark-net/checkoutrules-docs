@@ -1,0 +1,37 @@
+### Order subtotal amount - Order subtotal amount per product tag
+
+This condition checks the **order’s subtotal amount minus the subtotal amount of products with a specific product tag** against defined criteria, based on one of the following sub-conditions:
+
+- **amount is greater than or equals** (Matches when the difference is greater than or equal to the entered amount)
+- **amount is less than or equals** (Matches when the difference is less than or equal to the entered amount)
+
+To set these conditions:
+
+<Steps>
+  <Step title="Enter product tag">
+    Enter the <strong>product tag</strong> in the “Enter product tag” field.
+  </Step>
+
+  <Step title="Enter amount">
+    Enter the <strong>amount</strong> in the “Enter amount” field.
+  </Step>
+
+  <Step title="Select comparison option">
+    Select the comparison option from the dropdown.
+  </Step>
+</Steps>
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> **Example for “amount is less than or equals”**:  
+> Product Tag: `SummerCollection`  
+> Amount: `500`  
+> → Matches orders where the subtotal amount excluding products tagged `SummerCollection` is 500 or less.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-minus-product-tag-has-less-value.webp"
+  alt="Order Subtotal Amount Minus Product Tag Has Less Value"
+/>
