@@ -1,0 +1,92 @@
+---
+title: Replicación de bloques
+description: "Aprende cómo copiar un bloque dentro de una regla, pegarlo y reutilizarlo."
+icon: "clone"
+---
+
+## Visión general
+La replicación de bloques te permite duplicar rápidamente lógica existente en una regla sin recrearla manualmente. Esto es especialmente útil cuando el contenido de los bloques es similar, ya que ahorra tiempo y asegura consistencia.
+
+## Uso
+### Copiar el Bloque
+
+Haz clic en el ícono **Copy block** en el bloque que quieres duplicar. Esto copiará todo el bloque, incluyendo sus condiciones y acciones.
+
+<Note>
+Después de copiar, el **ícono de palomita** y el texto **"Copied"** aparecerán en lugar del ícono Copy block. También, se mostrará un mensaje de confirmación **"Block copied successfully!"** en la parte inferior.
+</Note>
+
+<img
+  src="/images/advanced/block-replication/copy-block.webp"
+  alt="Copy Block"
+/>
+
+### Pegar el Bloque
+Pega el bloque copiado abajo haciendo clic en el ícono **Paste block** dentro de la **misma regla** o cualquier otra regla del mismo tipo.
+
+<Note>
+Se mostrará un mensaje de confirmación **"Block pasted successfully!"** en la parte inferior.
+</Note>
+
+<img
+  src="/images/advanced/block-replication/paste-block.webp"
+  alt="Paste Block"
+/>
+
+<Warning>
+Si copias más de un bloque, solo el **último bloque copiado** se pegará, no todos.
+</Warning>
+
+### Actualizar el Contenido
+Modifica las condiciones, valores o acciones necesarias en el bloque pegado para que coincida con el nuevo escenario. Esto te permite reutilizar la estructura mientras la personalizas para el nuevo caso.
+
+**Ejemplo:**  
+Si copiaste un bloque donde la subcondición **User language** está configurada a **French** con el mensaje de error en francés, después de pegar el bloque puedes:  
+- Cambiar la subcondición **User language** de **French** a **German**.
+- Reemplazar el texto del mensaje de error con la traducción alemana.  
+
+De esta manera, la lógica del bloque permanece igual (verificación de pedido mínimo), pero los detalles se personalizan para un idioma diferente.
+
+<img
+  src="/images/advanced/block-replication/update-pasted-content.webp"
+  alt="Update Pasted Content"
+/>
+
+## Caso de Uso de Ejemplo
+
+Creemos una regla que imponga una **cantidad mínima de pedido** mientras muestra mensajes de error en múltiples idiomas.  
+
+Usando **replicación de bloques**, solo necesitas crear el primer bloque (francés), luego simplemente copiarlo y pegarlo dentro de la misma regla, y actualizar la condición **User language** y mensaje de error para alemán. Finalmente, añadir un bloque de respaldo para inglés.  
+
+### Bloque 1 (Francés)
+- Añade la condición **Order total amount** y configúrala a **menor o igual a 99.99** para activar un error si la cantidad del pedido está bajo 100.  
+- Y subcondición **User language** es **French**.  
+- Configura el mensaje de error:  
+  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+<img
+  src="/images/advanced/translations/example-french-translation.webp"
+  alt="Example French Translation"
+/>
+
+### Bloque 2 (Alemán) — creado copiando Bloque 1
+- Pega el bloque copiado debajo de todos los bloques haciendo clic en el ícono **Paste block** dentro de la **misma regla**.  
+- Actualiza la subcondición **User language** a **German**.  
+- Actualiza el mensaje de error:  
+  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+<img
+  src="/images/advanced/translations/example-german-translation.webp"
+  alt="Example German Translation"
+/>
+
+### Bloque 3 (Respaldo predeterminado – Inglés)
+- Añade la condición **Order total amount** y configúrala a **menor o igual a 99.99** para activar un error si la cantidad del pedido está bajo 100.  
+- Para la **condición else / respaldo**, Y subcondición **Previous all conditions invalid**.   
+- Configura el mensaje de error:  
+  > "Order amount is less than the required minimum order amount of $100"
+
+<img
+  src="/images/advanced/translations/example-fallback-english-translation.webp"
+  alt="Example Fallback English Translation"
+/>

@@ -1,0 +1,92 @@
+---
+title: "Renombrar métodos de pago"
+description: "Renombra/Traduce o añade un mensaje a los métodos de pago seleccionados en el checkout bajo condiciones dadas."
+icon: "pencil"
+---
+
+## Visión general de la regla
+
+Esta regla te permite renombrar, traducir o añadir un mensaje a métodos de pago específicos en el checkout basándose en condiciones definidas. Puedes personalizar las etiquetas de métodos de pago mostradas usando criterios como valor del carrito, dirección de envío, etiquetas de cliente o detalles del producto, etc.
+
+Esto ayuda a mejorar la claridad, apoyar la localización y mejorar la experiencia general de checkout para los clientes.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Renombrar Métodos de Pago** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Pago" → selecciona tipo de regla de checkout "Renombrar Métodos de Pago" → haz clic en "Seleccionar Regla"_.
+
+<img
+  src="/images/essentials/payment/select-rename-payment-methods.webp"
+  alt="Select Rename Payment Methods"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de renombrar métodos de pago**, donde puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente podemos añadir un nombre como "Renombrar métodos de pago" para describir lo que hace. Luego, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado.
+
+Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-rename-payment-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#condition-set), [condición](/guides/es/get-started/concepts#conditions-when) y [acción](/guides/es/get-started/concepts#action-what) relevantes.
+
+> Como ejemplo, estamos usando el **Conjunto de condiciones 1**, configurando la regla para ejecutarse **Siempre**, y configurándola para renombrar el método de pago **"Contra Entrega (COD)"** a **"Pagar en Efectivo"**.
+
+Alternativamente, podemos configurar la opción "Renombrar a" a "Añadir mensaje" para agregar un mensaje personalizado al nombre del método de pago en lugar de renombrarlo completamente.
+
+<img
+  src="/images/essentials/payment/condition-set-rename-payment-methods.webp"
+  alt="Condition Set Rename Payment Methods"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota que el método de pago Contra Entrega (COD) aún no está
+  renombrado.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+Después de configurar el email, la regla de checkout se ejecuta y renombra los métodos de pago especificados. Podemos verificar que el método de pago **"Contra Entrega (COD)"** ahora se muestra como **"Pagar en Efectivo"**, como se muestra a continuación.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-rename-payment-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-rename-payment-methods.webp"
+  alt="Activate The Rule"
+/>

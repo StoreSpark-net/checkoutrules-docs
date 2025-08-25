@@ -121,6 +121,79 @@
             ]
           }
         ]
+      },
+      {
+        "language": "es",
+        "groups": [
+          {
+            "group": "Primeros Pasos",
+            "icon": "code",
+            "pages": [
+              "guides/es/get-started/introduction",
+              "guides/es/get-started/installation",
+              "guides/es/get-started/concepts",
+              "guides/es/get-started/quickstart"
+            ]
+          },
+          {
+            "group": "Esenciales",
+            "icon": "book",
+            "pages": [
+              {
+                "group": "Conjuntos de Condiciones",
+                "icon": "filter",
+                "pages": ["guides/es/essentials/condition-sets/introduction"]
+              },
+              {
+                "group": "Envío",
+                "icon": "truck",
+                "pages": [
+                  "guides/es/essentials/shipping/reorder-shipping-methods",
+                  "guides/es/essentials/shipping/hide-shipping-methods",
+                  "guides/es/essentials/shipping/rename-shipping-methods",
+                  "guides/es/essentials/shipping/discount-shipping-methods"
+                ]
+              },
+              {
+                "group": "Pago",
+                "icon": "credit-card",
+                "pages": [
+                  "guides/es/essentials/payment/hide-express-checkout-options",
+                  "guides/es/essentials/payment/reorder-payment-methods",
+                  "guides/es/essentials/payment/hide-payment-methods",
+                  "guides/es/essentials/payment/rename-payment-methods"
+                ]
+              },
+              {
+                "group": "Validación",
+                "icon": "shield-check",
+                "pages": [
+                  "guides/es/essentials/validation/validate-block-checkout"
+                ]
+              },
+              {
+                "group": "Descuento",
+                "icon": "tag",
+                "pages": [
+                  "guides/es/essentials/discount/discount-order-amount",
+                  "guides/es/essentials/discount/discount-shipping-methods"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Avanzado",
+            "icon": "grid",
+            "pages": [
+              "guides/es/advanced/branching",
+              "guides/es/advanced/concurrency",
+              "guides/es/advanced/translations",
+              "guides/es/advanced/multi-store-support",
+              "guides/es/advanced/rule-duplication",
+              "guides/es/advanced/block-replication"
+            ]
+          }
+        ]
       }
     ]
   },

@@ -1,0 +1,129 @@
+---
+title: "Descontar métodos de envío"
+description: "Descuenta tarifas de envío específicas basándose en las condiciones dadas."
+icon: "badge-percent"
+---
+
+## Visión general de la regla
+
+Esta regla te permite descontar tarifas de envío específicas en el checkout basándose en condiciones definidas. Puedes aplicar porcentaje, cantidad fija de descuento, porcentaje del subtotal, establecer precio fijo, o configurar todo el envío gratis, etc. usando criterios como total del carrito, dirección de envío, etiquetas de cliente o atributos del producto, etc.
+
+Usando esta regla puedes crear un código de descuento, o crear un descuento automático. Si la regla crea un código de descuento, entonces el cliente puede usar el código de descuento en el checkout para obtener el descuento. De lo contrario, si se selecciona descuento automático, entonces la regla puede aplicar un descuento automáticamente a los métodos de envío seleccionados basándose en las condiciones configuradas.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Descontar Métodos de Envío** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Envío" → selecciona tipo de regla de checkout "Descontar Métodos de Envío" → haz clic en "Seleccionar Regla"_.
+
+<img
+  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
+  alt="Select Discount Shipping Methods"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de descontar métodos de envío**, donde puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente añade un nombre como "Descontar métodos de envío" para describir lo que hace si quieres aplicar un **"Descuento automático"**.
+
+<img
+  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
+  alt="Automatic Discount Name"
+/>
+
+O, si prefieres aplicar el descuento usando un código de descuento, haz clic en **"Código de descuento"** e ingresa tu código deseado o genera uno aleatoriamente haciendo clic en **"Generar código aleatorio"**.
+
+<img
+  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
+  alt="Discount Code"
+/>
+
+A continuación, en la misma pantalla, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado. Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Rule Status"
+/>
+
+A continuación, en la misma pantalla, configura las configuraciones de [Combinaciones](/guides/es/get-started/concepts#combinations) para controlar cómo este descuento de envío interactúa con otros descuentos. Puedes elegir permitir que se combine con:
+
+- **Descuentos de producto** – Esto permite que el descuento de envío se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de producto también estén configurados para combinarse con descuentos de envío.
+
+- **Descuentos de pedido** – Esto permite que el descuento de envío funcione junto con descuentos generales a nivel de pedido. Asegúrate de que los descuentos de pedido también estén configurados para permitir combinaciones con descuentos de envío.
+
+<img
+  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
+  alt="Combinations Disount Shipping Methods"
+/>
+
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#condition-set), [condición](/guides/es/get-started/concepts#conditions-when) y [acción](/guides/es/get-started/concepts#action-what) relevantes.
+
+> Como ejemplo, aquí estamos usando el **Conjunto de condiciones 1** predeterminado, configurando la regla para ejecutarse **Siempre**, y configurándola para aplicar un **descuento del 10%** a todos los métodos de envío usando la opción **Porcentaje**. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
+
+<img
+  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
+  alt="Condition Set Discount Shipping Methods"
+/>
+
+En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaje, Cantidad fija de descuento, Porcentaje del subtotal, Establecer precio fijo, o Configurar todo el envío gratis** basándose en tus requisitos.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Action Type Discount"
+/>
+
+El descuento también puede aplicarse solo a métodos de envío específicos seleccionando **"Aplicar este descuento solo a estos métodos de envío"** en lugar de "Aplicar este descuento a todos los métodos de envío", y luego ingresando los **nombres** de los métodos de envío a los que quieres que se aplique el descuento.
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Action Shipping Methods Selection"
+/>
+
+A continuación, en la misma pantalla, en la sección [Usos Máximos de Descuento](/guides/es/get-started/concepts#maximum-discount-uses), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota que todas las opciones de envío aún no han sido
+  descontadas.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+Después de configurar el email, la regla de checkout se ejecuta y aplica el descuento de envío configurado. Podemos verificar que el **descuento del 10%** es visible para los métodos de envío seleccionados en el checkout, como se muestra a continuación.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
+  alt="Activate The Rule"
+/>

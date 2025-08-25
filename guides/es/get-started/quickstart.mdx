@@ -1,0 +1,79 @@
+---
+title: "Inicio rápido"
+description: "Este inicio rápido te guiará a través de la creación de una regla de ejemplo, demostrando cómo funciona y cómo puede usarse para personalizar tu checkout de Shopify."
+icon: "rocket"
+---
+
+## Crear una regla de ejemplo
+
+Para crear una regla, navega a _BSure Checkout Rules → Reglas → haz clic en "Crear Regla"_.
+
+<img
+  src="/images/quickstart/create-checkout-rule.webp"
+  alt="Create Checkout Rule"
+/>
+
+Luego serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige una categoría (Envío, Pago, Validación o Descuento) → selecciona tipo de regla de checkout (por ejemplo, Reordenar Métodos de Envío) → haz clic en "Seleccionar Regla".
+
+<Warning>
+  Aquí estamos seleccionando *Reordenar Métodos de Envío* como el tipo de regla de checkout para
+  propósitos de demostración.
+</Warning>
+
+<img
+  src="/images/quickstart/create-checkout-rule-2.webp"
+  alt="Create Checkout Rule 2"
+/>
+Luego, aparecerá un popup de **selección de plantilla**. Elige una opción basada en tus
+requisitos. En la mayoría de casos, puedes elegir la regla vacía como punto de partida y
+modificarla según tus necesidades. Incluso si eliges una plantilla prellenada, podrás
+modificarla más tarde.
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Select Rule Template"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de reordenar métodos de envío**, donde puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente podemos añadir un nombre como "Reordenar Métodos de Envío" para describir lo que hace. Luego, selecciona el estado: Prueba, Activo o Desactivado.
+
+Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Rule Configure 1" />
+
+A continuación, en la misma pantalla, selecciona el conjunto de condiciones relevante, condición y operación. Como ejemplo aquí vamos a elegir el conjunto de condiciones predeterminado, luego configurar la regla para ejecutarse siempre, y seleccionar la operación para reordenar los métodos de envío desde precios de envío más altos a más bajos.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Rule Configure 2" />
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota el orden de los métodos de envío.
+</Warning>
+<img src="/images/shared/before-rule-apply.webp" alt="Before Rule Apply" />
+
+Después de usar la dirección de email de prueba, la regla de checkout se ejecuta y verás que los métodos de envío están reordenados. Podemos verificar que el método de envío más caro ahora está en la parte superior, como se muestra a continuación.
+
+<img src="/images/shared/after-rule-apply.webp" alt="After Rule Apply" />
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img src="/images/shared/activate-the-rule.webp" alt="Activate The Rule" />
+
+De manera similar, puedes crear múltiples reglas basadas en tus requisitos siguiendo el proceso descrito anteriormente.

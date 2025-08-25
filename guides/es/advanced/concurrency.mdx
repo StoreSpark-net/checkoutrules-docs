@@ -1,0 +1,163 @@
+---
+title: Concurrencia
+description: "Aprende cómo múltiples reglas del mismo tipo trabajan juntas y cómo impactan el proceso de checkout."
+icon: "list"
+---
+
+## Visión general
+
+Podemos crear múltiples reglas del mismo tipo. La concurrencia describe qué sucede cuando múltiples reglas activas del mismo tipo existen y luego se activan en la página de checkout al mismo tiempo.
+Este artículo te ayudará a entender qué sucede cuando estas reglas se aplican juntas, y cómo su efecto combinado puede influenciar el proceso de checkout.
+
+## Explicación
+
+Cuando añades más de una regla del mismo tipo, todas se ejecutan **independientemente pero casi al mismo tiempo**. El resultado del checkout es el efecto combinado de todas las reglas que se activan y generan acciones. El orden de ejecución para estas reglas es **no determinístico** según Shopify, pueden ejecutarse en cualquier orden.
+
+<Note>
+  Cada regla solo puede generar acciones que pueden combinarse con otras acciones generadas por el mismo tipo de regla.
+  Por ejemplo, puedes tener una regla para ocultar un método de envío, pero no puedes tener una regla para mostrar un método de envío.
+  Todas las reglas de ocultar métodos de envío se combinarán juntas para determinar todos los métodos de envío que deben ocultarse.
+</Note>
+
+Así es como funciona paso a paso:
+
+<Steps>
+  <Step title="Cada regla comienza a ejecutarse">
+    Cada regla comienza a ejecutarse casi al mismo tiempo, verificando sus propias condiciones para determinar si debe generar alguna acción.
+  </Step>
+
+  <Step title="Las acciones de regla se generan">
+    Si la condición de una regla se satisface, su acción se genera.
+    
+    > Por ejemplo, puedes tener una regla para <strong>ocultar cualquier método de envío que contenga "Worldwide"</strong> en su nombre. Luego otra regla para <strong>ocultar cualquier método de envío que contenga "International Shipping"</strong> en su nombre. Ambas reglas generarán acciones, una ocultará "Worldwide" y la otra ocultará "International Shipping".
+  </Step>
+
+  <Step title="Las acciones se combinan">
+    Si múltiples reglas generan acciones, sus acciones se combinan y se envían al Checkout de Shopify.
+
+    > Por ejemplo, Regla 1 oculta un método que contiene <strong>"Worldwide"</strong>, Regla 2 oculta un método que contiene <strong>"International Shipping"</strong> → Se generará una acción combinada de ocultar tanto Worldwide como International Shipping y se enviará al Checkout de Shopify.
+  
+  </Step>
+</Steps>
+
+## Caso de uso de ejemplo
+
+Digamos que quieres **ocultar ciertos métodos de envío** basándose en el código postal del cliente.  
+Para esto, supongamos que creamos las siguientes reglas:
+
+**Regla 1** → Ocultar método de envío `DHL Express Worldwide` cuando el código postal es **2005** o comienza con **100**.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example.webp"
+  alt="Rule 1 Example"
+/>
+</Frame>
+
+**Regla 2** → Ocultar método `International Shipping` cuando el código postal es **2005** o comienza con **500**.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example.webp"
+  alt="Rule 2 Example"
+/>
+</Frame>
+
+### Caso 1: Solo una regla aplica
+
+- Si el cliente ingresa un código postal como **10045**, **Regla 1** aplica, porque las condiciones para Regla 2 no se cumplen, así que no genera ninguna acción.
+
+  → En el checkout, el método `DHL Express Worldwide` se oculta, pero `International Shipping` y otros métodos permanecen disponibles como se muestra en la captura de pantalla a continuación.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example-checkout.webp"
+  alt="Rule 1 Example Checkout"
+/>
+</Frame>
+
+- Si el cliente ingresa un código postal como **50010**, **Regla 2** aplica.  
+  → En el checkout, el método `International Shipping` se oculta, pero `DHL Express Worldwide` y otros métodos permanecen disponibles.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example-checkout.webp"
+  alt="Rule 2 Example Checkout"
+/>
+</Frame>
+
+### Caso 2: Ambas reglas aplican juntas
+
+- Si el cliente ingresa el **código postal 2005**, entonces las condiciones se cumplen para ambas reglas, así que **tanto Regla 1 como Regla 2** aplican juntas.
+- Esto significa que **tanto `DHL Express Worldwide` como `International Shipping`** se ocultarán del checkout, dejando solo los otros métodos disponibles.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/both-rule-same-zipcode-example-checkout.webp"
+  alt="Both Rule Same Zipcode Example Checkout"
+/>
+</Frame>
+
+## Conflictos de reglas
+
+Si múltiples reglas no son seguras para concurrencia, pueden entrar en conflicto entre sí y causar problemas en la página de checkout.
+Necesitamos asegurar que las reglas no estén en conflicto entre sí para evitar problemas.
+
+<Warning>
+  Se necesita precaución al usar múltiples reglas del mismo tipo. Siempre asegúrate de que las reglas no estén en conflicto entre sí para evitar problemas.
+</Warning>
+
+### Ejemplo: Solo mostrar estos métodos de envío
+
+Cuando una regla está configurada para **Solo mostrar estos métodos de envío**, intentará ocultar todos los métodos de envío que no estén en la lista que queremos "solo mostrar".
+
+Si múltiples reglas están configuradas para **Solo mostrar estos métodos de envío**, pueden entrar en conflicto entre sí y causar que todas las opciones de envío se oculten.
+
+> **Ejemplo:** Regla 1 → Solo mostrar método de envío `DHL Express Worldwide` cuando el código postal es 2005 o comienza con 100.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-zipcode.webp"
+  alt="Rule 1 Zipcode"
+/>
+</Frame>
+
+> Regla 2 → Solo mostrar método de envío `International Shipping` cuando el código postal es 2005 o comienza con 500.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-zipcode.webp"
+  alt="Rule 2 Zipcode"
+/>
+</Frame>
+
+Cuando ambas reglas se ejecutan para el mismo código postal **2005**, Regla 1 intentará ocultar todos los métodos de envío que no sean `DHL Express Worldwide` y Regla 2 intentará ocultar todos los métodos de envío que no sean `International Shipping`. Esto resultará en error **No hay envío disponible** porque ambas reglas no son compatibles entre sí.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/shipping-not-available-error.webp"
+  alt="Shipping Not Available Error"
+/>
+</Frame>
+
+<Check>
+Para resolver este problema, necesitamos crear una 3ra regla aquí, que manejará los códigos postales comunes por separado.
+</Check>
+
+De esta manera, podemos asegurar que Regla 1 y Regla 2 sean independientes entre sí. Regla 3 manejará los códigos postales comunes por separado y podemos estar seguros de qué métodos de envío estarán disponibles para el cliente en cada caso.
+
+<Tip>
+Como consejo general, siempre debemos tratar de emparejar **Solo mostrar estos métodos de envío** con la condición **Método de Envío Disponible** como subcondición, y usar el(los) mismo(s) valor(es) en ambos.
+
+> **Ejemplo:** Regla → Solo mostrar método de envío `DHL Express Worldwide` cuando el código postal es 2005 o comienza con 100 _AND_ subcondición **Método de Envío Disponible** tiene cualquiera de estos valores: _DHL Express Worldwide_ Esto asegurará que _DHL Express Worldwide_ esté realmente disponible para ese checkout antes de que intentemos ocultar todos los otros métodos de envío.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-solution.webp"
+  alt="Rule 1 Solution"
+/>
+</Frame>
+
+De esta manera, podemos asegurar que los métodos de envío estén realmente disponibles en la página de checkout en primer lugar, que queremos "Solo mostrar" al cliente.
+
+</Tip>

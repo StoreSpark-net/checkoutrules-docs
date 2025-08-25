@@ -14,7 +14,7 @@ Branching allows you to build rules using multiple condition blocks that follow 
 
 <Note>
   The key condition here is [Previous all conditions
-  invalid](/guides/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  invalid](/guides/en/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
   in second and third blocks, which ensures only one block will execute based on
   the conditions and then the rule will stop. Using this condition you can use
   branching in any rule.
@@ -68,7 +68,7 @@ This is how this rule will execute:
 
 ### Fallback block (else)
 
-- If none of the previous blocks match, you can add a fallback block with a condition of [Previous all conditions invalid](/guides/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid).
+- If none of the previous blocks match, you can add a fallback block with a condition of [Previous all conditions invalid](/guides/en/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid).
 - This acts as the **Else (default catch all)** and ensures that there is always a default **“Then” action** (e.g., apply 5% discount), when no previous blocks were executed.
 
 > **Example:** Previous all conditions invalid → Apply 5% OFF on all shipping
@@ -103,7 +103,7 @@ Let’s say you want to apply different shipping discounts based on **product ta
 
 <img src="/images/advanced/branching/add-new-block.webp" alt="Add New Block" />
 
-Or, [copy the previous block](/guides/advanced/block-replication) and **paste it below** using the **paste icon**, then modify its conditions and actions.
+Or, [copy the previous block](/guides/en/advanced/block-replication) and **paste it below** using the **paste icon**, then modify its conditions and actions.
 
 **Block 2 (else if)** → _Product tag has value of `winter`_ AND _Previous all conditions invalid_ → Apply **50% off on all shipping**
 
