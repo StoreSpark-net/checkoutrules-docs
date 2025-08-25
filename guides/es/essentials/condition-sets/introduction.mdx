@@ -1,0 +1,97 @@
+---
+title: "Introducción"
+description: "Comprende qué son los conjuntos de condiciones y cómo usarlos."
+icon: "book-open"
+---
+
+## ¿Qué es un conjunto de condiciones?
+
+Un **conjunto de condiciones** es un grupo de condiciones predefinidas que se pueden usar para controlar cuándo debe ejecutarse una regla de checkout. Estas condiciones están disponibles en el selector [Cuándo](/guides/es/get-started/concepts#conditions-the-"when") en la configuración de la regla.
+
+Cada conjunto de condiciones muestra cuántas condiciones están disponibles en él comparado con el total. Por ejemplo, **Conjunto de condiciones 1** `22 / 143` significa que hay 22 condiciones disponibles en el Conjunto de condiciones 1 de un total de 143 condiciones. Aquí, 143 es el número total de condiciones disponibles en todos los conjuntos de condiciones.
+
+<img
+  src="/images/essentials/condition-sets/introduction/total-availibility-condition-set-example.webp"
+  alt="Condition Sets Example"
+/>
+
+<Info>
+  Puedes pasar el cursor sobre el nombre del conjunto de condiciones para ver todas las condiciones disponibles
+  en ese conjunto de condiciones. También puedes buscar una condición usando la barra de búsqueda
+  para encontrar una condición específica.
+</Info>
+
+Las condiciones del **conjunto de condiciones** seleccionado aparecen en el selector [Cuándo](/guides/es/get-started/concepts#conditions-the-"when") de abajo dentro del [bloque](/guides/es/get-started/concepts#block) de regla. Puedes cambiar entre conjuntos de condiciones y luego abrir el selector de condiciones en el selector "Cuándo" de abajo, para ver las condiciones disponibles en el conjunto de condiciones seleccionado.
+
+> Por ejemplo, aquí estamos usando el **Conjunto de condiciones 1** predeterminado, que tiene 22 condiciones disponibles, configurando la regla para ejecutarse si el **Total del pedido** es mayor o igual a **$50** y el **País de envío** es **Estados Unidos**, ya que estas condiciones están disponibles en el Conjunto de condiciones 1.
+
+<img
+  src="/images/essentials/condition-sets/introduction/condition-sets-example.webp"
+  alt="Condition Sets Example"
+/>
+
+## Por qué existen los conjuntos de condiciones
+
+No todas las condiciones pueden colocarse en la misma regla debido a límites de tamaño, por lo que proporcionamos diferentes conjuntos de condiciones. Cada conjunto contiene una porción del total de condiciones disponibles. Puedes crear múltiples reglas con diferentes conjuntos de condiciones para controlar la experiencia de checkout de tus clientes.
+
+## Cómo usar los conjuntos de condiciones
+
+### Elegir conjunto de condiciones
+
+En la sección de Conjuntos de Condiciones, haz clic en el conjunto de condiciones deseado. Si no estás seguro de qué conjunto de condiciones elegir, puedes buscar una condición usando la barra de búsqueda o pasar el cursor sobre el nombre del conjunto de condiciones para ver todas las condiciones disponibles en ese conjunto de condiciones.
+
+> Por ejemplo, aquí seleccionamos _Conjunto de condiciones 3_.
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-set-condition.webp"
+  alt="Condition Set Selection"
+/>
+
+#### Buscar una Condición (Opcional)
+
+Puedes hacer clic en la búsqueda en la esquina superior derecha de la sección de conjuntos de condiciones.
+
+<img
+  src="/images/essentials/condition-sets/introduction/search-condition-set.webp"
+  alt="Search Condition Set"
+/>
+
+Luego, escribe la condición que deseas en la barra de búsqueda y haz clic en el botón de búsqueda.
+
+<img
+  src="/images/essentials/condition-sets/introduction/type-in-search-condition.webp"
+  alt="Type In Search Condition"
+/>
+
+Luego, se mostrarán los conjuntos de condiciones coincidentes. Haz clic en el conjunto de condiciones que contiene tu condición deseada para cambiar a él.
+
+<img
+  src="/images/essentials/condition-sets/introduction/sorted-condition-sets.webp"
+  alt="Sorted Condition Sets"
+/>
+
+### Seleccionar condiciones
+
+Una vez que hayas seleccionado el conjunto de condiciones, elige la(s) condición(es) que deseas aplicar. Puedes agregar múltiples condiciones dentro del mismo conjunto para crear reglas potentes.
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-condition.webp"
+  alt="Select Condition"
+/>
+
+### Ejemplo de uso
+
+Por ejemplo, aquí estamos usando _Conjunto de condiciones 4_, configurando la regla para ocultar métodos de envío si _**Cualquier descuento de producto**_ es _menor o igual_ a _300_ o el _**Subtotal del pedido**_ es _menor o igual_ a _1500_. Luego, ocultar todos los métodos de envío.
+
+<img
+  src="/images/essentials/condition-sets/introduction/example-usage.webp"
+  alt="Example Usage"
+/>
+
+## Consejos para usar conjuntos de condiciones
+
+- Comienza identificando la condición principal que activa tu regla.
+- Revisa diferentes conjuntos para ver dónde se encuentra tu condición necesaria.
+- Usa la función de búsqueda para encontrar el conjunto de condiciones más fácilmente.
+
+Al usar los conjuntos de condiciones de manera efectiva, puedes controlar precisamente **cuándo** se ejecutan tus reglas de checkout, mejorando la flexibilidad de tu tienda y la experiencia de checkout.

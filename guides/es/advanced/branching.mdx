@@ -1,0 +1,150 @@
+---
+title: Ramificación (if else)
+description: "Aprende cómo crear y usar una estructura de regla if, else if, else para manejar múltiples condiciones en tus reglas."
+icon: "split"
+---
+
+## Visión general
+
+Usualmente cuando una regla tiene más de un bloque, entonces cada bloque se ejecuta en secuencia de arriba hacia abajo, y si las condiciones para cualquier bloque se cumplen, entonces las acciones para ese bloque se ejecutan. Así, cada regla puede tener múltiples acciones. Pero algunas veces no queremos este comportamiento, solo queremos que un bloque se ejecute y luego la regla debe detenerse. Aquí es donde entra la ramificación.
+
+La ramificación te permite construir reglas usando múltiples bloques de condiciones que siguen la lógica **if → else if → else**. Cada bloque se verifica en **secuencia**, y tan pronto como un bloque coincide, sus acciones se ejecutan, y la regla se detiene. Esto asegura que **solo un bloque se ejecute**, previniendo acciones superpuestas o conflictivas. Esta es una característica muy poderosa y puede usarse para crear reglas complejas con múltiples condiciones.
+
+> Aquí hay un ejemplo de una regla ramificada con tres bloques. Aquí, queremos aplicar diferentes descuentos basados en la etiqueta del producto y tenemos un descuento predeterminado del 5% en todo el envío en caso de que el cliente no sea elegible para ninguno de los otros descuentos. Solo un bloque se ejecutará basado en las condiciones y luego la regla se detendrá.
+
+<Note>
+  La condición clave aquí es [Previous all conditions
+  invalid](/guides/es/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  en el segundo y tercer bloques, que asegura que solo un bloque se ejecute basado en
+  las condiciones y luego la regla se detenga. Usando esta condición puedes usar
+  ramificación en cualquier regla.
+</Note>
+
+<img src="/images/advanced/branching/all-blocks.webp" alt="All Blocks" />
+
+Así es como esta regla se ejecutará:
+
+<Steps>
+  <Step title="Si la etiqueta del producto es deportes y la cantidad subtotal del pedido es mayor o igual a 33">
+    Entonces se aplicará 20% de descuento en envío y la regla se detendrá.
+  </Step>
+  <Step title="Else if la etiqueta del cliente es VIP">
+    Entonces se aplicará 50% de descuento en envío y la regla se detendrá.
+  </Step>
+  <Step title="Else (catch all predeterminado)">
+    Entonces se aplicará 5% de descuento en envío.
+  </Step>
+</Steps>
+
+## Explicación
+
+### Primer bloque de condición (if)
+
+- El sistema comienza con el primer bloque de condición.
+- Este bloque puede incluir múltiples **sub-condiciones** combinadas con **AND** u **OR**.
+- Si la condición general del bloque se cumple, su acción **"Then"** se ejecuta (ej., aplicar 20% de descuento).
+- Una vez que se ejecuta, el sistema no verifica los siguientes bloques.
+
+> **Ejemplo:** La etiqueta del producto tiene valor de **deportes** _AND_ Cantidad subtotal del pedido ≥ **33** _OR_ La etiqueta del producto tiene valor de **zapatos** → Aplicar 20% OFF en todo el envío
+
+    <img
+    src="/images/advanced/branching/if-condition.webp"
+    alt="If Condition"
+    />
+
+### Bloque(s) de condición Else if
+
+- Si el primer bloque no coincide, el sistema verifica el(los) siguiente(s) bloque(s).
+- Un bloque **Else If** puede contener múltiples **sub-condiciones** usando **AND** u **OR**, y debe incluir la condición **"Previous all conditions invalid"** como subcondición.
+- Puede haber uno o más bloques en secuencia. Sin embargo, si la condición **"Previous all conditions invalid"** no está presente, el bloque no funcionará como **Else If** y se comportará como un bloque **If** regular.
+- Si la condición general del bloque para cualquier bloque se cumple, su acción **"Then"** se ejecuta (ej., aplicar 50% de descuento), y la evaluación se detiene.
+
+> **Ejemplo:** Previous all conditions invalid AND La etiqueta del cliente tiene valor de **VIP** → Aplicar 50% de descuento en todo el envío
+
+    <img
+    src="/images/advanced/branching/else-if-condition.webp"
+    alt="Else If Condition"
+    />
+
+### Bloque de respaldo (else)
+
+- Si ninguno de los bloques anteriores coincide, puedes añadir un bloque de respaldo con una condición de [Previous all conditions invalid](/guides/es/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid).
+- Esto actúa como el **Else (catch all predeterminado)** y asegura que siempre haya una acción **"Then"** predeterminada (ej., aplicar 5% de descuento), cuando no se ejecutaron bloques anteriores.
+
+> **Ejemplo:** Previous all conditions invalid → Aplicar 5% OFF en todo el envío
+
+    <img
+    src="/images/advanced/branching/else-condition.webp"
+    alt="Else Condition"
+    />
+
+<Tip>
+  Debes organizar los bloques en el orden de mayor prioridad a menor
+  prioridad. El primer bloque es la mayor prioridad y el último bloque es la
+  menor prioridad.
+</Tip>
+
+## Caso de uso de ejemplo
+
+Digamos que quieres aplicar diferentes descuentos de envío basados en **etiquetas de producto**.
+
+### Configuración de regla
+
+**Bloque 1 (if)** → _La etiqueta del producto tiene valor de `deportes`_ → Aplicar **20%** de descuento en todo el envío (mayor prioridad).
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport.webp"
+  alt="20 Percent When Sport"
+/>
+
+**Añadiendo el siguiente bloque**  
+Para añadir un nuevo bloque después del primero, puedes:  
+Hacer clic en el botón **"Add new block"** en el constructor de reglas.
+
+<img src="/images/advanced/branching/add-new-block.webp" alt="Add New Block" />
+
+O, [copiar el bloque anterior](/guides/es/advanced/block-replication) y **pegarlo abajo** usando el **ícono de pegar**, luego modificar sus condiciones y acciones.
+
+**Bloque 2 (else if)** → _La etiqueta del producto tiene valor de `invierno`_ AND _Previous all conditions invalid_ → Aplicar **50% de descuento en todo el envío**
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter.webp"
+  alt="50 Percent When Winter"
+/>
+
+**Bloque 3 (else)** → _Previous all conditions invalid_ → Aplicar **5% de descuento en todo el envío** (descuento predeterminado).
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid.webp"
+  alt="5 Percent When Previous All Conditions Invalid"
+/>
+
+Así es como se verá toda la configuración de la regla.
+
+<img
+  src="/images/advanced/branching/example-all-blocks.webp"
+  alt="Example All Blocks"
+/>
+
+### Flujo de ejecución
+
+El sistema comienza con **Bloque 1**. Si coincide (etiqueta del producto = `deportes`), se aplica **20% de descuento en envío**, y la regla termina.
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport-checkout.webp"
+  alt="20 Percent When Sport Checkout"
+/>
+
+Si el Bloque 1 no coincide, verifica **Bloque 2**. Si etiqueta del producto = `invierno`, entonces se aplica **50% de descuento en envío**, y la regla termina.
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter-checkout.webp"
+  alt="50 Percent When Winter Checkout"
+/>
+
+Si ni el Bloque 1 ni el Bloque 2 coinciden, **Bloque 3** se ejecuta. Como usa **Previous all conditions invalid**, actúa como un **catch all predeterminado**, aplicando **5% de descuento en envío**.
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid-checkout.webp"
+  alt="5 Percent When Previous All Conditions Invalid Checkout"
+/>

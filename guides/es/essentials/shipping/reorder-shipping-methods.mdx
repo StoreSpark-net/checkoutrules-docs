@@ -1,0 +1,112 @@
+---
+title: "Reordenar métodos de envío"
+description: "Reorganiza cómo se muestran los métodos de envío o recogida en el checkout bajo condiciones dadas."
+icon: "shuffle"
+---
+
+## Visión general de la regla
+
+Esta regla te permite cambiar automáticamente el orden en que los métodos de envío aparecen en el checkout.
+Puedes priorizar opciones de envío específicas basándote en condiciones como total del carrito, dirección de entrega o etiquetas de producto, etc.
+
+Esto ayuda a simplificar la experiencia del cliente mostrando los métodos de envío más relevantes o rentables primero.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Reordenar Métodos de Envío** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Envío" → selecciona tipo de regla de checkout "Reordenar Métodos de Envío" → haz clic en "Seleccionar Regla"_.
+
+<img
+  src="/images/essentials/shipping/select-reorder-shipping-methods.webp"
+  alt="Select Reorder Shipping Methods"
+/>
+
+Luego, en la **selección de plantilla**, elige una opción basada en tus requisitos. En la mayoría de casos, puedes elegir la regla vacía como punto de partida y modificarla según tus necesidades. Incluso si eliges una plantilla prellenada, podrás modificarla más tarde.
+
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Select Rule Template"
+/>
+A continuación, llegarás a la pantalla **Crear nueva regla de reordenar métodos de envío**, donde
+puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente podemos añadir un nombre como "Reordenar métodos de envío" para describir lo que hace. Luego, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado.
+
+Aquí, como ejemplo, vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Rule Configure 1" />
+
+A continuación, en la misma pantalla, selecciona el [Objetivo](/guides/es/get-started/concepts#target) apropiado para definir dónde debe aplicarse la regla. Podemos elegir _"Envío"_ para reordenar métodos de envío mostrados después de que se ingresa una **dirección de envío**. Luego, podemos seleccionar:
+
+- **Todos los envíos excepto suscripciones** – aplica la regla solo a envíos regulares y omite cualquier pedido que contenga productos de suscripción. Esto es útil, ya que Shopify puede elegir automáticamente el método de envío más barato para productos de suscripción y ocultar todos los otros métodos de envío. Ocultar este método de envío más barato puede causar el error "no hay envío disponible". Por eso recomendamos usar esta opción si tienes productos de suscripción para evitar este error.
+
+- **Todos los envíos** – aplica la regla a cada pedido, incluyendo aquellos con artículos de suscripción.
+
+O, podemos elegir _"Recogida"_ si queremos que la regla se aplique específicamente a métodos de recogida mostrados cuando un cliente selecciona **"Recogida en tienda"** durante el checkout.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Select Target" />
+
+<Info>
+  Si no estás seguro sobre qué elegir para cualquier configuración de regla, muchas veces la
+  opción preseleccionada por defecto es la mejor opción. Siempre puedes comenzar con la
+  opción predeterminada y modificarla más tarde.
+</Info>
+
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#condition-set), [condición](/guides/es/get-started/concepts#conditions-when) y [acción](/guides/es/get-started/concepts#action-what) relevantes.
+
+> Como ejemplo aquí vamos a elegir el conjunto de condiciones predeterminado, luego configurar la regla para ejecutarse siempre, y seleccionar la operación para reordenar los métodos de envío desde precios de envío más altos a más bajos.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Rule Configure 2" />
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota el orden de los métodos de envío.
+</Warning>
+
+<img src="/images/shared/before-rule-apply.webp" alt="Before Rule Apply" />
+
+Después de configurar el email, la regla de checkout se ejecuta y verás que los métodos de envío están reordenados. Podemos verificar que el método de envío más caro ahora está en la parte superior, como se muestra a continuación.
+
+<img src="/images/shared/after-rule-apply.webp" alt="After Rule Apply" />
+
+## Configurar el método de envío preseleccionado por defecto
+
+Por defecto, Shopify siempre hará del método de envío superior el método de envío preseleccionado por defecto. Así que, usando esta regla, puedes cambiar el método de envío preseleccionado por defecto a cualquier método de envío que desees, haciéndolo el método de envío superior.
+
+Para hacer esto, como ejemplo, puedes usar la opción **Clasificación fija**, y establecer el rango a 1 para el método de envío que quieres que sea el método de envío preseleccionado por defecto. Por favor asegúrate de que "Todos los otros métodos de envío aparecerán aquí después de los anteriores" esté configurado en "Mostrar al final".
+
+<Warning>
+  Por favor nota, para probar esto, necesitarás activar la regla, y luego limpiar
+  las cookies/caché del navegador, para que el método de envío preseleccionado por defecto
+  no sea tu método de envío previamente seleccionado (Shopify puede guardar esta
+  selección en caché para tu navegador). O puedes usar un navegador diferente también
+  para ver lo que verán tus clientes.
+</Warning>
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img src="/images/shared/activate-the-rule.webp" alt="Activate The Rule" />

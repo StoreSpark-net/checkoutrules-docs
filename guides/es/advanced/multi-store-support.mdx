@@ -1,0 +1,126 @@
+---
+title: Soporte multi-tienda
+description: "Aprende cómo exportar múltiples reglas de una tienda e importarlas a otra tienda Shopify."
+icon: "repeat"
+---
+
+## Visión general
+
+Puedes copiar reglas entre diferentes tiendas Shopify sin tener que crearlas manualmente. Puedes exportar reglas de una tienda como archivo ZIP y luego importar ese archivo a otra tienda. Esto ahorra tiempo, asegura consistencia, y facilita gestionar reglas similares a través de múltiples tiendas. También puedes crear un respaldo de tus reglas en caso de que necesites restaurarlas más tarde.
+
+## Uso
+
+### Exportar reglas
+
+Selecciona una o más reglas en tu tienda actual y expórtalas. Las reglas seleccionadas pueden descargarse como un **archivo ZIP** a tu computadora o exportarse como archivos individuales.
+
+Aquí están los pasos para exportar reglas:
+
+<Steps>
+  <Step title="Seleccionar reglas">
+
+Puedes seleccionar una o múltiples reglas que quieres exportar. Luego, haz clic en los tres puntos y selecciona **"Export"**. Entonces aparecerá un popup.
+
+<img
+  src="/images/advanced/multi-store-support/export-rules.webp"
+  alt="Export Rules"
+/>
+Alternativamente, puedes exportar una sola regla abriendo la regla, haciendo clic en **"More actions"**, y luego seleccionando **"Export"** para exportar esa regla individualmente.
+
+<img
+  src="/images/advanced/multi-store-support/single-rule-export.webp"
+  alt="Single Rule Export"
+/>
+</Step>
+
+
+<Step title="Elegir formato de exportación">
+
+En el popup, elige una de las siguientes opciones:
+
+- **Archivo ZIP** (Descarga un solo archivo ZIP conteniendo todas las reglas seleccionadas)
+- **Archivos individuales** (Descarga cada regla seleccionada como archivo JSON separado con tiempo escalonado)
+
+<img
+  src="/images/advanced/multi-store-support/choose-export-format.webp"
+  alt="Choose Export Format"
+/>
+</Step>
+
+<Step title="Completar exportación">
+
+Por último, haz clic en "Export" para exportar las reglas.
+
+<img
+  src="/images/advanced/multi-store-support/complete-export.webp"
+  alt="Complete Export"
+/>
+</Step>
+</Steps>
+
+### Importar reglas
+
+Abre otra tienda Shopify, ve a la opción de importación, y sube el archivo **ZIP** exportado previamente o archivos JSON de reglas individuales. Todas las reglas dentro del ZIP o los archivos JSON seleccionados se añadirán a la nueva tienda.
+
+Aquí están los pasos para importar reglas:
+
+<Steps>
+<Step title="Hacer clic en botón Import">
+
+Haz clic en el botón **"Import"**. Entonces aparecerá un popup.
+
+<img
+  src="/images/advanced/multi-store-support/click-import-button.webp"
+  alt="Click Import button"
+/>
+</Step>
+
+<Step title="Añadir archivos o arrastrar archivos para subir">
+
+En el popup, añade tus archivos o arrástralos y suéltalos (por ejemplo, `Rename payment methods-besure-export.json`).
+
+<img
+  src="/images/advanced/multi-store-support/add-files-or-drop-files-to-upload.webp"
+  alt="Add files or drop files to upload"
+/>
+</Step>
+
+<Step title="Completar importación">
+
+Por último, haz clic en el botón **"Import"** en el popup para importar las reglas a la tienda.
+
+<img
+  src="/images/advanced/multi-store-support/complete-import.webp"
+  alt="Complete Import"
+/>
+</Step>
+</Steps>
+
+## Caso de uso de ejemplo
+
+Digamos que gestionas dos tiendas Shopify:
+
+- **Tienda A** → ya tiene reglas de descuento para diferentes grupos de clientes.
+- **Tienda B** → necesita las mismas reglas de descuento.
+
+En lugar de recrear las reglas desde cero en **Tienda B**, puedes:
+
+<Steps>
+  <Step title="Exportar reglas de Tienda A">
+    Exporta las reglas de <strong>Tienda A</strong> como archivo ZIP.
+    <img
+      src="/images/advanced/multi-store-support/export-rules.webp"
+      alt="Export From Store A"
+    />
+  </Step>
+
+  <Step title="Importar reglas a Tienda B">
+    Importa ese archivo ZIP a <strong>Tienda B</strong>.
+    <img
+      src="/images/advanced/multi-store-support/import-into-store-b.webp"
+      alt="Import Into Store B"
+    />
+  </Step>
+</Steps>
+
+Las reglas se importarán y estarán listas para usar inmediatamente.

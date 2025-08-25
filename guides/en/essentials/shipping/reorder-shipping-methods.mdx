@@ -17,7 +17,7 @@ The following steps show how to create and configure a **Reorder Shipping Method
 
 ### Create a new rule
 
-From your [Shopify admin](/guides/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+From your [Shopify admin](/guides/en/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/en/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
 
 Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Reorder Shipping Methods" → click “Select Rule”_.
 
@@ -37,13 +37,13 @@ you can configure your rule.
 
 ### Rule configuration
 
-To configure the rule, first optionally we can add a name such as "Reorder shipping methods" to describe what it does. Then, select the rule [status](/guides/get-started/concepts#status): Testing, Active, or Deactivated.
+To configure the rule, first optionally we can add a name such as "Reorder shipping methods" to describe what it does. Then, select the rule [status](/guides/en/get-started/concepts#status): Testing, Active, or Deactivated.
 
 Here, as an example, we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
 
 <img src="/images/shared/rule-configure-1.webp" alt="Rule Configure 1" />
 
-Next, on the same screen, select the appropriate [Target](/guides/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to reorder shipping methods shown after a **shipping address** is entered. Then, we can select:
+Next, on the same screen, select the appropriate [Target](/guides/en/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to reorder shipping methods shown after a **shipping address** is entered. Then, we can select:
 
 - **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
 
@@ -59,7 +59,7 @@ Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to picku
   default option and modify it later.
 </Info>
 
-Next, on the same screen, select the relevant [condition set](/guides/get-started/concepts#condition-set), [condition](/guides/get-started/concepts#conditions-when), and [action](/guides/get-started/concepts#action-what).
+Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
 > As an example here we are going to choose the default condition set, then set the rule to always run, and select the operation to reorder the shipping methods from shipping prices highest to lowest.
 
@@ -107,6 +107,6 @@ Click on **Rules** in the sidebar to view all rules. Select the rule you want to
 <Warning>
   Rule activation is only available on paid plans. If you haven't upgraded your
   plan yet, follow the instructions
-  [here](/guides/get-started/installation#upgrade-your-plan) to upgrade.
+  [here](/guides/en/get-started/installation#upgrade-your-plan) to upgrade.
 </Warning>
 <img src="/images/shared/activate-the-rule.webp" alt="Activate The Rule" />

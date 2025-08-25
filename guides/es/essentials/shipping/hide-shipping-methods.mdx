@@ -1,0 +1,107 @@
+---
+title: "Ocultar métodos de envío"
+description: "Oculta ciertos métodos de envío o recogida en el checkout bajo condiciones dadas."
+icon: "eye-slash"
+---
+
+## Visión general de la regla
+
+Esta regla te permite ocultar automáticamente métodos específicos de envío o recogida en el checkout basándose en condiciones definidas. Puedes controlar la visibilidad usando criterios como total del carrito, dirección de envío, etiquetas de cliente o detalles del producto, etc.
+
+Esto ayuda a simplificar la experiencia de checkout removiendo opciones de entrega irrelevantes o no disponibles, reduciendo la confusión y mejorando las tasas de conversión.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Ocultar Métodos de Envío** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Envío" → selecciona tipo de regla de checkout "Ocultar Métodos de Envío" → haz clic en "Seleccionar Regla"_.
+
+<img
+  src="/images/essentials/shipping/select-hide-shipping-methods.webp"
+  alt="Select Hide Shipping Methods"
+/>
+
+Luego, en la **selección de plantilla**, elige una opción basada en tus requisitos. En la mayoría de casos, puedes elegir la regla vacía como punto de partida y modificarla según tus necesidades. Incluso si eliges una plantilla prellenada, podrás modificarla más tarde.
+
+<img
+  src="/images/essentials/shipping/select-rule-template-hide-shipping-methods.webp"
+  alt="Select Rule Template"
+/>
+A continuación, llegarás a la pantalla **Crear nueva regla de ocultar métodos de envío**, donde
+puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente podemos añadir un nombre como "Ocultar métodos de envío" para describir lo que hace. Luego, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado.
+
+Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-hide-shipping-methods.webp"
+  alt="Rule Configure 1"
+/>
+
+A continuación, en la misma pantalla, selecciona el [Objetivo](/guides/es/get-started/concepts#target) apropiado para definir dónde debe aplicarse la regla. Podemos elegir _"Envío"_ para ocultar métodos de envío mostrados después de que se ingresa una **dirección de envío**. Luego, podemos seleccionar:
+
+- **Todos los envíos excepto suscripciones** – aplica la regla solo a envíos regulares y omite cualquier pedido que contenga productos de suscripción. Esto es útil, ya que Shopify puede elegir automáticamente el método de envío más barato para productos de suscripción y ocultar todos los otros métodos de envío. Ocultar este método de envío más barato puede causar el error "no hay envío disponible". Por eso recomendamos usar esta opción si tienes productos de suscripción para evitar este error.
+
+- **Todos los envíos** – aplica la regla a cada pedido, incluyendo aquellos con artículos de suscripción.
+
+O, podemos elegir _"Recogida"_ si queremos que la regla se aplique específicamente a métodos de recogida mostrados cuando un cliente selecciona **"Recogida en tienda"** durante el checkout.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Select Target" />
+
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#condition-set), [condición](/guides/es/get-started/concepts#conditions-when) y [acción](/guides/es/get-started/concepts#action-what) relevantes.
+
+> Como ejemplo, aquí estamos usando el **Conjunto de condiciones 1** predeterminado, configurando la regla para ejecutarse **Siempre**, y configurándola para **ocultar métodos de envío** que contengan **"Express Worldwide"**.
+
+<img
+  src="/images/essentials/shipping/condition-set-hide-shipping-methods.webp"
+  alt="Condition Set Hide Shipping Methods"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota que el método de envío <i>DHL Express Worldwide</i>
+  está disponible.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Before Rule Apply"
+/>
+
+Después de configurar el email, la regla de checkout se ejecuta y oculta los métodos de envío especificados. Podemos verificar que el método de envío **"Express Worldwide"** ya no es visible, como se muestra a continuación.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-hide-shipping-methods.webp"
+  alt="After Rule Apply"
+/>
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-hide-shipping-methods.webp"
+  alt="Activate The Rule"
+/>

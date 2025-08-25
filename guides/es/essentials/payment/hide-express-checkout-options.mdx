@@ -1,0 +1,119 @@
+---
+title: "Ocultar opciones de checkout express"
+description: "Oculta las opciones de pago express en la parte superior de la página de checkout."
+icon: "eye-slash"
+---
+
+## Visión general de la regla
+
+Esta regla te permite ocultar botones de checkout express como PayPal, Apple Pay, Google Pay, o Shop Pay en la parte superior de la página de checkout basándose en condiciones dadas.
+
+<Warning>
+  Puedes <i>siempre</i> ocultar estos botones express, <b>solo</b> si estás en
+  el plan Shopify Plus debido a restricciones de Shopify. Si estás en cualquier otro
+  plan de Shopify, entonces esta regla ocultará todos los botones de checkout express, solo cuando la
+  dirección de envío no esté llena. Cuando la dirección de envío esté llena,
+  entonces los botones de checkout express se volverán visibles nuevamente. Este mecanismo
+  asegura que al menos el cliente siempre ingrese su dirección de envío.
+</Warning>
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Ocultar Opciones de Checkout Express** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#go-to-the-app), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#create-a-sample-rule) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Pago" → selecciona tipo de regla de checkout "Ocultar Opciones de Checkout Express" → haz clic en "Seleccionar Regla"_.
+
+<img
+  src="/images/essentials/payment/select-hide-express-checkout-options.webp"
+  alt="Select Rule"
+/>
+
+Luego, aparecerá un popup de **selección de layout de checkout**. Elige una opción basada en la configuración de tu tienda, ya sea **checkout de 1 página** o **checkout de 3 páginas**. Si estás usando checkout de una página en tu tienda, entonces debes seleccionar **checkout de 1 página**. Si estás usando checkout de 3 páginas, entonces debes seleccionar **checkout de 3 páginas**.
+
+<img
+  src="/images/essentials/payment/select-rule-template-hide-express-checkout-options.webp"
+  alt="Select Rule Template"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de ocultar opciones de checkout express**, donde puedes configurar tu regla.
+
+### Configuración de regla
+
+Para configurar la regla, primero opcionalmente podemos añadir un nombre como "Ocultar opciones de checkout express" para describir lo que hace. Luego, selecciona el [estado](/guides/es/get-started/concepts#status) de la regla: Prueba, Activo o Desactivado.
+
+Aquí vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout para clientes reales.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-express-checkout-options.webp"
+  alt="Rule Configure 1"
+/>
+
+A continuación, si seleccionaste **checkout de 1 página** en el paso anterior, necesitarás configurar tus métodos de pago como se requiere en la configuración de la regla. Haz clic en **Marcar como hecho** para cada método una vez que hayas seguido las instrucciones para configurarlo. Opcionalmente, puedes añadir condiciones si quieres controlar cuándo debe ejecutarse la regla.
+
+<Note>
+  Puedes ver los videos de configuración proporcionados y seguir junto, si no estás seguro
+  de cómo configurar un método de pago manual como se requiere en la configuración de la regla.
+</Note>
+
+<img
+  src="/images/essentials/payment/setup-hide-payment-methods-options.webp"
+  alt="Setup"
+/>
+
+<Info>
+  Solo necesitas configurar estos métodos de pago manuales, si no estás en
+  Shopify Plus. Si estás en Shopify Plus, entonces no hay necesidad de configurar
+  estos métodos de pago manuales.
+</Info>
+
+O, si seleccionaste **checkout de 3 páginas** en el paso anterior, necesitarás elegir si ocultar o mostrar los métodos de pago listados en la pantalla a continuación para tanto la **página de información de checkout** como la **página de pago de checkout**. Opcionalmente, puedes añadir condiciones si quieres controlar cuándo debe ejecutarse la regla para ambas páginas.
+
+<img
+  src="/images/essentials/payment/setup-3-page-checkout-hide-express-checkout-options.webp"
+  alt="Setup"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, tenemos que usar `test@testing.com` como el email, en lugar del email real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen de abajo muestra la página de checkout <b>antes</b> de que se usara la dirección de email
+  de prueba. Por favor nota que el botón de pago express PayPal es visible.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-hide-express-checkout-options.webp"
+  alt="Before Rule Apply"
+/>
+
+Después de configurar el email, la regla de checkout se ejecuta y verás que el botón de pago express PayPal está **oculto**, como se muestra a continuación.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-express-checkout-options.webp"
+  alt="After Rule Apply"
+/>
+
+## Activar la regla
+
+Una vez que las pruebas estén hechas, podemos activar la regla, para que pueda comenzar a hacer cambios al checkout para clientes reales. Solo las reglas activadas pueden hacer cambios al checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que quieres activar, luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes pagos. Si no has actualizado tu
+  plan aún, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#upgrade-your-plan) para actualizar.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-express-checkout-options.webp"
+  alt="Activate The Rule"
+/>

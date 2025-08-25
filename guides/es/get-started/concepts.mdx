@@ -1,0 +1,156 @@
+---
+title: "Conceptos"
+description: "Aprende los conceptos clave detrás de cómo funciona BeSure Checkout Rules para personalizar y controlar tu experiencia de checkout de Shopify."
+icon: "puzzle-piece"
+---
+
+## ¿Qué es una regla?
+
+Una **regla de checkout** es un conjunto de lógica que define **qué** debe suceder durante el proceso de checkout y **cuándo**.
+
+## Elementos esenciales de las reglas
+
+Estas son las partes esenciales de cada regla que definen su propósito, cuándo debe ejecutarse, qué debe hacer y cómo se organizan esas acciones.
+
+### Estado
+
+Indica el estado actual de la regla, si está en prueba, activa o desactivada. Esto ayuda a controlar cuándo la regla surte efecto.
+
+<Tip>
+  Se recomienda comenzar con una regla en modo de prueba, para asegurar que la
+  regla funcione como se espera sin afectar a tus clientes. Puedes cambiar
+  al modo activo después de las pruebas.
+</Tip>
+
+<img src="/images/concepts/rule-status.webp" alt="Rule Status" />
+
+Aquí hay un ejemplo de cómo activar el modo de prueba en la página de checkout.
+
+<Frame>
+  <img src="/images/concepts/testing.webp" alt="Testing Mode" />
+</Frame>
+
+### Conjunto de condiciones
+
+Puedes usar cualquier conjunto de condiciones que se adapte a tus necesidades, si no estás seguro puedes comenzar usando solo el conjunto de condiciones 1 o usando la caja de búsqueda para buscar qué conjunto de condiciones tiene esa condición que necesitas y cambiar a él.
+
+> Por ejemplo, si quieres ocultar un método de envío basado en el metacampo del producto, entonces debes cambiar al conjunto de condiciones 4, luego podrás usar la condición de metacampo del producto.
+
+<Warning>
+  La selección del conjunto de condiciones solo está disponible en el momento de creación de la regla. No puedes
+  cambiar el conjunto de condiciones después de que la regla es creada. Si necesitas un
+  conjunto de condiciones diferente, crea una nueva regla.
+</Warning>
+
+<img src="/images/concepts/condition-set.webp" alt="Condition Set" />
+
+Obtén más información sobre conjuntos de condiciones [aquí](/guides/es/essentials/condition-sets/introduction) o aprende más sobre cada conjunto de condiciones a continuación.
+
+<CardGroup cols={3}>
+  <Card
+    title="Conjunto de Condiciones 1"
+    icon="1"
+    href="/guides/es/essentials/condition-sets/condition-set-1"
+  >
+    Aprende más sobre el conjunto de condiciones 1.
+  </Card>
+  <Card
+    title="Conjunto de Condiciones 2"
+    icon="2"
+    href="/guides/es/essentials/condition-sets/condition-set-2"
+  >
+    Aprende más sobre el conjunto de condiciones 2.
+  </Card>
+  <Card
+    title="Conjunto de Condiciones 3"
+    icon="3"
+    href="/guides/es/essentials/condition-sets/condition-set-3"
+  >
+    Aprende más sobre el conjunto de condiciones 3.
+  </Card>
+  <Card
+    title="Conjunto de Condiciones 4"
+    icon="4"
+    href="/guides/es/essentials/condition-sets/condition-set-4"
+  >
+    Aprende más sobre el conjunto de condiciones 4.
+  </Card>
+  <Card
+    title="Conjunto de Condiciones 5"
+    icon="5"
+    href="/guides/es/essentials/condition-sets/condition-set-5"
+  >
+    Aprende más sobre el conjunto de condiciones 5.
+  </Card>
+  <Card
+    title="Conjunto de Condiciones 6"
+    icon="6"
+    href="/guides/es/essentials/condition-sets/condition-set-6"
+  >
+    Aprende más sobre el conjunto de condiciones 6.
+  </Card>
+</CardGroup>
+
+### Condiciones (el "cuándo")
+
+Las condiciones se basan en el conjunto de condiciones seleccionado y definen los criterios que deben cumplirse para activar la regla. Usa AND (todos deben ser verdaderos), OR (cualquiera debe ser verdadero), para agrupar lógica relacionada para casos complejos.
+
+> Ver ejemplo a continuación - aquí la regla se ejecutará bajo cualquiera de las 2 circunstancias: cuando la fecha sea 4 de agosto de 2025, y ese día sea lunes, entonces la regla se ejecutará, O, todos los días cuando la hora sea 00:00 lo que básicamente significa todos los días a medianoche.
+
+<img src="/images/concepts/condition.webp" alt="Condition" />
+
+### Acción (el "qué")
+
+Cuando las condiciones en la sección "cuándo" son verdaderas, el sistema realizará la acción que definas. Cada acción se ejecuta solo si sus criterios específicos (condición de acción y operaciones) también se cumplen.
+
+> Ver ejemplo a continuación - aquí la acción está configurada para reordenar métodos de envío de forma fija, colocando 'Entrega al Día Siguiente' en la parte superior y poniendo todos los otros métodos de envío debajo de él.
+
+<img src="/images/concepts/action.webp" alt="Action" />
+
+### Bloque
+
+Juntas, las **condiciones** (el "cuándo"), y la **acción** (el "qué") forman un **bloque de regla**. Puedes usar **múltiples bloques** dentro de una regla para manejar escenarios complejos fácilmente.
+
+<img src="/images/concepts/block.webp" alt="Block" />
+
+## Opciones adicionales (para algunas reglas)
+
+Estas partes opcionales aparecen en tipos específicos de reglas y añaden más control sobre cómo y dónde se aplica la regla o se comporta bajo condiciones especiales.
+
+### Objetivo
+
+Define dónde se aplica la regla (por ejemplo, envío o recogida). Se usa solo en reglas de envío.
+
+<img src="/images/concepts/target.webp" alt="Target" />
+
+### Combinaciones
+
+Controla si el descuento de la regla puede combinarse con descuentos de producto, pedido o envío. Se usa solo en reglas de **Descuento**.
+
+<img src="/images/concepts/combinations.webp" alt="Combinations" />
+
+### Estrategia
+
+Si la regla de descuento tiene múltiples bloques, entonces la selección de estrategia entra en juego. Determina cómo se aplican esos bloques de regla (por ejemplo, el primero válido o el valor más alto). Se usa solo en la regla **Descuento Cantidad de Pedido**.
+
+<img src="/images/concepts/strategy.webp" alt="Strategy" />
+
+### Disparador
+
+Especifica qué paso activará la regla (por ejemplo, cuando el cliente está interactuando con el checkout o completando el checkout, o ambos). Se usa solo en la regla **Validar o Bloquear Checkout**.
+
+<img src="/images/concepts/trigger.webp" alt="Trigger" />
+
+### Respaldo
+
+Define qué sucede en la rara circunstancia, cuando la aplicación tiene un problema en el checkout (por ejemplo, permitir o bloquear checkout). Se usa solo en la regla **Validar o Bloquear Checkout**.
+
+<img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+### Usos máximos de descuento
+
+Define el **número total de veces** que el descuento puede usarse en todos los clientes. Opcionalmente, también puede restringir el uso a **una vez por cliente**. Solo aplicable cuando se usan códigos de descuento, no descuentos automáticos. Se usa solo en reglas de **Descuento**.
+
+> Por ejemplo, si el límite de uso **se establece en 1** y **"Limitar a un uso por cliente"** está desmarcado, solo un cliente podrá usar el código de descuento. Después de eso, el código se vuelve inválido para todos los demás.
+
+<img src="/images/concepts/maximum-discount-uses.webp" alt="Fallback" />
