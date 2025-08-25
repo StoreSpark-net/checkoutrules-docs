@@ -1,0 +1,52 @@
+### Nombre de pila
+
+Se utiliza para comparar el nombre del cliente con uno o más valores específicos, conteos o estados, según una de las siguientes subcondiciones:
+
+- **Contiene** (Coincide si el nombre contiene el valor o valor parcial especificado)
+- **No contiene** (Coincide si el nombre no contiene el valor o valor parcial especificado)
+- **Está vacío** (Coincide si no se ingresa ningún nombre)
+- **No está vacío** (Coincide si se ingresa cualquier valor en el campo de nombre)
+- **Es** (Coincide si el nombre coincide exactamente con el valor especificado)
+- **No es** (Coincide si el nombre no coincide exactamente con el valor especificado)
+- **Tiene un número de caracteres mayor o igual** (Coincide si el número total de caracteres en el nombre es mayor o igual al número especificado)
+- **Tiene un número de caracteres menor o igual** (Coincide si el número total de caracteres en el nombre es menor o igual al número especificado)
+- **Tiene solo** (Coincide si el nombre contiene únicamente el tipo de caracteres permitido en el menú desplegable)
+- **No tiene solo** (Coincide si el nombre contiene caracteres distintos a los permitidos en el menú desplegable)
+
+Para **Contiene**, **No contiene**, **Es** y **No es**, ingrese el valor a coincidir.
+
+> Por ejemplo, `No es: Jane` → Coincide si el nombre es cualquier cosa excepto “Jane”.
+
+<img
+  src="/images/essentials/condition-sets/first-name-is-not.webp"
+  alt="El nombre no es"
+/>
+
+Para **Tiene solo** y **No tiene solo**, seleccione el tipo de caracteres en el menú desplegable:
+
+- **Caracteres en inglés** (Permite solo A–Z y a–z)
+- **Caracteres en inglés + variantes con acentos** (Permite A–Z, a–z, además de caracteres acentuados como é, ñ, ö)  
+  > Por ejemplo, `tiene solo: caracteres en inglés` → Coincide si el nombre contiene únicamente caracteres en inglés.
+
+<img
+  src="/images/essentials/condition-sets/first-name-has-only.webp"
+  alt="El nombre tiene solo"
+/>
+
+Para **Tiene un número de caracteres mayor o igual** o **Tiene un número de caracteres menor o igual**, ingrese el umbral de caracteres.
+
+> Por ejemplo, `Tiene un número de caracteres mayor o igual a 5` → Coincide si el nombre contiene 5 o más caracteres.
+
+<img
+  src="/images/essentials/condition-sets/first-name-has-greater-value.webp"
+  alt="El nombre tiene un valor mayor"
+/>
+
+Para **Está vacío** y **No está vacío**, no es necesario ingresar un valor.
+
+> Por ejemplo, `Está vacío` → Coincide si el campo de nombre se deja en blanco.
+
+<img
+  src="/images/essentials/condition-sets/first-name-is-empty.webp"
+  alt="El nombre está vacío"
+/>

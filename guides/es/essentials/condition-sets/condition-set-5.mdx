@@ -1,0 +1,198 @@
+---
+title: "Conjunto de Condiciones 5"
+description: "Aprende sobre cada condición disponible dentro de _Conjunto de <br />Condiciones 5_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/es/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/es/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/es/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/es/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/es/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/es/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/es/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/es/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/es/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/es/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/es/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/es/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/es/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/es/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
+import Market from "/snippets/condition-set/es/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/es/first-name.mdx";
+import LastName from "/snippets/condition-set/es/last-name.mdx";
+import Company from "/snippets/condition-set/es/company.mdx";
+import PhoneNumber from "/snippets/condition-set/es/phone-number.mdx";
+import CityArea from "/snippets/condition-set/es/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/es/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Cliente
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## Detalles B2B
+
+### Metacampo de empresa compradora
+
+Esta condición verifica un **metacampo de empresa compradora** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)  
+- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)  
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)  
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)  
+- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)  
+- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)  
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)  
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)  
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
+
+> Por ejemplo, `Namespace: profile` · `Key: industry` · `Tiene alguno de estos valores: Retail, Wholesale` → Coincide si el metacampo de la empresa compradora contiene “Retail” o “Wholesale”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="Metacampo de Empresa Compradora Tiene Algún Valor"
+/>
+
+Para **Tiene un número mayor o igual a** y **Tiene un número menor o igual a**, ingresa un único valor numérico en el campo para comparar con el valor numérico del metacampo.
+
+> Por ejemplo, `Namespace: finance` · `Key: annual_revenue` · `Tiene un número mayor o igual a 1000000` → Coincide si los ingresos anuales de la empresa compradora son de un millón o más.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="Metacampo de Empresa Compradora Mayor Valor"
+/>
+
+Para **Tiene un número de valores mayor o igual a** y **Tiene un número de valores menor o igual a**, ingresa un único valor numérico en el campo para comparar con el conteo de valores en el metacampo.
+
+> Por ejemplo, `Namespace: compliance` · `Key: certifications` · `Tiene un número de valores menor o igual a 2` → Coincide si la empresa tiene dos o menos certificaciones.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="Metacampo de Empresa Compradora Conteo de Valores"
+/>
+
+### Metacampo de ubicación de empresa compradora
+
+Esta condición verifica un **metacampo de ubicación de empresa compradora** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)  
+- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)  
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)  
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)  
+- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)  
+- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)  
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)  
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)  
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
+
+> Por ejemplo, `Namespace: address` · `Key: country_code` · `No tiene ninguno de estos valores: US, CA` → Coincide si la ubicación de la empresa compradora no está en Estados Unidos o Canadá.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="Metacampo de Ubicación de Empresa Compradora No Tiene"
+/>
+
+Para **Tiene un número mayor o igual a** y **Tiene un número menor o igual a**, ingresa un único valor numérico en el campo para comparar con el valor numérico del metacampo.
+
+> Por ejemplo, `Namespace: logistics` · `Key: warehouse_capacity` · `Tiene un número menor o igual a 5000` → Coincide si la capacidad del almacén de la ubicación de la empresa compradora es de 5,000 unidades o menos.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="Metacampo de Ubicación de Empresa Compradora Menor Valor"
+/>
+
+Para **Tiene un número de valores mayor o igual a** y **Tiene un número de valores menor o igual a**, ingresa un único valor numérico en el campo para comparar con el conteo de valores en el metacampo.
+
+> Por ejemplo, `Namespace: services` · `Key: supported_languages` · `Tiene un número de valores mayor o igual a 4` → Coincide si la ubicación admite cuatro o más idiomas.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="Metacampo de Ubicación de Empresa Compradora Conteo de Valores"
+/>
+
+## Detalles del Pedido
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## El Carrito Tiene Algún Artículo
+
+<ProductTag />
+<ProductTags />
+
+### Opción de variante de producto
+
+Esta condición verifica las **Opciones de Variantes de Producto** contra criterios específicos. Si algún producto en el carrito tiene el valor de la Opción de Variante de Producto ingresado, basado en una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si las Opciones de Variantes de Producto tienen al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si las Opciones de Variantes de Producto no tienen ninguno de los valores ingresados)  
+- **Tiene algún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen solo los valores ingresados y ningún otro)  
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es mayor o igual al número ingresado)  
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es menor o igual al número ingresado)  
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores de Opciones de Variantes de Producto en el campo. Separa múltiples valores con comas.
+
+> Por ejemplo, `Tiene alguno de estos valores: Red, Blue` → Coincide si la Opción de Variante de Producto incluye “Red” o “Blue”.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="Opción de Variante de Producto"
+/>
+
+Para **Tiene un número de valores mayor o igual a** y **Tiene un número de valores menor o igual a**, ingresa un único valor numérico en el campo para comparar con el conteo de Opciones de Variantes de Producto.
+
+> Por ejemplo, `Tiene un número de valores mayor o igual a 3` → Coincide si hay tres o más Opciones de Variantes de Producto.
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="Conteo de Opciones de Variantes de Producto"
+/>
+
+## Envío
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localización
+<UserLanguage />
+<Market />
+
+## Dirección de Envío
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

@@ -1,0 +1,54 @@
+### Address line 2 (Apartment, suite, etc)
+
+Used to compare the customer’s address from Address Line 2 (Apartment, suite, unit, building, floor, etc.) with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if Address Line 2 contains the specified value or partial value)
+- **Does not contain** (Matches if Address Line 2 does not contain the specified value or partial value)
+- **Is empty** (Matches if no value is entered in Address Line 2)
+- **Is not empty** (Matches if any value is entered in Address Line 2)
+- **Has no of digits greater than or equals** (Matches if the total number of digits in Address Line 2 is greater than or equal to the specified number)
+- **Has no of digits less than or equals** (Matches if the total number of digits in Address Line 2 is less than or equal to the specified number)
+- **Has no of characters greater than or equals** (Matches if the total number of characters in Address Line 2 is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total number of characters in Address Line 2 is less than or equal to the specified number)
+- **Has no of words greater than or equals** (Matches if the total number of words in Address Line 2 is greater than or equal to the specified number)
+- **Has no of words less than or equals** (Matches if the total number of words in Address Line 2 is less than or equal to the specified number)
+- **Has only** (Matches if Address Line 2 contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if Address Line 2 contains characters other than the allowed character type from the dropdown)
+
+For **Contains** and **Does not contain**, enter the value to match.
+
+> For example, `Contains: Apt` → Matches if Address Line 2 contains the word “Apt”.
+
+<img
+  src="/images/essentials/condition-sets/address2-contains.webp"
+  alt="Address Line 2 Contains"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters + accent variants` → Matches if Address Line 2 contains English characters and accented characters.
+
+<img
+  src="/images/essentials/condition-sets/address2-has-only.webp"
+  alt="Address Line 2 Has Only"
+/>
+
+For **Has no of digits/characters/words greater than or equals** or **less than or equals**, enter the threshold value.
+
+> For example, `Has no of words greater than or equals 3` → Matches if Address Line 2 contains 3 or more words.
+
+<img
+  src="/images/essentials/condition-sets/address2-greater-than.webp"
+  alt="Address Line 2 Greater Than"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if Address Line 2 is left blank.
+
+<img
+  src="/images/essentials/condition-sets/address2-is-empty.webp"
+  alt="Address Line 2 Is Empty"
+/>

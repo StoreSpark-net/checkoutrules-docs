@@ -1,0 +1,52 @@
+### Full name (First name + Last name)
+
+Used to compare the customer’s full name with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the full name contains the specified value or partial value)
+- **Does not contain** (Matches if the full name does not contain the specified value or partial value)
+- **Is empty** (Matches if no name is entered)
+- **Is not empty** (Matches if any value is entered in the name field)
+- **Is** (Matches if the full name exactly matches the specified value)
+- **Is not** (Matches if the full name is not exactly the specified value)
+- **Has no of characters greater than or equals** (Matches if the total character count in the name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total character count in the name is less than or equal to the specified number)
+- **Has only** (Matches if the full name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the full name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Does not contain: Test` → Matches if the name does not contain “Test” anywhere.
+
+<img
+  src="/images/essentials/condition-sets/full-name-does-not-contain.webp"
+  alt="Full Name Does Not Contain"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `has only: english characters` → Matches if the customer’s name contains english characters only.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-only-english-chars.webp"
+  alt="Full Name Has Only English Chars"
+/>
+
+For **Has no of characters greater than or equals** or **Has no of characters less than or equals**, enter the character count threshold.
+
+> For example, `Has no of characters greater than or equals 10` → Matches if the full name contains 10 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-greater-value.webp"
+  alt="Full Name Has Greater Value"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the full name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/full-name-is-empty.webp"
+  alt="Full Name Is Empty"
+/>

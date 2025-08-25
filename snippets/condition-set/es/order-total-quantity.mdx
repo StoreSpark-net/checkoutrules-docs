@@ -1,0 +1,30 @@
+### Cantidad total del pedido
+
+Esta condición verifica la **cantidad total de artículos en un pedido** en función de criterios específicos, basados en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando la cantidad total de artículos es mayor o igual al número ingresado)
+- **es menor o igual que** (Coincide cuando la cantidad total de artículos es menor o igual al número ingresado)
+- **es múltiplo de** (Coincide cuando la cantidad total es un múltiplo exacto del número ingresado)
+- **no es múltiplo de** (Coincide cuando la cantidad total no es un múltiplo del número ingresado)
+
+Para configurar estas condiciones, ingrese una cantidad en el campo y seleccione la comparación adecuada del menú desplegable.
+
+<Note>
+  La cantidad se refiere a la **suma de todas las cantidades de artículos** en el pedido, no al número de productos distintos.
+</Note>
+
+> **Ejemplo para “es múltiplo de”**:  
+> `es múltiplo de 5` → Coincide con pedidos con cantidades totales como 5, 10, 15, 20, etc.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-order-total.webp"
+  alt="Es múltiplo de la cantidad total del pedido"
+/>
+
+> **Ejemplo para “es mayor o igual que”**:  
+> `es mayor o igual que 3` → Coincide con pedidos con 3 o más artículos en total.
+
+<img
+  src="/images/essentials/condition-sets/order-total-is-greater-value.webp"
+  alt="La cantidad total del pedido es mayor"
+/>

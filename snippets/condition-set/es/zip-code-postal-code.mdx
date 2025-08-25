@@ -1,0 +1,84 @@
+### Código postal
+
+Se utiliza para comparar los valores del Código postal (el campo Código postal en la página de pago en la dirección de envío) con uno o más códigos postales específicos, basándose en una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el campo de código postal contiene al menos uno de los valores listados)  
+- **No tiene ninguno de estos valores** (Coincide si el campo de código postal no contiene ninguno de los valores listados)  
+- **Tiene un valor entre estos valores** (Coincide si el valor del campo de código postal se encuentra dentro del rango especificado)  
+- **No tiene un valor entre estos valores** (Coincide si el valor del campo de código postal no se encuentra dentro del rango especificado)  
+- **Tiene cualquier otro valor además de estos valores** (Coincide si el campo de código postal contiene valores distintos a los listados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si el campo de código postal contiene solo los valores listados y ningún otro)  
+- **Tiene solo dígitos** (Coincide si el campo de código postal contiene únicamente caracteres numéricos)  
+- **No tiene solo dígitos** (Coincide si el campo de código postal contiene algún carácter no numérico)  
+- **Tiene un número de dígitos entre** (Coincide si el número de dígitos se encuentra dentro del rango especificado)  
+- **No tiene un número de dígitos entre** (Coincide si el número de dígitos no se encuentra dentro del rango especificado)  
+- **Está vacío** (Coincide si el campo de código postal no tiene ningún valor)  
+- **No está vacío** (Coincide si el campo de código postal contiene algún valor)  
+
+Usa **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, o **No tiene ningún otro valor además de estos valores** para comparar contra uno o más códigos postales específicos. Separa múltiples valores con comas.  
+
+<Note>
+  Usa el comodín * para hacer coincidir múltiples códigos postales. Por ejemplo,
+  BT* coincidirá con BT12, bt-590, etc. Usa ? para coincidir con cualquier
+  carácter único.
+</Note>
+
+> Por ejemplo, `Tiene alguno de estos valores: BT*` → Coincide con todos los códigos postales que empiezan con “BT”.  
+
+<img
+  src="/images/essentials/condition-sets/have-zipcodes.webp"
+  alt="Tener Códigos Postales"
+/>
+
+> Otro ejemplo, `No tiene ninguno de estos valores: 12345, 67890` → Coincide si el código no es “12345” ni “67890”.  
+
+<img
+  src="/images/essentials/condition-sets/dont-have-zipcodes.webp"
+  alt="No Tener Códigos Postales"
+/>
+
+Usa **Tiene un valor entre estos valores** o **No tiene un valor entre estos valores** para coincidir con códigos postales dentro o fuera de un rango numérico.  
+
+<Note>
+  Introduce solo números. Todos los valores comprendidos entre el valor inicial
+  y el valor final serán coincidentes, incluyendo el valor inicial y el final.
+</Note>
+
+> Por ejemplo, `Tiene un valor entre estos valores: 10000 – 20000` → Coincide si el código está entre “10000” y “20000”.  
+
+<img
+  src="/images/essentials/condition-sets/in-between-value-zipcodes.webp"
+  alt="Códigos Postales Entre Valores"
+/>
+
+Usa **Tiene solo dígitos** o **No tiene solo dígitos** para coincidir con códigos postales que contengan únicamente caracteres numéricos (0–9) o aquellos que incluyan caracteres no numéricos, como letras, espacios o símbolos.  
+
+> Por ejemplo, `Tiene solo dígitos` → Coincide únicamente con dígitos (0–9).  
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field-digits.webp"
+  alt="Código Postal Solo con Dígitos"
+/>
+
+Usa **Tiene un número de dígitos entre** o **No tiene un número de dígitos entre** para coincidir en función de la cantidad de dígitos del código.  
+
+<Note>
+  Introduce solo números. Todos los valores comprendidos entre el número de
+  dígitos dado serán coincidentes.
+</Note>
+
+> Por ejemplo, `Tiene un número de dígitos entre: 4 – 6` → Coincide con códigos que contengan entre 4 y 6 dígitos.  
+
+<img
+  src="/images/essentials/condition-sets/in-between-digits-zipcodes.webp"
+  alt="Códigos Postales Entre Dígitos"
+/>
+
+Usa **Está vacío** o **No está vacío** cuando solo necesites comprobar si el campo está rellenado.  
+
+> Por ejemplo, `No está vacío` → Coincide si se introduce cualquier valor en el campo.  
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field.webp"
+  alt="Código Postal Sin Campo"
+/>

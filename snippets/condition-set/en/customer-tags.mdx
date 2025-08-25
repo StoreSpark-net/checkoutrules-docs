@@ -1,0 +1,21 @@
+### Customer tags
+
+This condition checks the customer’s **tags** against specific criteria, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the customer has at least one of the entered tags)
+- **Does not have any of these values** (Matches if the customer has none of the entered tags)
+
+<Warning>
+  You can only use this condition with the same values throughout the rule. If
+  you want to use different values in different rule blocks, you should switch
+  to condition set 5 which allows more flexibility.
+</Warning>
+
+To set these conditions, type one or more tags into the field and choose the appropriate comparison from the dropdown. Separate multiple tags with commas and then press enter to load the tags simultaneously.
+
+> For example, `Has any of these values: VIP, VVIP` → Matches customers who have either the “VIP” or “VVIP” tag.
+
+<img
+  src="/images/essentials/condition-sets/customer-tags.webp"
+  alt="Customer Tags"
+/>

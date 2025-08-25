@@ -1,0 +1,37 @@
+### Código de provincia / Código de estado
+
+Se utiliza para comparar los valores de la Provincia/Estado (el campo Provincia/Estado en la página de pago en la dirección de envío) con uno o más valores o estados específicos, en función de una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el campo de provincia contiene al menos uno de los valores listados)
+
+- **No tiene ninguno de estos valores** (Coincide si el campo de provincia no contiene ninguno de los valores listados)
+
+- **Tiene cualquier otro valor además de estos valores** (Coincide si el campo de provincia contiene valores distintos a los listados)
+
+- **No tiene ningún otro valor además de estos valores** (Coincide si el campo de provincia contiene solo los valores listados y ningún otro)
+
+- **Está vacío** (Coincide si el campo de provincia no tiene ningún valor)
+
+- **No está vacío** (Coincide si el campo de provincia contiene algún valor)
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, **No tiene ningún otro valor además de estos valores**, introduzca uno o más valores para que coincidan. Separe varios valores con comas.
+
+<Note>
+  Agregue solo la abreviatura del código de provincia/estado de 2 o 3 letras en formato "ISO_3166-2".
+</Note>
+
+> Por ejemplo, `No tiene ningún otro valor además de estos valores: CA, TX` → Coincide si el campo contiene solo “CA” o “TX” y ningún otro valor.
+
+<img
+  src="/images/essentials/condition-sets/multiple-provinces.webp"
+  alt="Múltiples provincias o estados"
+/>
+
+Para **Está vacío** y **No está vacío**, no se necesita introducir ningún valor.
+
+> Por ejemplo, `No está vacío` → Coincide si se introduce cualquier valor en el campo.
+
+<img
+  src="/images/essentials/condition-sets/province-not-available.webp"
+  alt="Provincia o estado no disponible"
+/>

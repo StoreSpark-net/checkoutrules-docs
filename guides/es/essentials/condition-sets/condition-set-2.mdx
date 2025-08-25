@@ -1,0 +1,359 @@
+---
+title: "Conjunto de Condiciones 2"
+description: "Aprende sobre cada condición disponible dentro de _Conjunto de <br />Condiciones 2_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/es/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/es/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/es/email-address.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/es/customer-total-number-of-previous-orders.mdx";
+import OrderTotalAmount from "/snippets/condition-set/es/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/es/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/es/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/es/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/es/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/es/order-total-subscription-weight.mdx";
+import SKU from "/snippets/condition-set/es/sku.mdx";
+import Collection from "/snippets/condition-set/es/collection.mdx";
+import Collections from "/snippets/condition-set/es/collections.mdx";
+import LineItemProperty from "/snippets/condition-set/es/line-item-property.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/es/cart-has-shipping-product-requires-delivery.mdx";
+import cartHasNoShippingProduct from "/snippets/condition-set/es/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/es/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/es/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/es/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/es/cart-has-no-subscription-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/es/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/es/first-name.mdx";
+import LastName from "/snippets/condition-set/es/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/es/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/es/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/es/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/es/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/es/address-line2.mdx";
+import Company from "/snippets/condition-set/es/company.mdx";
+import PhoneNumber from "/snippets/condition-set/es/phone-number.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/es/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Cliente
+
+### El cliente ha iniciado sesión
+
+Coincide si el cliente tiene una sesión activa y está actualmente conectado a su cuenta de la tienda en el momento del checkout.
+
+<img
+  src="/images/essentials/condition-sets/customer-logged-in.webp"
+  alt="El Cliente Ha Iniciado Sesión"
+/>
+
+### El cliente no ha iniciado sesión
+
+Coincide si el cliente no tiene una sesión activa y está realizando el checkout como invitado.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-logged-in.webp"
+  alt="El Cliente No Ha Iniciado Sesión"
+/>
+
+<EmailAddress />
+<CustomerTotalNumberOfPreviousOrders />
+
+## Detalles del Pedido
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+## Detalles del Carrito
+
+### Atributo del carrito
+
+Esta condición compara los **atributos adjuntos al carrito** con criterios específicos, basados en una de las siguientes sub-condiciones:
+
+- **Tiene alguno de estos valores** (Coincide cuando el atributo del carrito contiene alguno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide cuando el atributo del carrito no contiene ninguno de los valores ingresados)  
+- **Tiene valor vacío** (Coincide cuando el atributo del carrito existe pero no tiene valor)  
+- **No tiene valor vacío** (Coincide cuando el atributo del carrito existe y contiene un valor)
+
+Para configurar estas condiciones:
+
+<Steps>
+  <Step title="Ingresar clave del atributo">
+    Ingresa la <strong>clave del atributo</strong> en el campo “Ingresar clave”.
+  </Step>
+
+  <Step title="Ingresar valor(es)">
+    Ingresa el/los <strong>valor(es)</strong> a comparar (cuando corresponda).
+  </Step>
+
+  <Step title="Elegir opción de comparación">
+    Elige la opción de comparación desde el menú desplegable.
+  </Step>
+</Steps>
+
+Para **Tiene alguno de estos valores** y **No tiene ninguno de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
+
+<Note>
+  Usa el comodín * para coincidir con valores parciales.  
+  Por ejemplo, valor* coincidirá con valor123, VALUETEST, etc.
+</Note>
+
+> **Ejemplo de “Tiene alguno de estos valores”**:  
+> Clave: `delivery_method`  
+> Valores: `express, pickup`  
+> → Coincide con carritos donde el atributo `delivery_method` es `express` o `pickup`.
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
+  alt="Atributo del Carrito Tiene Alguno de los Valores"
+/>
+
+Para **Tiene valor vacío** y **No tiene valor vacío**, no se requiere ingresar valores.
+
+> **Ejemplo de “No tiene valor vacío”**:  
+> Clave: `gift_message`  
+> → Coincide con carritos donde el atributo `gift_message` existe y contiene texto (ej. “¡Feliz Cumpleaños!”).
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-not-empty-value.webp"
+  alt="Atributo del Carrito No Tiene Valor Vacío"
+/>
+
+### Cantidad de producto por SKU
+
+Esta condición verifica la **cantidad de un producto específico (por SKU)** en el pedido contra los criterios definidos, basándose en una de las siguientes subcondiciones:
+
+- **la cantidad es mayor o igual** (Coincide cuando la cantidad del SKU especificado es mayor o igual al número ingresado)  
+- **la cantidad es menor o igual** (Coincide cuando la cantidad del SKU especificado es menor o igual al número ingresado)  
+- **la cantidad es divisible por** (Coincide cuando la cantidad del SKU especificado es un múltiplo exacto del número ingresado)  
+- **la cantidad no es divisible por** (Coincide cuando la cantidad del SKU especificado no es un múltiplo del número ingresado)  
+
+<Steps>
+  <Step title="Ingresar SKU">
+    Ingresa el <strong>SKU</strong> en el campo “Ingresar SKU”.
+  </Step>
+
+  <Step title="Ingresar cantidad">
+    Ingresa la <strong>cantidad</strong> en el campo “Ingresar cantidad”.
+  </Step>
+
+  <Step title="Seleccionar opción de comparación">
+    Selecciona la opción de comparación en el menú desplegable.
+  </Step>
+</Steps>
+
+> **Ejemplo de “la cantidad es mayor o igual que”**:  
+> SKU: `ABC123`  
+> Cantidad: `3`  
+> → Coincide con pedidos donde hay 3 o más unidades del producto `ABC123`.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-has-greater-value.webp"
+  alt="Cantidad de Producto por SKU Mayor o Igual"
+/>
+
+> **Ejemplo de “la cantidad es divisible por”**:  
+> SKU: `ABC123`  
+> Cantidad: `2`  
+> → Coincide con pedidos donde la cantidad del producto `ABC123` es 2, 4, 6, 8, etc.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-divisible-by.webp"
+  alt="Cantidad de Producto por SKU Divisible Por"
+/>
+
+### Cantidad total – Cantidad de producto de SKU
+
+Esta condición verifica la **cantidad total de todos los productos en el pedido excepto un producto específico (por SKU)** contra los criterios definidos, basada en una de las siguientes subcondiciones:
+
+- **cantidad es mayor o igual que** (Coincide cuando la cantidad total excluyendo el SKU especificado es mayor o igual al número ingresado)  
+- **cantidad es menor o igual que** (Coincide cuando la cantidad total excluyendo el SKU especificado es menor o igual al número ingresado)  
+- **cantidad es divisible por** (Coincide cuando la cantidad total excluyendo el SKU especificado es un múltiplo exacto del número ingresado)  
+- **cantidad no es divisible por** (Coincide cuando la cantidad total excluyendo el SKU especificado no es un múltiplo del número ingresado)
+
+<Steps>
+  <Step title="Ingresar SKU a excluir">
+    Ingresa el <strong>SKU</strong> a excluir en el campo “Ingresar SKU”.
+  </Step>
+
+  <Step title="Ingresar cantidad">
+    Ingresa la <strong>cantidad</strong> en el campo “Ingresar cantidad”.
+  </Step>
+
+  <Step title="Seleccionar opción de comparación">
+    Selecciona la opción de comparación en el menú desplegable.
+  </Step>
+</Steps>
+
+> **Ejemplo de “la cantidad es mayor o igual que”**:  
+> SKU: `ABC123`  
+> Cantidad: `5`  
+> → Coincide con pedidos donde la cantidad total de todos los productos excepto `ABC123` es 5 o más.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-has-greater-value.webp"
+  alt="Cantidad Total Menos SKU Es Mayor o Igual"
+/>
+
+> **Ejemplo de “la cantidad es divisible por”**:  
+> SKU: `ABC123`  
+> Cantidad: `3`  
+> → Coincide con pedidos donde la cantidad total de todos los productos excepto `ABC123` es 3, 6, 9, etc.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-divisible-by.webp"
+  alt="Cantidad Total Menos SKU Divisible Por"
+/>
+
+## El Carrito Tiene Algún Artículo
+
+<SKU />
+<Collection />
+<Collections />
+<LineItemProperty />
+<CartHasShippingProduct />
+<cartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+## Metacampo de Producto
+
+### Metacampo de variante de producto
+
+Esta condición verifica un **metacampo de variante de producto** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)  
+- **Tiene cualquier otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)  
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)  
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)  
+- **Tiene un número mayor o igual que** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)  
+- **Tiene un número menor o igual que** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)  
+- **Tiene un número de valores mayor o igual que** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)  
+- **Tiene un número de valores menor o igual que** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)  
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
+
+> Por ejemplo, `Namespace: shipping` · `Clave: allowed_regions` · `No tiene ninguno de estos valores: CA, TX` → Coincide si ni “CA” ni “TX” aparecen en el metacampo.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-does-not-contains.webp"
+  alt="Metacampo de Variante de Producto No Contiene"
+/>
+
+Para **Tiene número mayor o igual que** y **Tiene número menor o igual que**, ingresa un valor numérico único en el campo.
+
+> Por ejemplo, `Namespace: specs` · `Clave: length_mm` · `Tiene número mayor o igual que 50` → Coincide si el valor del metacampo es 50 o más.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value.webp"
+  alt="Metacampo de Variante de Producto Mayor o Igual"
+/>
+
+Para **Tiene cantidad de valores mayor o igual que** y **Tiene cantidad de valores menor o igual que**, ingresa un número para comparar contra la cantidad de valores del metacampo.
+
+> Por ejemplo, `Namespace: custom` · `Clave: available_colors` · `Tiene cantidad de valores mayor o igual que 3` → Coincide si el metacampo contiene 3 o más valores.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value-or-equals.webp"
+  alt="Metacampo de Variante de Producto Cantidad Mayor o Igual"
+/>
+
+## Envío
+
+<SelectedShippingMethod />
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Localización
+<UserLanguage />
+
+## Dirección de Envío
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
+
+## Comparaciones
+
+### Cantidad de producto por SKU vs Cantidad de producto por SKU
+
+Esta condición compara la **cantidad de producto de un SKU** con la **cantidad de producto de otro SKU**, en función de una de las siguientes subcondiciones:
+
+- **tiene una cantidad que es igual a** (Coincide si la cantidad de SKU1 es exactamente igual a la cantidad de SKU2)  
+- **tiene una cantidad que no es igual a** (Coincide si la cantidad de SKU1 es diferente de la cantidad de SKU2)  
+- **tiene una cantidad que es mayor o igual a** (Coincide si la cantidad de SKU1 es mayor o igual a la cantidad de SKU2)  
+- **tiene una cantidad que es menor o igual a** (Coincide si la cantidad de SKU1 es menor o igual a la cantidad de SKU2)  
+- **tiene una cantidad que es múltiplo de** (Coincide si la cantidad de SKU1 es un múltiplo exacto de la cantidad de SKU2)  
+- **tiene una cantidad que no es múltiplo de** (Coincide si la cantidad de SKU1 no es un múltiplo exacto de la cantidad de SKU2)  
+
+Para establecer estas condiciones:
+
+<Steps>
+  <Step title="Ingresar SKU para el primer producto">
+    Ingresa el <strong>código SKU</strong> para el primer producto en el campo <strong>Ingresar SKU1</strong>.
+  </Step>
+
+  <Step title="Ingresar SKU para el segundo producto">
+    Ingresa el <strong>código SKU</strong> para el segundo producto en el campo <strong>Ingresar SKU2</strong>.
+  </Step>
+
+  <Step title="Elegir opción de comparación">
+    Elige la opción de comparación desde el menú desplegable.
+  </Step>
+</Steps>
+
+> **Ejemplo de “tiene cantidad mayor o igual que”**:  
+> SKU1: `SKU-ABC`  
+> SKU2: `SKU-XYZ`  
+> → Coincide cuando la cantidad de `SKU-ABC` en el carrito es mayor o igual que la cantidad de `SKU-XYZ`.
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-greater-equals.webp"
+  alt="Cantidad de SKU Mayor o Igual"
+/>
+
+> **Ejemplo de “tiene cantidad que es múltiplo de”**:  
+> SKU1: `SKU-A`  
+> SKU2: `SKU-B`  
+> Múltiplo: `2`  
+> → Coincide cuando la cantidad de `SKU-A` es exactamente 2×, 4×, 6×, etc., la cantidad de `SKU-B` (ej. `SKU-A` tiene 6 unidades y `SKU-B` tiene 3 unidades).
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-multiple.webp"
+  alt="Cantidad de SKU Múltiplo"
+/>

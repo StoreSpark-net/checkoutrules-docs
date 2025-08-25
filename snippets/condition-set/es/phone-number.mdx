@@ -1,0 +1,39 @@
+### Número de teléfono
+
+Se utiliza para comparar el número de teléfono del cliente (el campo de número de teléfono en la página de pago en la dirección de envío) con uno o más valores específicos, conteos o estados, en función de una de las siguientes subcondiciones:
+
+- **Contiene** (Coincide si el número de teléfono contiene el valor especificado o un valor parcial)
+- **No contiene** (Coincide si el número de teléfono no contiene el valor especificado o un valor parcial)
+- **Está vacío** (Coincide si no se ingresa ningún número de teléfono)
+- **No está vacío** (Coincide si se ingresa algún valor en el campo de número de teléfono)
+- **Es** (Coincide si el número de teléfono coincide exactamente con el valor especificado)
+- **No es** (Coincide si el número de teléfono no es exactamente el valor especificado)
+- **Tiene un número de dígitos mayor o igual** (Coincide si el número total de dígitos en el número de teléfono es mayor o igual al número especificado)
+- **Tiene un número de dígitos menor o igual** (Coincide si el número total de dígitos en el número de teléfono es menor o igual al número especificado)
+
+Para **Contiene**, **No contiene**, **Es** y **No es**, ingrese el valor a coincidir.
+
+> Por ejemplo, `Contiene: 123` → Coincide si el número de teléfono contiene “123” en cualquier parte.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-contains.webp"
+  alt="El número de teléfono contiene"
+/>
+
+Para **Tiene un número de dígitos mayor o igual** o **Tiene un número de dígitos menor o igual**, ingrese el valor límite.
+
+> Por ejemplo, `Tiene un número de dígitos mayor o igual a 10` → Coincide si el número de teléfono contiene 10 o más dígitos.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-greater-than.webp"
+  alt="Número de teléfono mayor que"
+/>
+
+Para **Está vacío** y **No está vacío**, no es necesario ingresar un valor.
+
+> Por ejemplo, `Está vacío` → Coincide si el campo del número de teléfono está en blanco.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-is-empty.webp"
+  alt="Número de teléfono está vacío"
+/>

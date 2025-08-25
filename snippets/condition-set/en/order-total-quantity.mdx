@@ -1,0 +1,31 @@
+### Order total quantity
+
+This condition checks the **total quantity of items in an order** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total quantity of items is greater than or equal to the entered number)
+- **is less than or equals** (Matches when the total quantity of items is less than or equal to the entered number)
+- **is multiple of** (Matches when the total quantity is an exact multiple of the entered number)
+- **is not multiple of** (Matches when the total quantity is not a multiple of the entered number)
+
+To set these conditions, enter a quantity in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  The quantity refers to the **sum of all item quantities** in the order, not
+  the number of distinct products.
+</Note>
+
+> **Example for “is multiple of”**:  
+> `is multiple of 5` → Matches orders with total quantities like 5, 10, 15, 20, etc.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-order-total.webp"
+  alt="Is Multiple Of Order Total"
+/>
+
+> **Example for “is greater than or equals”**:  
+> `is greater than or equals 3` → Matches orders with 3 or more total items.
+
+<img
+  src="/images/essentials/condition-sets/order-total-is-greater-value.webp"
+  alt="Order Total Is Greater Value"
+/>
