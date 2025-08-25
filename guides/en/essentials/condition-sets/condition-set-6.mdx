@@ -4,136 +4,36 @@ description: "Learn about each condition available inside _Condition Set 6_."
 icon: "sliders"
 ---
 
-## Always
+import AlwaysCondition from "/snippets/condition-set/always-condition.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/order-total-subscription-weight.mdx";
 
-If you don’t want to set any condition, select _Always_. The rule will run every time for everyone, without checking any conditions.
+import { translations } from "/snippets/condition-set/translations.mdx";
 
-<img src="/images/essentials/condition-sets/always.webp" alt="Always" />
+<AlwaysCondition lang="en" translations={translations} />
 
-## Previous all conditions invalid
-
-When all previous conditions are invalid in the previous [rule block](/guides/en/get-started/concepts#block), i-e the previous rule block did not run, this condition becomes true, ensuring the action is triggered only if none of the earlier conditions are met.
-
-<Note>Available only when at least one previous rule block exists.</Note>
-
-<img
-  src="/images/essentials/condition-sets/previous-all-conditions-invalid.webp"
-  alt="Previous All Conditions Invalid"
-/>
+<PreviousAllConditionsInvalid lang="en" translations={translations} />
 
 ## Customer
 
-### New customer
-
-This condition becomes true if the customer is a new customer, i-e the customer has not previously spent any amount in the store to buy products.
-
-<img
-  src="/images/essentials/condition-sets/new-customer.webp"
-  alt="New Customer"
-/>
-
-### Repeat customer
-
-This condition becomes true if the customer has previously spent any amount in the store to buy products.
-
-<img
-  src="/images/essentials/condition-sets/repeat-customer.webp"
-  alt="Repeat Customer"
-/>
-
-### Customer total previous spent
-
-This condition checks the customer’s **total previous spent amount** against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the customer’s total previous spent amount is greater than or equal to the entered amount)
-- **is less than or equals** (Matches when the customer’s total previous spent amount is less than or equal to the entered amount)
-
-To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
-
-<Note>
-  Enter the amount in your store currency. Settings > Store Details > Store
-  Currency
-</Note>
-
-> For example, `is greater than or equals 500` → Matches customers who have spent 500 or more in total on previous purchases.
-
-<img
-  src="/images/essentials/condition-sets/customer-total-previous-spent.webp"
-  alt="Customer Total Previous Spent"
-/>
-
-### Email address
-
-This condition checks the customer’s **email address** against specific criteria, based on one of the following sub-conditions:
-
-- **contains** (The email address includes the entered value)
-- **does not contain** (The email address does not include the entered value)
-- **is empty** (No email address is provided)
-- **is not empty** (An email address is provided)
-- **is** (The email address exactly matches the entered value)
-- **is not** (The email address does not exactly match the entered value)
-
-For **contains**, **does not contain**, **is**, and **is not**, type a value in the text box to compare against the customer’s email address.
-
-> For example, `contains @gmail.com` → Matches any email address ending with “@gmail.com”.
-
-<img
-  src="/images/essentials/condition-sets/email-contains.webp"
-  alt="Email Contains"
-/>
-
-For **is empty** and **is not empty**, no value entry is required.
-
-> For example, `is empty` → Matches when the email field is blank.
-
-<img
-  src="/images/essentials/condition-sets/email-empty.webp"
-  alt="Email Empty"
-/>
+<NewCustomer lang="en" translations={translations} />
+<RepeatCustomer lang="en" translations={translations} />
+<CustomerTotalPreviousSpent lang="en" translations={translations} />
+<EmailAddress lang="en" translations={translations} />
 
 ## Order Details
 
-### Order total amount
-
-This condition checks the **order’s total amount** against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the order’s total amount is greater than or equal to the entered amount)
-- **is less than or equals** (Matches when the order’s total amount is less than or equal to the entered amount)
-
-To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
-
-<Note>
-  Enter the amount in your store currency. Settings > Store Details > Store
-  Currency
-</Note>
-
-> For example, `is greater than or equals 600` → Matches orders with a total amount of 600 or more.
-
-<img
-  src="/images/essentials/condition-sets/order-total-amount.webp"
-  alt="Order Total Amount"
-/>
-
-### Order subtotal amount
-
-This condition checks the **order’s subtotal amount** against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the order’s subtotal amount is greater than or equal to the entered amount)
-- **is less than or equals** (Matches when the order’s subtotal amount is less than or equal to the entered amount)
-
-To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
-
-<Note>
-  Enter the amount in your store currency. Settings > Store Details > Store
-  Currency
-</Note>
-
-> For example, `is greater than or equals 699` → Matches orders with a subtotal amount of 699 or more.
-
-<img
-  src="/images/essentials/condition-sets/order-subtotal-amount.webp"
-  alt="Order Subtotal Amount"
-/>
+<OrderTotalAmount lang="en" translations={translations} />
+<OrderSubtotalAmount lang="en" translations={translations} />
 
 ### Order tax amount
 
@@ -177,53 +77,9 @@ To set these conditions, enter the amount in the field and choose the appropriat
   alt="Order Duty Amount"
 />
 
-### Order total weight
-
-This condition checks the **order’s total weight** against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the order’s total weight is greater than or equal to the entered weight)
-- **is less than or equals** (Matches when the order’s total weight is less than or equal to the entered weight)
-
-To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
-
-> For example, `is less than or equals 5 kg` → Matches orders with a total weight of 5 kilograms or less.
-
-<img
-  src="/images/essentials/condition-sets/order-total-weight.webp"
-  alt="Order Total Weight"
-/>
-
-### Order total one time purchase weight
-
-This condition checks the **total weight of one-time purchase items** in the order against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the total one-time purchase weight is greater than or equal to the entered weight)
-- **is less than or equals** (Matches when the total one-time purchase weight is less than or equal to the entered weight)
-
-To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
-
-> For example, `is greater than or equals 10 lb` → Matches orders where the total weight of one-time purchase items is 10 pounds or more.
-
-<img
-  src="/images/essentials/condition-sets/order-total-one-time-purchase-weight.webp"
-  alt="Order Total One-Time Purchase Weight"
-/>
-
-### Order total subscription weight
-
-This condition checks the **total weight of subscription items** in the order against specific criteria, based on one of the following sub-conditions:
-
-- **is greater than or equals** (Matches when the total subscription weight is greater than or equal to the entered weight)
-- **is less than or equals** (Matches when the total subscription weight is less than or equal to the entered weight)
-
-To set these conditions, enter the weight in the field, select the weight unit (**lb**, **oz**, **kg**, or **g**) from the dropdown, and choose the appropriate comparison.
-
-> For example, `is greater than or equals 5 kg` → Matches orders where the total weight of subscription items is 5 kilograms or more.
-
-<img
-  src="/images/essentials/condition-sets/order-total-subscription-weight.webp"
-  alt="Order Total Subscription Weight"
-/>
+<OrderTotalWeight lang="en" translations={translations} />
+<OrderTotalOneTimePurchaseWeight lang="en" translations={translations} />
+<OrderTotalSubscriptionWeight lang="en" translations={translations} />
 
 ### Total discount amount (any discount type)
 
