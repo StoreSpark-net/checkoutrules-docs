@@ -1,0 +1,341 @@
+---
+title: "条件集 4"
+description: "了解 _条件集 4_ 中可用的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/zh/customer-tag.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/zh/customer-total-number-of-previous-orders.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/zh/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/zh/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/zh/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/zh/total-product-discount-percentage.mdx";
+import SKU from "/snippets/condition-set/zh/sku.mdx";
+import ProductTag from "/snippets/condition-set/zh/product-tag.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 客户
+
+<EmailAddress />
+<CustomerTag />
+<CustomerTotalNumberOfPreviousOrders />
+
+## B2B 详情
+
+### 客户是 B2B 公司
+
+此条件检查客户是否属于您店铺记录中的 **公司**。如果客户被识别为 B2B 公司，则条件成立。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-b2b-company.webp"
+  alt="客户是 B2B 公司"
+/>
+
+### 客户不是 B2B 公司
+
+此条件检查客户是否 **不** 属于您店铺记录中的 **公司**。如果客户未被识别为 B2B 公司，则条件成立。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-b2b-company.webp"
+  alt="客户不是 B2B 公司"
+/>
+
+### 采购公司名称
+
+此条件检查客户是否属于您店铺记录中的公司，然后根据以下子条件检查该 **采购公司名称** 是否符合特定标准：
+
+- **包含**（采购公司名称包含输入的值时匹配）
+- **不包含**（采购公司名称不包含输入的值时匹配）
+- **为空**（未提供采购公司名称时匹配）
+- **不为空**（提供了采购公司名称时匹配）
+- **等于**（采购公司名称与输入的值完全相同时匹配）
+- **不等于**（采购公司名称与输入的值不完全相同时匹配）
+
+对于 **包含**、**不包含**、**等于** 和 **不等于**，请在文本框中输入一个值，与客户的采购公司名称进行比较。
+
+> 例如，`包含 Trading` → 匹配任何包含 “Trading” 一词的采购公司名称。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-contains.webp"
+  alt="采购公司名称包含"
+/>
+
+对于 **为空** 和 **不为空**，无需输入值。
+
+> 例如，`为空` → 当采购公司名称字段为空时匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-empty.webp"
+  alt="采购公司名称为空"
+/>
+
+### 采购公司地点名称
+
+此条件检查客户是否属于您店铺记录中的公司，然后根据以下子条件检查该 **采购公司地点名称** 是否符合特定标准：
+
+- **包含**（采购公司地点名称包含输入的值时匹配）
+- **不包含**（采购公司地点名称不包含输入的值时匹配）
+- **为空**（未提供采购公司地点名称时匹配）
+- **不为空**（提供了采购公司地点名称时匹配）
+- **等于**（采购公司地点名称与输入的值完全相同时匹配）
+- **不等于**（采购公司地点名称与输入的值不完全相同时匹配）
+
+对于 **包含**、**不包含**、**等于** 和 **不等于**，请在文本框中输入一个值，与客户的采购公司地点名称进行比较。
+
+> 例如，`包含 New York` → 匹配任何包含 “New York” 的采购公司地点名称。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-contains.webp"
+  alt="采购公司地点名称包含"
+/>
+
+对于 **为空** 和 **不为空**，无需输入值。
+
+> 例如，`为空` → 当采购公司地点名称字段为空时匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-empty.webp"
+  alt="采购公司地点名称为空"
+/>
+
+## 订单详情
+
+<OrderSubtotalAmount />
+
+## 购物车详情
+
+### 货币
+
+用于将客户在您店铺中选择的货币与一个或多个特定货币进行比较，基于以下子条件之一：
+
+- **有这些值中的任意一个**（如果客户的货币在给定列表中，则匹配）
+- **没有这些值中的任意一个**（如果客户的货币不在给定列表中，则匹配）
+- **有这些值之外的其他任何值**（如果客户的货币不在给定列表中，则匹配）
+- **没有这些值之外的其他值**（如果客户的货币仅限于给定列表中的值，则匹配）
+
+对于上述任意选项，从列表中搜索并选择一个或多个货币。您还可以使用 **粘贴**、**全部复制** 或 **全部清除** 选项快速选择。多个值请用逗号分隔。
+
+> 例如，`没有这些值之外的其他值: USD, EUR` → 匹配字段仅包含 “USD” 或 “EUR”，且不包含其他货币时。
+
+<img
+  src="/images/essentials/condition-sets/select-currencies.webp"
+  alt="多种货币"
+/>
+
+### 产品供应商
+
+此条件根据特定标准检查 **产品供应商**。如果购物车中的任何产品具有输入的供应商值，则根据以下子条件进行匹配：
+
+- **有这些值中的任意一个**（如果产品供应商包含输入的任意值，则匹配）
+- **没有这些值中的任意一个**（如果产品供应商不包含输入的任意值，则匹配）
+- **有这些值之外的其他值**（如果产品供应商值不在输入值中，则匹配）
+- **没有这些值之外的其他值**（如果产品供应商值仅为输入的值而没有其他时匹配）
+- **值数量大于或等于**（如果产品供应商数量大于或等于输入的数字时匹配）
+- **值数量小于或等于**（如果产品供应商数量小于或等于输入的数字时匹配）
+
+对于 **有这些值中的任意一个**、**没有这些值中的任意一个**、**有这些值之外的其他值** 和 **没有这些值之外的其他值**，请在字段中输入一个或多个产品供应商名称。多个值请用逗号分隔。
+
+<Note>
+  使用 * 通配符匹配多个值。例如，Drop* 将匹配 Dropship、drop-590 等。使用 ? 匹配任意单个字符。
+</Note>
+> 例如，`有这些值中的任意一个: Nike, Adidas` → 如果产品供应商是 “Nike” 或 “Adidas” 则匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-vendor.webp"
+  alt="产品供应商"
+/>
+
+对于 **值数量大于或等于** 和 **值数量小于或等于**，请输入一个数字来匹配产品供应商数量。
+
+> 例如，`值数量大于或等于 3` → 匹配有三个或更多产品供应商时。
+
+<img
+  src="/images/essentials/condition-sets/count-product-vendor.webp"
+  alt="产品供应商数量"
+/>
+
+### 产品标题
+
+此条件根据特定标准检查 **产品标题**。如果购物车中的任何产品具有输入的标题值，则根据以下子条件进行匹配：
+
+- **包含**（产品标题包含输入的值时匹配）
+- **不包含**（产品标题不包含输入的值时匹配）
+
+- **等于**（产品标题与输入的值完全相同时匹配）
+- **不等于**（产品标题与输入的值不完全相同时匹配）
+
+要设置这些条件，请在字段中输入产品标题值并从下拉菜单中选择比较选项。
+
+> 例如，`包含 Shoes` → 匹配任何包含 “Shoes” 一词的产品标题。
+
+<img
+  src="/images/essentials/condition-sets/product-title-contains.webp"
+  alt="产品标题包含"
+/>
+
+### 产品类型
+
+此条件根据特定标准检查 **产品类型**。如果购物车中的任何产品具有输入的产品类型值，则根据以下子条件进行匹配：
+
+- **包含**（产品类型包含输入的值时匹配）
+- **不包含**（产品类型不包含输入的值时匹配）
+- **为空**（未提供产品类型时匹配）
+- **不为空**（提供了产品类型时匹配）
+- **等于**（产品类型与输入的值完全相同时匹配）
+- **不等于**（产品类型与输入的值不完全相同时匹配）
+
+对于 **包含**、**不包含**、**等于** 和 **不等于**，请输入一个值，与产品类型进行比较。
+
+> 例如，`包含 Electronics` → 匹配任何包含 “Electronics” 一词的产品类型。
+
+<img
+  src="/images/essentials/condition-sets/product-type-contains.webp"
+  alt="产品类型包含"
+/>
+
+对于 **为空** 和 **不为空**，无需输入值。
+
+> 例如，`为空` → 当产品类型字段为空时匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-type-empty.webp"
+  alt="产品类型为空"
+/>
+
+### 按 SKU 的订单小计金额
+
+此条件根据以下子条件检查订单中具有特定 **SKU** 的产品小计金额是否符合定义的标准：
+
+- **金额大于或等于**（当具有指定 SKU 的产品小计金额大于或等于输入金额时匹配）
+- **金额小于或等于**（当具有指定 SKU 的产品小计金额小于或等于输入金额时匹配）
+
+设置这些条件：
+
+<Steps>
+  <Step title="输入 SKU">
+    在“输入 SKU”字段中输入 <strong>SKU</strong>。
+  </Step>
+
+  <Step title="输入金额">
+    在“输入金额”字段中输入 <strong>金额</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+<Note>
+  以您店铺的货币输入金额。设置 > 店铺详情 > 店铺货币
+</Note>
+
+> **“金额大于或等于”的示例**：  
+> SKU: `ABC123`  
+> 金额: `777`  
+> → 当 SKU 为 `ABC123` 的产品小计金额为 777 或更多时匹配。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-sku-has-greater-value.webp"
+  alt="按 SKU 的订单小计金额大于"
+/>
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## 购物车包含任意商品
+
+<SKU />
+<ProductTag />
+
+## 产品元字段
+
+### 产品元字段
+
+此条件检查您指定的 **产品自定义字段**（通过 **命名空间** 和 **键**），然后使用以下子条件之一进行评估：
+
+- **有这些值中的任意一个**（如果自定义字段包含输入的任意值则匹配）
+- **没有这些值中的任意一个**（如果自定义字段不包含输入的任意值则匹配）
+- **有这些值之外的其他任何值**（如果自定义字段的值不在输入值中则匹配）
+- **没有这些值之外的其他值**（如果自定义字段值仅为输入值而没有其他时匹配）
+- **为空值**（如果自定义字段没有值时匹配）
+- **不为空值**（如果自定义字段包含任意值时匹配）
+- **数值大于或等于**（如果自定义字段的数值大于或等于输入数字时匹配）
+- **数值小于或等于**（如果自定义字段的数值小于或等于输入数字时匹配）
+- **值数量大于或等于**（如果自定义字段中的值数量大于或等于输入数字时匹配）
+- **值数量小于或等于**（如果自定义字段中的值数量小于或等于输入数字时匹配）
+
+对于 **有这些值中的任意一个**、**没有这些值中的任意一个**、**有这些值之外的其他任何值** 和 **没有这些值之外的其他值**，请输入一个或多个值。多个值用逗号分隔。
+
+> 例如，`命名空间: details` · `键: material` · `有这些值中的任意一个: Cotton, Linen` → 如果自定义字段包含 “Cotton” 或 “Linen” 则匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-has-any-value.webp"
+  alt="产品自定义字段包含任意值"
+/>
+
+对于 **数值大于或等于** 和 **数值小于或等于**，请输入一个数字，与自定义字段的数值进行比较。
+
+> 例如，`命名空间: nutrition` · `键: calories` · `数值小于或等于 200` → 如果自定义字段数值为 200 或更低则匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-less-value.webp"
+  alt="产品自定义字段数值较小"
+/>
+
+对于 **值数量大于或等于** 和 **值数量小于或等于**，请输入一个数字，与自定义字段中的值数量进行比较。
+
+> 例如，`命名空间: features` · `键: available_sizes` · `值数量大于或等于 5` → 如果自定义字段包含五个或更多值则匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
+  alt="产品自定义字段数量较大"
+/>
+
+## 配送
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## 本地化
+<UserLanguage />
+
+## 收货地址
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

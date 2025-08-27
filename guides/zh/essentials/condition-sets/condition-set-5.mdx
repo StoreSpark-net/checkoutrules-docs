@@ -1,0 +1,198 @@
+---
+title: "条件集 5"
+description: "了解 _条件集 5_ 中可用的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/zh/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/zh/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/zh/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/zh/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/zh/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/zh/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/zh/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/zh/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import Market from "/snippets/condition-set/zh/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 客户
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## B2B 详情
+
+### 采购公司元字段
+
+此条件会检查您指定的 **采购公司自定义字段**（通过 **命名空间** 和 **键**），然后使用以下子条件之一进行评估：
+
+- **具有以下任意值**（如果自定义字段至少有一个输入的值，则匹配）
+- **不具有以下任意值**（如果自定义字段没有输入的任何值，则匹配）
+- **具有除以下值以外的其他值**（如果自定义字段的值不在输入值中，则匹配）
+- **不具有除以下值以外的其他值**（如果自定义字段只有输入的值而没有其他值，则匹配）
+- **为空值**（如果自定义字段没有值，则匹配）
+- **不为空值**（如果自定义字段有任意值，则匹配）
+- **数值大于或等于**（如果自定义字段的数值大于或等于输入的数字，则匹配）
+- **数值小于或等于**（如果自定义字段的数值小于或等于输入的数字，则匹配）
+- **值的数量大于或等于**（如果自定义字段中值的数量大于或等于输入的数字，则匹配）
+- **值的数量小于或等于**（如果自定义字段中值的数量小于或等于输入的数字，则匹配）
+
+对于 **具有以下任意值**、**不具有以下任意值**、**具有除以下值以外的其他值** 和 **不具有除以下值以外的其他值**，请输入一个或多个值到字段中。多个值用逗号分隔。
+
+> 例如，`命名空间: profile` · `键: industry` · `具有以下任意值: Retail, Wholesale` → 如果采购公司的自定义字段包含“Retail”或“Wholesale”，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="采购公司自定义字段具有任意值"
+/>
+
+对于 **数值大于或等于** 和 **数值小于或等于**，请输入单个数值以与自定义字段的数值进行匹配。
+
+> 例如，`命名空间: finance` · `键: annual_revenue` · `数值大于或等于 1000000` → 如果采购公司的年收入大于等于一百万，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="采购公司自定义字段数值比较"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请输入单个数值以与自定义字段中的值数量进行匹配。
+
+> 例如，`命名空间: compliance` · `键: certifications` · `值的数量小于或等于 2` → 如果公司有两个或更少的认证，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="采购公司自定义字段数量"
+/>
+
+### 采购公司位置元字段
+
+此条件会检查您指定的 **采购公司地址自定义字段**（通过 **命名空间** 和 **键**），然后使用以下子条件之一进行评估：
+
+- **具有以下任意值**（如果自定义字段至少有一个输入的值，则匹配）
+- **不具有以下任意值**（如果自定义字段没有输入的任何值，则匹配）
+- **具有除以下值以外的其他值**（如果自定义字段的值不在输入值中，则匹配）
+- **不具有除以下值以外的其他值**（如果自定义字段只有输入的值而没有其他值，则匹配）
+- **为空值**（如果自定义字段没有值，则匹配）
+- **不为空值**（如果自定义字段有任意值，则匹配）
+- **数值大于或等于**（如果自定义字段的数值大于或等于输入的数字，则匹配）
+- **数值小于或等于**（如果自定义字段的数值小于或等于输入的数字，则匹配）
+- **值的数量大于或等于**（如果自定义字段中值的数量大于或等于输入的数字，则匹配）
+- **值的数量小于或等于**（如果自定义字段中值的数量小于或等于输入的数字，则匹配）
+
+对于 **具有以下任意值**、**不具有以下任意值**、**具有除以下值以外的其他值** 和 **不具有除以下值以外的其他值**，请输入一个或多个值到字段中。多个值用逗号分隔。
+
+> 例如，`命名空间: address` · `键: country_code` · `不具有以下任意值: US, CA` → 如果采购公司地址不在美国或加拿大，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="采购公司地址自定义字段不包含"
+/>
+
+对于 **数值大于或等于** 和 **数值小于或等于**，请输入单个数值以与自定义字段的数值进行匹配。
+
+> 例如，`命名空间: logistics` · `键: warehouse_capacity` · `数值小于或等于 5000` → 如果采购公司地址的仓储容量小于或等于 5000 单位，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="采购公司地址自定义字段数值比较"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请输入单个数值以与自定义字段中的值数量进行匹配。
+
+> 例如，`命名空间: services` · `键: supported_languages` · `值的数量大于或等于 4` → 如果该地点支持 4 种或更多语言，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="采购公司地址自定义字段数量"
+/>
+
+## 订单详情
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## 购物车包含任意商品
+
+<ProductTag />
+<ProductTags />
+
+### 产品变型选项
+
+此条件会检查 **产品变体选项** 是否符合特定条件。如果购物车中的任何产品具有输入的产品变体选项值，将根据以下子条件之一进行匹配：
+
+- **具有以下任意值**（如果产品变体选项至少有一个输入的值，则匹配）
+- **不具有以下任意值**（如果产品变体选项没有输入的任何值，则匹配）
+- **具有除以下值以外的其他值**（如果产品变体选项的值不在输入值中，则匹配）
+- **不具有除以下值以外的其他值**（如果产品变体选项只有输入的值而没有其他值，则匹配）
+- **值的数量大于或等于**（如果产品变体选项的数量大于或等于输入的数字，则匹配）
+- **值的数量小于或等于**（如果产品变体选项的数量小于或等于输入的数字，则匹配）
+
+对于 **具有以下任意值**、**不具有以下任意值**、**具有除以下值以外的其他值** 和 **不具有除以下值以外的其他值**，请输入一个或多个产品变体选项值。多个值用逗号分隔。
+
+> 例如，`具有以下任意值: Red, Blue` → 如果产品变体选项包含“Red”或“Blue”，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="产品变体选项"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请输入单个数值以与产品变体选项数量进行匹配。
+
+> 例如，`值的数量大于或等于 3` → 如果有 3 个或更多产品变体选项，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="产品变体选项数量"
+/>
+
+## 配送
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## 本地化
+<UserLanguage />
+<Market />
+
+## 收货地址
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

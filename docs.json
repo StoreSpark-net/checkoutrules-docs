@@ -450,7 +450,89 @@
             ]
           }
         ]
-      }
+      },
+        {
+          "language": "zh",
+          "groups": [
+            {
+              "group": "入门",
+              "icon": "code",
+              "pages": [
+                "guides/zh/get-started/introduction",
+                "guides/zh/get-started/installation",
+                "guides/zh/get-started/concepts",
+                "guides/zh/get-started/quickstart",
+                "guides/zh/get-started/faq"
+              ]
+            },
+            {
+              "group": "必备",
+              "icon": "book",
+              "pages": [
+                {
+                  "group": "条件集",
+                  "icon": "filter",
+                  "pages": [
+                    "guides/zh/essentials/condition-sets/introduction",
+                    "guides/zh/essentials/condition-sets/condition-set-1",
+                    "guides/zh/essentials/condition-sets/condition-set-2",
+                    "guides/zh/essentials/condition-sets/condition-set-3",
+                    "guides/zh/essentials/condition-sets/condition-set-4",
+                    "guides/zh/essentials/condition-sets/condition-set-5",
+                    "guides/zh/essentials/condition-sets/condition-set-6"
+                  ]
+                },
+                {
+                  "group": "船运",
+                  "icon": "truck",
+                  "pages": [
+                    "guides/zh/essentials/shipping/reorder-shipping-methods",
+                    "guides/zh/essentials/shipping/hide-shipping-methods",
+                    "guides/zh/essentials/shipping/rename-shipping-methods",
+                    "guides/zh/essentials/shipping/discount-shipping-methods"
+                  ]
+                },
+                {
+                  "group": "付款",
+                  "icon": "credit-card",
+                  "pages": [
+                    "guides/zh/essentials/payment/hide-express-checkout-options",
+                    "guides/zh/essentials/payment/reorder-payment-methods",
+                    "guides/zh/essentials/payment/hide-payment-methods",
+                    "guides/zh/essentials/payment/rename-payment-methods"
+                  ]
+                },
+                {
+                  "group": "验证",
+                  "icon": "shield-check",
+                  "pages": [
+                    "guides/zh/essentials/validation/validate-block-checkout"
+                  ]
+                },
+                {
+                  "group": "折扣",
+                  "icon": "tag",
+                  "pages": [
+                    "guides/zh/essentials/discount/discount-order-amount",
+                    "guides/zh/essentials/discount/discount-shipping-methods"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "先进的",
+              "icon": "grid",
+              "pages": [
+                "guides/zh/advanced/branching",
+                "guides/zh/advanced/concurrency",
+                "guides/zh/advanced/translations",
+                "guides/zh/advanced/multi-store-support",
+                "guides/zh/advanced/rule-duplication",
+                "guides/zh/advanced/block-replication"
+              ]
+            }
+          ]
+        }
     ]
   },
   "logo": {
