@@ -1,0 +1,133 @@
+---
+title: "Réduction sur les méthodes d’expédition"
+description: "Réduire des tarifs d’expédition spécifiques en fonction des conditions données."
+icon: "badge-percent"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet de réduire des tarifs d’expédition spécifiques au passage en caisse en fonction de conditions définies. Vous pouvez appliquer un pourcentage, une remise fixe, un pourcentage basé sur le sous-total, définir un prix fixe ou rendre l’expédition gratuite, etc., en utilisant des critères tels que le total du panier, l’adresse d’expédition, les balises client ou les attributs produit, etc.
+
+Avec cette règle, vous pouvez créer un code de réduction ou une remise automatique.  
+Si la règle crée un code de réduction, alors le client peut l’utiliser au passage en caisse pour obtenir la remise.  
+Sinon, si la remise automatique est sélectionnée, la règle peut appliquer automatiquement une réduction aux méthodes d’expédition sélectionnées selon les conditions configurées.
+
+## Configuration d’exemple
+
+Les étapes suivantes montrent comment créer et configurer une règle **Réduction sur les méthodes d’expédition** à l’aide de l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [administration Shopify](/guides/fr/get-started/installation#go-to-the-app), ouvrez l’application. Dans la barre latérale, allez à la section [Règles](/guides/fr/get-started/quickstart#create-a-sample-rule) et cliquez sur _« Créer une règle »_.
+
+Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle de passage en caisse**. Choisissez _catégorie « Expédition » → sélectionnez le type de règle « Réduction sur les méthodes d’expédition » → cliquez sur « Sélectionner la règle »_.
+
+<img
+  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
+  alt="Sélectionner Réduction sur les Méthodes d’Expédition"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de réduction sur les méthodes d’expédition**, où vous pourrez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, commencez par ajouter éventuellement un nom tel que « Réduction sur les méthodes d’expédition » pour décrire ce qu’elle fait si vous souhaitez appliquer une **« Remise automatique »**.
+
+<img
+  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
+  alt="Nom Remise Automatique"
+/>
+
+Ou, si vous préférez appliquer la remise avec un code de réduction, cliquez sur **« Code de réduction »** et saisissez votre code souhaité ou générez-en un aléatoire en cliquant sur **« Générer un code aléatoire »**.
+
+<img
+  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
+  alt="Code de Réduction"
+/>
+
+Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/concepts#status) de la règle : Mise à l’essai, Actif ou Désactivé.  
+Ici, nous allons choisir le statut **Mise à l’essai**, afin de tester rapidement la règle sans affecter le passage en caisse des clients réels.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Statut de la règle"
+/>
+
+Ensuite, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinations) pour contrôler comment cette remise d’expédition interagit avec d’autres remises. Vous pouvez autoriser sa combinaison avec :
+
+- **Remises produit** – Cela permet d’utiliser la remise d’expédition avec des remises au niveau produit. Assurez-vous que les remises produit sont également configurées pour se combiner avec les remises d’expédition.
+- **Remises de commande** – Cela permet d’utiliser la remise d’expédition avec des remises au niveau de la commande. Assurez-vous que les remises de commande autorisent également la combinaison avec les remises d’expédition.
+
+<img
+  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
+  alt="Combinaisons Réduction Expédition"
+/>
+
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#condition-set), la [condition](/guides/fr/get-started/concepts#conditions-when) et l’[action](/guides/fr/get-started/concepts#action-what) pertinents.
+
+> Par exemple, ici nous utilisons l’**Ensemble de conditions 1** par défaut, définissant la règle pour s’exécuter **Toujours**, et la configurons pour appliquer une **remise de 10 %** à toutes les méthodes d’expédition en utilisant l’option **Pourcentage**. Le message de réduction **« 10 % DE RÉDUCTION »** sera affiché aux clients au passage en caisse.
+
+<img
+  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
+  alt="Ensemble de conditions Réduction Expédition"
+/>
+
+Dans la section **Action**, vous pouvez appliquer la remise en utilisant : **Pourcentage, Montant fixe, Pourcentage du sous-total, Prix fixe ou Gratuité de l’expédition**, selon vos besoins.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Type d’Action Réduction"
+/>
+
+La remise peut aussi être appliquée uniquement à certaines méthodes d’expédition en sélectionnant **« Appliquer cette remise uniquement à ces méthodes d’expédition »** au lieu de « Appliquer cette remise à toutes les méthodes d’expédition », puis en saisissant les **noms** des méthodes d’expédition concernées.
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Sélection Méthodes d’Expédition"
+/>
+
+Ensuite, dans la section [Nombre maximum d’utilisations de la remise](/guides/fr/get-started/concepts#maximum-discount-uses), vous pouvez éventuellement définir une limite d’utilisation du code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est choisi.
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et enregistrer votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Tester la règle
+
+Comme la règle est définie au statut mise à l’essai, nous devons utiliser `test@testing.com` comme e-mail, au lieu de l’adresse réelle, pour exécuter la règle au passage en caisse.
+
+<Warning>
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que l’e-mail
+  de test ne soit utilisé. Veuillez noter que les options d’expédition n’ont pas
+  encore été réduites.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Avant application de la règle"
+/>
+
+Après avoir défini l’e-mail, la règle de passage en caisse s’exécute et applique la remise configurée sur l’expédition. Nous pouvons vérifier que la **remise de 10 %** est visible pour les méthodes d’expédition sélectionnées au passage en caisse, comme montré ci-dessous.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
+  alt="Après application de la règle"
+/>
+
+## Activer la règle
+
+Une fois la mise à l’essai terminée, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des clients réels.  
+Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour voir toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer**.
+
+<Warning>
+  L’activation des règles n’est disponible que dans les forfaits payants.  
+  Si vous n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#upgrade-your-plan) pour le mettre à niveau.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
+  alt="Activer la règle Réduction Expédition"
+/>

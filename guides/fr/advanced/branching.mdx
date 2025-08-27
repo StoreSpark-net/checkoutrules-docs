@@ -1,0 +1,146 @@
+---
+title: "Branchement (if else)"
+description: "Apprenez à créer et à utiliser une structure de règle if, else if, else pour gérer plusieurs conditions dans vos règles."
+icon: "split"
+---
+
+## Vue d’ensemble
+
+En général, lorsqu’une règle contient plusieurs blocs, chaque bloc est exécuté dans l’ordre de haut en bas, et si les conditions d’un bloc sont remplies, alors les actions de ce bloc sont exécutées. Ainsi, chaque règle peut avoir plusieurs actions. Mais parfois, nous ne voulons pas de ce comportement : nous voulons qu’un seul bloc s’exécute puis que la règle s’arrête. C’est là qu’intervient le **branchement**.
+
+Le branchement vous permet de construire des règles en utilisant plusieurs blocs de conditions qui suivent la logique **if → else if → else**. Chaque bloc est vérifié **séquentiellement**, et dès qu’un bloc correspond, ses actions sont exécutées, et la règle s’arrête. Cela garantit qu’**un seul bloc s’exécute**, évitant les actions qui se chevauchent ou entrent en conflit. C’est une fonctionnalité très puissante qui peut être utilisée pour créer des règles complexes avec plusieurs conditions.
+
+> Voici un exemple d’une règle avec branchement comportant trois blocs. Ici, nous voulons appliquer des réductions différentes en fonction du tag produit, et nous avons une remise par défaut de 5 % sur tous les frais d’expédition dans le cas où le client n’est éligible à aucune des autres réductions. Un seul bloc sera exécuté selon les conditions, puis la règle s’arrêtera.
+
+<Note>
+  La condition clé ici est [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  dans les deuxième et troisième blocs, ce qui garantit qu’un seul bloc sera exécuté selon les conditions, puis la règle s’arrêtera. En utilisant cette condition, vous pouvez mettre en place un branchement dans n’importe quelle règle.
+</Note>
+
+<img src="/images/advanced/branching/all-blocks.webp" alt="Tous les blocs" />
+
+Voici comment cette règle s’exécutera :
+
+<Steps>
+  <Step title="Si le tag produit est sport et que le montant du sous-total de la commande est supérieur ou égal à 33">
+    Alors une réduction de 20 % sur l’expédition sera appliquée et la règle s’arrêtera.
+  </Step>
+  <Step title="Sinon si le tag client est VIP">
+    Alors une réduction de 50 % sur l’expédition sera appliquée et la règle s’arrêtera.
+  </Step>
+  <Step title="Sinon (par défaut)">
+    Alors une réduction de 5 % sur l’expédition sera appliquée.
+  </Step>
+</Steps>
+
+## Explication
+
+### Premier bloc de conditions (if)
+
+- Le système commence avec le premier bloc de conditions.
+- Ce bloc peut inclure plusieurs **sous-conditions** combinées avec **ET** ou **OU**.
+- Si la condition globale du bloc est remplie, son action **“Alors”** s’exécute (par ex., appliquer une réduction de 20 %).
+- Une fois exécuté, le système ne vérifie pas les blocs suivants.
+
+> **Exemple :** Le tag produit a la valeur **sport** _ET_ le montant du sous-total ≥ **33** _OU_ le tag produit a la valeur **shoes** → Appliquer 20 % de réduction sur tous les frais d’expédition.
+
+<img
+  src="/images/advanced/branching/if-condition.webp"
+  alt="Condition If"
+/>
+
+### Bloc(s) de conditions Else if
+
+- Si le premier bloc ne correspond pas, le système vérifie le ou les blocs suivants.
+- Un bloc **Else If** peut contenir plusieurs **sous-conditions** utilisant **ET** ou **OU**, et il doit inclure la condition **"Toutes les conditions précédentes invalides"** comme sous-condition.
+- Il peut y avoir un ou plusieurs blocs en séquence. Toutefois, si la condition **"Toutes les conditions précédentes invalides"** n’est pas présente, le bloc ne fonctionnera pas comme un **Else If** et se comportera comme un bloc **If** normal.
+- Si la condition globale du bloc est remplie, son action **“Alors”** s’exécute (par ex., appliquer 50 % de réduction), et l’évaluation s’arrête.
+
+> **Exemple :** Toutes les conditions précédentes invalides ET le tag client a la valeur **VIP** → Appliquer 50 % de réduction sur tous les frais d’expédition.
+
+<img
+  src="/images/advanced/branching/else-if-condition.webp"
+  alt="Condition Else If"
+/>
+
+### Bloc de repli (else)
+
+- Si aucun des blocs précédents ne correspond, vous pouvez ajouter un bloc de repli avec la condition [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid).
+- Cela agit comme le **Else (par défaut)** et garantit qu’il y a toujours une action **“Alors”** (par ex., appliquer une réduction de 5 %) lorsque aucun des blocs précédents n’a été exécuté.
+
+> **Exemple :** Toutes les conditions précédentes invalides → Appliquer 5 % de réduction sur tous les frais d’expédition.
+
+<img
+  src="/images/advanced/branching/else-condition.webp"
+  alt="Condition Else"
+/>
+
+<Tip>
+  Vous devez organiser les blocs de la priorité la plus élevée à la plus basse.  
+  Le premier bloc est la priorité la plus élevée et le dernier bloc est la priorité la plus basse.
+</Tip>
+
+## Exemple de cas d’utilisation
+
+Imaginons que vous souhaitiez appliquer différentes réductions sur l’expédition en fonction des **tags produits**.
+
+### Configuration de la règle
+
+**Bloc 1 (if)** → _Le tag produit a la valeur `sport`_ → Appliquer **20 %** de réduction sur tous les frais d’expédition (priorité la plus élevée).
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport.webp"
+  alt="20 Pourcent Quand Sport"
+/>
+
+**Ajout du bloc suivant**  
+ Pour ajouter un nouveau bloc après le premier, vous pouvez soit :  
+ Cliquer sur le bouton **“Ajouter un nouveau bloc”** dans le constructeur de règles.
+
+<img src="/images/advanced/branching/add-new-block.webp" alt="Ajouter un nouveau bloc" />
+
+Ou bien [copier le bloc précédent](/guides/fr/advanced/block-replication) et le **coller en dessous** à l’aide de l’icône **coller**, puis modifier ses conditions et actions.
+
+**Bloc 2 (else if)** → _Le tag produit a la valeur `winter`_ ET _Toutes les conditions précédentes invalides_ → Appliquer **50 % de réduction sur tous les frais d’expédition**.
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter.webp"
+  alt="50 Pourcent Quand Winter"
+/>
+
+**Bloc 3 (else)** → _Toutes les conditions précédentes invalides_ → Appliquer **5 % de réduction sur tous les frais d’expédition** (remise par défaut).
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid.webp"
+  alt="5 Pourcent Quand Toutes les Conditions Précédentes Invalides"
+/>
+
+Voici à quoi ressemblera l’ensemble de la configuration de la règle.
+
+<img
+  src="/images/advanced/branching/example-all-blocks.webp"
+  alt="Exemple Tous les Blocs"
+/>
+
+### Flux d’exécution
+
+Le système commence avec le **Bloc 1**. S’il correspond (tag produit = `sport`), une réduction de **20 % sur l’expédition** est appliquée, et la règle s’arrête.
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport-checkout.webp"
+  alt="20 Pourcent Quand Sport Checkout"
+/>
+
+Si le Bloc 1 ne correspond pas, il vérifie le **Bloc 2**. Si le tag produit = `winter`, alors **50 % de réduction sur l’expédition** est appliquée, et la règle s’arrête.
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter-checkout.webp"
+  alt="50 Pourcent Quand Winter Checkout"
+/>
+
+Si ni le Bloc 1 ni le Bloc 2 ne correspondent, le **Bloc 3** s’exécute. Comme il utilise **Toutes les conditions précédentes invalides**, il agit comme un **par défaut**, appliquant **5 % de réduction sur l’expédition**.
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid-checkout.webp"
+  alt="5 Pourcent Quand Toutes les Conditions Précédentes Invalides Checkout"
+/>

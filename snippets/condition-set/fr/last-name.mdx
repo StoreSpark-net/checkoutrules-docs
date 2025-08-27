@@ -1,0 +1,52 @@
+### Nom de famille
+
+Utilisé pour comparer le nom de famille du client avec une ou plusieurs valeurs spécifiques, comptes ou états, en fonction de l’une des sous-conditions suivantes :
+
+- **Contient** (Correspond si le nom de famille contient la valeur spécifiée ou une valeur partielle)  
+- **Ne contient pas** (Correspond si le nom de famille ne contient pas la valeur spécifiée ou une valeur partielle)  
+- **Est vide** (Correspond si aucun nom de famille n’est saisi)  
+- **N’est pas vide** (Correspond si une valeur quelconque est saisie dans le champ du nom de famille)  
+- **Est** (Correspond si le nom de famille correspond exactement à la valeur spécifiée)  
+- **N’est pas** (Correspond si le nom de famille n’est pas exactement la valeur spécifiée)  
+- **A un nombre de caractères supérieur ou égal à** (Correspond si le nombre total de caractères dans le nom de famille est supérieur ou égal au nombre spécifié)  
+- **A un nombre de caractères inférieur ou égal à** (Correspond si le nombre total de caractères dans le nom de famille est inférieur ou égal au nombre spécifié)  
+- **A seulement** (Correspond si le nom de famille contient uniquement le type de caractères autorisé dans la liste déroulante)  
+- **N’a pas seulement** (Correspond si le nom de famille contient des caractères autres que le type de caractères autorisé dans la liste déroulante)  
+
+Pour **Contient**, **Ne contient pas**, **Est**, et **N’est pas**, entrez la valeur à faire correspondre.  
+
+> Par exemple, `N’est pas : Smith` → Correspond si le nom de famille est autre chose que « Smith ».  
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-not.webp"
+  alt="Nom de famille n’est pas"
+/>
+
+Pour **A seulement** et **N’a pas seulement**, sélectionnez le type de caractères dans la liste déroulante :
+
+- **Caractères anglais** (Autorise uniquement A–Z et a–z)  
+- **Caractères anglais + variantes accentuées** (Autorise A–Z, a–z, plus les caractères accentués comme é, ñ, ö)  
+  > Par exemple, `A seulement : Caractères anglais` → Correspond si le nom de famille contient uniquement des caractères anglais.  
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-only.webp"
+  alt="Nom de famille a seulement"
+/>
+
+Pour **A un nombre de caractères supérieur ou égal à** ou **A un nombre de caractères inférieur ou égal à**, entrez le seuil de caractères.  
+
+> Par exemple, `A un nombre de caractères supérieur ou égal à 5` → Correspond si le nom de famille contient 5 caractères ou plus.  
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-greater-value.webp"
+  alt="Nom de famille a une valeur supérieure"
+/>
+
+Pour **Est vide** et **N’est pas vide**, aucune valeur n’est nécessaire.  
+
+> Par exemple, `Est vide` → Correspond si le champ du nom de famille est laissé vide.  
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-empty.webp"
+  alt="Nom de famille est vide"
+/>

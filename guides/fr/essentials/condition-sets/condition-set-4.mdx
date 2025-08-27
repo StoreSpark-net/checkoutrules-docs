@@ -1,0 +1,341 @@
+---
+title: "Ensemble de conditions 4"
+description: "Découvrez chaque condition disponible dans _l’Ensemble de conditions 4_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/fr/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/fr/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/fr/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/fr/customer-tag.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/fr/customer-total-number-of-previous-orders.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/fr/order-subtotal-amount.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/fr/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/fr/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/fr/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/fr/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/fr/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/fr/total-product-discount-percentage.mdx";
+import SKU from "/snippets/condition-set/fr/sku.mdx";
+import ProductTag from "/snippets/condition-set/fr/product-tag.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/fr/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/fr/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/fr/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/fr/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/fr/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/fr/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/fr/first-name.mdx";
+import LastName from "/snippets/condition-set/fr/last-name.mdx";
+import Company from "/snippets/condition-set/fr/company.mdx";
+import PhoneNumber from "/snippets/condition-set/fr/phone-number.mdx";
+import CityArea from "/snippets/condition-set/fr/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/fr/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Client
+
+<EmailAddress />
+<CustomerTag />
+<CustomerTotalNumberOfPreviousOrders />
+
+## Détails B2B
+
+### Le client est une entreprise B2B
+
+Cette condition vérifie si le client appartient à une **entreprise** dans vos enregistrements de boutique. Si le client est identifié comme une entreprise B2B, la condition est considérée comme remplie.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-b2b-company.webp"
+  alt="Le client est une entreprise B2B"
+/>
+
+### Le client n’est pas une entreprise B2B
+
+Cette condition vérifie si le client n’appartient **pas** à une **entreprise** dans vos enregistrements de boutique. Si le client n’est pas identifié comme une entreprise B2B, la condition est considérée comme remplie.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-b2b-company.webp"
+  alt="Le client n’est pas une entreprise B2B"
+/>
+
+### Nom de l’entreprise acheteuse
+
+Cette condition vérifie si le client appartient à une entreprise dans vos enregistrements, puis compare le **nom de l’entreprise acheteuse** à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **contient** (Le nom de l’entreprise acheteuse inclut la valeur saisie)
+- **ne contient pas** (Le nom de l’entreprise acheteuse n’inclut pas la valeur saisie)
+- **est vide** (Aucun nom d’entreprise acheteuse n’est fourni)
+- **n’est pas vide** (Un nom d’entreprise acheteuse est fourni)
+- **est** (Le nom de l’entreprise acheteuse correspond exactement à la valeur saisie)
+- **n’est pas** (Le nom de l’entreprise acheteuse ne correspond pas exactement à la valeur saisie)
+
+Pour **contient**, **ne contient pas**, **est** et **n’est pas**, saisissez une valeur dans le champ texte à comparer avec le nom de l’entreprise acheteuse du client.
+
+> Par exemple, `contient Trading` → Correspond à tout nom d’entreprise acheteuse contenant le mot “Trading”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-contains.webp"
+  alt="Le nom de l’entreprise acheteuse contient"
+/>
+
+Pour **est vide** et **n’est pas vide**, aucune valeur n’est requise.
+
+> Par exemple, `est vide` → Correspond si le champ du nom d’entreprise acheteuse est vide.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-empty.webp"
+  alt="Nom de l’entreprise acheteuse vide"
+/>
+
+### Nom de l’emplacement de l’entreprise acheteuse
+
+Cette condition vérifie si le client appartient à une entreprise dans vos enregistrements, puis compare le **nom de l’emplacement de l’entreprise acheteuse** à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **contient** (Le nom de l’emplacement inclut la valeur saisie)
+- **ne contient pas** (Le nom de l’emplacement n’inclut pas la valeur saisie)
+- **est vide** (Aucun nom d’emplacement n’est fourni)
+- **n’est pas vide** (Un nom d’emplacement est fourni)
+- **est** (Le nom de l’emplacement correspond exactement à la valeur saisie)
+- **n’est pas** (Le nom de l’emplacement ne correspond pas exactement à la valeur saisie)
+
+Pour **contient**, **ne contient pas**, **est** et **n’est pas**, saisissez une valeur dans le champ texte à comparer avec le nom de l’emplacement de l’entreprise acheteuse.
+
+> Par exemple, `contient New York` → Correspond à tout nom d’emplacement contenant “New York”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-contains.webp"
+  alt="Le nom de l’emplacement de l’entreprise acheteuse contient"
+/>
+
+Pour **est vide** et **n’est pas vide**, aucune valeur n’est requise.
+
+> Par exemple, `est vide` → Correspond si le champ du nom de l’emplacement est vide.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-empty.webp"
+  alt="Nom de l’emplacement de l’entreprise acheteuse vide"
+/>
+
+## Détails de la commande
+
+<OrderSubtotalAmount />
+
+## Détails du panier
+
+### Devise
+
+Utilisé pour comparer la devise choisie par le client dans votre boutique avec une ou plusieurs devises spécifiques, selon l’une des sous-conditions suivantes :
+
+- **Contient au moins une de ces valeurs** (Correspond si la devise du client est dans la liste donnée)
+- **Ne contient aucune de ces valeurs** (Correspond si la devise du client n’est pas dans la liste donnée)
+- **Contient une autre valeur que ces valeurs** (Correspond si la devise du client n’est pas dans la liste donnée)
+- **Ne contient aucune autre valeur que ces valeurs** (Correspond si la devise du client est uniquement dans la liste donnée et aucune autre)
+
+Pour toute option ci-dessus, recherchez et sélectionnez une ou plusieurs devises dans la liste. Vous pouvez aussi utiliser les options **Coller**, **Copier tout** ou **Effacer tout** pour une sélection rapide. Séparez plusieurs valeurs avec des virgules.
+
+> Par exemple, `Ne contient aucune autre valeur que ces valeurs : USD, EUR` → Correspond si le champ contient uniquement “USD” ou “EUR” et aucune autre devise.
+
+<img
+  src="/images/essentials/condition-sets/select-currencies.webp"
+  alt="Devises multiples"
+/>
+
+### Fournisseur du produit
+
+Cette condition vérifie le **fournisseur du produit** selon des critères spécifiques. Si un produit du panier correspond à la valeur saisie pour le fournisseur, en fonction de l’une des sous-conditions suivantes :
+
+- **Contient au moins une de ces valeurs** (Correspond si le fournisseur contient au moins une des valeurs saisies)
+- **Ne contient aucune de ces valeurs** (Correspond si le fournisseur ne contient aucune des valeurs saisies)
+- **Contient une autre valeur que ces valeurs** (Correspond si le fournisseur contient une valeur qui ne fait pas partie des valeurs saisies)
+- **Ne contient aucune autre valeur que ces valeurs** (Correspond si le fournisseur contient uniquement les valeurs saisies et aucune autre)
+- **Nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de fournisseurs est supérieur ou égal au nombre saisi)
+- **Nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de fournisseurs est inférieur ou égal au nombre saisi)
+
+Pour **Contient au moins une de ces valeurs**, **Ne contient aucune de ces valeurs**, **Contient une autre valeur que ces valeurs** et **Ne contient aucune autre valeur que ces valeurs**, saisissez un ou plusieurs noms de fournisseurs dans le champ. Séparez plusieurs valeurs avec des virgules.
+
+<Note>
+  Utilisez * comme caractère générique pour correspondre à plusieurs valeurs. Par exemple, Drop* correspondra à Dropship, drop-590, etc. Utilisez ? pour correspondre à un seul caractère.
+</Note>
+
+> Par exemple, `Contient au moins une de ces valeurs : Nike, Adidas` → Correspond si le fournisseur du produit est “Nike” ou “Adidas”.
+
+<img
+  src="/images/essentials/condition-sets/product-vendor.webp"
+  alt="Fournisseur du produit"
+/>
+
+Pour **Nombre de valeurs supérieur ou égal à** et **Nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour correspondre au nombre de fournisseurs.
+
+> Par exemple, `Nombre de valeurs supérieur ou égal à 3` → Correspond si le nombre de fournisseurs est trois ou plus.
+
+<img
+  src="/images/essentials/condition-sets/count-product-vendor.webp"
+  alt="Nombre de fournisseurs"
+/>
+
+### Titre du produit
+
+Cette condition vérifie le **titre du produit** selon des critères spécifiques. Si un produit du panier correspond à la valeur saisie pour le titre, en fonction de l’une des sous-conditions suivantes :
+
+- **contient** (Le titre du produit inclut la valeur saisie)
+- **ne contient pas** (Le titre du produit n’inclut pas la valeur saisie)
+- **est** (Le titre du produit correspond exactement à la valeur saisie)
+- **n’est pas** (Le titre du produit ne correspond pas exactement à la valeur saisie)
+
+Pour configurer ces conditions, saisissez la valeur du titre du produit dans le champ et choisissez l’option de comparaison appropriée dans le menu déroulant.
+
+> Par exemple, `contient Shoes` → Correspond à tout titre de produit contenant le mot “Shoes”.
+
+<img
+  src="/images/essentials/condition-sets/product-title-contains.webp"
+  alt="Titre du produit contient"
+/>
+
+### Type de produit
+
+Cette condition vérifie le **type de produit** selon des critères spécifiques. Si un produit du panier correspond à la valeur saisie pour le type, en fonction de l’une des sous-conditions suivantes :
+
+- **contient** (Le type de produit inclut la valeur saisie)
+- **ne contient pas** (Le type de produit n’inclut pas la valeur saisie)
+- **est vide** (Aucun type de produit n’est fourni)
+- **n’est pas vide** (Un type de produit est fourni)
+- **est** (Le type de produit correspond exactement à la valeur saisie)
+- **n’est pas** (Le type de produit ne correspond pas exactement à la valeur saisie)
+
+Pour **contient**, **ne contient pas**, **est** et **n’est pas**, saisissez une valeur dans le champ texte à comparer avec le type du produit.
+
+> Par exemple, `contient Electronics` → Correspond à tout type de produit contenant le mot “Electronics”.
+
+<img
+  src="/images/essentials/condition-sets/product-type-contains.webp"
+  alt="Type de produit contient"
+/>
+
+Pour **est vide** et **n’est pas vide**, aucune valeur n’est requise.
+
+> Par exemple, `est vide` → Correspond si le champ du type de produit est vide.
+
+<img
+  src="/images/essentials/condition-sets/product-type-empty.webp"
+  alt="Type de produit vide"
+/>
+
+### Montant du sous-total de la commande par SKU
+
+Cette condition vérifie le **montant du sous-total des produits avec un SKU spécifique** dans la commande selon des critères définis, en fonction de l’une des sous-conditions suivantes :
+
+- **montant supérieur ou égal à** (Correspond si le sous-total des produits avec le SKU spécifié est supérieur ou égal au montant saisi)
+- **montant inférieur ou égal à** (Correspond si le sous-total des produits avec le SKU spécifié est inférieur ou égal au montant saisi)
+
+Pour configurer ces conditions :
+
+<Steps>
+  <Step title="Saisir le SKU">
+    Entrez le <strong>SKU</strong> dans le champ “Saisir SKU”.
+  </Step>
+
+  <Step title="Saisir le montant">
+    Entrez le <strong>montant</strong> dans le champ “Saisir montant”.
+  </Step>
+
+  <Step title="Sélectionner une option de comparaison">
+    Sélectionnez l’option de comparaison dans le menu déroulant.
+  </Step>
+</Steps>
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> **Exemple pour “montant supérieur ou égal à”** :  
+> SKU: `ABC123`  
+> Montant: `777`  
+> → Correspond aux commandes où le sous-total des produits avec SKU `ABC123` est de 777 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-sku-has-greater-value.webp"
+  alt="Sous-total par SKU supérieur ou égal"
+/>
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## Le panier contient des articles
+
+<SKU />
+<ProductTag />
+
+## Méta-champ de produit
+
+### Méta-champ de produit
+
+Cette condition vérifie un **méta-champ de produit** que vous spécifiez par **namespace** et **clé**, puis l’évalue en fonction de l’une des sous-conditions suivantes :
+
+- **Contient au moins une de ces valeurs** (Correspond si le méta-champ contient au moins une des valeurs saisies)
+- **Ne contient aucune de ces valeurs** (Correspond si le méta-champ ne contient aucune des valeurs saisies)
+- **Contient une autre valeur que ces valeurs** (Correspond si le méta-champ contient une valeur qui ne fait pas partie des valeurs saisies)
+- **Ne contient aucune autre valeur que ces valeurs** (Correspond si le méta-champ contient uniquement les valeurs saisies et aucune autre)
+- **Valeur vide** (Correspond si le méta-champ n’a aucune valeur)
+- **Ne contient pas de valeur vide** (Correspond si le méta-champ contient une valeur quelconque)
+- **Nombre supérieur ou égal à** (Correspond si la valeur numérique du méta-champ est supérieure ou égale au nombre saisi)
+- **Nombre inférieur ou égal à** (Correspond si la valeur numérique du méta-champ est inférieure ou égale au nombre saisi)
+- **Nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de valeurs dans le méta-champ est supérieur ou égal au nombre saisi)
+- **Nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de valeurs dans le méta-champ est inférieur ou égal au nombre saisi)
+
+Pour **Contient au moins une de ces valeurs**, **Ne contient aucune de ces valeurs**, **Contient une autre valeur que ces valeurs** et **Ne contient aucune autre valeur que ces valeurs**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs avec des virgules.
+
+> Par exemple, `Namespace: details` · `Clé: material` · `Contient au moins une de ces valeurs : Cotton, Linen` → Correspond si le méta-champ contient “Cotton” ou “Linen”.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-has-any-value.webp"
+  alt="Méta-champ de produit contient une valeur"
+/>
+
+Pour **Nombre supérieur ou égal à** et **Nombre inférieur ou égal à**, saisissez une valeur numérique unique dans le champ à comparer avec la valeur numérique du méta-champ.
+
+> Par exemple, `Namespace: nutrition` · `Clé: calories` · `Nombre inférieur ou égal à 200` → Correspond si la valeur numérique du méta-champ est de 200 ou moins.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-less-value.webp"
+  alt="Méta-champ de produit valeur inférieure"
+/>
+
+Pour **Nombre de valeurs supérieur ou égal à** et **Nombre de valeurs inférieur ou égal à**, saisissez une valeur numérique unique dans le champ à comparer avec le nombre de valeurs du méta-champ.
+
+> Par exemple, `Namespace: features` · `Clé: available_sizes` · `Nombre de valeurs supérieur ou égal à 5` → Correspond si le méta-champ contient cinq tailles ou plus.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
+  alt="Méta-champ de produit nombre de valeurs supérieur"
+/>
+
+## Expédition
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Localisation
+<UserLanguage />
+
+## Adresse de expédition
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

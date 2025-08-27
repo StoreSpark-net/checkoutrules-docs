@@ -1,0 +1,92 @@
+---
+title: Réplication de bloc
+description: "Apprenez à copier un bloc dans une règle, le coller et le réutiliser."
+icon: "clone"
+---
+
+## Vue d’ensemble
+La réplication de bloc vous permet de dupliquer rapidement une logique existante dans une règle sans avoir à la recréer manuellement. C’est particulièrement utile lorsque le contenu des blocs est similaire, car cela permet de gagner du temps et d’assurer la cohérence.
+
+## Utilisation
+### Copier le bloc
+
+Cliquez sur l’icône **Copier le bloc** du bloc que vous souhaitez dupliquer. Cela copiera l’intégralité du bloc, y compris ses conditions et ses actions.
+
+<Note>
+Après la copie, l’**icône de tick** et le texte **« Copié »** apparaîtront à la place de l’icône Copier le bloc. De plus, un message de confirmation **« Bloc copié avec succès ! »** sera affiché en bas.
+</Note>
+
+<img
+  src="/images/advanced/block-replication/copy-block.webp"
+  alt="Copier le bloc"
+/>
+
+### Coller le bloc
+Collez le bloc copié en dessous en cliquant sur l’icône **Coller le bloc** à l’intérieur de la **même règle** ou de toute autre règle du même type.
+
+<Note>
+Un message de confirmation **« Bloc collé avec succès ! »** sera affiché en bas.
+</Note>
+
+<img
+  src="/images/advanced/block-replication/paste-block.webp"
+  alt="Coller le bloc"
+/>
+
+<Warning>
+Si vous copiez plusieurs blocs, seul le **dernier bloc copié** sera collé, et non tous.
+</Warning>
+
+### Mettre à jour le contenu
+Modifiez les conditions, valeurs ou actions nécessaires dans le bloc collé pour l’adapter au nouveau scénario. Cela vous permet de réutiliser la structure tout en la personnalisant pour le nouveau cas.
+
+**Exemple :**  
+Si vous avez copié un bloc où la sous-condition **Langue de l’utilisateur** est définie sur **Français** avec le message d’erreur en français, après avoir collé le bloc vous pouvez :  
+- Changer la sous-condition **Langue de l’utilisateur** de **Français** à **Allemand**.  
+- Remplacer le texte du message d’erreur par la traduction en allemand.  
+
+De cette façon, la logique du bloc reste la même (contrôle du montant minimum de commande), mais les détails sont personnalisés pour une autre langue.
+
+<img
+  src="/images/advanced/block-replication/update-pasted-content.webp"
+  alt="Mettre à jour le contenu collé"
+/>
+
+## Exemple de cas d’utilisation
+
+Créons une règle qui impose un **montant minimum de commande** tout en affichant des messages d’erreur dans plusieurs langues.  
+
+En utilisant la **réplication de bloc**, vous n’avez besoin de créer que le premier bloc (Français), puis de le copier et de le coller dans la même règle, et de mettre à jour la condition **Langue de l’utilisateur** et le message d’erreur pour l’allemand. Enfin, ajoutez un bloc de secours pour l’anglais.  
+
+### Bloc 1 (Français)
+- Ajoutez la condition **Montant total de la commande** et définissez-la sur **inférieur ou égal à 99,99** pour déclencher une erreur si le montant de la commande est inférieur à 100.  
+- ET sous-condition **Langue de l’utilisateur** est **Français**.  
+- Définissez le message d’erreur :  
+  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+<img
+  src="/images/advanced/translations/example-french-translation.webp"
+  alt="Exemple de traduction française"
+/>
+
+### Bloc 2 (Allemand) — créé en copiant le Bloc 1
+- Collez le bloc copié en dessous de tous les blocs en cliquant sur l’icône **Coller le bloc** à l’intérieur de la **même règle**.  
+- Mettez à jour la sous-condition **Langue de l’utilisateur** à **Allemand**.  
+- Mettez à jour le message d’erreur :  
+  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+<img
+  src="/images/advanced/translations/example-german-translation.webp"
+  alt="Exemple de traduction allemande"
+/>
+
+### Bloc 3 (Bloc de secours – Anglais)
+- Ajoutez la condition **Montant total de la commande** et définissez-la sur **inférieur ou égal à 99,99** pour déclencher une erreur si le montant de la commande est inférieur à 100.  
+- Pour la **condition de secours/else**, ajoutez la sous-condition **Toutes les conditions précédentes invalides**.   
+- Définissez le message d’erreur :  
+  > "Order amount is less than the required minimum order amount of $100"
+
+<img
+  src="/images/advanced/translations/example-fallback-english-translation.webp"
+  alt="Exemple de traduction anglaise de secours"
+/>
