@@ -1,0 +1,118 @@
+---
+title: "FAQ"
+description: "Find answers to the most frequently asked questions about using the **BeSure Checkout Rules** app in your Shopify store."
+icon: "info"
+---
+
+If you can’t find what you’re looking for, [get in touch](https://checkoutrules.com/contact/).
+
+<AccordionGroup>
+  <Accordion title="What is a checkout rule?">
+    It's a way to customize the checkout experience for your customers. For example, a shipping checkout rule will help you modify the shipping options being displayed on the checkout. Similarly, a payment checkout rule will help you modify the payment options being displayed on the checkout.
+  </Accordion>
+
+  <Accordion title="How to create a checkout rule?">
+    You can create a checkout rule by clicking on the **Create rule** button on the rules page. You can then select the type of rule you want to create and follow the instructions.
+
+    <img src="/images/faqs/create_rule-Bjcq8flN.webp" alt="How to create a rule" />
+  </Accordion>
+
+  <Accordion title="Should I choose an empty rule?">
+    Sometimes when you select a rule, it might show you a selection of **'empty rule'** vs **'predefined templates'**. You can select **'empty rule'** if you cannot find a good template to use. This will allow you to create a rule where you can customize the behavior exactly as per your needs. You can also select any of the **'predefined templates'** if you find a template that suits your needs. This will allow you to create a rule starting from the template, but you can still customize it as per your needs.
+    <img src="/images/faqs/empty_rule_templates-DlBCQK7n.webp" alt="Empty rule or templates" />
+  </Accordion>
+
+  <Accordion title="How to test a checkout rule?">
+    You can test a checkout rule by setting it to **TESTING** status. This will allow you to see how the rule changes your checkout without affecting your customers.  
+    After creating the rule, simply open your store's checkout page, then use the test email address to see the changes.
+
+    <img src="/images/faqs/rule_testing-Dp4kiMTw.webp" alt="Testing a rule" />
+  </Accordion>
+
+  <Accordion title="Which condition set should I use?">
+   You can use any condition set that suits your needs. If you are unsure, you can either start by just using **condition set 1** or by using the search box to search which condition set has that condition and switch to it. For example, if you want to hide a shipping method based on the product metafield, then you can use condition set 4. Condition set selection is only available at rule creation time. You cannot change the condition set after the rule is created.
+
+    <img src="/images/faqs/condition_set_selection-jOo749bC.webp" alt="Condition set selection" />
+  </Accordion>
+
+  <Accordion title="What is the basic structure of a checkout rule?">
+    A checkout rule consists of a condition (or a set of conditions) and an action (or multiple actions). The condition is used to check if the rule should be applied or not. The action is used to modify the checkout. For example, if we set a rule to hide UPS shipping if the order total is less than \$50, then the condition will check if the order total is less than $50. If the condition is met during checkout, then the action will be applied. The action will hide UPS shipping from the checkout.
+    <img src="/images/faqs/basic_rule_structure-LbDRaUUy.webp" alt="Basic rule structure" />
+  </Accordion>
+
+  <Accordion title="What are blocks inside a checkout rule?">
+  A block is composed of block conditions with the block action. When you start creating a new empty rule, the first block is already added for you. You can add multiple blocks in a rule. Each block can have its own set of conditions and one action. The blocks are evaluated in the order they are added. If block conditions are true, then the corresponding action will be applied. Then the next block is evaluated and so on.
+    <img src="/images/faqs/rule_blocks-DkeFb4UF.webp" alt="Rule blocks" />
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+<AccordionGroup>
+  <Accordion title="Does this app work for 1 page checkout?">
+    Yes, the app works well for both **1 page** and **3 page** checkouts since it uses native Shopify APIs.
+  </Accordion>
+
+  <Accordion title="Does this app only work for Shopify Plus?">
+    No, this app works for all Shopify plans. You can use this app to customize your checkout for all plans.
+  </Accordion>
+
+  <Accordion title="Does this app work for invoice checkout (when customer opens checkout from invoice)?">
+   Yes, this app works with invoice-based checkout. Only discount rules do not support invoice-based checkout at the moment, but you can manually apply the automatic discount rules on the draft order before sending out the invoice.
+    <img src="/images/faqs/draft_order_apply_discounts-Bzc-zA93.webp" alt="Invoice checkout" />
+  </Accordion>
+
+  <Accordion title="Can I customize what rules should run on invoice checkout (when customer opens checkout from invoice)?">
+  Yes, there are options available which can enable/disable rules for that invoice. For example, you can choose to 'ignore the validation rules' before sharing checkout link or sending out the invoice. Automatic discount rules are not automatically applied on the invoice checkout, but you can manually apply the automatic discount rules on the draft order before sending out the invoice. If you select a shipping option for the customer before sending the invoice, then shipping rules will not run on that invoice checkout. If you select 'Payment due later' option and then send the invoice, then payment rules will run on that invoice checkout.
+    <img src="/images/faqs/invoice_admin_view-C9KJI8JV.webp" alt="Invoice customization" />
+  </Accordion>
+
+  <Accordion title="Does this app work for draft orders (when created from admin)?">
+  It works for some rule categories. Validation rules will work, but there is an option that you can use to ignore them if you need to. Automatic discount rules can be manually applied to the draft order. When you click on the 'add discount' button, it will show the option 'Apply all eligible automatic discounts' which, when selected, can apply the automatic discount rules. Shipping and payment rules will not work in the draft order admin.
+    <img src="/images/faqs/admin_view_draft_orders-BQ3pRIeY.webp" alt="Draft orders" />
+  </Accordion>
+
+  <Accordion title="Can I use wildcard like * to select shipping or payment methods?">
+   You can use a * to select all shipping or payment methods. You can also use * or ? in these ways, for example, to select all methods that start with 'Standard', you can use 'Standard*'. To select all methods that end with 'Standard', you can use '\*Standard'. To select all methods that start with 'New' and end with 'Way', you can use 'New*Way'. Similarly, you can use ? to match with a single character.
+  </Accordion>
+
+  <Accordion title="What is the difference between 'is' and 'contains' used in different rules?">
+The 'is' condition is used to match the exact value. The 'contains' condition is used to match the value partially. For example, 'is' will match 'Standard' with 'Standard' only, while 'contains' will match 'Standard' with 'Standard Shipping' or 'Standard Delivery'.
+  </Accordion>
+
+  <Accordion title="How to add a note or modify text displayed on the checkout?">
+    You can add a note or modify text displayed on the checkout by following the steps mentioned [here](https://checkoutrules.com/blog/shopify-easily-customize-checkout-text/?utm_source=app&utm_medium=help_page&utm_campaign=app_help).
+  </Accordion>
+</AccordionGroup>
+
+## Reorder Shipping Methods
+
+<AccordionGroup>
+  <Accordion title="How to set the default pre-selected shipping method?">
+   You can set the default pre-selected shipping method by making it the top shipping method on the checkout. Then it will be pre-selected for your customers. Please note, if you have started a checkout before, then Shopify caches your previous selection of shipping method and will pre-select that one. You can clear the cache by using incognito browser mode or by using a different browser or by starting a new checkout with different cart content. Your customers will not have this issue.
+  </Accordion>
+</AccordionGroup>
+
+## Reorder Payment Methods
+
+<AccordionGroup>
+  <Accordion title="How to set the default pre-selected payment method?">
+  You can set the default pre-selected payment method by making it the top payment method on the checkout. Then it will be pre-selected for your customers (this is not always true, please read the FAQ below). Please note that if you have started a checkout before, then Shopify caches your previous selection of payment method and will pre-select that one. You can clear the cache by using incognito browser mode, by using a different browser, or by starting a new checkout with different cart content. Your customers will not have this issue.
+  </Accordion>
+
+  <Accordion title="Why is top most payment method not being set the default pre-selected payment method?">
+   It usually works when you reorder the payment method to the top, then it becomes the pre-selected payment method, but this default pre-selection is controlled by Shopify and the payment provider that you are using. This app only allows you to reorder the payment methods. There are some payment gateways, like Klarna and iDeal, that always want to be selected first, no matter what. In that case, your only option is to try a workaround like showing these payment gateways in a particular region only and hiding them in all other regions. Once they are hidden, it might be possible to set the topmost payment method as the default pre-selected payment method.
+  </Accordion>
+</AccordionGroup>
+
+## Validate / Block Checkout
+
+<AccordionGroup>
+  <Accordion title="How does the app detect PO Box addresses?">
+    When you use the 'P.O. box address' condition in the rule, then all kinds of entries in the shipping address like P.O. box, P O box, or P.o b o x, etc. are detected by the app automatically. If you want to detect a custom word or phrase, you can do that by using the 'Address line' condition within which you can specify the word or phrase you want to detect.
+  </Accordion>
+
+  <Accordion title="How to detect PO Box addresses in other languages?">
+   If you want to detect PO Box words or phrases in other languages, you can do that by using the 'Address (line1 + line2)' condition within which you can specify the words or phrases you want to detect. For example, 'Packstation' in German. You can add multiple of these conditions for each word using the OR operator in between them.
+  </Accordion>
+</AccordionGroup>
