@@ -1,0 +1,36 @@
+### 每个产品标签的订单小计金额
+
+此条件会检查订单中带有特定产品标签的 **产品小计金额** 是否符合定义的条件，基于以下子条件之一：
+
+- **金额大于或等于**（当指定产品标签的产品小计金额大于或等于输入金额时匹配）
+- **金额小于或等于**（当指定产品标签的产品小计金额小于或等于输入金额时匹配）
+
+设置这些条件的方法：
+
+<Steps>
+  <Step title="输入产品标签">
+    在“输入产品标签”字段中输入<strong>产品标签</strong>。
+  </Step>
+
+  <Step title="输入金额">
+    在“输入金额”字段中输入<strong>金额</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+<Note>
+  输入的金额应使用您的商店货币。路径：设置 &gt; 商店详情 &gt; 商店货币
+</Note>
+
+> **“金额大于或等于”的示例**:  
+> 产品标签: `SummerCollection`  
+> 金额: `777`  
+> → 匹配小计金额为 777 或更多、且带有 `SummerCollection` 标签的产品订单。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-product-tag-has-greater-value.webp"
+  alt="每个产品标签的订单小计金额大于值"
+/>

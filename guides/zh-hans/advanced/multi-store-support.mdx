@@ -1,0 +1,127 @@
+---
+title: 多商店支持
+description: "了解如何从一个商店导出多个规则并将它们导入到另一个 Shopify 商店。"
+icon: "repeat"
+---
+
+## 概览
+
+您可以在不同的 Shopify 商店之间复制规则，而无需手动创建。您可以将一个商店中的规则导出为 ZIP 文件，然后将该文件导入到另一个商店。这可以节省时间，确保一致性，并使跨多个商店管理相似规则变得更容易。您还可以创建规则的备份，以便在需要时恢复它们。
+
+## 使用方法
+
+### 导出规则
+
+在当前商店中选择一个或多个规则并导出。所选规则可以作为 **ZIP 文件** 下载到您的计算机，或作为单独的文件导出。
+
+以下是导出规则的步骤：
+
+<Steps>
+  <Step title="选择规则">
+
+您可以选择一个或多个要导出的规则。然后，点击右上角的三个点并选择 **"导出"**。接着会出现一个弹窗。
+
+<img
+  src="/images/advanced/multi-store-support/export-rules.webp"
+  alt="导出规则"
+/>
+
+或者，您也可以单独导出某个规则：打开该规则，点击 **"更多操作"**，然后选择 **"导出"** 来单独导出该规则。
+
+<img
+  src="/images/advanced/multi-store-support/single-rule-export.webp"
+  alt="单个规则导出"
+/>
+</Step>
+
+
+<Step title="选择导出格式">
+
+在弹窗中，选择以下选项之一：
+
+- **ZIP 压缩包**（下载包含所有所选规则的单个 ZIP 文件）
+- **单独文件**（每个所选规则作为单独的 JSON 文件下载，下载会有间隔时间）
+
+<img
+  src="/images/advanced/multi-store-support/choose-export-format.webp"
+  alt="选择导出格式"
+/>
+</Step>
+
+<Step title="完成导出">
+
+最后，点击 **"导出"** 来导出规则。
+
+<img
+  src="/images/advanced/multi-store-support/complete-export.webp"
+  alt="完成导出"
+/>
+</Step>
+</Steps>
+
+### 导入规则
+
+打开另一个 Shopify 商店，进入导入选项，并上传之前导出的 **ZIP 文件** 或单独的规则 JSON 文件。ZIP 内的所有规则或所选的 JSON 文件将被添加到新商店中。
+
+以下是导入规则的步骤：
+
+<Steps>
+<Step title="点击导入按钮">
+
+点击 **"导入"** 按钮。接着会出现一个弹窗。
+
+<img
+  src="/images/advanced/multi-store-support/click-import-button.webp"
+  alt="点击导入按钮"
+/>
+</Step>
+
+<Step title="添加文件或拖放文件上传">
+
+在弹窗中，添加文件或将文件拖放到上传区域（例如，`重命名支付方式-besure-export.json`）。
+
+<img
+  src="/images/advanced/multi-store-support/add-files-or-drop-files-to-upload.webp"
+  alt="添加或拖放文件上传"
+/>
+</Step>
+
+<Step title="完成导入">
+
+最后，在弹窗中点击 **"导入"** 按钮，将规则导入到商店中。
+
+<img
+  src="/images/advanced/multi-store-support/complete-import.webp"
+  alt="完成导入"
+/>
+</Step>
+</Steps>
+
+## 示例用例
+
+假设您管理两个 Shopify 商店：
+
+- **商店 A** → 已经有针对不同客户群的折扣规则。
+- **商店 B** → 需要相同的折扣规则。
+
+与其在 **商店 B** 中从头重新创建规则，您可以这样做：
+
+<Steps>
+  <Step title="从商店 A 导出规则">
+    将 <strong>商店 A</strong> 的规则导出为 ZIP 文件。
+    <img
+      src="/images/advanced/multi-store-support/export-rules.webp"
+      alt="从商店 A 导出"
+    />
+  </Step>
+
+  <Step title="将规则导入商店 B">
+    将该 ZIP 文件导入到 <strong>商店 B</strong>。
+    <img
+      src="/images/advanced/multi-store-support/import-into-store-b.webp"
+      alt="导入到商店 B"
+    />
+  </Step>
+</Steps>
+
+这些规则将立即被导入并可使用。
