@@ -1,0 +1,125 @@
+---
+title: "Masquer les options de passage en caisse express"
+description: "Masquer les options de paiement express en haut de la page de passage en caisse."
+icon: "eye-slash"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet de masquer les boutons de passage en caisse express tels que PayPal, Apple Pay, Google Pay ou Shop Pay en haut de la page de passage en caisse, en fonction de conditions données.
+
+<Warning>
+  Vous pouvez <i>toujours</i> masquer ces boutons express, <b>uniquement</b> si
+  vous disposez d’un forfait Shopify Plus, en raison des restrictions de
+  Shopify. Si vous êtes sur un autre forfait Shopify, alors cette règle masquera
+  tous les boutons de passage en caisse express uniquement lorsque l’adresse de
+  livraison n’est pas remplie. Lorsque l’adresse de livraison est renseignée,
+  les boutons de passage en caisse express redeviendront visibles. Ce mécanisme
+  garantit qu’au minimum le client saisira toujours son adresse de livraison.
+</Warning>
+
+## Exemple de configuration
+
+Les étapes suivantes montrent comment créer et configurer une règle **Masquer les options de passage en caisse express** à l’aide de l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [admin Shopify](/guides/fr/get-started/installation#go-to-the-app), ouvrez l’application. Dans la barre latérale, allez à la section [Règles](/guides/fr/get-started/quickstart#create-a-sample-rule) et cliquez sur _"Créer une règle"_.
+
+Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle de passage en caisse**. Choisissez _catégorie "Paiement" → type de règle de passage en caisse "Masquer les options de passage en caisse express" → cliquez sur “Sélectionner la règle”_.
+
+<img
+  src="/images/essentials/payment/select-hide-express-checkout-options.webp"
+  alt="Sélectionner la règle"
+/>
+
+Ensuite, une fenêtre contextuelle de **sélection de la mise en page du passage en caisse** apparaîtra. Choisissez une option en fonction de la configuration de votre boutique, soit **Passage en caisse en 1 page**, soit **Passage en caisse en 3 pages**.  
+Si vous utilisez le passage en caisse en 1 page sur votre boutique, sélectionnez **Passage en caisse en 1 page**. Si vous utilisez le passage en caisse en 3 pages, sélectionnez **Passage en caisse en 3 pages**.
+
+<img
+  src="/images/essentials/payment/select-rule-template-hide-express-checkout-options.webp"
+  alt="Sélectionner le modèle de règle"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle pour masquer les options de passage en caisse express**, où vous pouvez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, nous pouvons d’abord, facultativement, ajouter un nom tel que "Masquer les options de passage en caisse express" pour décrire ce qu’elle fait. Ensuite, sélectionnez le [statut](/guides/fr/get-started/concepts#status) de la règle : Mise à l’essai, Active ou Désactivée.
+
+Ici, nous allons choisir le statut **Mise à l’essai**, afin de pouvoir rapidement tester la règle sans affecter le passage en caisse des vrais clients.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-express-checkout-options.webp"
+  alt="Configuration de la règle 1"
+/>
+
+Ensuite, si vous avez sélectionné **Passage en caisse en 1 page** à l’étape précédente, vous devrez configurer vos modes de paiement comme requis dans la configuration de la règle. Cliquez sur **Marquer comme terminé** pour chaque méthode après avoir suivi les instructions pour la configurer. Facultativement, vous pouvez ajouter des conditions si vous souhaitez contrôler quand la règle doit s’exécuter.
+
+<Note>
+  Vous pouvez regarder les vidéos de configuration fournies et suivre les étapes
+  si vous n’êtes pas sûr de savoir comment configurer un mode de paiement
+  manuel, comme requis dans la configuration de la règle.
+</Note>
+
+<img
+  src="/images/essentials/payment/setup-hide-payment-methods-options.webp"
+  alt="Configuration"
+/>
+
+<Info>
+  Vous n’avez besoin de configurer ces modes de paiement manuels que si vous
+  n’êtes pas sur Shopify Plus. Si vous êtes sur Shopify Plus, il n’est pas
+  nécessaire de configurer ces modes de paiement manuels.
+</Info>
+
+Ou, si vous avez sélectionné **Passage en caisse en 3 pages** à l’étape précédente, vous devrez choisir de masquer ou d’afficher les modes de paiement listés dans l’écran ci-dessous, à la fois pour la **page d’informations du passage en caisse** et pour la **page de paiement du passage en caisse**.  
+Facultativement, vous pouvez ajouter des conditions si vous souhaitez contrôler quand la règle doit s’exécuter pour les deux pages.
+
+<img
+  src="/images/essentials/payment/setup-3-page-checkout-hide-express-checkout-options.webp"
+  alt="Configuration"
+/>
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et sauvegarder votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Mettre la règle à l’essai
+
+Comme la règle est définie sur le statut mise à l’essai, nous devons utiliser `test@testing.com` comme adresse e-mail, au lieu de l’e-mail réel, pour exécuter la règle lors du passage en caisse.
+
+<Warning>
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que
+  l’adresse e-mail de test ait été utilisée. Veuillez noter que le bouton de
+  paiement express PayPal est visible.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-hide-express-checkout-options.webp"
+  alt="Avant application de la règle"
+/>
+
+Après avoir défini l’e-mail, la règle de passage en caisse s’exécute et vous verrez que le bouton de paiement express PayPal est **masqué**, comme indiqué ci-dessous.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-express-checkout-options.webp"
+  alt="Après application de la règle"
+/>
+
+## Activer la règle
+
+Une fois la mise à l’essai terminée, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des vrais clients. Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer** pour l’activer.
+
+<Warning>
+  L’activation des règles n’est disponible que sur les forfaits payants. Si vous
+  n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#upgrade-your-plan) pour effectuer la
+  mise à niveau.
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-express-checkout-options.webp"
+  alt="Activer la règle"
+/>

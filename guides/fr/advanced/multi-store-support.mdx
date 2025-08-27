@@ -1,0 +1,127 @@
+---
+title: Prise en charge multi-boutiques
+description: "Apprenez à exporter plusieurs règles d’une boutique et à les importer dans une autre boutique Shopify."
+icon: "repeat"
+---
+
+## Vue d’ensemble
+
+Vous pouvez copier des règles entre différentes boutiques Shopify sans avoir à les recréer manuellement. Vous pouvez exporter des règles d’une boutique sous forme de fichier ZIP, puis importer ce fichier dans une autre boutique. Cela permet de gagner du temps, d’assurer la cohérence et de faciliter la gestion de règles similaires dans plusieurs boutiques. Vous pouvez également créer une sauvegarde de vos règles au cas où vous auriez besoin de les restaurer ultérieurement.
+
+## Utilisation
+
+### Exporter des règles
+
+Sélectionnez une ou plusieurs règles dans votre boutique actuelle et exportez-les. Les règles sélectionnées peuvent être téléchargées sous forme de **fichier ZIP** sur votre ordinateur ou exportées en fichiers individuels.
+
+Voici les étapes pour exporter des règles :
+
+<Steps>
+  <Step title="Sélectionner des règles">
+
+Vous pouvez sélectionner une ou plusieurs règles que vous souhaitez exporter. Cliquez ensuite sur les trois points et sélectionnez **« Exporter »**. Une fenêtre contextuelle apparaîtra alors.
+
+<img
+  src="/images/advanced/multi-store-support/export-rules.webp"
+  alt="Exporter des règles"
+/>
+
+Vous pouvez également exporter une seule règle en l’ouvrant, en cliquant sur **« Plus d’actions »**, puis en sélectionnant **« Exporter »** pour exporter cette règle individuellement.
+
+<img
+  src="/images/advanced/multi-store-support/single-rule-export.webp"
+  alt="Exporter une seule règle"
+/>
+</Step>
+
+
+<Step title="Choisir le format d’export">
+
+Dans la fenêtre contextuelle, choisissez l’une des options suivantes :
+
+- **Archive ZIP** (Télécharge un seul fichier ZIP contenant toutes les règles sélectionnées)
+- **Fichiers individuels** (Télécharge chaque règle sélectionnée comme fichier JSON séparé avec un délai échelonné)
+
+<img
+  src="/images/advanced/multi-store-support/choose-export-format.webp"
+  alt="Choisir le format d’export"
+/>
+</Step>
+
+<Step title="Finaliser l’export">
+
+Enfin, cliquez sur **« Exporter »** pour exporter les règles.
+
+<img
+  src="/images/advanced/multi-store-support/complete-export.webp"
+  alt="Finaliser l’export"
+/>
+</Step>
+</Steps>
+
+### Importer des règles
+
+Ouvrez une autre boutique Shopify, allez dans l’option d’importation et téléversez le **fichier ZIP** précédemment exporté ou les fichiers JSON individuels de règles. Toutes les règles contenues dans le ZIP ou les fichiers JSON sélectionnés seront ajoutées à la nouvelle boutique.
+
+Voici les étapes pour importer des règles :
+
+<Steps>
+<Step title="Cliquer sur le bouton Importer">
+
+Cliquez sur le bouton **« Importer »**. Une fenêtre contextuelle apparaîtra alors.
+
+<img
+  src="/images/advanced/multi-store-support/click-import-button.webp"
+  alt="Cliquer sur le bouton Importer"
+/>
+</Step>
+
+<Step title="Ajouter des fichiers ou glisser-déposer pour téléverser">
+
+Dans la fenêtre contextuelle, ajoutez vos fichiers ou glissez-déposez-les (par exemple, `Renommer les méthodes de paiement-besure-export.json`).
+
+<img
+  src="/images/advanced/multi-store-support/add-files-or-drop-files-to-upload.webp"
+  alt="Ajouter des fichiers ou glisser-déposer pour téléverser"
+/>
+</Step>
+
+<Step title="Finaliser l’import">
+
+Enfin, cliquez sur le bouton **« Importer »** dans la fenêtre contextuelle pour importer les règles dans la boutique.
+
+<img
+  src="/images/advanced/multi-store-support/complete-import.webp"
+  alt="Finaliser l’import"
+/>
+</Step>
+</Steps>
+
+## Exemple de cas d’utilisation
+
+Imaginons que vous gériez deux boutiques Shopify :
+
+- **Boutique A** → possède déjà des règles de remise pour différents groupes de clients.  
+- **Boutique B** → a besoin des mêmes règles de remise.  
+
+Au lieu de recréer les règles à partir de zéro dans la **Boutique B**, vous pouvez :
+
+<Steps>
+  <Step title="Exporter les règles de la Boutique A">
+    Exportez les règles de la <strong>Boutique A</strong> sous forme de fichier ZIP.
+    <img
+      src="/images/advanced/multi-store-support/export-rules.webp"
+      alt="Exporter depuis la Boutique A"
+    />
+  </Step>
+
+  <Step title="Importer les règles dans la Boutique B">
+    Importez ce fichier ZIP dans la <strong>Boutique B</strong>.
+    <img
+      src="/images/advanced/multi-store-support/import-into-store-b.webp"
+      alt="Importer dans la Boutique B"
+    />
+  </Step>
+</Steps>
+
+Les règles seront importées et prêtes à être utilisées immédiatement.
