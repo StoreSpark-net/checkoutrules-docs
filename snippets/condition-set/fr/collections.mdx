@@ -1,0 +1,40 @@
+### Collections
+
+Cette condition vérifie les **collections** selon des critères spécifiques. Elle sera vraie si **n’importe quel** produit dans le panier appartient à la valeur de collection saisie, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si la collection contient au moins l’une des valeurs saisies)
+- **N’a aucune de ces valeurs** (Correspond si la collection ne contient aucune des valeurs saisies)
+- **A une autre valeur que celles-ci** (Correspond si la collection contient une valeur qui n’est pas parmi celles saisies)
+- **N’a pas d’autre valeur que celles-ci** (Correspond si la collection contient uniquement les valeurs saisies et aucune autre)
+- **A un nombre de valeurs supérieur ou égal** (Correspond si le **nombre** de collections est supérieur ou égal au nombre saisi)
+- **A un nombre de valeurs inférieur ou égal** (Correspond si le **nombre** de collections est inférieur ou égal au nombre saisi)
+
+<Warning>
+  Vous ne pouvez utiliser cette condition qu’avec les mêmes valeurs dans toute la règle.  
+  Si vous souhaitez utiliser différentes valeurs dans différents blocs de règles, vous devez passer au jeu de conditions 3 qui permet plus de flexibilité.
+</Warning>
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs de collections dans le champ.
+
+> Par exemple, `A une autre valeur que celles-ci : Été2025, Hiver2025` → Correspond si la collection contient au moins une valeur qui n’est pas « Été2025 » ou « Hiver2025 ».
+
+<img
+  src="/images/essentials/condition-sets/collections.webp"
+  alt="Collections"
+/>
+
+Depuis la fenêtre contextuelle, sélectionnez une ou plusieurs collections parmi celles déjà créées dans votre boutique.
+
+<img
+  src="/images/essentials/condition-sets/popup-collections.webp"
+  alt="Fenêtre contextuelle des collections"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal** et **A un nombre de valeurs inférieur ou égal**, saisissez une seule valeur numérique dans le champ pour correspondre au nombre de collections.
+
+> Par exemple, `A un nombre de valeurs inférieur ou égal à 7` → Correspond s’il y a sept collections ou moins.
+
+<img
+  src="/images/essentials/condition-sets/count-collections.webp"
+  alt="Nombre de collections"
+/>

@@ -1,0 +1,199 @@
+---
+title: "Ensemble de conditions 5"
+description: "Découvrez chaque condition disponible dans _l’Ensemble de conditions 5_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/fr/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/fr/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/fr/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/fr/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/fr/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/fr/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/fr/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/fr/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/fr/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/fr/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/fr/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/fr/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/fr/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/fr/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/fr/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/fr/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/fr/user-language.mdx";
+import Market from "/snippets/condition-set/fr/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/fr/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/fr/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/fr/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/fr/first-name.mdx";
+import LastName from "/snippets/condition-set/fr/last-name.mdx";
+import Company from "/snippets/condition-set/fr/company.mdx";
+import PhoneNumber from "/snippets/condition-set/fr/phone-number.mdx";
+import CityArea from "/snippets/condition-set/fr/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/fr/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Client
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## Détails B2B
+
+### Métachamp de l’entreprise acheteuse
+
+Cette condition vérifie un **métachamp de l’entreprise acheteuse** que vous spécifiez par **espace de noms** et **clé**, puis l’évalue en utilisant l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si le métachamp contient au moins l’une des valeurs saisies)  
+- **N’a aucune de ces valeurs** (Correspond si le métachamp ne contient aucune des valeurs saisies)  
+- **A une autre valeur que celles-ci** (Correspond si le métachamp a une valeur qui n’est pas parmi les valeurs saisies)  
+- **N’a pas d’autre valeur que celles-ci** (Correspond si le métachamp contient uniquement les valeurs saisies et aucune autre)  
+- **A une valeur vide** (Correspond si le métachamp n’a aucune valeur)  
+- **N’a pas de valeur vide** (Correspond si le métachamp contient une valeur quelconque)  
+- **A un nombre supérieur ou égal à** (Correspond si la valeur numérique du métachamp est supérieure ou égale au nombre saisi)  
+- **A un nombre inférieur ou égal à** (Correspond si la valeur numérique du métachamp est inférieure ou égale au nombre saisi)  
+- **A un nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est supérieur ou égal au nombre saisi)  
+- **A un nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est inférieur ou égal au nombre saisi)  
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules.
+
+> Par exemple, `Namespace: profile` · `Key: industry` · `A l’une de ces valeurs: Retail, Wholesale` → Correspond si le métachamp de l’entreprise acheteuse contient “Retail” ou “Wholesale”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="Métachamp de l’entreprise acheteuse ayant une valeur"
+/>
+
+Pour **A un nombre supérieur ou égal à** et **A un nombre inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer à la valeur numérique du métachamp.
+
+> Par exemple, `Namespace: finance` · `Key: annual_revenue` · `A un nombre supérieur ou égal à 1000000` → Correspond si le revenu annuel de l’entreprise acheteuse est d’un million ou plus.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="Valeur numérique du métachamp de l’entreprise acheteuse"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal à** et **A un nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer au nombre de valeurs dans le métachamp.
+
+> Par exemple, `Namespace: compliance` · `Key: certifications` · `A un nombre de valeurs inférieur ou égal à 2` → Correspond si l’entreprise possède deux certifications ou moins.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="Nombre de valeurs du métachamp de l’entreprise acheteuse"
+/>
+
+### Métachamp de l’emplacement de l’entreprise acheteuse
+
+Cette condition vérifie un **métachamp de l’emplacement de l’entreprise acheteuse** que vous spécifiez par **espace de noms** et **clé**, puis l’évalue en utilisant l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si le métachamp contient au moins l’une des valeurs saisies)  
+- **N’a aucune de ces valeurs** (Correspond si le métachamp ne contient aucune des valeurs saisies)  
+- **A une autre valeur que celles-ci** (Correspond si le métachamp a une valeur qui n’est pas parmi les valeurs saisies)  
+- **N’a pas d’autre valeur que celles-ci** (Correspond si le métachamp contient uniquement les valeurs saisies et aucune autre)  
+- **A une valeur vide** (Correspond si le métachamp n’a aucune valeur)  
+- **N’a pas de valeur vide** (Correspond si le métachamp contient une valeur quelconque)  
+- **A un nombre supérieur ou égal à** (Correspond si la valeur numérique du métachamp est supérieure ou égale au nombre saisi)  
+- **A un nombre inférieur ou égal à** (Correspond si la valeur numérique du métachamp est inférieure ou égale au nombre saisi)  
+- **A un nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est supérieur ou égal au nombre saisi)  
+- **A un nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est inférieur ou égal au nombre saisi)  
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules.
+
+> Par exemple, `Namespace: address` · `Key: country_code` · `N’a aucune de ces valeurs: US, CA` → Correspond si l’emplacement de l’entreprise acheteuse n’est pas aux États-Unis ou au Canada.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="Métachamp de l’emplacement de l’entreprise acheteuse sans valeur"
+/>
+
+Pour **A un nombre supérieur ou égal à** et **A un nombre inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer à la valeur numérique du métachamp.
+
+> Par exemple, `Namespace: logistics` · `Key: warehouse_capacity` · `A un nombre inférieur ou égal à 5000` → Correspond si la capacité d’entrepôt de l’emplacement de l’entreprise acheteuse est de 5 000 unités ou moins.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="Valeur numérique du métachamp de l’emplacement de l’entreprise acheteuse"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal à** et **A un nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer au nombre de valeurs dans le métachamp.
+
+> Par exemple, `Namespace: services` · `Key: supported_languages` · `A un nombre de valeurs supérieur ou égal à 4` → Correspond si l’emplacement prend en charge quatre langues ou plus.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="Nombre de valeurs du métachamp de l’emplacement de l’entreprise acheteuse"
+/>
+
+## Détails de la commande
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## Le panier contient des articles
+
+<ProductTag />
+<ProductTags />
+
+### Option de variante de produit
+
+Cette condition vérifie les **options de variante de produit** par rapport à des critères spécifiques. Si un produit dans le panier possède la valeur de l’option de variante de produit saisie, alors l’évaluation se fait selon l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si les options de variante de produit ont au moins l’une des valeurs saisies)  
+- **N’a aucune de ces valeurs** (Correspond si les options de variante de produit n’ont aucune des valeurs saisies)  
+- **A une autre valeur que celles-ci** (Correspond si les options de variante de produit contiennent une valeur qui n’est pas parmi celles saisies)  
+- **N’a pas d’autre valeur que celles-ci** (Correspond si les options de variante de produit ne contiennent que les valeurs saisies et aucune autre)  
+- **A un nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** d’options de variante de produit est supérieur ou égal au nombre saisi)  
+- **A un nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** d’options de variante de produit est inférieur ou égal au nombre saisi)  
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs d’option de variante de produit dans le champ. Séparez plusieurs valeurs par des virgules.
+
+> Par exemple, `A l’une de ces valeurs: Red, Blue` → Correspond si l’option de variante de produit inclut “Red” ou “Blue”.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="Option de variante de produit"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal à** et **A un nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer au nombre d’options de variante de produit.
+
+> Par exemple, `A un nombre de valeurs supérieur ou égal à 3` → Correspond s’il y a trois options de variante de produit ou plus.
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="Nombre d’options de variante de produit"
+/>
+
+## Expédition
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localisation
+
+<UserLanguage />
+<Market />
+
+## Adresse de expédition
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

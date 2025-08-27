@@ -1,0 +1,30 @@
+### Quantité totale de commande
+
+Cette condition vérifie la **quantité totale d’articles dans une commande** par rapport à des critères spécifiques, en fonction de l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (correspond lorsque la quantité totale d’articles est supérieure ou égale au nombre saisi)
+- **est inférieur ou égal à** (correspond lorsque la quantité totale d’articles est inférieure ou égale au nombre saisi)
+- **est un multiple de** (correspond lorsque la quantité totale est un multiple exact du nombre saisi)
+- **n’est pas un multiple de** (correspond lorsque la quantité totale n’est pas un multiple du nombre saisi)
+
+Pour définir ces conditions, saisissez une quantité dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
+
+<Note>
+  La quantité fait référence à la **somme de toutes les quantités d’articles** dans la commande, et non au nombre de produits distincts.
+</Note>
+
+> **Exemple pour “est un multiple de”** :  
+> `est un multiple de 5` → correspond aux commandes avec des quantités totales comme 5, 10, 15, 20, etc.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-order-total.webp"
+  alt="Est un multiple de la quantité totale de commande"
+/>
+
+> **Exemple pour “est supérieur ou égal à”** :  
+> `est supérieur ou égal à 3` → correspond aux commandes contenant 3 articles ou plus au total.
+
+<img
+  src="/images/essentials/condition-sets/order-total-is-greater-value.webp"
+  alt="Quantité totale de commande supérieure ou égale"
+/>

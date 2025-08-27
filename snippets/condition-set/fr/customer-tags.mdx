@@ -1,0 +1,22 @@
+### Tags client
+
+Cette condition vérifie les **tags** du client par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **Contient au moins une de ces valeurs** (Correspond si le client possède au moins un des tags saisis)
+- **Ne contient aucune de ces valeurs** (Correspond si le client ne possède aucun des tags saisis)
+
+<Warning>
+  Vous ne pouvez utiliser cette condition qu’avec les mêmes valeurs dans toute la règle.  
+  Si vous souhaitez utiliser des valeurs différentes dans plusieurs blocs de règles,  
+  vous devez passer à l’ensemble de conditions 5 qui permet plus de flexibilité.
+</Warning>
+
+Pour définir ces conditions, saisissez un ou plusieurs tags dans le champ et choisissez la comparaison appropriée dans la liste déroulante.  
+Séparez plusieurs tags par des virgules puis appuyez sur Entrée pour charger les tags simultanément.
+
+> Par exemple, `Contient au moins une de ces valeurs : VIP, VVIP` → Correspond aux clients qui possèdent soit le tag “VIP” soit le tag “VVIP”.
+
+<img
+  src="/images/essentials/condition-sets/customer-tags.webp"
+  alt="Tags client"
+/>

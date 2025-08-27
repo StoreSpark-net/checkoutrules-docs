@@ -1,0 +1,22 @@
+### Type d’expédition sélectionné (Expédition/Retrait)
+
+Cette condition vérifie la sélection **« Expédier vs Retrait en magasin »** sur la page de paiement, comme illustré ci-dessous.
+
+<img
+  src="/images/essentials/condition-sets/shipping-pickup-type.webp"
+  alt="Sélection du type Expédition vs Retrait sur la page de paiement"
+/>
+
+Elle sera remplie si le type d’expédition sélectionné est le même que la valeur saisie, en fonction de l’une des sous-conditions suivantes :
+
+- **est** (Correspond si la sélection de livraison est exactement la même que la valeur saisie)
+- **n’est pas** (Correspond si la sélection de livraison est différente de la valeur saisie)
+
+Pour l’une des options ci-dessus, choisissez un type d’expédition dans la liste : **Retrait**, **Livraison locale**, **Expédition**, **Point de retrait**, **Vente au détail**, ou **Aucun**.
+
+> **Exemple :** `n’est pas : Retrait` → Correspond si le type d’expédition sélectionné est autre que « Retrait », c’est-à-dire qu’il s’agit de « Expédition ».
+
+<img
+  src="/images/essentials/condition-sets/select-shipping-type.webp"
+  alt="Sélectionner le type d’expédition"
+/>

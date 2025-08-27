@@ -1,0 +1,258 @@
+---
+title: "Ensemble de conditions 3"
+description: "Découvrez chaque condition disponible dans _l’Ensemble de conditions 3_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/fr/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/fr/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/fr/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/fr/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/fr/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/fr/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/fr/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/fr/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/fr/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/fr/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/fr/product-tags.mdx";
+import Collection from "/snippets/condition-set/fr/collection.mdx";
+import Collections from "/snippets/condition-set/fr/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/fr/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/fr/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/fr/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/fr/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/fr/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/fr/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/fr/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/fr/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/fr/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/fr/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/fr/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/fr/user-language.mdx";
+import Market from "/snippets/condition-set/fr/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/fr/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/fr/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/fr/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/fr/first-name.mdx";
+import LastName from "/snippets/condition-set/fr/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/fr/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/fr/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/fr/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/fr/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/fr/address-line2.mdx";
+import Company from "/snippets/condition-set/fr/company.mdx";
+import PhoneNumber from "/snippets/condition-set/fr/phone-number.mdx";
+import CityArea from "/snippets/condition-set/fr/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/fr/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Client
+
+<EmailAddress />
+<CustomerTag />
+
+## Détails de la commande
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Montant du sous-total de commande pour achat unique
+
+Cette condition vérifie le **montant du sous-total de commande pour achat unique** (Le montant du sous-total provenant de produits qui ne sont pas des abonnements) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (Correspond lorsque le montant du sous-total de commande pour achat unique est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond lorsque le montant du sous-total de commande pour achat unique est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans la liste déroulante.
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> Par exemple, `est supérieur ou égal à 700` → Correspond aux commandes avec un montant de sous-total pour achat unique de 700 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="Montant du sous-total de commande pour achat unique"
+/>
+
+### Montant du sous-total de commande par abonnement
+
+Cette condition vérifie le **montant du sous-total de commande par abonnement** (Le montant du sous-total provenant de produits qui sont des abonnements) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (Correspond lorsque le montant du sous-total de commande par abonnement est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond lorsque le montant du sous-total de commande par abonnement est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans la liste déroulante.
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> Par exemple, `est supérieur ou égal à 1200` → Correspond aux commandes avec un montant de sous-total par abonnement de 1200 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="Montant du sous-total de commande par abonnement"
+/>
+
+### Montant du sous-total de commande numérique
+
+Cette condition vérifie le **montant du sous-total de commande numérique** (Le montant du sous-total provenant de produits numériques) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (Correspond lorsque le montant du sous-total de commande numérique est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond lorsque le montant du sous-total de commande numérique est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans la liste déroulante.
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> Par exemple, `est inférieur ou égal à 398` → Correspond aux commandes avec un montant de sous-total numérique de 398 ou moins.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="Montant du sous-total de commande numérique"
+/>
+
+### Montant du sous-total de commande physique
+
+Cette condition vérifie le **montant du sous-total de commande physique** (Le montant du sous-total provenant de produits physiques) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (Correspond lorsque le montant du sous-total de commande physique est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond lorsque le montant du sous-total de commande physique est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans la liste déroulante.
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> Par exemple, `est supérieur ou égal à 299` → Correspond aux commandes avec un montant de sous-total physique de 299 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="Montant du sous-total de commande physique"
+/>
+
+<OrderTotalQuantity />
+
+## Détails du panier
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### Quantité par étiquette de produit
+
+Cette condition vérifie la **quantité de produits avec une étiquette de produit spécifique** dans la commande par rapport aux critères définis, selon l’une des sous-conditions suivantes :
+
+- **la quantité est supérieure ou égale à** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est supérieure ou égale au nombre saisi)
+- **la quantité est inférieure ou égale à** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est inférieure ou égale au nombre saisi)
+- **la quantité est divisible par** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est un multiple exact du nombre saisi)
+- **la quantité n’est pas divisible par** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée n’est pas un multiple du nombre saisi)
+
+Pour définir ces conditions :
+
+<Steps>
+  <Step title="Saisir l’étiquette de produit">
+    Saisissez l’<strong>étiquette de produit</strong> dans le champ “Saisir l’étiquette de produit”.
+  </Step>
+
+  <Step title="Saisir la quantité">
+    Saisissez la <strong>quantité</strong> dans le champ “Saisir la quantité”.
+  </Step>
+
+  <Step title="Sélectionner l’option de comparaison">
+    Sélectionnez l’option de comparaison dans la liste déroulante.
+  </Step>
+</Steps>
+
+> **Exemple pour “la quantité est supérieure ou égale à”** :  
+> Étiquette de produit : `SummerCollection`  
+> Quantité : `3`  
+> → Correspond aux commandes où il y a 3 unités ou plus de produits étiquetés `SummerCollection`.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="Quantité par étiquette de produit avec valeur supérieure"
+/>
+
+> **Exemple pour “la quantité est divisible par”** :  
+> Étiquette de produit : `SummerCollection`  
+> Quantité : `2`  
+> → Correspond aux commandes où la quantité de produits étiquetés `SummerCollection` est 2, 4, 6, 8, etc.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="Quantité par étiquette de produit divisible par"
+/>
+
+## Le panier contient des articles
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### Coût par quantité de n’importe quel produit
+
+Cette condition vérifie le **coût par quantité de n’importe quel produit dans la commande** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **est supérieur ou égal à** (Correspond lorsque le coût par quantité de n’importe quel produit est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond lorsque le coût par quantité de n’importe quel produit est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans la liste déroulante.
+
+<Note>
+  Entrez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> Par exemple, `est supérieur ou égal à 200` → Correspond lorsque le coût par quantité de n’importe quel produit est de 200 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="Coût par quantité de n’importe quel produit"
+/>
+
+## Expédition
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localisation
+<UserLanguage />
+<Market />
+
+## Adresse de expédition
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

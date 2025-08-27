@@ -1,0 +1,51 @@
+### Ville / Zone
+
+Utilisé pour comparer la Ville / Zone (le champ Ville/Zone sur la page de paiement dans l’adresse de livraison) avec une ou plusieurs valeurs spécifiques, des comptes ou des états, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si le champ ville contient au moins une des valeurs listées)
+
+- **N’a aucune de ces valeurs** (Correspond si le champ ville ne contient aucune des valeurs listées)
+
+- **A toute autre valeur en dehors de ces valeurs** (Correspond si le champ ville contient des valeurs autres que celles listées)
+
+- **N’a aucune autre valeur en dehors de ces valeurs** (Correspond si le champ ville contient uniquement les valeurs listées et aucune autre)
+
+- **Nombre de chiffres supérieur ou égal à** (Correspond si le nombre de chiffres dans le champ ville est supérieur ou égal au nombre spécifié)
+
+- **Nombre de chiffres inférieur ou égal à** (Correspond si le nombre de chiffres dans le champ ville est inférieur ou égal au nombre spécifié)
+
+- **Est vide** (Correspond si le champ ville n’a aucune valeur)
+
+- **N’est pas vide** (Correspond si le champ ville contient une valeur)
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A toute autre valeur en dehors de ces valeurs**, **N’a aucune autre valeur en dehors de ces valeurs**, entrez une ou plusieurs valeurs à comparer. Séparez plusieurs valeurs par des virgules.
+
+<Note>
+  Utilisez le caractère générique * pour correspondre aux noms de ville partiels. 
+  Par exemple, Santo* correspondra à santo domingo, santodomngo etc.
+</Note>
+
+> Par exemple, `A l’une de ces valeurs : Lahore, Karachi` → Correspond si le champ contient soit « Lahore » soit « Karachi ».
+
+<img
+  src="/images/essentials/condition-sets/multiple-cities.webp"
+  alt="Plusieurs Villes"
+/>
+
+Pour **Nombre de chiffres supérieur ou égal à** ou **Nombre de chiffres inférieur ou égal à**, entrez le seuil du nombre de chiffres.
+
+> Par exemple, `Nombre de chiffres supérieur ou égal à 5` → Correspond si la valeur du champ contient cinq chiffres ou plus.
+
+<img
+  src="/images/essentials/condition-sets/count-cities.webp"
+  alt="Compter Villes"
+/>
+
+Pour **Est vide** et **N’est pas vide**, aucune saisie de valeur n’est nécessaire.
+
+> Par exemple, `Est vide` → Correspond si aucune valeur n’est saisie pour le champ.
+
+<img
+  src="/images/essentials/condition-sets/city-available.webp"
+  alt="Ville Disponible"
+/>

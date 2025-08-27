@@ -1,0 +1,66 @@
+### Propriété d’article de ligne
+
+Cette condition vérifie les **propriétés attachées à un article de ligne** par rapport à des critères spécifiques, en fonction de l’une des sous-conditions suivantes :
+
+- **Contient l’une de ces valeurs** (Correspond lorsque la propriété de l’article de ligne spécifiée contient l’une des valeurs saisies)  
+- **Ne contient aucune de ces valeurs** (Correspond lorsque la propriété de l’article de ligne spécifiée ne contient aucune des valeurs saisies)  
+- **A une valeur vide** (Correspond lorsque la propriété de l’article de ligne existe mais n’a pas de valeur)  
+- **N’a pas de valeur vide** (Correspond lorsque la propriété de l’article de ligne existe et contient une valeur)  
+- **Nombre de valeurs supérieur ou égal à** (Correspond lorsque la propriété de l’article de ligne contient un nombre de valeurs supérieur ou égal au nombre saisi)  
+- **Nombre de valeurs inférieur ou égal à** (Correspond lorsque la propriété de l’article de ligne contient un nombre de valeurs inférieur ou égal au nombre saisi)  
+
+Pour définir ces conditions :
+
+<Steps>
+  <Step title="Saisir la clé de propriété">
+    Saisissez la <strong>clé de propriété</strong> dans le champ « Saisir la clé ».
+  </Step>
+
+  <Step title="Saisir la/les valeur(s)">
+    Saisissez la/les <strong>valeur(s)</strong> à comparer (le cas échéant).
+  </Step>
+
+  <Step title="Choisir l’option de comparaison">
+    Choisissez l’option de comparaison dans le menu déroulant.
+  </Step>
+</Steps>
+
+Pour **Contient l’une de ces valeurs** et **Ne contient aucune de ces valeurs**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules.  
+
+<Note>
+  Utilisez le caractère générique * pour correspondre à des valeurs partielles.  
+  Par exemple, valeur* correspondra à valeur123, VALEURTEST etc.
+</Note>
+
+> **Exemple pour « Contient l’une de ces valeurs »** :  
+> Clé : `color`  
+> Valeurs : `red, blue`  
+> → Correspond aux articles de ligne où la propriété `color` est soit `red` soit `blue`.
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="Propriété d’article de ligne contient l’une des valeurs"
+/>
+
+Pour **A une valeur vide** et **N’a pas de valeur vide**, aucune saisie de valeur n’est requise.  
+
+> **Exemple pour « N’a pas de valeur vide »** :  
+> Clé : `engraving`  
+> → Correspond aux articles de ligne où la propriété `engraving` existe et contient du texte (par ex. « Joyeux anniversaire »).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="Propriété d’article de ligne non vide"
+/>
+
+Pour **Nombre de valeurs supérieur ou égal à** et **Nombre de valeurs inférieur ou égal à**, saisissez le nombre seuil dans le champ.  
+
+> **Exemple pour « Nombre de valeurs inférieur ou égal à »** :  
+> Clé : `size`  
+> Nombre : `2`  
+> → Correspond aux articles de ligne où la propriété `size` contient 2 valeurs distinctes ou moins (par ex. `S, M`).  
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="Propriété d’article de ligne valeurs inférieures ou égales"
+/>

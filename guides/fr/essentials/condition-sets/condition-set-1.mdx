@@ -1,0 +1,239 @@
+---
+title: "Ensemble de conditions 1"
+description: "Découvrez chaque condition disponible dans _Ensemble de conditions 1_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/fr/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/fr/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/fr/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/fr/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/fr/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/fr/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/fr/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/fr/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/fr/order-subtotal-amount.mdx";
+import SKU from "/snippets/condition-set/fr/sku.mdx";
+import ProductTags from "/snippets/condition-set/fr/product-tags.mdx";
+import Collections from "/snippets/condition-set/fr/collections.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/fr/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/fr/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/fr/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/fr/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/fr/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/fr/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/fr/first-name.mdx";
+import LastName from "/snippets/condition-set/fr/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/fr/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/fr/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/fr/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/fr/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/fr/address-line2.mdx";
+import Company from "/snippets/condition-set/fr/company.mdx";
+import PhoneNumber from "/snippets/condition-set/fr/phone-number.mdx";
+import CityArea from "/snippets/condition-set/fr/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/fr/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Date et heure
+
+### Configuration supplémentaire requise
+
+Lors de la configuration de toute condition **Date et heure**, une configuration supplémentaire est requise. Suivez ces étapes pour la compléter.
+
+<Steps>
+  <Step title="Choisissez votre fuseau horaire">
+    Dans le menu déroulant <strong>Veuillez choisir votre fuseau horaire</strong>, sélectionnez le fuseau horaire de votre boutique, puis cliquez sur <strong>"Enregistrer"</strong> pour l’appliquer.
+    
+    > Par exemple, sélectionnez <strong>Vancouver</strong> si vous souhaitez l’heure du Pacifique (PT).
+
+    <img
+      src="/images/essentials/condition-sets/select-timezone.webp"
+      alt="Sélectionner le fuseau horaire"
+    />
+  </Step>
+
+  <Step title="Activez le bloc intégré BeSure dans votre thème">
+    - Cliquez sur le lien <strong>BeSure Embed Block</strong> pour activer le bloc dans votre thème.
+    
+    <img
+      src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
+      alt="Cliquer sur le bloc intégré BeSure"
+    />
+
+    - Dans l’éditeur de thème, localisez le <strong>BeSure Embed Block</strong> sous <em>App embeds</em> et activez-le.
+    
+    <img
+      src="/images/essentials/condition-sets/locate-and-enable-block.webp"
+      alt="Localiser et activer le bloc"
+    />
+  </Step>
+
+  <Step title="Enregistrez votre thème">
+    Après avoir activé le bloc, veuillez enregistrer votre thème. Le bouton <strong>Enregistrer</strong> se trouve en haut à droite.
+    
+    <img
+      src="/images/essentials/condition-sets/save-theme.webp"
+      alt="Enregistrer le thème"
+    />
+  </Step>
+
+  <Step title="Marquer comme terminé (Optionnel)">
+    Cliquez sur <strong>"Marquer comme terminé"</strong> lorsque toutes les étapes sont terminées, puis enregistrez la règle.
+    
+    <img
+      src="/images/essentials/condition-sets/mark-as-done.webp"
+      alt="Marquer comme terminé"
+    />
+  </Step>
+
+  <Step title="Testez votre règle">
+    Maintenant, après avoir créé la règle, videz d’abord votre panier. Ensuite, ajoutez un nouveau produit au panier et procédez au paiement pour tester si la règle fonctionne comme prévu.
+  </Step>
+</Steps>
+
+### Date
+
+Utilisée pour comparer la date de passage en caisse du client avec une date ou une plage de dates sélectionnée, selon l’une des sous-conditions suivantes :
+
+- **est** (La date de passage en caisse du client correspond à la date sélectionnée)  
+- **n’est pas** (La date de passage en caisse du client ne correspond pas à la date sélectionnée)  
+- **est avant** (La date de passage en caisse du client est antérieure à la date sélectionnée)  
+- **est après** (La date de passage en caisse du client est postérieure à la date sélectionnée)  
+- **est comprise entre** (La date de passage en caisse du client se situe entre la date de début et la date de fin sélectionnées)  
+- **n’est pas comprise entre** (La date de passage en caisse du client se situe en dehors de la plage de dates sélectionnée)  
+
+Pour **est**, **n’est pas**, **est avant** et **est après**, sélectionnez une seule date dans le sélecteur de calendrier.  
+
+> Par exemple, `est avant le 11 août 2025` → Correspond aux dates avant le 11 août 2025.
+
+<img
+  src="/images/essentials/condition-sets/single-date.webp"
+  alt="Date unique"
+/>
+
+Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une date de début et une date de fin dans le sélecteur de calendrier.  
+
+> Par exemple, `est comprise entre le 11 août 2025 et le 19 août 2025` → Correspond aux dates comprises entre le 11 août 2025 et le 19 août 2025.
+
+<img
+  src="/images/essentials/condition-sets/multiple-dates.webp"
+  alt="Dates multiples"
+/>
+
+### Jour de la semaine
+
+Utilisé pour comparer le jour de passage en caisse du client avec un jour ou une plage de jours sélectionné(s), selon l’une des sous-conditions suivantes :
+
+- **est** (Le jour de passage en caisse du client correspond au jour sélectionné)  
+- **n’est pas** (Le jour de passage en caisse du client ne correspond pas au jour sélectionné)  
+- **est compris entre** (Le jour de passage en caisse du client se situe entre les jours de début et de fin sélectionnés)  
+- **n’est pas compris entre** (Le jour de passage en caisse du client ne se situe pas entre les jours de début et de fin sélectionnés)  
+
+Pour **est** et **n’est pas**, sélectionnez un seul jour dans le menu déroulant.  
+
+> Par exemple, `est lundi` → Correspond au jour lundi.
+
+<img src="/images/essentials/condition-sets/single-day.webp" alt="Jour unique" />
+
+Pour **est compris entre** et **n’est pas compris entre**, sélectionnez à la fois un jour de début et un jour de fin dans le menu déroulant.  
+
+> Par exemple, `est compris entre lundi et vendredi` → Correspond aux jours entre lundi et vendredi.
+
+<img
+  src="/images/essentials/condition-sets/multiple-days.webp"
+  alt="Jours multiples"
+/>
+
+### Heure de la journée
+
+Utilisée pour comparer l’heure de passage en caisse du client avec une heure ou une plage d’heures sélectionnée(s), selon l’une des sous-conditions suivantes :
+
+- **est** (L’heure de passage en caisse du client correspond à l’heure sélectionnée)  
+- **n’est pas** (L’heure de passage en caisse du client ne correspond pas à l’heure sélectionnée)  
+- **est comprise entre** (L’heure de passage en caisse du client se situe entre les heures de début et de fin sélectionnées)  
+- **n’est pas comprise entre** (L’heure de passage en caisse du client ne se situe pas entre les heures de début et de fin sélectionnées)  
+
+Pour **est** et **n’est pas**, sélectionnez une seule heure dans le menu déroulant.  
+
+> Par exemple, `est 02:30` → Correspond exactement à 2h30.
+
+<img
+  src="/images/essentials/condition-sets/single-time.webp"
+  alt="Heure unique"
+/>
+
+Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une heure de début et une heure de fin dans le menu déroulant.  
+
+> Par exemple, `n’est pas comprise entre 01:30 et 05:00` → Correspond aux heures non comprises entre 1h30 et 5h00.
+
+<img
+  src="/images/essentials/condition-sets/multiple-times.webp"
+  alt="Heures multiples"
+/>
+
+### Jour de la semaine et heure de la journée
+
+Utilisé pour comparer le jour et l’heure de passage en caisse du client avec une plage sélectionnée, selon l’une des conditions suivantes :
+
+- **est comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse se situent entre les valeurs de début et de fin sélectionnées)  
+- **n’est pas comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse ne se situent pas entre les valeurs de début et de fin sélectionnées)  
+
+Pour définir ces conditions, sélectionnez un jour et une heure comme point de départ et un autre jour et une autre heure comme point de fin dans les menus déroulants.  
+
+> Par exemple, `est comprise entre lundi 00:00 et mercredi 12:00` → Correspond aux passages en caisse effectués entre le lundi à minuit et le mercredi à midi.
+
+<img
+  src="/images/essentials/condition-sets/range-day-and-time.webp"
+  alt="Jours et heures"
+/>
+
+## Client
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTags />
+
+## Détails de la commande
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+## Le panier contient des articles
+<SKU />
+<ProductTags />
+<Collections />
+
+## Expédition
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Localisation
+<UserLanguage />
+
+## Adresse de expédition
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

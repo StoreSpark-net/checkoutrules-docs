@@ -1,0 +1,39 @@
+### Numéro de téléphone
+
+Utilisé pour comparer le numéro de téléphone du client (le champ du numéro de téléphone sur la page de paiement dans l’adresse de livraison) avec une ou plusieurs valeurs spécifiques, des comptes ou des états, en fonction de l’une des sous-conditions suivantes :
+
+- **Contient** (Correspond si le numéro de téléphone contient la valeur spécifiée ou une valeur partielle)
+- **Ne contient pas** (Correspond si le numéro de téléphone ne contient pas la valeur spécifiée ou une valeur partielle)
+- **Est vide** (Correspond si aucun numéro de téléphone n’est saisi)
+- **N’est pas vide** (Correspond si une valeur est saisie dans le champ du numéro de téléphone)
+- **Est** (Correspond si le numéro de téléphone correspond exactement à la valeur spécifiée)
+- **N’est pas** (Correspond si le numéro de téléphone n’est pas exactement la valeur spécifiée)
+- **Nombre de chiffres supérieur ou égal à** (Correspond si le nombre total de chiffres dans le numéro de téléphone est supérieur ou égal au nombre spécifié)
+- **Nombre de chiffres inférieur ou égal à** (Correspond si le nombre total de chiffres dans le numéro de téléphone est inférieur ou égal au nombre spécifié)
+
+Pour **Contient**, **Ne contient pas**, **Est**, et **N’est pas**, entrez la valeur à correspondre.
+
+> Par exemple, `Contient : 123` → Correspond si le numéro de téléphone contient « 123 » n’importe où.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-contains.webp"
+  alt="Numéro de téléphone Contient"
+/>
+
+Pour **Nombre de chiffres supérieur ou égal à** ou **Nombre de chiffres inférieur ou égal à**, entrez la valeur seuil.
+
+> Par exemple, `Nombre de chiffres supérieur ou égal à 10` → Correspond si le numéro de téléphone contient 10 chiffres ou plus.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-greater-than.webp"
+  alt="Numéro de téléphone Supérieur À"
+/>
+
+Pour **Est vide** et **N’est pas vide**, aucune saisie de valeur n’est nécessaire.
+
+> Par exemple, `Est vide` → Correspond si le champ du numéro de téléphone est laissé vide.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-is-empty.webp"
+  alt="Numéro de téléphone Est Vide"
+/>

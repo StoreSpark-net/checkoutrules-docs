@@ -1,0 +1,36 @@
+### Montant du sous-total de la commande par étiquette de produit
+
+Cette condition vérifie le **montant du sous-total des produits avec une étiquette de produit spécifique** dans la commande par rapport aux critères définis, en fonction de l’une des sous-conditions suivantes :
+
+- **le montant est supérieur ou égal à** (Correspond lorsque le montant du sous-total des produits avec l’étiquette spécifiée est supérieur ou égal au montant saisi)
+- **le montant est inférieur ou égal à** (Correspond lorsque le montant du sous-total des produits avec l’étiquette spécifiée est inférieur ou égal au montant saisi)
+
+Pour définir ces conditions :
+
+<Steps>
+  <Step title="Saisir l’étiquette du produit">
+    Saisissez l’<strong>étiquette du produit</strong> dans le champ “Saisir l’étiquette du produit”.
+  </Step>
+
+  <Step title="Saisir le montant">
+    Saisissez le <strong>montant</strong> dans le champ “Saisir le montant”.
+  </Step>
+
+  <Step title="Sélectionner l’option de comparaison">
+    Sélectionnez l’option de comparaison dans le menu déroulant.
+  </Step>
+</Steps>
+
+<Note>
+  Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
+</Note>
+
+> **Exemple pour “le montant est supérieur ou égal à”** :  
+> Étiquette du produit : `SummerCollection`  
+> Montant : `777`  
+> → Correspond aux commandes où le montant du sous-total des produits étiquetés `SummerCollection` est de 777 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-product-tag-has-greater-value.webp"
+  alt="Montant du sous-total de la commande par étiquette de produit - valeur supérieure"
+/>

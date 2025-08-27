@@ -1,0 +1,115 @@
+---
+title: "Réorganiser les modes d’expédition"
+description: "Réorganiser l’affichage des méthodes d’expédition ou de retrait lors du passage en caisse selon des conditions données."
+icon: "shuffle"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet de modifier automatiquement l’ordre dans lequel les méthodes d’expédition apparaissent lors du passage en caisse.  
+Vous pouvez donner la priorité à certaines options d’expédition en fonction de conditions telles que le total du panier, l’adresse de livraison ou les balises de produit, etc.
+
+Cela aide à simplifier l’expérience client en affichant d’abord les méthodes d’expédition les plus pertinentes ou les plus rentables.
+
+## Exemple de configuration
+
+Les étapes suivantes montrent comment créer et configurer une règle **Réorganiser les modes d’expédition** à l’aide de l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [admin Shopify](/guides/fr/get-started/installation#go-to-the-app), ouvrez l’application. Dans la barre latérale, allez à la section [Règles](/guides/fr/get-started/quickstart#create-a-sample-rule) et cliquez sur _"Créer une règle"_.
+
+Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle de passage en caisse**. Choisissez _catégorie "Expédition" → type de règle de passage en caisse "Réorganiser les modes d’expédition" → cliquez sur “Sélectionner la règle”_.
+
+<img
+  src="/images/essentials/shipping/select-reorder-shipping-methods.webp"
+  alt="Sélectionner Réorganiser les modes d’expédition"
+/>
+
+Ensuite, dans la **sélection de modèle**, choisissez une option en fonction de vos besoins. Dans la plupart des cas, vous pouvez choisir la règle vide comme point de départ et la modifier selon vos besoins. Même si vous choisissez un modèle prérempli, vous pourrez le modifier plus tard.
+
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Sélectionner le modèle de règle"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de réorganisation des modes d’expédition**, où vous pouvez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, nous pouvons d’abord, facultativement, ajouter un nom tel que "Réorganiser les modes d’expédition" pour décrire ce qu’elle fait. Ensuite, sélectionnez le [statut](/guides/fr/get-started/concepts#status) de la règle : Mise à l’essai, Active ou Désactivée.
+
+Ici, à titre d’exemple, nous allons choisir le statut **Mise à l’essai**, afin de pouvoir rapidement tester la règle sans affecter le passage en caisse des vrais clients.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Configuration de la règle 1" />
+
+Ensuite, sur le même écran, sélectionnez la [Cible](/guides/fr/get-started/concepts#target) appropriée pour définir où la règle doit s’appliquer. Nous pouvons choisir _"Expédier"_ pour réorganiser les modes d’expédition affichés après la saisie d’une **adresse de livraison**. Puis, nous pouvons sélectionner :
+
+- **Toutes les expéditions sauf les abonnements** – applique la règle uniquement aux expéditions normales et ignore toute commande contenant des produits par abonnement. C’est utile, car Shopify peut automatiquement choisir le mode d’expédition le moins cher pour les produits par abonnement et masquer tous les autres modes d’expédition. Masquer ce mode le moins cher peut provoquer une erreur "aucune expédition disponible". C’est pourquoi nous recommandons d’utiliser cette option si vous avez des produits par abonnement afin d’éviter cette erreur.
+
+- **Toutes les expéditions** – applique la règle à chaque commande, y compris celles contenant des articles d’abonnement.
+
+Ou, nous pouvons choisir _"Retrait"_ si nous voulons que la règle s’applique spécifiquement aux méthodes de retrait affichées lorsqu’un client sélectionne **"Retrait en magasin"** lors du passage en caisse.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Sélectionner la cible" />
+
+<Info>
+  Si vous n’êtes pas sûr de ce qu’il faut choisir pour un paramètre de règle, le
+  choix par défaut pré-sélectionné est souvent la meilleure option. Vous pouvez
+  toujours commencer avec l’option par défaut et la modifier plus tard.
+</Info>
+
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#condition-set) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-when) et l’[action](/guides/fr/get-started/concepts#action-what).
+
+> À titre d’exemple, ici nous allons choisir l’ensemble de conditions par défaut, puis définir la règle pour qu’elle s’exécute toujours, et sélectionner l’opération pour réorganiser les modes d’expédition du prix le plus élevé au plus bas.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Configuration de la règle 2" />
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et sauvegarder votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Mettre la règle à l’essai
+
+Comme la règle est définie sur le statut mise à l’essai, nous devons utiliser `test@testing.com` comme adresse e-mail, au lieu de l’e-mail réel, pour exécuter la règle lors du passage en caisse.
+
+<Warning>
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que
+  l’adresse e-mail de test ait été utilisée. Veuillez noter l’ordre des méthodes
+  d’expédition.
+</Warning>
+
+<img src="/images/shared/before-rule-apply.webp" alt="Avant application de la règle" />
+
+Après avoir défini l’e-mail, la règle de passage en caisse s’exécute et vous verrez que les méthodes d’expédition sont réorganisées. Nous pouvons vérifier que la méthode d’expédition la plus chère est maintenant en haut, comme illustré ci-dessous.
+
+<img src="/images/shared/after-rule-apply.webp" alt="Après application de la règle" />
+
+## Définir le mode d’expédition pré-sélectionné par défaut
+
+Par défaut, Shopify fera toujours du mode d’expédition affiché en haut le mode d’expédition pré-sélectionné par défaut. Ainsi, à l’aide de cette règle, vous pouvez changer le mode d’expédition pré-sélectionné par défaut pour n’importe quel mode que vous souhaitez, en le plaçant en haut de la liste.
+
+Pour ce faire, par exemple, vous pouvez utiliser l’option **Classement fixe**, et définir le rang à 1 pour le mode d’expédition que vous souhaitez voir comme mode d’expédition pré-sélectionné par défaut. Assurez-vous que l’option "Toutes les autres méthodes d’expédition apparaîtront ici après celles ci-dessus" est définie sur "Afficher à la fin".
+
+<Warning>
+  Veuillez noter que, pour tester cela, vous devrez activer la règle, puis vider
+  les cookies/cache du navigateur, afin que le mode d’expédition
+  pré-sélectionné par défaut ne soit pas votre mode d’expédition précédemment
+  sélectionné (Shopify peut enregistrer cette sélection en cache pour votre
+  navigateur). Vous pouvez également utiliser un autre navigateur pour voir ce
+  que vos clients verront.
+</Warning>
+
+## Activer la règle
+
+Une fois la mise à l’essai terminée, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des vrais clients. Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer** pour l’activer.
+
+<Warning>
+  L’activation des règles n’est disponible que sur les forfaits payants. Si vous
+  n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#upgrade-your-plan) pour effectuer la
+  mise à niveau.
+</Warning>
+<img src="/images/shared/activate-the-rule.webp" alt="Activer la règle" />
