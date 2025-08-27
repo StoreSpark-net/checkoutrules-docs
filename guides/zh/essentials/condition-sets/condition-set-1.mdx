@@ -1,0 +1,239 @@
+---
+title: "条件集 1"
+description: "了解 _条件集 1_ 中提供的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/zh/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/zh/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/zh/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/zh/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import SKU from "/snippets/condition-set/zh/sku.mdx";
+import ProductTags from "/snippets/condition-set/zh/product-tags.mdx";
+import Collections from "/snippets/condition-set/zh/collections.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/zh/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/zh/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/zh/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/zh/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/zh/address-line2.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 日期时间
+
+### 需要额外设置
+
+在设置任何 **日期时间** 条件时，需要进行额外设置。请按照以下步骤完成设置。
+
+<Steps>
+  <Step title="选择您的时区">
+    从 <strong>请选择您的时区</strong> 下拉菜单中，选择您商店的时区，然后点击 <strong>"保存"</strong> 应用设置。
+    
+    > 例如，如果您想要太平洋时间 (PT)，请选择 <strong>温哥华</strong>。
+
+    <img
+      src="/images/essentials/condition-sets/select-timezone.webp"
+      alt="选择时区"
+    />
+  </Step>
+
+  <Step title="在主题中启用 BeSure 嵌入模块">
+    - 点击 <strong>BeSure 嵌入模块</strong> 链接，在主题中启用该模块。
+    
+    <img
+      src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
+      alt="点击 BeSure 嵌入模块"
+    />
+
+    - 在主题编辑器中，找到 <strong>BeSure 嵌入模块</strong> 位于 <em>应用嵌入</em> 下并启用它。
+    
+    <img
+      src="/images/essentials/condition-sets/locate-and-enable-block.webp"
+      alt="找到并启用模块"
+    />
+  </Step>
+
+  <Step title="保存主题">
+    启用模块后，请保存您的主题。<strong>保存</strong> 按钮位于右上角。
+    
+    <img
+      src="/images/essentials/condition-sets/save-theme.webp"
+      alt="保存主题"
+    />
+  </Step>
+
+  <Step title="标记为完成（可选）">
+    完成所有步骤后，点击 <strong>"标记为完成"</strong>，然后保存规则。
+    
+    <img
+      src="/images/essentials/condition-sets/mark-as-done.webp"
+      alt="标记为完成"
+    />
+  </Step>
+
+  <Step title="测试规则">
+    创建规则后，请先清空购物车。然后，向购物车添加新产品并结账，测试规则是否正常生效。
+  </Step>
+</Steps>
+
+### 日期
+
+用于将客户的结账日期与所选日期或日期范围进行比较，基于以下子条件之一：
+
+- **是**（客户的结账日期与所选日期匹配）
+- **不是**（客户的结账日期与所选日期不匹配）
+- **在之前**（客户的结账日期早于所选日期）
+- **在之后**（客户的结账日期晚于所选日期）
+- **介于…之间**（客户的结账日期在所选起止日期之间）
+- **不在…之间**（客户的结账日期不在所选起止日期之间）
+
+对于 **是**、**不是**、**在之前** 和 **在之后**，请选择日历选择器中的单个日期。
+
+> 例如，`在 2025 年 8 月 11 日之前` → 匹配 2025 年 8 月 11 日之前的日期。
+
+<img
+  src="/images/essentials/condition-sets/single-date.webp"
+  alt="单个日期"
+/>
+
+对于 **介于…之间** 和 **不在…之间**，请选择开始日期和结束日期。
+
+> 例如，`介于 2025 年 8 月 11 日至 2025 年 8 月 19 日` → 匹配 2025 年 8 月 11 日至 2025 年 8 月 19 日之间的日期。
+
+<img
+  src="/images/essentials/condition-sets/multiple-dates.webp"
+  alt="多个日期"
+/>
+
+### 星期几
+
+用于将客户结账的星期几与所选天数或天数范围进行比较，基于以下子条件之一：
+
+- **是**（客户结账的星期几与所选匹配）
+- **不是**（客户结账的星期几与所选不匹配）
+- **介于…之间**（客户结账的星期几在所选开始和结束天数之间）
+- **不在…之间**（客户结账的星期几不在所选开始和结束天数之间）
+
+对于 **是** 和 **不是**，从下拉菜单中选择单个星期几。
+
+> 例如，`是星期一` → 匹配星期一。
+
+<img src="/images/essentials/condition-sets/single-day.webp" alt="单个星期" />
+
+对于 **介于…之间** 和 **不在…之间**，选择开始和结束天数。
+
+> 例如，`介于星期一至星期五` → 匹配星期一至星期五之间的天数。
+
+<img
+  src="/images/essentials/condition-sets/multiple-days.webp"
+  alt="多个星期"
+/>
+
+### 时间段
+
+用于将客户结账时间与所选时间或时间范围进行比较，基于以下子条件之一：
+
+- **是**（客户结账时间与所选时间匹配）
+- **不是**（客户结账时间与所选时间不匹配）
+- **介于…之间**（客户结账时间在所选起止时间之间）
+- **不在…之间**（客户结账时间不在所选起止时间之间）
+
+对于 **是** 和 **不是**，从下拉菜单中选择单个时间。
+
+> 例如，`是 02:30` → 精确匹配上午 2:30。
+
+<img
+  src="/images/essentials/condition-sets/single-time.webp"
+  alt="单个时间"
+/>
+
+对于 **介于…之间** 和 **不在…之间**，选择开始和结束时间。
+
+> 例如，`不在 01:30 至 05:00 之间` → 匹配不在凌晨 1:30 至 5:00 之间的时间。
+
+<img
+  src="/images/essentials/condition-sets/multiple-times.webp"
+  alt="多个时间"
+/>
+
+### 星期几 + 时间段
+
+用于将客户结账的星期几和时间与所选范围比较，基于以下条件：
+
+- **介于…之间**（匹配结账时间在所选开始和结束之间）
+- **不在…之间**（匹配结账时间不在所选开始和结束之间）
+
+设置条件时，请从下拉菜单选择起始点的星期几和时间，以及结束点的星期几和时间。
+
+> 例如，`介于星期一 00:00 至星期三 12:00` → 匹配星期一凌晨至星期三中午之间的结账。
+
+<img
+  src="/images/essentials/condition-sets/range-day-and-time.webp"
+  alt="星期 + 时间"
+/>
+
+## 客户
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTags />
+
+## 订单详情
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+## 购物车中是否包含任意商品
+<SKU />
+<ProductTags />
+<Collections />
+
+## 配送
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## 本地化
+<UserLanguage />
+
+## 配送地址
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
