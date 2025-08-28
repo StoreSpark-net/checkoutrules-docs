@@ -1,0 +1,39 @@
+### Colecciones
+
+Esta condición verifica las **Colecciones** frente a criterios específicos. Se volverá verdadera si **algún** producto en el carrito pertenece al valor de Colección ingresado, en función de una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si la colección tiene al menos uno de los valores ingresados)  
+- **No tiene ninguno de estos valores** (Coincide si la colección no tiene ninguno de los valores ingresados)  
+- **Tiene cualquier otro valor además de estos valores** (Coincide si la colección tiene un valor que no está entre los valores ingresados)  
+- **No tiene ningún otro valor además de estos valores** (Coincide si la colección solo tiene los valores ingresados y ningún otro)  
+- **Tiene un número de valores mayor o igual que** (Coincide si el **conteo** de colecciones es mayor o igual que el número ingresado)  
+- **Tiene un número de valores menor o igual que** (Coincide si el **conteo** de colecciones es menor o igual que el número ingresado)  
+
+<Warning>
+  Solo puede usar esta condición con los mismos valores en toda la regla. Si desea usar valores diferentes en distintos bloques de reglas, debe cambiar al conjunto de condiciones 3 que permite mayor flexibilidad.
+</Warning>
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingrese uno o más valores de colección en el campo.
+
+> Por ejemplo, `Tiene cualquier otro valor además de estos valores: Verano2025, Invierno2025` → Coincide si la colección incluye al menos un valor que no sea “Verano2025” o “Invierno2025”.
+
+<img
+  src="/images/essentials/condition-sets/collections.webp"
+  alt="Colecciones"
+/>
+
+En la ventana emergente, seleccione una o varias colecciones de las colecciones ya creadas en su tienda.
+
+<img
+  src="/images/essentials/condition-sets/popup-collections.webp"
+  alt="Ventana Emergente de Colecciones"
+/>
+
+Para **Tiene un número de valores mayor o igual que** y **Tiene un número de valores menor o igual que**, ingrese un solo valor numérico en el campo para coincidir con el conteo de colecciones.
+
+> Por ejemplo, `Tiene un número de valores menor o igual que 7` → Coincide si hay siete o menos colecciones.
+
+<img
+  src="/images/essentials/condition-sets/count-collections.webp"
+  alt="Conteo de Colecciones"
+/>

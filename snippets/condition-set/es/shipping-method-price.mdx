@@ -1,0 +1,21 @@
+### Precio del método de envío
+
+Esta condición verifica el **precio del método de envío** según los criterios del nombre de envío seleccionado y la regla de comparación de precio. Puede configurarlo utilizando las siguientes opciones:
+
+**Criterios del nombre de envío:**
+
+- **el nombre del envío contiene** (Coincide cuando el nombre del método de envío incluye el texto ingresado)
+- **el nombre del envío es** (Coincide cuando el nombre del método de envío coincide exactamente con el texto ingresado)
+- **cualquier método de envío** (Coincide independientemente del nombre del método de envío)
+
+**Opciones de comparación de precio:**
+
+- **el precio es mayor o igual que** (Coincide cuando el precio del método de envío es mayor o igual que la cantidad ingresada)
+- **el precio es menor o igual que** (Coincide cuando el precio del método de envío es menor o igual que la cantidad ingresada)
+
+> Por ejemplo, `el nombre del envío contiene Express` + `el precio es mayor o igual que 200` → Coincide con pedidos cuyo nombre del método de envío contiene “Express” y un precio de envío de 200 o más.
+
+<img
+  src="/images/essentials/condition-sets/shipping-method-price.webp"
+  alt="Precio del método de envío"
+/>

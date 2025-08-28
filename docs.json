@@ -133,7 +133,8 @@
               "guides/es/get-started/introduction",
               "guides/es/get-started/installation",
               "guides/es/get-started/concepts",
-              "guides/es/get-started/quickstart"
+              "guides/es/get-started/quickstart",
+              "guides/es/get-started/faq"
             ]
           },
           {
@@ -143,7 +144,15 @@
               {
                 "group": "Conjuntos de Condiciones",
                 "icon": "filter",
-                "pages": ["guides/es/essentials/condition-sets/introduction"]
+                "pages": [
+                  "guides/es/essentials/condition-sets/introduction",
+                  "guides/es/essentials/condition-sets/condition-set-1",
+                  "guides/es/essentials/condition-sets/condition-set-2",
+                  "guides/es/essentials/condition-sets/condition-set-3",
+                  "guides/es/essentials/condition-sets/condition-set-4",
+                  "guides/es/essentials/condition-sets/condition-set-5",
+                  "guides/es/essentials/condition-sets/condition-set-6"
+                ]
               },
               {
                 "group": "Envío",

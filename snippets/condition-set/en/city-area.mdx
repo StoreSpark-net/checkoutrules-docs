@@ -1,0 +1,51 @@
+### City / Area
+
+Used to compare the City / Area (The City/Area field on the checkout page in shipping address) values with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the city field contains at least one of the listed values)
+
+- **Does not have any of these values** (Matches if the city field does not contain any of the listed values)
+
+- **Has any other value besides these values** (Matches if the city field contains values other than the listed ones)
+
+- **Does not have any other value besides these values** (Matches if the city field contains only the listed values and no others)
+
+- **Has number of digits greater than or equals** (Matches if the number of digits in the city field is greater than or equal to the specified number)
+
+- **Has number of digits less than or equals** (Matches if the number of digits in the city field is less than or equal to the specified number)
+
+- **Is empty** (Matches if the city field has no value)
+
+- **Is not empty** (Matches if the city field contains any value)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match partial city names. For example, Santo* will match
+  santo domingo, santodomngo etc.
+</Note>
+
+> For example, `Has any of these values: Lahore, Karachi` → Matches if the field contains either “Lahore” or “Karachi”.
+
+<img
+  src="/images/essentials/condition-sets/multiple-cities.webp"
+  alt="Multiple Cities"
+/>
+
+For **Has number of digits greater than or equals** or **Has number of digits less than or equals**, enter the digit count threshold.
+
+> For example, `Has number of digits greater than or equals 5` → Matches if the field’s value has five or more digits.
+
+<img
+  src="/images/essentials/condition-sets/count-cities.webp"
+  alt="Count Cities"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if no value is entered for the field.
+
+<img
+  src="/images/essentials/condition-sets/city-available.webp"
+  alt="City Available"
+/>

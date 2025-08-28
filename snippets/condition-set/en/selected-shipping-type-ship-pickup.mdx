@@ -1,0 +1,22 @@
+### Selected shipping type (Ship/Pickup)
+
+This condition checks the "Ship vs Pickup in store" selection on the checkout page, as shown below.
+
+<img
+  src="/images/essentials/condition-sets/shipping-pickup-type.webp"
+  alt="Checkout Page Shipping vs Pickup Type Selection"
+/>
+
+It will become true if the selected shipping type is the same as the entered value, based on one of the following sub-conditions:
+
+- **is** (Matches if the Delivery selection is exactly as the entered value)
+- **is not** (Matches if the Delivery selection is different from the entered value)
+
+For any of the above options, choose one shipping type from the list: **Pickup**, **Local delivery**, **Shipping**, **Pickup point**, **Retail**, or **None**.
+
+> **Example:** `is not: Pickup` → Matches if the selected shipping type is anything other than “Pickup”, i-e it is "Ship".
+
+<img
+  src="/images/essentials/condition-sets/select-shipping-type.webp"
+  alt="Select Shipping Type"
+/>

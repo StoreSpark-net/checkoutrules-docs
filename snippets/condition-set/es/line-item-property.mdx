@@ -1,0 +1,66 @@
+### Propiedad de artículo de línea
+
+Esta condición verifica las **propiedades adjuntas a un artículo de línea** según criterios específicos, basados en una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide cuando la propiedad de artículo de línea especificada contiene alguno de los valores ingresados)
+- **No tiene ninguno de estos valores** (Coincide cuando la propiedad de artículo de línea especificada no contiene ninguno de los valores ingresados)
+- **Tiene valor vacío** (Coincide cuando la propiedad de artículo de línea especificada existe pero no tiene valor)
+- **No tiene valor vacío** (Coincide cuando la propiedad de artículo de línea especificada existe y contiene un valor)
+- **Tiene número de valores mayor o igual** (Coincide cuando la propiedad de artículo de línea especificada contiene un número de valores mayor o igual al número ingresado)
+- **Tiene número de valores menor o igual** (Coincide cuando la propiedad de artículo de línea especificada contiene un número de valores menor o igual al número ingresado)
+
+Para configurar estas condiciones:
+
+<Steps>
+  <Step title="Ingresar clave de propiedad">
+    Ingrese la <strong>clave de propiedad</strong> en el campo “Ingresar clave”.
+  </Step>
+
+  <Step title="Ingresar valor(es)">
+    Ingrese el <strong>valor(es)</strong> a coincidir (cuando corresponda).
+  </Step>
+
+  <Step title="Elegir opción de comparación">
+    Elija la opción de comparación del menú desplegable.
+  </Step>
+</Steps>
+
+Para **Tiene alguno de estos valores** y **No tiene ninguno de estos valores**, ingrese uno o más valores en el campo. Separe múltiples valores con comas.
+
+<Note>
+  Use * comodín para coincidir con valores parciales. Por ejemplo, valor* coincidirá con
+  valor123, VALUETEST, etc.
+</Note>
+
+> **Ejemplo para “Tiene alguno de estos valores”**:  
+> Clave: `color`  
+> Valores: `rojo, azul`  
+> → Coincide con los artículos de línea donde la propiedad `color` es `rojo` o `azul`.
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="Propiedad de artículo de línea con algunos valores"
+/>
+
+Para **Tiene valor vacío** y **No tiene valor vacío**, no se requiere ingresar ningún valor.
+
+> **Ejemplo para “No tiene valor vacío”**:  
+> Clave: `grabado`  
+> → Coincide con los artículos de línea donde la propiedad `grabado` existe y contiene algún texto (por ejemplo, “Feliz Aniversario”).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="Propiedad de artículo de línea no vacía"
+/>
+
+Para **Tiene número de valores mayor o igual** y **Tiene número de valores menor o igual**, ingrese el número límite en el campo.
+
+> **Ejemplo para “Tiene número de valores menor o igual”**:  
+> Clave: `talla`  
+> Número: `2`  
+> → Coincide con los artículos de línea donde la propiedad `talla` tiene 2 o menos valores distintos (por ejemplo, `S, M`).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="Propiedad de artículo de línea con valores menores"
+/>

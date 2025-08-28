@@ -1,0 +1,22 @@
+### Etiquetas de clientes
+
+Esta condición verifica las **etiquetas** del cliente contra criterios específicos, basados en una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el cliente tiene al menos una de las etiquetas ingresadas)  
+- **No tiene ninguno de estos valores** (Coincide si el cliente no tiene ninguna de las etiquetas ingresadas)
+
+<Warning>
+  Solo puedes usar esta condición con los mismos valores en toda la regla.  
+  Si deseas usar diferentes valores en distintos bloques de reglas,  
+  debes cambiar al conjunto de condiciones 5, que permite más flexibilidad.
+</Warning>
+
+Para configurar estas condiciones, escribe una o más etiquetas en el campo y elige la comparación apropiada en el menú desplegable.  
+Separa varias etiquetas con comas y luego presiona Enter para cargar las etiquetas simultáneamente.
+
+> Por ejemplo, `Tiene alguno de estos valores: VIP, VVIP` → Coincide con los clientes que tienen la etiqueta “VIP” o “VVIP”.
+
+<img
+  src="/images/essentials/condition-sets/customer-tags.webp"
+  alt="Etiquetas de clientes"
+/>
