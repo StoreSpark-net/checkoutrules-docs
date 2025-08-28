@@ -1,0 +1,169 @@
+---
+title: Concurrence
+description: "Apprenez comment plusieurs règles du même type fonctionnent ensemble et comment elles influencent le passage à la caisse."
+icon: "list"
+---
+
+## Vue d’ensemble
+
+Nous pouvons créer plusieurs règles du même type. La **concurrence** décrit ce qui se passe lorsque plusieurs règles actives du même type existent et sont déclenchées sur la page de passage à la caisse en même temps.  
+Cet article vous aidera à comprendre ce qui se passe lorsque ces règles sont appliquées ensemble et comment leur effet combiné peut influencer le processus de passage à la caisse.
+
+## Explication
+
+Lorsque vous ajoutez plus d’une règle du même type, elles s’exécutent toutes **indépendamment mais presque en même temps**.  
+Le résultat du passage à la caisse est l’effet combiné de toutes les règles déclenchées et qui génèrent des actions.  
+L’ordre d’exécution de ces règles est **non déterministe** selon Shopify : elles peuvent s’exécuter dans n’importe quel ordre.
+
+<Note>
+  Chaque règle peut uniquement générer des actions qui peuvent être combinées avec d’autres actions générées par le même type de règle.  
+  Par exemple, vous pouvez avoir une règle pour masquer une méthode d’expédition, mais vous ne pouvez pas avoir une règle pour afficher une méthode d’expédition.  
+  Toutes les règles de masquage des méthodes d’expédition seront combinées pour déterminer toutes les méthodes qui doivent être masquées.
+</Note>
+
+Voici comment cela fonctionne étape par étape :
+
+<Steps>
+  <Step title="Chaque règle commence à s’exécuter">
+    Chaque règle commence à s’exécuter presque en même temps, en vérifiant ses propres conditions pour déterminer si elle doit générer des actions.
+  </Step>
+
+  <Step title="Les actions des règles sont générées">
+    Si la condition d’une règle est satisfaite, son action est générée.
+    
+    > Par exemple, vous pouvez avoir une règle pour <strong>masquer toute méthode d’expédition contenant "Worldwide"</strong> dans son nom.  
+    > Puis une autre règle pour <strong>masquer toute méthode d’expédition contenant "International Shipping"</strong> dans son nom.  
+    > Les deux règles généreront des actions : l’une masquera "Worldwide" et l’autre masquera "International Shipping".
+  </Step>
+
+  <Step title="Les actions sont combinées">
+    Si plusieurs règles génèrent des actions, leurs actions sont combinées et envoyées au passage à la caisse Shopify.
+
+    > Par exemple, Règle 1 masque une méthode contenant <strong>"Worldwide"</strong>, Règle 2 masque une méthode contenant <strong>"International Shipping"</strong> → Une action combinée pour masquer à la fois Worldwide et International Shipping sera générée et envoyée au passage à la caisse Shopify.
+  </Step>
+</Steps>
+
+## Exemple de cas d’utilisation
+
+Supposons que vous vouliez **masquer certaines méthodes d’expédition** en fonction du code postal du client.  
+Pour cela, imaginons que nous créons les règles suivantes :
+
+**Règle 1** → Masquer la méthode d’expédition `DHL Express Worldwide` lorsque le code postal est **2005** ou commence par **100**.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example.webp"
+  alt="Exemple Règle 1"
+/>
+</Frame>
+
+**Règle 2** → Masquer la méthode `International Shipping` lorsque le code postal est **2005** ou commence par **500**.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example.webp"
+  alt="Exemple Règle 2"
+/>
+</Frame>
+
+### Cas 1 : Une seule règle s’applique
+
+- Si le client saisit un code postal comme **10045**, la **Règle 1** s’applique, car les conditions de la Règle 2 ne sont pas remplies, donc aucune action n’est générée.
+
+  → Au passage à la caisse, la méthode `DHL Express Worldwide` est masquée, mais `International Shipping` et les autres méthodes restent disponibles comme indiqué dans la capture ci-dessous.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example-checkout.webp"
+  alt="Exemple Passage à la caisse Règle 1"
+/>
+</Frame>
+
+- Si le client saisit un code postal comme **50010**, la **Règle 2** s’applique.  
+  → Au passage à la caisse, la méthode `International Shipping` est masquée, mais `DHL Express Worldwide` et les autres méthodes restent disponibles.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example-checkout.webp"
+  alt="Exemple Passage à la caisse Règle 2"
+/>
+</Frame>
+
+### Cas 2 : Les deux règles s’appliquent ensemble
+
+- Si le client saisit le **code postal 2005**, alors les conditions sont remplies pour les deux règles, donc **Règle 1 et Règle 2** s’appliquent ensemble.  
+- Cela signifie que **`DHL Express Worldwide` et `International Shipping`** seront toutes deux masquées lors du passage à la caisse, ne laissant que les autres méthodes disponibles.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/both-rule-same-zipcode-example-checkout.webp"
+  alt="Exemple Passage à la caisse Deux Règles"
+/>
+</Frame>
+
+## Conflits entre règles
+
+Si plusieurs règles ne sont pas conçues pour fonctionner en concurrence, elles peuvent entrer en conflit et causer des problèmes sur la page de passage à la caisse.  
+Nous devons nous assurer que les règles ne se contredisent pas afin d’éviter tout problème.
+
+<Warning>
+  Soyez prudent lors de l’utilisation de plusieurs règles du même type. Assurez-vous toujours que les règles ne sont pas en conflit afin d’éviter des problèmes.
+</Warning>
+
+### Exemple : N’afficher que ces méthodes d’expédition
+
+Lorsqu’une règle est définie sur **N’afficher que ces méthodes d’expédition**, elle essaiera de masquer toutes les méthodes qui ne figurent pas dans la liste que nous voulons "seulement afficher".
+
+Si plusieurs règles sont définies sur **N’afficher que ces méthodes d’expédition**, elles peuvent entrer en conflit et entraîner la suppression de toutes les options d’expédition.
+
+> **Exemple :**  
+> Règle 1 → N’afficher que la méthode `DHL Express Worldwide` lorsque le code postal est 2005 ou commence par 100.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-zipcode.webp"
+  alt="Code postal Règle 1"
+/>
+</Frame>
+
+> Règle 2 → N’afficher que la méthode `International Shipping` lorsque le code postal est 2005 ou commence par 500.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-zipcode.webp"
+  alt="Code postal Règle 2"
+/>
+</Frame>
+
+Lorsque les deux règles s’exécutent pour le même code postal **2005**, la Règle 1 tentera de masquer toutes les méthodes sauf `DHL Express Worldwide`, et la Règle 2 tentera de masquer toutes les méthodes sauf `International Shipping`.  
+Cela entraînera une erreur **Aucune méthode d’expédition disponible**, car les deux règles ne sont pas compatibles.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/shipping-not-available-error.webp"
+  alt="Erreur Méthode d’expédition non disponible"
+/>
+</Frame>
+
+<Check>
+Pour résoudre ce problème, nous devons créer une 3ᵉ règle ici, qui traitera les codes postaux communs séparément.
+</Check>
+
+De cette façon, nous pouvons garantir que la Règle 1 et la Règle 2 sont indépendantes l’une de l’autre. La Règle 3 gérera les codes postaux communs et nous pourrons être sûrs des méthodes disponibles pour le client dans chaque cas.
+
+<Tip>
+De manière générale, nous devrions toujours associer **N’afficher que ces méthodes d’expédition** avec la condition **Méthode d’expédition disponible** en tant que sous-condition, et utiliser les mêmes valeurs dans les deux.
+
+> **Exemple :**  
+> Règle → N’afficher que la méthode d’expédition `DHL Express Worldwide` lorsque le code postal est 2005 ou commence par 100 _ET_ sous-condition **Méthode d’expédition disponible** contient l’une de ces valeurs : _DHL Express Worldwide_.  
+> Cela garantira que _DHL Express Worldwide_ est réellement disponible pour ce passage à la caisse avant que nous essayions de masquer toutes les autres méthodes.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-solution.webp"
+  alt="Solution Règle 1"
+/>
+</Frame>
+
+Ainsi, nous nous assurons que les méthodes d’expédition que nous voulons "n’afficher que" sont bien disponibles sur la page de passage à la caisse.
+</Tip>

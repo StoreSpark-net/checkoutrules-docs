@@ -1,0 +1,157 @@
+---
+title: "Concepts"
+description: "Découvrez les concepts clés derrière le fonctionnement de BeSure Checkout Rules pour personnaliser et contrôler votre expérience de passage à la caisse Shopify."
+icon: "puzzle-piece"
+---
+
+## Qu’est-ce qu’une règle ?
+
+Une **règle de passage à la caisse** est un ensemble de logique qui définit **ce qui** doit se produire pendant le processus de passage à la caisse et **quand**.
+
+## Éléments essentiels d’une règle
+
+Voici les parties essentielles de chaque règle qui définissent son objectif, quand elle doit s’exécuter, ce qu’elle doit faire et comment ces actions sont organisées.
+
+### Statut
+
+Indique l’état actuel de la règle, qu’elle soit en mode test, active ou désactivée. Cela permet de contrôler quand la règle prend effet.
+
+<Tip>
+  Il est recommandé de commencer avec une règle en mode test, afin de vérifier
+  que la règle fonctionne comme prévu sans impacter vos clients. Vous pouvez
+  passer en mode actif après les tests.
+</Tip>
+
+<img src="/images/concepts/rule-status.webp" alt="Statut de la règle" />
+
+Voici un exemple de la manière d’activer le mode test sur la page de passage à la caisse.
+
+<Frame>
+  <img src="/images/concepts/testing.webp" alt="Mode test" />
+</Frame>
+
+### Ensemble de conditions
+
+Vous pouvez utiliser n’importe quel ensemble de conditions qui correspond à vos besoins. Si vous n’êtes pas sûr, vous pouvez soit commencer avec l’ensemble de conditions 1, soit utiliser la barre de recherche pour trouver quel ensemble contient la condition dont vous avez besoin et basculer dessus.
+
+> Par exemple, si vous souhaitez masquer une méthode d’expédition en fonction du méta-champ produit, vous devez alors utiliser l’ensemble de conditions 4. Vous pourrez ainsi utiliser la condition méta-champ produit.
+
+<Warning>
+  La sélection de l’ensemble de conditions n’est disponible qu’au moment de la
+  création de la règle. Vous ne pouvez pas modifier l’ensemble de conditions après
+  la création de la règle. Si vous avez besoin d’un autre ensemble de conditions,
+  créez une nouvelle règle.
+</Warning>
+
+<img src="/images/concepts/condition-set.webp" alt="Ensemble de conditions" />
+
+Obtenez plus d’informations sur les ensembles de conditions [ici](/guides/fr/essentials/condition-sets/introduction) ou apprenez-en plus sur chaque ensemble ci-dessous.
+
+<CardGroup cols={3}>
+  <Card
+    title="Ensemble de conditions 1"
+    icon="1"
+    href="/guides/fr/essentials/condition-sets/condition-set-1"
+  >
+    En savoir plus sur l’ensemble de conditions 1.
+  </Card>
+  <Card
+    title="Ensemble de conditions 2"
+    icon="2"
+    href="/guides/fr/essentials/condition-sets/condition-set-2"
+  >
+    En savoir plus sur l’ensemble de conditions 2.
+  </Card>
+  <Card
+    title="Ensemble de conditions 3"
+    icon="3"
+    href="/guides/fr/essentials/condition-sets/condition-set-3"
+  >
+    En savoir plus sur l’ensemble de conditions 3.
+  </Card>
+  <Card
+    title="Ensemble de conditions 4"
+    icon="4"
+    href="/guides/fr/essentials/condition-sets/condition-set-4"
+  >
+    En savoir plus sur l’ensemble de conditions 4.
+  </Card>
+  <Card
+    title="Ensemble de conditions 5"
+    icon="5"
+    href="/guides/fr/essentials/condition-sets/condition-set-5"
+  >
+    En savoir plus sur l’ensemble de conditions 5.
+  </Card>
+  <Card
+    title="Ensemble de conditions 6"
+    icon="6"
+    href="/guides/fr/essentials/condition-sets/condition-set-6"
+  >
+    En savoir plus sur l’ensemble de conditions 6.
+  </Card>
+</CardGroup>
+
+### Conditions (le « quand »)
+
+Les conditions sont basées sur l’ensemble de conditions sélectionné et définissent les critères qui doivent être remplis pour déclencher la règle. Utilisez AND (toutes doivent être vraies), OR (au moins une est vraie), pour regrouper une logique complexe.
+
+> Voir l’exemple ci-dessous : la règle s’exécutera dans l’une des deux situations suivantes : lorsque la date est le 4 août 2025 et que ce jour est un lundi, alors la règle sera appliquée, OU, chaque jour à minuit (00:00), ce qui signifie en pratique tous les jours à minuit.
+
+<img src="/images/concepts/condition.webp" alt="Condition" />
+
+### Action (le « quoi »)
+
+Lorsque les conditions de la section « quand » sont remplies, le système exécute l’action que vous définissez. Chaque action n’est exécutée que si ses critères spécifiques (condition de l’action et opérations) sont également respectés.
+
+> Voir l’exemple ci-dessous : ici, l’action est configurée pour réorganiser les méthodes d’expédition d’une manière fixe, en plaçant « Livraison le lendemain » en haut et en mettant toutes les autres méthodes d’expédition en dessous.
+
+<img src="/images/concepts/action.webp" alt="Action" />
+
+### Bloc
+
+Ensemble, les **conditions** (le « quand ») et l’**action** (le « quoi ») constituent un **bloc de règle**. Vous pouvez utiliser **plusieurs blocs** au sein d’une règle pour gérer facilement des scénarios complexes.
+
+<img src="/images/concepts/block.webp" alt="Bloc" />
+
+## Options supplémentaires (pour certaines règles)
+
+Ces parties optionnelles apparaissent dans certains types de règles et offrent plus de contrôle sur la façon dont la règle s’applique ou se comporte dans des conditions particulières.
+
+### Cible
+
+Définit où la règle s’applique (par ex. expédition ou retrait en magasin). Utilisé uniquement dans les règles d’expédition.
+
+<img src="/images/concepts/target.webp" alt="Cible" />
+
+### Combinaisons
+
+Contrôle si la réduction de la règle peut être combinée avec des réductions de produit, de commande ou d’expédition. Utilisé uniquement dans les règles de **Réduction**.
+
+<img src="/images/concepts/combinations.webp" alt="Combinaisons" />
+
+### Stratégie
+
+Si la règle de réduction comporte plusieurs blocs, la sélection de stratégie entre en jeu. Elle détermine comment ces blocs de règles sont appliqués (par ex. le premier valide ou la valeur la plus élevée). Utilisé uniquement dans la règle de **Réduction par montant de commande**.
+
+<img src="/images/concepts/strategy.webp" alt="Stratégie" />
+
+### Déclencheur
+
+Spécifie quelle étape déclenchera la règle (par ex. lorsque le client interagit avec le passage à la caisse, lorsqu’il finalise le passage à la caisse, ou les deux). Utilisé uniquement dans la règle **Valider ou bloquer le passage à la caisse**.
+
+<img src="/images/concepts/trigger.webp" alt="Déclencheur" />
+
+### Solution de secours
+
+Définit ce qui se passe dans le cas rare où l’application rencontre un problème lors du passage à la caisse (par ex. autoriser ou bloquer le passage à la caisse). Utilisé uniquement dans la règle **Valider ou bloquer le passage à la caisse**.
+
+<img src="/images/concepts/fallback.webp" alt="Solution de secours" />
+
+### Nombre maximal d’utilisations de la réduction
+
+Définit le **nombre total de fois** que la réduction peut être utilisée par tous les clients. Peut également restreindre l’utilisation à **une seule fois par client**. Applicable uniquement lors de l’utilisation de codes de réduction, pas de réductions automatiques. Utilisé uniquement dans les règles de **Réduction**.
+
+> Par exemple, si la limite d’utilisation est **définie à 1** et que l’option **« Limiter à une utilisation par client »** n’est pas cochée, un seul client pourra utiliser le code de réduction. Après cela, le code devient invalide pour tous les autres.
+
+<img src="/images/concepts/maximum-discount-uses.webp" alt="Solution de secours" />
