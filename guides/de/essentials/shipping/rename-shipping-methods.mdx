@@ -1,0 +1,102 @@
+---
+title: "Versandmethoden umbenennen"
+description: "Umbenennen/Übersetzen oder eine Nachricht zu den ausgewählten Versandmethoden beim Checkout unter bestimmten Bedingungen hinzufügen."
+icon: "pencil"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, die Bezeichnungen von Versand- und Abholmöglichkeiten beim Checkout basierend auf bestimmten Bedingungen umzubenennen oder zu übersetzen. Sie können die angezeigten Namen mithilfe von Kriterien wie Warenkorbwert, Kundentags, Versandadresse oder Produktdetails usw. anpassen.
+
+Dies trägt dazu bei, die Klarheit für Kunden zu verbessern, die Lokalisierung zu unterstützen und das gesamte Checkout-Erlebnis zu optimieren.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man eine **Versandmethoden umbenennen-Regel** mithilfe der App erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Anschließend werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Versand" → Checkout-Regeltyp "Versandmethoden umbenennen" → Klicken Sie auf "Regel auswählen"_.
+
+<img
+  src="/images/essentials/shipping/select-rename-shipping-methods.webp"
+  alt="Versandmethoden umbenennen auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Umbenennen von Versandmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Versandmethoden umbenennen" hinzufügen, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-rename-shipping-methods.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Wählen Sie anschließend auf demselben Bildschirm das passende [Ziel](/guides/de/get-started/concepts#target), um zu definieren, wo die Regel angewendet werden soll. Wir können _"Versand"_ wählen, um Versandmethoden umzubenennen, die nach Eingabe einer **Versandadresse** angezeigt werden. Dann können wir auswählen:
+
+- **Alle Sendungen außer Abonnements** – wendet die Regel nur auf reguläre Sendungen an und überspringt alle Bestellungen mit Abonnementprodukten. Dies ist nützlich, da Shopify automatisch die günstigste Versandmethode für Abonnementprodukte auswählt und alle anderen Versandmethoden ausblendet. Das Ausblenden dieser günstigsten Versandmethode kann den Fehler "Kein Versand verfügbar" verursachen. Deshalb empfehlen wir, diese Option zu verwenden, wenn Sie Abonnementprodukte haben, um diesen Fehler zu vermeiden.
+
+- **Alle Sendungen** – wendet die Regel auf jede Bestellung an, einschließlich derjenigen mit Abonnementartikeln.
+
+Die Auswahl von _"Abholung"_ ist für diesen Regeltyp derzeit aufgrund von Shopify-Beschränkungen nicht verfügbar.
+
+<img
+  src="/images/essentials/shipping/select-target-2.webp"
+  alt="Ziel auswählen"
+/>
+
+Wählen Sie anschließend den relevanten [Bedingungssatz](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what).
+
+> Als Beispiel verwenden wir **Bedingungssatz 1**, setzen die Regel auf **Immer** ausführen und konfigurieren sie so, dass Versandmethoden, die **"International Shipping"** enthalten, in **"Local Shipping"** umbenannt werden.
+
+Alternativ können wir die Option „Umbenennen in“ auf „Nachricht hinzufügen“ ändern, um dem Namen der Versandmethode eine benutzerdefinierte Nachricht hinzuzufügen, anstatt sie vollständig umzubenennen.
+
+<img
+  src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"
+  alt="Bedingungssatz Versandmethoden umbenennen"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> Verwendung der Test-E-Mail-Adresse. Bitte beachten Sie, dass die Versandmethode <i>International Shipping</i> verfügbar und noch nicht umbenannt ist.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und die angegebenen Versandmethoden werden umbenannt. Wir können überprüfen, dass die Versandmethode **"International Shipping"** nun als **"Local Shipping"** angezeigt wird, wie unten dargestellt.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-rename-shipping-methods.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen für alle Kunden anwenden.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/activate-the-rule-rename-shipping-methods.webp"
+  alt="Regel aktivieren"
+/>

@@ -1,0 +1,95 @@
+---
+title: "Zahlungsmethoden umbenennen"
+description: "Benennen/Übersetzen oder fügen Sie eine Nachricht zu den ausgewählten Zahlungsmethoden beim Checkout unter bestimmten Bedingungen hinzu."
+icon: "pencil"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, bestimmte Zahlungsmethoden beim Checkout basierend auf definierten Bedingungen umzubenennen, zu übersetzen oder eine Nachricht hinzuzufügen.  
+Sie können die angezeigten Bezeichnungen für Zahlungsmethoden mithilfe von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktdetails anpassen.
+
+Dies trägt dazu bei, die Klarheit zu verbessern, die Lokalisierung zu unterstützen und das gesamte Checkout-Erlebnis für Kunden zu optimieren.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man mithilfe der App eine **Zahlungsmethoden umbenennen**-Regel erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Zahlung" → Checkout-Regeltyp "Zahlungsmethoden umbenennen" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/payment/select-rename-payment-methods.webp"
+  alt="Zahlungsmethoden umbenennen auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Umbenennen von Zahlungsmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Zahlungsmethoden umbenennen" hinzufügen, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-rename-payment-methods.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what) aus.
+
+> Als Beispiel verwenden wir **Bedingungsset 1**, stellen die Regel so ein, dass sie **immer** ausgeführt wird, und konfigurieren sie so, dass die Zahlungsmethode **"Nachnahme (COD)"** in **"Bar bezahlen"** umbenannt wird.
+
+Alternativ können wir die Option „Umbenennen in“ auf „Nachricht hinzufügen“ setzen, um eine benutzerdefinierte Nachricht an den Namen der Zahlungsmethode anzuhängen, anstatt ihn vollständig umzubenennen.
+
+<img
+  src="/images/essentials/payment/condition-set-rename-payment-methods.webp"
+  alt="Bedingungsset Zahlungsmethoden umbenennen"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie, dass die Zahlungsmethode Nachnahme
+  (COD) noch nicht umbenannt ist.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und benennt die angegebenen Zahlungsmethoden um. Wir können bestätigen, dass die Zahlungsmethode **"Nachnahme (COD)"** nun als **"Bar bezahlen"** angezeigt wird, wie unten dargestellt.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-rename-payment-methods.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade
+  durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/payment/activate-the-rule-rename-payment-methods.webp"
+  alt="Regel aktivieren"
+/>

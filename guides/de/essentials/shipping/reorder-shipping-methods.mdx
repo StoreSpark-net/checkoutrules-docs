@@ -1,0 +1,104 @@
+---
+title: "Versandmethoden neu anordnen"
+description: "Ordnen Sie die Anzeige der Versand- oder Abholmöglichkeiten beim Checkout unter bestimmten Bedingungen neu."
+icon: "shuffle"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, automatisch die Reihenfolge zu ändern, in der die Versandmethoden beim Checkout erscheinen.  
+Sie können bestimmte Versandoptionen priorisieren, basierend auf Bedingungen wie Warenkorbwert, Lieferadresse oder Produkttags usw.
+
+Dies hilft, das Kundenerlebnis zu optimieren, indem die relevantesten oder kostengünstigsten Versandmethoden zuerst angezeigt werden.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man eine **Versandmethoden neu anordnen-Regel** mithilfe der App erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Anschließend werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Versand" → Checkout-Regeltyp "Versandmethoden neu anordnen" → Klicken Sie auf "Regel auswählen"_.
+
+<img
+  src="/images/essentials/shipping/select-reorder-shipping-methods.webp"
+  alt="Versandmethoden neu anordnen auswählen"
+/>
+
+Dann wählen Sie in der **Vorlagenauswahl** eine Option basierend auf Ihren Anforderungen. In den meisten Fällen können Sie die leere Regel als Ausgangspunkt wählen und sie nach Ihren Bedürfnissen anpassen. Auch wenn Sie eine vorgefüllte Vorlage wählen, können Sie diese später ändern.
+
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Regelvorlage auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Neuordnen von Versandmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Versandmethoden neu anordnen" hinzufügen, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir als Beispiel den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Regel konfigurieren 1" />
+
+Wählen Sie anschließend auf demselben Bildschirm das passende [Ziel](/guides/de/get-started/concepts#target), um zu definieren, wo die Regel angewendet werden soll. Wir können _"Versand"_ wählen, um Versandmethoden neu anzuordnen, die nach Eingabe einer **Versandadresse** angezeigt werden. Dann können wir auswählen:
+
+- **Alle Sendungen außer Abonnements** – wendet die Regel nur auf reguläre Sendungen an und überspringt alle Bestellungen mit Abonnementprodukten. Dies ist nützlich, da Shopify automatisch die günstigste Versandmethode für Abonnementprodukte auswählt und alle anderen Versandmethoden ausblendet. Das Ausblenden dieser günstigsten Versandmethode kann den Fehler "Kein Versand verfügbar" verursachen. Deshalb empfehlen wir, diese Option zu verwenden, wenn Sie Abonnementprodukte haben, um diesen Fehler zu vermeiden.
+
+- **Alle Sendungen** – wendet die Regel auf jede Bestellung an, einschließlich derjenigen mit Abonnementartikeln.
+
+Oder wir können _"Abholung"_ wählen, wenn wir möchten, dass die Regel speziell auf Abholmöglichkeiten angewendet wird, die angezeigt werden, wenn ein Kunde beim Checkout **"Abholung im Geschäft"** auswählt.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Ziel auswählen" />
+
+<Info>
+  Wenn Sie unsicher sind, was Sie für eine Regel-Einstellung wählen sollen, ist oft die standardmäßig vorausgewählte Option die beste Wahl. Sie können jederzeit mit der Standardoption starten und diese später ändern.
+</Info>
+
+Wählen Sie anschließend den relevanten [Bedingungssatz](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what).
+
+> Als Beispiel wählen wir hier den Standard-Bedingungssatz, setzen die Regel auf „Immer ausführen“ und wählen die Operation, die Versandmethoden nach Versandpreisen von hoch nach niedrig neu anzuordnen.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Regel konfigurieren 2" />
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> Verwendung der Test-E-Mail-Adresse. Bitte beachten Sie die Reihenfolge der Versandmethoden.
+</Warning>
+
+<img src="/images/shared/before-rule-apply.webp" alt="Vor Regelanwendung" />
+
+Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und Sie sehen, dass die Versandmethoden neu angeordnet sind. Wir können überprüfen, dass die teuerste Versandmethode nun ganz oben angezeigt wird, wie unten dargestellt.
+
+<img src="/images/shared/after-rule-apply.webp" alt="Nach Regelanwendung" />
+
+## Standardmäßig vorausgewählte Versandmethode festlegen
+
+Standardmäßig macht Shopify immer die oberste Versandmethode zur standardmäßig vorausgewählten Versandmethode. Mit dieser Regel können Sie also die standardmäßig vorausgewählte Versandmethode auf jede gewünschte Versandmethode ändern, indem Sie sie zur obersten Versandmethode machen.
+
+Um dies zu tun, können Sie beispielsweise die Option **Feste Rangfolge** verwenden und den Rang für die gewünschte Versandmethode, die als Standard vorausgewählt werden soll, auf 1 setzen. Bitte stellen Sie sicher, dass „Alle anderen Versandmethoden erscheinen hier nach den oben genannten“ auf „Am Ende anzeigen“ gesetzt ist.
+
+<Warning>
+  Bitte beachten Sie, dass Sie zum Testen die Regel aktivieren und dann die Cookies/den Cache des Browsers löschen müssen, damit die standardmäßig vorausgewählte Versandmethode nicht Ihre zuvor ausgewählte Versandmethode ist (Shopify kann diese Auswahl im Cache Ihres Browsers speichern). Alternativ können Sie auch einen anderen Browser verwenden, um zu sehen, was Ihre Kunden sehen werden.
+</Warning>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen für alle Kunden anwenden.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade durchzuführen.
+</Warning>
+
+<img src="/images/shared/activate-the-rule.webp" alt="Regel aktivieren" />

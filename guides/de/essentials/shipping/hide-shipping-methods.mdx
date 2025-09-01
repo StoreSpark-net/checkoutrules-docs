@@ -1,0 +1,104 @@
+---
+title: "Versandmethoden ausblenden"
+description: "Bestimmte Versand oder Abholmöglichkeiten beim Checkout unter gegebenen Bedingungen ausblenden."
+icon: "eye-slash"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, bestimmte Versand- oder Abholmöglichkeiten beim Checkout automatisch basierend auf definierten Bedingungen auszublenden. Sie können die Sichtbarkeit anhand von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktdetails usw. steuern.
+
+Dies hilft, den Checkout-Prozess zu optimieren, indem irrelevante oder nicht verfügbare Lieferoptionen entfernt werden, Verwirrung reduziert und die Konversionsrate verbessert wird.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man eine **Versandmethoden ausblenden-Regel** mithilfe der App erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Anschließend werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Versand" → Checkout-Regeltyp "Versandmethoden ausblenden" → Klicken Sie auf "Regel auswählen"_.
+
+<img
+  src="/images/essentials/shipping/select-hide-shipping-methods.webp"
+  alt="Versandmethoden ausblenden auswählen"
+/>
+
+Dann wählen Sie in der **Vorlagenauswahl** eine Option basierend auf Ihren Anforderungen. In den meisten Fällen können Sie die leere Regel als Ausgangspunkt wählen und an Ihre Bedürfnisse anpassen. Selbst wenn Sie eine vorgefertigte Vorlage auswählen, können Sie diese später noch ändern.
+
+<img
+  src="/images/essentials/shipping/select-rule-template-hide-shipping-methods.webp"
+  alt="Regelvorlage auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Ausblenden von Versandmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Versandmethoden ausblenden" hinzufügen, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-hide-shipping-methods.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Wählen Sie anschließend auf demselben Bildschirm das passende [Ziel](/guides/de/get-started/concepts#target), um zu definieren, wo die Regel angewendet werden soll. Wir können _"Versand"_ wählen, um Versandmethoden auszublenden, die nach Eingabe einer **Versandadresse** angezeigt werden. Dann können wir auswählen:
+
+- **Alle Sendungen außer Abonnements** – wendet die Regel nur auf reguläre Sendungen an und überspringt alle Bestellungen mit Abonnementprodukten. Dies ist nützlich, da Shopify automatisch die günstigste Versandmethode für Abonnementprodukte auswählt und alle anderen Versandmethoden ausblendet. Das Ausblenden dieser günstigsten Versandmethode kann den Fehler "Kein Versand verfügbar" verursachen. Deshalb empfehlen wir, diese Option zu verwenden, wenn Sie Abonnementprodukte haben, um diesen Fehler zu vermeiden.
+
+- **Alle Sendungen** – wendet die Regel auf jede Bestellung an, einschließlich derjenigen mit Abonnementartikeln.
+
+Oder wir können _"Abholung"_ wählen, wenn wir möchten, dass die Regel speziell auf Abholmöglichkeiten angewendet wird, die angezeigt werden, wenn ein Kunde beim Checkout **"Abholung im Geschäft"** auswählt.
+
+<img src="/images/essentials/shipping/select-target.webp" alt="Ziel auswählen" />
+
+Wählen Sie anschließend den relevanten [Bedingungssatz](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what).
+
+> Als Beispiel verwenden wir hier den Standard **Bedingungssatz 1**, setzen die Regel auf **Immer** ausführen und konfigurieren sie so, dass **Versandmethoden ausgeblendet** werden, die **"Express Worldwide"** enthalten.
+
+<img
+  src="/images/essentials/shipping/condition-set-hide-shipping-methods.webp"
+  alt="Bedingungssatz Versandmethoden ausblenden"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> Verwendung der Test-E-Mail-Adresse. Bitte beachten Sie, dass die Versandmethode <i>DHL Express Worldwide</i> verfügbar ist.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und die angegebenen Versandmethoden werden ausgeblendet. Wir können überprüfen, dass die Versandmethode **"Express Worldwide"** nicht mehr sichtbar ist, wie unten gezeigt.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-hide-shipping-methods.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen für alle Kunden anwenden.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/activate-the-rule-hide-shipping-methods.webp"
+  alt="Regel aktivieren"
+/>

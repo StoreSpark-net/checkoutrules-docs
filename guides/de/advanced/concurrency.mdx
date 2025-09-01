@@ -1,0 +1,163 @@
+---
+title: Gleichzeitigkeit
+description: "Erfahren Sie, wie mehrere Regeln desselben Typs zusammenarbeiten und wie sie den Checkout Prozess beeinflussen."
+icon: "list"
+---
+
+## Übersicht
+
+Wir können mehrere Regeln desselben Typs erstellen. Gleichzeitigkeit beschreibt, was passiert, wenn mehrere aktive Regeln desselben Typs existieren und gleichzeitig auf der Checkout-Seite ausgelöst werden.
+Dieser Artikel hilft Ihnen zu verstehen, was passiert, wenn diese Regeln zusammen angewendet werden und wie ihre kombinierte Wirkung den Checkout-Prozess beeinflussen kann.
+
+## Erklärung
+
+Wenn Sie mehr als eine Regel desselben Typs hinzufügen, laufen sie alle **unabhängig, aber fast gleichzeitig**. Das Checkout-Ergebnis ist die kombinierte Wirkung aller Regeln, die ausgelöst werden und Aktionen erzeugen. Die Ausführungsreihenfolge dieser Regeln ist laut Shopify **nicht deterministisch**, sie können in beliebiger Reihenfolge ausgeführt werden.
+
+<Note>
+  Jede Regel kann nur Aktionen erzeugen, die mit anderen Aktionen desselben Regeltyps kombiniert werden können.
+  Zum Beispiel können Sie eine Regel haben, um eine Versandmethode auszublenden, aber nicht eine Regel, um eine Versandmethode anzuzeigen.
+  Alle Regeln zum Ausblenden von Versandmethoden werden zusammengeführt, um alle Versandmethoden zu bestimmen, die ausgeblendet werden sollen.
+</Note>
+
+So funktioniert es Schritt für Schritt:
+
+<Steps>
+  <Step title="Jede Regel beginnt mit der Ausführung">
+    Jede Regel beginnt fast gleichzeitig mit der Ausführung und prüft ihre eigenen Bedingungen, um festzustellen, ob Aktionen erzeugt werden sollen.
+  </Step>
+
+  <Step title="Regelaktionen werden erzeugt">
+    Wenn die Bedingung einer Regel erfüllt ist, wird ihre Aktion erzeugt.
+    
+    > Zum Beispiel: Sie können eine Regel haben, um <strong>jede Versandmethode auszublenden, die "Worldwide" im Namen enthält</strong>. Dann eine andere Regel, um <strong>jede Versandmethode auszublenden, die "International Shipping" im Namen enthält</strong>. Beide Regeln erzeugen Aktionen: eine blendet "Worldwide" aus, die andere "International Shipping".
+  </Step>
+
+  <Step title="Aktionen werden kombiniert">
+    Wenn mehrere Regeln Aktionen erzeugen, werden diese kombiniert und an den Shopify-Checkout gesendet.
+
+    > Zum Beispiel: Regel 1 blendet eine Methode aus, die <strong>"Worldwide"</strong> enthält, Regel 2 blendet eine Methode aus, die <strong>"International Shipping"</strong> enthält → Eine kombinierte Aktion zum Ausblenden sowohl von Worldwide als auch International Shipping wird erzeugt und an den Shopify-Checkout gesendet.
+  
+  </Step>
+</Steps>
+
+## Beispielanwendung
+
+Angenommen, Sie möchten **bestimmte Versandmethoden ausblenden** basierend auf der Postleitzahl des Kunden.  
+Dazu erstellen wir folgende Regeln:
+
+**Regel 1** → Blende die Versandmethode `DHL Express Worldwide` aus, wenn die Postleitzahl **2005** ist oder mit **100** beginnt.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example.webp"
+  alt="Regel 1 Beispiel"
+/>
+</Frame>
+
+**Regel 2** → Blende die Versandmethode `International Shipping` aus, wenn die Postleitzahl **2005** ist oder mit **500** beginnt.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example.webp"
+  alt="Regel 2 Beispiel"
+/>
+</Frame>
+
+### Fall 1: Nur eine Regel greift
+
+- Wenn der Kunde eine Postleitzahl wie **10045** eingibt, greift **Regel 1**, da die Bedingungen für Regel 2 nicht erfüllt sind, und es werden keine Aktionen für Regel 2 erzeugt.
+
+  → Im Checkout wird die Methode `DHL Express Worldwide` ausgeblendet, aber `International Shipping` und andere Methoden bleiben verfügbar, wie im Screenshot unten gezeigt.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example-checkout.webp"
+  alt="Regel 1 Beispiel Checkout"
+/>
+</Frame>
+
+- Wenn der Kunde eine Postleitzahl wie **50010** eingibt, greift **Regel 2**.  
+  → Im Checkout wird die Methode `International Shipping` ausgeblendet, aber `DHL Express Worldwide` und andere Methoden bleiben verfügbar.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example-checkout.webp"
+  alt="Regel 2 Beispiel Checkout"
+/>
+</Frame>
+
+### Fall 2: Beide Regeln greifen gleichzeitig
+
+- Wenn der Kunde die **Postleitzahl 2005** eingibt, sind die Bedingungen für beide Regeln erfüllt, daher greifen **Regel 1 und Regel 2** gleichzeitig.
+- Das bedeutet, dass **sowohl `DHL Express Worldwide` als auch `International Shipping`** im Checkout ausgeblendet werden, während nur die anderen Methoden verfügbar bleiben.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/both-rule-same-zipcode-example-checkout.webp"
+  alt="Beide Regeln gleiche Postleitzahl Beispiel Checkout"
+/>
+</Frame>
+
+## Regelkonflikte
+
+Wenn mehrere Regeln nicht gleichzeitigkeitssicher sind, können sie miteinander in Konflikt geraten und Probleme auf der Checkout-Seite verursachen.
+Wir müssen sicherstellen, dass die Regeln nicht im Konflikt stehen, um Probleme zu vermeiden.
+
+<Warning>
+  Vorsicht bei der Verwendung mehrerer Regeln desselben Typs. Stellen Sie immer sicher, dass die Regeln nicht miteinander in Konflikt stehen, um Probleme zu vermeiden.
+</Warning>
+
+### Beispiel: Nur diese Versandmethoden anzeigen
+
+Wenn eine Regel auf **Nur diese Versandmethoden anzeigen** gesetzt ist, versucht sie, alle Versandmethoden auszublenden, die nicht in der Liste enthalten sind, die wir "nur anzeigen" möchten.
+
+Wenn mehrere Regeln auf **Nur diese Versandmethoden anzeigen** gesetzt sind, können sie miteinander in Konflikt geraten und alle Versandoptionen ausblenden.
+
+> **Beispiel:** Regel 1 → Nur die Versandmethode `DHL Express Worldwide` anzeigen, wenn Postleitzahl 2005 oder mit 100 beginnt.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-zipcode.webp"
+  alt="Regel 1 Postleitzahl"
+/>
+</Frame>
+
+> Regel 2 → Nur die Versandmethode `International Shipping` anzeigen, wenn Postleitzahl 2005 oder mit 500 beginnt.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-zipcode.webp"
+  alt="Regel 2 Postleitzahl"
+/>
+</Frame>
+
+Wenn beide Regeln für dieselbe Postleitzahl **2005** ausgeführt werden, versucht Regel 1, alle Versandmethoden auszublenden, die nicht `DHL Express Worldwide` sind, und Regel 2 versucht, alle Versandmethoden auszublenden, die nicht `International Shipping` sind. Dies führt zu einem **Keine Versandoptionen verfügbar**-Fehler, da beide Regeln nicht kompatibel sind.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/shipping-not-available-error.webp"
+  alt="Versand nicht verfügbar Fehler"
+/>
+</Frame>
+
+<Check>
+Um dieses Problem zu lösen, müssen wir hier eine 3. Regel erstellen, die die gemeinsamen Postleitzahlen separat behandelt.
+</Check>
+
+So können wir sicherstellen, dass Regel 1 und Regel 2 unabhängig voneinander sind. Regel 3 behandelt die gemeinsamen Postleitzahlen separat, und wir wissen genau, welche Versandmethoden dem Kunden in jedem Fall zur Verfügung stehen.
+
+<Tip>
+Als allgemeiner Tipp sollten wir **Nur diese Versandmethoden anzeigen** immer mit der Bedingung **Versandmethode verfügbar** als Unterbedingung kombinieren und denselben Wert in beiden verwenden.
+
+> **Beispiel:** Regel → Nur die Versandmethode `DHL Express Worldwide` anzeigen, wenn Postleitzahl 2005 oder beginnt mit 100 _UND_ Unterbedingung **Versandmethode verfügbar** enthält einen dieser Werte: _DHL Express Worldwide_ Dies stellt sicher, dass _DHL Express Worldwide_ tatsächlich für diesen Checkout verfügbar ist, bevor wir versuchen, alle anderen Versandmethoden auszublenden.
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-solution.webp"
+  alt="Regel 1 Lösung"
+/>
+</Frame>
+
+Auf diese Weise können wir sicherstellen, dass die Versandmethoden auf der Checkout-Seite tatsächlich verfügbar sind, die wir dem Kunden "nur anzeigen" möchten.
+
+</Tip>

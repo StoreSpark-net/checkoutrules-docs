@@ -1,0 +1,44 @@
+### Stadt / Bereich
+
+Verwendet, um die Werte des Stadt-/Bereich-Feldes (Feld „Stadt/Bereich“ auf der Checkout-Seite in der Lieferadresse) mit einem oder mehreren spezifischen Werten, Zählungen oder Zuständen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn das Stadtfeld mindestens einen der angegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Trifft zu, wenn das Stadtfeld keinen der angegebenen Werte enthält)
+- **Hat andere Werte als diese** (Trifft zu, wenn das Stadtfeld Werte enthält, die nicht in der Liste stehen)
+- **Hat keine anderen Werte als diese** (Trifft zu, wenn das Stadtfeld nur die angegebenen Werte und keine anderen enthält)
+- **Anzahl der Ziffern größer oder gleich** (Trifft zu, wenn die Anzahl der Ziffern im Stadtfeld größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Ziffern kleiner oder gleich** (Trifft zu, wenn die Anzahl der Ziffern im Stadtfeld kleiner oder gleich der angegebenen Zahl ist)
+- **Ist leer** (Trifft zu, wenn das Stadtfeld keinen Wert enthält)
+- **Ist nicht leer** (Trifft zu, wenn das Stadtfeld einen beliebigen Wert enthält)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat andere Werte als diese**, **Hat keine anderen Werte als diese**, geben Sie einen oder mehrere Werte zum Vergleichen ein. Trennen Sie mehrere Werte mit Kommas.
+
+<Note>
+  Verwenden Sie das Wildcard-Zeichen * um teilweise Städtenamen abzugleichen. Zum Beispiel: Santo* 
+  stimmt mit Santo Domingo, Santodomngo usw. überein.
+</Note>
+
+> Zum Beispiel: `Hat einen dieser Werte: Lahore, Karachi` → Trifft zu, wenn das Feld „Lahore“ oder „Karachi“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/multiple-cities.webp"
+  alt="Mehrere Städte"
+/>
+
+Für **Anzahl der Ziffern größer oder gleich** oder **Anzahl der Ziffern kleiner oder gleich**, geben Sie den Schwellenwert ein.
+
+> Zum Beispiel: `Anzahl der Ziffern größer oder gleich 5` → Trifft zu, wenn der Wert im Feld fünf oder mehr Ziffern enthält.
+
+<img
+  src="/images/essentials/condition-sets/count-cities.webp"
+  alt="Anzahl der Städte"
+/>
+
+Für **Ist leer** und **Ist nicht leer**, ist keine Wertangabe erforderlich.
+
+> Zum Beispiel: `Ist leer` → Trifft zu, wenn kein Wert für das Feld eingegeben wurde.
+
+<img
+  src="/images/essentials/condition-sets/city-available.webp"
+  alt="Stadt verfügbar"
+/>

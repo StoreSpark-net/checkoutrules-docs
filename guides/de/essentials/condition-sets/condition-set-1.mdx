@@ -1,0 +1,239 @@
+---
+title: "Bedingungssatz 1"
+description: "Erfahren Sie mehr über jede Bedingung innerhalb von _Bedingungssatz 1_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/de/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/de/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/de/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/de/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/de/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import SKU from "/snippets/condition-set/de/sku.mdx";
+import ProductTags from "/snippets/condition-set/de/product-tags.mdx";
+import Collections from "/snippets/condition-set/de/collections.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/de/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/de/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/de/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/de/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/de/address-line2.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import CityArea from "/snippets/condition-set/de/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Datum & Uhrzeit
+
+### Zusätzliche Einrichtung erforderlich
+
+Bei der Einrichtung einer **Datum & Uhrzeit**-Bedingung ist eine zusätzliche Einrichtung erforderlich. Führen Sie die folgenden Schritte aus, um dies abzuschließen.
+
+<Steps>
+  <Step title="Wählen Sie Ihre Zeitzone">
+    Wählen Sie im Dropdown <strong>Bitte wählen Sie Ihre Zeitzone</strong> die Zeitzone Ihres Shops aus und klicken Sie auf <strong>"Speichern"</strong>, um sie anzuwenden.
+    
+    > Zum Beispiel: Wählen Sie <strong>Vancouver</strong>, wenn Sie Pacific Time (PT) verwenden möchten.
+
+    <img
+      src="/images/essentials/condition-sets/select-timezone.webp"
+      alt="Zeitzone auswählen"
+    />
+  </Step>
+
+  <Step title="Aktivieren Sie den BeSure Embed Block in Ihrem Theme">
+    - Klicken Sie auf den Link <strong>BeSure Embed Block</strong>, um den Block in Ihrem Theme zu aktivieren.
+    
+    <img
+      src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
+      alt="Auf BeSure Embed Block klicken"
+    />
+
+    - Suchen Sie im Theme-Editor unter <em>App embeds</em> den <strong>BeSure Embed Block</strong> und aktivieren Sie ihn.
+    
+    <img
+      src="/images/essentials/condition-sets/locate-and-enable-block.webp"
+      alt="Block suchen und aktivieren"
+    />
+  </Step>
+
+  <Step title="Speichern Sie Ihr Theme">
+    Nachdem Sie den Block aktiviert haben, speichern Sie bitte Ihr Theme. Der <strong>Speichern</strong>-Button befindet sich oben rechts.
+    
+    <img
+      src="/images/essentials/condition-sets/save-theme.webp"
+      alt="Theme speichern"
+    />
+  </Step>
+
+  <Step title="Als erledigt markieren (Optional)">
+    Klicken Sie auf <strong>"Als erledigt markieren"</strong>, wenn alle Schritte abgeschlossen sind, und speichern Sie dann die Regel.
+    
+    <img
+      src="/images/essentials/condition-sets/mark-as-done.webp"
+      alt="Als erledigt markieren"
+    />
+  </Step>
+
+  <Step title="Testen Sie Ihre Regel">
+    Leeren Sie zuerst Ihren Warenkorb. Fügen Sie dann ein neues Produkt hinzu und gehen Sie zur Kasse, um zu testen, ob die Regel wie erwartet funktioniert.
+  </Step>
+</Steps>
+
+### Datum
+
+Wird verwendet, um das Checkout-Datum des Kunden mit einem ausgewählten Datum oder Datumsbereich zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist** (Das Checkout-Datum des Kunden entspricht dem ausgewählten Datum)
+- **ist nicht** (Das Checkout-Datum des Kunden entspricht nicht dem ausgewählten Datum)
+- **ist vor** (Das Checkout-Datum des Kunden liegt vor dem ausgewählten Datum)
+- **ist nach** (Das Checkout-Datum des Kunden liegt nach dem ausgewählten Datum)
+- **liegt zwischen** (Das Checkout-Datum des Kunden liegt innerhalb des ausgewählten Start- und Enddatums)
+- **liegt nicht zwischen** (Das Checkout-Datum des Kunden liegt außerhalb des ausgewählten Start- und Enddatums)
+
+Für **ist**, **ist nicht**, **ist vor** und **ist nach** wählen Sie ein einzelnes Datum im Kalender-Picker aus.
+
+> Zum Beispiel: `ist vor 11. August 2025` → Passt zu allen Daten vor dem 11. August 2025.
+
+<img
+  src="/images/essentials/condition-sets/single-date.webp"
+  alt="Einzelnes Datum"
+/>
+
+Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl ein Start- als auch ein Enddatum im Kalender-Picker aus.
+
+> Zum Beispiel: `liegt zwischen 11. August 2025 und 19. August 2025` → Passt zu Daten zwischen dem 11. August 2025 und 19. August 2025.
+
+<img
+  src="/images/essentials/condition-sets/multiple-dates.webp"
+  alt="Mehrere Daten"
+/>
+
+### Wochentag
+
+Vergleicht den Checkout-Tag des Kunden mit einem ausgewählten Tag oder einer ausgewählten Tagesspanne, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist** (Der Checkout-Tag des Kunden entspricht dem ausgewählten Tag)
+- **ist nicht** (Der Checkout-Tag des Kunden entspricht nicht dem ausgewählten Tag)
+- **liegt zwischen** (Der Checkout-Tag des Kunden liegt zwischen dem ausgewählten Start- und Endtag)
+- **liegt nicht zwischen** (Der Checkout-Tag des Kunden liegt nicht zwischen dem ausgewählten Start- und Endtag)
+
+Für **ist** und **ist nicht** wählen Sie einen einzelnen Tag aus dem Dropdown aus.
+
+> Zum Beispiel: `ist Montag` → Passt zum Montag.
+
+<img src="/images/essentials/condition-sets/single-day.webp" alt="Einzelner Tag" />
+
+Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl einen Start- als auch einen Endtag aus dem Dropdown aus.
+
+> Zum Beispiel: `liegt zwischen Montag und Freitag` → Passt zu allen Tagen zwischen Montag und Freitag.
+
+<img
+  src="/images/essentials/condition-sets/multiple-days.webp"
+  alt="Mehrere Tage"
+/>
+
+### Tageszeit
+
+Vergleicht die Checkout-Zeit des Kunden mit einer ausgewählten Zeit oder Zeitspanne, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist** (Die Checkout-Zeit des Kunden entspricht der ausgewählten Zeit)
+- **ist nicht** (Die Checkout-Zeit des Kunden entspricht nicht der ausgewählten Zeit)
+- **liegt zwischen** (Die Checkout-Zeit des Kunden liegt zwischen der ausgewählten Start- und Endzeit)
+- **liegt nicht zwischen** (Die Checkout-Zeit des Kunden liegt nicht zwischen der ausgewählten Start- und Endzeit)
+
+Für **ist** und **ist nicht** wählen Sie eine einzelne Zeit aus dem Dropdown aus.
+
+> Zum Beispiel: `ist 02:30` → Passt genau zu 2:30 Uhr.
+
+<img
+  src="/images/essentials/condition-sets/single-time.webp"
+  alt="Einzelne Zeit"
+/>
+
+Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl eine Start- als auch eine Endzeit aus dem Dropdown aus.
+
+> Zum Beispiel: `liegt nicht zwischen 01:30 und 05:00` → Passt zu allen Zeiten, die nicht zwischen 1:30 Uhr und 5:00 Uhr liegen.
+
+<img
+  src="/images/essentials/condition-sets/multiple-times.webp"
+  alt="Mehrere Zeiten"
+/>
+
+### Wochentag und Tageszeit
+
+Vergleicht den Checkout-Tag und die Checkout-Zeit des Kunden mit einem ausgewählten Bereich, basierend auf einer der folgenden Bedingungen:
+
+- **liegt zwischen** (Passt, wenn Checkout-Tag und -Zeit zwischen den ausgewählten Start- und Endwerten liegen)
+- **liegt nicht zwischen** (Passt nicht, wenn Checkout-Tag und -Zeit zwischen den ausgewählten Start- und Endwerten liegen)
+
+Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und eine weitere Zeit als Endpunkt aus den Dropdowns aus.
+
+> Zum Beispiel: `liegt zwischen Montag 00:00 und Mittwoch 12:00` → Passt zu allen Checkouts zwischen Montag Mitternacht und Mittwoch Mittag.
+
+<img
+  src="/images/essentials/condition-sets/range-day-and-time.webp"
+  alt="Tage und Zeiten"
+/>
+
+## Kunde
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTags />
+
+## Bestelldetails
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+## Warenkorb enthält Elemente
+<SKU />
+<ProductTags />
+<Collections />
+
+## Versand
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Lokalisierung
+<UserLanguage />
+
+## Versandadresse
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

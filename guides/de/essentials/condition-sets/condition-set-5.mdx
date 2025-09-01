@@ -1,0 +1,198 @@
+---
+title: "Bedingungssatz 5"
+description: "Erfahren Sie mehr über jede Bedingung im _Bedingungssatz 5_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/de/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/de/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/de/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/de/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/de/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/de/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/de/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/de/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/de/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/de/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import Market from "/snippets/condition-set/de/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import CityArea from "/snippets/condition-set/de/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Kunde
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## B2B Details
+
+### Metafeld des einkaufenden Unternehmens
+
+Diese Bedingung prüft ein **Metafeld des einkaufenden Unternehmens**, das Sie durch **Namespace** und **Schlüssel** angeben, und bewertet es anhand einer der folgenden Unterbedingungen:
+
+- **Hat einen der angegebenen Werte** (Entspricht, wenn das Metafeld mindestens einen der eingegebenen Werte enthält)
+- **Hat keinen der angegebenen Werte** (Entspricht, wenn das Metafeld keinen der eingegebenen Werte enthält)
+- **Hat einen anderen Wert als diese Werte** (Entspricht, wenn das Metafeld einen Wert enthält, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Entspricht, wenn das Metafeld nur die eingegebenen Werte enthält und keine anderen)
+- **Hat keinen Wert** (Entspricht, wenn das Metafeld keinen Wert enthält)
+- **Hat einen Wert** (Entspricht, wenn das Metafeld einen beliebigen Wert enthält)
+- **Hat Zahl größer oder gleich** (Entspricht, wenn der numerische Wert des Metafelds größer oder gleich der eingegebenen Zahl ist)
+- **Hat Zahl kleiner oder gleich** (Entspricht, wenn der numerische Wert des Metafelds kleiner oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl Werte größer oder gleich** (Entspricht, wenn die **Anzahl** der Werte im Metafeld größer oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl Werte kleiner oder gleich** (Entspricht, wenn die **Anzahl** der Werte im Metafeld kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen der angegebenen Werte**, **Hat keinen der angegebenen Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte in das Feld ein. Trennen Sie mehrere Werte mit Kommas.
+
+> Zum Beispiel, `Namespace: profile` · `Key: industry` · `Hat einen der angegebenen Werte: Einzelhandel, Großhandel` → Entspricht, wenn das Metafeld des einkaufenden Unternehmens entweder „Einzelhandel“ oder „Großhandel“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="Metafeld des einkaufenden Unternehmens hat einen der Werte"
+/>
+
+Für **Hat Zahl größer oder gleich** und **Hat Zahl kleiner oder gleich** geben Sie einen einzelnen numerischen Wert in das Feld ein, um ihn mit dem Wert des Metafelds abzugleichen.
+
+> Zum Beispiel, `Namespace: finance` · `Key: annual_revenue` · `Hat Zahl größer oder gleich 1000000` → Entspricht, wenn der Jahresumsatz des Unternehmens mindestens eine Million beträgt.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="Metafeld des einkaufenden Unternehmens – größerer Wert"
+/>
+
+Für **Hat Anzahl Werte größer oder gleich** und **Hat Anzahl Werte kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Werte im Metafeld zu überprüfen.
+
+> Zum Beispiel, `Namespace: compliance` · `Key: certifications` · `Hat Anzahl Werte kleiner oder gleich 2` → Entspricht, wenn das Unternehmen zwei oder weniger Zertifizierungen hat.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="Metafeld des einkaufenden Unternehmens – Anzahl Werte"
+/>
+
+### Metafeld des Standorts des einkaufenden Unternehmens
+
+Diese Bedingung prüft ein **Metafeld des Standorts des einkaufenden Unternehmens**, das Sie durch **Namespace** und **Schlüssel** angeben, und bewertet es anhand einer der folgenden Unterbedingungen:
+
+- **Hat einen der angegebenen Werte** (Entspricht, wenn das Metafeld mindestens einen der eingegebenen Werte enthält)
+- **Hat keinen der angegebenen Werte** (Entspricht, wenn das Metafeld keinen der eingegebenen Werte enthält)
+- **Hat einen anderen Wert als diese Werte** (Entspricht, wenn das Metafeld einen Wert enthält, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Entspricht, wenn das Metafeld nur die eingegebenen Werte enthält und keine anderen)
+- **Hat keinen Wert** (Entspricht, wenn das Metafeld keinen Wert enthält)
+- **Hat einen Wert** (Entspricht, wenn das Metafeld einen beliebigen Wert enthält)
+- **Hat Zahl größer oder gleich** (Entspricht, wenn der numerische Wert des Metafelds größer oder gleich der eingegebenen Zahl ist)
+- **Hat Zahl kleiner oder gleich** (Entspricht, wenn der numerische Wert des Metafelds kleiner oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl Werte größer oder gleich** (Entspricht, wenn die **Anzahl** der Werte im Metafeld größer oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl Werte kleiner oder gleich** (Entspricht, wenn die **Anzahl** der Werte im Metafeld kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen der angegebenen Werte**, **Hat keinen der angegebenen Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte in das Feld ein. Trennen Sie mehrere Werte mit Kommas.
+
+> Zum Beispiel, `Namespace: address` · `Key: country_code` · `Hat keinen der angegebenen Werte: US, CA` → Entspricht, wenn sich der Standort des einkaufenden Unternehmens nicht in den USA oder Kanada befindet.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="Metafeld des Standorts des Unternehmens – enthält nicht"
+/>
+
+Für **Hat Zahl größer oder gleich** und **Hat Zahl kleiner oder gleich** geben Sie einen einzelnen numerischen Wert in das Feld ein, um ihn mit dem Metafeld abzugleichen.
+
+> Zum Beispiel, `Namespace: logistics` · `Key: warehouse_capacity` · `Hat Zahl kleiner oder gleich 5000` → Entspricht, wenn die Lagerkapazität am Standort 5.000 Einheiten oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="Metafeld des Standorts des Unternehmens – kleinerer Wert"
+/>
+
+Für **Hat Anzahl Werte größer oder gleich** und **Hat Anzahl Werte kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Werte im Metafeld zu überprüfen.
+
+> Zum Beispiel, `Namespace: services` · `Key: supported_languages` · `Hat Anzahl Werte größer oder gleich 4` → Entspricht, wenn der Standort vier oder mehr Sprachen unterstützt.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="Metafeld des Standorts des Unternehmens – Anzahl Werte"
+/>
+
+## Bestelldetails
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## Warenkorb enthält Artikel
+
+<ProductTag />
+<ProductTags />
+
+### Produktvariantenoption
+
+Diese Bedingung prüft die **Produktvariantenoptionen** anhand bestimmter Kriterien. Entspricht, wenn ein Produkt im Warenkorb den eingegebenen Produktvariantenoptionenwert enthält, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen der angegebenen Werte** (Entspricht, wenn die Produktvariantenoptionen mindestens einen der eingegebenen Werte enthalten)
+- **Hat keinen der angegebenen Werte** (Entspricht, wenn die Produktvariantenoptionen keinen der eingegebenen Werte enthalten)
+- **Hat einen anderen Wert als diese Werte** (Entspricht, wenn die Produktvariantenoptionen einen Wert enthalten, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Entspricht, wenn die Produktvariantenoptionen nur die eingegebenen Werte enthalten und keine anderen)
+- **Hat Anzahl Werte größer oder gleich** (Entspricht, wenn die **Anzahl** der Produktvariantenoptionen größer oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl Werte kleiner oder gleich** (Entspricht, wenn die **Anzahl** der Produktvariantenoptionen kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen der angegebenen Werte**, **Hat keinen der angegebenen Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte für die Produktvariantenoptionen ein. Trennen Sie mehrere Werte mit Kommas.
+
+> Zum Beispiel, `Hat einen der angegebenen Werte: Rot, Blau` → Entspricht, wenn die Produktvariantenoption „Rot“ oder „Blau“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="Produktvariantenoption"
+/>
+
+Für **Hat Anzahl Werte größer oder gleich** und **Hat Anzahl Werte kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Produktvariantenoptionen zu überprüfen.
+
+> Zum Beispiel, `Hat Anzahl Werte größer oder gleich 3` → Entspricht, wenn drei oder mehr Produktvariantenoptionen vorhanden sind.
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="Produktvariantenoption – Anzahl"
+/>
+
+## Versand
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Lokalisierung
+<UserLanguage />
+<Market />
+
+## Versandadresse
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

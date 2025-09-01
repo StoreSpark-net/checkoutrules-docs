@@ -1,0 +1,54 @@
+### Adresse (Zeile 1 + Zeile 2)
+
+Verwendet, um die vollständige Adresse des Kunden (kombiniert aus Adresszeile 1 und Adresszeile 2) mit einem oder mehreren spezifischen Werten, Zählungen oder Zuständen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Enthält** (Trifft zu, wenn die Adresse den angegebenen Wert oder Teilwert enthält)
+- **Enthält nicht** (Trifft zu, wenn die Adresse den angegebenen Wert oder Teilwert nicht enthält)
+- **Ist leer** (Trifft zu, wenn in beiden Zeilen keine Adresse eingegeben ist)
+- **Ist nicht leer** (Trifft zu, wenn in einer der Zeilen ein Wert eingegeben ist)
+- **Anzahl der Ziffern größer oder gleich** (Trifft zu, wenn die Gesamtzahl der Ziffern in der Adresse größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Ziffern kleiner oder gleich** (Trifft zu, wenn die Gesamtzahl der Ziffern in der Adresse kleiner oder gleich der angegebenen Zahl ist)
+- **Anzahl der Zeichen größer oder gleich** (Trifft zu, wenn die Gesamtzahl der Zeichen in der Adresse größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Zeichen kleiner oder gleich** (Trifft zu, wenn die Gesamtzahl der Zeichen in der Adresse kleiner oder gleich der angegebenen Zahl ist)
+- **Anzahl der Wörter größer oder gleich** (Trifft zu, wenn die Gesamtzahl der Wörter in der Adresse größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Wörter kleiner oder gleich** (Trifft zu, wenn die Gesamtzahl der Wörter in der Adresse kleiner oder gleich der angegebenen Zahl ist)
+- **Nur folgende Zeichen** (Trifft zu, wenn die Adresse nur den erlaubten Zeichentyp aus der Dropdown-Liste enthält)
+- **Nicht nur folgende Zeichen** (Trifft zu, wenn die Adresse andere Zeichen als den erlaubten Zeichentyp enthält)
+
+Für **Enthält** und **Enthält nicht**, geben Sie den Wert zum Vergleichen ein.
+
+> Zum Beispiel: `Enthält: Straße` → Trifft zu, wenn die Adresse das Wort „Straße“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/address-contains.webp"
+  alt="Adresse Enthält"
+/>
+
+Für **Nur folgende Zeichen** und **Nicht nur folgende Zeichen**, wählen Sie den Zeichentyp aus der Dropdown-Liste:
+
+- **Englische Zeichen** (Erlaubt nur A–Z und a–z)
+- **Englische Zeichen + Akzentvarianten** (Erlaubt A–Z, a–z sowie akzentuierte Zeichen wie é, ñ, ö)
+  > Zum Beispiel: `Nur folgende Zeichen: Englische Zeichen` → Trifft zu, wenn die Adresse nur englische Zeichen enthält.
+
+<img
+  src="/images/essentials/condition-sets/address-has-only.webp"
+  alt="Adresse Nur folgende Zeichen"
+/>
+
+Für **Anzahl der Ziffern/Zeichen/Wörter größer oder gleich** oder **kleiner oder gleich**, geben Sie den Schwellenwert ein.
+
+> Zum Beispiel: `Anzahl der Wörter größer oder gleich 5` → Trifft zu, wenn die Adresse 5 oder mehr Wörter enthält.
+
+<img
+  src="/images/essentials/condition-sets/address-greater-than.webp"
+  alt="Adresse Größer Als"
+/>
+
+Für **Ist leer** und **Ist nicht leer**, ist keine Wertangabe erforderlich.
+
+> Zum Beispiel: `Ist leer` → Trifft zu, wenn sowohl Adresszeile 1 als auch Adresszeile 2 leer sind.
+
+<img
+  src="/images/essentials/condition-sets/address-is-empty.webp"
+  alt="Adresse Ist Leer"
+/>

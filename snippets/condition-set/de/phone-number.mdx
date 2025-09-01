@@ -1,0 +1,39 @@
+### Telefonnummer
+
+Verwendet, um die Telefonnummer des Kunden (Feld „Telefonnummer“ auf der Checkout-Seite in der Lieferadresse) mit einem oder mehreren spezifischen Werten, Zählungen oder Zuständen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Enthält** (Trifft zu, wenn die Telefonnummer den angegebenen Wert oder Teilwert enthält)
+- **Enthält nicht** (Trifft zu, wenn die Telefonnummer den angegebenen Wert oder Teilwert nicht enthält)
+- **Ist leer** (Trifft zu, wenn keine Telefonnummer eingegeben ist)
+- **Ist nicht leer** (Trifft zu, wenn ein Wert im Telefonnummern-Feld eingegeben ist)
+- **Ist** (Trifft zu, wenn die Telefonnummer exakt dem angegebenen Wert entspricht)
+- **Ist nicht** (Trifft zu, wenn die Telefonnummer nicht exakt dem angegebenen Wert entspricht)
+- **Anzahl der Ziffern größer oder gleich** (Trifft zu, wenn die Gesamtanzahl der Ziffern in der Telefonnummer größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Ziffern kleiner oder gleich** (Trifft zu, wenn die Gesamtanzahl der Ziffern in der Telefonnummer kleiner oder gleich der angegebenen Zahl ist)
+
+Für **Enthält**, **Enthält nicht**, **Ist** und **Ist nicht**, geben Sie den Wert zum Vergleichen ein.
+
+> Zum Beispiel: `Enthält: 123` → Trifft zu, wenn die Telefonnummer „123“ irgendwo enthält.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-contains.webp"
+  alt="Telefonnummer Enthält"
+/>
+
+Für **Anzahl der Ziffern größer oder gleich** oder **kleiner oder gleich**, geben Sie den Schwellenwert ein.
+
+> Zum Beispiel: `Anzahl der Ziffern größer oder gleich 10` → Trifft zu, wenn die Telefonnummer 10 oder mehr Ziffern enthält.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-greater-than.webp"
+  alt="Telefonnummer Größer Als"
+/>
+
+Für **Ist leer** und **Ist nicht leer**, ist keine Wertangabe erforderlich.
+
+> Zum Beispiel: `Ist leer` → Trifft zu, wenn das Telefonnummern-Feld leer bleibt.
+
+<img
+  src="/images/essentials/condition-sets/phone-number-is-empty.webp"
+  alt="Telefonnummer Ist Leer"
+/>

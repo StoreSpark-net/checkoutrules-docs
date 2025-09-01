@@ -1,0 +1,145 @@
+---
+title: Verzweigungen (if else)
+description: "Erfahren Sie, wie Sie eine if, else if, else Regelstruktur erstellen und verwenden, um mehrere Bedingungen in Ihren Regeln zu behandeln."
+icon: "split"
+---
+
+## Übersicht
+
+Normalerweise wird, wenn eine Regel mehr als einen Block hat, jeder Block von oben nach unten ausgeführt, und wenn die Bedingungen eines Blocks erfüllt sind, werden die Aktionen für diesen Block ausgeführt. Jede Regel kann also mehrere Aktionen haben. Manchmal möchten wir jedoch dieses Verhalten nicht, sondern nur einen Block ausführen und dann die Regel stoppen. Genau hier kommen Verzweigungen ins Spiel.
+
+Verzweigungen ermöglichen es Ihnen, Regeln mit mehreren Bedingungsblöcken zu erstellen, die der **if → else if → else** Logik folgen. Jeder Block wird in **Reihenfolge** geprüft, und sobald ein Block zutrifft, werden seine Aktionen ausgeführt und die Regel gestoppt. Dies stellt sicher, dass **nur ein Block ausgeführt wird**, wodurch überlappende oder widersprüchliche Aktionen vermieden werden. Dies ist eine sehr leistungsfähige Funktion und kann verwendet werden, um komplexe Regeln mit mehreren Bedingungen zu erstellen.
+
+> Hier ist ein Beispiel für eine Verzweigungsregel mit drei Blöcken. Hier möchten wir unterschiedliche Rabatte basierend auf dem Produkttag anwenden, und wir haben einen Standardrabatt von 5 % auf alle Versandkosten, falls der Kunde für keinen der anderen Rabatte berechtigt ist. Es wird nur ein Block basierend auf den Bedingungen ausgeführt und dann stoppt die Regel.
+
+<Note>
+  Die Schlüsselbedingung hier ist [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  im zweiten und dritten Block, die sicherstellt, dass nur ein Block basierend auf den Bedingungen ausgeführt wird und die Regel dann stoppt. Mit dieser Bedingung können Sie Verzweigungen in jeder Regel verwenden.
+</Note>
+
+<img src="/images/advanced/branching/all-blocks.webp" alt="Alle Blöcke" />
+
+So wird diese Regel ausgeführt:
+
+<Steps>
+  <Step title="Wenn Produkttag 'sport' ist und der Bestellwert ≥ 33 beträgt">
+    Dann werden 20 % Rabatt auf den Versand angewendet und die Regel stoppt.
+  </Step>
+  <Step title="Else if Kundentag ist VIP">
+    Dann werden 50 % Rabatt auf den Versand angewendet und die Regel stoppt.
+  </Step>
+  <Step title="Else (Standard-Fallback)">
+    Dann werden 5 % Rabatt auf den Versand angewendet.
+  </Step>
+</Steps>
+
+## Erklärung
+
+### Erster Bedingungsblock (if)
+
+- Das System beginnt mit dem ersten Bedingungsblock.
+- Dieser Block kann mehrere **Unterbedingungen** enthalten, die mit **AND** oder **OR** kombiniert werden.
+- Wenn die Gesamtbedingung des Blocks erfüllt ist, wird die **“Dann”-Aktion** ausgeführt (z. B. 20 % Rabatt anwenden).
+- Sobald sie ausgeführt wird, prüft das System die nächsten Blöcke nicht mehr.
+
+> **Beispiel:** Produkttag = **sport** _UND_ Bestellwert ≥ **33** _ODER_ Produkttag = **schuhe** → 20 % Rabatt auf alle Versandkosten anwenden
+
+    <img
+    src="/images/advanced/branching/if-condition.webp"
+    alt="If-Bedingung"
+    />
+
+### Else if Bedingungsblock(s)
+
+- Wenn der erste Block nicht zutrifft, prüft das System den nächsten Block bzw. die nächsten Blöcke.
+- Ein **Else If** Block kann mehrere **Unterbedingungen** enthalten, die mit **AND** oder **OR** kombiniert werden, und muss die Bedingung **"Alle vorherigen Bedingungen ungültig"** als Unterbedingung enthalten.
+- Es kann mehrere Blöcke in Folge geben. Wenn die Bedingung **"Alle vorherigen Bedingungen ungültig"** jedoch fehlt, funktioniert der Block nicht als **Else If** und verhält sich wie ein regulärer **If** Block.
+- Wenn die Gesamtbedingung eines Blocks erfüllt ist, wird die **“Dann”-Aktion** ausgeführt (z. B. 50 % Rabatt anwenden) und die Auswertung stoppt.
+
+> **Beispiel:** Alle vorherigen Bedingungen ungültig _UND_ Kundentag = **VIP** → 50 % Rabatt auf alle Versandkosten anwenden
+
+    <img
+    src="/images/advanced/branching/else-if-condition.webp"
+    alt="Else If-Bedingung"
+    />
+
+### Zurückfallen Block (else)
+
+- Wenn keiner der vorherigen Blöcke zutrifft, können Sie einen Fallback-Block mit der Bedingung [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid) hinzufügen.
+- Dies fungiert als **Else (Standard-Fallback)** und stellt sicher, dass es immer eine Standard-**“Dann”-Aktion** gibt (z. B. 5 % Rabatt anwenden), wenn keine vorherigen Blöcke ausgeführt wurden.
+
+> **Beispiel:** Alle vorherigen Bedingungen ungültig → 5 % Rabatt auf alle Versandkosten anwenden
+
+    <img
+    src="/images/advanced/branching/else-condition.webp"
+    alt="Else-Bedingung"
+    />
+
+<Tip>
+  Sie sollten die Blöcke in der Reihenfolge von höchster Priorität bis niedrigster Priorität anordnen. Der erste Block hat die höchste Priorität und der letzte Block die niedrigste Priorität.
+</Tip>
+
+## Beispielanwendung
+
+Angenommen, Sie möchten unterschiedliche Versandrabatte basierend auf **Produkttags** anwenden.
+
+### Regelaufbau
+
+**Block 1 (if)** → _Produkttag = `sport`_ → **20 %** Rabatt auf alle Versandkosten anwenden (höchste Priorität).
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport.webp"
+  alt="20 Prozent bei Sport"
+/>
+
+**Nächsten Block hinzufügen**  
+ Um einen neuen Block nach dem ersten hinzuzufügen, können Sie entweder:  
+ Klicken Sie auf die **“Neuen Block hinzufügen”**-Schaltfläche im Regel-Builder.
+
+<img src="/images/advanced/branching/add-new-block.webp" alt="Neuen Block hinzufügen" />
+
+Oder, [kopieren Sie den vorherigen Block](/guides/de/advanced/block-replication) und **fügen Sie ihn darunter ein** über das **Einfüge-Symbol**, und ändern Sie dann die Bedingungen und Aktionen.
+
+**Block 2 (else if)** → _Produkttag = `winter`_ UND _Alle vorherigen Bedingungen ungültig_ → **50 % Rabatt auf alle Versandkosten** anwenden
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter.webp"
+  alt="50 Prozent bei Winter"
+/>
+
+**Block 3 (else)** → _Alle vorherigen Bedingungen ungültig_ → **5 % Rabatt auf alle Versandkosten** anwenden (Standardrabatt).
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid.webp"
+  alt="5 Prozent bei Alle vorherigen Bedingungen ungültig"
+/>
+
+So sieht der gesamte Regelaufbau aus.
+
+<img
+  src="/images/advanced/branching/example-all-blocks.webp"
+  alt="Beispiel Alle Blöcke"
+/>
+
+### Ausführungsablauf
+
+Das System beginnt mit **Block 1**. Wenn dieser zutrifft (Produkttag = `sport`), werden **20 % Rabatt auf den Versand** angewendet und die Regel endet.
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport-checkout.webp"
+  alt="20 Prozent bei Sport Checkout"
+/>
+
+Wenn Block 1 nicht zutrifft, prüft es **Block 2**. Wenn Produkttag = `winter`, werden **50 % Rabatt auf den Versand** angewendet und die Regel endet.
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter-checkout.webp"
+  alt="50 Prozent bei Winter Checkout"
+/>
+
+Wenn weder Block 1 noch Block 2 zutrifft, wird **Block 3** ausgeführt. Da **Alle vorherigen Bedingungen ungültig** verwendet wird, fungiert dieser Block als **Standard-Fallback** und wendet **5 % Rabatt auf den Versand** an.
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid-checkout.webp"
+  alt="5 Prozent bei Alle vorherigen Bedingungen ungültig Checkout"
+/>

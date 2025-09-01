@@ -1,0 +1,115 @@
+---
+title: Übersetzungen
+description: "Erfahren Sie, wie Sie Validierungsregeln einrichten, die Fehlermeldungen in verschiedenen Sprachen basierend auf der Sprache des Kunden anzeigen, mit einer Standard Zurückgreifen Option."
+icon: "globe"
+---
+
+## Übersicht  
+
+Übersetzungen ermöglichen es Ihnen, Validierungsfehlermeldungen für verschiedene Kundensprachen zu lokalisieren. Durch die Kombination der **Benutzersprache**-Bedingung mit Ihrer Regel-Logik können Sie Fehlermeldungen in der bevorzugten Sprache des Kunden anzeigen und auch eine Standard Zurückgreifen Meldung in jeder gewünschten Sprache definieren.  
+
+<Note>
+  Die Bedingung **Benutzersprache** ist der Schlüssel zu den Übersetzungen. Mit ihr können wir mehrere Blöcke innerhalb der Regel erstellen, um unterschiedliche Sprachen zu behandeln.
+</Note>
+
+## Einrichtung
+### Validierungsregel erstellen
+Erstellen Sie zunächst eine Regel mit den von Ihnen gewünschten Bedingungen.
+
+> Zum Beispiel: **Bestellwert kleiner oder gleich 100 $**
+
+<img
+  src="/images/advanced/translations/set-order-amount.webp"
+  alt="Bestellwert festlegen"
+/>
+
+### Sprachbedingung hinzufügen 
+Fügen Sie **Benutzersprache** als Unterbedingung hinzu und wählen Sie die gewünschte Sprache aus, in der die Fehlermeldung übersetzt werden soll.
+
+> Zum Beispiel möchten wir die Fehlermeldung ins **Französische** übersetzen, daher wählen wir **Benutzersprache** als "Französisch".
+
+<img
+  src="/images/advanced/translations/set-user-language.webp"
+  alt="Benutzersprache festlegen"
+/>
+
+### Fehlermeldung lokalisieren
+Legen Sie **Ziel** fest, wo die Fehlermeldung im Checkout angezeigt werden soll (entweder oben auf der Checkout-Seite oder in einem bestimmten Feld wie Adresszeile 1) und schreiben Sie die Fehlermeldung in der gewählten Sprache, sodass Kunden sie lokalisiert sehen.
+
+> Zum Beispiel: **Ziel** auf **Oben auf der Checkout-Seite** setzen und Fehlermeldung auf Französisch eingeben: "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+<img
+  src="/images/advanced/translations/set-error-message.webp"
+  alt="Fehlermeldung festlegen"
+/>
+
+### Für weitere Sprachen duplizieren  
+Wenn Sie die Fehlermeldung in anderen Sprachen anzeigen möchten, kopieren Sie den Regelblock (über die Schaltfläche "Block kopieren" oben rechts) und fügen Sie ihn darunter ein. Aktualisieren Sie dann die **Benutzersprache**-Bedingung auf eine andere Sprache (z. B. **Deutsch**) und ersetzen Sie die Fehlermeldung durch die übersetzte Version.
+
+> Zum Beispiel: Hier haben wir den eingefügten Block hinzugefügt und die **Benutzersprache**-Bedingung auf "Deutsch" geändert und die Fehlermeldung übersetzt.
+
+<img
+  src="/images/advanced/translations/example-german-translation.webp"
+  alt="Beispiel Deutsche Übersetzung"
+/>
+
+### Zurückgreifen Block mit Standardmeldung hinzufügen
+Fügen Sie schließlich einen letzten Block mit der Bedingung **Alle vorherigen Bedingungen ungültig** hinzu, zusammen mit allen anderen Bedingungen, die Sie hatten. Schreiben Sie in diesem Block die Standardfehlermeldung (in der Regel auf Englisch). Dies stellt sicher, dass Kunden, die keine der anderen Sprachregeln erfüllen, weiterhin eine Standardmeldung sehen.  
+
+> Zum Beispiel: Hier haben wir den Zurückgreifen Block hinzugefügt mit der Bedingung **Alle vorherigen Bedingungen ungültig** zusammen mit der Bedingung **Bestellwert** und die Fehlermeldung auf Englisch gesetzt: "Order amount is less than the required minimum order amount of $100".
+
+<img
+  src="/images/advanced/translations/example-fallback-english-translation.webp"
+  alt="Beispiel Zurückgreifen Englische Übersetzung"
+/>
+
+## Zusammenfassung
+Hier ist eine Zusammenfassung der Regel, die wir im obigen Beispiel erstellt haben:
+
+### Block 1 (Französisch)
+- Fügen Sie die Bedingung **Bestellwert** hinzu und setzen Sie sie auf **kleiner oder gleich 99,99**, um einen Fehler auszulösen, wenn der Bestellwert unter 100 liegt.  
+- UND Unterbedingung **Benutzersprache** ist **Französisch**.  
+- Fehlermeldung festlegen:  
+  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+### Block 2 (Deutsch)
+- Fügen Sie die Bedingung **Bestellwert** hinzu und setzen Sie sie auf **kleiner oder gleich 99,99**, um einen Fehler auszulösen, wenn der Bestellwert unter 100 liegt.  
+- UND Unterbedingung **Benutzersprache** ist **Deutsch**.  
+- Fehlermeldung festlegen:  
+  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+
+### Block 3 (Standard Zurückgreifen – Englisch)
+- Fügen Sie die Bedingung **Bestellwert** hinzu und setzen Sie sie auf **kleiner oder gleich 99,99**, um einen Fehler auszulösen, wenn der Bestellwert unter 100 liegt.  
+- Für die **Else / Zurückgreifen Bedingung**, UND Unterbedingung **Alle vorherigen Bedingungen ungültig**.   
+- Fehlermeldung festlegen:  
+  > "Order amount is less than the required minimum order amount of $100"
+
+So sieht die Regel aus:
+
+<img
+  src="/images/advanced/translations/full-rule.webp"
+  alt="Komplette Regel"
+/>
+
+### Verhalten beim Checkout
+- Wenn die **Sprache des Kunden Französisch** ist und der **Bestellwert kleiner als 100 $** beträgt, wird die **französische Fehlermeldung** im Checkout angezeigt.  
+
+<img
+  src="/images/advanced/translations/example-french-error-message.webp"
+  alt="Beispiel Französische Fehlermeldung"
+/>
+
+- Wenn die **Sprache des Kunden Deutsch** ist und der **Bestellwert kleiner als 100 $** beträgt, wird die **deutsche Fehlermeldung** im Checkout angezeigt.  
+
+<img
+  src="/images/advanced/translations/example-german-error-message.webp"
+  alt="Beispiel Deutsche Fehlermeldung"
+/>
+
+- Wenn die **Sprache des Kunden eine andere Sprache** ist und der **Bestellwert kleiner als 100 $** beträgt, wird die Standardmeldung auf **Englisch** im Checkout angezeigt.
+
+<img
+  src="/images/advanced/translations/example-english-error-message.webp"
+  alt="Beispiel Englische Fehlermeldung"
+/>

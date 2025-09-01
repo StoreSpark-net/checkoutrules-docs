@@ -1,0 +1,144 @@
+---
+title: "Checkout validieren/blockieren"
+description: "Zeigen Sie Fehler an oder blockieren Sie einen ungültigen (oder nicht erlaubten) Checkout unter bestimmten Bedingungen."
+icon: "ban"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, den Checkout-Prozess basierend auf definierten Bedingungen zu validieren oder zu blockieren.  
+Sie können benutzerdefinierte Fehlermeldungen anzeigen oder den Checkout vollständig verhindern, wenn bestimmte Kriterien erfüllt sind, wie z. B. ungültige Warenkorbinhalte, eingeschränkte Versandregionen, Kundentags oder fehlende Produktattribute usw.
+
+Dies hilft, Geschäftsregeln durchzusetzen, nicht unterstützte Bestellungen zu verhindern und Kunden dabei zu unterstützen, Probleme zu lösen, bevor sie den Checkout abschließen.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man mithilfe der App eine **Checkout validieren/blockieren**-Regel erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app).  
+Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet.  
+Wählen Sie _Kategorie "Validierung" → Checkout-Regeltyp "Checkout validieren/blockieren" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/validation/select-validation-block-rule.webp"
+  alt="Validierung Block-Regel auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Checkout validieren/blockieren-Regel erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Checkout validieren/blockieren" hinzufügen, um zu beschreiben, was sie tut.  
+Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/validation/rule-configure-1-validation-block-rule.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm mindestens eine Option unter [Diese Regel auslösen](/guides/de/get-started/concepts#trigger).  
+Sie können **Mit dem Checkout interagieren** auswählen, wodurch die Regel ausgeführt wird, während sich der Kunde im Checkout-Prozess befindet, und **Checkout abschließen**, wodurch die Regel ausgeführt wird, wenn der Kunde den Checkout beendet. Standardmäßig sollten Sie beide Optionen auswählen, um sicherzustellen, dass die Regel immer dann ausgeführt wird, wenn es nötig ist.
+
+<Info>
+  Wenn Sie unsicher sind, was Sie für eine beliebige Regel-Einstellung wählen
+  sollen, ist die standardmäßig vorausgewählte Option oft die beste Wahl.  
+  Sie können immer mit der Standardoption beginnen und diese später ändern.
+</Info>
+
+<img src="/images/concepts/trigger.webp" alt="Auslöser" />
+
+Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what) aus.
+
+> Als Beispiel verwenden wir hier das Standard-**Bedingungsset 1**, stellen die Regel so ein, dass sie ausgelöst wird, wenn das Feld **"Adresszeile 2 (Wohnung, Suite usw.)"** **leer** ist, und konfigurieren sie so, dass der Checkout blockiert wird.  
+> Die Fehlermeldung **"Vollständige Adresse eingeben"** wird unter dem Feld **Adresszeile 2** beim Checkout angezeigt, wodurch Kunden ihre vollständige Adresse angeben müssen, bevor sie fortfahren können.
+
+<img
+  src="/images/essentials/validation/condition-set-validation-block-rule.webp"
+  alt="Bedingungsset"
+/>
+
+Im Abschnitt **Aktion** können Sie den **Zielort** auswählen, an dem Ihre benutzerdefinierte Fehlermeldung auf der Checkout-Seite angezeigt wird.  
+Das Dropdown-Menü bietet eine Liste von Platzierungsoptionen:
+
+- Unter der Kategorie **Allgemein** können Sie **"Oben auf der Checkout-Seite"** auswählen, um die Aktion ganz oben anzuzeigen.
+
+- Unter **Unter diesen Eingabefeldern** können Sie auswählen, die Aktion unter bestimmten Eingabefeldern anzuzeigen, wie z. B.: E-Mail, Telefonnummer des Kunden, Land, Vorname, Nachname, Firma, Adresse (Adresszeile 1), Wohnung, Stadt, Bundesland / Kanton, Postleitzahl, Telefonnummer für den Versand.
+
+Dies gibt Ihnen die Kontrolle darüber, wo die Fehlermeldung angezeigt wird, und hilft Ihnen, sie im relevantesten Abschnitt des Checkout-Formulars zu platzieren.
+
+<img
+  src="/images/essentials/validation/action-target-dropdown.webp"
+  alt="Aktionsziel-Dropdown"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm, wie sich das System im seltenen Fall verhalten soll, wenn die App beim Checkout fehlschlägt oder ein Problem auftritt.  
+Dies ist eine Fallback-Option, und in den meisten Fällen möchten Sie dem Kunden erlauben, den Checkout abzuschließen, was die Standardoption ist. Sie haben zwei Optionen:
+
+- **Kunden erlauben, den Checkout abzuschließen**: Dies stellt sicher, dass der Kunde auch dann mit seinem Kauf fortfahren kann, wenn die App auf ein Problem stößt, ohne unterbrochen zu werden.
+
+- **Kunden am Abschluss des Checkouts hindern**: Dies stoppt den Kunden daran, den Checkout abzuschließen, wenn die App fehlschlägt, und kann Transaktionen verhindern.
+
+Wählen Sie die Option, die am besten zu Ihrem gewünschten Kundenerlebnis und Ihrer Risikobereitschaft passt.
+
+<img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie, dass die Fehlermeldung noch nicht
+  angezeigt wird.
+</Warning>
+
+<img
+  src="/images/essentials/validation/before-rule-apply-validation-block-rule.webp"
+  alt="Vor Regelanwendung"
+/>
+
+<Note>
+  Bitte stellen Sie sicher, dass Sie alle erforderlichen Felder in der
+  Versandadresse ausfüllen. Shopify führt die Regel nur aus, wenn alle
+  erforderlichen Felder ausgefüllt sind und der Kunde tatsächlich zum Checkout
+  bereit ist, um zu verhindern, dass die Regel bei jedem Tastendruck ausgeführt
+  wird.
+</Note>
+
+Nachdem das Feld Adresszeile 2 (Wohnung, Suite usw.) **leer** gelassen wurde, läuft die Checkout-Regel und blockiert den Checkout-Prozess.  
+Wir können überprüfen, dass die Fehlermeldung **"Vollständige Adresse eingeben"** unter dem Feld **Adresszeile 2** beim Checkout angezeigt wird, wie unten dargestellt.
+
+<img
+  src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann.  
+Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen.  
+Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade
+  durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/validation/activate-the-rule-validation-block-rule.webp"
+  alt="Regel aktivieren"
+/>
