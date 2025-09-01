@@ -1,0 +1,32 @@
+### Provinz-/Bundesstaat-Code
+
+Verwendet, um die Werte des Provinz-/Bundesstaat-Feldes (Feld „Provinz/Bundesstaat“ auf der Checkout-Seite in der Lieferadresse) mit einem oder mehreren spezifischen Werten oder Zuständen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn das Provinz-Feld mindestens einen der angegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Trifft zu, wenn das Provinz-Feld keinen der angegebenen Werte enthält)
+- **Hat andere Werte als diese** (Trifft zu, wenn das Provinz-Feld Werte enthält, die nicht in der Liste stehen)
+- **Hat keine anderen Werte als diese** (Trifft zu, wenn das Provinz-Feld nur die angegebenen Werte und keine anderen enthält)
+- **Ist leer** (Trifft zu, wenn das Provinz-Feld keinen Wert enthält)
+- **Ist nicht leer** (Trifft zu, wenn das Provinz-Feld einen beliebigen Wert enthält)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat andere Werte als diese**, **Hat keine anderen Werte als diese**, geben Sie einen oder mehrere Werte zum Vergleichen ein. Trennen Sie mehrere Werte mit Kommas.
+
+<Note>
+  Geben Sie nur 2- oder 3-Buchstaben-Kürzel für Provinz/Bundesstaat im Format „ISO_3166-2“ ein.
+</Note>
+
+> Zum Beispiel: `Hat keine anderen Werte als diese: CA, TX` → Trifft zu, wenn das Feld nur „CA“ oder „TX“ enthält und keine anderen Werte.
+
+<img
+  src="/images/essentials/condition-sets/multiple-provinces.webp"
+  alt="Mehrere Provinzen oder Bundesstaaten"
+/>
+
+Für **Ist leer** und **Ist nicht leer**, ist keine Wertangabe erforderlich.
+
+> Zum Beispiel: `Ist nicht leer` → Trifft zu, wenn irgendein Wert für das Feld eingegeben wurde.
+
+<img
+  src="/images/essentials/condition-sets/province-not-available.webp"
+  alt="Provinz oder Bundesstaat nicht verfügbar"
+/>

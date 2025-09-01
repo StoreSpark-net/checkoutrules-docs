@@ -1,0 +1,343 @@
+---
+title: "Bedingungssatz 4"
+description: "Erfahren Sie mehr über jede Bedingung innerhalb von _Bedingungssatz 4_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/de/customer-tag.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/de/customer-total-number-of-previous-orders.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/de/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/de/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/de/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/de/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/de/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/de/total-product-discount-percentage.mdx";
+import SKU from "/snippets/condition-set/de/sku.mdx";
+import ProductTag from "/snippets/condition-set/de/product-tag.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import CityArea from "/snippets/condition-set/de/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Kunde
+
+<EmailAddress />
+<CustomerTag />
+<CustomerTotalNumberOfPreviousOrders />
+
+## B2B-Details
+
+### Kunde ist ein B2B-Unternehmen
+
+Diese Bedingung prüft, ob der Kunde zu einem **Unternehmen** in Ihren Shop-Daten gehört. Wenn der Kunde als B2B-Unternehmen identifiziert wird, gilt die Bedingung als erfüllt.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-b2b-company.webp"
+  alt="Kunde ist ein B2B-Unternehmen"
+/>
+
+### Kunde ist kein B2B-Unternehmen
+
+Diese Bedingung prüft, ob der Kunde **nicht** zu einem **Unternehmen** in Ihren Shop-Daten gehört. Wenn der Kunde nicht als B2B-Unternehmen identifiziert wird, gilt die Bedingung als erfüllt.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-b2b-company.webp"
+  alt="Kunde ist kein B2B-Unternehmen"
+/>
+
+### Name des kaufenden Unternehmens
+
+Diese Bedingung prüft, ob der Kunde zu einem Unternehmen in Ihren Shop-Daten gehört, und überprüft dann den **Namen des kaufenden Unternehmens** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **enthält** (Der Name des kaufenden Unternehmens enthält den eingegebenen Wert)
+- **enthält nicht** (Der Name des kaufenden Unternehmens enthält den eingegebenen Wert nicht)
+- **ist leer** (Kein Name des kaufenden Unternehmens angegeben)
+- **ist nicht leer** (Ein Name des kaufenden Unternehmens ist angegeben)
+- **ist** (Der Name des kaufenden Unternehmens stimmt genau mit dem eingegebenen Wert überein)
+- **ist nicht** (Der Name des kaufenden Unternehmens stimmt nicht genau mit dem eingegebenen Wert überein)
+
+Für **enthält**, **enthält nicht**, **ist** und **ist nicht**, geben Sie einen Wert im Textfeld ein, um ihn mit dem Namen des kaufenden Unternehmens des Kunden zu vergleichen.
+
+> Beispiel: `enthält Trading` → Passt auf jeden Namen eines kaufenden Unternehmens, der das Wort „Trading“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-contains.webp"
+  alt="Name des kaufenden Unternehmens enthält"
+/>
+
+Für **ist leer** und **ist nicht leer** ist keine Wertangabe erforderlich.
+
+> Beispiel: `ist leer` → Passt, wenn das Feld für den Namen des kaufenden Unternehmens leer ist.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-empty.webp"
+  alt="Name des kaufenden Unternehmens ist leer"
+/>
+
+### Standortname des kaufenden Unternehmens
+
+Diese Bedingung prüft, ob der Kunde zu einem Unternehmen in Ihren Shop-Daten gehört, und überprüft dann den **Standortnamen des kaufenden Unternehmens** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **enthält** (Der Standortname des kaufenden Unternehmens enthält den eingegebenen Wert)
+- **enthält nicht** (Der Standortname des kaufenden Unternehmens enthält den eingegebenen Wert nicht)
+- **ist leer** (Kein Standortname des kaufenden Unternehmens angegeben)
+- **ist nicht leer** (Ein Standortname des kaufenden Unternehmens ist angegeben)
+- **ist** (Der Standortname des kaufenden Unternehmens stimmt genau mit dem eingegebenen Wert überein)
+- **ist nicht** (Der Standortname des kaufenden Unternehmens stimmt nicht genau mit dem eingegebenen Wert überein)
+
+Für **enthält**, **enthält nicht**, **ist** und **ist nicht**, geben Sie einen Wert im Textfeld ein, um ihn mit dem Standortnamen des kaufenden Unternehmens des Kunden zu vergleichen.
+
+> Beispiel: `enthält New York` → Passt auf jeden Standortnamen eines kaufenden Unternehmens, der „New York“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-contains.webp"
+  alt="Standortname des kaufenden Unternehmens enthält"
+/>
+
+Für **ist leer** und **ist nicht leer** ist keine Wertangabe erforderlich.
+
+> Beispiel: `ist leer` → Passt, wenn das Feld für den Standortnamen des kaufenden Unternehmens leer ist.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-empty.webp"
+  alt="Standortname des kaufenden Unternehmens ist leer"
+/>
+
+## Bestelldetails
+
+<OrderSubtotalAmount />
+
+## Warenkorbdetails
+
+### Währung
+
+Wird verwendet, um die vom Kunden im Shop ausgewählte Währung mit einer oder mehreren bestimmten Währungen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Passt, wenn die Währung des Kunden in der angegebenen Liste enthalten ist)
+- **Hat keinen dieser Werte** (Passt, wenn die Währung des Kunden nicht in der angegebenen Liste enthalten ist)
+- **Hat einen anderen Wert als diese Werte** (Passt, wenn die Währung des Kunden nicht in der angegebenen Liste enthalten ist)
+- **Hat keinen anderen Wert als diese Werte** (Passt, wenn die Währung des Kunden nur in der angegebenen Liste enthalten ist und keine anderen)
+
+Für jede der oben genannten Optionen suchen Sie eine oder mehrere Währungen aus der Liste aus. Sie können auch die Optionen **Einfügen**, **Alle kopieren** oder **Alles löschen** zur schnellen Auswahl verwenden. Mehrere Werte durch Komma trennen.
+
+> Beispiel: `Hat keinen anderen Wert als diese Werte: USD, EUR` → Passt, wenn das Feld nur „USD“ oder „EUR“ enthält und keine anderen Währungen.
+
+<img
+  src="/images/essentials/condition-sets/select-currencies.webp"
+  alt="Mehrere Währungen"
+/>
+
+### Produktanbieter
+
+Diese Bedingung prüft den **Produktanbieter** anhand bestimmter Kriterien. Wenn ein Produkt im Warenkorb den eingegebenen Produktanbieterwert hat, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Passt, wenn der Produktanbieter mindestens einen der eingegebenen Werte hat)
+- **Hat keinen dieser Werte** (Passt, wenn der Produktanbieter keinen der eingegebenen Werte hat)
+- **Hat einen anderen Wert als diese Werte** (Passt, wenn der Produktanbieter einen Wert hat, der nicht unter den eingegebenen Werten ist)
+- **Hat keinen anderen Wert als diese Werte** (Passt, wenn der Produktanbieter nur die eingegebenen Werte hat und keine anderen)
+- **Hat Anzahl der Werte größer oder gleich** (Passt, wenn die **Anzahl** der Produktanbieter größer oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl der Werte kleiner oder gleich** (Passt, wenn die **Anzahl** der Produktanbieter kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Produktanbieternamen in das Feld ein. Mehrere Werte durch Komma trennen.
+
+<Note>
+  Verwenden Sie * als Platzhalter, um mehrere Werte zu vergleichen. Beispiel: Drop* passt auf Dropship, drop-590 usw. ? passt auf ein einzelnes Zeichen.
+</Note>
+
+> Beispiel: `Hat einen dieser Werte: Nike, Adidas` → Passt, wenn der Produktanbieter „Nike“ oder „Adidas“ ist.
+
+<img
+  src="/images/essentials/condition-sets/product-vendor.webp"
+  alt="Produktanbieter"
+/>
+
+Für **Hat Anzahl der Werte größer oder gleich** und **Hat Anzahl der Werte kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Produktanbieter zu prüfen.
+
+> Beispiel: `Hat Anzahl der Werte größer oder gleich 3` → Passt, wenn es drei oder mehr Produktanbieter gibt.
+
+<img
+  src="/images/essentials/condition-sets/count-product-vendor.webp"
+  alt="Anzahl der Produktanbieter"
+/>
+
+### Produkttitel
+
+Diese Bedingung prüft den **Produkttitel** anhand bestimmter Kriterien. Wenn ein Produkt im Warenkorb den eingegebenen Produkttitelwert hat, basierend auf einer der folgenden Unterbedingungen:
+
+- **enthält** (Der Produkttitel enthält den eingegebenen Wert)
+- **enthält nicht** (Der Produkttitel enthält den eingegebenen Wert nicht)
+- **ist** (Der Produkttitel stimmt genau mit dem eingegebenen Wert überein)
+- **ist nicht** (Der Produkttitel stimmt nicht genau mit dem eingegebenen Wert überein)
+
+Geben Sie den Produkttitelwert in das Feld ein und wählen Sie die entsprechende Vergleichsoption aus dem Dropdown-Menü.
+
+> Beispiel: `enthält Schuhe` → Passt, wenn ein Produkttitel das Wort „Schuhe“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-title-contains.webp"
+  alt="Produkttitel enthält"
+/>
+
+### Produkttyp
+
+Diese Bedingung prüft den **Produkttyp** anhand bestimmter Kriterien. Wenn ein Produkt im Warenkorb den eingegebenen Produkttypwert hat, basierend auf einer der folgenden Unterbedingungen:
+
+- **enthält** (Der Produkttyp enthält den eingegebenen Wert)
+- **enthält nicht** (Der Produkttyp enthält den eingegebenen Wert nicht)
+- **ist leer** (Kein Produkttyp angegeben)
+- **ist nicht leer** (Ein Produkttyp ist angegeben)
+- **ist** (Der Produkttyp stimmt genau mit dem eingegebenen Wert überein)
+- **ist nicht** (Der Produkttyp stimmt nicht genau mit dem eingegebenen Wert überein)
+
+Für **enthält**, **enthält nicht**, **ist** und **ist nicht**, geben Sie einen Wert im Textfeld ein, um ihn mit dem Produkttyp zu vergleichen.
+
+> Beispiel: `enthält Elektronik` → Passt, wenn ein Produkttyp das Wort „Elektronik“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-type-contains.webp"
+  alt="Produkttyp enthält"
+/>
+
+Für **ist leer** und **ist nicht leer** ist keine Wertangabe erforderlich.
+
+> Beispiel: `ist leer` → Passt, wenn das Feld für den Produkttyp leer ist.
+
+<img
+  src="/images/essentials/condition-sets/product-type-empty.webp"
+  alt="Produkttyp ist leer"
+/>
+
+### Zwischensumme der Bestellung Betrag pro SKU
+
+Diese Bedingung prüft die **Zwischensumme der Produkte mit einer bestimmten SKU** im Warenkorb anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Betrag ist größer oder gleich** (Passt, wenn die Zwischensumme der Produkte mit der angegebenen SKU größer oder gleich dem eingegebenen Betrag ist)
+- **Betrag ist kleiner oder gleich** (Passt, wenn die Zwischensumme der Produkte mit der angegebenen SKU kleiner oder gleich dem eingegebenen Betrag ist)
+
+So legen Sie die Bedingungen fest:
+
+<Steps>
+  <Step title="SKU eingeben">
+    Geben Sie die <strong>SKU</strong> in das Feld „SKU eingeben“ ein.
+  </Step>
+
+  <Step title="Betrag eingeben">
+    Geben Sie den <strong>Betrag</strong> in das Feld „Betrag eingeben“ ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown-Menü.
+  </Step>
+</Steps>
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop Details > Shop
+  Währung
+</Note>
+
+> Beispiel für „Betrag ist größer oder gleich“:  
+> SKU: `ABC123`  
+> Betrag: `777`  
+> → Passt, wenn die Zwischensumme der Produkte mit SKU `ABC123` 777 oder mehr beträgt.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-sku-has-greater-value.webp"
+  alt="Zwischensumme pro SKU ist größer oder gleich"
+/>
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## Warenkorb enthält Artikel
+
+<SKU />
+<ProductTag />
+
+## Produkt-Metafeld
+
+### Produkt-Metafeld
+
+Diese Bedingung prüft ein **Produkt-Metafeld**, das Sie durch **Namespace** und **Schlüssel** angeben, und wertet es anhand einer der folgenden Unterbedingungen aus:
+
+- **Hat einen dieser Werte** (Passt, wenn das Metafeld mindestens einen der eingegebenen Werte hat)
+- **Hat keinen dieser Werte** (Passt, wenn das Metafeld keinen der eingegebenen Werte hat)
+- **Hat einen anderen Wert als diese Werte** (Passt, wenn das Metafeld einen Wert hat, der nicht unter den eingegebenen Werten ist)
+- **Hat keinen anderen Wert als diese Werte** (Passt, wenn das Metafeld nur die eingegebenen Werte enthält)
+- **Hat leeren Wert** (Passt, wenn das Metafeld keinen Wert enthält)
+- **Hat keinen leeren Wert** (Passt, wenn das Metafeld einen Wert enthält)
+- **Zahl größer oder gleich** (Passt, wenn der numerische Wert des Metafeldes größer oder gleich der eingegebenen Zahl ist)
+- **Zahl kleiner oder gleich** (Passt, wenn der numerische Wert des Metafeldes kleiner oder gleich der eingegebenen Zahl ist)
+- **Anzahl der Werte größer oder gleich** (Passt, wenn die **Anzahl** der Werte im Metafeld größer oder gleich der eingegebenen Zahl ist)
+- **Anzahl der Werte kleiner oder gleich** (Passt, wenn die **Anzahl** der Werte im Metafeld kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte in das Feld ein. Mehrere Werte durch Komma trennen.
+
+> Beispiel: `Namespace: details` · `Schlüssel: material` · `Hat einen dieser Werte: Baumwolle, Leinen` → Passt, wenn das Metafeld „Baumwolle“ oder „Leinen“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-has-any-value.webp"
+  alt="Produkt-Metafeld hat einen Wert"
+/>
+
+Für **Zahl größer oder gleich** und **Zahl kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um den numerischen Wert des Metafeldes zu prüfen.
+
+> Beispiel: `Namespace: ernährung` · `Schlüssel: kalorien` · `Zahl kleiner oder gleich 200` → Passt, wenn der numerische Wert des Metafeldes 200 oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-less-value.webp"
+  alt="Produkt-Metafeld kleiner Wert"
+/>
+
+Für **Anzahl der Werte größer oder gleich** und **Anzahl der Werte kleiner oder gleich** geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Werte im Metafeld zu prüfen.
+
+> Beispiel: `Namespace: merkmale` · `Schlüssel: verfügbare_größen` · `Anzahl der Werte größer oder gleich 5` → Passt, wenn das Metafeld fünf oder mehr Größen enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
+  alt="Produkt-Metafeld Anzahl der Werte"
+/>
+
+## Versand
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Lokalisierung
+
+<UserLanguage />
+
+## Versandadresse
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

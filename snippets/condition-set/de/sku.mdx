@@ -1,0 +1,27 @@
+### SKU
+
+Diese Bedingung prüft die **SKU** der Produkte im Warenkorb anhand bestimmter Kriterien. Sie wird wahr, wenn **ein beliebiges** Produkt im Warenkorb den eingegebenen SKU-Wert hat, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn die SKU mindestens einen der eingegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Trifft zu, wenn die SKU keinen der eingegebenen Werte enthält)
+- **Hat einen anderen Wert als diese Werte** (Trifft zu, wenn die SKU einen Wert hat, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Trifft zu, wenn die SKU nur die eingegebenen Werte enthält und keine anderen)
+- **Anzahl der Werte ist größer oder gleich** (Trifft zu, wenn die **Anzahl** der SKUs größer oder gleich der eingegebenen Zahl ist)
+- **Anzahl der Werte ist kleiner oder gleich** (Trifft zu, wenn die **Anzahl** der SKUs kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere SKU-Werte in das Feld ein. Trennen Sie mehrere Werte mit Kommas.
+
+<Note>
+  Verwenden Sie * als Platzhalter, um mehrere SKU-Werte abzugleichen. Zum Beispiel: SKU* stimmt mit
+  SKU12, sku-new-1 usw. überein.
+</Note>
+
+> Zum Beispiel, `Hat einen dieser Werte: SKU1, SKU2` → Trifft zu, wenn die SKU entweder “SKU1” oder “SKU2” ist.
+
+<img src="/images/essentials/condition-sets/skus.webp" alt="SKUs" />
+
+Für **Anzahl der Werte ist größer oder gleich** und **Anzahl der Werte ist kleiner oder gleich**, geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der SKUs abzugleichen.
+
+> Zum Beispiel, `Anzahl der Werte ist größer oder gleich 3` → Trifft zu, wenn es drei oder mehr SKUs gibt.
+
+<img src="/images/essentials/condition-sets/count-sku.webp" alt="SKU-Anzahl" />

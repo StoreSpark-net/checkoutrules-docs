@@ -1,0 +1,152 @@
+---
+title: "Konzepte"
+description: "Erfahren Sie die wichtigsten Konzepte hinter BeSure Checkout Rules, um Ihr Shopify-Checkout-Erlebnis anzupassen und zu steuern."
+icon: "puzzle-piece"
+---
+
+## Was ist eine Regel?
+
+Eine **Checkout Regel** ist eine Logik, die definiert, **was** während des Checkout-Prozesses geschehen soll und **wann**.
+
+## Wesentliches der Regel
+
+Dies sind die wesentlichen Teile jeder Regel, die ihren Zweck definieren, wann sie ausgeführt werden soll, was sie tun soll und wie diese Aktionen organisiert sind.
+
+### Status
+
+Gibt den aktuellen Zustand der Regel an, ob sie sich im Testmodus, aktiv oder deaktiviert befindet. Dies hilft, zu steuern, wann die Regel wirksam wird.
+
+<Tip>
+  Es wird empfohlen, mit einer Regel im Testmodus zu beginnen, um sicherzustellen, dass die Regel wie erwartet funktioniert, ohne Ihre Kunden zu beeinflussen. Nach dem Testen können Sie in den aktiven Modus wechseln.
+</Tip>
+
+<img src="/images/concepts/rule-status.webp" alt="Regelstatus" />
+
+Hier ein Beispiel, wie Sie den Testmodus auf der Checkout-Seite aktivieren.
+
+<Frame>
+  <img src="/images/concepts/testing.webp" alt="Testmodus" />
+</Frame>
+
+### Bedingungsset
+
+Sie können jedes Bedingungsset verwenden, das Ihren Bedürfnissen entspricht. Wenn Sie unsicher sind, können Sie entweder mit Bedingungsset 1 beginnen oder die Suchfunktion verwenden, um herauszufinden, welches Bedingungsset die benötigte Bedingung enthält, und dann zu diesem wechseln.
+
+> Zum Beispiel: Wenn Sie eine Versandmethode basierend auf einem Produkt-Metafeld ausblenden möchten, wechseln Sie zu Bedingungsset 4. Dann können Sie die Bedingung für das Produkt-Metafeld verwenden.
+
+<Warning>
+  Die Auswahl des Bedingungssets ist nur bei der Erstellung der Regel verfügbar. Sie können das Bedingungsset nach der Erstellung der Regel nicht ändern. Wenn Sie ein anderes Bedingungsset benötigen, erstellen Sie eine neue Regel.
+</Warning>
+
+<img src="/images/concepts/condition-set.webp" alt="Bedingungsset" />
+
+Weitere Informationen zu Bedingungssets finden Sie [hier](/guides/de/essentials/condition-sets/introduction) oder lernen Sie unten mehr über jedes Bedingungsset.
+
+<CardGroup cols={3}>
+  <Card
+    title="Bedingungsset 1"
+    icon="1"
+    href="/guides/de/essentials/condition-sets/condition-set-1"
+  >
+    Erfahren Sie mehr über Bedingungsset 1.
+  </Card>
+  <Card
+    title="Bedingungsset 2"
+    icon="2"
+    href="/guides/de/essentials/condition-sets/condition-set-2"
+  >
+    Erfahren Sie mehr über Bedingungsset 2.
+  </Card>
+  <Card
+    title="Bedingungsset 3"
+    icon="3"
+    href="/guides/de/essentials/condition-sets/condition-set-3"
+  >
+    Erfahren Sie mehr über Bedingungsset 3.
+  </Card>
+  <Card
+    title="Bedingungsset 4"
+    icon="4"
+    href="/guides/de/essentials/condition-sets/condition-set-4"
+  >
+    Erfahren Sie mehr über Bedingungsset 4.
+  </Card>
+  <Card
+    title="Bedingungsset 5"
+    icon="5"
+    href="/guides/de/essentials/condition-sets/condition-set-5"
+  >
+    Erfahren Sie mehr über Bedingungsset 5.
+  </Card>
+  <Card
+    title="Bedingungsset 6"
+    icon="6"
+    href="/guides/de/essentials/condition-sets/condition-set-6"
+  >
+    Erfahren Sie mehr über Bedingungsset 6.
+  </Card>
+</CardGroup>
+
+### Bedingungen (das "wann")
+
+Bedingungen basieren auf dem ausgewählten Bedingungsset und definieren die Kriterien, die erfüllt sein müssen, damit die Regel ausgelöst wird. Verwenden Sie AND (alle müssen wahr sein) oder OR (mindestens eine muss wahr sein), um zusammenhängende Logik für komplexe Fälle zu gruppieren.
+
+> Siehe Beispiel unten – hier wird die Regel unter zwei Umständen ausgeführt: Wenn das Datum der 4. August 2025 ist und dieser Tag Montag ist, wird die Regel ausgeführt, ODER jeden Tag, wenn die Uhrzeit 00:00 ist, was im Grunde bedeutet, jeden Tag um Mitternacht.
+
+<img src="/images/concepts/condition.webp" alt="Bedingung" />
+
+### Aktion (das "was")
+
+Wenn die Bedingungen im Abschnitt "wann" erfüllt sind, führt das System die von Ihnen definierte Aktion aus. Jede Aktion wird nur ausgeführt, wenn auch ihre spezifischen Kriterien (Aktionsbedingung und Operationen) erfüllt sind.
+
+> Siehe Beispiel unten – hier ist die Aktion so eingestellt, dass die Versandmethoden in einer festen Reihenfolge neu geordnet werden, indem 'Next Day Delivery' nach oben verschoben und alle anderen Versandmethoden darunter platziert werden.
+
+<img src="/images/concepts/action.webp" alt="Aktion" />
+
+### Block
+
+Zusammen bilden **Bedingungen** (das "wann") und die **Aktion** (das "was") einen **Regelblock**. Sie können **mehrere Blöcke** innerhalb einer Regel verwenden, um komplexe Szenarien einfach zu handhaben.
+
+<img src="/images/concepts/block.webp" alt="Block" />
+
+## Zusätzliche Optionen (für einige Regeln)
+
+Diese optionalen Bestandteile erscheinen in bestimmten Regeltypen und bieten mehr Kontrolle darüber, wie und wo die Regel angewendet wird oder sich unter besonderen Bedingungen verhält.
+
+### Ziel
+
+Definiert, wo die Regel gilt (z. B. Versand oder Abholung). Wird nur in Versandregeln verwendet.
+
+<img src="/images/concepts/target.webp" alt="Ziel" />
+
+### Kombinationen
+
+Steuert, ob der Rabatt der Regel mit Produkt-, Bestell- oder Versandrabatten kombiniert werden kann. Wird nur in **Rabatt**-Regeln verwendet.
+
+<img src="/images/concepts/combinations.webp" alt="Kombinationen" />
+
+### Strategie
+
+Wenn die Rabattregel mehrere Blöcke hat, kommt die Strategiewahl ins Spiel. Sie bestimmt, wie diese Regelblöcke angewendet werden (z. B. zuerst gültige oder höchster Wert). Wird nur in **Rabatt auf Bestellwert**-Regeln verwendet.
+
+<img src="/images/concepts/strategy.webp" alt="Strategie" />
+
+### Auslöser
+
+Legt fest, welcher Schritt die Regel auslöst (z. B. wenn der Kunde mit dem Checkout interagiert oder den Checkout abschließt, oder beides). Wird nur in **Checkout validieren oder blockieren**-Regeln verwendet.
+
+<img src="/images/concepts/trigger.webp" alt="Auslöser" />
+
+### Zurückgreifen
+
+Definiert, was in dem seltenen Fall passiert, dass die App ein Problem im Checkout hat (z. B. Checkout erlauben oder blockieren). Wird nur in **Checkout validieren oder blockieren**-Regeln verwendet.
+
+<img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+### Maximale Rabattnutzung
+
+Definiert die **gesamte Anzahl der Male**, die der Rabatt von allen Kunden verwendet werden kann. Optional kann die Nutzung auch auf **einmal pro Kunde** beschränkt werden. Gilt nur bei Verwendung von Rabattcodes, nicht bei automatischen Rabatten. Wird nur in **Rabatt**-Regeln verwendet.
+
+> Zum Beispiel: Wenn das Nutzungslimit **auf 1 gesetzt** und **„Auf eine Nutzung pro Kunde beschränken“** deaktiviert ist, kann nur ein Kunde den Rabattcode verwenden. Danach wird der Code für alle anderen ungültig.
+
+<img src="/images/concepts/maximum-discount-uses.webp" alt="Maximale Rabattnutzung" />

@@ -1,0 +1,362 @@
+---
+title: "Bedingungssatz 2"
+description: "Erfahren Sie mehr über jede Bedingung innerhalb von _Bedingungssatz 2_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/de/customer-total-number-of-previous-orders.mdx";
+import OrderTotalAmount from "/snippets/condition-set/de/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/de/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/de/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/de/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/de/order-total-subscription-weight.mdx";
+import SKU from "/snippets/condition-set/de/sku.mdx";
+import Collection from "/snippets/condition-set/de/collection.mdx";
+import Collections from "/snippets/condition-set/de/collections.mdx";
+import LineItemProperty from "/snippets/condition-set/de/line-item-property.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/de/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/de/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/de/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/de/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/de/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/de/cart-has-no-subscription-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/de/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/de/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/de/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/de/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/de/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/de/address-line2.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Kunde
+
+### Kunde ist eingeloggt
+
+Passt, wenn der Kunde eine aktive Kontositzung hat und zum Zeitpunkt des Checkouts in seinem Shop-Konto angemeldet ist.
+
+<img
+  src="/images/essentials/condition-sets/customer-logged-in.webp"
+  alt="Kunde ist eingeloggt"
+/>
+
+### Kunde ist nicht eingeloggt
+
+Passt, wenn der Kunde keine aktive Kontositzung hat und als Gast auscheckt.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-logged-in.webp"
+  alt="Kunde ist nicht eingeloggt"
+/>
+
+<EmailAddress />
+<CustomerTotalNumberOfPreviousOrders />
+
+## Bestelldetails
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+## Warenkorb-Details
+
+### Warenkorb-Attribut
+
+Diese Bedingung prüft die **dem Warenkorb zugeordneten Attribute** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Passt, wenn das angegebene Warenkorb-Attribut einen der eingegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Passt, wenn das angegebene Warenkorb-Attribut keinen der eingegebenen Werte enthält)
+- **Hat leeren Wert** (Passt, wenn das angegebene Warenkorb-Attribut existiert, aber keinen Wert enthält)
+- **Hat keinen leeren Wert** (Passt, wenn das angegebene Warenkorb-Attribut existiert und einen Wert enthält)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="Attribut-Schlüssel eingeben">
+    Geben Sie den <strong>Attribut-Schlüssel</strong> im Feld „Enter key“ ein.
+  </Step>
+
+  <Step title="Wert(e) eingeben">
+    Geben Sie die <strong>Wert(e)</strong> ein, die überprüft werden sollen (falls zutreffend).
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown aus.
+  </Step>
+</Steps>
+
+Für **Hat einen dieser Werte** und **Hat keinen dieser Werte** geben Sie einen oder mehrere Werte ein. Trennen Sie mehrere Werte mit Kommas.
+
+<Note>
+  Verwenden Sie * als Platzhalter, um Teilwerte zu matchen. Zum Beispiel: value* → value123, VALUETEST etc.
+</Note>
+
+> **Beispiel für „Hat einen dieser Werte“**:  
+Schlüssel: `delivery_method`  
+Werte: `express, pickup`  
+→ Passt zu Warenkörben, bei denen das `delivery_method`-Attribut entweder `express` oder `pickup` ist.
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
+  alt="Warenkorb-Attribut hat einen dieser Werte"
+/>
+
+Für **Hat leeren Wert** und **Hat keinen leeren Wert** ist keine Wertangabe erforderlich.
+
+> **Beispiel für „Hat keinen leeren Wert“**:  
+> Schlüssel: `gift_message`  
+> → Passt zu Warenkörben, bei denen ein `gift_message`-Attribut existiert und einen Text enthält (z. B. „Alles Gute zum Geburtstag!“).
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-not-empty-value.webp"
+  alt="Warenkorb-Attribut hat keinen leeren Wert"
+/>
+
+### Produktmenge pro SKU
+
+Diese Bedingung prüft die **Menge eines bestimmten Produkts (nach SKU)** in der Bestellung anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Menge ist größer oder gleich** (Passt, wenn die Menge der angegebenen SKU größer oder gleich der eingegebenen Zahl ist)
+- **Menge ist kleiner oder gleich** (Passt, wenn die Menge der angegebenen SKU kleiner oder gleich der eingegebenen Zahl ist)
+- **Menge ist teilbar durch** (Passt, wenn die Menge der angegebenen SKU ein exaktes Vielfaches der eingegebenen Zahl ist)
+- **Menge ist nicht teilbar durch** (Passt, wenn die Menge der angegebenen SKU kein Vielfaches der eingegebenen Zahl ist)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="SKU eingeben">
+    Geben Sie die <strong>SKU</strong> im Feld „Enter SKU“ ein.
+  </Step>
+
+  <Step title="Menge eingeben">
+    Geben Sie die <strong>Menge</strong> im Feld „Enter quantity“ ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown aus.
+  </Step>
+</Steps>
+
+> **Beispiel für „Menge ist größer oder gleich“**:  
+> SKU: `ABC123`  
+> Menge: `3`  
+> → Passt zu Bestellungen, bei denen 3 oder mehr Einheiten von `ABC123` enthalten sind.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-has-greater-value.webp"
+  alt="Produktmenge pro SKU größer oder gleich"
+/>
+
+> **Beispiel für „Menge ist teilbar durch“**:  
+> SKU: `ABC123`  
+> Menge: `2`  
+> → Passt zu Bestellungen, bei denen die Menge von `ABC123` 2, 4, 6, 8 usw. beträgt.
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-divisible-by.webp"
+  alt="Produktmenge pro SKU teilbar durch"
+/>
+
+### Gesamte Menge – Produktmenge einer SKU
+
+Diese Bedingung prüft die **Gesamtmenge aller Produkte in der Bestellung, ausgenommen ein bestimmtes Produkt (nach SKU)** anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Menge ist größer oder gleich** (Passt, wenn die Gesamtmenge ohne die angegebene SKU größer oder gleich der eingegebenen Zahl ist)
+- **Menge ist kleiner oder gleich** (Passt, wenn die Gesamtmenge ohne die angegebene SKU kleiner oder gleich der eingegebenen Zahl ist)
+- **Menge ist teilbar durch** (Passt, wenn die Gesamtmenge ohne die angegebene SKU ein exaktes Vielfaches der eingegebenen Zahl ist)
+- **Menge ist nicht teilbar durch** (Passt, wenn die Gesamtmenge ohne die angegebene SKU kein Vielfaches der eingegebenen Zahl ist)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="SKU zum Ausschließen eingeben">
+    Geben Sie die <strong>SKU</strong> ein, die ausgeschlossen werden soll.
+  </Step>
+
+  <Step title="Menge eingeben">
+    Geben Sie die <strong>Menge</strong> im Feld „Enter quantity“ ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown aus.
+  </Step>
+</Steps>
+
+> **Beispiel für „Menge ist größer oder gleich“**:  
+> SKU: `ABC123`  
+> Menge: `5`  
+> → Passt zu Bestellungen, bei denen die Gesamtmenge aller Produkte außer `ABC123` 5 oder mehr beträgt.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-has-greater-value.webp"
+  alt="Gesamtmenge – Produktmenge einer SKU größer oder gleich"
+/>
+
+> **Beispiel für „Menge ist teilbar durch“**:  
+> SKU: `ABC123`  
+> Menge: `3`  
+> → Passt zu Bestellungen, bei denen die Gesamtmenge aller Produkte außer `ABC123` 3, 6, 9 usw. beträgt.
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-divisible-by.webp"
+  alt="Gesamtmenge – Produktmenge einer SKU teilbar durch"
+/>
+
+## Warenkorb enthält Artikel
+
+<SKU />
+<Collection />
+<Collections />
+<LineItemProperty />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+## Produkt-Metafeld
+
+### Produktvarianten-Metafeld
+
+Diese Bedingung prüft ein **Produktvarianten-Metafeld**, das Sie nach **Namespace** und **Key** angeben, und bewertet es anhand einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Passt, wenn das Metafeld mindestens einen der eingegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Passt, wenn das Metafeld keinen der eingegebenen Werte enthält)
+- **Hat einen anderen Wert als diese Werte** (Passt, wenn das Metafeld einen Wert hat, der nicht unter den eingegebenen Werten ist)
+- **Hat keinen anderen Wert als diese Werte** (Passt, wenn das Metafeld nur die eingegebenen Werte enthält und keine anderen)
+- **Hat leeren Wert** (Passt, wenn das Metafeld keinen Wert enthält)
+- **Hat keinen leeren Wert** (Passt, wenn das Metafeld irgendeinen Wert enthält)
+- **Hat Zahl größer oder gleich** (Passt, wenn der numerische Wert des Metafelds größer oder gleich der eingegebenen Zahl ist)
+- **Hat Zahl kleiner oder gleich** (Passt, wenn der numerische Wert des Metafelds kleiner oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl von Werten größer oder gleich** (Passt, wenn die Anzahl der Werte im Metafeld größer oder gleich der eingegebenen Zahl ist)
+- **Hat Anzahl von Werten kleiner oder gleich** (Passt, wenn die Anzahl der Werte im Metafeld kleiner oder gleich der eingegebenen Zahl ist)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte ein, getrennt durch Kommas.
+
+> Zum Beispiel: `Namespace: shipping` · `Key: allowed_regions` · `Hat keinen dieser Werte: CA, TX` → Passt, wenn weder „CA“ noch „TX“ im Metafeld erscheint.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-does-not-contains.webp"
+  alt="Produktvarianten-Metafeld enthält nicht"
+/>
+
+Für **Hat Zahl größer oder gleich** und **Hat Zahl kleiner oder gleich** geben Sie eine einzelne numerische Zahl ein, die gegen den numerischen Wert des Metafelds geprüft wird.
+
+> Zum Beispiel: `Namespace: specs` · `Key: length_mm` · `Hat Zahl größer oder gleich 50` → Passt, wenn der numerische Wert des Metafelds 50 oder mehr beträgt.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value.webp"
+  alt="Produktvarianten-Metafeld Wert größer"
+/>
+
+Für **Hat Anzahl von Werten größer oder gleich** und **Hat Anzahl von Werten kleiner oder gleich** geben Sie eine einzelne numerische Zahl ein, die gegen die Anzahl der Werte im Metafeld geprüft wird.
+
+> Zum Beispiel: `Namespace: custom` · `Key: available_colors` · `Hat Anzahl von Werten größer oder gleich 3` → Passt, wenn drei oder mehr Werte im Metafeld vorhanden sind.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value-or-equals.webp"
+  alt="Produktvarianten-Metafeld Wert größer oder gleich"
+/>
+
+## Versand
+
+<SelectedShippingMethod />
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Lokalisierung
+<UserLanguage />
+
+## Versandadresse
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
+
+## Vergleiche
+
+### Produktmenge pro SKU vs Produktmenge pro SKU
+
+Diese Bedingung vergleicht die **Produktmenge einer SKU** mit der **Produktmenge einer anderen SKU**, basierend auf einer der folgenden Unterbedingungen:
+
+- **hat Menge, die gleich ist** (Passt, wenn die Menge von SKU1 genau der Menge von SKU2 entspricht)
+- **hat Menge, die nicht gleich ist** (Passt, wenn die Menge von SKU1 von SKU2 abweicht)
+- **hat Menge, die größer oder gleich ist** (Passt, wenn die Menge von SKU1 größer oder gleich der Menge von SKU2 ist)
+- **hat Menge, die kleiner oder gleich ist** (Passt, wenn die Menge von SKU1 kleiner oder gleich der Menge von SKU2 ist)
+- **hat Menge, die ein Vielfaches ist** (Passt, wenn die Menge von SKU1 ein exaktes Vielfaches der Menge von SKU2 ist)
+- **hat Menge, die kein Vielfaches ist** (Passt, wenn die Menge von SKU1 kein exaktes Vielfaches der Menge von SKU2 ist)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="SKU für das erste Produkt eingeben">
+    Geben Sie die <strong>SKU</strong> für das erste Produkt im Feld <strong>Enter SKU1</strong> ein.
+  </Step>
+
+  <Step title="SKU für das zweite Produkt eingeben">
+    Geben Sie die <strong>SKU</strong> für das zweite Produkt im Feld <strong>Enter SKU2</strong> ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown aus.
+  </Step>
+</Steps>
+
+> **Beispiel für „hat Menge, die größer oder gleich ist“**:  
+> SKU1: `SKU-ABC`  
+> SKU2: `SKU-XYZ`  
+> → Passt, wenn die Menge von `SKU-ABC` im Warenkorb größer oder gleich der Menge von `SKU-XYZ` ist.
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-greater-equals.webp"
+  alt="SKU-Menge größer oder gleich"
+/>
+
+> **Beispiel für „hat Menge, die ein Vielfaches ist“**:  
+> SKU1: `SKU-A`  
+> SKU2: `SKU-B`  
+> Vielfaches: `2`  
+> → Passt, wenn die Menge von `SKU-A` genau 2×, 4×, 6× usw. der Menge von `SKU-B` entspricht (z. B. `SKU-A` 6 Einheiten, `SKU-B` 3 Einheiten).
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-multiple.webp"
+  alt="SKU-Menge Vielfaches"
+/>

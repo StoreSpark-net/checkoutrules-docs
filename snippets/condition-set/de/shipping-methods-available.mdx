@@ -1,0 +1,33 @@
+### Verfügbare Versandmethoden
+
+Wird verwendet, um zu prüfen, ob die angegebenen Versandmethoden auf der Checkout-Seite tatsächlich verfügbar sind, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn die Checkout-Seite mindestens eine der aufgelisteten Versandmethoden enthält)
+- **Hat keinen dieser Werte** (Trifft zu, wenn die Checkout-Seite keine der aufgelisteten Versandmethoden enthält)
+- **Hat einen anderen Wert als diese Werte** (Trifft zu, wenn die Checkout-Seite Versandmethoden enthält, die nicht aufgelistet sind)
+- **Hat keinen anderen Wert als diese Werte** (Trifft zu, wenn die Checkout-Seite nur die aufgelisteten Versandmethoden enthält und keine anderen)
+- **Anzahl der Werte ist größer oder gleich** (Trifft zu, wenn die Anzahl der auf der Checkout-Seite verfügbaren Versandmethoden größer oder gleich der angegebenen Zahl ist)
+- **Anzahl der Werte ist kleiner oder gleich** (Trifft zu, wenn die Anzahl der auf der Checkout-Seite verfügbaren Versandmethoden kleiner oder gleich der angegebenen Zahl ist)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** oder **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere Werte ein, um abzugleichen. Mehrere Werte durch Kommas trennen.
+
+<Note>
+  Verwenden Sie das * Wildcard-Zeichen, um Teile von Versandmethodennamen abzugleichen. Zum Beispiel, Stand* 
+  entspricht Standard, Standardversand usw.
+</Note>
+
+> Zum Beispiel, `Hat einen dieser Werte: Express Lieferung, Standardversand` → Trifft zu, wenn mindestens eine der ausgewählten Versandmethoden verfügbar ist.
+
+<img
+  src="/images/essentials/condition-sets/multiple-shipping-methods.webp"
+  alt="Mehrere Versandmethoden"
+/>
+
+Für **Anzahl der Werte ist größer oder gleich** oder **Anzahl der Werte ist kleiner oder gleich**, geben Sie den Schwellenwert für die Anzahl ein.
+
+> Zum Beispiel, `Anzahl der Werte ist größer oder gleich 3` → Trifft zu, wenn drei oder mehr Versandmethoden verfügbar sind.
+
+<img
+  src="/images/essentials/condition-sets/count-shipping-methods.webp"
+  alt="Anzahl Versandmethoden"
+/>

@@ -1,0 +1,65 @@
+### Zeilenartikel-Eigenschaft
+
+Diese Bedingung überprüft die **Eigenschaften, die einem Zeilenartikel zugeordnet sind**, anhand spezifischer Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft einen der eingegebenen Werte enthält)  
+- **Hat keinen dieser Werte** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft keinen der eingegebenen Werte enthält)  
+- **Hat keinen Wert** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft existiert, aber keinen Wert hat)  
+- **Hat einen Wert** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft existiert und einen Wert enthält)  
+- **Hat eine Anzahl von Werten größer oder gleich** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft eine Anzahl von Werten enthält, die größer oder gleich der eingegebenen Zahl ist)  
+- **Hat eine Anzahl von Werten kleiner oder gleich** (Trifft zu, wenn die angegebene Zeilenartikel-Eigenschaft eine Anzahl von Werten enthält, die kleiner oder gleich der eingegebenen Zahl ist)  
+
+So legen Sie diese Bedingungen fest:
+
+<Steps>
+  <Step title="Eigenschaftsschlüssel eingeben">
+    Geben Sie den <strong>Eigenschaftsschlüssel</strong> in das Feld „Schlüssel eingeben“ ein.
+  </Step>
+
+  <Step title="Wert(e) eingeben">
+    Geben Sie die <strong>Wert(e)</strong> zum Abgleichen ein (falls zutreffend).
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown-Menü.
+  </Step>
+</Steps>
+
+Für **Hat einen dieser Werte** und **Hat keinen dieser Werte**, geben Sie einen oder mehrere Werte in das Feld ein. Trennen Sie mehrere Werte durch Kommas.
+
+<Note>
+  Verwenden Sie das Platzhalterzeichen * zum Abgleichen von Teilwerten. Zum Beispiel stimmt value* mit value123, VALUETEST usw. überein.
+</Note>
+
+> **Beispiel für „Hat einen dieser Werte“**:  
+> Schlüssel: `color`  
+> Werte: `red, blue`  
+> → Trifft auf Zeilenartikel zu, bei denen die Eigenschaft `color` entweder `red` oder `blue` ist.
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="Zeilenartikel-Eigenschaft hat einen dieser Werte"
+/>
+
+Für **Hat keinen Wert** und **Hat einen Wert** ist keine Werteingabe erforderlich.
+
+> **Beispiel für „Hat einen Wert“**:  
+> Schlüssel: `engraving`  
+> → Trifft auf Zeilenartikel zu, bei denen die Eigenschaft `engraving` existiert und Text enthält (z. B. „Happy Anniversary“).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="Zeilenartikel-Eigenschaft hat einen Wert"
+/>
+
+Für **Hat eine Anzahl von Werten größer oder gleich** und **Hat eine Anzahl von Werten kleiner oder gleich**, geben Sie die Grenzzahl in das Feld ein.
+
+> **Beispiel für „Hat eine Anzahl von Werten kleiner oder gleich“**:  
+> Schlüssel: `size`  
+> Zahl: `2`  
+> → Trifft auf Zeilenartikel zu, bei denen die Eigenschaft `size` 2 oder weniger verschiedene Werte hat (z. B. `S, M`).
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="Zeilenartikel-Eigenschaft Anzahl der Werte kleiner"
+/>

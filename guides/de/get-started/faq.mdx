@@ -1,0 +1,118 @@
+---
+title: "Häufig Gestellte Fragen"
+description: "Finden Sie Antworten auf die am häufigsten gestellten Fragen zur Verwendung der **BeSure Checkout Rules** App in Ihrem Shopify-Shop."
+icon: "info"
+---
+
+Wenn Sie nicht finden, wonach Sie suchen, [kontaktieren Sie uns](https://checkoutrules.com/contact/).
+
+<AccordionGroup>
+  <Accordion title="Was ist eine Checkout-Regel?">
+    Es ist eine Möglichkeit, das Checkout-Erlebnis für Ihre Kunden anzupassen. Zum Beispiel hilft Ihnen eine Versand-Checkout-Regel dabei, die beim Checkout angezeigten Versandoptionen zu ändern. Ebenso hilft Ihnen eine Zahlungs-Checkout-Regel dabei, die beim Checkout angezeigten Zahlungsoptionen anzupassen.
+  </Accordion>
+
+  <Accordion title="Wie erstelle ich eine Checkout-Regel?">
+    Sie können eine Checkout-Regel erstellen, indem Sie auf der Regel-Seite auf die **Regel erstellen**-Schaltfläche klicken. Anschließend können Sie den Typ der Regel auswählen, die Sie erstellen möchten, und den Anweisungen folgen.
+
+    <img src="/images/faqs/create_rule-Bjcq8flN.webp" alt="Wie erstelle ich eine Regel" />
+  </Accordion>
+
+  <Accordion title="Sollte ich eine leere Regel wählen?">
+    Manchmal wird Ihnen beim Auswählen einer Regel eine Auswahl von **'leere Regel'** vs. **'vordefinierte Vorlagen'** angezeigt. Sie können **'leere Regel'** wählen, wenn Sie keine passende Vorlage finden. Dadurch können Sie eine Regel erstellen, bei der Sie das Verhalten genau nach Ihren Bedürfnissen anpassen können. Sie können auch jede der **'vordefinierten Vorlagen'** auswählen, wenn Sie eine passende Vorlage finden. Dadurch können Sie eine Regel ausgehend von der Vorlage erstellen, sie jedoch weiterhin an Ihre Bedürfnisse anpassen.
+    <img src="/images/faqs/empty_rule_templates-DlBCQK7n.webp" alt="Leere Regel oder Vorlagen" />
+  </Accordion>
+
+  <Accordion title="Wie teste ich eine Checkout-Regel?">
+    Sie können eine Checkout-Regel testen, indem Sie den Status auf **TESTEN** setzen. Dies ermöglicht Ihnen zu sehen, wie die Regel den Checkout verändert, ohne Ihre Kunden zu beeinflussen.  
+    Nachdem Sie die Regel erstellt haben, öffnen Sie einfach die Checkout-Seite Ihres Shops und verwenden die Test-E-Mail-Adresse, um die Änderungen zu sehen.
+
+    <img src="/images/faqs/rule_testing-Dp4kiMTw.webp" alt="Regel testen" />
+  </Accordion>
+
+  <Accordion title="Welches Bedingungsset sollte ich verwenden?">
+    Sie können jedes Bedingungsset verwenden, das Ihren Anforderungen entspricht. Wenn Sie unsicher sind, können Sie entweder mit **Bedingungsset 1** beginnen oder die Suchfunktion verwenden, um herauszufinden, welches Bedingungsset die gewünschte Bedingung enthält und darauf wechseln. Zum Beispiel, wenn Sie eine Versandmethode basierend auf dem Produkt-Metafeld ausblenden möchten, können Sie Bedingungsset 4 verwenden. Die Auswahl des Bedingungssets ist nur bei der Erstellung einer Regel verfügbar. Nach der Erstellung kann das Bedingungsset nicht mehr geändert werden.
+
+    <img src="/images/faqs/condition_set_selection-jOo749bC.webp" alt="Bedingungsset auswählen" />
+  </Accordion>
+
+  <Accordion title="Was ist die Grundstruktur einer Checkout-Regel?">
+    Eine Checkout-Regel besteht aus einer Bedingung (oder mehreren Bedingungen) und einer Aktion (oder mehreren Aktionen). Die Bedingung prüft, ob die Regel angewendet werden soll oder nicht. Die Aktion wird verwendet, um den Checkout zu ändern. Zum Beispiel, wenn wir eine Regel erstellen, um UPS-Versand auszublenden, wenn der Bestellwert unter \$50 liegt, prüft die Bedingung, ob der Bestellwert unter \$50 liegt. Wenn die Bedingung beim Checkout erfüllt ist, wird die Aktion angewendet. Die Aktion blendet dann den UPS-Versand im Checkout aus.
+    <img src="/images/faqs/basic_rule_structure-LbDRaUUy.webp" alt="Grundstruktur der Regel" />
+  </Accordion>
+
+  <Accordion title="Was sind Blöcke innerhalb einer Checkout-Regel?">
+    Ein Block besteht aus Blockbedingungen mit der Blockaktion. Wenn Sie beginnen, eine neue leere Regel zu erstellen, wird der erste Block bereits für Sie hinzugefügt. Sie können mehrere Blöcke in einer Regel hinzufügen. Jeder Block kann sein eigenes Satz von Bedingungen und eine Aktion haben. Die Blöcke werden in der Reihenfolge ausgewertet, in der sie hinzugefügt wurden. Wenn die Blockbedingungen erfüllt sind, wird die entsprechende Aktion angewendet. Danach wird der nächste Block ausgewertet und so weiter.
+    <img src="/images/faqs/rule_blocks-DkeFb4UF.webp" alt="Regelblöcke" />
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+<AccordionGroup>
+  <Accordion title="Funktioniert diese App für 1-Seiten-Checkout?">
+    Ja, die App funktioniert sowohl für **1-Seiten-** als auch **3-Seiten-Checkouts**, da sie native Shopify-APIs verwendet.
+  </Accordion>
+
+  <Accordion title="Funktioniert diese App nur für Shopify Plus?">
+    Nein, diese App funktioniert für alle Shopify-Pläne. Sie können diese App verwenden, um Ihren Checkout für alle Pläne anzupassen.
+  </Accordion>
+
+  <Accordion title="Funktioniert diese App für Rechnungs-Checkout (wenn der Kunde über eine Rechnung öffnet)?">
+    Ja, diese App funktioniert mit rechnungsbasiertem Checkout. Nur Rabattregeln unterstützen momentan keinen Rechnungs-Checkout, aber Sie können die automatischen Rabattregeln manuell auf die Entwurfsbestellung anwenden, bevor Sie die Rechnung senden.
+    <img src="/images/faqs/draft_order_apply_discounts-Bzc-zA93.webp" alt="Rechnungs-Checkout" />
+  </Accordion>
+
+  <Accordion title="Kann ich anpassen, welche Regeln beim Rechnungs-Checkout ausgeführt werden (wenn der Kunde über eine Rechnung öffnet)?">
+    Ja, es gibt Optionen, die es ermöglichen, Regeln für diese Rechnung zu aktivieren/deaktivieren. Zum Beispiel können Sie vor dem Teilen des Checkout-Links oder Senden der Rechnung die Option 'Validierungsregeln ignorieren' wählen. Automatische Rabattregeln werden beim Rechnungs-Checkout nicht automatisch angewendet, können aber manuell auf die Entwurfsbestellung angewendet werden, bevor die Rechnung gesendet wird. Wenn Sie eine Versandoption für den Kunden vor dem Senden der Rechnung auswählen, werden Versandregeln beim Rechnungs-Checkout nicht ausgeführt. Wenn Sie die Option 'Zahlung später fällig' auswählen und die Rechnung senden, werden Zahlungsregeln beim Rechnungs-Checkout ausgeführt.
+    <img src="/images/faqs/invoice_admin_view-C9KJI8JV.webp" alt="Rechnungsanpassung" />
+  </Accordion>
+
+  <Accordion title="Funktioniert diese App für Entwurfsbestellungen (im Admin erstellt)?">
+    Sie funktioniert für einige Regelkategorien. Validierungsregeln funktionieren, aber es gibt eine Option, diese bei Bedarf zu ignorieren. Automatische Rabattregeln können manuell auf die Entwurfsbestellung angewendet werden. Wenn Sie auf die Schaltfläche 'Rabatt hinzufügen' klicken, wird die Option 'Alle berechtigten automatischen Rabatte anwenden' angezeigt, die, wenn ausgewählt, die automatischen Rabattregeln anwenden kann. Versand- und Zahlungsregeln funktionieren im Admin-Bereich der Entwurfsbestellungen nicht.
+    <img src="/images/faqs/admin_view_draft_orders-BQ3pRIeY.webp" alt="Entwurfsbestellungen" />
+  </Accordion>
+
+  <Accordion title="Kann ich Wildcards wie * verwenden, um Versand- oder Zahlungsmethoden auszuwählen?">
+    Sie können ein * verwenden, um alle Versand- oder Zahlungsmethoden auszuwählen. Sie können * oder ? auch auf diese Weise verwenden: Um z. B. alle Methoden auszuwählen, die mit 'Standard' beginnen, können Sie 'Standard*' verwenden. Um alle Methoden auszuwählen, die mit 'Standard' enden, können Sie \*Standard verwenden. Um alle Methoden auszuwählen, die mit 'Neu' beginnen und mit 'Weg' enden, können Sie 'Neu*Weg' verwenden. Ebenso können Sie ? verwenden, um ein einzelnes Zeichen abzugleichen.
+  </Accordion>
+
+  <Accordion title="Was ist der Unterschied zwischen 'ist' und 'enthält', die in verschiedenen Regeln verwendet werden?">
+    Die Bedingung 'ist' wird verwendet, um den genauen Wert abzugleichen. Die Bedingung 'enthält' wird verwendet, um den Wert teilweise abzugleichen. Zum Beispiel wird 'ist' 'Standard' nur mit 'Standard' abgleichen, während 'enthält' 'Standard' mit 'Standard Shipping' oder 'Standard Lieferung' abgleicht.
+  </Accordion>
+
+  <Accordion title="Wie füge ich eine Notiz hinzu oder ändere den im Checkout angezeigten Text?">
+    Sie können eine Notiz hinzufügen oder den im Checkout angezeigten Text ändern, indem Sie die Schritte [hier](https://checkoutrules.com/blog/shopify-easily-customize-checkout-text/?utm_source=app&utm_medium=help_page&utm_campaign=app_help) befolgen.
+  </Accordion>
+</AccordionGroup>
+
+## Versandmethoden neu ordnen
+
+<AccordionGroup>
+  <Accordion title="Wie setze ich die standardmäßig vorausgewählte Versandmethode?">
+    Sie können die standardmäßig vorausgewählte Versandmethode festlegen, indem Sie sie zur obersten Versandmethode im Checkout machen. Sie wird dann für Ihre Kunden vorausgewählt. Bitte beachten Sie, dass Shopify Ihre vorherige Auswahl speichert, wenn Sie bereits einen Checkout gestartet haben. Sie können den Cache löschen, indem Sie den Inkognito-Modus verwenden, einen anderen Browser verwenden oder einen neuen Checkout mit anderem Warenkorbinhalt starten. Ihre Kunden werden dieses Problem nicht haben.
+  </Accordion>
+</AccordionGroup>
+
+## Zahlungsmethoden neu ordnen
+
+<AccordionGroup>
+  <Accordion title="Wie setze ich die standardmäßig vorausgewählte Zahlungsmethode?">
+    Sie können die standardmäßig vorausgewählte Zahlungsmethode festlegen, indem Sie sie zur obersten Zahlungsmethode im Checkout machen. Sie wird dann für Ihre Kunden vorausgewählt (dies ist nicht immer garantiert, bitte lesen Sie die FAQ unten). Bitte beachten Sie, dass Shopify Ihre vorherige Auswahl speichert, wenn Sie bereits einen Checkout gestartet haben. Sie können den Cache löschen, indem Sie den Inkognito-Modus verwenden, einen anderen Browser verwenden oder einen neuen Checkout mit anderem Warenkorbinhalt starten. Ihre Kunden werden dieses Problem nicht haben.
+  </Accordion>
+
+  <Accordion title="Warum wird die oberste Zahlungsmethode nicht als standardmäßig vorausgewählt gesetzt?">
+    Normalerweise funktioniert es, wenn Sie die Zahlungsmethode an die oberste Position verschieben, wird sie zur vorausgewählten Zahlungsmethode. Diese Standardvorauswahl wird jedoch von Shopify und dem verwendeten Zahlungsanbieter gesteuert. Diese App ermöglicht nur die Neuordnung der Zahlungsmethoden. Einige Zahlungsanbieter wie Klarna und iDeal möchten immer zuerst ausgewählt werden. In diesem Fall bleibt Ihnen nur die Möglichkeit, einen Workaround zu verwenden, z. B. diese Zahlungsanbieter nur in einer bestimmten Region anzuzeigen und in allen anderen Regionen auszublenden. Sobald sie ausgeblendet sind, könnte es möglich sein, die oberste Zahlungsmethode als standardmäßig vorausgewählt festzulegen.
+  </Accordion>
+</AccordionGroup>
+
+## Checkout validieren / Blockieren
+
+<AccordionGroup>
+  <Accordion title="Wie erkennt die App Postfachadressen?">
+    Wenn Sie die Bedingung 'Postfachadresse' in der Regel verwenden, erkennt die App automatisch alle Arten von Einträgen in der Lieferadresse wie P.O. Box, P O Box, P.o b o x usw. Wenn Sie ein benutzerdefiniertes Wort oder einen Ausdruck erkennen möchten, können Sie dies mit der Bedingung 'Adresszeile' tun, in der Sie das Wort oder den Ausdruck angeben können, den Sie erkennen möchten.
+  </Accordion>
+
+  <Accordion title="Wie erkennt man Postfachadressen in anderen Sprachen?">
+    Wenn Sie Postfachwörter oder -ausdrücke in anderen Sprachen erkennen möchten, können Sie dies mit der Bedingung 'Adresse (Zeile1 + Zeile2)' tun, in der Sie die Wörter oder Ausdrücke angeben, die Sie erkennen möchten. Zum Beispiel 'Packstation' auf Deutsch. Sie können mehrere dieser Bedingungen für jedes Wort hinzufügen, wobei Sie den OR-Operator zwischen ihnen verwenden.
+  </Accordion>
+</AccordionGroup>

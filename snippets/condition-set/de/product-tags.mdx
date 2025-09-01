@@ -1,0 +1,32 @@
+### Produkt-Tags
+
+Diese Bedingung prüft die **Produkt-Tags** anhand bestimmter Kriterien. Sie wird wahr, wenn **ein beliebiges** Produkt im Warenkorb den eingegebenen Produkt-Tag-Wert hat, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn die Produkt-Tags mindestens einen der eingegebenen Werte enthalten)
+- **Hat keinen dieser Werte** (Trifft zu, wenn die Produkt-Tags keinen der eingegebenen Werte enthalten)
+- **Hat einen anderen Wert als diese Werte** (Trifft zu, wenn die Produkt-Tags einen Wert haben, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Trifft zu, wenn die Produkt-Tags nur die eingegebenen Werte enthalten und keine anderen)
+- **Anzahl der Werte ist größer oder gleich** (Trifft zu, wenn die **Anzahl** der Produkt-Tags größer oder gleich der eingegebenen Zahl ist)
+- **Anzahl der Werte ist kleiner oder gleich** (Trifft zu, wenn die **Anzahl** der Produkt-Tags kleiner oder gleich der eingegebenen Zahl ist)
+
+<Warning>
+  Sie können diese Bedingung nur mit denselben Werten in der gesamten Regel verwenden. Wenn Sie unterschiedliche Werte in verschiedenen Regelblöcken verwenden möchten, sollten Sie auf Bedingungsset 3, 5 oder 6 wechseln, die mehr Flexibilität bieten.
+</Warning>
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere Produkt-Tag-Werte in das Feld ein. Trennen Sie mehrere Werte mit Kommas.
+
+> Zum Beispiel, `Hat keinen dieser Werte: summer, clearance` → Trifft zu, wenn das Produkt-Tag weder “summer” noch “clearance” enthält.
+
+<img
+  src="/images/essentials/condition-sets/product-tags.webp"
+  alt="Produkt-Tags"
+/>
+
+Für **Anzahl der Werte ist größer oder gleich** und **Anzahl der Werte ist kleiner oder gleich**, geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Produkt-Tags abzugleichen.
+
+> Zum Beispiel, `Anzahl der Werte ist kleiner oder gleich 4` → Trifft zu, wenn es vier oder weniger Produkt-Tags gibt.
+
+<img
+  src="/images/essentials/condition-sets/count-product-tags.webp"
+  alt="Produkt-Tags Anzahl"
+/>
