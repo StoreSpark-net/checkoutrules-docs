@@ -1,0 +1,139 @@
+---
+title: "Zahlungsmethoden neu anordnen"
+description: "Ordnen Sie die Anzeige der Zahlungsmethoden beim Checkout unter bestimmten Bedingungen neu."
+icon: "shuffle"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, die Reihenfolge zu ändern, in der Zahlungsmethoden beim Checkout angezeigt werden.  
+Sie können bestimmte Zahlungsoptionen priorisieren, basierend auf Bedingungen wie Warenkorbwert, Versandland oder Produkttags usw.
+
+Dies hilft, das Kundenerlebnis zu optimieren, indem die bevorzugten oder relevantesten Zahlungsmethoden zuerst angezeigt werden.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man mithilfe der App eine **Zahlungsmethoden neu anordnen**-Regel erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app).  
+Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet.  
+Wählen Sie _Kategorie "Zahlung" → Checkout-Regeltyp "Zahlungsmethoden neu anordnen" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/payment/select-reorder-payment-methods.webp"
+  alt="Zahlungsmethoden neu anordnen auswählen"
+/>
+
+Anschließend wählen Sie in der **Vorlagenauswahl** eine Option basierend auf Ihren Anforderungen.  
+In den meisten Fällen können Sie die leere Regel als Ausgangspunkt wählen und nach Ihren Bedürfnissen anpassen. Selbst wenn Sie eine vorgefüllte Vorlage auswählen, können Sie diese später ändern.
+
+<img
+  src="/images/essentials/payment/select-rule-template-reorder-payment-methods.webp"
+  alt="Regelvorlage auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Neuanordnen von Zahlungsmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Zahlungsmethoden neu anordnen" hinzufügen, um zu beschreiben, was sie tut.  
+Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-reorder-payment-methods.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#condition-set), die [Bedingung](/guides/de/get-started/concepts#conditions-when) und die [Aktion](/guides/de/get-started/concepts#action-what) aus.
+
+> Als Beispiel wählen wir das Standard-Bedingungsset 1, stellen die Regel so ein, dass sie immer ausgeführt wird, und wählen die Operation **Alphabetische Reihenfolge**, indem wir **Name A bis Z (aufsteigend)** auswählen, um die Zahlungsmethoden neu anzuordnen.
+
+<img
+  src="/images/essentials/payment/condition-set-reorder-payment-methods.webp"
+  alt="Bedingungsset"
+/>
+
+Im Aktionsbereich haben Sie zwei Auswahlmöglichkeiten:
+
+- **Alphabetische Reihenfolge** – Damit können Sie die Zahlungsmethoden alphabetisch anordnen.  
+  Sie können entweder **Name A-Z (aufsteigend)** oder **Name Z-A (absteigend)** wählen.
+
+<img
+  src="/images/essentials/payment/action-alphabetical-order-reorder-payment-methods.webp"
+  alt="Aktion Alphabetische Reihenfolge"
+/>
+
+- **Feste Rangfolge** – Mit dieser Option können Sie die Reihenfolge der Zahlungsmethoden manuell festlegen, indem Sie jeder Methode eine feste Rangnummer (z. B. 1, 2, 3 usw.) zuweisen, sodass Sie genau steuern können, welche Methode an welcher **Position** erscheint.
+
+<img
+  src="/images/essentials/payment/action-fixed-ranking-reorder-payment-methods.webp"
+  alt="Aktion Feste Rangfolge"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie die Reihenfolge der Zahlungsmethoden.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Als Beispiel: Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und die **Zahlungsmethoden werden neu angeordnet**.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-reorder-payment-methods.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Standardmäßig vorausgewählte Zahlungsmethode festlegen
+
+Standardmäßig macht Shopify immer die oberste Zahlungsmethode zur standardmäßig vorausgewählten Zahlungsmethode.  
+Mit dieser Regel können Sie also die standardmäßig vorausgewählte Zahlungsmethode auf eine beliebige Methode ändern, indem Sie diese an die oberste Position setzen.
+
+Dazu können Sie beispielsweise die Option **Feste Rangfolge** verwenden und der gewünschten Zahlungsmethode den Rang 1 zuweisen.  
+Bitte stellen Sie sicher, dass „Alle anderen Zahlungsmethoden erscheinen hier nach den oben genannten“ auf „Am Ende anzeigen“ gesetzt ist.
+
+<Warning>
+  Bitte beachten Sie: Um dies zu testen, müssen Sie die Regel aktivieren und
+  anschließend die Cookies/den Cache des Browsers löschen, damit die
+  standardmäßig vorausgewählte Zahlungsmethode nicht Ihre zuvor gewählte ist
+  (Shopify kann diese Auswahl im Cache Ihres Browsers speichern).  
+  Alternativ können Sie auch einen anderen Browser verwenden, um zu sehen, was
+  Ihre Kunden sehen werden.
+</Warning>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann.  
+Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen.  
+Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade
+  durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/payment/activate-the-rule-reorder-payment-methods.webp"
+  alt="Regel aktivieren"
+/>

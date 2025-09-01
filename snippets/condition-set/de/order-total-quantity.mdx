@@ -1,0 +1,31 @@
+### Gesamtmenge der Bestellung
+
+Diese Bedingung überprüft die **Gesamtmenge der Artikel in einer Bestellung** anhand spezifischer Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer als oder gleich** (Trifft zu, wenn die Gesamtmenge der Artikel größer oder gleich der eingegebenen Zahl ist)  
+- **ist kleiner als oder gleich** (Trifft zu, wenn die Gesamtmenge der Artikel kleiner oder gleich der eingegebenen Zahl ist)  
+- **ist ein Vielfaches von** (Trifft zu, wenn die Gesamtmenge ein exaktes Vielfaches der eingegebenen Zahl ist)  
+- **ist kein Vielfaches von** (Trifft zu, wenn die Gesamtmenge kein Vielfaches der eingegebenen Zahl ist)  
+
+Um diese Bedingungen festzulegen, geben Sie eine Menge in das Feld ein und wählen Sie den entsprechenden Vergleich aus der Dropdown-Liste.
+
+<Note>
+  Die Menge bezieht sich auf die **Summe aller Artikelmengen** in der Bestellung, 
+  nicht auf die Anzahl der verschiedenen Produkte.
+</Note>
+
+> **Beispiel für „ist ein Vielfaches von“**:  
+> `ist ein Vielfaches von 5` → Trifft auf Bestellungen mit Gesamtmengen wie 5, 10, 15, 20 usw. zu.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-order-total.webp"
+  alt="Ist ein Vielfaches der Gesamtbestellung"
+/>
+
+> **Beispiel für „ist größer als oder gleich“**:  
+> `ist größer als oder gleich 3` → Trifft auf Bestellungen mit 3 oder mehr Gesamtartikeln zu.
+
+<img
+  src="/images/essentials/condition-sets/order-total-is-greater-value.webp"
+  alt="Bestellmenge ist größerer Wert"
+/>

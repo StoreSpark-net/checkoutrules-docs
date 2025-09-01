@@ -1,0 +1,39 @@
+### Kollektionen
+
+Diese Bedingung prüft die **Kollektionen** anhand bestimmter Kriterien. Sie wird wahr, wenn **ein beliebiges** Produkt im Warenkorb zum eingegebenen Kollektion-Wert gehört, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Trifft zu, wenn die Kollektion mindestens einen der eingegebenen Werte enthält)
+- **Hat keinen dieser Werte** (Trifft zu, wenn die Kollektion keinen der eingegebenen Werte enthält)
+- **Hat einen anderen Wert als diese Werte** (Trifft zu, wenn die Kollektion einen Wert hat, der nicht zu den eingegebenen Werten gehört)
+- **Hat keinen anderen Wert als diese Werte** (Trifft zu, wenn die Kollektion nur die eingegebenen Werte enthält und keine anderen)
+- **Anzahl der Werte ist größer oder gleich** (Trifft zu, wenn die **Anzahl** der Kollektionen größer oder gleich der eingegebenen Zahl ist)
+- **Anzahl der Werte ist kleiner oder gleich** (Trifft zu, wenn die **Anzahl** der Kollektionen kleiner oder gleich der eingegebenen Zahl ist)
+
+<Warning>
+  Sie können diese Bedingung nur mit denselben Werten in der gesamten Regel verwenden. Wenn Sie unterschiedliche Werte in verschiedenen Regelblöcken verwenden möchten, sollten Sie auf Bedingungsset 3 wechseln, das mehr Flexibilität bietet.
+</Warning>
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere Kollektion-Werte in das Feld ein.
+
+> Zum Beispiel, `Hat einen anderen Wert als diese Werte: Summer2025, Winter2025` → Trifft zu, wenn die Kollektion mindestens einen Wert enthält, der nicht “Summer2025” oder “Winter2025” ist.
+
+<img
+  src="/images/essentials/condition-sets/collections.webp"
+  alt="Kollektionen"
+/>
+
+Wählen Sie im Popup eine oder mehrere Kollektionen aus den bereits in Ihrem Shop erstellten Kollektionen aus.
+
+<img
+  src="/images/essentials/condition-sets/popup-collections.webp"
+  alt="Popup Kollektionen"
+/>
+
+Für **Anzahl der Werte ist größer oder gleich** und **Anzahl der Werte ist kleiner oder gleich**, geben Sie einen einzelnen numerischen Wert ein, um die Anzahl der Kollektionen abzugleichen.
+
+> Zum Beispiel, `Anzahl der Werte ist kleiner oder gleich 7` → Trifft zu, wenn es sieben oder weniger Kollektionen gibt.
+
+<img
+  src="/images/essentials/condition-sets/count-collections.webp"
+  alt="Kollektionen Anzahl"
+/>

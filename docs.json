@@ -286,6 +286,88 @@
             ]
           }
         ]
+      },
+      {
+        "language": "de",
+        "groups": [
+          {
+            "group": "Erste Schritte",
+            "icon": "code",
+            "pages": [
+              "guides/de/get-started/introduction",
+              "guides/de/get-started/installation",
+              "guides/de/get-started/concepts",
+              "guides/de/get-started/quickstart",
+              "guides/de/get-started/faq"
+            ]
+          },
+          {
+            "group": "Wesentliches",
+            "icon": "book",
+            "pages": [
+              {
+                "group": "Bedingungssets",
+                "icon": "filter",
+                "pages": [
+                  "guides/de/essentials/condition-sets/introduction",
+                  "guides/de/essentials/condition-sets/condition-set-1",
+                  "guides/de/essentials/condition-sets/condition-set-2",
+                  "guides/de/essentials/condition-sets/condition-set-3",
+                  "guides/de/essentials/condition-sets/condition-set-4",
+                  "guides/de/essentials/condition-sets/condition-set-5",
+                  "guides/de/essentials/condition-sets/condition-set-6"
+                ]
+              },
+              {
+                "group": "Versand",
+                "icon": "truck",
+                "pages": [
+                  "guides/de/essentials/shipping/reorder-shipping-methods",
+                  "guides/de/essentials/shipping/hide-shipping-methods",
+                  "guides/de/essentials/shipping/rename-shipping-methods",
+                  "guides/de/essentials/shipping/discount-shipping-methods"
+                ]
+              },
+              {
+                "group": "Zahlung",
+                "icon": "credit-card",
+                "pages": [
+                  "guides/de/essentials/payment/hide-express-checkout-options",
+                  "guides/de/essentials/payment/reorder-payment-methods",
+                  "guides/de/essentials/payment/hide-payment-methods",
+                  "guides/de/essentials/payment/rename-payment-methods"
+                ]
+              },
+              {
+                "group": "Validierung",
+                "icon": "shield-check",
+                "pages": [
+                  "guides/de/essentials/validation/validate-block-checkout"
+                ]
+              },
+              {
+                "group": "Rabatt",
+                "icon": "tag",
+                "pages": [
+                  "guides/de/essentials/discount/discount-order-amount",
+                  "guides/de/essentials/discount/discount-shipping-methods"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Erweiterte",
+            "icon": "grid",
+            "pages": [
+              "guides/de/advanced/branching",
+              "guides/de/advanced/concurrency",
+              "guides/de/advanced/translations",
+              "guides/de/advanced/multi-store-support",
+              "guides/de/advanced/rule-duplication",
+              "guides/de/advanced/block-replication"
+            ]
+          }
+        ]
       }
     ]
   },

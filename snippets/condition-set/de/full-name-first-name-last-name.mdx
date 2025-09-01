@@ -1,0 +1,52 @@
+### Vollständiger Name (Vorname + Nachname)
+
+Wird verwendet, um den vollständigen Namen des Kunden mit einem oder mehreren spezifischen Werten, Zählungen oder Zuständen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Enthält** (Trifft zu, wenn der vollständige Name den angegebenen Wert oder Teilwert enthält)
+- **Enthält nicht** (Trifft zu, wenn der vollständige Name den angegebenen Wert oder Teilwert nicht enthält)
+- **Ist leer** (Trifft zu, wenn kein Name eingegeben wurde)
+- **Ist nicht leer** (Trifft zu, wenn ein Wert im Namensfeld eingegeben wurde)
+- **Ist** (Trifft zu, wenn der vollständige Name genau dem angegebenen Wert entspricht)
+- **Ist nicht** (Trifft zu, wenn der vollständige Name nicht genau dem angegebenen Wert entspricht)
+- **Anzahl Zeichen größer oder gleich** (Trifft zu, wenn die Gesamtanzahl der Zeichen im Namen größer oder gleich der angegebenen Zahl ist)
+- **Anzahl Zeichen kleiner oder gleich** (Trifft zu, wenn die Gesamtanzahl der Zeichen im Namen kleiner oder gleich der angegebenen Zahl ist)
+- **Enthält nur** (Trifft zu, wenn der vollständige Name nur die erlaubte Zeichentypen aus dem Dropdown enthält)
+- **Enthält nicht nur** (Trifft zu, wenn der vollständige Name Zeichen enthält, die nicht dem erlaubten Zeichentyp aus dem Dropdown entsprechen)
+
+Für **Enthält**, **Enthält nicht**, **Ist** und **Ist nicht**, geben Sie den zu vergleichenden Wert ein.
+
+> Beispiel: `Enthält nicht: Test` → Trifft zu, wenn der Name nirgends „Test“ enthält.
+
+<img
+  src="/images/essentials/condition-sets/full-name-does-not-contain.webp"
+  alt="Vollständiger Name Enthält Nicht"
+/>
+
+Für **Enthält nur** und **Enthält nicht nur**, wählen Sie den Zeichentyp aus dem Dropdown:
+
+- **Englische Zeichen** (Erlaubt nur A–Z und a–z)
+- **Englische Zeichen + Akzentvarianten** (Erlaubt A–Z, a–z sowie Akzentzeichen wie é, ñ, ö)
+  > Beispiel: `Enthält nur: englische Zeichen` → Trifft zu, wenn der Name des Kunden nur englische Zeichen enthält.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-only-english-chars.webp"
+  alt="Vollständiger Name Enthält Nur Englische Zeichen"
+/>
+
+Für **Anzahl Zeichen größer oder gleich** oder **Anzahl Zeichen kleiner oder gleich**, geben Sie die Zeichenanzahl ein.
+
+> Beispiel: `Anzahl Zeichen größer oder gleich 10` → Trifft zu, wenn der vollständige Name 10 oder mehr Zeichen enthält.
+
+<img
+  src="/images/essentials/condition-sets/full-name-has-greater-value.webp"
+  alt="Vollständiger Name Größerer Wert"
+/>
+
+Für **Ist leer** und **Ist nicht leer**, ist keine Eingabe erforderlich.
+
+> Beispiel: `Ist leer` → Trifft zu, wenn das Namensfeld leer bleibt.
+
+<img
+  src="/images/essentials/condition-sets/full-name-is-empty.webp"
+  alt="Vollständiger Name Ist Leer"
+/>

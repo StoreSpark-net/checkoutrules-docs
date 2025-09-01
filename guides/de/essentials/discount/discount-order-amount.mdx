@@ -1,0 +1,146 @@
+---
+title: "Bestellbetrag rabattieren"
+description: "Rabatt auf den Bestell-Zwischensummenbetrag basierend auf den angegebenen Bedingungen."
+icon: "badge-percent"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, einen Rabatt auf die Bestell-Zwischensumme basierend auf den definierten Bedingungen anzuwenden.  
+Sie können Rabatte als Prozentsatz, festen Betrag abziehen, Prozentsatz unter Ausschluss bestimmter Produkte, Prozentsatz nur für bestimmte Produkte, festen Betrag unter Ausschluss bestimmter Produkte oder festen Betrag nur für bestimmte Produkte anbieten – mithilfe von Kriterien wie Warenkorbwert, Kundentags, Versandadresse oder Produktattributen usw.
+
+Mit dieser Regel können Sie einen Rabattcode erstellen oder einen automatischen Rabatt anlegen.  
+Wenn die Regel einen Rabattcode erstellt, kann der Kunde den Rabattcode beim Checkout verwenden, um den Rabatt zu erhalten.  
+Andernfalls, wenn ein automatischer Rabatt ausgewählt ist, kann die Regel automatisch einen Rabatt auf die Bestell-Zwischensumme anwenden, basierend auf den konfigurierten Bedingungen.  
+Dies hilft, Käufe zu fördern, bestimmte Kunden zu belohnen und die Conversion-Rate zu erhöhen.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie Sie mithilfe der App eine **Bestellbetrag rabattieren**-Regel erstellen und konfigurieren.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app).  
+Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet.  
+Wählen Sie _Kategorie "Rabatt" → Checkout-Regeltyp "Bestellbetrag rabattieren" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/discount/select-discount-amount.webp"
+  alt="Rabatt auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Bestellbetrag-rabattieren-Regel erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, fügen Sie zunächst optional einen Namen wie "Bestellbetrag rabattieren" hinzu, um zu beschreiben, was sie tut, wenn Sie einen **"Automatischen Rabatt"** anwenden möchten.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-order-amount.webp"
+  alt="Automatischer Rabattname"
+/>
+
+Oder, wenn Sie den Rabatt lieber über einen Rabattcode anwenden möchten, klicken Sie auf **"Rabattcode"** und geben Sie den gewünschten Code ein oder generieren Sie einen zufälligen, indem Sie auf **"Zufälligen Code generieren"** klicken.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-order-amount.webp"
+  alt="Rabattcode"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.  
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Regelstatus"
+/>
+
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Kombinationen](/guides/de/get-started/concepts#combinations)-Einstellungen, um zu steuern, wie dieser Bestellrabatt mit **anderen Rabatten** interagiert. Sie können zulassen, dass er kombiniert wird mit:
+
+- **Produktrabatten** – Dadurch kann der Bestellrabatt zusammen mit produktspezifischen Rabatten verwendet werden. Stellen Sie sicher, dass Produktrabatte auch so konfiguriert sind, dass sie mit Bestellrabatten kombiniert werden können.
+
+- **Bestellrabatten** – Dadurch können mehrere Bestellrabatte gleichzeitig angewendet werden. Stellen Sie sicher, dass die anderen Bestellrabatte ebenfalls so eingestellt sind, dass sie mit Bestellrabatten kombiniert werden.
+
+- **Versandrabatten** – Dadurch kann der Bestellrabatt zusammen mit Rabatten auf Versandebene verwendet werden. Bestätigen Sie, dass Versandrabatte ebenfalls so eingestellt sind, dass sie mit Bestellrabatten kombiniert werden.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Kombinationen"
+/>
+
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Strategie](/guides/de/get-started/concepts#strategy)-Einstellungen, um zu steuern, wie das System mit mehreren Rabattblöcken umgeht.  
+Sie können **Erste** auswählen, wodurch nur der erste Rabatt angewendet wird, der die Bedingungen erfüllt, unabhängig von besseren Rabatten, die später folgen könnten.  
+Oder Sie wählen **Maximum**, wodurch alle Rabattblöcke ausgewertet und derjenige mit der höchsten Reduktion angewendet wird.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Strategie Bestellrabatt"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm die relevante [Bedingung](/guides/de/get-started/concepts#conditions-when) und [Aktion](/guides/de/get-started/concepts#action-what).
+
+> Als Beispiel stellen wir hier die Regel so ein, dass sie immer ausgeführt wird, und konfigurieren sie so, dass ein **10%-Rabatt** mit der Option Prozentsatz angewendet wird.  
+> Die Rabattnachricht **"10% RABATT"** wird den Kunden beim Checkout angezeigt.
+
+<img
+  src="/images/essentials/discount/condition-set-discount-order-amount.webp"
+  alt="Bedingungsset Rabatt"
+/>
+
+Im Abschnitt Aktion können Sie den Rabatt mit **Prozentsatz** oder **Festem Betrag abziehen** anwenden, ohne bestimmte Produkte auswählen zu müssen.  
+Alle anderen Methoden – **Prozentsatz unter Ausschluss dieser Produkte, Prozentsatz nur für diese Produkte, Fester Betrag unter Ausschluss dieser Produkte und Fester Betrag nur für diese Produkte** – erfordern, dass Sie Produkte auswählen, damit der Rabatt funktioniert.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Aktionstyp Rabatt"
+/>
+
+Als Nächstes können Sie auf demselben Bildschirm im Abschnitt [Maximale Rabattnutzung](/guides/de/get-started/concepts#maximum-discount-uses) optional ein Nutzungslimit für den Rabattcode aktivieren, ihn auf eine einmalige Nutzung pro Kunde beschränken oder beides anwenden, falls ein Rabattcode ausgewählt ist.
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie, dass noch kein Rabatt angewendet
+  wurde.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nachdem die E-Mail-Adresse gesetzt wurde, läuft die Checkout-Regel und wendet den konfigurierten **10%-Rabatt** mit der Option Prozentsatz an.  
+Wir können überprüfen, dass die Rabattnachricht **"10% RABATT"** beim Checkout sichtbar ist, wie unten gezeigt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order-amount.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann.  
+Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen.  
+Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade
+  durchzuführen.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-order-amount.webp"
+  alt="Regel aktivieren"
+/>

@@ -1,0 +1,239 @@
+---
+title: "Bedingungssatz 6"
+description: "Erfahren Sie mehr über jede Bedingung im _Bedingungssatz 6_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/de/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/de/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/de/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import OrderTotalAmount from "/snippets/condition-set/de/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/de/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/de/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/de/order-total-subscription-weight.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/de/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/de/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/de/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/de/total-product-discount-percentage.mdx";
+import ProductTag from "/snippets/condition-set/de/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/de/product-tags.mdx";
+import LineItemProperty from "/snippets/condition-set/de/line-item-property.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-no-one-time-purchase-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/de/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/de/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import CityArea from "/snippets/condition-set/de/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Kunde
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+
+## Bestelldetails
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Steuerbetrag der Bestellung
+
+Diese Bedingung prüft den **Steuerbetrag der Bestellung** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Steuerbetrag der Bestellung größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Steuerbetrag der Bestellung kleiner oder gleich dem eingegebenen Betrag ist)
+
+Geben Sie den Betrag in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in Ihrer Shop-Währung ein. Einstellungen > Shop-Details > Shop
+  Währung
+</Note>
+
+> Zum Beispiel, `ist größer oder gleich 50` → Entspricht Bestellungen mit einem Steuerbetrag von 50 oder mehr.
+
+<img
+  src="/images/essentials/condition-sets/order-tax-amount.webp"
+  alt="Steuerbetrag der Bestellung"
+/>
+
+### Zollbetrag der Bestellung
+
+Diese Bedingung prüft den **Zollbetrag der Bestellung** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Zollbetrag der Bestellung größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Zollbetrag der Bestellung kleiner oder gleich dem eingegebenen Betrag ist)
+
+Geben Sie den Betrag in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in Ihrer Shop-Währung ein. Einstellungen > Shop-Details > Shop
+  Währung
+</Note>
+
+> Zum Beispiel, `ist größer oder gleich 80` → Entspricht Bestellungen mit einem Zollbetrag von 80 oder mehr.
+
+<img
+  src="/images/essentials/condition-sets/order-duty-amount.webp"
+  alt="Zollbetrag der Bestellung"
+/>
+
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+### Gesamtrabattbetrag (beliebiger Rabatttyp)
+
+Diese Bedingung prüft den **Gesamtrabattbetrag** der Bestellung (Produkt- oder Bestellrabatt) anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Gesamtrabattbetrag größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Gesamtrabattbetrag kleiner oder gleich dem eingegebenen Betrag ist)
+
+Geben Sie den Betrag in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in Ihrer Shop-Währung ein. Einstellungen > Shop-Details > Shop
+  Währung
+</Note>
+
+> Zum Beispiel, `ist kleiner oder gleich 50` → Entspricht, wenn der Gesamtrabattbetrag der Bestellung (beliebiger Typ) 50 oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/total-discount-amount.webp"
+  alt="Gesamtrabattbetrag"
+/>
+
+### Gesamtprozentualer Rabatt (beliebiger Rabatttyp)
+
+Diese Bedingung prüft den **gesamten prozentualen Rabatt** der Bestellung (Produkt- oder Bestellrabatt) anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Gesamtprozentsatz eines beliebigen Rabatttyps in der Bestellung größer oder gleich dem eingegebenen Prozentsatz ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Gesamtprozentsatz eines beliebigen Rabatttyps in der Bestellung kleiner oder gleich dem eingegebenen Prozentsatz ist)
+
+Geben Sie den Prozentsatz in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+> Zum Beispiel, `ist kleiner oder gleich 15` → Entspricht, wenn der Gesamtprozentsatz aus beliebigen Rabattarten in der Bestellung 15 % oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/total-discount-percentage.webp"
+  alt="Gesamtprozentualer Rabatt (beliebiger Rabatttyp)"
+/>
+
+### Gesamtbestellrabattbetrag
+
+Diese Bedingung prüft den **Gesamtbestellrabattbetrag** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Gesamtbetrag des Bestellrabatts größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Gesamtbetrag des Bestellrabatt kleiner oder gleich dem eingegebenen Betrag ist)
+
+Geben Sie den Betrag in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in Ihrer Shop-Währung ein. Einstellungen > Shop-Details > Shop
+  Währung
+</Note>
+
+> Zum Beispiel, `ist kleiner oder gleich 75` → Entspricht, wenn der Gesamtbestellrabatt 75 oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-amount.webp"
+  alt="Gesamtbestellrabattbetrag"
+/>
+
+### Gesamtbestellrabattprozentsatz
+
+Diese Bedingung prüft den **Gesamtprozentsatz des Bestellrabatts** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der angewendete Rabattprozentsatz auf die gesamte Bestellung größer oder gleich dem eingegebenen Prozentsatz ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der angewendete Rabattprozentsatz auf die gesamte Bestellung kleiner oder gleich dem eingegebenen Prozentsatz ist)
+
+Geben Sie den Prozentsatz in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+> Zum Beispiel, `ist kleiner oder gleich 15` → Entspricht, wenn der angewendete Rabattprozentsatz auf die Bestellung 15 % oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
+  alt="Gesamtbestellrabattprozentsatz"
+/>
+
+## Warenkorbdetails
+
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## Warenkorb enthält Artikel
+
+<ProductTag />
+<ProductTags />
+<LineItemProperty />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+
+## Versand
+
+<SelectedShippingMethod />
+
+### Preis der ausgewählten Versandmethode
+
+Diese Bedingung prüft den **Preis der ausgewählten Versandmethode** anhand bestimmter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Entspricht, wenn der Preis der ausgewählten Versandmethode größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Entspricht, wenn der Preis der ausgewählten Versandmethode kleiner oder gleich dem eingegebenen Betrag ist)
+
+Geben Sie den Betrag in das Feld ein und wählen Sie den Vergleich aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in Ihrer Shop-Währung ein. Einstellungen > Shop-Details > Shop
+  Währung
+</Note>
+
+> Zum Beispiel, `ist kleiner oder gleich 50` → Entspricht Bestellungen, bei denen der Preis der ausgewählten Versandmethode 50 oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-price.webp"
+  alt="Preis der ausgewählten Versandmethode"
+/>
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodPrice />
+<ShippingMethodsAvailable />
+
+## Lokalisierung
+<UserLanguage />
+
+## Versandadresse
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

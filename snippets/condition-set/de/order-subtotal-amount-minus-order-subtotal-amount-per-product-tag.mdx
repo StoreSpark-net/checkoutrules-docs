@@ -1,0 +1,36 @@
+### Bestell-Zwischensumme – Bestellung Zwischensumme pro Produkt-Tag
+
+Diese Bedingung überprüft die **Bestell-Zwischensumme abzüglich der Zwischensumme der Produkte mit einem bestimmten Produkt-Tag** anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Betrag ist größer oder gleich** (Trifft zu, wenn die Differenz größer oder gleich dem eingegebenen Betrag ist)  
+- **Betrag ist kleiner oder gleich** (Trifft zu, wenn die Differenz kleiner oder gleich dem eingegebenen Betrag ist)  
+
+So legen Sie diese Bedingungen fest:
+
+<Steps>
+  <Step title="Produkt-Tag eingeben">
+    Geben Sie den <strong>Produkt-Tag</strong> in das Feld „Produkt-Tag eingeben“ ein.
+  </Step>
+
+  <Step title="Betrag eingeben">
+    Geben Sie den <strong>Betrag</strong> in das Feld „Betrag eingeben“ ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown-Menü.
+  </Step>
+</Steps>
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> **Beispiel für „Betrag ist kleiner oder gleich“**:  
+> Produkt-Tag: `SummerCollection`  
+> Betrag: `500`  
+> → Trifft auf Bestellungen zu, bei denen die Zwischensumme ohne Produkte mit dem Tag `SummerCollection` 500 oder weniger beträgt.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-minus-product-tag-has-less-value.webp"
+  alt="Bestell-Zwischensumme abzüglich Produkt-Tag Bedingung"
+/>
