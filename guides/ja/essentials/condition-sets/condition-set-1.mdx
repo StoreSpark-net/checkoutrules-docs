@@ -1,0 +1,246 @@
+---
+title: "条件セット 1"
+description: "_条件セット 1_ 内で利用可能な各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/ja/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/ja/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/ja/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/ja/customer-tags.mdx";
+import OrderTotalAmount from "/snippets/condition-set/ja/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import SKU from "/snippets/condition-set/ja/sku.mdx";
+import ProductTags from "/snippets/condition-set/ja/product-tags.mdx";
+import Collections from "/snippets/condition-set/ja/collections.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/ja/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/ja/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/ja/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/ja/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/ja/address-line2.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import CityArea from "/snippets/condition-set/ja/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 日付と時間
+
+### 追加設定が必要です
+
+**日付と時間** 条件を設定する際は、追加の設定が必要です。以下の手順に従ってください。
+
+<Steps>
+  <Step title="タイムゾーンを選択する">
+    <strong>タイムゾーンを選択してください</strong> ドロップダウンから店舗のタイムゾーンを選択し、<strong>"保存"</strong> をクリックして適用します。
+    
+    > 例えば、太平洋時間 (PT) を使用する場合は、<strong>バンクーバー</strong> を選択します。
+
+    <img
+      src="/images/essentials/condition-sets/select-timezone.webp"
+      alt="タイムゾーンを選択"
+    />
+  </Step>
+
+  <Step title="テーマで BeSure 埋め込みブロックを有効にする">
+    - <strong>BeSure 埋め込みブロック</strong> リンクをクリックして、テーマでブロックを有効にします。
+    
+    <img
+      src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
+      alt="BeSure 埋め込みブロックをクリック"
+    />
+
+    - テーマエディタで、<em>アプリ埋め込み</em> の下にある <strong>BeSure 埋め込みブロック</strong> を見つけて有効にします。
+    
+    <img
+      src="/images/essentials/condition-sets/locate-and-enable-block.webp"
+      alt="ブロックを探して有効化"
+    />
+  </Step>
+
+  <Step title="テーマを保存する">
+    ブロックを有効にした後、テーマを保存してください。<strong>保存</strong> ボタンは右上にあります。
+    
+    <img
+      src="/images/essentials/condition-sets/save-theme.webp"
+      alt="テーマを保存"
+    />
+  </Step>
+
+  <Step title="完了としてマーク (任意)">
+    すべてのステップが完了したら <strong>"完了としてマーク"</strong> をクリックし、ルールを保存してください。
+    
+    <img
+      src="/images/essentials/condition-sets/mark-as-done.webp"
+      alt="完了としてマーク"
+    />
+  </Step>
+
+  <Step title="ルールをテストする">
+    ルールを作成した後、まずカートを空にします。その後、新しい商品をカートに追加し、チェックアウトに進んでルールが期待通りに動作するか確認してください。
+  </Step>
+</Steps>
+
+### 日付
+
+顧客のチェックアウト日を選択した日付または日付範囲と比較するために使用され、以下のサブ条件のいずれかに基づきます:
+
+- **は** (顧客のチェックアウト日が選択した日付と一致する場合)
+- **ではない** (顧客のチェックアウト日が選択した日付と一致しない場合)
+- **より前** (顧客のチェックアウト日が選択した日付より前の場合)
+- **より後** (顧客のチェックアウト日が選択した日付より後の場合)
+- **の間にある** (顧客のチェックアウト日が開始日と終了日の間にある場合)
+- **の間にない** (顧客のチェックアウト日が開始日と終了日の間にない場合)
+
+**は**、**ではない**、**より前**、**より後** の場合、カレンダーピッカーから単一の日付を選択します。
+
+> 例: `より前 2025年8月11日` → 2025年8月11日より前の日付に一致。
+
+<img
+  src="/images/essentials/condition-sets/single-date.webp"
+  alt="単一の日付"
+/>
+
+**の間にある** と **の間にない** の場合は、開始日と終了日の両方をカレンダーピッカーから選択します。
+
+> 例: `の間にある 2025年8月11日 と 2025年8月19日` → 2025年8月11日から2025年8月19日までの日付に一致。
+
+<img
+  src="/images/essentials/condition-sets/multiple-dates.webp"
+  alt="複数の日付"
+/>
+
+### 曜日
+
+顧客のチェックアウト日が選択した曜日または曜日範囲と比較され、以下のサブ条件のいずれかに基づきます:
+
+- **は** (顧客のチェックアウト日が選択した曜日と一致する場合)
+
+- **ではない** (顧客のチェックアウト日が選択した曜日と一致しない場合)
+
+- **の間にある** (顧客のチェックアウト日が開始曜日と終了曜日の間にある場合)
+
+- **の間にない** (顧客のチェックアウト日が開始曜日と終了曜日の間にない場合)
+
+**は** と **ではない** の場合、ドロップダウンから単一の曜日を選択します。
+
+> 例: `は 月曜日` → 月曜日に一致。
+
+<img src="/images/essentials/condition-sets/single-day.webp" alt="単一の曜日" />
+
+**の間にある** と **の間にない** の場合、ドロップダウンから開始曜日と終了曜日の両方を選択します。
+
+> 例: `の間にある 月曜日 と 金曜日` → 月曜日から金曜日の間の曜日に一致。
+
+<img
+  src="/images/essentials/condition-sets/multiple-days.webp"
+  alt="複数の曜日"
+/>
+
+### 時刻
+
+顧客のチェックアウト時間を選択した時刻または時間範囲と比較するために使用され、以下のサブ条件のいずれかに基づきます:
+
+- **は** (顧客のチェックアウト時間が選択した時刻と一致する場合)
+
+- **ではない** (顧客のチェックアウト時間が選択した時刻と一致しない場合)
+
+- **の間にある** (顧客のチェックアウト時間が開始時刻と終了時刻の間にある場合)
+
+- **の間にない** (顧客のチェックアウト時間が開始時刻と終了時刻の間にない場合)
+
+**は** と **ではない** の場合、ドロップダウンから単一の時刻を選択します。
+
+> 例: `は 02:30` → 午前2時30分ちょうどに一致。
+
+<img
+  src="/images/essentials/condition-sets/single-time.webp"
+  alt="単一の時刻"
+/>
+
+**の間にある** と **の間にない** の場合、ドロップダウンから開始時刻と終了時刻の両方を選択します。
+
+> 例: `の間にない 01:30 と 05:00` → 午前1時30分から午前5時の間ではない時間に一致。
+
+<img
+  src="/images/essentials/condition-sets/multiple-times.webp"
+  alt="複数の時刻"
+/>
+
+### 曜日と時刻
+
+顧客のチェックアウトの曜日と時刻を選択した範囲と比較するために使用され、以下の条件に基づきます:
+
+- **の間にある** (チェックアウトの曜日と時刻が選択した開始と終了の値の間にある場合に一致)
+- **の間にない** (チェックアウトの曜日と時刻が選択した開始と終了の値の間にない場合に一致)
+
+これらの条件を設定するには、ドロップダウンから開始の曜日と時刻、および終了の曜日と時刻を選択します。
+
+> 例: `の間にある 月曜日 00:00 と 水曜日 12:00` → 月曜日午前0時から水曜日正午までに行われたチェックアウトに一致。
+
+<img
+  src="/images/essentials/condition-sets/range-day-and-time.webp"
+  alt="曜日と時刻"
+/>
+
+## 顧客
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTags />
+
+## 注文の詳細
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+## カートに商品が含まれる
+
+<SKU />
+<ProductTags />
+<Collections />
+
+## 配送
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## ローカリゼーション
+<UserLanguage />
+
+## 配送先住所
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
