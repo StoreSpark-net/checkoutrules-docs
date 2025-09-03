@@ -196,82 +196,82 @@
           }
         ]
       },
-      {
-        "language": "fr",
-        "groups": [
-          {
-            "group": "Prise en main",
-            "icon": "code",
-            "pages": [
-              "guides/fr/get-started/introduction",
-              "guides/fr/get-started/installation",
-              "guides/fr/get-started/concepts",
-              "guides/fr/get-started/quickstart",
-              "guides/fr/get-started/faq"
-            ]
-          },
-          {
-            "group": "Essentiels",
-            "icon": "book",
-            "pages": [
-              {
-                "group": "Ensembles de Conditions",
-                "icon": "filter",
-                "pages": [
-                  "guides/fr/essentials/condition-sets/introduction"
-                ]
-              },
-              {
-                "group": "Expédition",
-                "icon": "truck",
-                "pages": [
-                  "guides/fr/essentials/shipping/reorder-shipping-methods",
-                  "guides/fr/essentials/shipping/hide-shipping-methods",
-                  "guides/fr/essentials/shipping/rename-shipping-methods",
-                  "guides/fr/essentials/shipping/discount-shipping-methods"
-                ]
-              },
-              {
-                "group": "Paiement",
-                "icon": "credit-card",
-                "pages": [
-                  "guides/fr/essentials/payment/hide-express-checkout-options",
-                  "guides/fr/essentials/payment/reorder-payment-methods",
-                  "guides/fr/essentials/payment/hide-payment-methods",
-                  "guides/fr/essentials/payment/rename-payment-methods"
-                ]
-              },
-              {
-                "group": "Validation",
-                "icon": "shield-check",
-                "pages": [
-                  "guides/fr/essentials/validation/validate-block-checkout"
-                ]
-              },
-              {
-                "group": "Remise",
-                "icon": "tag",
-                "pages": [
-                  "guides/fr/essentials/discount/discount-order-amount",
-                  "guides/fr/essentials/discount/discount-shipping-methods"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Avancé",
-            "icon": "grid",
-            "pages": [
-              "guides/fr/advanced/branching",
-              "guides/fr/advanced/concurrency",
-              "guides/fr/advanced/translations",
-              "guides/fr/advanced/multi-store-support",
-              "guides/fr/advanced/rule-duplication",
-              "guides/fr/advanced/block-replication"
-            ]
-          }
-        ]
-      }
+        {
+          "language": "zh-Hans",
+          "groups": [
+            {
+              "group": "入门",
+              "icon": "code",
+              "pages": [
+                "guides/zh-hans/get-started/introduction",
+                "guides/zh-hans/get-started/installation",
+                "guides/zh-hans/get-started/concepts",
+                "guides/zh-hans/get-started/quickstart",
+                "guides/zh-hans/get-started/faq"
+              ]
+            },
+            {
+              "group": "必备",
+              "icon": "book",
+              "pages": [
+                {
+                  "group": "条件集",
+                  "icon": "filter",
+                  "pages": [
+                    "guides/zh-hans/essentials/condition-sets/introduction"
+                  ]
+                },
+                {
+                  "group": "船运",
+                  "icon": "truck",
+                  "pages": [
+                    "guides/zh-hans/essentials/shipping/reorder-shipping-methods",
+                    "guides/zh-hans/essentials/shipping/hide-shipping-methods",
+                    "guides/zh-hans/essentials/shipping/rename-shipping-methods",
+                    "guides/zh-hans/essentials/shipping/discount-shipping-methods"
+                  ]
+                },
+                {
+                  "group": "付款",
+                  "icon": "credit-card",
+                  "pages": [
+                    "guides/zh-hans/essentials/payment/hide-express-checkout-options",
+                    "guides/zh-hans/essentials/payment/reorder-payment-methods",
+                    "guides/zh-hans/essentials/payment/hide-payment-methods",
+                    "guides/zh-hans/essentials/payment/rename-payment-methods"
+                  ]
+                },
+                {
+                  "group": "验证",
+                  "icon": "shield-check",
+                  "pages": [
+                    "guides/zh-hans/essentials/validation/validate-block-checkout"
+                  ]
+                },
+                {
+                  "group": "折扣",
+                  "icon": "tag",
+                  "pages": [
+                    "guides/zh-hans/essentials/discount/discount-order-amount",
+                    "guides/zh-hans/essentials/discount/discount-shipping-methods"
+                  ]
+                }
+              ]
+            },
+            {
+              "group": "先进的",
+              "icon": "grid",
+              "pages": [
+                "guides/zh-hans/advanced/branching",
+                "guides/zh-hans/advanced/concurrency",
+                "guides/zh-hans/advanced/translations",
+                "guides/zh-hans/advanced/multi-store-support",
+                "guides/zh-hans/advanced/rule-duplication",
+                "guides/zh-hans/advanced/block-replication"
+              ]
+            }
+          ]
+        }
     ]
   },
   "logo": {
