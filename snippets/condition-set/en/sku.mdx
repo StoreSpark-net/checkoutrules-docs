@@ -1,0 +1,27 @@
+### SKU
+
+This condition checks the **SKU** of the products in the cart against specific criteria. It will become true if **any** product in the cart has the entered SKU value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the SKU has at least one of the entered values)
+- **Does not have any of these values** (Matches if the SKU has none of the entered values)
+- **Has any other value besides these values** (Matches if the SKU has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the SKU has only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of SKUs is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of SKUs is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more SKU values into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match multiple SKU values. For example, SKU* will match
+  SKU12, sku-new-1 etc.
+</Note>
+> For example, `Has any of these values: SKU1, SKU2` → Matches if the SKU is either
+“SKU1” or “SKU2”.{" "}
+
+<img src="/images/essentials/condition-sets/skus.webp" alt="SKUs" />
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the SKU count.
+
+> For example, `Has number of values greater than or equals 3` → Matches if there are three or more SKUs.
+
+<img src="/images/essentials/condition-sets/count-sku.webp" alt="SKU Count" />

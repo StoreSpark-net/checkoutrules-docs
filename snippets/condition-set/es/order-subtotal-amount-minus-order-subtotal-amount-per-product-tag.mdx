@@ -1,0 +1,36 @@
+### Importe subtotal del pedido - Importe subtotal del pedido por etiqueta de producto
+
+Esta condición verifica el **importe subtotal del pedido menos el importe subtotal de los productos con una etiqueta de producto específica** según criterios definidos, basado en una de las siguientes subcondiciones:
+
+- **el importe es mayor o igual que** (Coincide cuando la diferencia es mayor o igual al importe ingresado)
+- **el importe es menor o igual que** (Coincide cuando la diferencia es menor o igual al importe ingresado)
+
+Para configurar estas condiciones:
+
+<Steps>
+  <Step title="Ingresar etiqueta de producto">
+    Ingrese la <strong>etiqueta de producto</strong> en el campo “Ingresar etiqueta de producto”.
+  </Step>
+
+  <Step title="Ingresar importe">
+    Ingrese el <strong>importe</strong> en el campo “Ingresar importe”.
+  </Step>
+
+  <Step title="Seleccionar opción de comparación">
+    Seleccione la opción de comparación del menú desplegable.
+  </Step>
+</Steps>
+
+<Note>
+  Ingrese el importe en la moneda de su tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> **Ejemplo para “el importe es menor o igual que”**:  
+> Etiqueta de producto: `SummerCollection`  
+> Importe: `500`  
+> → Coincide con pedidos donde el importe subtotal excluyendo productos etiquetados `SummerCollection` es 500 o menos.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-minus-product-tag-has-less-value.webp"
+  alt="Importe subtotal del pedido menos etiqueta de producto - Valor menor"
+/>

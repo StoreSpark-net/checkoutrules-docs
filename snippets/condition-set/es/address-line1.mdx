@@ -1,0 +1,54 @@
+### Línea de dirección 1
+
+Se utiliza para comparar la dirección del cliente de la Línea de Dirección 1 con uno o más valores específicos, conteos o estados, en función de una de las siguientes subcondiciones:
+
+- **Contiene** (Coincide si la Línea de Dirección 1 contiene el valor especificado o un valor parcial)
+- **No contiene** (Coincide si la Línea de Dirección 1 no contiene el valor especificado o un valor parcial)
+- **Está vacía** (Coincide si no se ingresa ningún valor en la Línea de Dirección 1)
+- **No está vacía** (Coincide si se ingresa algún valor en la Línea de Dirección 1)
+- **Tiene un número de dígitos mayor o igual** (Coincide si el número total de dígitos en la Línea de Dirección 1 es mayor o igual al número especificado)
+- **Tiene un número de dígitos menor o igual** (Coincide si el número total de dígitos en la Línea de Dirección 1 es menor o igual al número especificado)
+- **Tiene un número de caracteres mayor o igual** (Coincide si el número total de caracteres en la Línea de Dirección 1 es mayor o igual al número especificado)
+- **Tiene un número de caracteres menor o igual** (Coincide si el número total de caracteres en la Línea de Dirección 1 es menor o igual al número especificado)
+- **Tiene un número de palabras mayor o igual** (Coincide si el número total de palabras en la Línea de Dirección 1 es mayor o igual al número especificado)
+- **Tiene un número de palabras menor o igual** (Coincide si el número total de palabras en la Línea de Dirección 1 es menor o igual al número especificado)
+- **Tiene solo** (Coincide si la Línea de Dirección 1 contiene solo el tipo de carácter permitido del menú desplegable)
+- **No tiene solo** (Coincide si la Línea de Dirección 1 contiene caracteres distintos al tipo de carácter permitido del menú desplegable)
+
+Para **Contiene** y **No contiene**, ingrese el valor a coincidir.
+
+> Por ejemplo, `Contiene: Street` → Coincide si la Línea de Dirección 1 contiene la palabra “Street”.
+
+<img
+  src="/images/essentials/condition-sets/address1-contains.webp"
+  alt="La Línea de Dirección 1 contiene"
+/>
+
+Para **Tiene solo** y **No tiene solo**, seleccione el tipo de carácter en el menú desplegable:
+
+- **Caracteres en inglés** (Permite solo A–Z y a–z)
+- **Caracteres en inglés + variantes con acentos** (Permite A–Z, a–z, más caracteres acentuados como é, ñ, ö)
+  > Por ejemplo, `Tiene solo: caracteres en inglés` → Coincide si la Línea de Dirección 1 contiene solo caracteres en inglés.
+
+<img
+  src="/images/essentials/condition-sets/address1-has-only.webp"
+  alt="La Línea de Dirección 1 tiene solo"
+/>
+
+Para **Tiene un número de dígitos/caracteres/palabras mayor o igual** o **menor o igual**, ingrese el valor límite.
+
+> Por ejemplo, `Tiene un número de palabras mayor o igual a 5` → Coincide si la Línea de Dirección 1 contiene 5 o más palabras.
+
+<img
+  src="/images/essentials/condition-sets/address1-greater-than.webp"
+  alt="La Línea de Dirección 1 mayor que"
+/>
+
+Para **Está vacía** y **No está vacía**, no es necesario ingresar un valor.
+
+> Por ejemplo, `Está vacía` → Coincide si la Línea de Dirección 1 está en blanco.
+
+<img
+  src="/images/essentials/condition-sets/address1-is-empty.webp"
+  alt="La Línea de Dirección 1 está vacía"
+/>

@@ -1,0 +1,234 @@
+---
+title: "Conjunto de Condiciones 6"
+description: "Aprende sobre cada condición disponible dentro de _Conjunto de <br />Condiciones 6_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/es/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/es/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/es/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/es/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/es/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/es/email-address.mdx";
+import OrderTotalAmount from "/snippets/condition-set/es/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/es/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/es/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/es/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/es/order-total-subscription-weight.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/es/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/es/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/es/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/es/total-product-discount-percentage.mdx";
+import ProductTag from "/snippets/condition-set/es/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/es/product-tags.mdx";
+import LineItemProperty from "/snippets/condition-set/es/line-item-property.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/es/cart-has-no-one-time-purchase-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/es/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/es/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/es/first-name.mdx";
+import LastName from "/snippets/condition-set/es/last-name.mdx";
+import Company from "/snippets/condition-set/es/company.mdx";
+import PhoneNumber from "/snippets/condition-set/es/phone-number.mdx";
+import CityArea from "/snippets/condition-set/es/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/es/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Cliente
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+
+## Detalles del pedido
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Monto de impuestos del pedido
+
+Esta condición verifica el **monto de impuestos del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el monto de impuestos del pedido es mayor o igual al monto ingresado)  
+- **es menor o igual a** (Coincide cuando el monto de impuestos del pedido es menor o igual al monto ingresado)  
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual a 50` → Coincide con pedidos con un monto de impuestos de 50 o más.  
+
+<img
+  src="/images/essentials/condition-sets/order-tax-amount.webp"
+  alt="Monto de Impuestos del Pedido"
+/>
+
+### Monto de aranceles del pedido
+
+Esta condición verifica el **monto de aranceles del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el monto de aranceles del pedido es mayor o igual al monto ingresado)  
+- **es menor o igual a** (Coincide cuando el monto de aranceles del pedido es menor o igual al monto ingresado)  
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es mayor o igual a 80` → Coincide con pedidos con un monto de aranceles de 80 o más.  
+
+<img
+  src="/images/essentials/condition-sets/order-duty-amount.webp"
+  alt="Monto de Aranceles del Pedido"
+/>
+
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+### Monto total de descuento (cualquier tipo de descuento)
+
+Esta condición verifica el **monto total de descuento** en el pedido (cualquier descuento de producto o pedido) contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el monto total de descuento es mayor o igual al monto ingresado)  
+- **es menor o igual a** (Coincide cuando el monto total de descuento es menor o igual al monto ingresado)  
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es menor o igual a 50` → Coincide si el monto total de descuento del pedido (cualquier tipo) es 50 o menos.  
+
+<img
+  src="/images/essentials/condition-sets/total-discount-amount.webp"
+  alt="Monto Total de Descuento"
+/>
+
+### Porcentaje total de descuento (cualquier tipo de descuento)
+
+Esta condición verifica el **porcentaje total de descuento** en el pedido (cualquier descuento de producto o pedido) contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es mayor o igual al porcentaje ingresado)  
+- **es menor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es menor o igual al porcentaje ingresado)  
+
+Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.  
+
+> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento de cualquier tipo en el pedido es 15% o menos.  
+
+<img
+  src="/images/essentials/condition-sets/total-discount-percentage.webp"
+  alt="Porcentaje Total de Descuento (Cualquier Tipo)"
+/>
+
+### Monto total de descuento del pedido
+
+Esta condición verifica el **monto total de descuento del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el monto total de descuento del pedido es mayor o igual al monto ingresado)  
+- **es menor o igual a** (Coincide cuando el monto total de descuento del pedido es menor o igual al monto ingresado)  
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es menor o igual a 75` → Coincide si el monto total de descuento de todo el pedido es 75 o menos.  
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-amount.webp"
+  alt="Monto Total de Descuento del Pedido"
+/>
+
+### Porcentaje total de descuento del pedido
+
+Esta condición verifica el **porcentaje total de descuento del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es mayor o igual al porcentaje ingresado)  
+- **es menor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es menor o igual al porcentaje ingresado)  
+
+Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.  
+
+> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento aplicado en el pedido es 15% o menos.  
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
+  alt="Porcentaje Total de Descuento del Pedido"
+/>
+
+## Detalles del carrito
+
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## El carrito tiene algún artículo
+
+<ProductTag />
+<ProductTags />
+<LineItemProperty />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+
+## Envío
+
+<SelectedShippingMethod />
+
+### Precio del método de envío seleccionado
+
+Esta condición verifica el **precio del método de envío seleccionado** contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **es mayor o igual a** (Coincide cuando el precio del método de envío seleccionado es mayor o igual al monto ingresado)  
+- **es menor o igual a** (Coincide cuando el precio del método de envío seleccionado es menor o igual al monto ingresado)  
+
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+
+<Note>
+  Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
+</Note>
+
+> Por ejemplo, `es menor o igual a 50` → Coincide con pedidos donde el precio del método de envío seleccionado es 50 o menos.  
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-price.webp"
+  alt="Precio del Método de Envío Seleccionado"
+/>
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodPrice />
+<ShippingMethodsAvailable />
+
+## Localización
+<UserLanguage />
+
+## Dirección de envío
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
