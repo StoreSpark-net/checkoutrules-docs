@@ -1,0 +1,84 @@
+### Code postal
+
+Utilisé pour comparer les valeurs du code postal (le champ Code postal sur la page de paiement dans l’adresse de livraison) avec un ou plusieurs codes postaux spécifiques, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (correspond si le champ code postal contient au moins une des valeurs listées)
+- **N’a aucune de ces valeurs** (correspond si le champ code postal ne contient aucune des valeurs listées)
+- **A une valeur comprise entre ces valeurs** (correspond si la valeur du champ code postal se situe dans l’intervalle spécifié)
+- **N’a pas de valeur comprise entre ces valeurs** (correspond si la valeur du champ code postal ne se situe pas dans l’intervalle spécifié)
+- **A toute autre valeur en dehors de ces valeurs** (correspond si le champ code postal contient des valeurs autres que celles listées)
+- **N’a aucune autre valeur en dehors de ces valeurs** (correspond si le champ code postal contient uniquement les valeurs listées et aucune autre)
+- **Contient uniquement des chiffres** (correspond si le champ code postal contient uniquement des caractères numériques)
+- **Ne contient pas uniquement des chiffres** (correspond si le champ code postal contient des caractères non numériques)
+- **A un nombre de chiffres compris entre** (correspond si le nombre de chiffres se situe dans l’intervalle spécifié)
+- **N’a pas un nombre de chiffres compris entre** (correspond si le nombre de chiffres ne se situe pas dans l’intervalle spécifié)
+- **Est vide** (correspond si le champ code postal n’a aucune valeur)
+- **N’est pas vide** (correspond si le champ code postal contient une valeur)
+
+Utilisez **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A toute autre valeur en dehors de ces valeurs**, ou **N’a aucune autre valeur en dehors de ces valeurs** pour comparer avec un ou plusieurs codes postaux spécifiques. Séparez plusieurs valeurs par des virgules.
+
+<Note>
+  Utilisez le caractère générique * pour correspondre à plusieurs codes postaux.  
+  Par exemple, BT* correspondra à BT12, bt-590, etc.  
+  Utilisez ? pour correspondre à n’importe quel caractère unique.
+</Note>
+
+> Par exemple, `A l’une de ces valeurs : BT*` → correspond à tous les codes postaux commençant par “BT”.
+
+<img
+  src="/images/essentials/condition-sets/have-zipcodes.webp"
+  alt="Avoir des codes postaux"
+/>
+
+> Un autre exemple, `N’a aucune de ces valeurs : 12345, 67890` → correspond si le code n’est pas “12345” ou “67890”.
+
+<img
+  src="/images/essentials/condition-sets/dont-have-zipcodes.webp"
+  alt="Ne pas avoir de codes postaux"
+/>
+
+Utilisez **A une valeur comprise entre ces valeurs** ou **N’a pas de valeur comprise entre ces valeurs** pour correspondre aux codes postaux dans ou en dehors d’un intervalle numérique.
+
+<Note>
+  Entrez uniquement des nombres.  
+  Toutes les valeurs comprises entre la valeur de départ et la valeur finale seront prises en compte, y compris la valeur de départ et la valeur finale.
+</Note>
+
+> Par exemple, `A une valeur comprise entre ces valeurs : 10000 – 20000` → correspond si le code est compris entre “10000” et “20000”.
+
+<img
+  src="/images/essentials/condition-sets/in-between-value-zipcodes.webp"
+  alt="Codes postaux compris entre deux valeurs"
+/>
+
+Utilisez **Contient uniquement des chiffres** ou **Ne contient pas uniquement des chiffres** pour correspondre aux codes postaux qui contiennent uniquement des caractères numériques (0–9) ou à ceux qui incluent des caractères non numériques, tels que des lettres, des espaces ou des symboles.
+
+> Par exemple, `Contient uniquement des chiffres` → correspond uniquement aux chiffres (0–9).
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field-digits.webp"
+  alt="Code postal uniquement chiffres"
+/>
+
+Utilisez **A un nombre de chiffres compris entre** ou **N’a pas un nombre de chiffres compris entre** pour correspondre selon le nombre de chiffres dans le code.
+
+<Note>
+  Entrez uniquement des nombres.  
+  Toutes les valeurs comprises entre le nombre de chiffres indiqué seront prises en compte.
+</Note>
+
+> Par exemple, `A un nombre de chiffres compris entre : 4 – 6` → correspond aux codes contenant entre 4 et 6 chiffres.
+
+<img
+  src="/images/essentials/condition-sets/in-between-digits-zipcodes.webp"
+  alt="Codes postaux nombre de chiffres compris entre"
+/>
+
+Utilisez **Est vide** ou **N’est pas vide** lorsque vous devez simplement vérifier si le champ est rempli ou non.
+
+> Par exemple, `N’est pas vide` → correspond si une valeur est saisie dans le champ.
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field.webp"
+  alt="Champ code postal"
+/>

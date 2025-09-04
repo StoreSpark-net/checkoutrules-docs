@@ -1,0 +1,27 @@
+### SKU
+
+Cette condition vérifie le **SKU** des produits dans le panier par rapport à des critères spécifiques. Elle devient vraie si **au moins un** produit dans le panier possède la valeur SKU saisie, selon l’une des sous-conditions suivantes :
+
+- **Contient l’une de ces valeurs** (Correspond si le SKU contient au moins une des valeurs saisies)
+- **Ne contient aucune de ces valeurs** (Correspond si le SKU ne contient aucune des valeurs saisies)
+- **Contient une autre valeur que celles-ci** (Correspond si le SKU a une valeur qui n’est pas parmi celles saisies)
+- **Ne contient aucune autre valeur que celles-ci** (Correspond si le SKU contient uniquement les valeurs saisies et aucune autre)
+- **A un nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de SKU est supérieur ou égal au nombre saisi)
+- **A un nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de SKU est inférieur ou égal au nombre saisi)
+
+Pour **Contient l’une de ces valeurs**, **Ne contient aucune de ces valeurs**, **Contient une autre valeur que celles-ci**, et **Ne contient aucune autre valeur que celles-ci**, saisissez une ou plusieurs valeurs de SKU dans le champ. Séparez plusieurs valeurs par des virgules.
+
+<Note>
+  Utilisez le caractère générique * pour faire correspondre plusieurs valeurs de SKU.  
+  Par exemple, SKU* correspondra à SKU12, sku-new-1, etc.
+</Note>
+
+> Par exemple, `Contient l’une de ces valeurs : SKU1, SKU2` → Correspond si le SKU est soit “SKU1” soit “SKU2”.
+
+<img src="/images/essentials/condition-sets/skus.webp" alt="SKUs" />
+
+Pour **A un nombre de valeurs supérieur ou égal à** et **A un nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour correspondre au nombre de SKU.
+
+> Par exemple, `A un nombre de valeurs supérieur ou égal à 3` → Correspond s’il y a trois SKU ou plus.
+
+<img src="/images/essentials/condition-sets/count-sku.webp" alt="Nombre de SKU" />

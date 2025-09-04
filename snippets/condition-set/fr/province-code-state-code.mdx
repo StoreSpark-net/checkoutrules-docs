@@ -1,0 +1,38 @@
+### Code de province / Code d’état
+
+Utilisé pour comparer la Province / l’État (le champ Province/État sur la page de paiement dans l’adresse de livraison) avec une ou plusieurs valeurs ou états spécifiques, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si le champ province contient au moins une des valeurs listées)
+
+- **N’a aucune de ces valeurs** (Correspond si le champ province ne contient aucune des valeurs listées)
+
+- **A toute autre valeur en dehors de ces valeurs** (Correspond si le champ province contient des valeurs autres que celles listées)
+
+- **N’a aucune autre valeur en dehors de ces valeurs** (Correspond si le champ province contient uniquement les valeurs listées et aucune autre)
+
+- **Est vide** (Correspond si le champ province n’a aucune valeur)
+
+- **N’est pas vide** (Correspond si le champ province contient une valeur)
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A toute autre valeur en dehors de ces valeurs**, **N’a aucune autre valeur en dehors de ces valeurs**, entrez une ou plusieurs valeurs à comparer. Séparez plusieurs valeurs par des virgules.
+
+<Note>
+  Ajoutez uniquement l’abréviation du code de province/état de 2 ou 3 lettres
+  au format "ISO_3166-2".
+</Note>
+
+> Par exemple, `N’a aucune autre valeur en dehors de ces valeurs : CA, TX` → Correspond si le champ contient uniquement « CA » ou « TX » et aucune autre valeur.
+
+<img
+  src="/images/essentials/condition-sets/multiple-provinces.webp"
+  alt="Provinces ou États Multiples"
+/>
+
+Pour **Est vide** et **N’est pas vide**, aucune saisie de valeur n’est nécessaire.
+
+> Par exemple, `N’est pas vide` → Correspond si une valeur est saisie pour le champ.
+
+<img
+  src="/images/essentials/condition-sets/province-not-available.webp"
+  alt="Province ou État Non Disponible"
+/>

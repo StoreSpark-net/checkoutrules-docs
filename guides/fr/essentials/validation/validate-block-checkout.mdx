@@ -1,0 +1,133 @@
+---
+title: "Valider/bloquer le passage en caisse"
+description: "Afficher des erreurs ou bloquer un passage en caisse invalide (ou non autorisé) selon des conditions données."
+icon: "ban"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet de valider ou de bloquer le processus de passage en caisse en fonction de conditions définies. Vous pouvez afficher des messages d’erreur personnalisés ou empêcher complètement le passage en caisse lorsque certains critères sont remplis, tels que : contenu invalide du panier, régions de livraison restreintes, balises client ou attributs de produit manquants, etc.
+
+Cela permet de faire respecter les règles commerciales, d’éviter les commandes non prises en charge et de guider les clients pour résoudre les problèmes avant de terminer le passage en caisse.
+
+## Exemple de configuration
+
+Les étapes suivantes montrent comment créer et configurer une règle **Valider/Bloquer le passage en caisse** à l’aide de l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [admin Shopify](/guides/fr/get-started/installation#go-to-the-app), ouvrez l’application. Dans la barre latérale, allez à la section [Règles](/guides/fr/get-started/quickstart#create-a-sample-rule) et cliquez sur _"Créer une règle"_.
+
+Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle de passage en caisse**. Choisissez _catégorie "Validation" → type de règle de passage en caisse "Valider/Bloquer le passage en caisse" → cliquez sur “Sélectionner la règle”_.
+
+<img
+  src="/images/essentials/validation/select-validation-block-rule.webp"
+  alt="Sélectionner la règle de validation/blocage"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de validation/blocage du passage en caisse**, où vous pouvez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, nous pouvons d’abord, facultativement, ajouter un nom tel que "Valider/Bloquer le passage en caisse" pour décrire ce qu’elle fait. Ensuite, sélectionnez le [statut](/guides/fr/get-started/concepts#status) de la règle : Mise à l’essai, Active ou Désactivée.
+
+Ici, nous allons choisir le statut **Mise à l’essai**, afin de pouvoir rapidement tester la règle sans affecter le passage en caisse des vrais clients.
+
+<img
+  src="/images/essentials/validation/rule-configure-1-validation-block-rule.webp"
+  alt="Configuration de la règle 1"
+/>
+
+Ensuite, sur le même écran, sélectionnez au moins une option sous [Déclencher cette règle](/guides/fr/get-started/concepts#trigger). Vous pouvez choisir **Interagir avec le passage en caisse**, qui exécute la règle pendant que le client est dans le processus de passage en caisse, et **Terminer le passage en caisse**, qui exécute la règle lorsque le client termine le passage en caisse. Par défaut, vous devriez sélectionner les deux options pour vous assurer que la règle s’exécute toujours lorsque nécessaire.
+
+<Info>
+  Si vous n’êtes pas sûr de ce qu’il faut choisir pour certains paramètres de
+  règle, l’option par défaut pré-sélectionnée est souvent le meilleur choix.
+  Vous pouvez toujours commencer avec l’option par défaut et la modifier plus
+  tard.
+</Info>
+
+<img src="/images/concepts/trigger.webp" alt="Déclencheur" />
+
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#condition-set) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-when) et l’[action](/guides/fr/get-started/concepts#action-what).
+
+> Par exemple, ici nous utilisons l’**Ensemble de conditions 1** par défaut, en définissant la règle pour qu’elle se déclenche lorsque le champ **"Ligne d’adresse 2 (Appartement, suite, etc)"** est **vide**, et en la configurant pour bloquer le passage en caisse. Le message d’erreur **"Entrez une adresse complète"** sera affiché sous le champ **Ligne d’adresse 2** lors du passage en caisse, obligeant les clients à fournir leur adresse complète avant de continuer.
+
+<img
+  src="/images/essentials/validation/condition-set-validation-block-rule.webp"
+  alt="Ensemble de conditions"
+/>
+
+Dans la section **Action**, vous pouvez choisir l’**emplacement cible** où votre message d’erreur personnalisé apparaîtra sur la page de passage en caisse. Le menu déroulant propose une liste d’options de placement :
+
+- Sous la catégorie **Général**, vous pouvez sélectionner **"Haut de la page de passage en caisse"** pour afficher l’action tout en haut.
+
+- Sous **Sous ces champs de saisie**, vous pouvez choisir d’afficher l’action sous des champs spécifiques, tels que : E-mail, Numéro de téléphone du client, Pays, Prénom, Nom, Société, Adresse (Ligne d’adresse 1), Appartement, Ville, Province/État, Code postal, Numéro de téléphone pour la livraison.
+
+Cela vous donne le contrôle de l’endroit où le message d’erreur apparaît, vous aidant à le placer dans la section la plus pertinente du formulaire de passage en caisse.
+
+<img
+  src="/images/essentials/validation/action-target-dropdown.webp"
+  alt="Menu déroulant de l’action"
+/>
+
+Ensuite, sur le même écran, sélectionnez comment le système doit se comporter dans le cas rare où l’application échoue ou rencontre un problème pendant le passage en caisse. Il s’agit d’une option de secours et, dans la plupart des cas, vous voudrez permettre au client de terminer le passage en caisse, ce qui est l’option par défaut. Vous trouverez deux options :
+
+- **Permettre au client de terminer le passage en caisse** : Cela garantit que même si l’application rencontre un problème, le client peut toujours continuer son achat sans interruption.
+
+- **Empêcher le client de terminer le passage en caisse** : Cela empêchera le client de finaliser son passage en caisse si l’application échoue, ce qui peut bloquer des transactions.
+
+Choisissez l’option qui correspond le mieux à l’expérience client souhaitée et à votre tolérance au risque.
+
+<img src="/images/concepts/fallback.webp" alt="Option de secours" />
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et sauvegarder votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Mettre la règle à l’essai
+
+Comme la règle est définie sur le statut mise à l’essai, nous devons utiliser `test@testing.com` comme adresse e-mail, au lieu de l’e-mail réel, pour exécuter la règle lors du passage en caisse.
+
+<Warning>
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que
+  l’adresse e-mail de test ait été utilisée. Veuillez noter que le message
+  d’erreur n’est pas encore affiché.
+</Warning>
+
+<img
+  src="/images/essentials/validation/before-rule-apply-validation-block-rule.webp"
+  alt="Avant application de la règle"
+/>
+
+<Note>
+  Veuillez vous assurer de remplir tous les champs obligatoires de l’adresse de
+  livraison. Shopify n’exécutera la règle que si tous les champs obligatoires
+  sont remplis et que le client est réellement prêt à passer en caisse, afin
+  d’éviter d’exécuter la règle à chaque frappe.
+</Note>
+
+Après avoir laissé le champ Ligne d’adresse 2 (Appartement, suite, etc) **vide**, la règle de passage en caisse s’exécute et bloque le processus de passage en caisse. Nous pouvons vérifier que le message d’erreur **"Entrez une adresse complète"** est affiché sous le champ **Ligne d’adresse 2** lors du passage en caisse, comme indiqué ci-dessous.
+
+<img
+  src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"
+  alt="Après application de la règle"
+/>
+
+## Activer la règle
+
+Une fois la mise à l’essai terminée, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des vrais clients. Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer** pour l’activer.
+
+<Warning>
+  L’activation des règles n’est disponible que sur les forfaits payants. Si vous
+  n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#upgrade-your-plan) pour effectuer la
+  mise à niveau.
+</Warning>
+
+<img
+  src="/images/essentials/validation/activate-the-rule-validation-block-rule.webp"
+  alt="Activer la règle"
+/>

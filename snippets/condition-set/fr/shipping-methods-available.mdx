@@ -1,0 +1,33 @@
+### Méthodes d’expédition disponibles
+
+Utilisé pour vérifier si les méthodes d’expédition données sont réellement disponibles sur la page de paiement, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si la page de paiement contient au moins une des méthodes d’expédition listées)
+- **N’a aucune de ces valeurs** (Correspond si la page de paiement ne contient aucune des méthodes d’expédition listées)
+- **A une autre valeur que celles-ci** (Correspond si la page de paiement contient des méthodes d’expédition autres que celles listées)
+- **N’a pas d’autre valeur que celles-ci** (Correspond si la page de paiement contient uniquement les méthodes d’expédition listées et aucune autre)
+- **A un nombre de valeurs supérieur ou égal** (Correspond si le nombre de méthodes d’expédition disponibles sur la page de paiement est supérieur ou égal au nombre spécifié)
+- **A un nombre de valeurs inférieur ou égal** (Correspond si le nombre de méthodes d’expédition disponibles sur la page de paiement est inférieur ou égal au nombre spécifié)
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, ou **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs à faire correspondre. Séparez plusieurs valeurs par des virgules.
+
+<Note>
+  Utilisez le caractère générique * pour correspondre à des noms partiels de méthodes d’expédition.  
+  Par exemple, Stand* correspondra à Standard, standard shipping, etc.
+</Note>
+
+> Par exemple, `A l’une de ces valeurs : Livraison Express, Livraison Standard` → Correspond si au moins une des méthodes d’expédition sélectionnées est disponible.
+
+<img
+  src="/images/essentials/condition-sets/multiple-shipping-methods.webp"
+  alt="Méthodes d’expédition multiples"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal** ou **A un nombre de valeurs inférieur ou égal**, saisissez le seuil de comptage.
+
+> Par exemple, `A un nombre de valeurs supérieur ou égal à 3` → Correspond si trois méthodes d’expédition ou plus sont disponibles.
+
+<img
+  src="/images/essentials/condition-sets/count-shipping-methods.webp"
+  alt="Nombre de méthodes d’expédition"
+/>

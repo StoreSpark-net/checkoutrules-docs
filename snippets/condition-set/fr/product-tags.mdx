@@ -1,0 +1,33 @@
+### Balises de produit
+
+Cette condition vérifie les **balises de produit** selon des critères spécifiques. Elle sera vraie si **n’importe quel** produit dans le panier possède la valeur de balise de produit saisie, en fonction de l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si les balises de produit contiennent au moins l’une des valeurs saisies)
+- **N’a aucune de ces valeurs** (Correspond si les balises de produit ne contiennent aucune des valeurs saisies)
+- **A une autre valeur que celles-ci** (Correspond si les balises de produit contiennent une valeur qui n’est pas parmi celles saisies)
+- **N’a pas d’autre valeur que celles-ci** (Correspond si les balises de produit contiennent uniquement les valeurs saisies et aucune autre)
+- **A un nombre de valeurs supérieur ou égal** (Correspond si le **nombre** de balises de produit est supérieur ou égal au nombre saisi)
+- **A un nombre de valeurs inférieur ou égal** (Correspond si le **nombre** de balises de produit est inférieur ou égal au nombre saisi)
+
+<Warning>
+  Vous ne pouvez utiliser cette condition qu’avec les mêmes valeurs dans toute la règle.  
+  Si vous souhaitez utiliser différentes valeurs dans différents blocs de règles, vous devez passer au jeu de conditions 3, 5 ou 6 qui permettent plus de flexibilité.
+</Warning>
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs de balises de produit dans le champ. Séparez plusieurs valeurs par des virgules.
+
+> Par exemple, `N’a aucune de ces valeurs : été, liquidation` → Correspond si la balise de produit ne contient pas « été » ou « liquidation ».
+
+<img
+  src="/images/essentials/condition-sets/product-tags.webp"
+  alt="Balises de produit"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal** et **A un nombre de valeurs inférieur ou égal**, saisissez une seule valeur numérique dans le champ pour correspondre au nombre de balises de produit.
+
+> Par exemple, `A un nombre de valeurs inférieur ou égal à 4` → Correspond si le nombre de balises de produit est de quatre ou moins.
+
+<img
+  src="/images/essentials/condition-sets/count-product-tags.webp"
+  alt="Nombre de balises de produit"
+/>

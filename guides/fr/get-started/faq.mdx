@@ -1,0 +1,118 @@
+---
+title: "Questions fréquemment posées"
+description: "Trouvez les réponses aux questions les plus fréquemment posées sur l’utilisation de l’application **BeSure Checkout Rules** dans votre boutique Shopify."
+icon: "info"
+---
+
+Si vous ne trouvez pas ce que vous cherchez, [contactez-nous](https://checkoutrules.com/contact/).
+
+<AccordionGroup>
+  <Accordion title="Qu’est-ce qu’une règle de passage en caisse?">
+    C’est un moyen de personnaliser l’expérience de passage en caisse pour vos clients. Par exemple, une règle d’expédition vous aidera à modifier les options d’expédition affichées lors du passage en caisse. De même, une règle de passage en caisse vous aidera à modifier les options de paiement affichées lors du passage en caisse.
+  </Accordion>
+
+  <Accordion title="Comment créer une règle de passage en caisse ?">
+    Vous pouvez créer une règle de passage en caisse en cliquant sur le bouton **Créer une règle** sur la page des règles. Vous pouvez ensuite sélectionner le type de règle que vous souhaitez créer et suivre les instructions.
+
+    <img src="/images/faqs/create_rule-Bjcq8flN.webp" alt="Comment créer une règle" />
+  </Accordion>
+
+  <Accordion title="Dois-je choisir une règle vide ?">
+    Parfois, lorsque vous sélectionnez une règle, il se peut qu’on vous propose le choix entre **« règle vide »** et **« modèles prédéfinis »**. Vous pouvez sélectionner **« règle vide »** si vous ne trouvez pas de modèle adapté à vos besoins. Cela vous permettra de créer une règle dont vous pouvez personnaliser le comportement exactement selon vos besoins. Vous pouvez également sélectionner l’un des **« modèles prédéfinis »** si vous trouvez un modèle qui vous convient. Cela vous permettra de créer une règle à partir du modèle, mais vous pourrez toujours la personnaliser.
+    <img src="/images/faqs/empty_rule_templates-DlBCQK7n.webp" alt="Règle vide ou modèles" />
+  </Accordion>
+
+  <Accordion title="Comment tester une règle de passage en caisse ?">
+  Vous pouvez tester une règle en la mettant en statut **Mise à l’essai**. Cela vous permettra de voir comment la règle modifie votre passage en caisse sans affecter vos clients. 
+  Après avoir créé la règle, ouvrez simplement la page de passage en caisse de votre boutique, puis utilisez l’adresse email de test pour voir les modifications.
+
+    <img src="/images/faqs/rule_testing-Dp4kiMTw.webp" alt="Tester une règle" />
+  </Accordion>
+
+  <Accordion title="Quel ensemble de conditions dois-je utiliser ?">
+   Vous pouvez utiliser n’importe quel ensemble de conditions qui correspond à vos besoins. Si vous n’êtes pas sûr, vous pouvez soit commencer avec **l’ensemble de conditions 1**, soit utiliser la barre de recherche pour voir quel ensemble contient la condition recherchée et passer à celui-ci. Par exemple, si vous voulez masquer une méthode d’expédition en fonction d’un métachamp produit, vous pouvez utiliser l’ensemble de conditions 4. La sélection de l’ensemble de conditions n’est disponible qu’au moment de la création de la règle. Vous ne pouvez pas changer l’ensemble après la création de la règle.
+
+    <img src="/images/faqs/condition_set_selection-jOo749bC.webp" alt="Sélection d’un ensemble de conditions" />
+  </Accordion>
+
+  <Accordion title="Quelle est la structure de base d’une règle de passage en caisse ?">
+    Une règle de passage en caisse se compose d’une condition (ou d’un ensemble de conditions) et d’une action (ou de plusieurs actions). La condition est utilisée pour vérifier si la règle doit être appliquée ou non. L’action est utilisée pour modifier le passage en caisse. Par exemple, si nous définissons une règle pour masquer UPS si le total de la commande est inférieur à \$50, la condition vérifiera si le total est inférieur à \$50. Si la condition est remplie, alors l’action s’appliquera et UPS sera masqué lors du passage en caisse.
+    <img src="/images/faqs/basic_rule_structure-LbDRaUUy.webp" alt="Structure de base d’une règle" />
+  </Accordion>
+
+  <Accordion title="Que sont les blocs dans une règle de passage en caisse ?">
+  Un bloc est composé de conditions de bloc et d’une action de bloc. Lorsque vous commencez à créer une nouvelle règle vide, le premier bloc est déjà ajouté pour vous. Vous pouvez ajouter plusieurs blocs dans une règle. Chaque bloc peut avoir son propre ensemble de conditions et une action. Les blocs sont évalués dans l’ordre où ils sont ajoutés. Si les conditions du bloc sont vraies, l’action correspondante est appliquée. Ensuite, le bloc suivant est évalué, et ainsi de suite.
+    <img src="/images/faqs/rule_blocks-DkeFb4UF.webp" alt="Blocs de règle" />
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+<AccordionGroup>
+  <Accordion title="Cette application fonctionne-t-elle pour le passage en caisse en 1 page ?">
+    Oui, l’application fonctionne aussi bien pour le passage en caisse en **1 page** que pour le passage en caisse en **3 pages**, puisqu’elle utilise les API natives de Shopify.
+  </Accordion>
+
+  <Accordion title="Cette application fonctionne-t-elle uniquement pour Shopify Plus ?">
+    Non, cette application fonctionne avec tous les forfaits Shopify. Vous pouvez l’utiliser pour personnaliser votre passage en caisse, quel que soit le forfait.
+  </Accordion>
+
+  <Accordion title="Cette application fonctionne-t-elle pour le passage en caisse via facture (lorsque le client ouvre le passage en caisse depuis une facture) ?">
+   Oui, l’application fonctionne avec le passage en caisse via facture. Seules les règles de réduction ne sont pas prises en charge pour ce type de passage en caisse pour le moment, mais vous pouvez appliquer manuellement les règles de réduction automatique sur la commande provisoire avant d’envoyer la facture.
+    <img src="/images/faqs/draft_order_apply_discounts-Bzc-zA93.webp" alt="Passage en caisse via facture" />
+  </Accordion>
+
+  <Accordion title="Puis-je personnaliser quelles règles doivent s’exécuter lors d’un passage en caisse via facture (lorsque le client ouvre le passage en caisse depuis une facture) ?">
+  Oui, des options sont disponibles pour activer/désactiver certaines règles pour cette facture. Par exemple, vous pouvez choisir d’« ignorer les règles de validation » avant de partager le lien de passage en caisse ou d’envoyer la facture. Les règles de réduction automatique ne sont pas appliquées automatiquement sur le passage en caisse via facture, mais vous pouvez les appliquer manuellement sur la commande provisoire avant d’envoyer la facture. Si vous sélectionnez une option d’expédition pour le client avant d’envoyer la facture, les règles d’expédition ne s’exécuteront pas sur ce passage en caisse. Si vous sélectionnez l’option « Paiement dû ultérieurement » puis envoyez la facture, les règles de paiement s’exécuteront sur ce passage en caisse.
+    <img src="/images/faqs/invoice_admin_view-C9KJI8JV.webp" alt="Personnalisation des factures" />
+  </Accordion>
+
+  <Accordion title="Cette application fonctionne-t-elle pour les commandes provisoires (créées depuis l’admin) ?">
+  Elle fonctionne pour certaines catégories de règles. Les règles de validation fonctionneront, mais il existe une option pour les ignorer si nécessaire. Les règles de réduction automatique peuvent être appliquées manuellement à la commande provisoire. Lorsque vous cliquez sur le bouton « ajouter une réduction », l’option « Appliquer toutes les réductions automatiques éligibles » apparaîtra et pourra être utilisée. Les règles d’expédition et de passage en caisse ne fonctionnent pas dans les commandes provisoires via l’admin.
+    <img src="/images/faqs/admin_view_draft_orders-BQ3pRIeY.webp" alt="Commandes provisoires" />
+  </Accordion>
+
+  <Accordion title="Puis-je utiliser un joker comme * pour sélectionner les méthodes d’expédition ou de paiement ?">
+   Vous pouvez utiliser un * pour sélectionner toutes les méthodes d’expédition ou de paiement. Vous pouvez également utiliser * ou ? de ces façons : par exemple, pour sélectionner toutes les méthodes commençant par « Standard », vous pouvez utiliser « Standard* ». Pour sélectionner toutes les méthodes finissant par « Standard », vous pouvez utiliser « \*Standard ». Pour sélectionner toutes les méthodes commençant par « New » et finissant par « Way », vous pouvez utiliser « New*Way ». De même, vous pouvez utiliser ? pour correspondre à un seul caractère.
+  </Accordion>
+
+  <Accordion title="Quelle est la différence entre « est » et « contient » utilisés dans différentes règles ?">
+La condition « est » est utilisée pour correspondre exactement à la valeur. La condition « contient » est utilisée pour correspondre partiellement. Par exemple, « est » correspondra uniquement entre « Standard » et « Standard », tandis que « contient » correspondra entre « Standard » et « Standard Shipping » ou « Standard Delivery ».
+  </Accordion>
+
+  <Accordion title="Comment ajouter une note ou modifier le texte affiché lors du passage en caisse ?">
+    Vous pouvez ajouter une note ou modifier le texte affiché lors du passage en caisse en suivant les étapes mentionnées [ici](https://checkoutrules.com/blog/shopify-easily-customize-checkout-text/?utm_source=app&utm_medium=help_page&utm_campaign=app_help).
+  </Accordion>
+</AccordionGroup>
+
+## Réorganiser les méthodes d’expédition
+
+<AccordionGroup>
+  <Accordion title="Comment définir la méthode d’expédition par défaut pré-sélectionnée ?">
+   Vous pouvez définir la méthode d’expédition par défaut pré-sélectionnée en la plaçant en haut de la liste des méthodes lors du passage en caisse. Elle sera alors pré-sélectionnée pour vos clients. Veuillez noter que si vous avez déjà commencé un passage en caisse auparavant, Shopify met en cache votre sélection précédente et la pré-sélectionnera. Vous pouvez effacer ce cache en utilisant le mode navigation privée, un autre navigateur ou en lançant un nouveau passage en caisse avec un contenu de panier différent. Vos clients n’auront pas ce problème.
+  </Accordion>
+</AccordionGroup>
+
+## Réorganiser les méthodes de paiement
+
+<AccordionGroup>
+  <Accordion title="Comment définir la méthode de paiement par défaut pré-sélectionnée ?">
+  Vous pouvez définir la méthode de paiement par défaut pré-sélectionnée en la plaçant en haut de la liste des méthodes lors du passage en caisse. Elle sera alors pré-sélectionnée pour vos clients (ce n’est pas toujours vrai, veuillez lire la FAQ ci-dessous). Veuillez noter que si vous avez déjà commencé un passage en caisse auparavant, Shopify met en cache votre sélection précédente et la pré-sélectionnera. Vous pouvez effacer ce cache en utilisant le mode navigation privée, un autre navigateur, ou en lançant un nouveau passage en caisse avec un contenu de panier différent. Vos clients n’auront pas ce problème.
+  </Accordion>
+
+  <Accordion title="Pourquoi la méthode de paiement en haut de la liste n’est-elle pas définie par défaut comme méthode pré-sélectionnée ?">
+   En général, lorsque vous réorganisez la méthode de paiement en haut, elle devient la méthode pré-sélectionnée, mais cette sélection par défaut est contrôlée par Shopify et le prestataire de paiement que vous utilisez. Cette application vous permet uniquement de réorganiser les méthodes de paiement. Certains prestataires, comme Klarna et iDeal, veulent toujours être sélectionnés en premier, quoi qu’il en soit. Dans ce cas, votre seule option est d’utiliser une solution de contournement, par exemple en affichant ces prestataires uniquement dans une région spécifique et en les masquant ailleurs. Une fois masqués, il peut devenir possible de définir la méthode de paiement la plus haute comme méthode par défaut pré-sélectionnée.
+  </Accordion>
+</AccordionGroup>
+
+## Valider / Bloquer le passage en caisse
+
+<AccordionGroup>
+  <Accordion title="Comment l’application détecte-t-elle les adresses de type boîte postale ?">
+    Lorsque vous utilisez la condition « adresse boîte postale (P.O. box) » dans la règle, toutes les variantes saisies dans l’adresse d’expédition comme P.O. box, P O box, ou P.o b o x, etc. sont détectées automatiquement par l’application. Si vous souhaitez détecter un mot ou une expression personnalisée, vous pouvez utiliser la condition « Ligne d’adresse » dans laquelle vous pouvez spécifier le mot ou l’expression à détecter.
+  </Accordion>
+
+  <Accordion title="Comment détecter les adresses de type boîte postale (PO Box) dans d’autres langues ?">
+   Si vous souhaitez détecter des mots ou expressions de type boîte postale dans d’autres langues, vous pouvez utiliser la condition « Adresse (ligne1 + ligne2) » dans laquelle vous pouvez spécifier les mots ou expressions à détecter. Par exemple, « Packstation » en allemand. Vous pouvez ajouter plusieurs conditions de ce type pour chaque mot en utilisant l’opérateur OU entre elles.
+  </Accordion>
+</AccordionGroup>
