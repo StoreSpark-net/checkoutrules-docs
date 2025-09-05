@@ -1,0 +1,258 @@
+---
+title: "Bedingungssatz 3"
+description: "Erfahren Sie mehr über jede Bedingung innerhalb von _Bedingungssatz 3_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/de/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/de/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/de/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/de/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/de/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/de/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/de/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/de/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/de/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/de/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/de/product-tags.mdx";
+import Collection from "/snippets/condition-set/de/collection.mdx";
+import Collections from "/snippets/condition-set/de/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/de/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/de/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/de/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/de/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/de/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/de/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/de/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/de/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/de/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/de/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/de/user-language.mdx";
+import Market from "/snippets/condition-set/de/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/de/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/de/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/de/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/de/first-name.mdx";
+import LastName from "/snippets/condition-set/de/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/de/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/de/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/de/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/de/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/de/address-line2.mdx";
+import Company from "/snippets/condition-set/de/company.mdx";
+import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
+import CityArea from "/snippets/condition-set/de/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/de/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Kunde
+
+<EmailAddress />
+<CustomerTag />
+
+## Bestelldetails
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Zwischensumme der Bestellung einmaliger Kaufbetrag
+
+Diese Bedingung prüft die **Zwischensumme einmaliger Käufe in der Bestellung** (die Zwischensumme der Produkte, die keine Abonnement-Produkte sind) anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Passt, wenn die Zwischensumme einmaliger Käufe größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Passt, wenn die Zwischensumme einmaliger Käufe kleiner oder gleich dem eingegebenen Betrag ist)
+
+Um diese Bedingung festzulegen, geben Sie den Betrag ein und wählen Sie die passende Vergleichsoption aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> Beispiel: `ist größer oder gleich 700` → Passt zu Bestellungen mit einer Zwischensumme einmaliger Käufe von 700 oder mehr.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="Zwischensumme einmaliger Kauf"
+/>
+
+### Zwischensumme der Bestellung Abonnementbetrag
+
+Diese Bedingung prüft die **Zwischensumme der Abonnement-Produkte in der Bestellung** anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Passt, wenn die Zwischensumme der Abonnement-Produkte größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Passt, wenn die Zwischensumme der Abonnement-Produkte kleiner oder gleich dem eingegebenen Betrag ist)
+
+Um diese Bedingung festzulegen, geben Sie den Betrag ein und wählen Sie die passende Vergleichsoption aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> Beispiel: `ist größer oder gleich 1200` → Passt zu Bestellungen mit einer Zwischensumme der Abonnement-Produkte von 1200 oder mehr.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="Zwischensumme Abonnement"
+/>
+
+### Bestellung Zwischensumme digitaler Betrag
+
+Diese Bedingung prüft die **Zwischensumme digitaler Produkte in der Bestellung** anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Passt, wenn die Zwischensumme digitaler Produkte größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Passt, wenn die Zwischensumme digitaler Produkte kleiner oder gleich dem eingegebenen Betrag ist)
+
+Um diese Bedingung festzulegen, geben Sie den Betrag ein und wählen Sie die passende Vergleichsoption aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> Beispiel: `ist kleiner oder gleich 398` → Passt zu Bestellungen mit einer Zwischensumme digitaler Produkte von 398 oder weniger.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="Zwischensumme digitale Produkte"
+/>
+
+### Bestellung Zwischensumme physische Betrag 
+
+Diese Bedingung prüft die **Zwischensumme physischer Produkte in der Bestellung** anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Passt, wenn die Zwischensumme physischer Produkte größer oder gleich dem eingegebenen Betrag ist)
+- **ist kleiner oder gleich** (Passt, wenn die Zwischensumme physischer Produkte kleiner oder gleich dem eingegebenen Betrag ist)
+
+Um diese Bedingung festzulegen, geben Sie den Betrag ein und wählen Sie die passende Vergleichsoption aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> Beispiel: `ist größer oder gleich 299` → Passt zu Bestellungen mit einer Zwischensumme physischer Produkte von 299 oder mehr.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="Zwischensumme physische Produkte"
+/>
+
+<OrderTotalQuantity />
+
+## Warenkorb-Details
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### Menge pro Produkt-Tag
+
+Diese Bedingung prüft die **Menge der Produkte mit einem bestimmten Produkt-Tag** in der Bestellung anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Menge ist größer oder gleich** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag größer oder gleich der eingegebenen Zahl ist)
+- **Menge ist kleiner oder gleich** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag kleiner oder gleich der eingegebenen Zahl ist)
+- **Menge ist teilbar durch** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag ein Vielfaches der eingegebenen Zahl ist)
+- **Menge ist nicht teilbar durch** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag kein Vielfaches der eingegebenen Zahl ist)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="Produkt-Tag eingeben">
+    Geben Sie den <strong>Produkt-Tag</strong> im Feld „Produkt-Tag eingeben“ ein.
+  </Step>
+
+  <Step title="Menge eingeben">
+    Geben Sie die <strong>Menge</strong> im Feld „Menge eingeben“ ein.
+  </Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown-Menü.
+  </Step>
+</Steps>
+
+> Beispiel für „Menge ist größer oder gleich“:  
+> Produkt-Tag: `SummerCollection`  
+> Menge: `3`  
+> → Passt zu Bestellungen, bei denen 3 oder mehr Einheiten von Produkten mit dem Tag `SummerCollection` enthalten sind.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="Menge pro Produkt-Tag größer oder gleich"
+/>
+
+> Beispiel für „Menge ist teilbar durch“:  
+> Produkt-Tag: `SummerCollection`  
+> Menge: `2`  
+> → Passt zu Bestellungen, bei denen die Menge der Produkte mit dem Tag `SummerCollection` 2, 4, 6, 8 usw. beträgt.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="Menge pro Produkt-Tag teilbar durch"
+/>
+
+## Warenkorb enthält Artikel
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### Kosten pro Menge eines Produkts
+
+Diese Bedingung prüft die **Kosten pro Menge eines beliebigen Produkts** in der Bestellung anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **ist größer oder gleich** (Passt, wenn die Kosten pro Menge eines Produkts größer oder gleich dem eingegebenen Betrag sind)
+- **ist kleiner oder gleich** (Passt, wenn die Kosten pro Menge eines Produkts kleiner oder gleich dem eingegebenen Betrag sind)
+
+Um diese Bedingungen festzulegen, geben Sie den Betrag ein und wählen Sie die passende Vergleichsoption aus dem Dropdown-Menü.
+
+<Note>
+  Geben Sie den Betrag in der Währung Ihres Shops ein. Einstellungen > Shop-Details > Shop-Währung
+</Note>
+
+> Beispiel: `ist größer oder gleich 200` → Passt, wenn die Kosten pro Menge eines beliebigen Produkts 200 oder mehr betragen.
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="Kosten pro Menge eines Produkts"
+/>
+
+## Versand
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Lokalisierung
+<UserLanguage />
+<Market />
+
+## Versandadresse
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

@@ -1,0 +1,80 @@
+### Postleitzahl / PLZ
+
+Verwendet, um die Werte des Feldes „Postleitzahl / PLZ“ (Feld auf der Checkout-Seite in der Lieferadresse) mit einem oder mehreren bestimmten Postleitzahlen zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat eines dieser Werte** (Trifft zu, wenn das Feld mindestens einen der aufgeführten Werte enthält)
+- **Hat keines dieser Werte** (Trifft zu, wenn das Feld keinen der aufgeführten Werte enthält)
+- **Hat Wert zwischen diesen Werten** (Trifft zu, wenn der Wert im angegebenen Bereich liegt)
+- **Hat keinen Wert zwischen diesen Werten** (Trifft zu, wenn der Wert nicht im angegebenen Bereich liegt)
+- **Hat andere Werte als diese** (Trifft zu, wenn das Feld Werte enthält, die nicht aufgelistet sind)
+- **Hat keine anderen Werte als diese** (Trifft zu, wenn das Feld nur die aufgeführten Werte enthält)
+- **Enthält nur Ziffern** (Trifft zu, wenn das Feld nur Zahlen enthält)
+- **Enthält nicht nur Ziffern** (Trifft zu, wenn das Feld Buchstaben, Leerzeichen oder Symbole enthält)
+- **Anzahl der Ziffern zwischen** (Trifft zu, wenn die Anzahl der Ziffern innerhalb des angegebenen Bereichs liegt)
+- **Anzahl der Ziffern nicht zwischen** (Trifft zu, wenn die Anzahl der Ziffern nicht innerhalb des angegebenen Bereichs liegt)
+- **Ist leer** (Trifft zu, wenn das Feld keinen Wert enthält)
+- **Ist nicht leer** (Trifft zu, wenn das Feld einen Wert enthält)
+
+Verwenden Sie **Hat eines dieser Werte**, **Hat keines dieser Werte**, **Hat andere Werte als diese** oder **Hat keine anderen Werte als diese**, um gegen eine oder mehrere Postleitzahlen zu prüfen. Trennen Sie mehrere Werte mit Kommas.
+
+<Note>
+  Verwenden Sie das Wildcard-Zeichen * zur Übereinstimmung mehrerer Postleitzahlen. Zum Beispiel BT* entspricht BT12, bt-590 etc. Verwenden Sie ? für ein einzelnes beliebiges Zeichen.
+</Note>
+
+> Beispiel: `Hat eines dieser Werte: BT*` → Trifft auf alle Postleitzahlen zu, die mit „BT“ beginnen.
+
+<img
+  src="/images/essentials/condition-sets/have-zipcodes.webp"
+  alt="Postleitzahlen vorhanden"
+/>
+
+> Anderes Beispiel: `Hat keines dieser Werte: 12345, 67890` → Trifft zu, wenn der Code nicht „12345“ oder „67890“ ist.
+
+<img
+  src="/images/essentials/condition-sets/dont-have-zipcodes.webp"
+  alt="Postleitzahlen nicht vorhanden"
+/>
+
+Verwenden Sie **Hat Wert zwischen diesen Werten** oder **Hat keinen Wert zwischen diesen Werten**, um Postleitzahlen innerhalb oder außerhalb eines numerischen Bereichs zu prüfen.
+
+<Note>
+  Nur Zahlen eingeben. Alle Werte zwischen Start- und Endwert werden eingeschlossen.
+</Note>
+
+> Beispiel: `Hat Wert zwischen diesen Werten: 10000 – 20000` → Trifft zu, wenn der Code zwischen „10000“ und „20000“ liegt.
+
+<img
+  src="/images/essentials/condition-sets/in-between-value-zipcodes.webp"
+  alt="Postleitzahlen innerhalb eines Bereichs"
+/>
+
+Verwenden Sie **Enthält nur Ziffern** oder **Enthält nicht nur Ziffern**, um Codes zu prüfen, die nur Zahlen (0–9) oder auch Buchstaben, Leerzeichen oder Symbole enthalten.
+
+> Beispiel: `Enthält nur Ziffern` → Trifft nur auf Zahlen zu (0–9).
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field-digits.webp"
+  alt="Nur Zahlen"
+/>
+
+Verwenden Sie **Anzahl der Ziffern zwischen** oder **Anzahl der Ziffern nicht zwischen**, um anhand der Anzahl der Ziffern zu prüfen.
+
+<Note>
+  Nur Zahlen eingeben. Alle Werte im angegebenen Bereich werden berücksichtigt.
+</Note>
+
+> Beispiel: `Anzahl der Ziffern zwischen: 4 – 6` → Trifft auf Codes zu, die zwischen 4 und 6 Ziffern enthalten.
+
+<img
+  src="/images/essentials/condition-sets/in-between-digits-zipcodes.webp"
+  alt="Anzahl der Ziffern innerhalb eines Bereichs"
+/>
+
+Verwenden Sie **Ist leer** oder **Ist nicht leer**, wenn nur geprüft werden soll, ob das Feld ausgefüllt ist.
+
+> Beispiel: `Ist nicht leer` → Trifft zu, wenn ein Wert eingegeben wurde.
+
+<img
+  src="/images/essentials/condition-sets/zipcode-no-field.webp"
+  alt="Postleitzahlenfeld ausgefüllt"
+/>

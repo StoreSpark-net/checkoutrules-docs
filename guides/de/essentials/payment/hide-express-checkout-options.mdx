@@ -1,0 +1,125 @@
+---
+title: "Express Checkout Optionen ausblenden"
+description: "Blenden Sie Express Checkout Zahlungsoptionen oben auf der Checkout Seite aus."
+icon: "eye-slash"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, Express-Checkout-Buttons wie PayPal, Apple Pay, Google Pay oder Shop Pay oben auf der Checkout-Seite basierend auf bestimmten Bedingungen auszublenden.
+
+<Warning>
+  Sie können diese Express-Buttons <i>immer</i> ausblenden, <b>nur</b> wenn Sie
+  einen Shopify-Plus-Plan haben, aufgrund von Shopify-Beschränkungen. Wenn Sie
+  einen anderen Shopify-Plan nutzen, blendet diese Regel alle
+  Express-Checkout-Buttons nur dann aus, wenn die Versandadresse nicht ausgefüllt
+  ist. Wenn die Versandadresse ausgefüllt ist, werden die Express-Checkout-Buttons
+  wieder sichtbar. Dieser Mechanismus stellt sicher, dass der Kunde zumindest
+  immer seine Versandadresse eingibt.
+</Warning>
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man eine **Express-Checkout-Optionen ausblenden**-Regel mithilfe der App erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Zahlung" → Checkout-Regeltyp "Express-Checkout-Optionen ausblenden" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/payment/select-hide-express-checkout-options.webp"
+  alt="Regel auswählen"
+/>
+
+Dann erscheint ein **Checkout-Layout-Auswahl**-Popup. Wählen Sie eine Option basierend auf dem Setup Ihres Shops: entweder **1-Seiten-Checkout** oder **3-Seiten-Checkout**.  
+Wenn Sie in Ihrem Shop den Ein-Seiten-Checkout verwenden, sollten Sie **1-Seiten-Checkout** auswählen. Wenn Sie den Drei-Seiten-Checkout verwenden, sollten Sie **3-Seiten-Checkout** auswählen.
+
+<img
+  src="/images/essentials/payment/select-rule-template-hide-express-checkout-options.webp"
+  alt="Regelvorlage auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Regel zum Ausblenden von Express-Checkout-Optionen erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie "Express-Checkout-Optionen ausblenden" hinzufügen, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-express-checkout-options.webp"
+  alt="Regel konfigurieren 1"
+/>
+
+Wenn Sie im vorherigen Schritt **1-Seiten-Checkout** ausgewählt haben, müssen Sie Ihre Zahlungsmethoden wie in der Regelkonfiguration gefordert einrichten. Klicken Sie auf **Als erledigt markieren** für jede Methode, nachdem Sie die Anweisungen zur Konfiguration befolgt haben. Optional können Sie Bedingungen hinzufügen, wenn Sie steuern möchten, wann die Regel ausgeführt werden soll.
+
+<Note>
+  Sie können sich die bereitgestellten Einrichtungs-Videos ansehen und
+  mitverfolgen, wenn Sie unsicher sind, wie Sie eine manuelle Zahlungsmethode
+  wie in der Regelkonfiguration gefordert einrichten.
+</Note>
+
+<img
+  src="/images/essentials/payment/setup-hide-payment-methods-options.webp"
+  alt="Einrichtung"
+/>
+
+<Info>
+  Sie müssen diese manuellen Zahlungsmethoden nur konfigurieren, wenn Sie nicht
+  auf Shopify Plus sind. Wenn Sie auf Shopify Plus sind, ist es nicht notwendig,
+  diese manuellen Zahlungsmethoden zu konfigurieren.
+</Info>
+
+Oder, wenn Sie im vorherigen Schritt **3-Seiten-Checkout** ausgewählt haben, müssen Sie auswählen, ob die unten auf dem Bildschirm aufgeführten Zahlungsmethoden sowohl auf der **Checkout-Informationsseite** als auch auf der **Checkout-Zahlungsseite** ausgeblendet oder angezeigt werden sollen. Optional können Sie Bedingungen hinzufügen, wenn Sie steuern möchten, wann die Regel für beide Seiten ausgeführt werden soll.
+
+<img
+  src="/images/essentials/payment/setup-3-page-checkout-hide-express-checkout-options.webp"
+  alt="Einrichtung"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie, dass der PayPal-Express-Zahlungsbutton
+  sichtbar ist.
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-hide-express-checkout-options.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nach Eingabe der E-Mail wird die Checkout-Regel ausgeführt und Sie sehen, dass der PayPal-Express-Zahlungsbutton **ausgeblendet** ist, wie unten dargestellt.
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-express-checkout-options.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade
+  durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-express-checkout-options.webp"
+  alt="Regel aktivieren"
+/>

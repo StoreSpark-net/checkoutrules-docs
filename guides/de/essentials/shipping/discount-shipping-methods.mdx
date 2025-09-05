@@ -1,0 +1,126 @@
+---
+title: "Rabatt Versandarten"
+description: "Rabattieren Sie bestimmte Versandkosten basierend auf den festgelegten Bedingungen."
+icon: "badge-percent"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es Ihnen, bestimmte Versandkosten beim Checkout basierend auf definierten Bedingungen zu rabattieren. Sie können Prozentsätze, feste Beträge, Prozentsätze vom Zwischensumme, festen Preis festlegen oder den gesamten Versand kostenlos machen, usw., unter Verwendung von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktattributen usw.
+
+Mit dieser Regel können Sie einen Rabattcode erstellen oder einen automatischen Rabatt festlegen. Wenn die Regel einen Rabattcode erstellt, kann der Kunde diesen beim Checkout verwenden, um den Rabatt zu erhalten. Andernfalls, wenn ein automatischer Rabatt ausgewählt ist, kann die Regel den Rabatt automatisch auf die ausgewählten Versandmethoden basierend auf den konfigurierten Bedingungen anwenden.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie man eine **Versandrabatte-Regel** mithilfe der App erstellt und konfiguriert.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#go-to-the-app). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#create-a-sample-rule) und klicken Sie auf _"Regel erstellen"_.
+
+Anschließend werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Versand" → Checkout-Regeltyp "Versandrabatte" → Klicken Sie auf "Regel auswählen"_.
+
+<img
+  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
+  alt="Versandrabatte auswählen"
+/>
+
+Danach gelangen Sie zum Bildschirm **Neue Versandrabatte-Regel erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, geben Sie optional einen Namen ein, z. B. "Versandrabatte", um zu beschreiben, was die Regel tut, wenn Sie einen **automatischen Rabatt** anwenden möchten.
+
+<img
+  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
+  alt="Automatischer Rabatt Name"
+/>
+
+Oder, wenn Sie den Rabatt über einen Rabattcode anwenden möchten, klicken Sie auf **"Rabattcode"** und geben Sie Ihren gewünschten Code ein oder generieren Sie einen zufälligen Code, indem Sie auf **"Zufälligen Code generieren"** klicken.
+
+<img
+  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
+  alt="Rabattcode"
+/>
+
+Wählen Sie anschließend auf demselben Bildschirm den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert. Hier wählen wir den Status **Testing**, um die Regel schnell zu testen, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Regelstatus"
+/>
+
+Konfigurieren Sie anschließend die [Kombinationen](/guides/de/get-started/concepts#combinations), um zu steuern, wie dieser Versandrabatt mit anderen Rabatten interagiert. Sie können wählen, ob er kombiniert werden darf mit:
+
+- **Produktrabatten** – Ermöglicht die Verwendung des Versandrabatts zusammen mit allen Produkt-Rabatten. Stellen Sie sicher, dass auch Produkt-Rabatte für die Kombination mit Versandrabatten konfiguriert sind.
+
+- **Bestellrabatten** – Ermöglicht, dass der Versandrabatt zusammen mit Bestellrabatten angewendet wird. Stellen Sie sicher, dass auch Bestellrabatte für die Kombination mit Versandrabatten aktiviert sind.
+
+<img
+  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
+  alt="Kombinationen Versandrabatte"
+/>
+
+Wählen Sie anschließend die relevanten [Bedingungssätze](/guides/de/get-started/concepts#condition-set), [Bedingungen](/guides/de/get-started/concepts#conditions-when) und [Aktionen](/guides/de/get-started/concepts#action-what) aus.
+
+> Als Beispiel verwenden wir hier den Standard **Bedingungssatz 1**, setzen die Regel auf **Immer** auszuführen und konfigurieren sie so, dass ein **10%-Rabatt** auf alle Versandmethoden mit der **Prozentoption** angewendet wird. Die Rabattmeldung **"10% RABATT"** wird den Kunden beim Checkout angezeigt.
+
+<img
+  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
+  alt="Bedingungssatz Versandrabatte"
+/>
+
+Im Abschnitt Aktion können Sie auswählen, wie der Rabatt angewendet werden soll: **Prozent, Fester Betrag, Prozentsatz vom Zwischensumme, Fester Preis festlegen oder Alle Versandkosten kostenlos** basierend auf Ihren Anforderungen.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Aktionstyp Rabatt"
+/>
+
+Der Rabatt kann auch nur auf bestimmte Versandmethoden angewendet werden, indem Sie **"Diesen Rabatt nur auf diese Versandmethoden anwenden"** anstelle von "Diesen Rabatt auf alle Versandmethoden anwenden" auswählen und dann die **Namen** der Versandmethoden eingeben, auf die der Rabatt angewendet werden soll.
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Versandmethoden-Auswahl"
+/>
+
+Im Abschnitt [Maximale Rabattverwendungen](/guides/de/get-started/concepts#maximum-discount-uses) können Sie optional ein Nutzungslimit für den Rabattcode aktivieren, ihn auf einmal pro Kunde beschränken oder beides anwenden, wenn ein Rabattcode ausgewählt ist.
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> Verwendung der Test-E-Mail-Adresse. Beachten Sie, dass alle Versandoptionen noch nicht rabattiert wurden.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nach der Eingabe der E-Mail wird die Checkout-Regel ausgeführt und der konfigurierte Versandrabatt angewendet. Wir können überprüfen, dass der **10%-Rabatt** für die ausgewählten Versandmethoden beim Checkout sichtbar ist, wie unten gezeigt.
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen beim Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen für alle Kunden anwenden.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
+  alt="Regel aktivieren"
+/>

@@ -1,0 +1,72 @@
+---
+title: "Schnellstart"
+description: "Dieser Schnellstart führt Sie durch das Erstellen einer Beispielregel, zeigt, wie sie funktioniert, und wie sie verwendet werden kann, um Ihren Shopify-Checkout anzupassen."
+icon: "rocket"
+---
+
+## Erstellen einer Beispielregel
+
+Um eine Regel zu erstellen, navigieren Sie zu _BSure Checkout Rules → Regeln → "Regel erstellen" klicken_.
+
+<img
+  src="/images/quickstart/create-checkout-rule.webp"
+  alt="Checkout-Regel erstellen"
+/>
+
+Sie werden dann zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie eine Kategorie (Versand, Zahlung, Validierung oder Rabatt) → wählen Sie den Checkout-Regeltyp (z. B. Versandmethoden neu ordnen) → klicken Sie auf „Regel auswählen“.
+
+<Warning>
+  Hier wählen wir *Versandmethoden neu ordnen* als Checkout-Regeltyp zu Demonstrationszwecken aus.
+</Warning>
+
+<img
+  src="/images/quickstart/create-checkout-rule-2.webp"
+  alt="Checkout-Regel erstellen 2"
+/>
+Anschließend erscheint ein **Popup zur Vorlagenauswahl**. Wählen Sie eine Option basierend auf Ihren Anforderungen. In den meisten Fällen können Sie die leere Regel als Ausgangspunkt wählen und sie nach Ihren Bedürfnissen anpassen. Selbst wenn Sie eine vorgefertigte Vorlage wählen, können Sie diese später ändern.
+<img
+  src="/images/shared/select-rule-template.webp"
+  alt="Regelvorlage auswählen"
+/>
+
+Danach gelangen Sie zum Bildschirm **Neue Regel zum Neuordnen von Versandmethoden erstellen**, wo Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, können wir zunächst optional einen Namen wie „Versandmethoden neu ordnen“ hinzufügen, um zu beschreiben, was sie tut. Dann wählen Sie den Status: Testing, Aktiv oder Deaktiviert.
+
+Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img src="/images/shared/rule-configure-1.webp" alt="Regel konfigurieren 1" />
+
+Auf demselben Bildschirm wählen Sie als Nächstes das relevante Bedingungsset, die Bedingung und die Operation. Als Beispiel wählen wir hier das Standard-Bedingungsset, setzen die Regel so, dass sie immer ausgeführt wird, und wählen die Operation, um die Versandmethoden nach Versandkosten von hoch nach niedrig neu anzuordnen.
+
+<img src="/images/shared/rule-configure-2.webp" alt="Regel konfigurieren 2" />
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail verwenden, anstelle der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>bevor</b> die Test-E-Mail-Adresse verwendet wurde. Bitte beachten Sie die Reihenfolge der Versandmethoden.
+</Warning>
+<img src="/images/shared/before-rule-apply.webp" alt="Vor Regelanwendung" />
+
+Nach Verwendung der Test-E-Mail-Adresse wird die Checkout-Regel ausgeführt und Sie sehen, dass die Versandmethoden neu geordnet wurden. Wir können überprüfen, dass die teuerste Versandmethode jetzt oben steht, wie unten gezeigt.
+
+<img src="/images/shared/after-rule-apply.webp" alt="Nach Regelanwendung" />
+
+## Regel aktivieren
+
+Nachdem der Test abgeschlossen ist, können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf die **Aktivieren**-Schaltfläche, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie Ihren Plan noch nicht aktualisiert haben, befolgen Sie die Anweisungen [hier](/guides/de/get-started/installation#upgrade-your-plan), um ein Upgrade durchzuführen.
+</Warning>
+<img src="/images/shared/activate-the-rule.webp" alt="Regel aktivieren" />
+
+Ebenso können Sie basierend auf Ihren Anforderungen mehrere Regeln erstellen, indem Sie den oben beschriebenen Prozess befolgen.
