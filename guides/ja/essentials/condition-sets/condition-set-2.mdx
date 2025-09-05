@@ -1,0 +1,363 @@
+---
+title: "条件セット 2"
+description: "_条件セット 2_ 内で利用可能な各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/ja/customer-total-number-of-previous-orders.mdx";
+import OrderTotalAmount from "/snippets/condition-set/ja/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/ja/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/ja/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/ja/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/ja/order-total-subscription-weight.mdx";
+import SKU from "/snippets/condition-set/ja/sku.mdx";
+import Collection from "/snippets/condition-set/ja/collection.mdx";
+import Collections from "/snippets/condition-set/ja/collections.mdx";
+import LineItemProperty from "/snippets/condition-set/ja/line-item-property.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/ja/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/ja/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/ja/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/ja/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/ja/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/ja/cart-has-no-subscription-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/ja/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/ja/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/ja/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/ja/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/ja/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/ja/address-line2.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 顧客
+
+### 顧客がログインしている場合
+
+顧客がアクティブなアカウントセッションを持ち、チェックアウト時にストアアカウントにログインしている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/customer-logged-in.webp"
+  alt="顧客がログインしている"
+/>
+
+### 顧客がログインしていない場合
+
+顧客がアクティブなアカウントセッションを持っておらず、ゲストとしてチェックアウトしている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-logged-in.webp"
+  alt="顧客がログインしていない"
+/>
+
+<EmailAddress />
+<CustomerTotalNumberOfPreviousOrders />
+
+## 注文詳細
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+## カートの詳細
+
+### カート属性
+
+この条件は、**カートに付加された属性**を特定の基準と比較します。以下のサブ条件に基づいて判定されます：
+
+- **これらの値のいずれかを持つ**（指定したカート属性が入力された値のいずれかを含む場合に一致）
+- **これらの値のいずれも持たない**（指定したカート属性が入力された値を含まない場合に一致）
+- **空の値を持つ**（カート属性が存在するが値が空の場合に一致）
+- **空の値を持たない**（カート属性が存在し、値が入力されている場合に一致）
+
+これらの条件を設定する手順：
+
+<Steps>
+  <Step title="属性キーを入力">
+    「キーを入力」フィールドに<strong>属性キー</strong>を入力します。
+  </Step>
+
+  <Step title="値を入力">
+    必要に応じて、一致させたい<strong>値</strong>を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+**これらの値のいずれかを持つ** および **これらの値のいずれも持たない** の場合は、1つ以上の値を入力フィールドに入力します。複数の値はカンマで区切ります。
+
+<Note>
+  部分一致には * ワイルドカードを使用してください。例えば、value* は value123 や VALUETEST などに一致します。
+</Note>
+
+> **「これらの値のいずれかを持つ」の例**:  
+キー: `delivery_method`  
+値: `express, pickup`  
+→ `delivery_method` 属性が `express` または `pickup` の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
+  alt="カート属性が値を持つ"
+/>
+
+**空の値を持つ** および **空の値を持たない** の場合は、値の入力は不要です。
+
+> **「空の値を持たない」の例**:  
+> キー: `gift_message`  
+> → `gift_message` 属性が存在し、何らかのテキストを含む場合（例：「Happy Birthday!」）に一致します。
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-not-empty-value.webp"
+  alt="カート属性が空でない"
+/>
+
+### SKUごとの商品数量
+
+この条件は、注文内の**特定の商品（SKU指定）の数量**を定義された基準と比較します。以下のサブ条件に基づきます：
+
+- **数量が以上**（指定したSKUの数量が入力した数以上の場合に一致）
+- **数量が以下**（指定したSKUの数量が入力した数以下の場合に一致）
+- **数量が割り切れる**（指定したSKUの数量が入力した数で割り切れる場合に一致）
+- **数量が割り切れない**（指定したSKUの数量が入力した数で割り切れない場合に一致）
+
+条件を設定する手順：
+
+<Steps>
+  <Step title="SKUを入力">
+    「SKUを入力」フィールドに<strong>SKU</strong>を入力します。
+  </Step>
+
+  <Step title="数量を入力">
+    「数量を入力」フィールドに<strong>数量</strong>を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+> **「数量が以上」の例**:  
+> SKU: `ABC123`  
+> 数量: `3`  
+> → 商品 `ABC123` が3個以上ある注文に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-has-greater-value.webp"
+  alt="SKUごとの商品数量が以上"
+/>
+
+> **「数量が割り切れる」の例**:  
+> SKU: `ABC123`  
+> 数量: `2`  
+> → 商品 `ABC123` の数量が2, 4, 6, 8... の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-divisible-by.webp"
+  alt="SKUごとの商品数量が割り切れる"
+/>
+
+### 合計数量 – SKUの商品数量
+
+この条件は、注文内の**指定されたSKUを除いた全商品の合計数量**を基準と比較します。以下のサブ条件に基づきます：
+
+- **数量が以上**（指定SKUを除く合計数量が入力した数以上の場合に一致）
+- **数量が以下**（指定SKUを除く合計数量が入力した数以下の場合に一致）
+- **数量が割り切れる**（指定SKUを除く合計数量が入力した数で割り切れる場合に一致）
+- **数量が割り切れない**（指定SKUを除く合計数量が入力した数で割り切れない場合に一致）
+
+条件を設定する手順：
+
+<Steps>
+  <Step title="除外するSKUを入力">
+    「SKUを入力」フィールドに<strong>除外するSKU</strong>を入力します。
+  </Step>
+
+  <Step title="数量を入力">
+    「数量を入力」フィールドに<strong>数量</strong>を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+> **「数量が以上」の例**:  
+> SKU: `ABC123`  
+> 数量: `5`  
+> → `ABC123` を除いた合計数量が5以上の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-has-greater-value.webp"
+  alt="合計数量 – SKUの商品数量が以上"
+/>
+
+> **「数量が割り切れる」の例**:  
+> SKU: `ABC123`  
+> 数量: `3`  
+> → `ABC123` を除いた合計数量が3, 6, 9... の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-divisible-by.webp"
+  alt="合計数量 – SKUの商品数量が割り切れる"
+/>
+
+## カートに商品が含まれる
+
+<SKU />
+<Collection />
+<Collections />
+<LineItemProperty />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+## 商品メタフィールド
+
+### 商品バリアントメタフィールド
+
+この条件は、指定した**商品バリアントメタフィールド**を **namespace** と **key** で判定し、以下のサブ条件のいずれかを使用して評価します：
+
+- **これらの値のいずれかを持つ**（メタフィールドが入力値のいずれかを含む場合に一致）
+- **これらの値のいずれも持たない**（メタフィールドが入力値を含まない場合に一致）
+- **これら以外の値を持つ**（メタフィールドが入力値以外の値を持つ場合に一致）
+- **これら以外の値を持たない**（メタフィールドが入力値のみを持ち、それ以外を持たない場合に一致）
+- **空の値を持つ**（メタフィールドが値を持たない場合に一致）
+- **空の値を持たない**（メタフィールドが何らかの値を持つ場合に一致）
+- **数値が以上**（メタフィールドの数値が入力値以上の場合に一致）
+- **数値が以下**（メタフィールドの数値が入力値以下の場合に一致）
+- **値の数が以上**（メタフィールド内の値の数が入力値以上の場合に一致）
+- **値の数が以下**（メタフィールド内の値の数が入力値以下の場合に一致）
+
+**これらの値のいずれかを持つ**、**これらの値のいずれも持たない**、**これら以外の値を持つ**、**これら以外の値を持たない** の場合は、1つ以上の値を入力します。複数の値はカンマで区切ります。
+
+> 例: `Namespace: shipping` · `Key: allowed_regions` · `これらの値のいずれも持たない: CA, TX` → メタフィールドに「CA」「TX」が含まれない場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-does-not-contains.webp"
+  alt="商品バリアントメタフィールドが含まない"
+/>
+
+**数値が以上** および **数値が以下** の場合、入力フィールドに1つの数値を入力してメタフィールドの数値と比較します。
+
+> 例: `Namespace: specs` · `Key: length_mm` · `数値が50以上` → メタフィールドの数値が50以上の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value.webp"
+  alt="商品バリアントメタフィールドが数値以上"
+/>
+
+**値の数が以上** および **値の数が以下** の場合、入力フィールドに1つの数値を入力して、メタフィールドの値の数と比較します。
+
+> 例: `Namespace: custom` · `Key: available_colors` · `値の数が3以上` → メタフィールドに3つ以上の値がある場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value-or-equals.webp"
+  alt="商品バリアントメタフィールドの値の数が以上"
+/>
+
+## 配送
+
+<SelectedShippingMethod />
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## ローカライズ
+<UserLanguage />
+
+## 配送先住所
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
+
+## 比較
+
+### SKUごとの商品数量 vs SKUごとの商品数量
+
+この条件は、**あるSKUの商品数量**を**別のSKUの商品数量**と比較します。以下のサブ条件に基づきます：
+
+- **数量が等しい**（SKU1とSKU2の数量が完全に一致する場合に一致）
+- **数量が等しくない**（SKU1とSKU2の数量が異なる場合に一致）
+- **数量が以上**（SKU1の数量がSKU2の数量以上の場合に一致）
+- **数量が以下**（SKU1の数量がSKU2の数量以下の場合に一致）
+- **数量が倍数である**（SKU1の数量がSKU2の数量の正確な倍数である場合に一致）
+- **数量が倍数でない**（SKU1の数量がSKU2の数量の正確な倍数でない場合に一致）
+
+条件を設定する手順：
+
+<Steps>
+  <Step title="最初の商品SKUを入力">
+    <strong>SKU1</strong> フィールドに最初の商品<strong>SKUコード</strong>を入力します。
+  </Step>
+
+  <Step title="2番目の商品SKUを入力">
+    <strong>SKU2</strong> フィールドに2番目の商品<strong>SKUコード</strong>を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+> **「数量が以上」の例**:  
+> SKU1: `SKU-ABC`  
+> SKU2: `SKU-XYZ`  
+> → カート内の `SKU-ABC` の数量が `SKU-XYZ` の数量以上の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-greater-equals.webp"
+  alt="SKU 数量が以上"
+/>
+
+> **「数量が倍数である」の例**:  
+> SKU1: `SKU-A`  
+> SKU2: `SKU-B`  
+> 倍数: `2`  
+> → `SKU-A` の数量が `SKU-B` の数量のちょうど 2 倍、4 倍、6 倍 … の場合に一致します  
+> （例: `SKU-A` が 6 個、`SKU-B` が 3 個の場合）。
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-multiple.webp"
+  alt="SKU 数量の倍数"
+/>

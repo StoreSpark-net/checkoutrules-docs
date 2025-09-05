@@ -1,0 +1,344 @@
+---
+title: "条件セット 4"
+description: "_条件セット 4_ 内で利用できる各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/ja/customer-tag.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/ja/customer-total-number-of-previous-orders.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/ja/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/ja/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/ja/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/ja/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/ja/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/ja/total-product-discount-percentage.mdx";
+import SKU from "/snippets/condition-set/ja/sku.mdx";
+import ProductTag from "/snippets/condition-set/ja/product-tag.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import CityArea from "/snippets/condition-set/ja/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 顧客
+
+<EmailAddress />
+<CustomerTag />
+<CustomerTotalNumberOfPreviousOrders />
+
+## B2B 詳細
+
+### 顧客が B2B 企業である
+
+この条件は、顧客がストア記録上で **企業** に属しているかどうかを確認します。顧客が B2B 企業として識別されている場合、この条件は満たされます。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-b2b-company.webp"
+  alt="顧客が B2B 企業である"
+/>
+
+### 顧客が B2B 企業ではない
+
+この条件は、顧客がストア記録上で **企業に属していない** かどうかを確認します。顧客が B2B 企業として識別されていない場合、この条件は満たされます。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-b2b-company.webp"
+  alt="顧客が B2B 企業ではない"
+/>
+
+### 購入企業名
+
+この条件は、顧客がストア記録上の企業に属している場合、その **購入企業名** を以下のいずれかのサブ条件に基づいて確認します:
+
+- **含む**（購入企業名が入力された値を含む場合）
+- **含まない**（購入企業名が入力された値を含まない場合）
+- **空である**（購入企業名が入力されていない場合）
+- **空でない**（購入企業名が入力されている場合）
+- **一致する**（購入企業名が入力された値と完全に一致する場合）
+- **一致しない**（購入企業名が入力された値と完全に一致しない場合）
+
+**含む**, **含まない**, **一致する**, **一致しない** の場合は、比較する値をテキストボックスに入力します。
+
+> 例: `contains Trading` → 「Trading」という単語を含む任意の購入企業名に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-contains.webp"
+  alt="購入企業名を含む"
+/>
+
+**空である**, **空でない** の場合は値を入力する必要はありません。
+
+> 例: `is empty` → 購入企業名のフィールドが空欄の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-empty.webp"
+  alt="購入企業名が空である"
+/>
+
+### 購入企業拠点名
+
+この条件は、顧客がストア記録上の企業に属している場合、その **購入企業拠点名** を以下のいずれかのサブ条件に基づいて確認します:
+
+- **含む**（購入企業拠点名が入力された値を含む場合）
+- **含まない**（購入企業拠点名が入力された値を含まない場合）
+- **空である**（購入企業拠点名が入力されていない場合）
+- **空でない**（購入企業拠点名が入力されている場合）
+- **一致する**（購入企業拠点名が入力された値と完全に一致する場合）
+- **一致しない**（購入企業拠点名が入力された値と完全に一致しない場合）
+
+**含む**, **含まない**, **一致する**, **一致しない** の場合は、比較する値をテキストボックスに入力します。
+
+> 例: `contains New York` → 「New York」を含む任意の購入企業拠点名に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-contains.webp"
+  alt="購入企業拠点名を含む"
+/>
+
+**空である**, **空でない** の場合は値を入力する必要はありません。
+
+> 例: `is empty` → 購入企業拠点名のフィールドが空欄の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-empty.webp"
+  alt="購入企業拠点名が空である"
+/>
+
+## 注文詳細
+
+<OrderSubtotalAmount />
+
+## カートの詳細
+
+### 通貨
+
+顧客がストアで選択した通貨を、以下のいずれかのサブ条件に基づいて 1 つ以上の特定の通貨と比較します:
+
+- **これらの値のいずれかを持つ**（顧客の通貨が指定リストに含まれる場合に一致）
+- **これらの値のいずれも持たない**（顧客の通貨が指定リストに含まれない場合に一致）
+- **これら以外の値を持つ**（顧客の通貨が指定リストに含まれない場合に一致）
+- **これら以外の値を持たない**（顧客の通貨が指定リストのみに含まれる場合に一致）
+
+上記のいずれかのオプションについて、リストから 1 つ以上の通貨を検索して選択します。クイック選択には **貼り付け**, **すべてコピー**, **すべてクリア** のオプションも利用できます。複数の値はカンマで区切って入力します。
+
+> 例: `Does not have any other value besides these values: USD, EUR` → フィールドに「USD」または「EUR」しか含まれていない場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/select-currencies.webp"
+  alt="複数通貨"
+/>
+
+### 商品の販売元
+
+この条件は **商品販売元（Product Vendor）** を特定の基準と比較します。カート内の任意の商品が入力された販売元の値に一致する場合、以下のいずれかのサブ条件に基づいて判定されます：
+
+- **これらのいずれかの値を持つ**（商品販売元が入力した値のいずれかに一致する場合に一致）
+- **これらのいずれかの値を持たない**（商品販売元が入力した値のいずれにも一致しない場合に一致）
+- **これら以外の値を持つ**（商品販売元が入力した値以外の値を持つ場合に一致）
+- **これら以外の値を持たない**（商品販売元が入力した値のみを持ち、それ以外はない場合に一致）
+- **値の数が以上である**（商品販売元の **数** が入力された数以上である場合に一致）
+- **値の数が以下である**（商品販売元の **数** が入力された数以下である場合に一致）
+
+**これらのいずれかの値を持つ**、**これらのいずれかの値を持たない**、**これら以外の値を持つ**、**これら以外の値を持たない** の場合、1 つ以上の商品販売元名を入力します。複数の値はカンマで区切ります。
+
+<Note>
+  複数の値に一致させるには * ワイルドカードを使用できます。例: Drop* → Dropship、drop-590 などに一致します。  
+  任意の 1 文字に一致させるには ? を使用します。
+</Note>
+
+> 例: `これらのいずれかの値を持つ: Nike, Adidas` → 商品販売元が「Nike」または「Adidas」の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-vendor.webp"
+  alt="商品販売元"
+/>
+
+**値の数が以上である** および **値の数が以下である** の場合、商品販売元の数と一致させるために 1 つの数値を入力します。
+
+> 例: `値の数が以上である 3` → 商品販売元が 3 つ以上ある場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/count-product-vendor.webp"
+  alt="商品販売元の数"
+/>
+
+### 商品タイトル
+
+この条件は **商品タイトル** を特定の基準と比較します。カート内の任意の商品が入力された商品タイトルの値に一致する場合、以下のいずれかのサブ条件に基づいて判定されます：
+
+- **含む**（商品タイトルに入力した値が含まれている場合に一致）
+- **含まない**（商品タイトルに入力した値が含まれていない場合に一致）
+- **一致する**（商品タイトルが入力した値と完全に一致する場合に一致）
+- **一致しない**（商品タイトルが入力した値と完全に一致しない場合に一致）
+
+これらの条件を設定するには、フィールドに商品タイトルの値を入力し、ドロップダウンから比較方法を選択します。
+
+> 例: `含む Shoes` → 「Shoes」を含む任意の商品タイトルに一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-title-contains.webp"
+  alt="商品タイトルに含む"
+/>
+
+### 商品タイプ
+
+この条件は **商品タイプ** を特定の基準と比較します。カート内の任意の商品が入力された商品タイプの値に一致する場合、以下のいずれかのサブ条件に基づいて判定されます：
+
+- **含む**（商品タイプに入力した値が含まれている場合に一致）
+- **含まない**（商品タイプに入力した値が含まれていない場合に一致）
+- **空である**（商品タイプが入力されていない場合に一致）
+- **空でない**（商品タイプが入力されている場合に一致）
+- **一致する**（商品タイプが入力した値と完全に一致する場合に一致）
+- **一致しない**（商品タイプが入力した値と完全に一致しない場合に一致）
+
+**含む**、**含まない**、**一致する**、**一致しない** の場合は、商品タイプと比較する値をテキストボックスに入力します。
+
+> 例: `含む Electronics` → 「Electronics」を含む任意の商品タイプに一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-type-contains.webp"
+  alt="商品タイプに含む"
+/>
+
+**空である** および **空でない** の場合は、値の入力は不要です。
+
+> 例: `空である` → 商品タイプが空白の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-type-empty.webp"
+  alt="商品タイプが空"
+/>
+
+### SKU ごとの注文小計金額
+
+この条件は、注文内の **特定 SKU を持つ商品の小計金額** を特定の基準と比較します。以下のいずれかのサブ条件に基づいて判定されます：
+
+- **金額が以上である**（指定された SKU の商品の小計金額が入力した金額以上の場合に一致）
+- **金額が以下である**（指定された SKU の商品の小計金額が入力した金額以下の場合に一致）
+
+これらの条件を設定する手順：
+
+<Steps>
+  <Step title="SKU を入力">
+    「SKU を入力」フィールドに <strong>SKU</strong> を入力します。
+  </Step>
+
+  <Step title="金額を入力">
+    「金額を入力」フィールドに <strong>金額</strong> を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+<Note>
+  金額はストアの通貨で入力してください。  
+  設定 > ストアの詳細 > ストア通貨
+</Note>
+
+> **「金額が以上である」の例**:  
+> SKU: `ABC123`  
+> 金額: `777`  
+> → SKU `ABC123` の商品の小計金額が 777 以上の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-sku-has-greater-value.webp"
+  alt="SKU ごとの注文小計金額が以上"
+/>
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## カートに商品が含まれる
+
+<SKU />
+<ProductTag />
+
+## 商品メタフィールド
+
+### 商品メタフィールド
+
+この条件は、指定された **名前空間（namespace）** と **キー（key）** の **商品メタフィールド** を確認し、以下のいずれかのサブ条件に基づいて評価します：
+
+- **これらのいずれかの値を持つ**（メタフィールドが入力された値のいずれかを持つ場合に一致）
+- **これらのいずれかの値を持たない**（メタフィールドが入力された値を持たない場合に一致）
+- **これら以外の値を持つ**（メタフィールドが入力された値以外の値を持つ場合に一致）
+- **これら以外の値を持たない**（メタフィールドが入力された値のみを持つ場合に一致）
+- **空の値を持つ**（メタフィールドが空の場合に一致）
+- **空の値を持たない**（メタフィールドに値が存在する場合に一致）
+- **数値が以上である**（メタフィールドの数値が入力した値以上の場合に一致）
+- **数値が以下である**（メタフィールドの数値が入力した値以下の場合に一致）
+- **値の数が以上である**（メタフィールドの値の数が入力した数以上の場合に一致）
+- **値の数が以下である**（メタフィールドの値の数が入力した数以下の場合に一致）
+
+**これらのいずれかの値を持つ**、**これらのいずれかの値を持たない**、**これら以外の値を持つ**、**これら以外の値を持たない** の場合は、1 つ以上の値を入力します。複数の値はカンマで区切ります。
+
+> 例: `Namespace: details` · `Key: material` · `これらのいずれかの値を持つ: Cotton, Linen` → メタフィールドに「Cotton」または「Linen」が含まれている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-has-any-value.webp"
+  alt="商品メタフィールドがいずれかの値を持つ"
+/>
+
+**数値が以上である** および **数値が以下である** の場合は、メタフィールドの数値と比較するために 1 つの数値を入力します。
+
+> 例: `Namespace: nutrition` · `Key: calories` · `数値が以下である 200` → メタフィールドの数値が 200 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-less-value.webp"
+  alt="商品メタフィールドが数値以下"
+/>
+
+**値の数が以上である** および **値の数が以下である** の場合は、メタフィールド内の値の数と比較するために 1 つの数値を入力します。
+
+> 例: `Namespace: features` · `Key: available_sizes` · `値の数が以上である 5` → メタフィールドに 5 つ以上のサイズが含まれている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
+  alt="商品メタフィールドが値の数以上"
+/>
+
+## 配送
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## ローカライズ
+<UserLanguage />
+
+## 配送先住所
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
+

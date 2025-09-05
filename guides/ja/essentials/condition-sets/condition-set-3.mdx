@@ -1,0 +1,258 @@
+---
+title: "条件セット 3"
+description: "_条件セット 3_ 内で利用可能な各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/ja/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/ja/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/ja/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/ja/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/ja/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/ja/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/ja/product-tags.mdx";
+import Collection from "/snippets/condition-set/ja/collection.mdx";
+import Collections from "/snippets/condition-set/ja/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/ja/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/ja/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/ja/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/ja/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/ja/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/ja/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/ja/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import Market from "/snippets/condition-set/ja/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/ja/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/ja/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/ja/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/ja/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/ja/address-line2.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import CityArea from "/snippets/condition-set/ja/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 顧客
+
+<EmailAddress />
+<CustomerTag />
+
+## 注文の詳細
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### 注文小計のワンタイム購入金額
+
+この条件は **注文の小計ワンタイム購入金額**（サブスクリプション商品以外の商品の小計金額）を次のいずれかの基準と比較して判定します:
+
+- **以上**（小計ワンタイム購入金額が入力した金額以上の場合に一致）
+- **以下**（小計ワンタイム購入金額が入力した金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額は店舗の通貨で入力してください。 設定 > 店舗詳細 > 店舗通貨
+</Note>
+
+> 例: `以上 700` → 注文の小計ワンタイム購入金額が 700 以上の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="注文小計ワンタイム購入金額"
+/>
+
+### 注文小計のサブスクリプション金額
+
+この条件は **注文の小計サブスクリプション金額**（サブスクリプション商品の小計金額）を次のいずれかの基準と比較して判定します:
+
+- **以上**（小計サブスクリプション金額が入力した金額以上の場合に一致）
+- **以下**（小計サブスクリプション金額が入力した金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額は店舗の通貨で入力してください。 設定 > 店舗詳細 > 店舗通貨
+</Note>
+
+> 例: `以上 1200` → 注文の小計サブスクリプション金額が 1200 以上の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="注文小計サブスクリプション金額"
+/>
+
+### 注文小計のデジタル商品金額
+
+この条件は **注文の小計デジタル商品金額**（デジタル商品の小計金額）を次のいずれかの基準と比較して判定します:
+
+- **以上**（小計デジタル金額が入力した金額以上の場合に一致）
+- **以下**（小計デジタル金額が入力した金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額は店舗の通貨で入力してください。 設定 > 店舗詳細 > 店舗通貨
+</Note>
+
+> 例: `以下 398` → 注文の小計デジタル金額が 398 以下の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="注文小計デジタル商品金額"
+/>
+
+### 注文小計の物理商品金額
+
+この条件は **注文の小計物理商品金額**（物理商品の小計金額）を次のいずれかの基準と比較して判定します:
+
+- **以上**（小計物理金額が入力した金額以上の場合に一致）
+- **以下**（小計物理金額が入力した金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額は店舗の通貨で入力してください。 設定 > 店舗詳細 > 店舗通貨
+</Note>
+
+> 例: `以上 299` → 注文の小計物理金額が 299 以上の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="注文小計物理商品金額"
+/>
+
+<OrderTotalQuantity />
+
+## カートの詳細
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### 商品タグごとの数量
+
+この条件は **特定の商品タグが付いた商品の数量** を次のいずれかの基準と比較して判定します:
+
+- **数量が以上**（指定した商品タグの商品の数量が入力した数以上の場合に一致）
+- **数量が以下**（指定した商品タグの商品の数量が入力した数以下の場合に一致）
+- **数量が割り切れる**（指定した商品タグの商品の数量が入力した数の倍数の場合に一致）
+- **数量が割り切れない**（指定した商品タグの商品の数量が入力した数の倍数でない場合に一致）
+
+これらの条件を設定するには:
+
+<Steps>
+  <Step title="商品タグを入力">
+    「商品タグを入力」フィールドに <strong>商品タグ</strong> を入力します。
+  </Step>
+
+  <Step title="数量を入力">
+    「数量を入力」フィールドに <strong>数量</strong> を入力します。
+  </Step>
+
+  <Step title="比較オプションを選択">
+    ドロップダウンから比較オプションを選択します。
+  </Step>
+</Steps>
+
+> **「数量が以上」の例**:  
+> 商品タグ: `SummerCollection`  
+> 数量: `3`  
+> → `SummerCollection` タグ付きの商品が 3 個以上ある注文に一致。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="商品タグごとの数量が以上"
+/>
+
+> **「数量が割り切れる」の例**:  
+> 商品タグ: `SummerCollection`  
+> 数量: `2`  
+> → `SummerCollection` タグ付き商品の数量が 2, 4, 6, 8 … の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="商品タグごとの数量が割り切れる"
+/>
+
+## カートに商品が含まれる
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### 任意の商品単価
+
+この条件は **注文内の任意の商品単価** を次のいずれかの基準と比較して判定します:
+
+- **以上**（任意の商品単価が入力した金額以上の場合に一致）
+- **以下**（任意の商品単価が入力した金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額は店舗の通貨で入力してください。 設定 > 店舗詳細 > 店舗通貨
+</Note>
+
+> 例: `以上 200` → 任意の商品単価が 200 以上の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="任意の商品単価"
+/>
+
+## 配送
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## ローカライズ
+<UserLanguage />
+<Market />
+
+## 配送先住所
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

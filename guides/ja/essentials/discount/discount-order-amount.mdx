@@ -1,0 +1,130 @@
+---
+title: "注文金額の割引"
+description: "指定された条件に基づいて注文小計を割引します。"
+icon: "badge-percent"
+---
+
+## ルール概要
+
+このルールでは、定義された条件に基づいて注文小計に割引を適用できます。カート合計、顧客タグ、配送先住所、商品属性などの条件を使用して、パーセンテージ割引、固定額割引、特定の商品を除外したパーセンテージ割引、特定の商品にのみパーセンテージ割引、特定の商品を除外した固定額割引、特定の商品にのみ固定額割引などの割引を提供できます。
+
+このルールを使用して、割引コードを作成するか、自動割引を作成できます。割引コードを作成した場合、顧客はチェックアウト時に割引コードを使用して割引を受けることができます。自動割引を選択した場合は、設定された条件に基づいて、注文小計に自動的に割引が適用されます。これにより、購入を促進し、特定の顧客に報酬を与え、コンバージョン率を向上させることができます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **注文金額の割引** ルールを作成および設定する方法を示します。
+
+### 新しいルールを作成
+
+[ショッピファイ管理画面](/guides/ja/get-started/installation#go-to-the-app) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#create-a-sample-rule) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+次に、**チェックアウトルールタイプ選択画面** にリダイレクトされます。_カテゴリー「割引」→ チェックアウトルールタイプ「注文金額の割引」→ 「ルールを選択」_ を選びます。
+
+<img
+  src="/images/essentials/discount/select-discount-amount.webp"
+  alt="割引を選択"
+/>
+
+次に、**新しい注文金額の割引ルール作成** 画面に移動し、ルールを設定できます。
+
+### ルールの設定
+
+ルールを設定するには、まず任意で「注文金額の割引」などの名前を付けて、**自動割引** を適用する場合に何をするルールかを説明できます。
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-order-amount.webp"
+  alt="自動割引名"
+/>
+
+または、割引コードを使用して割引を適用したい場合は、**「割引コード」** をクリックして希望のコードを入力するか、**「ランダムコードを生成」** をクリックしてランダムに生成できます。
+
+<img
+  src="/images/essentials/discount/discount-code-discount-order-amount.webp"
+  alt="割引コード"
+/>
+
+同じ画面で、ルールの [ステータス](/guides/ja/get-started/concepts#status) を選択します：テスト、アクティブ、または無効。ここでは、**テスト** ステータスを選択して、実際の顧客のチェックアウトに影響を与えずにルールをすぐにテストできます。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="ルールステータス"
+/>
+
+同じ画面で、[組み合わせ設定](/guides/ja/get-started/concepts#combinations) を設定し、この注文割引が **他の割引** とどのように組み合わせられるかを制御します。次の組み合わせが可能です：
+
+- **商品割引** – 注文割引が商品レベルの割引と併用できるようにします。商品割引も注文割引との組み合わせを許可するように設定してください。
+
+- **注文割引** – 複数の注文レベル割引を併用できるようにします。他の注文割引も注文割引との組み合わせを許可するように設定してください。
+
+- **配送割引** – 注文割引が配送レベル割引と併用できるようにします。配送割引も注文割引との組み合わせを許可するように設定してください。
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="組み合わせ"
+/>
+
+同じ画面で、[戦略](/guides/ja/get-started/concepts#strategy) を設定し、複数の割引ブロックをシステムがどのように扱うかを制御します。**最初** を選択すると、条件を満たす最初の割引のみが適用され、後でより良い割引があっても無視されます。**最大** を選択すると、すべての割引ブロックを評価し、最も高い割引を適用します。
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="注文割引の戦略"
+/>
+
+同じ画面で、関連する [条件](/guides/ja/get-started/concepts#conditions-when) および [アクション](/guides/ja/get-started/concepts#action-what) を選択します。
+
+> 例として、ルールを常に実行するよう設定し、**10% 割引** を **パーセンテージ** オプションで適用するよう構成します。割引メッセージ **「10% OFF」** がチェックアウトで顧客に表示されます。
+
+<img
+  src="/images/essentials/discount/condition-set-discount-order-amount.webp"
+  alt="条件セット 割引"
+/>
+
+アクションセクションでは、特定の商品を選択する必要なく **パーセンテージ** または **固定額割引** で割引を適用できます。他の方法 **「これらの商品を除外したパーセンテージ割引」、「これらの商品にのみパーセンテージ割引」、「これらの商品を除外した固定額割引」、「これらの商品にのみ固定額割引」** は、割引を適用するために対象商品を選択する必要があります。
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="アクションタイプ 割引"
+/>
+
+同じ画面で、[割引の最大使用回数](/guides/ja/get-started/concepts#maximum-discount-uses) セクションにて、割引コードの使用制限を有効化したり、顧客ごとに1回までに制限したり、割引コードが選択されている場合は両方を適用できます。
+
+最後に、画面上部の <b>保存</b> ボタンをクリックして、ルールを作成および保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルール保存" />
+
+## ルールのテスト
+
+ルールはテストステータスに設定されているため、チェックアウトでルールを実行するには、実際のメールアドレスの代わりに `test@testing.com` を使用する必要があります。
+
+<Warning>
+  以下の画像は、テスト用メールアドレスを使用する <b>前</b> のチェックアウトページを示しています。割引はまだ適用されていません。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-methods.webp"
+  alt="ルール適用前"
+/>
+
+メールを設定した後、チェックアウトルールが実行され、設定された **10% 割引** が **パーセンテージ** オプションで適用されます。チェックアウトで **「10% OFF」** 割引メッセージが表示されていることを確認できます。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order-amount.webp"
+  alt="ルール適用後"
+/>
+
+## ルールを有効化
+
+テストが完了したら、ルールを有効化して、実際の顧客のチェックアウトに変更を適用できるようにします。有効化されたルールのみが、すべての顧客のチェックアウトに変更を加えることができます。
+
+サイドバーの **ルール** をクリックしてすべてのルールを表示します。有効化したいルールを選択し、**有効化** ボタンをクリックして有効化します。
+
+<Warning>
+  ルールの有効化は有料プランでのみ利用可能です。プランをまだアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#upgrade-your-plan) の手順に従ってアップグレードしてください。
+</Warning>
+
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-order-amount.webp"
+  alt="ルールを有効化"
+/>

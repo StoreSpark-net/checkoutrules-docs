@@ -1,0 +1,199 @@
+---
+title: "条件セット 5"
+description: "_条件セット 5_ 内で利用可能な各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/ja/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/ja/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/ja/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/ja/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/ja/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/ja/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/ja/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/ja/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/ja/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/ja/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import Market from "/snippets/condition-set/ja/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import CityArea from "/snippets/condition-set/ja/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 顧客
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## B2B 詳細
+
+### 購入会社のメタフィールド
+
+この条件では、指定した **namespace** と **key** の **購入会社メタフィールド** をチェックし、以下のいずれかのサブ条件で評価します:
+
+- **これらの値のいずれかを持つ**（入力された値のうち少なくとも 1 つを持っている場合に一致）
+- **これらの値のいずれも持たない**（入力された値のいずれも持っていない場合に一致）
+- **これらの値以外の値を持つ**（入力された値以外の値を持っている場合に一致）
+- **これらの値以外の値を持たない**（入力された値のみを持ち、それ以外は持っていない場合に一致）
+- **空の値を持つ**（メタフィールドに値がない場合に一致）
+- **空の値を持たない**（メタフィールドに何らかの値がある場合に一致）
+- **数値が以上である**（メタフィールドの数値が入力された数値以上である場合に一致）
+- **数値が以下である**（メタフィールドの数値が入力された数値以下である場合に一致）
+- **値の数が以上である**（メタフィールド内の値の数が入力された数値以上である場合に一致）
+- **値の数が以下である**（メタフィールド内の値の数が入力された数値以下である場合に一致）
+
+**これらの値のいずれかを持つ**, **これらの値のいずれも持たない**, **これらの値以外の値を持つ**, **これらの値以外の値を持たない** の場合、1 つ以上の値を入力欄に入力してください。複数の値はカンマで区切ります。
+
+> 例: `Namespace: profile` · `Key: industry` · `これらの値のいずれかを持つ: Retail, Wholesale` → 購入会社のメタフィールドに「Retail」または「Wholesale」が含まれていれば一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="購入会社メタフィールドが任意の値を持つ"
+/>
+
+**数値が以上である** と **数値が以下である** の場合、1 つの数値を入力欄に入力して、メタフィールドの数値と照合します。
+
+> 例: `Namespace: finance` · `Key: annual_revenue` · `数値が 1000000 以上` → 購入会社の年間収益が 100 万以上の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="購入会社メタフィールド数値が以上"
+/>
+
+**値の数が以上である** と **値の数が以下である** の場合、1 つの数値を入力欄に入力して、メタフィールド内の値の数と照合します。
+
+> 例: `Namespace: compliance` · `Key: certifications` · `値の数が 2 以下` → 会社が 2 つ以下の認証を持っている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="購入会社メタフィールド値の数"
+/>
+
+### 購入会社のロケーションメタフィールド
+
+この条件は、指定された **namespace** と **key** による **購入会社のロケーションメタフィールド** をチェックし、次のいずれかのサブ条件で評価します:
+
+- **これらの値のいずれかを持つ** （メタフィールドに入力された値の少なくとも1つが含まれている場合に一致）
+- **これらの値のいずれも持たない** （メタフィールドに入力された値が1つも含まれていない場合に一致）
+- **これらの値以外の値を持つ** （メタフィールドが入力された値以外の値を持っている場合に一致）
+- **これらの値以外の値を持たない** （メタフィールドが入力された値のみを持ち、それ以外はない場合に一致）
+- **空の値を持つ** （メタフィールドに値がない場合に一致）
+- **空の値を持たない** （メタフィールドに何らかの値が含まれている場合に一致）
+- **数値が指定の数以上である** （メタフィールドの数値が入力された数以上の場合に一致）
+- **数値が指定の数以下である** （メタフィールドの数値が入力された数以下の場合に一致）
+- **値の数が指定の数以上である** （メタフィールド内の値の **件数** が入力された数以上の場合に一致）
+- **値の数が指定の数以下である** （メタフィールド内の値の **件数** が入力された数以下の場合に一致）
+
+**これらの値のいずれかを持つ**、**これらの値のいずれも持たない**、**これらの値以外の値を持つ**、**これらの値以外の値を持たない** を使用する場合は、1つ以上の値をフィールドに入力してください。複数の値を指定する場合はカンマで区切ります。
+
+> 例: `Namespace: address` · `Key: country_code` · `これらの値のいずれも持たない: US, CA` → 購入会社の所在地がアメリカまたはカナダでない場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="購入会社所在地メタフィールドが含まない"
+/>
+
+**数値が以上である** と **数値が以下である** の場合、1 つの数値を入力してください。
+
+> 例: `Namespace: logistics` · `Key: warehouse_capacity` · `数値が 5000 以下` → 購入会社所在地の倉庫容量が 5000 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="購入会社所在地メタフィールド数値が以下"
+/>
+
+**値の数が以上である** と **値の数が以下である** の場合、1 つの数値を入力してください。
+
+> 例: `Namespace: services` · `Key: supported_languages` · `値の数が 4 以上` → 所在地が 4 つ以上の言語をサポートしている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="購入会社所在地メタフィールド値の数"
+/>
+
+## 注文の詳細
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## カートに商品が含まれる
+
+<ProductTag />
+<ProductTags />
+
+### 商品バリアントオプション
+
+この条件では、**商品バリアントオプション** を特定の条件に基づいて確認します。カート内のいずれかの商品が入力された商品バリアントオプション値を持っている場合、以下のサブ条件で評価します:
+
+- **これらの値のいずれかを持つ**
+- **これらの値のいずれも持たない**
+- **これらの値以外の値を持つ**
+- **これらの値以外の値を持たない**
+- **値の数が以上である**
+- **値の数が以下である**
+
+**これらの値のいずれかを持つ**, **これらの値のいずれも持たない**, **これらの値以外の値を持つ**, **これらの値以外の値を持たない** の場合、1 つ以上の商品バリアントオプション値を入力してください。複数の値はカンマで区切ります。
+
+> 例: `これらの値のいずれかを持つ: Red, Blue` → 商品バリアントオプションに「Red」または「Blue」が含まれている場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="商品バリアントオプション"
+/>
+
+**値の数が以上である** と **値の数が以下である** の場合、1 つの数値を入力して、商品バリアントオプション数と照合します。
+
+> 例: `値の数が 3 以上` → 商品バリアントオプションが 3 つ以上ある場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="商品バリアントオプション数"
+/>
+
+## 配送
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## ローカライゼーション
+
+<UserLanguage />
+<Market />
+
+## 配送先住所
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
