@@ -1,0 +1,239 @@
+---
+title: "Condition Set 6"
+description: "Learn about each condition available inside _Condition Set 6_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh-hans/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh-hans/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/zh-hans/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/zh-hans/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/zh-hans/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/zh-hans/email-address.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh-hans/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh-hans/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/zh-hans/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/zh-hans/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/zh-hans/order-total-subscription-weight.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/zh-hans/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/zh-hans/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/zh-hans/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/zh-hans/total-product-discount-percentage.mdx";
+import ProductTag from "/snippets/condition-set/zh-hans/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh-hans/product-tags.mdx";
+import LineItemProperty from "/snippets/condition-set/zh-hans/line-item-property.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/zh-hans/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/zh-hans/cart-has-no-one-time-purchase-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/zh-hans/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh-hans/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh-hans/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/zh-hans/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/zh-hans/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh-hans/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh-hans/first-name.mdx";
+import LastName from "/snippets/condition-set/zh-hans/last-name.mdx";
+import Company from "/snippets/condition-set/zh-hans/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh-hans/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh-hans/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh-hans/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh-hans/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh-hans/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Customer
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+
+## Order Details
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Order tax amount
+
+This condition checks the **order’s tax amount** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s tax amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s tax amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 50` → Matches orders with a tax amount of 50 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-tax-amount.webp"
+  alt="Order Tax Amount"
+/>
+
+### Order duty amount
+
+This condition checks the **order’s duty amount** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s duty amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s duty amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 80` → Matches orders with a duty amount of 80 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-duty-amount.webp"
+  alt="Order Duty Amount"
+/>
+
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+### Total discount amount (any discount type)
+
+This condition checks the **total discount amount** in the order (any product or order discount) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total discount amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the total discount amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is less than or equals 50` → Matches if the total discount amount of the order (any type) is 50 or less.
+
+<img
+  src="/images/essentials/condition-sets/total-discount-amount.webp"
+  alt="Total Discount Amount"
+/>
+
+### Total discount percentage (any discount type)
+
+This condition checks the **total discount percentage** in the order (any product or order discount) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total discount percentage from any type of discount in the order is greater than or equal to the entered percentage)
+- **is less than or equals** (Matches when the total discount percentage from any type of discount in the order is less than or equal to the entered percentage)
+
+To set these conditions, enter the percentage in the field and choose the appropriate comparison from the dropdown.
+
+> For example, `is less than or equals 15` → Matches if the total discount percentage from any discount type in the order is 15% or less.
+
+<img
+  src="/images/essentials/condition-sets/total-discount-percentage.webp"
+  alt="Total Discount Percentage (Any Discount Type)"
+/>
+
+### Order total discount amount
+
+This condition checks the **order total discount amount** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the total discount amount for the order is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the total discount amount for the order is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is less than or equals 75` → Matches if the total discount amount for the entire order is 75 or less.
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-amount.webp"
+  alt="Order Total Discount Amount"
+/>
+
+### Order total discount percentage
+
+This condition checks the **order total discount percentage** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the overall discount percentage applied to the entire order is greater than or equal to the entered percentage)
+- **is less than or equals** (Matches when the overall discount percentage applied to the entire order is less than or equal to the entered percentage)
+
+To set these conditions, enter the percentage in the field and choose the appropriate comparison from the dropdown.
+
+> For example, `is less than or equals 15` → Matches if the total discount percentage applied on the order is 15% or less.
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
+  alt="Order Total Discount Percentage"
+/>
+
+## Cart Details
+
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## Cart Has Any Items
+
+<ProductTag />
+<ProductTags />
+<LineItemProperty />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+
+## Shipping
+
+<SelectedShippingMethod />
+
+### Selected shipping method price
+
+This condition checks the **selected shipping method’s price** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the selected shipping method’s price is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the selected shipping method’s price is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is less than or equals 50` → Matches orders where the selected shipping method price is 50 or less.
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-price.webp"
+  alt="Selected Shipping Method Price"
+/>
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodPrice />
+<ShippingMethodsAvailable />
+
+## Localization
+<UserLanguage />
+
+## Shipping Address
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

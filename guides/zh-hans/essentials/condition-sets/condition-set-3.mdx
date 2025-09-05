@@ -1,0 +1,263 @@
+---
+title: "Condition Set 3"
+description: "Learn about each condition available inside _Condition Set 3_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh-hans/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh-hans/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/zh-hans/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/zh-hans/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh-hans/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh-hans/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/zh-hans/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh-hans/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh-hans/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/zh-hans/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh-hans/product-tags.mdx";
+import Collection from "/snippets/condition-set/zh-hans/collection.mdx";
+import Collections from "/snippets/condition-set/zh-hans/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/zh-hans/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/zh-hans/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/zh-hans/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/zh-hans/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/zh-hans/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/zh-hans/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/zh-hans/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/zh-hans/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh-hans/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh-hans/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/zh-hans/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/zh-hans/user-language.mdx";
+import Market from "/snippets/condition-set/zh-hans/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh-hans/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh-hans/first-name.mdx";
+import LastName from "/snippets/condition-set/zh-hans/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/zh-hans/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/zh-hans/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/zh-hans/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/zh-hans/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/zh-hans/address-line2.mdx";
+import Company from "/snippets/condition-set/zh-hans/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh-hans/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh-hans/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh-hans/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh-hans/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh-hans/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Customer
+
+<EmailAddress />
+<CustomerTag />
+
+## Order Details
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### Order subtotal one time purchase amount
+
+This condition checks the **order’s subtotal one time purchase amount** (The subtotal amount from products that are not subscription products) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s subtotal one time purchase amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s subtotal one time purchase amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 700` → Matches orders with a subtotal one time purchase amount of 700 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="Order Subtotal One Time Purchase Amount"
+/>
+
+### Order subtotal subscription amount
+
+This condition checks the **order’s subtotal subscription amount** (The subtotal amount from products that are subscription products) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s subtotal subscription amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s subtotal subscription amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 1200` → Matches orders with a subtotal subscription amount of 1200 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="Order Subtotal Subscription Amount"
+/>
+
+### Order subtotal digital amount
+
+This condition checks the **order’s subtotal digital amount** (The subtotal amount from products that are digital products) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s subtotal digital amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s subtotal digital amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is less than or equals 398` → Matches orders with a subtotal digital amount of 398 or less.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="Order Subtotal Digital Amount"
+/>
+
+### Order subtotal physical amount
+
+This condition checks the **order’s subtotal physical amount** (The subtotal amount from products that are physical products) against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the order’s subtotal physical amount is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the order’s subtotal physical amount is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 299` → Matches orders with a subtotal physical amount of 299 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="Order Subtotal Physical Amount"
+/>
+
+<OrderTotalQuantity />
+
+## Cart Details
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### Quantity per product tag
+
+This condition checks the **quantity of products with a specific product tag** in the order against defined criteria, based on one of the following sub-conditions:
+
+- **quantity is greater than or equals** (Matches when the quantity of products with the specified product tag is greater than or equal to the entered number)
+- **quantity is less than or equals** (Matches when the quantity of products with the specified product tag is less than or equal to the entered number)
+- **quantity is divisible by** (Matches when the quantity of products with the specified product tag is an exact multiple of the entered number)
+- **quantity is not divisible by** (Matches when the quantity of products with the specified product tag is not a multiple of the entered number)
+
+To set these conditions:
+
+<Steps>
+  <Step title="Enter product tag">
+    Enter the <strong>product tag</strong> in the “Enter product tag” field.
+  </Step>
+
+  <Step title="Enter quantity">
+    Enter the <strong>quantity</strong> in the “Enter quantity” field.
+  </Step>
+
+  <Step title="Select comparison option">
+    Select the comparison option from the dropdown.
+  </Step>
+</Steps>
+
+> **Example for “quantity is greater than or equals”**:  
+> Product Tag: `SummerCollection`  
+> Quantity: `3`  
+> → Matches orders where there are 3 or more units of products tagged `SummerCollection`.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="Quantity per Product Tag Has Greater Value"
+/>
+
+> **Example for “quantity is divisible by”**:  
+> Product Tag: `SummerCollection`  
+> Quantity: `2`  
+> → Matches orders where the quantity of products tagged `SummerCollection` is 2, 4, 6, 8, etc.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="Quantity per Product Tag Divisible By"
+/>
+
+## Cart Has Any Items
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### Any product cost per quantity
+
+This condition checks the **cost per quantity of any product in the order** against specific criteria, based on one of the following sub-conditions:
+
+- **is greater than or equals** (Matches when the cost per quantity of any product is greater than or equal to the entered amount)
+- **is less than or equals** (Matches when the cost per quantity of any product is less than or equal to the entered amount)
+
+To set these conditions, enter the amount in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> For example, `is greater than or equals 200` → Matches when any product’s cost per quantity is 200 or more.
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="Any Product Cost Per Quantity"
+/>
+
+## Shipping
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localization
+<UserLanguage />
+<Market />
+
+## Shipping Address
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

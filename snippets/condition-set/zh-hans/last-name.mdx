@@ -1,0 +1,52 @@
+### Last name
+
+Used to compare the customer’s last name with one or more specific values, counts, or states, based on one of the following sub-conditions:
+
+- **Contains** (Matches if the last name contains the specified value or partial value)
+- **Does not contain** (Matches if the last name does not contain the specified value or partial value)
+- **Is empty** (Matches if no last name is entered)
+- **Is not empty** (Matches if any value is entered in the last name field)
+- **Is** (Matches if the last name exactly matches the specified value)
+- **Is not** (Matches if the last name is not exactly the specified value)
+- **Has no of characters greater than or equals** (Matches if the total character count in the last name is greater than or equal to the specified number)
+- **Has no of characters less than or equals** (Matches if the total character count in the last name is less than or equal to the specified number)
+- **Has only** (Matches if the last name contains only the allowed character type from the dropdown)
+- **Does not have only** (Matches if the last name contains characters other than the allowed character type from the dropdown)
+
+For **Contains**, **Does not contain**, **Is**, and **Is not**, enter the value to match.
+
+> For example, `Is not: Smith` → Matches if the last name is anything except “Smith”.
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-not.webp"
+  alt="Last Name Is Not"
+/>
+
+For **Has only** and **Does not have only**, select the character type from the dropdown:
+
+- **English characters** (Allows only A–Z and a–z)
+- **English characters + accent variants** (Allows A–Z, a–z, plus accented characters like é, ñ, ö)
+  > For example, `Has only: English characters` → Matches if the last name contains English characters only.
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-only.webp"
+  alt="Last Name Has Only"
+/>
+
+For **Has no of characters greater than or equals** or **Has no of characters less than or equals**, enter the character count threshold.
+
+> For example, `Has no of characters greater than or equals 5` → Matches if the last name contains 5 or more characters.
+
+<img
+  src="/images/essentials/condition-sets/last-name-has-greater-value.webp"
+  alt="Last Name Has Greater Value"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches if the last name field is left blank.
+
+<img
+  src="/images/essentials/condition-sets/last-name-is-empty.webp"
+  alt="Last Name Is Empty"
+/>

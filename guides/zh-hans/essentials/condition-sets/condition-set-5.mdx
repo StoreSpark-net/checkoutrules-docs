@@ -1,0 +1,198 @@
+---
+title: "Condition Set 5"
+description: "Learn about each condition available inside _Condition Set 5_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh-hans/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh-hans/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/zh-hans/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/zh-hans/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/zh-hans/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/zh-hans/email-address.mdx";
+import CustomerTags from "/snippets/condition-set/zh-hans/customer-tags.mdx";
+import CustomerTag from "/snippets/condition-set/zh-hans/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh-hans/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh-hans/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/zh-hans/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/zh-hans/order-total-weight.mdx";
+import ProductTag from "/snippets/condition-set/zh-hans/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh-hans/product-tags.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh-hans/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh-hans/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh-hans/user-language.mdx";
+import Market from "/snippets/condition-set/zh-hans/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh-hans/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh-hans/first-name.mdx";
+import LastName from "/snippets/condition-set/zh-hans/last-name.mdx";
+import Company from "/snippets/condition-set/zh-hans/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh-hans/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh-hans/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh-hans/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh-hans/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh-hans/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Customer
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+<CustomerTag />
+<CustomerTags />
+
+## B2B Details
+
+### Purchasing company metafield
+
+This condition checks a **purchasing company metafield** you specify by **namespace** and **key**, then evaluates it using one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the metafield has at least one of the entered values)
+- **Does not have any of these values** (Matches if the metafield has none of the entered values)
+- **Has any other value besides these values** (Matches if the metafield has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the metafield has only the entered values and no others)
+- **Has empty value** (Matches if the metafield has no value)
+- **Does not have empty value** (Matches if the metafield contains any value)
+- **Has number greater than or equal to** (Matches if the metafield’s numeric value is greater than or equal to the entered number)
+- **Has number less than or equal to** (Matches if the metafield’s numeric value is less than or equal to the entered number)
+- **Has number of values greater than or equals** (Matches if the **count** of values in the metafield is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of values in the metafield is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas.
+
+> For example, `Namespace: profile` · `Key: industry` · `Has any of these values: Retail, Wholesale` → Matches if the purchasing company’s metafield contains either “Retail” or “Wholesale”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-has-any-value.webp"
+  alt="Purchasing Company Metafield Has Any Value"
+/>
+
+For **Has number greater than or equal to** and **Has number less than or equal to**, enter a single numeric value in the field to match against the metafield’s numeric value.
+
+> For example, `Namespace: finance` · `Key: annual_revenue` · `Has number greater than or equal to 1000000` → Matches if the purchasing company’s annual revenue is one million or more.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-greater-value.webp"
+  alt="Purchasing Company Metafield Greater Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match against the count of values in the metafield.
+
+> For example, `Namespace: compliance` · `Key: certifications` · `Has number of values less than or equals 2` → Matches if the company has two or fewer certifications.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-metafield-values-count.webp"
+  alt="Purchasing Company Metafield Values Count"
+/>
+
+### Purchasing company location metafield
+
+This condition checks a **purchasing company location metafield** you specify by **namespace** and **key**, then evaluates it using one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the metafield has at least one of the entered values)
+- **Does not have any of these values** (Matches if the metafield has none of the entered values)
+- **Has any other value besides these values** (Matches if the metafield has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the metafield has only the entered values and no others)
+- **Has empty value** (Matches if the metafield has no value)
+- **Does not have empty value** (Matches if the metafield contains any value)
+- **Has number greater than or equal to** (Matches if the metafield’s numeric value is greater than or equal to the entered number)
+- **Has number less than or equal to** (Matches if the metafield’s numeric value is less than or equal to the entered number)
+- **Has number of values greater than or equals** (Matches if the **count** of values in the metafield is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of values in the metafield is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas.
+
+> For example, `Namespace: address` · `Key: country_code` · `Does not have any of these values: US, CA` → Matches if the purchasing company location is not in the United States or Canada.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-does-not-have.webp"
+  alt="Purchasing Company Location Metafield Does Not Have"
+/>
+
+For **Has number greater than or equal to** and **Has number less than or equal to**, enter a single numeric value in the field to match against the metafield’s numeric value.
+
+> For example, `Namespace: logistics` · `Key: warehouse_capacity` · `Has number less than or equal to 5000` → Matches if the purchasing company location’s warehouse capacity is 5,000 units or fewer.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-less-value.webp"
+  alt="Purchasing Company Location Metafield Less Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match against the count of values in the metafield.
+
+> For example, `Namespace: services` · `Key: supported_languages` · `Has number of values greater than or equals 4` → Matches if the location supports four or more languages.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-metafield-values-count.webp"
+  alt="Purchasing Company Location Metafield Values Count"
+/>
+
+## Order Details
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+
+## Cart Has Any Items
+
+<ProductTag />
+<ProductTags />
+
+### Product variant option
+
+This condition checks the **Product Variant Options** against specific criteria. If any product in the cart has the entered Product Variant Option value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the Product Variant Options have at least one of the entered values)
+- **Does not have any of these values** (Matches if the Product Variant Options have none of the entered values)
+- **Has any other value besides these values** (Matches if the Product Variant Options have a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the Product Variant Options have only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of Product Variant Options is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of Product Variant Options is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more Product Variant Option values into the field. Separate multiple values with commas.
+
+> For example, `Has any of these values: Red, Blue` → Matches if the Product Variant Option includes either “Red” or “Blue”.
+
+<img
+  src="/images/essentials/condition-sets/product-variant-option.webp"
+  alt="Product Variant Option"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the Product Variant Options count.
+
+> For example, `Has number of values greater than or equals 3` → Matches if there are three or more Product Variant Options.
+
+<img
+  src="/images/essentials/condition-sets/count-product-variant-option.webp"
+  alt="Product Variant Option Count"
+/>
+
+## Shipping
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## Localization
+<UserLanguage />
+<Market />
+
+## Shipping Address
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

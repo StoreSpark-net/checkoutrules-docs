@@ -1,0 +1,344 @@
+---
+title: "Condition Set 4"
+description: "Learn about each condition available inside _Condition Set 4_."
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh-hans/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh-hans/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/zh-hans/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/zh-hans/customer-tag.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/zh-hans/customer-total-number-of-previous-orders.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh-hans/order-subtotal-amount.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh-hans/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh-hans/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/zh-hans/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/zh-hans/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/zh-hans/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/zh-hans/total-product-discount-percentage.mdx";
+import SKU from "/snippets/condition-set/zh-hans/sku.mdx";
+import ProductTag from "/snippets/condition-set/zh-hans/product-tag.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh-hans/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh-hans/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh-hans/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh-hans/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh-hans/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh-hans/first-name.mdx";
+import LastName from "/snippets/condition-set/zh-hans/last-name.mdx";
+import Company from "/snippets/condition-set/zh-hans/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh-hans/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh-hans/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh-hans/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh-hans/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh-hans/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## Customer
+
+<EmailAddress />
+<CustomerTag />
+<CustomerTotalNumberOfPreviousOrders />
+
+## B2B Details
+
+### Customer is a B2B company
+
+This condition checks whether the customer belongs to a **company** in your store records. If the customer is identified as a B2B company, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-b2b-company.webp"
+  alt="Customer is a B2B Company"
+/>
+
+### Customer is not a B2B company
+
+This condition checks whether the customer does **not** belong to a **company** in your store records. If the customer is not identified as a B2B company, the condition is considered met.
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-b2b-company.webp"
+  alt="Customer is Not a B2B Company"
+/>
+
+### Purchasing company name
+
+This condition checks if the customer belongs to a company in your store records, then checks that **purchasing company name** against specific criteria, based on one of the following sub-conditions:
+
+- **contains** (The purchasing company name includes the entered value)
+- **does not contain** (The purchasing company name does not include the entered value)
+- **is empty** (No purchasing company name is provided)
+- **is not empty** (A purchasing company name is provided)
+- **is** (The purchasing company name exactly matches the entered value)
+- **is not** (The purchasing company name does not exactly match the entered value)
+
+For **contains**, **does not contain**, **is**, and **is not**, type a value in the text box to compare against the customer’s purchasing company name.
+
+> For example, `contains Trading` → Matches any purchasing company name containing the word “Trading”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-contains.webp"
+  alt="Purchasing Company Name Contains"
+/>
+
+For **is empty** and **is not empty**, no value entry is required.
+
+> For example, `is empty` → Matches when the purchasing company name field is blank.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-name-empty.webp"
+  alt="Purchasing Company Name Empty"
+/>
+
+### Purchasing company location name
+
+This condition checks if the customer belongs to a company in your store records, then checks that **purchasing company location name** against specific criteria, based on one of the following sub-conditions:
+
+- **contains** (The purchasing company location name includes the entered value)
+- **does not contain** (The purchasing company location name does not include the entered value)
+- **is empty** (No purchasing company location name is provided)
+- **is not empty** (A purchasing company location name is provided)
+- **is** (The purchasing company location name exactly matches the entered value)
+- **is not** (The purchasing company location name does not exactly match the entered value)
+
+For **contains**, **does not contain**, **is**, and **is not**, type a value in the text box to compare against the customer’s purchasing company location name.
+
+> For example, `contains New York` → Matches any purchasing company location name containing “New York”.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-contains.webp"
+  alt="Purchasing Company Location Name Contains"
+/>
+
+For **is empty** and **is not empty**, no value entry is required.
+
+> For example, `is empty` → Matches when the purchasing company location name field is blank.
+
+<img
+  src="/images/essentials/condition-sets/purchasing-company-location-name-empty.webp"
+  alt="Purchasing Company Location Name Empty"
+/>
+
+## Order Details
+
+<OrderSubtotalAmount />
+
+## Cart Details
+
+### Currency
+
+Used to compare the customer's currency selection on your store, with one or more specific currencies, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the customer's currency is from the given list)
+- **Does not have any of these values** (Matches if the customer's currency is not from the given list)
+- **Has any other value besides these values** (Matches if the customer's currency is not from the given list)
+- **Does not have any other value besides these values** (Matches if the customer's currency is from the given list and no others)
+
+For any of the above options, search and select one or more currencies from the list. You can also use the **Paste**, **Copy all**, or **Clear all** options for quick selection. Separate multiple values with commas.
+
+> For example, `Does not have any other value besides these values: USD, EUR` → Matches if the field contains only “USD” or “EUR” and no other currencies.
+
+<img
+  src="/images/essentials/condition-sets/select-currencies.webp"
+  alt="Multiple Currencies"
+/>
+
+### Product vendor
+
+This condition checks the **product vendor** against specific criteria. If any product in the cart has the entered Product Vendor value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the product vendor has at least one of the entered values)
+- **Does not have any of these values** (Matches if the product vendor has none of the entered values)
+- **Has any other value besides these values** (Matches if the product vendor has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the product vendor has only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of product vendors is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of product vendors is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more product vendor names into the field. Separate multiple values with commas.
+
+<Note>
+  Use * wildcard to match multiple values. For example, Drop* will match
+  Dropship, drop-590 etc. Use ? to match to any single character.
+</Note>
+> For example, `Has any of these values: Nike, Adidas` → Matches if the product vendor
+is either “Nike” or “Adidas”.
+
+<img
+  src="/images/essentials/condition-sets/product-vendor.webp"
+  alt="Product Vendor"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the product vendor count.
+
+> For example, `Has number of values greater than or equals 3` → Matches if there are three or more product vendors.
+
+<img
+  src="/images/essentials/condition-sets/count-product-vendor.webp"
+  alt="Product Vendor Count"
+/>
+
+### Product title
+
+This condition checks the **product title** against specific criteria. If any product in the cart has the entered Product Title value, based on one of the following sub-conditions:
+
+- **contains** (The product title includes the entered value)
+- **does not contain** (The product title does not include the entered value)
+
+- **is** (The product title exactly matches the entered value)
+- **is not** (The product title does not exactly match the entered value)
+
+To set these conditions, enter the product title value in the field and choose the appropriate comparison from the dropdown.
+
+> For example, `contains Shoes` → Matches any product title containing the word “Shoes”.
+
+<img
+  src="/images/essentials/condition-sets/product-title-contains.webp"
+  alt="Product Title Contains"
+/>
+
+### Product type
+
+This condition checks the **product type** against specific criteria. If any product in the cart has the entered Product Type value, based on one of the following sub-conditions:
+
+- **contains** (The product type includes the entered value)
+- **does not contain** (The product type does not include the entered value)
+- **is empty** (No product type is provided)
+- **is not empty** (A product type is provided)
+- **is** (The product type exactly matches the entered value)
+- **is not** (The product type does not exactly match the entered value)
+
+For **contains**, **does not contain**, **is**, and **is not**, type a value in the text box to compare against the product type.
+
+> For example, `contains Electronics` → Matches any product type containing the word “Electronics”.
+
+<img
+  src="/images/essentials/condition-sets/product-type-contains.webp"
+  alt="Product Type Contains"
+/>
+
+For **is empty** and **is not empty**, no value entry is required.
+
+> For example, `is empty` → Matches when the product type field is blank.
+
+<img
+  src="/images/essentials/condition-sets/product-type-empty.webp"
+  alt="Product Type Empty"
+/>
+
+### Order subtotal amount per SKU
+
+This condition checks the **subtotal amount of products with a specific SKU** in the order against defined criteria, based on one of the following sub-conditions:
+
+- **amount is greater than or equals** (Matches when the subtotal amount of products with the specified SKU is greater than or equal to the entered amount)
+- **amount is less than or equals** (Matches when the subtotal amount of products with the specified SKU is less than or equal to the entered amount)
+
+To set these conditions:
+
+<Steps>
+  <Step title="Enter SKU">
+    Enter the <strong>SKU</strong> in the “Enter SKU” field.
+  </Step>
+
+  <Step title="Enter amount">
+    Enter the <strong>amount</strong> in the “Enter amount” field.
+  </Step>
+
+  <Step title="Select comparison option">
+    Select the comparison option from the dropdown.
+  </Step>
+</Steps>
+
+<Note>
+  Enter the amount in your store currency. Settings > Store Details > Store
+  Currency
+</Note>
+
+> **Example for “amount is greater than or equals”**:  
+> SKU: `ABC123`  
+> Amount: `777`  
+> → Matches orders where the subtotal amount of products with SKU `ABC123` is 777 or more.
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-amount-per-sku-has-greater-value.webp"
+  alt="Order Subtotal Amount per SKU Has Greater Value"
+/>
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## Cart Has Any Items
+
+<SKU />
+<ProductTag />
+
+## Product Metafield
+
+### Product metafield
+
+This condition checks a **product metafield** you specify by **namespace** and **key**, then evaluates it using one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the metafield has at least one of the entered values)
+- **Does not have any of these values** (Matches if the metafield has none of the entered values)
+- **Has any other value besides these values** (Matches if the metafield has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the metafield has only the entered values and no others)
+- **Has empty value** (Matches if the metafield has no value)
+- **Does not have empty value** (Matches if the metafield contains any value)
+- **Has number greater than or equal to** (Matches if the metafield’s numeric value is greater than or equal to the entered number)
+- **Has number less than or equal to** (Matches if the metafield’s numeric value is less than or equal to the entered number)
+- **Has number of values greater than or equals** (Matches if the **count** of values in the metafield is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of values in the metafield is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas.
+
+> For example, `Namespace: details` · `Key: material` · `Has any of these values: Cotton, Linen` → Matches if the metafield contains either “Cotton” or “Linen”.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-has-any-value.webp"
+  alt="Product Metafield Has Any Value"
+/>
+
+For **Has number greater than or equal to** and **Has number less than or equal to**, enter a single numeric value in the field to match against the metafield’s numeric value.
+
+> For example, `Namespace: nutrition` · `Key: calories` · `Has number less than or equal to 200` → Matches if the metafield’s numeric value is 200 or below.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-less-value.webp"
+  alt="Product Metafield Less Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match against the count of values in the metafield.
+
+> For example, `Namespace: features` · `Key: available_sizes` · `Has number of values greater than or equals 5` → Matches if the metafield contains five or more sizes.
+
+<img
+  src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
+  alt="Product Metafield Greater Values Count"
+/>
+
+## Shipping
+
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## Localization
+<UserLanguage />
+
+## Shipping Address
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

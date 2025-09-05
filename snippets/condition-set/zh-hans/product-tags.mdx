@@ -1,0 +1,34 @@
+### Product tags
+
+This condition checks the **Product Tags** against specific criteria. It will become true if **any** product in the cart has the entered Product Tag value, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the Product Tags have at least one of the entered values)
+- **Does not have any of these values** (Matches if the Product Tags have none of the entered values)
+- **Has any other value besides these values** (Matches if the Product Tags have a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the Product Tags have only the entered values and no others)
+- **Has number of values greater than or equals** (Matches if the **count** of Product Tags is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of Product Tags is less than or equal to the entered number)
+
+<Warning>
+  You can only use this condition with the same values throughout the rule. If
+  you want to use different values in different rule blocks, you should switch
+  to condition set 3, 5, or 6 which allow more flexibility.
+</Warning>
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more Product Tag values into the field. Separate multiple values with commas.
+
+> For example, `Does not have any of these values: summer, clearance` → Matches if the Product Tag does not include “summer” or “clearance”.
+
+<img
+  src="/images/essentials/condition-sets/product-tags.webp"
+  alt="Product Tags"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match the Product Tags count.
+
+> For example, `Has number of values less than or equals 4` → Matches if there are four or fewer Product Tags.
+
+<img
+  src="/images/essentials/condition-sets/count-product-tags.webp"
+  alt="Product Tags Count"
+/>
