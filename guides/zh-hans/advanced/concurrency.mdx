@@ -1,0 +1,164 @@
+---
+title: 并发
+description: "了解相同类型的多个规则如何协同工作，以及它们如何影响结账流程。"
+icon: "list"
+---
+
+## 概述
+
+我们可以创建多个相同类型的规则。并发描述的是当存在多个相同类型的活动规则时，在结账页面同时被触发时会发生什么。  
+本文将帮助您理解当这些规则一起应用时会发生什么，以及它们的组合效果如何影响结账流程。
+
+## 解释
+
+当您添加多个相同类型的规则时，它们都会 **独立运行，但几乎在同一时间** 执行。结账的结果是所有被触发并生成操作的规则的综合效果。根据 Shopify 的说明，这些规则的执行顺序是 **不确定的**，它们可以以任何顺序执行。
+
+<Note>
+  每个规则只能生成可与同类型规则生成的其他操作合并的操作。  
+  例如，您可以创建一个规则来隐藏某个配送方式，但不能创建规则来显示某个配送方式。  
+  所有隐藏配送方式的规则将被合并在一起，以确定应隐藏哪些配送方式。
+</Note>
+
+以下是逐步的工作方式：
+
+<Steps>
+  <Step title="每个规则开始执行">
+    每个规则几乎同时开始执行，检查自己的条件以确定是否应生成任何操作。
+  </Step>
+
+  <Step title="生成规则操作">
+    如果某个规则的条件满足，则会生成其操作。
+    
+    > 例如，您可以创建一个规则来<strong>隐藏名称中包含 “Worldwide” 的任意配送方式</strong>。然后再创建一个规则来<strong>隐藏名称中包含 “International Shipping” 的任意配送方式</strong>。两个规则都会生成操作，一个会隐藏 “Worldwide”，另一个会隐藏 “International Shipping”。
+  </Step>
+
+  <Step title="操作被合并">
+    如果多个规则生成了操作，它们的操作将被合并并发送到 Shopify 结账。
+
+    > 例如，规则 1 隐藏包含 <strong>“Worldwide”</strong> 的配送方式，规则 2 隐藏包含 <strong>“International Shipping”</strong> 的配送方式 → 一个合并的操作将隐藏 “Worldwide” 和 “International Shipping”，并发送到 Shopify 结账。
+  
+  </Step>
+</Steps>
+
+## 示例用例
+
+假设您想根据客户的邮政编码来**隐藏某些配送方式**。  
+为此，我们假设创建以下规则：
+
+**规则 1** → 当邮政编码是 **2005** 或以 **100** 开头时，隐藏 `DHL Express Worldwide` 配送方式。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example.webp"
+  alt="规则 1 示例"
+/>
+</Frame>
+
+**规则 2** → 当邮政编码是 **2005** 或以 **500** 开头时，隐藏 `International Shipping` 配送方式。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example.webp"
+  alt="规则 2 示例"
+/>
+</Frame>
+
+### 情况 1：只有一个规则生效
+
+- 如果客户输入的邮政编码是 **10045**，则 **规则 1** 生效，因为规则 2 的条件不满足，所以不会生成任何操作。
+
+  → 在结账时，`DHL Express Worldwide` 配送方式会被隐藏，但 `International Shipping` 和其他方式仍然可用，如下图所示。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-example-checkout.webp"
+  alt="规则 1 示例结账"
+/>
+</Frame>
+
+- 如果客户输入的邮政编码是 **50010**，则 **规则 2** 生效。  
+  → 在结账时，`International Shipping` 配送方式会被隐藏，但 `DHL Express Worldwide` 和其他方式仍然可用。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-example-checkout.webp"
+  alt="规则 2 示例结账"
+/>
+</Frame>
+
+### 情况 2：两个规则同时生效
+
+- 如果客户输入的邮政编码是 **2005**，则两个规则的条件都满足，所以 **规则 1 和规则 2** 会同时生效。  
+- 这意味着 **`DHL Express Worldwide` 和 `International Shipping`** 都会在结账时被隐藏，只留下其他可用的方式。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/both-rule-same-zipcode-example-checkout.webp"
+  alt="两个规则同邮编示例结账"
+/>
+</Frame>
+
+## 规则冲突
+
+如果多个规则不是并发安全的，它们可能会彼此冲突，并在结账页面引发问题。  
+我们需要确保这些规则之间不冲突，以避免问题。
+
+<Warning>
+  使用相同类型的多个规则时需要谨慎。始终确保规则之间不会互相冲突，以避免问题。
+</Warning>
+
+### 示例：仅显示这些配送方式
+
+当某个规则设置为 **仅显示这些配送方式** 时，它会尝试隐藏所有不在“仅显示”列表中的配送方式。
+
+如果多个规则都设置为 **仅显示这些配送方式**，它们可能会互相冲突，导致所有配送方式都被隐藏。
+
+> **示例：** 规则 1 → 当邮政编码是 2005 或以 100 开头时，仅显示 `DHL Express Worldwide` 配送方式。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-zipcode.webp"
+  alt="规则 1 邮编"
+/>
+</Frame>
+
+> 规则 2 → 当邮政编码是 2005 或以 500 开头时，仅显示 `International Shipping` 配送方式。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-2-zipcode.webp"
+  alt="规则 2 邮编"
+/>
+</Frame>
+
+当两个规则在相同邮编 **2005** 下同时运行时，规则 1 会尝试隐藏所有不是 `DHL Express Worldwide` 的配送方式，而规则 2 会尝试隐藏所有不是 `International Shipping` 的配送方式。结果会导致 **无可用配送** 错误，因为两个规则不兼容。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/shipping-not-available-error.webp"
+  alt="配送不可用错误"
+/>
+</Frame>
+
+<Check>
+要解决此问题，我们需要在这里创建一个第 3 个规则，专门处理公共邮政编码。
+</Check>
+
+这样，我们就能确保规则 1 和规则 2 相互独立。规则 3 将单独处理公共邮编，我们就能确定在每种情况下客户可用的配送方式。
+
+<Tip>
+作为一般建议，我们应始终尝试将 **仅显示这些配送方式** 与 **配送方式可用** 条件作为子条件配对，并在两者中使用相同的值。
+
+> **示例：** 规则 → 当邮政编码是 2005 或以 100 开头时，仅显示 `DHL Express Worldwide` 配送方式 _并且_ 子条件 **配送方式可用** 包含以下任意值：_DHL Express Worldwide_。  
+这样可以确保在尝试隐藏所有其他配送方式之前，_DHL Express Worldwide_ 实际上在该结账中是可用的。
+
+<Frame>
+<img
+  src="/images/advanced/concurrency/rule-1-solution.webp"
+  alt="规则 1 解决方案"
+/>
+</Frame>
+
+通过这种方式，我们可以确保想要“仅显示”给客户的配送方式在结账页面上确实是可用的。
+
+</Tip>

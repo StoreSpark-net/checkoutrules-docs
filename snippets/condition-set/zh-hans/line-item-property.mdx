@@ -1,0 +1,65 @@
+### 订单项属性
+
+此条件用于根据以下子条件之一检查附加到**订单项的属性**：
+
+- **包含以下任意值**（当指定的订单项属性包含任意输入的值时匹配）
+- **不包含以下任意值**（当指定的订单项属性不包含任何输入的值时匹配）
+- **值为空**（当指定的订单项属性存在但没有值时匹配）
+- **值不为空**（当指定的订单项属性存在且包含值时匹配）
+- **值的数量大于或等于**（当指定的订单项属性的值数量大于或等于输入的数字时匹配）
+- **值的数量小于或等于**（当指定的订单项属性的值数量小于或等于输入的数字时匹配）
+
+设置这些条件的方法：
+
+<Steps>
+  <Step title="输入属性键">
+    在“输入键”字段中输入<strong>属性键</strong>。
+  </Step>
+
+  <Step title="输入值">
+    输入要匹配的<strong>值</strong>（如适用）。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+对于 **包含以下任意值** 和 **不包含以下任意值**，请输入一个或多个值。多个值用逗号分隔。
+
+<Note>
+  使用 * 通配符来匹配部分值。例如，value* 将匹配 value123、VALUETEST 等。
+</Note>
+
+> **“包含以下任意值”的示例**：  
+> 键：`color`  
+> 值：`red, blue`  
+> → 匹配 `color` 属性为 `red` 或 `blue` 的订单项。
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-has-any-values.webp"
+  alt="订单项属性包含任意值"
+/>
+
+对于 **值为空** 和 **值不为空**，不需要输入值。
+
+> **“值不为空”的示例**：  
+> 键：`engraving`  
+> → 匹配存在 `engraving` 属性并包含内容的订单项（例如：“Happy Anniversary”）。
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-not-empty-value.webp"
+  alt="订单项属性值不为空"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请输入阈值数字。
+
+> **“值的数量小于或等于”的示例**：  
+> 键：`size`  
+> 数量：`2`  
+> → 匹配 `size` 属性包含 2 个或更少不同值的订单项（例如：`S, M`）。
+
+<img
+  src="/images/essentials/condition-sets/line-item-property-values-less-than.webp"
+  alt="订单项属性值小于等于"
+/>
