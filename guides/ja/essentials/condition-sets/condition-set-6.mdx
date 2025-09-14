@@ -1,0 +1,234 @@
+---
+title: "条件セット 6"
+description: "_条件セット 6_ 内で利用可能な各条件について学びます。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/ja/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/ja/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/ja/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/ja/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/ja/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/ja/email-address.mdx";
+import OrderTotalAmount from "/snippets/condition-set/ja/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/ja/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/ja/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/ja/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/ja/order-total-subscription-weight.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/ja/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/ja/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/ja/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/ja/total-product-discount-percentage.mdx";
+import ProductTag from "/snippets/condition-set/ja/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/ja/product-tags.mdx";
+import LineItemProperty from "/snippets/condition-set/ja/line-item-property.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/ja/cart-has-no-one-time-purchase-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/ja/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/ja/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/ja/first-name.mdx";
+import LastName from "/snippets/condition-set/ja/last-name.mdx";
+import Company from "/snippets/condition-set/ja/company.mdx";
+import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
+import CityArea from "/snippets/condition-set/ja/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/ja/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 顧客
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+
+## 注文の詳細
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### 注文の税額
+
+この条件は、**注文の税額** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （注文の税額が入力された金額以上の場合に一致）
+- **以下である** （注文の税額が入力された金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額はストアの通貨で入力してください。設定 > ストア詳細 > ストア通貨
+</Note>
+
+> 例: `以上である 50` → 税額が 50 以上の注文に一致します。
+
+<img
+  src="/images/essentials/condition-sets/order-tax-amount.webp"
+  alt="注文の税額"
+/>
+
+### 注文の関税額
+
+この条件は、**注文の関税額** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （注文の関税額が入力された金額以上の場合に一致）
+- **以下である** （注文の関税額が入力された金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額はストアの通貨で入力してください。設定 > ストア詳細 > ストア通貨
+</Note>
+
+> 例: `以上である 80` → 関税額が 80 以上の注文に一致します。
+
+<img
+  src="/images/essentials/condition-sets/order-duty-amount.webp"
+  alt="注文の関税額"
+/>
+
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+### 合計割引額（すべての割引タイプ）
+
+この条件は、注文内の **合計割引額（任意の製品割引または注文割引）** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （合計割引額が入力された金額以上の場合に一致）
+- **以下である** （合計割引額が入力された金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額はストアの通貨で入力してください。設定 > ストア詳細 > ストア通貨
+</Note>
+
+> 例: `以下である 50` → 注文の合計割引額（任意のタイプ）が 50 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/total-discount-amount.webp"
+  alt="合計割引額"
+/>
+
+### 合計割引率（すべての割引タイプ）
+
+この条件は、注文内の **合計割引率（任意の製品割引または注文割引）** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （合計割引率が入力されたパーセンテージ以上の場合に一致）
+- **以下である** （合計割引率が入力されたパーセンテージ以下の場合に一致）
+
+これらの条件を設定するには、フィールドにパーセンテージを入力し、ドロップダウンから適切な比較を選択します。
+
+> 例: `以下である 15` → 注文内の合計割引率が 15% 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/total-discount-percentage.webp"
+  alt="合計割引率（すべての割引タイプ）"
+/>
+
+### 注文合計割引額
+
+この条件は、**注文合計割引額** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （注文の合計割引額が入力された金額以上の場合に一致）
+- **以下である** （注文の合計割引額が入力された金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額はストアの通貨で入力してください。設定 > ストア詳細 > ストア通貨
+</Note>
+
+> 例: `以下である 75` → 注文全体の割引額が 75 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-amount.webp"
+  alt="注文合計割引額"
+/>
+
+### 注文合計割引率
+
+この条件は、**注文合計割引率** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （注文全体に適用された割引率が入力されたパーセンテージ以上の場合に一致）
+- **以下である** （注文全体に適用された割引率が入力されたパーセンテージ以下の場合に一致）
+
+これらの条件を設定するには、フィールドにパーセンテージを入力し、ドロップダウンから適切な比較を選択します。
+
+> 例: `以下である 15` → 注文に適用された合計割引率が 15% 以下の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
+  alt="注文合計割引率"
+/>
+
+## カートの詳細
+
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## カートに商品が含まれる
+
+<ProductTag />
+<ProductTags />
+<LineItemProperty />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+
+## 配送
+
+<SelectedShippingMethod />
+
+### 選択された配送方法の価格
+
+この条件は、**選択された配送方法の価格** を次のいずれかのサブ条件に基づいて確認します:
+
+- **以上である** （選択された配送方法の価格が入力された金額以上の場合に一致）
+- **以下である** （選択された配送方法の価格が入力された金額以下の場合に一致）
+
+これらの条件を設定するには、フィールドに金額を入力し、ドロップダウンから適切な比較を選択します。
+
+<Note>
+  金額はストアの通貨で入力してください。設定 > ストア詳細 > ストア通貨
+</Note>
+
+> 例: `以下である 50` → 選択された配送方法の価格が 50 以下の注文に一致します。
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-price.webp"
+  alt="選択された配送方法の価格"
+/>
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodPrice />
+<ShippingMethodsAvailable />
+
+## ローカライズ
+<UserLanguage />
+
+## 配送先住所
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

@@ -1,0 +1,102 @@
+---
+title: "配送方法の名前を変更"
+description: "指定された条件に基づいて、チェックアウトで選択された配送方法やピックアップ方法の名前を変更/翻訳したり、メッセージを追加できます。"
+icon: "pencil"
+---
+
+## ルール概要
+
+このルールでは、特定の条件に基づいてチェックアウト時の配送およびピックアップ方法のラベルを変更または翻訳できます。カートの合計、顧客タグ、配送先住所、商品情報などの基準を使って表示名をカスタマイズできます。
+
+これにより、顧客にとっての明確さを向上させ、ローカライズをサポートし、チェックアウト全体の体験を改善できます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **配送方法の名前を変更するルール** を作成および設定する方法を示します。
+
+### 新しいルールを作成
+
+[ショッピファイ管理画面](/guides/ja/get-started/installation#go-to-the-app) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#create-a-sample-rule) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+その後、**チェックアウトルールタイプ選択画面** にリダイレクトされます。_カテゴリ「配送」→ チェックアウトルールタイプ「配送方法の名前を変更」→ 「ルールを選択」_ を選択します。
+
+<img
+  src="/images/essentials/shipping/select-rename-shipping-methods.webp"
+  alt="配送方法の名前を変更選択"
+/>
+
+次に、**配送方法の名前を変更する新しいルール作成画面** に移動し、ルールを設定します。
+
+### ルールの設定
+
+ルールを設定するには、まず任意で「配送方法の名前を変更」といった名前を追加して、ルールの内容を説明できます。その後、ルールの [ステータス](/guides/ja/get-started/concepts#status) を選択します: テスト中、アクティブ、または非アクティブ。
+
+ここでは例として **テスト中** のステータスを選択します。これにより、実際の顧客のチェックアウトに影響を与えずにルールをすぐにテストできます。
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-rename-shipping-methods.webp"
+  alt="ルール設定1"
+/>
+
+同じ画面で、ルールを適用する場所を定義するために、適切な [対象](/guides/ja/get-started/concepts#target) を選択します。_「配送」_ を選択すると、**配送先住所** 入力後に表示される配送方法の名前を変更できます。その後、以下を選択できます:
+
+- **定期購入を除くすべての出荷** – 通常配送のみにルールを適用し、定期購入商品を含む注文はスキップします。ショッピファイは定期購入商品の最安配送方法を自動選択し、他の配送方法を非表示にすることがあるため、このオプションを使用すると「配送方法なし」エラーを回避できます。
+
+- **すべての出荷** – 定期購入商品を含む注文も含め、すべての注文にルールを適用します。
+
+現在、このルールタイプでは _「ピックアップ」_ の選択はショッピファイの制限により利用できません。
+
+<img
+  src="/images/essentials/shipping/select-target-2.webp"
+  alt="対象選択"
+/>
+
+同じ画面で、関連する [条件セット](/guides/ja/get-started/concepts#condition-set)、[条件](/guides/ja/get-started/concepts#conditions-when)、および [アクション](/guides/ja/get-started/concepts#action-what) を選択します。
+
+> ここでは例として、**条件セット1** を使用し、ルールを常に実行するように設定し、**「International Shipping」** を含む配送方法を **「Local Shipping」** に変更するように設定します。
+
+また、「名前を変更」オプションを「メッセージを追加」に変更することで、配送方法名を完全に変更する代わりにカスタムメッセージを追加できます。
+
+<img
+  src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"
+  alt="条件セット配送方法の名前変更"
+/>
+
+最後に、画面上部の <b>保存</b> ボタンをクリックしてルールを作成および保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルール保存" />
+
+## ルールのテスト
+
+ルールがテスト中ステータスに設定されているため、実際のメールアドレスの代わりに `test@testing.com` を使用してチェックアウトでルールを実行します。
+
+<Warning>
+  下の画像はテスト用メールアドレスを使用する <b>前</b> のチェックアウトページです。<i>International Shipping</i> 配送方法が利用可能で、まだ名前は変更されていません。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="ルール適用前"
+/>
+
+メールを設定後、チェックアウトルールが実行され、指定した配送方法の名前が変更されます。**「International Shipping」** 配送方法が **「Local Shipping」** と表示されていることを確認できます。
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-rename-shipping-methods.webp"
+  alt="ルール適用後"
+/>
+
+## ルールの有効化
+
+テストが完了したら、ルールを有効化して実際の顧客のチェックアウトに変更を反映させることができます。有効化されたルールのみがすべての顧客のチェックアウトに変更を加えることができます。
+
+サイドバーの **ルール** をクリックしてすべてのルールを表示します。有効化するルールを選択し、**有効化** ボタンをクリックします。
+
+<Warning>
+  ルールの有効化は有料プランでのみ利用可能です。プランをまだアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#upgrade-your-plan) の手順に従ってアップグレードしてください。
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-rename-shipping-methods.webp"
+  alt="ルール有効化"
+/>

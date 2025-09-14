@@ -1,0 +1,110 @@
+---
+title: "支払い方法を非表示にする"
+description: "指定された条件に基づいて、チェックアウトで特定の支払い方法を非表示にします。"
+icon: "eye-slash"
+---
+
+## ルール概要
+
+このルールでは、定義された条件に基づいてチェックアウトで特定の支払い方法を自動的に非表示にできます。カート合計、配送先住所、顧客タグ、商品情報などの条件を使用して表示/非表示を制御できます。
+
+これにより、関連性の低いまたは利用できない支払いオプションを削除して、チェックアウトプロセスを効率化し、顧客の摩擦を減らし、コンバージョン率を向上させることができます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **支払い方法を非表示にする** ルールを作成および設定する方法を示します。
+
+### 新しいルールを作成
+
+[ショッピファイ管理画面](/guides/ja/get-started/installation#go-to-the-app) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#create-a-sample-rule) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+次に、**チェックアウトルールタイプ選択画面** にリダイレクトされます。_カテゴリー「支払い」→ チェックアウトルールタイプ「支払い方法を非表示にする」→ 「ルールを選択」_ を選びます。
+
+<img
+  src="/images/essentials/payment/select-hide-payment-methods.webp"
+  alt="支払い方法を非表示にするを選択"
+/>
+
+次に、**新しい支払い方法非表示ルール作成** 画面に移動し、ルールを設定できます。
+
+### ルールの設定
+
+ルールを設定するには、まず任意で「支払い方法を非表示にする」などの名前を付けて、何をするルールかを説明できます。次に、ルールの [ステータス](/guides/ja/get-started/concepts#status) を選択します：テスト、アクティブ、または無効。
+
+ここでは、**テスト** ステータスを選択して、実際の顧客のチェックアウトに影響を与えずにルールをすぐにテストできます。
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-payment-methods.webp"
+  alt="ルール設定 1"
+/>
+
+同じ画面で、関連する [条件セット](/guides/ja/get-started/concepts#condition-set)、[条件](/guides/ja/get-started/concepts#conditions-when)、および [アクション](/guides/ja/get-started/concepts#action-what) を選択します。
+
+> 例として、デフォルトの **条件セット1** を使用し、ルールを常に実行するように設定し、支払い方法 **「代金引換 (COD)」** を非表示に設定します。
+
+<img
+  src="/images/essentials/payment/condition-set-hide-payment-methods.webp"
+  alt="条件セット 支払い方法を非表示"
+/>
+
+**アクションセクション** では、チェックアウトで支払い方法を管理するための3つのオプションがあります：
+
+- **これらの支払い方法を非表示にする** – 条件が一致した場合に指定した支払い方法のみを非表示にします。
+
+<img
+  src="/images/essentials/payment/action-hide-these-payment-methods-hide-payment-methods.webp"
+  alt="アクション 指定支払い方法を非表示"
+/>
+
+- **すべての支払い方法を非表示にする** – 条件が一致した場合、利用可能なすべての支払い方法を非表示にします。
+
+<img
+  src="/images/essentials/payment/action-hide-all-payment-methods.webp"
+  alt="アクション すべての支払い方法を非表示"
+/>
+
+- **これらの支払い方法のみ表示する** – 条件が一致した場合に指定した支払い方法のみを表示し、その他のすべてを非表示にします。
+
+<img
+  src="/images/essentials/payment/action-only-show-these-payment-methods-hide-payment-methods.webp"
+  alt="アクション 指定支払い方法のみ表示"
+/>
+
+最後に、画面上部の <b>保存</b> ボタンをクリックして、ルールを作成および保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルール保存" />
+
+## ルールのテスト
+
+ルールはテストステータスに設定されているため、チェックアウトでルールを実行するには、実際のメールアドレスの代わりに `test@testing.com` を使用する必要があります。
+
+<Warning>
+  以下の画像は、テスト用メールアドレスを使用する <b>前</b> のチェックアウトページを示しています。「代金引換 (COD)」支払い方法が表示されています。
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="ルール適用前"
+/>
+
+メールを設定した後、チェックアウトルールが実行され、指定された支払い方法が非表示になります。以下のように、**「代金引換 (COD)」** 支払い方法が表示されなくなっていることを確認できます。
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-payment-methods.webp"
+  alt="ルール適用後"
+/>
+
+## ルールを有効化
+
+テストが完了したら、ルールを有効化して、実際の顧客のチェックアウトに変更を適用できるようにします。有効化されたルールのみが、すべての顧客のチェックアウトに変更を加えることができます。
+
+サイドバーの **ルール** をクリックしてすべてのルールを表示します。有効化したいルールを選択し、**有効化** ボタンをクリックして有効化します。
+
+<Warning>
+  ルールの有効化は有料プランでのみ利用可能です。プランをまだアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#upgrade-your-plan) の手順に従ってアップグレードしてください。
+</Warning>
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-payment-methods.webp"
+  alt="ルールを有効化"
+/>

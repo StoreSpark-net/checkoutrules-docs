@@ -368,6 +368,88 @@
             ]
           }
         ]
+      },
+      {
+        "language": "ja",
+        "groups": [
+          {
+            "group": "開始方法",
+            "icon": "code",
+            "pages": [
+              "guides/ja/get-started/introduction",
+              "guides/ja/get-started/installation",
+              "guides/ja/get-started/concepts",
+              "guides/ja/get-started/quickstart",
+              "guides/ja/get-started/faq"
+            ]
+          },
+          {
+            "group": "必需品",
+            "icon": "book",
+            "pages": [
+              {
+                "group": "条件セット",
+                "icon": "filter",
+                "pages": [
+                  "guides/ja/essentials/condition-sets/introduction",
+                  "guides/ja/essentials/condition-sets/condition-set-1",
+                  "guides/ja/essentials/condition-sets/condition-set-2",
+                  "guides/ja/essentials/condition-sets/condition-set-3",
+                  "guides/ja/essentials/condition-sets/condition-set-4",
+                  "guides/ja/essentials/condition-sets/condition-set-5",
+                  "guides/ja/essentials/condition-sets/condition-set-6"
+                ]
+              },
+              {
+                "group": "配送",
+                "icon": "truck",
+                "pages": [
+                  "guides/ja/essentials/shipping/reorder-shipping-methods",
+                  "guides/ja/essentials/shipping/hide-shipping-methods",
+                  "guides/ja/essentials/shipping/rename-shipping-methods",
+                  "guides/ja/essentials/shipping/discount-shipping-methods"
+                ]
+              },
+              {
+                "group": "支払い",
+                "icon": "credit-card",
+                "pages": [
+                  "guides/ja/essentials/payment/hide-express-checkout-options",
+                  "guides/ja/essentials/payment/reorder-payment-methods",
+                  "guides/ja/essentials/payment/hide-payment-methods",
+                  "guides/ja/essentials/payment/rename-payment-methods"
+                ]
+              },
+              {
+                "group": "妥当性確認",
+                "icon": "shield-check",
+                "pages": [
+                  "guides/ja/essentials/validation/validate-block-checkout"
+                ]
+              },
+              {
+                "group": "割引",
+                "icon": "tag",
+                "pages": [
+                  "guides/ja/essentials/discount/discount-order-amount",
+                  "guides/ja/essentials/discount/discount-shipping-methods"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "高度な",
+            "icon": "grid",
+            "pages": [
+              "guides/ja/advanced/branching",
+              "guides/ja/advanced/concurrency",
+              "guides/ja/advanced/translations",
+              "guides/ja/advanced/multi-store-support",
+              "guides/ja/advanced/rule-duplication",
+              "guides/ja/advanced/block-replication"
+            ]
+          }
+        ]
       }
     ]
   },
