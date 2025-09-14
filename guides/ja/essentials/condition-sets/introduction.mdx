@@ -1,0 +1,95 @@
+---
+title: "導入"
+description: "条件セットとは何か、そしてそれをどのように使用するかを理解する。"
+icon: "book-open"
+---
+
+## 条件セットとは何か
+
+**条件セット** は、あらかじめ定義された条件のグループで、チェックアウトルールをいつ実行するかを制御するために使用できます。これらの条件は、ルール設定の [When](/guides/ja/get-started/concepts#conditions-the-“when”) セレクターで利用可能です。
+
+各条件セットは、利用可能な条件の数と総条件数を示します。例えば、**条件セット 1** `22 / 143` は、条件セット 1 内に 22 の条件があり、全条件数 143 のうち 22 条件が利用可能であることを意味します。ここで 143 は、すべての条件セットに存在する条件の総数です。
+
+<img
+  src="/images/essentials/condition-sets/introduction/total-availibility-condition-set-example.webp"
+  alt="Condition Sets Example"
+/>
+
+<Info>
+  条件セット名にマウスをホバーすると、その条件セットで利用可能なすべての条件を確認できます。また、検索バーを使用して特定の条件を探すこともできます。
+</Info>
+
+選択した **条件セット** の条件は、ルール [ブロック](/guides/ja/get-started/concepts#block) 内の [When](/guides/ja/get-started/concepts#conditions-the-“when”) セレクターに表示されます。条件セットを切り替えた後、下の "When" セレクターで条件セレクターを開くと、選択した条件セット内の条件が確認できます。
+
+> 例えば、ここではデフォルトの **条件セット 1** を使用しています。条件セット 1 には 22 の条件があり、ルールを実行する条件として **注文合計** が **$50** 以上で、**配送先国** が **アメリカ合衆国** の場合に設定しています。これは、これらの条件が条件セット 1 に含まれているためです。
+
+<img
+  src="/images/essentials/condition-sets/introduction/condition-sets-example.webp"
+  alt="Condition Sets Example"
+/>
+
+## 条件セットが存在する理由
+
+すべての条件を同じルールに配置することはサイズ制限によりできないため、異なる条件セットを提供しています。各セットには、利用可能な条件の一部が含まれています。異なる条件セットを使用して複数のルールを作成することで、顧客のチェックアウト体験を制御できます。
+
+## 条件セットの使用方法
+
+### 条件セットを選択する
+
+条件セットセクションで、希望する条件セットをクリックします。どの条件セットを選択すべきか迷った場合は、検索バーを使用して条件を検索するか、条件セット名にホバーしてその条件セット内のすべての条件を確認できます。
+
+> 例えば、ここでは _条件セット 3_ を選択しています。
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-set-condition.webp"
+  alt="Condition Set Selection"
+/>
+
+#### 条件を検索する（オプション）
+
+条件セットセクションの右上にある検索をクリックします。
+
+<img
+  src="/images/essentials/condition-sets/introduction/search-condition-set.webp"
+  alt="Search Condition Set"
+/>
+
+次に、検索バーに希望する条件を入力し、検索ボタンをクリックします。
+
+<img
+  src="/images/essentials/condition-sets/introduction/type-in-search-condition.webp"
+  alt="Type In Search Condition"
+/>
+
+検索結果に一致する条件セットが表示されます。希望する条件を含む条件セットをクリックして切り替えます。
+
+<img
+  src="/images/essentials/condition-sets/introduction/sorted-condition-sets.webp"
+  alt="Sorted Condition Sets"
+/>
+
+### 条件を選択する
+
+条件セットを選択したら、適用したい条件を選択します。同じセット内で複数の条件を追加して、より強力なルールを作成できます。
+
+<img
+  src="/images/essentials/condition-sets/introduction/select-condition.webp"
+  alt="Select Condition"
+/>
+
+### 使用例
+
+例えば、ここでは _条件セット 4_ を使用し、_**任意の商品割引金額**_ が _300 以下_ または _**注文小計金額**_ が _1500 以下_ の場合に配送方法を非表示にするルールを設定しています。その後、すべての配送方法を非表示にします。
+
+<img
+  src="/images/essentials/condition-sets/introduction/example-usage.webp"
+  alt="Example Usage"
+/>
+
+## 条件セット使用のヒント
+
+- ルールをトリガーする主要な条件を特定することから始めましょう。
+- 必要な条件がどのセットにあるかを確認するために、異なるセットをチェックしてください。
+- 検索機能を活用して、条件セットをより簡単に見つけましょう。
+
+条件セットを効果的に使用することで、チェックアウトルールが実行される **タイミング** を正確に制御でき、ストアの柔軟性とチェックアウト体験を向上させることができます。

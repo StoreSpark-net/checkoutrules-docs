@@ -1,0 +1,114 @@
+---
+title: 分岐（if else）
+description: "複数の条件をルールで扱うための if、else if、else のルール構造の作成と使用方法を学びます。"
+icon: "split"
+---
+
+## 概要
+
+通常、ルールに複数のブロックがある場合、各ブロックは上から下に順番に実行され、任意のブロックの条件が満たされた場合、そのブロックのアクションが実行されます。したがって、各ルールは複数のアクションを持つことができます。しかし、場合によってはこの動作を望まず、1つのブロックだけを実行し、その後ルールを停止させたいことがあります。これが分岐（Branching）の出番です。
+
+分岐を使用すると、**if → else if → else** ロジックに従う複数の条件ブロックを使用してルールを作成できます。各ブロックは**順番に**チェックされ、1つのブロックが一致すると、そのアクションが実行され、ルールは停止します。これにより、**1つのブロックのみが実行される**ことが保証され、アクションの重複や競合を防ぎます。これは非常に強力な機能で、複数の条件を持つ複雑なルールの作成に使用できます。
+
+> 以下は、3つのブロックを持つ分岐ルールの例です。ここでは、商品タグに基づいて異なる割引を適用したい場合を示します。その他の割引に該当しない場合には、すべての配送に対してデフォルトで5%割引を適用します。条件に基づき1つのブロックのみが実行され、その後ルールは停止します。
+
+<Note>
+  ここでの重要な条件は、2番目と3番目のブロックにある[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)で、条件に基づき1つのブロックのみが実行され、その後ルールは停止します。この条件を使用することで、任意のルールで分岐を使用できます。
+</Note>
+
+<img src="/images/advanced/branching/all-blocks.webp" alt="All Blocks" />
+
+このルールは次のように実行されます：
+
+<Steps>
+  <Step title="商品タグが sport で、注文小計が 33 以上の場合">
+    その場合、配送に対して20%割引が適用され、ルールは停止します。
+  </Step>
+  <Step title="顧客タグが VIP の場合">
+    その場合、配送に対して50%割引が適用され、ルールは停止します。
+  </Step>
+  <Step title="それ以外（デフォルト）">
+    その場合、配送に対して5%割引が適用されます。
+  </Step>
+</Steps>
+
+## 説明
+
+### 最初の条件ブロック（if）
+
+- システムは最初の条件ブロックから開始します。
+- このブロックには、**AND** または **OR** を使用した複数の**サブ条件**を含めることができます。
+- ブロック全体の条件が満たされた場合、その**「Then」アクション**が実行されます（例：20%割引を適用）。
+- 一度実行されると、システムは次のブロックをチェックしません。
+
+> **例:** 商品タグが **sport** かつ 注文小計 ≥ **33** または 商品タグが **shoes** → すべての配送に20%割引を適用
+
+<img src="/images/advanced/branching/if-condition.webp" alt="If Condition" />
+
+### Else if 条件ブロック
+
+- 最初のブロックが一致しない場合、システムは次のブロックをチェックします。
+- **Else If** ブロックには、**AND** または **OR** を使用した複数の**サブ条件**を含めることができ、サブ条件として**「前のすべての条件が無効」**を含める必要があります。
+- ブロックは1つ以上順番に配置できます。ただし、**「前のすべての条件が無効」**が含まれていない場合、そのブロックは **Else If** として機能せず、通常の **If** ブロックとして動作します。
+- 任意のブロックの条件が満たされると、その**「Then」アクション**が実行され、評価は停止します。
+
+> **例:** 前のすべての条件が無効 かつ 顧客タグが **VIP** → すべての配送に50%割引を適用
+
+<img src="/images/advanced/branching/else-if-condition.webp" alt="Else If Condition" />
+
+### フォールバックブロック（else）
+
+- 以前のブロックがいずれも一致しない場合、[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid) の条件を持つフォールバックブロックを追加できます。
+- これにより、**Else（デフォルト）** として機能し、以前のブロックが実行されなかった場合でも常にデフォルトの**「Then」アクション**（例：5%割引）が実行されます。
+
+> **例:** 前のすべての条件が無効 → すべての配送に5%割引を適用
+
+<img src="/images/advanced/branching/else-condition.webp" alt="Else Condition" />
+
+<Tip>
+  ブロックは優先度の高い順から低い順に並べることをおすすめします。最初のブロックが最も高い優先度で、最後のブロックが最も低い優先度です。
+</Tip>
+
+## 使用例
+
+商品タグに基づいて異なる配送割引を適用したい場合を考えます。
+
+### ルール設定
+
+**ブロック1（if）** → _商品タグが `sport`_ → すべての配送に **20%** 割引を適用（最優先）
+
+<img src="/images/advanced/branching/20-percent-when-sport.webp" alt="20 Percent When Sport" />
+
+**次のブロックを追加**  
+最初のブロックの後に新しいブロックを追加するには、次のいずれかを実行します：  
+ルールビルダーで **「新しいブロックを追加」** ボタンをクリック
+
+<img src="/images/advanced/branching/add-new-block.webp" alt="Add New Block" />
+
+または、[前のブロックをコピー](/guides/ja/advanced/block-replication) して **貼り付けアイコン** を使い下に貼り付け、条件とアクションを修正します。
+
+**ブロック2（else if）** → _商品タグが `winter`_ かつ _前のすべての条件が無効_ → すべての配送に **50% 割引** を適用
+
+<img src="/images/advanced/branching/50-percent-when-winter.webp" alt="50 Percent When Winter" />
+
+**ブロック3（else）** → _前のすべての条件が無効_ → すべての配送に **5% 割引** を適用（デフォルト割引）
+
+<img src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid.webp" alt="5 Percent When Previous All Conditions Invalid" />
+
+全体のルール設定は以下のようになります。
+
+<img src="/images/advanced/branching/example-all-blocks.webp" alt="Example All Blocks" />
+
+### 実行フロー
+
+システムは **ブロック1** から開始します。一致した場合（商品タグ = `sport`）、**20%配送割引** が適用され、ルールは終了します。
+
+<img src="/images/advanced/branching/20-percent-when-sport-checkout.webp" alt="20 Percent When Sport Checkout" />
+
+ブロック1が一致しない場合、**ブロック2** をチェックします。商品タグ = `winter` の場合、**50%配送割引** が適用され、ルールは終了します。
+
+<img src="/images/advanced/branching/50-percent-when-winter-checkout.webp" alt="50 Percent When Winter Checkout" />
+
+ブロック1もブロック2も一致しない場合、**ブロック3** が実行されます。**前のすべての条件が無効** を使用しているため、**デフォルトのキャッチオール** として機能し、**5%配送割引** が適用されます。
+
+<img src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid-checkout.webp" alt="5 Percent When Previous All Conditions Invalid Checkout" />

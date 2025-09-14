@@ -1,0 +1,125 @@
+---
+title: "配送方法の割引"
+description: "指定された条件に基づいて、特定の配送料金を割引します。"
+icon: "badge-percent"
+---
+
+## ルール概要
+
+このルールでは、定義された条件に基づいてチェックアウト時の特定の配送料金を割引できます。カート合計、配送先住所、顧客タグ、商品属性などの基準を使い、パーセンテージ割引、固定金額割引、サブトータルパーセンテージ、固定価格設定、またはすべての配送を無料にするなどの設定が可能です。
+
+このルールを使用して割引コードを作成することも、自動割引を作成することもできます。割引コードを作成した場合、顧客はチェックアウト時に割引コードを使用して割引を受けられます。自動割引を選択した場合は、設定された条件に基づいて選択された配送方法に自動で割引が適用されます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **配送方法の割引ルール** を作成および設定する方法を示します。
+
+### 新しいルールを作成
+
+[ショッピファイ管理画面](/guides/ja/get-started/installation#go-to-the-app) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#create-a-sample-rule) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+その後、**チェックアウトルールタイプ選択画面** にリダイレクトされます。_カテゴリ「配送」→ チェックアウトルールタイプ「配送方法の割引」→ 「ルールを選択」_ を選択します。
+
+<img
+  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
+  alt="配送方法の割引選択"
+/>
+
+次に、**新しい配送方法の割引ルール作成画面** に移動し、ルールを設定します。
+
+### ルールの設定
+
+まず、任意で「配送方法の割引」といった名前を追加して、ルールの内容を説明します（**自動割引** を適用する場合）。
+
+<img
+  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
+  alt="自動割引の名前"
+/>
+
+または、割引コードを使用して割引を適用する場合は **「割引コード」** をクリックし、希望するコードを入力するか、**「ランダムコードを生成」** をクリックして自動生成します。
+
+<img
+  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
+  alt="割引コード"
+/>
+
+次に、同じ画面でルールの [ステータス](/guides/ja/get-started/concepts#status) を選択します: テスト中、アクティブ、または非アクティブ。ここでは例として **テスト中** を選択し、実際の顧客のチェックアウトに影響を与えずにルールをテストします。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="ルールステータス"
+/>
+
+同じ画面で、[組み合わせ](/guides/ja/get-started/concepts#combinations) の設定を行い、この配送割引が他の割引とどのように連動するかを制御します。以下の組み合わせが可能です:
+
+- **商品割引** – 商品レベルの割引と併用できます。商品割引も配送割引と組み合わせ可能に設定してください。
+- **注文割引** – 注文全体の割引と併用できます。注文割引も配送割引と組み合わせ可能に設定してください。
+
+<img
+  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
+  alt="組み合わせ設定"
+/>
+
+次に、同じ画面で関連する [条件セット](/guides/ja/get-started/concepts#condition-set)、[条件](/guides/ja/get-started/concepts#conditions-when)、および [アクション](/guides/ja/get-started/concepts#action-what) を選択します。
+
+> ここでは例として、デフォルトの **条件セット1** を使用し、ルールを常に実行するように設定し、**パーセンテージ** オプションで全配送方法に **10%割引** を適用します。割引メッセージ **「10% OFF」** がチェックアウトで顧客に表示されます。
+
+<img
+  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
+  alt="条件セット配送方法の割引"
+/>
+
+アクションセクションでは、必要に応じて **パーセンテージ、固定金額、サブトータルパーセンテージ、固定価格設定、またはすべての配送を無料にする** オプションを選択できます。
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="アクションタイプ割引"
+/>
+
+割引は特定の配送方法のみに適用することも可能です。**「この割引を特定の配送方法のみに適用」** を選択し、割引を適用する配送方法の **名前** を入力します。
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="配送方法選択"
+/>
+
+同じ画面で、[最大割引使用回数](/guides/ja/get-started/concepts#maximum-discount-uses) セクションにて、割引コードの使用制限を有効にしたり、顧客ごとに1回までに制限したり、両方を設定することもできます。
+
+最後に、画面上部の <b>保存</b> ボタンをクリックしてルールを作成および保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルール保存" />
+
+## ルールのテスト
+
+ルールがテスト中ステータスに設定されているため、実際のメールアドレスの代わりに `test@testing.com` を使用してチェックアウトでルールを実行します。
+
+<Warning>
+  下の画像はテスト用メールアドレスを使用する <b>前</b> のチェックアウトページです。すべての配送オプションにまだ割引が適用されていません。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="ルール適用前"
+/>
+
+メールを設定後、チェックアウトルールが実行され、設定された配送割引が適用されます。選択した配送方法に **10%割引** が適用されていることを確認できます。
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
+  alt="ルール適用後"
+/>
+
+## ルールの有効化
+
+テストが完了したら、ルールを有効化して実際の顧客のチェックアウトに変更を反映させることができます。有効化されたルールのみがすべての顧客のチェックアウトに変更を加えることができます。
+
+サイドバーの **ルール** をクリックしてすべてのルールを表示します。有効化するルールを選択し、**有効化** ボタンをクリックします。
+
+<Warning>
+  ルールの有効化は有料プランでのみ利用可能です。プランをまだアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#upgrade-your-plan) の手順に従ってアップグレードしてください。
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
+  alt="ルール有効化"
+/>

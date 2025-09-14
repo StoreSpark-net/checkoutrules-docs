@@ -1,0 +1,124 @@
+---
+title: マルチストアサポート
+description: "1つのストアから複数のルールをエクスポートし、別のショッピファイストアにインポートする方法を学びます。"
+icon: "repeat"
+---
+
+## 概要
+
+異なるショッピファイストア間でルールを手動で作成せずにコピーできます。1つのストアからルールをZIPファイルとしてエクスポートし、そのファイルを別のストアにインポートできます。これにより時間を節約し、一貫性を確保し、複数のストアで同様のルールを管理しやすくなります。また、後で復元が必要な場合に備えてルールのバックアップを作成することもできます。
+
+## 使用方法
+
+### ルールをエクスポート
+
+現在のストアで1つ以上のルールを選択し、エクスポートします。選択したルールは **ZIPファイル** としてコンピュータにダウンロードするか、個別のファイルとしてエクスポートできます。
+
+ルールをエクスポートする手順は以下の通りです:
+
+<Steps>
+  <Step title="ルールを選択">
+
+エクスポートしたい1つまたは複数のルールを選択します。その後、3点リーダーをクリックし **「エクスポート」** を選択します。するとポップアップが表示されます。
+
+<img
+  src="/images/advanced/multi-store-support/export-rules.webp"
+  alt="ルールのエクスポート"
+/>
+
+または、ルールを開き、**「その他の操作」** をクリックして **「エクスポート」** を選択することで、個別のルールをエクスポートすることもできます。
+
+<img
+  src="/images/advanced/multi-store-support/single-rule-export.webp"
+  alt="単一ルールのエクスポート"
+/>
+</Step>
+
+<Step title="エクスポート形式を選択">
+
+ポップアップで、次のいずれかのオプションを選択します:
+
+- **ZIPアーカイブ**（選択したすべてのルールを含む単一のZIPファイルをダウンロード）
+- **個別ファイル**（選択した各ルールを別々のJSONファイルとして順次ダウンロード）
+
+<img
+  src="/images/advanced/multi-store-support/choose-export-format.webp"
+  alt="エクスポート形式の選択"
+/>
+</Step>
+
+<Step title="エクスポートの完了">
+
+最後に「エクスポート」をクリックしてルールをエクスポートします。
+
+<img
+  src="/images/advanced/multi-store-support/complete-export.webp"
+  alt="エクスポート完了"
+/>
+</Step>
+</Steps>
+
+### ルールをインポート
+別のショッピファイストアを開き、インポートオプションに移動して、以前にエクスポートした ZIPファイル または個別のルール JSONファイル をアップロードします。ZIP 内または選択した JSON ファイル内のすべてのルールが新しいストアに追加されます。
+ルールをインポートする手順は以下の通りです:
+
+<Steps>
+<Step title="インポートボタンをクリック">
+
+**「インポート」** ボタンをクリックします。するとポップアップが表示されます。
+
+<img
+  src="/images/advanced/multi-store-support/click-import-button.webp"
+  alt="インポートボタンをクリック"
+/>
+</Step>
+
+<Step title="ファイルを追加またはドラッグ＆ドロップ">
+
+ポップアップで、ファイルを追加するかドラッグ＆ドロップします（例: `Rename payment methods-besure-export.json`）。
+
+<img
+  src="/images/advanced/multi-store-support/add-files-or-drop-files-to-upload.webp"
+  alt="ファイルを追加またはドラッグ＆ドロップ"
+/>
+</Step>
+
+<Step title="インポートの完了">
+
+最後にポップアップ内の **「インポート」** ボタンをクリックして、ルールをストアにインポートします。
+
+<img
+  src="/images/advanced/multi-store-support/complete-import.webp"
+  alt="インポート完了"
+/>
+</Step>
+</Steps>
+
+## 使用例
+
+2つのショッピファイストアを管理しているとします:
+
+- **ストアA** → すでに異なる顧客グループ向けの割引ルールがある。
+- **ストアB** → 同じ割引ルールが必要。
+
+**ストアB** でルールを最初から作成する代わりに、次の手順を行います:
+
+<Steps>
+  <Step title="ストアAからルールをエクスポート">
+    <strong>ストアA</strong> からルールをZIPファイルとしてエクスポートします。
+    <img
+      src="/images/advanced/multi-store-support/export-rules.webp"
+      alt="ストアAからエクスポート"
+    />
+  </Step>
+
+  <Step title="ストアBにルールをインポート">
+    そのZIPファイルを <strong>ストアB</strong> にインポートします。
+    <img
+      src="/images/advanced/multi-store-support/import-into-store-b.webp"
+      alt="ストアBにインポート"
+    />
+  </Step>
+</Steps>
+
+ルールは即座にインポートされ、すぐに使用可能になります。
