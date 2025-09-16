@@ -13,7 +13,7 @@ Verzweigungen ermöglichen es Ihnen, Regeln mit mehreren Bedingungsblöcken zu e
 > Hier ist ein Beispiel für eine Verzweigungsregel mit drei Blöcken. Hier möchten wir unterschiedliche Rabatte basierend auf dem Produkttag anwenden, und wir haben einen Standardrabatt von 5 % auf alle Versandkosten, falls der Kunde für keinen der anderen Rabatte berechtigt ist. Es wird nur ein Block basierend auf den Bedingungen ausgeführt und dann stoppt die Regel.
 
 <Note>
-  Die Schlüsselbedingung hier ist [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  Die Schlüsselbedingung hier ist [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#alle-vorherigen-bedingungen-ungültig)
   im zweiten und dritten Block, die sicherstellt, dass nur ein Block basierend auf den Bedingungen ausgeführt wird und die Regel dann stoppt. Mit dieser Bedingung können Sie Verzweigungen in jeder Regel verwenden.
 </Note>
 
@@ -65,7 +65,7 @@ So wird diese Regel ausgeführt:
 
 ### Zurückfallen Block (else)
 
-- Wenn keiner der vorherigen Blöcke zutrifft, können Sie einen Fallback-Block mit der Bedingung [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid) hinzufügen.
+- Wenn keiner der vorherigen Blöcke zutrifft, können Sie einen Fallback-Block mit der Bedingung [Alle vorherigen Bedingungen ungültig](/guides/de/essentials/condition-sets/condition-set-1#alle-vorherigen-bedingungen-ungültig) hinzufügen.
 - Dies fungiert als **Else (Standard-Fallback)** und stellt sicher, dass es immer eine Standard-**“Dann”-Aktion** gibt (z. B. 5 % Rabatt anwenden), wenn keine vorherigen Blöcke ausgeführt wurden.
 
 > **Beispiel:** Alle vorherigen Bedingungen ungültig → 5 % Rabatt auf alle Versandkosten anwenden

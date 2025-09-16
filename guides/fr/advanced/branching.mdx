@@ -13,7 +13,7 @@ Le branchement vous permet de construire des règles en utilisant plusieurs bloc
 > Voici un exemple d’une règle avec branchement comportant trois blocs. Ici, nous voulons appliquer des réductions différentes en fonction du tag produit, et nous avons une remise par défaut de 5 % sur tous les frais d’expédition dans le cas où le client n’est éligible à aucune des autres réductions. Un seul bloc sera exécuté selon les conditions, puis la règle s’arrêtera.
 
 <Note>
-  La condition clé ici est [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)
+  La condition clé ici est [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#toutes-les-conditions-précédentes-invalides)
   dans les deuxième et troisième blocs, ce qui garantit qu’un seul bloc sera exécuté selon les conditions, puis la règle s’arrêtera. En utilisant cette condition, vous pouvez mettre en place un branchement dans n’importe quelle règle.
 </Note>
 
@@ -65,7 +65,7 @@ Voici comment cette règle s’exécutera :
 
 ### Bloc de repli (else)
 
-- Si aucun des blocs précédents ne correspond, vous pouvez ajouter un bloc de repli avec la condition [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid).
+- Si aucun des blocs précédents ne correspond, vous pouvez ajouter un bloc de repli avec la condition [Toutes les conditions précédentes invalides](/guides/fr/essentials/condition-sets/condition-set-1#toutes-les-conditions-précédentes-invalides).
 - Cela agit comme le **Else (par défaut)** et garantit qu’il y a toujours une action **“Alors”** (par ex., appliquer une réduction de 5 %) lorsque aucun des blocs précédents n’a été exécuté.
 
 > **Exemple :** Toutes les conditions précédentes invalides → Appliquer 5 % de réduction sur tous les frais d’expédition.
