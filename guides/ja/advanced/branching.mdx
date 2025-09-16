@@ -13,7 +13,7 @@ icon: "split"
 > 以下は、3つのブロックを持つ分岐ルールの例です。ここでは、商品タグに基づいて異なる割引を適用したい場合を示します。その他の割引に該当しない場合には、すべての配送に対してデフォルトで5%割引を適用します。条件に基づき1つのブロックのみが実行され、その後ルールは停止します。
 
 <Note>
-  ここでの重要な条件は、2番目と3番目のブロックにある[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid)で、条件に基づき1つのブロックのみが実行され、その後ルールは停止します。この条件を使用することで、任意のルールで分岐を使用できます。
+  ここでの重要な条件は、2番目と3番目のブロックにある[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#以前のすべての条件が無効)で、条件に基づき1つのブロックのみが実行され、その後ルールは停止します。この条件を使用することで、任意のルールで分岐を使用できます。
 </Note>
 
 <img src="/images/advanced/branching/all-blocks.webp" alt="All Blocks" />
@@ -58,7 +58,7 @@ icon: "split"
 
 ### フォールバックブロック（else）
 
-- 以前のブロックがいずれも一致しない場合、[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#previous-all-conditions-invalid) の条件を持つフォールバックブロックを追加できます。
+- 以前のブロックがいずれも一致しない場合、[前のすべての条件が無効](/guides/ja/essentials/condition-sets/condition-set-1#以前のすべての条件が無効) の条件を持つフォールバックブロックを追加できます。
 - これにより、**Else（デフォルト）** として機能し、以前のブロックが実行されなかった場合でも常にデフォルトの**「Then」アクション**（例：5%割引）が実行されます。
 
 > **例:** 前のすべての条件が無効 → すべての配送に5%割引を適用
