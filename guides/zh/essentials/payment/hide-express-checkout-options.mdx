@@ -1,0 +1,111 @@
+---
+title: "隐藏快捷结账选项"
+description: "隐藏结账页面顶部的快捷结账支付选项。"
+icon: "eye-slash"
+---
+
+## 规则概览
+
+此规则允许您根据给定条件隐藏结账页面顶部的快捷结账按钮，例如 PayPal、Apple Pay、Google Pay 或 Shop Pay。
+
+<Warning>
+  您可以 <i>始终</i> 隐藏这些快捷按钮，<b>仅当</b> 您使用 Shopify Plus 计划时，因为 Shopify 的限制。如果您使用其他 Shopify 计划，那么此规则将仅在配送地址未填写时隐藏所有快捷结账按钮。当配送地址填写完成后，快捷结账按钮将再次可见。此机制确保客户至少会始终输入他们的配送地址。
+</Warning>
+
+## 示例配置
+
+以下步骤展示了如何使用应用程序创建和配置一个 **隐藏快捷结账选项** 规则。
+
+### 创建新规则
+
+从您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用)，打开应用程序。在侧边栏，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+然后，您将被重定向到 **选择结账规则类型页面**。选择 _类别 "支付" → 选择结账规则类型 "隐藏快捷结账选项" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/payment/select-hide-express-checkout-options.webp"
+  alt="选择规则"
+/>
+
+接着，将会出现一个 **结账布局选择** 弹窗。根据您的商店设置选择一个选项：**单页结账** 或 **三页结账**。如果您的商店使用单页结账，则应选择 **单页结账**。如果您的商店使用三页结账，则应选择 **三页结账**。
+
+<img
+  src="/images/essentials/payment/select-rule-template-hide-express-checkout-options.webp"
+  alt="选择规则模板"
+/>
+
+然后，您将进入 **创建新隐藏快捷结账选项规则** 页面，在这里您可以配置规则。
+
+### 规则配置
+
+要配置规则，首先可以选择性地添加一个名称，例如 "隐藏快捷结账选项"，以描述它的作用。然后，选择规则 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活或已停用。
+
+这里我们选择 **测试中** 地位，以便快速测试规则而不影响实际客户的结账。
+
+<img
+  src="/images/essentials/payment/rule-configure-1-hide-express-checkout-options.webp"
+  alt="规则配置 1"
+/>
+
+接下来，如果您在上一步选择了 **单页结账**，则需要在规则设置中按要求设置支付方式。按照说明配置完成后，请为每个方法点击 **标记为完成**。您也可以选择性地添加条件，以控制规则何时执行。
+
+<Note>
+  如果您不确定如何在规则设置中配置手动支付方式，可以观看提供的设置视频并跟随操作。
+</Note>
+
+<img
+  src="/images/essentials/payment/setup-hide-payment-methods-options.webp"
+  alt="设置"
+/>
+
+<Info>
+  只有在您未使用 Shopify Plus 时，才需要配置这些手动支付方式。如果您使用 Shopify Plus，则无需配置这些手动支付方式。
+</Info>
+
+或者，如果您在上一步选择了 **三页结账**，则需要选择是否在以下页面中隐藏或显示支付方式：**结账信息页面** 和 **结账支付页面**。您也可以选择性地添加条件，以控制规则在这两个页面上的执行。
+
+<img
+  src="/images/essentials/payment/setup-3-page-checkout-hide-express-checkout-options.webp"
+  alt="设置"
+/>
+
+最后，点击顶部的 <b>保存</b> 按钮以创建并保存规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则设置为测试地位，我们必须使用 `test@testing.com` 作为电子邮件，而不是实际的电子邮件，才能在结账时运行该规则。
+
+<Warning>
+  下图显示了在使用测试电子邮件地址 <b>之前</b> 的结账页面。
+  请注意，PayPal 快捷支付按钮仍然可见。
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-hide-express-checkout-options.webp"
+  alt="应用规则之前"
+/>
+
+设置电子邮件后，结账规则运行，您将看到 PayPal 快捷支付按钮已被 **隐藏**，如下所示。
+
+<img
+  src="/images/essentials/payment/after-rule-apply-hide-express-checkout-options.webp"
+  alt="应用规则之后"
+/>
+
+## 激活规则
+
+测试完成后，我们可以激活规则，以便它开始对实际客户的结账产生影响。只有已激活的规则才能对所有客户的结账进行更改。
+
+点击侧边栏中的 **规则** 查看所有规则。选择您要激活的规则，然后点击 **激活** 按钮来激活它。
+
+<Warning>
+  规则激活仅适用于付费计划。如果您尚未升级计划，请按照
+  [这里](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+
+<img
+  src="/images/essentials/payment/activate-the-rule-hide-express-checkout-options.webp"
+  alt="激活规则"
+/>

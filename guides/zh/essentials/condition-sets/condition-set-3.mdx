@@ -1,0 +1,259 @@
+---
+title: "条件集 3"
+description: "了解 _条件集 3_ 中可用的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import CustomerTag from "/snippets/condition-set/zh/customer-tag.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/zh/order-total-quantity.mdx";
+import OrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh/order-subtotal-amount-per-product-tag.mdx";
+import OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag from "/snippets/condition-set/zh/order-subtotal-amount-minus-order-subtotal-amount-per-product-tag.mdx";
+import ProductTag from "/snippets/condition-set/zh/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh/product-tags.mdx";
+import Collection from "/snippets/condition-set/zh/collection.mdx";
+import Collections from "/snippets/condition-set/zh/collections.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/zh/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/zh/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/zh/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/zh/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/zh/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/zh/cart-has-no-subscription-product.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/zh/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import Market from "/snippets/condition-set/zh/market.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/zh/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/zh/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/zh/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/zh/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/zh/address-line2.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 客户
+
+<EmailAddress />
+<CustomerTag />
+
+## 订单详情
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### 订单小计一次性购买金额
+
+此条件检查 **订单的小计一次性购买金额**（非订阅产品的小计金额）是否符合特定标准，基于以下子条件之一：
+
+- **大于或等于**（当订单的小计一次性购买金额大于或等于输入金额时匹配）
+- **小于或等于**（当订单的小计一次性购买金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  在您的商店货币中输入金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 700` → 匹配小计一次性购买金额为 700 或更多的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-one-time-purchase-amount.webp"
+  alt="订单小计一次性购买金额"
+/>
+
+### 订单小计订阅金额
+
+此条件检查 **订单的小计订阅金额**（订阅产品的小计金额）是否符合特定标准，基于以下子条件之一：
+
+- **大于或等于**（当订单的小计订阅金额大于或等于输入金额时匹配）
+- **小于或等于**（当订单的小计订阅金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  在您的商店货币中输入金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 1200` → 匹配小计订阅金额为 1200 或更多的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-subscription-amount.webp"
+  alt="订单小计订阅金额"
+/>
+
+### 订单小计数字产品金额
+
+此条件检查 **订单的小计数字产品金额**（数字产品的小计金额）是否符合特定标准，基于以下子条件之一：
+
+- **大于或等于**（当订单的小计数字产品金额大于或等于输入金额时匹配）
+- **小于或等于**（当订单的小计数字产品金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  在您的商店货币中输入金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`小于或等于 398` → 匹配小计数字产品金额为 398 或更少的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-digital-amount.webp"
+  alt="订单小计数字产品金额"
+/>
+
+### 订单小计实体产品金额
+
+此条件检查 **订单的小计实体产品金额**（实体产品的小计金额）是否符合特定标准，基于以下子条件之一：
+
+- **大于或等于**（当订单的小计实体产品金额大于或等于输入金额时匹配）
+- **小于或等于**（当订单的小计实体产品金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  在您的商店货币中输入金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 299` → 匹配小计实体产品金额为 299 或更多的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-subtotal-physical-amount.webp"
+  alt="订单小计实体产品金额"
+/>
+
+<OrderTotalQuantity />
+
+## 购物车详情
+
+<OrderSubtotalAmountPerProductTag />
+<OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
+
+### 每个产品标签的数量
+
+此条件检查 **具有特定产品标签的产品数量** 是否符合定义的标准，基于以下子条件之一：
+
+- **数量大于或等于**（当具有指定产品标签的产品数量大于或等于输入数字时匹配）
+- **数量小于或等于**（当具有指定产品标签的产品数量小于或等于输入数字时匹配）
+- **数量可被整除**（当具有指定产品标签的产品数量是输入数字的倍数时匹配）
+- **数量不可被整除**（当具有指定产品标签的产品数量不是输入数字的倍数时匹配）
+
+要设置这些条件：
+
+<Steps>
+  <Step title="输入产品标签">
+    在“输入产品标签”字段中输入<strong>产品标签</strong>。
+  </Step>
+
+  <Step title="输入数量">
+    在“输入数量”字段中输入<strong>数量</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+> **“数量大于或等于”的示例**:  
+> 产品标签: `SummerCollection`  
+> 数量: `3`  
+> → 匹配具有 `SummerCollection` 标签的产品数量为 3 或更多的订单。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="产品标签数量大于等于"
+/>
+
+> **“数量可被整除”的示例**:  
+> 产品标签: `SummerCollection`  
+> 数量: `2`  
+> → 匹配具有 `SummerCollection` 标签的产品数量为 2、4、6、8 等的订单。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="产品标签数量可被整除"
+/>
+
+## 购物车包含任意商品
+
+<ProductTag />
+<ProductTags />
+<Collection />
+<Collections />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+### 任意产品单价
+
+此条件检查 **订单中任意产品的单价** 是否符合特定标准，基于以下子条件之一：
+
+- **大于或等于**（当任意产品的单价大于或等于输入金额时匹配）
+- **小于或等于**（当任意产品的单价小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  在您的商店货币中输入金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 200` → 匹配任意产品单价为 200 或更多的情况。
+
+<img
+  src="/images/essentials/condition-sets/any-product-cost-per-quantity.webp"
+  alt="任意产品单价"
+/>
+
+## 配送
+
+<ShippingMethodPrice />
+<SelectedShippingTypeShipPickup />
+<ShippingMethodsAvailable />
+
+## 本地化
+
+<UserLanguage />
+<Market />
+
+## 收货地址
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

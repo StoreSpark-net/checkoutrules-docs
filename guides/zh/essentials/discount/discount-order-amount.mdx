@@ -1,0 +1,128 @@
+---
+title: "折扣订单金额"
+description: "根据给定条件对订单小计金额进行折扣。"
+icon: "badge-percent"
+---
+
+## 规则概述
+
+此规则允许您根据定义的条件对订单小计应用折扣。您可以提供百分比折扣、固定金额减免、排除特定产品的百分比、仅针对特定产品的百分比、排除特定产品的固定金额减免，或仅针对特定产品的固定金额减免，使用购物车总额、客户标签、送货地址或产品属性等条件。
+
+使用此规则，您可以创建折扣码，或创建自动折扣。如果规则创建了折扣码，则客户可以在结账时使用折扣码获得折扣。否则，如果选择了自动折扣，则规则可以根据配置的条件自动将折扣应用于订单小计。这有助于激励购买、奖励特定客户并推动更高的转化率。
+
+## 示例配置
+
+以下步骤展示了如何使用应用程序创建和配置一个 **折扣订单金额** 规则。
+
+### 创建新规则
+
+在您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用) 中打开应用。在侧边栏中，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+然后，您将被重定向到 **选择结账规则类型界面**。选择 _类别 "折扣" → 选择结账规则类型 "折扣订单金额" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/discount/select-discount-amount.webp"
+  alt="选择折扣"
+/>
+
+接下来，您将进入 **创建新折扣订单金额规则** 界面，在这里您可以配置您的规则。
+
+### 规则配置
+
+要配置规则，首先可选地添加一个名称，例如 "折扣订单金额"，用于描述其功能，如果您想应用一个 **"自动折扣"**。
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-order-amount.webp"
+  alt="自动折扣名称"
+/>
+
+或者，如果您更愿意使用折扣码来应用折扣，请点击 **"折扣码"** 并输入您想要的代码，或者点击 **"生成随机代码"** 来随机生成一个。
+
+<img
+  src="/images/essentials/discount/discount-code-discount-order-amount.webp"
+  alt="折扣码"
+/>
+
+接下来，在同一界面上，选择规则的 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活或停用。在这里，我们将选择 **测试中** 地位，以便我们可以快速测试规则而不会影响实际客户的结账。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="规则地位"
+/>
+
+接下来，在同一界面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此订单折扣如何与**其他折扣**交互。您可以选择允许其与以下折扣组合使用：
+
+- **产品折扣** – 这使订单折扣可以与任何产品级别的折扣一起使用。请确保产品折扣也被配置为允许与订单折扣组合。
+
+- **订单折扣** – 这允许多个订单级别折扣一起应用。请确保其他订单折扣也设置为允许与订单折扣组合。
+
+- **运费折扣** – 这使订单折扣可以与运费级别折扣一起使用。请确认运费折扣也设置为允许与订单折扣组合。
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="组合"
+/>
+
+接下来，在同一界面上，配置 [策略](/guides/zh/get-started/concepts#策略) 设置，以控制系统如何处理多个折扣块。您可以选择 **优先**，即仅应用第一个满足条件的折扣，忽略后续可能更优的折扣；或选择 **最大值**，即评估所有折扣块并应用减免最大的一项。
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="策略订单折扣"
+/>
+
+接下来，在同一界面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+
+> 例如，在这里我们设置规则为始终运行，并将其配置为使用百分比选项应用 **10% 折扣**。折扣信息 **"10% 折扣"** 将在结账时显示给客户。
+
+<img
+  src="/images/essentials/discount/condition-set-discount-order-amount.webp"
+  alt="条件集折扣"
+/>
+
+在操作部分，您可以选择使用 **百分比** 或 **固定金额减免** 来应用折扣，而无需选择特定产品。其他方法 **排除这些产品的百分比、仅针对这些产品的百分比、排除这些产品的固定金额减免、仅针对这些产品的固定金额减免** 则需要您选择产品才能生效。
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="操作类型折扣"
+/>
+
+接下来，在同一界面中，在 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择性地启用折扣码的使用限制、限制为每个客户一次，或者在选择折扣码时同时应用这两者。
+
+最后，点击顶部的 <b>保存</b> 按钮来创建并保存您的规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则设置为测试中地位，我们必须使用 `test@testing.com` 作为电子邮件，而不是实际电子邮件，才能在结账时运行该规则。
+
+<Warning>
+  下图显示了在使用测试电子邮件地址 <b>之前</b> 的结账页面。请注意，此时尚未应用任何折扣。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-methods.webp"
+  alt="应用规则前"
+/>
+
+设置电子邮件后，结账规则将运行并应用已配置的 **10% 折扣**，使用百分比选项。我们可以验证，在结账时显示了 **"10% 折扣"** 的折扣信息，如下所示。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order-amount.webp"
+  alt="应用规则后"
+/>
+
+## 激活规则
+
+测试完成后，我们可以激活该规则，以便它开始对实际客户的结账进行更改。只有激活的规则才能对所有客户的结账生效。
+
+点击侧边栏中的 **规则** 来查看所有规则。选择您要激活的规则，然后点击 **激活** 按钮来激活它。
+
+<Warning>
+  规则激活仅适用于付费计划。如果您尚未升级计划，请按照
+  [此处](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-order-amount.webp"
+  alt="激活规则"
+/>

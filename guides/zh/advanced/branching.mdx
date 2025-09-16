@@ -1,0 +1,146 @@
+---
+title: 分支 (if else)
+description: "学习如何创建和使用 if、else if、else 规则结构来处理规则中的多个条件。"
+icon: "split"
+---
+
+## 概述
+
+通常，当一个规则有多个块时，每个块会按照从上到下的顺序执行，如果某个块的条件满足，则执行该块的操作。因此，每个规则可以有多个操作。但有时我们并不希望这样，我们只希望执行一个块，然后规则停止。这时就需要用到分支。
+
+分支允许您使用多个条件块来构建规则，遵循 **if → else if → else** 逻辑。每个块会按顺序检查，一旦某个块匹配，其操作会被执行，规则随即停止。这确保了 **只有一个块会运行**，防止重叠或冲突的操作。这是一个非常强大的功能，可以用来创建具有多个条件的复杂规则。
+
+> 下面是一个包含三个块的分支规则示例。在这里，我们希望根据产品标签应用不同的折扣，如果客户不符合任何其他折扣条件，则默认对所有配送提供 5% 的折扣。只有一个块会根据条件执行，然后规则会停止。
+
+<Note>
+  这里的关键条件是第二个和第三个块中的
+  [之前所有条件无效](/guides/zh/essentials/condition-sets/condition-set-1#前面所有条件无效)，
+  这确保了只有一个块会根据条件执行，然后规则会停止。使用此条件，您可以在任何规则中使用分支。
+</Note>
+
+<img src="/images/advanced/branching/all-blocks.webp" alt="所有块" />
+
+这是该规则的执行方式：
+
+<Steps>
+  <Step title="如果产品标签是 sport 并且订单小计金额大于或等于 33">
+    那么将应用 20% 的配送折扣，规则将停止。
+  </Step>
+  <Step title="否则如果客户标签是 VIP">
+    那么将应用 50% 的配送折扣，规则将停止。
+  </Step>
+  <Step title="否则 (默认捕获所有)">
+    那么将应用 5% 的配送折扣。
+  </Step>
+</Steps>
+
+## 解释
+
+### 第一个条件块 (if)
+
+- 系统从第一个条件块开始。
+- 该块可以包含多个 **子条件**，并通过 **AND** 或 **OR** 组合。
+- 如果整个块条件满足，则运行其 **“Then” 操作**（例如，应用 20% 折扣）。
+- 一旦运行，系统将不再检查后续块。
+
+> **示例：** 产品标签的值为 **sport** _AND_ 订单小计金额 ≥ **33** _OR_ 产品标签的值为 **shoes** → 对所有配送应用 20% 折扣
+
+<img
+  src="/images/advanced/branching/if-condition.webp"
+  alt="If 条件"
+/>
+
+### 否则如果条件块 (else if)
+
+- 如果第一个块不匹配，系统会检查下一个块。
+- 一个 **Else If** 块可以包含多个 **子条件**，使用 **AND** 或 **OR**，并且必须包含 **"之前所有条件无效"** 作为子条件。
+- 可以有一个或多个块依次排列。但是，如果没有 **"之前所有条件无效"** 条件，该块将不会作为 **Else If** 工作，而会表现为常规的 **If** 块。
+- 如果任何块的整体条件满足，则运行其 **“Then” 操作**（例如，应用 50% 折扣），并停止评估。
+
+> **示例：** 之前所有条件无效 AND 客户标签的值为 **VIP** → 对所有配送应用 50% 折扣
+
+<img
+  src="/images/advanced/branching/else-if-condition.webp"
+  alt="Else If 条件"
+/>
+
+### 回退块 (else)
+
+- 如果之前的块都不匹配，您可以添加一个条件为 [之前所有条件无效](/guides/zh/essentials/condition-sets/condition-set-1#前面所有条件无效) 的回退块。
+- 这相当于 **Else (默认捕获所有)**，确保始终有一个默认的 **“Then” 操作**（例如，应用 5% 折扣），当没有执行之前的块时。
+
+> **示例：** 之前所有条件无效 → 对所有配送应用 5% 折扣
+
+<img
+  src="/images/advanced/branching/else-condition.webp"
+  alt="Else 条件"
+/>
+
+<Tip>
+  您应按照优先级从高到低的顺序排列这些块。第一个块是最高优先级，最后一个块是最低优先级。
+</Tip>
+
+## 示例用例
+
+假设您希望根据 **产品标签** 应用不同的配送折扣。
+
+### 规则设置
+
+**块 1 (if)** → _产品标签的值为 `sport`_ → 对所有配送应用 **20% 折扣**（最高优先级）。
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport.webp"
+  alt="当 sport 时 20% 折扣"
+/>
+
+**添加下一个块**  
+在第一个块之后添加新块，您可以选择：  
+点击规则构建器中的 **“添加新块”** 按钮。
+
+<img src="/images/advanced/branching/add-new-block.webp" alt="添加新块" />
+
+或者，[复制上一个块](/guides/zh/advanced/block-replication)，并使用 **粘贴图标**将其粘贴到下方，然后修改其条件和操作。
+
+**块 2 (else if)** → _产品标签的值为 `winter`_ AND _之前所有条件无效_ → 对所有配送应用 **50% 折扣**
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter.webp"
+  alt="当 winter 时 50% 折扣"
+/>
+
+**块 3 (else)** → _之前所有条件无效_ → 对所有配送应用 **5% 折扣**（默认折扣）。
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid.webp"
+  alt="当之前所有条件无效时 5% 折扣"
+/>
+
+以下是整个规则设置的样子。
+
+<img
+  src="/images/advanced/branching/example-all-blocks.webp"
+  alt="所有块示例"
+/>
+
+### 执行流程
+
+系统从 **块 1** 开始。如果匹配（产品标签 = `sport`），则应用 **20% 配送折扣**，规则结束。
+
+<img
+  src="/images/advanced/branching/20-percent-when-sport-checkout.webp"
+  alt="结账时 sport 20% 折扣"
+/>
+
+如果块 1 不匹配，则检查 **块 2**。如果产品标签 = `winter`，则应用 **50% 配送折扣**，规则结束。
+
+<img
+  src="/images/advanced/branching/50-percent-when-winter-checkout.webp"
+  alt="结账时 winter 50% 折扣"
+/>
+
+如果块 1 和块 2 都不匹配，则执行 **块 3**。由于它使用了 **之前所有条件无效**，因此它作为 **默认捕获所有**，应用 **5% 配送折扣**。
+
+<img
+  src="/images/advanced/branching/5-percent-when-previous-all-conditions-invalid-checkout.webp"
+  alt="结账时之前所有条件无效时 5% 折扣"
+/>

@@ -1,0 +1,102 @@
+---
+title: "重命名配送方式"
+description: "在给定条件下，在结账时重命名/翻译或为所选配送方式添加消息。"
+icon: "pencil"
+---
+
+## 规则概述
+
+此规则允许您根据特定条件在结账时重命名或翻译配送和自提方式的标签。您可以使用购物车金额、客户标签、配送地址或产品详情等条件自定义显示的名称。
+
+这有助于为客户提供更清晰的信息，支持本地化，并改善整体结账体验。
+
+## 示例配置
+
+以下步骤展示了如何使用应用程序创建和配置一个 **重命名配送方式** 规则。
+
+### 创建新规则
+
+从 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用) 打开应用程序。在侧边栏中，转到 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+然后，您将被重定向到 **选择结账规则类型界面**。选择 _类别 "配送" → 选择结账规则类型 "重命名配送方式" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/shipping/select-rename-shipping-methods.webp"
+  alt="选择重命名配送方式"
+/>
+
+接下来，您将进入 **创建新的重命名配送方式规则** 界面，在这里您可以配置规则。
+
+### 规则配置
+
+要配置规则，首先可以选择性地添加一个名称，例如 "重命名配送方式" 来描述它的作用。然后，选择规则的 [地位](/guides/zh/get-started/concepts#地位)：测试中、已激活或已停用。
+
+这里我们选择 **测试中** 地位，这样我们可以快速测试规则，而不会影响实际客户的结账。
+
+<img
+  src="/images/essentials/shipping/rule-configure-1-rename-shipping-methods.webp"
+  alt="规则配置 1"
+/>
+
+接下来，在同一界面上，选择合适的 [目标](/guides/zh/get-started/concepts#目标) 来定义规则应适用的位置。我们可以选择 _"配送"_，以重命名在输入 **配送地址** 后显示的配送方式。然后，我们可以选择：
+
+- **除订阅以外的所有配送** – 仅将规则应用于常规配送，并跳过包含订阅产品的订单。这很有用，因为 Shopify 可以自动为订阅产品选择最便宜的配送方式并隐藏所有其他配送方式。隐藏此最便宜的配送方式可能会导致 “无可用配送” 错误。因此，如果您有订阅产品，我们建议使用此选项以避免此错误。
+
+- **所有配送** – 将规则应用于每个订单，包括包含订阅产品的订单。
+
+由于 Shopify 的限制，目前此规则类型下的 _"自提"_ 选项不可用。
+
+<img
+  src="/images/essentials/shipping/select-target-2.webp"
+  alt="选择目标"
+/>
+
+接下来，在同一界面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+
+> 例如，我们使用 **条件集 1**，将规则设置为 **始终运行**，并配置它将包含 **"国际配送"** 的配送方式重命名为 **"本地配送"**。
+
+或者，我们可以将 “重命名为” 选项更改为 “添加消息”，以便在配送方式名称后附加自定义消息，而不是完全重命名。
+
+<img
+  src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"
+  alt="条件集 重命名配送方式"
+/>
+
+最后，点击顶部的 <b>保存</b> 按钮以创建并保存规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则设置为测试地位，我们必须使用 `test@testing.com` 作为邮箱，而不是实际邮箱，来在结账时运行规则。
+
+<Warning>
+  下图显示了在使用测试邮箱地址 <b>之前</b> 的结账页面。请注意，<i>国际配送</i> 配送方式可用，且尚未被重命名。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
+  alt="应用规则前"
+/>
+
+设置邮箱后，结账规则运行并重命名了指定的配送方式。我们可以验证 **"国际配送"** 方式现在显示为 **"本地配送"**，如下所示。
+
+<img
+  src="/images/essentials/shipping/after-rule-apply-rename-shipping-methods.webp"
+  alt="应用规则后"
+/>
+
+## 激活规则
+
+测试完成后，我们可以激活规则，以便它可以开始对实际客户的结账进行更改。只有已激活的规则才能对所有客户的结账进行更改。
+
+点击侧边栏中的 **规则** 查看所有规则。选择要激活的规则，然后点击 **激活** 按钮以激活它。
+
+<Warning>
+  规则激活仅在付费计划中可用。如果您尚未升级计划，请按照
+  [此处](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+<img
+  src="/images/essentials/shipping/activate-the-rule-rename-shipping-methods.webp"
+  alt="激活规则"
+/>

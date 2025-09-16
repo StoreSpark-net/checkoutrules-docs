@@ -1,0 +1,362 @@
+---
+title: "条件集 2"
+description: "了解 _条件集 2_ 中可用的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import CustomerTotalNumberOfPreviousOrders from "/snippets/condition-set/zh/customer-total-number-of-previous-orders.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import OrderTotalQuantity from "/snippets/condition-set/zh/order-total-quantity.mdx";
+import OrderTotalWeight from "/snippets/condition-set/zh/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/zh/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/zh/order-total-subscription-weight.mdx";
+import SKU from "/snippets/condition-set/zh/sku.mdx";
+import Collection from "/snippets/condition-set/zh/collection.mdx";
+import Collections from "/snippets/condition-set/zh/collections.mdx";
+import LineItemProperty from "/snippets/condition-set/zh/line-item-property.mdx";
+import CartHasShippingProduct from "/snippets/condition-set/zh/cart-has-shipping-product-requires-delivery.mdx";
+import CartHasNoShippingProduct from "/snippets/condition-set/zh/cart-has-no-shipping-product.mdx";
+import CartHasDigitalProduct from "/snippets/condition-set/zh/cart-has-digital-product.mdx";
+import CartHasNoDigitalProduct from "/snippets/condition-set/zh/cart-has-no-digital-product.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-no-one-time-purchase-product.mdx";
+import CartHasSubscriptionProduct from "/snippets/condition-set/zh/cart-has-subscription-product.mdx";
+import CartHasNoSubscriptionProduct from "/snippets/condition-set/zh/cart-has-no-subscription-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/zh/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import POBoxAddress from "/snippets/condition-set/zh/p-o-box-address.mdx";
+import NotPOBoxAddress from "/snippets/condition-set/zh/not-p-o-box-address.mdx";
+import AddressLine1Line2 from "/snippets/condition-set/zh/address-line1-line2.mdx";
+import AddressLine1 from "/snippets/condition-set/zh/address-line1.mdx";
+import AddressLine2 from "/snippets/condition-set/zh/address-line2.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 客户
+
+### 客户已登录
+
+如果客户有一个活跃的账户会话，并且在结账时已登录其商店账户，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/customer-logged-in.webp"
+  alt="客户已登录"
+/>
+
+### 客户未登录
+
+如果客户没有活跃的账户会话，并且以访客身份结账，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/customer-is-not-logged-in.webp"
+  alt="客户未登录"
+/>
+
+<EmailAddress />
+<CustomerTotalNumberOfPreviousOrders />
+
+## 订单详情
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+<OrderTotalQuantity />
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+## 购物车详情
+
+### 购物车属性
+
+此条件根据以下子条件检查**附加到购物车的属性**是否符合特定标准：
+
+- **包含以下任意值**（当指定的购物车属性包含任意输入值时匹配）
+- **不包含以下任意值**（当指定的购物车属性不包含任何输入值时匹配）
+- **值为空**（当指定的购物车属性存在但没有值时匹配）
+- **值不为空**（当指定的购物车属性存在并且包含一个值时匹配）
+
+设置此条件：
+
+<Steps>
+  <Step title="输入属性键">
+    在“输入键”字段中输入<strong>属性键</strong>。
+  </Step>
+
+  <Step title="输入值">
+    输入要匹配的<strong>值</strong>（如适用）。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+对于 **包含以下任意值** 和 **不包含以下任意值**，请在字段中输入一个或多个值。多个值用逗号分隔。
+
+<Note>
+  使用 * 通配符匹配部分值。例如，value* 将匹配 value123、VALUETEST 等。
+</Note>
+
+> **“包含以下任意值”的示例**：  
+键: `delivery_method`  
+值: `express, pickup`  
+→ 匹配 `delivery_method` 属性为 `express` 或 `pickup` 的购物车。
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
+  alt="购物车属性包含任意值"
+/>
+
+对于 **值为空** 和 **值不为空**，无需输入值。
+
+> **“值不为空”的示例**：  
+> 键: `gift_message`  
+> → 匹配存在 `gift_message` 属性并包含一些文本（例如，“生日快乐！”）的购物车。
+
+<img
+  src="/images/essentials/condition-sets/cart-attribute-not-empty-value.webp"
+  alt="购物车属性值不为空"
+/>
+
+### 每个 SKU 的产品数量
+
+此条件根据以下子条件检查订单中**特定产品（通过 SKU）**的数量是否符合定义的标准：
+
+- **数量大于或等于**（当指定 SKU 的数量大于或等于输入值时匹配）
+- **数量小于或等于**（当指定 SKU 的数量小于或等于输入值时匹配）
+- **数量可被整除**（当指定 SKU 的数量是输入值的整数倍时匹配）
+- **数量不可被整除**（当指定 SKU 的数量不是输入值的整数倍时匹配）
+
+设置此条件：
+
+<Steps>
+  <Step title="输入 SKU">
+    在“输入 SKU”字段中输入<strong>SKU</strong>。
+  </Step>
+
+  <Step title="输入数量">
+    在“输入数量”字段中输入<strong>数量</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+> **“数量大于或等于”的示例**：  
+> SKU: `ABC123`  
+> 数量: `3`  
+> → 匹配订单中产品 `ABC123` 的数量为 3 或更多的情况。
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-has-greater-value.webp"
+  alt="每个 SKU 的产品数量大于或等于"
+/>
+
+> **“数量可被整除”的示例**：  
+> SKU: `ABC123`  
+> 数量: `2`  
+> → 匹配订单中产品 `ABC123` 的数量为 2、4、6、8 等的情况。
+
+<img
+  src="/images/essentials/condition-sets/product-quantity-per-sku-divisible-by.webp"
+  alt="每个 SKU 的产品数量可被整除"
+/>
+
+### 总数量 – 排除特定 SKU 的产品数量
+
+此条件根据以下子条件检查订单中**所有产品的总数量（排除特定产品 SKU）**是否符合定义的标准：
+
+- **数量大于或等于**（当排除指定 SKU 后的总数量大于或等于输入值时匹配）
+- **数量小于或等于**（当排除指定 SKU 后的总数量小于或等于输入值时匹配）
+- **数量可被整除**（当排除指定 SKU 后的总数量是输入值的整数倍时匹配）
+- **数量不可被整除**（当排除指定 SKU 后的总数量不是输入值的整数倍时匹配）
+
+设置此条件：
+
+<Steps>
+  <Step title="输入要排除的 SKU">
+    在“输入 SKU”字段中输入要排除的<strong>SKU</strong>。
+  </Step>
+
+  <Step title="输入数量">
+    在“输入数量”字段中输入<strong>数量</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+> **“数量大于或等于”的示例**：  
+> SKU: `ABC123`  
+> 数量: `5`  
+> → 匹配订单中除 `ABC123` 外的所有产品总数量大于或等于 5 的情况。
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-has-greater-value.webp"
+  alt="总数量 – 排除 SKU 的产品数量大于或等于"
+/>
+
+> **“数量可被整除”的示例**：  
+> SKU: `ABC123`  
+> 数量: `3`  
+> → 匹配订单中除 `ABC123` 外的所有产品总数量为 3、6、9 等的情况。
+
+<img
+  src="/images/essentials/condition-sets/total-quantity-minus-sku-product-sku-divisible-by.webp"
+  alt="总数量 – 排除 SKU 的产品数量可被整除"
+/>
+
+## 购物车包含任意商品
+
+<SKU />
+<Collection />
+<Collections />
+<LineItemProperty />
+<CartHasShippingProduct />
+<CartHasNoShippingProduct />
+<CartHasDigitalProduct />
+<CartHasNoDigitalProduct />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+<CartHasSubscriptionProduct />
+<CartHasNoSubscriptionProduct />
+
+## 产品元字段
+
+### 产品变体元字段
+
+此条件检查您指定的**产品变体元字段**（通过 **命名空间** 和 **键**），然后根据以下子条件进行评估：
+
+- **包含以下任意值**（如果元字段至少有一个输入值，则匹配）
+- **不包含以下任意值**（如果元字段没有任何输入值，则匹配）
+- **包含除这些值以外的其他值**（如果元字段的值不在输入值列表中，则匹配）
+- **不包含除这些值以外的其他值**（如果元字段仅有输入值而无其他值，则匹配）
+- **值为空**（如果元字段没有值，则匹配）
+- **值不为空**（如果元字段有任意值，则匹配）
+- **数值大于或等于**（如果元字段的数值大于或等于输入值，则匹配）
+- **数值小于或等于**（如果元字段的数值小于或等于输入值，则匹配）
+- **值的数量大于或等于**（如果元字段中值的数量大于或等于输入值，则匹配）
+- **值的数量小于或等于**（如果元字段中值的数量小于或等于输入值，则匹配）
+
+对于 **包含以下任意值**、**不包含以下任意值**、**包含除这些值以外的其他值** 和 **不包含除这些值以外的其他值**，请在字段中输入一个或多个值。多个值用逗号分隔。
+
+> 示例：`命名空间: shipping` · `键: allowed_regions` · `不包含以下任意值: CA, TX` → 匹配元字段中既不包含 “CA” 也不包含 “TX” 的情况。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-does-not-contains.webp"
+  alt="产品变体元字段不包含"
+/>
+
+对于 **数值大于或等于** 和 **数值小于或等于**，请在字段中输入一个数值，与元字段的数值进行比较。
+
+> 示例：`命名空间: specs` · `键: length_mm` · `数值大于或等于 50` → 匹配元字段数值大于或等于 50 的情况。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value.webp"
+  alt="产品变体元字段数值大于"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请在字段中输入一个数值，与元字段中值的数量进行比较。
+
+> 示例：`命名空间: custom` · `键: available_colors` · `值的数量大于或等于 3` → 匹配元字段中有三个或更多值的情况。
+
+<img
+  src="/images/essentials/condition-sets/product-variant-metafield-greater-value-or-equals.webp"
+  alt="产品变体元字段值的数量大于或等于"
+/>
+
+## 配送
+
+<SelectedShippingMethod />
+<ShippingMethodsAvailable />
+<SelectedShippingTypeShipPickup />
+
+## 本地化
+<UserLanguage />
+
+## 收货地址
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<POBoxAddress />
+<NotPOBoxAddress />
+<AddressLine1Line2 />
+<AddressLine1 />
+<AddressLine2 />
+<Company />
+<PhoneNumber />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />
+
+## 比较
+
+### 每个 SKU 的产品数量 vs 每个 SKU 的产品数量
+
+此条件将**一个 SKU 的产品数量**与**另一个 SKU 的产品数量**进行比较，基于以下子条件：
+
+- **数量等于**（如果 SKU1 的数量与 SKU2 相等，则匹配）
+- **数量不等于**（如果 SKU1 的数量与 SKU2 不同，则匹配）
+- **数量大于或等于**（如果 SKU1 的数量大于或等于 SKU2，则匹配）
+- **数量小于或等于**（如果 SKU1 的数量小于或等于 SKU2，则匹配）
+- **数量是…的倍数**（如果 SKU1 的数量是 SKU2 的整数倍，则匹配）
+- **数量不是…的倍数**（如果 SKU1 的数量不是 SKU2 的整数倍，则匹配）
+
+设置此条件：
+
+<Steps>
+  <Step title="输入第一个产品的 SKU">
+    在<strong>输入 SKU1</strong>字段中输入第一个产品的<strong>SKU 代码</strong>。
+  </Step>
+
+  <Step title="输入第二个产品的 SKU">
+    在<strong>输入 SKU2</strong>字段中输入第二个产品的<strong>SKU 代码</strong>。
+  </Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+> **“数量大于或等于”的示例**：  
+> SKU1: `SKU-ABC`  
+> SKU2: `SKU-XYZ`  
+> → 匹配当购物车中 `SKU-ABC` 的数量大于或等于 `SKU-XYZ` 的数量时。
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-greater-equals.webp"
+  alt="SKU 数量大于或等于"
+/>
+
+> **“数量是…的倍数”的示例**：  
+> SKU1: `SKU-A`  
+> SKU2: `SKU-B`  
+> 倍数: `2`  
+> → 匹配当 `SKU-A` 的数量正好是 `SKU-B` 的 2 倍、4 倍、6 倍等时（例如，`SKU-A` 有 6 件，`SKU-B` 有 3 件）。
+
+<img
+  src="/images/essentials/condition-sets/sku-quantity-multiple.webp"
+  alt="SKU 数量倍数"
+/>

@@ -1,0 +1,114 @@
+---
+title: 翻译
+description: "了解如何设置验证规则，根据客户的语言显示错误消息，并提供默认的回退选项。"
+icon: "globe"
+---
+
+## 概述  
+
+翻译功能允许您为不同客户语言本地化验证错误消息。通过将 **用户语言** 条件与规则逻辑结合，您可以在客户的首选语言中显示错误消息，并且还可以定义任意语言的默认回退消息。  
+
+<Note>
+  用户语言条件是翻译的关键。使用它，我们可以在规则中创建多个区块来处理不同的语言。
+</Note>
+
+## 如何设置
+### 创建验证规则
+首先，创建一个包含您选择的条件的规则。
+
+> 例如，订单总金额小于或等于 $100
+
+<img
+  src="/images/advanced/translations/set-order-amount.webp"
+  alt="设置订单金额"
+/>
+
+### 添加语言条件 
+添加 **用户语言** 作为子条件，并选择您想要翻译错误消息的目标语言。
+
+> 例如，我们想要将错误消息翻译成 "French"，因此我们将 **用户语言** 设置为 "French"。
+
+<img
+  src="/images/advanced/translations/set-user-language.webp"
+  alt="设置用户语言"
+/>
+
+### 本地化错误消息
+设置错误消息显示的 **目标位置**（可以是结账页面顶部，或特定字段如地址第一行），并在所选语言中编写错误消息，以便客户看到本地化后的提示。
+
+> 例如，将 **目标位置** 设置为 **结账页面顶部**，并将错误消息设置为法语："Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+<img
+  src="/images/advanced/translations/set-error-message.webp"
+  alt="设置错误消息"
+/>
+
+### 为其他语言复制  
+如果您想为其他语言显示错误消息，可以复制规则区块（右上角的 “复制区块” 按钮），然后粘贴到下面，接着更新 **用户语言** 条件为另一种语言（例如 **German**），并替换为翻译后的错误消息。
+
+> 例如，这里我们添加了复制的区块，并将 **用户语言** 条件更新为 "German"，并替换为德语错误消息。
+
+<img
+  src="/images/advanced/translations/example-german-translation.webp"
+  alt="示例德语翻译"
+/>
+
+### 添加带有默认消息的回退区块
+最后，添加一个条件为 **之前所有条件无效** 的回退区块，并包含您原有的其他条件。在该区块中编写默认错误消息（通常为英文）。这可以确保不符合其他语言规则的客户仍然能看到默认消息。  
+
+> 例如，这里我们添加了回退区块，条件为 **之前所有条件无效**，并包含 **订单总金额** 条件，将错误消息设置为 "Order amount is less than the required minimum order amount of $100"。
+
+<img
+  src="/images/advanced/translations/example-fallback-english-translation.webp"
+  alt="示例回退英文翻译"
+/>
+
+## 总结
+以下是我们在上面示例中创建的规则总结：
+
+### 区块 1 (French)
+- 添加 **订单总金额** 条件，并将其设置为 **小于或等于 99.99**，以便当订单金额小于 100 时触发错误。  
+- AND 子条件 **用户语言** 为 **French**。  
+- 设置错误消息：  
+  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+
+### 区块 2 (German)
+- 添加 **订单总金额** 条件，并将其设置为 **小于或等于 99.99**，以便当订单金额小于 100 时触发错误。  
+- AND 子条件 **用户语言** 为 **German**。  
+- 设置错误消息：  
+  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+### 区块 3 (默认回退 – English)
+- 添加 **订单总金额** 条件，并将其设置为 **小于或等于 99.99**，以便当订单金额小于 100 时触发错误。  
+- 对于 **else / 回退条件**，AND 子条件 **之前所有条件无效**。   
+- 设置错误消息：  
+  > "Order amount is less than the required minimum order amount of $100"
+
+以下是该规则的示例：
+
+<img
+  src="/images/advanced/translations/full-rule.webp"
+  alt="完整规则"
+/>
+
+### 结账时会发生什么
+- 如果客户的 **语言是 French** 并且 **订单金额小于 $100**，他们将在结账时看到 **法语错误消息**。  
+
+<img
+  src="/images/advanced/translations/example-french-error-message.webp"
+  alt="示例法语错误消息"
+/>
+
+- 如果客户的 **语言是 German** 并且 **订单金额小于 $100**，他们将在结账时看到 **德语错误消息**。  
+
+<img
+  src="/images/advanced/translations/example-german-error-message.webp"
+  alt="示例德语错误消息"
+/>
+
+- 如果客户的 **语言是其他任何语言** 并且 **订单金额小于 $100**，他们将在结账时看到默认的 **英文错误消息**。  
+
+<img
+  src="/images/advanced/translations/example-english-error-message.webp"
+  alt="示例英文错误消息"
+/>

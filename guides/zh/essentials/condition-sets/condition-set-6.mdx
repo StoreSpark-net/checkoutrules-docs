@@ -1,0 +1,234 @@
+---
+title: "条件集 6"
+description: "了解 _条件集 6_ 中可用的每个条件。"
+icon: "sliders"
+---
+
+import Always from "/snippets/condition-set/zh/always.mdx";
+import PreviousAllConditionsInvalid from "/snippets/condition-set/zh/previous-all-conditions-invalid.mdx";
+import NewCustomer from "/snippets/condition-set/zh/new-customer.mdx";
+import RepeatCustomer from "/snippets/condition-set/zh/repeat-customer.mdx";
+import CustomerTotalPreviousSpent from "/snippets/condition-set/zh/customer-total-previous-spent.mdx";
+import EmailAddress from "/snippets/condition-set/zh/email-address.mdx";
+import OrderTotalAmount from "/snippets/condition-set/zh/order-total-amount.mdx";
+import OrderSubtotalAmount from "/snippets/condition-set/zh/order-subtotal-amount.mdx";
+import OrderTotalWeight from "/snippets/condition-set/zh/order-total-weight.mdx";
+import OrderTotalOneTimePurchaseWeight from "/snippets/condition-set/zh/order-total-one-time-purchase-weight.mdx";
+import OrderTotalSubscriptionWeight from "/snippets/condition-set/zh/order-total-subscription-weight.mdx";
+import AnyProductDiscountAmount from "/snippets/condition-set/zh/any-product-discount-amount.mdx";
+import AnyProductDiscountPercentage from "/snippets/condition-set/zh/any-product-discount-percentage.mdx";
+import TotalProductDiscountAmount from "/snippets/condition-set/zh/total-product-discount-amount.mdx";
+import TotalProductDiscountPercentage from "/snippets/condition-set/zh/total-product-discount-percentage.mdx";
+import ProductTag from "/snippets/condition-set/zh/product-tag.mdx";
+import ProductTags from "/snippets/condition-set/zh/product-tags.mdx";
+import LineItemProperty from "/snippets/condition-set/zh/line-item-property.mdx";
+import CartHasOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-one-time-purchase-product.mdx";
+import CartHasNoOneTimePurchaseProduct from "/snippets/condition-set/zh/cart-has-no-one-time-purchase-product.mdx";
+import SelectedShippingMethod from "/snippets/condition-set/zh/selected-shipping-method.mdx";
+import ShippingMethodsAvailable from "/snippets/condition-set/zh/shipping-methods-available.mdx";
+import SelectedShippingTypeShipPickup from "/snippets/condition-set/zh/selected-shipping-type-ship-pickup.mdx";
+import ShippingMethodPrice from "/snippets/condition-set/zh/shipping-method-price.mdx";
+import UserLanguage from "/snippets/condition-set/zh/user-language.mdx";
+import ShippingAddressIsEmpty from "/snippets/condition-set/zh/shipping-address-is-empty.mdx";
+import ShippingAddressIsNotEmpty from "/snippets/condition-set/zh/shipping-address-is-not-empty.mdx";
+import FullNameFirstNameLastName from "/snippets/condition-set/zh/full-name-first-name-last-name.mdx";
+import FirstName from "/snippets/condition-set/zh/first-name.mdx";
+import LastName from "/snippets/condition-set/zh/last-name.mdx";
+import Company from "/snippets/condition-set/zh/company.mdx";
+import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
+import CityArea from "/snippets/condition-set/zh/city-area.mdx";
+import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
+import Country from "/snippets/condition-set/zh/country.mdx";
+import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+
+<Always />
+
+<PreviousAllConditionsInvalid />
+
+## 客户
+
+<NewCustomer />
+<RepeatCustomer />
+<CustomerTotalPreviousSpent />
+<EmailAddress />
+
+## 订单详情
+
+<OrderTotalAmount />
+<OrderSubtotalAmount />
+
+### 订单税额
+
+此条件根据以下子条件检查**订单的税额**是否符合特定标准：
+
+- **大于或等于**（当订单税额大于或等于输入金额时匹配）
+- **小于或等于**（当订单税额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  输入商店货币中的金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 50` → 匹配税额为 50 或以上的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-tax-amount.webp"
+  alt="订单税额"
+/>
+
+### 订单关税额
+
+此条件根据以下子条件检查**订单的关税额**是否符合特定标准：
+
+- **大于或等于**（当订单关税额大于或等于输入金额时匹配）
+- **小于或等于**（当订单关税额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  输入商店货币中的金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`大于或等于 80` → 匹配关税额为 80 或以上的订单。
+
+<img
+  src="/images/essentials/condition-sets/order-duty-amount.webp"
+  alt="订单关税额"
+/>
+
+<OrderTotalWeight />
+<OrderTotalOneTimePurchaseWeight />
+<OrderTotalSubscriptionWeight />
+
+### 总折扣金额（任何折扣类型）
+
+此条件根据以下子条件检查订单中的**总折扣金额**（任何商品或订单折扣）是否符合特定标准：
+
+- **大于或等于**（当总折扣金额大于或等于输入金额时匹配）
+- **小于或等于**（当总折扣金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  输入商店货币中的金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`小于或等于 50` → 如果订单的总折扣金额（任何类型）为 50 或更少，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/total-discount-amount.webp"
+  alt="总折扣金额"
+/>
+
+### 总折扣百分比（任何折扣类型）
+
+此条件根据以下子条件检查订单中的**总折扣百分比**（任何商品或订单折扣）是否符合特定标准：
+
+- **大于或等于**（当订单中任何类型折扣的总折扣百分比大于或等于输入的百分比时匹配）
+- **小于或等于**（当订单中任何类型折扣的总折扣百分比小于或等于输入的百分比时匹配）
+
+要设置这些条件，请在字段中输入百分比并从下拉菜单中选择合适的比较方式。
+
+> 例如，`小于或等于 15` → 如果订单中任何折扣类型的总折扣百分比为 15% 或更少，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/total-discount-percentage.webp"
+  alt="总折扣百分比（任何折扣类型）"
+/>
+
+### 订单总折扣金额
+
+此条件根据以下子条件检查**订单总折扣金额**是否符合特定标准：
+
+- **大于或等于**（当订单的总折扣金额大于或等于输入金额时匹配）
+- **小于或等于**（当订单的总折扣金额小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  输入商店货币中的金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`小于或等于 75` → 如果整个订单的总折扣金额为 75 或更少，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-amount.webp"
+  alt="订单总折扣金额"
+/>
+
+### 订单总折扣百分比
+
+此条件根据以下子条件检查**订单总折扣百分比**是否符合特定标准：
+
+- **大于或等于**（当应用于整个订单的总折扣百分比大于或等于输入的百分比时匹配）
+- **小于或等于**（当应用于整个订单的总折扣百分比小于或等于输入的百分比时匹配）
+
+要设置这些条件，请在字段中输入百分比并从下拉菜单中选择合适的比较方式。
+
+> 例如，`小于或等于 15` → 如果应用于订单的总折扣百分比为 15% 或更少，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
+  alt="订单总折扣百分比"
+/>
+
+## 购物车详情
+
+<AnyProductDiscountAmount />
+<AnyProductDiscountPercentage />
+<TotalProductDiscountAmount />
+<TotalProductDiscountPercentage />
+
+## 购物车包含任何商品
+
+<ProductTag />
+<ProductTags />
+<LineItemProperty />
+<CartHasOneTimePurchaseProduct />
+<CartHasNoOneTimePurchaseProduct />
+
+## 配送
+
+<SelectedShippingMethod />
+
+### 已选择的配送方式价格
+
+此条件根据以下子条件检查**已选择的配送方式价格**是否符合特定标准：
+
+- **大于或等于**（当已选择的配送方式价格大于或等于输入金额时匹配）
+- **小于或等于**（当已选择的配送方式价格小于或等于输入金额时匹配）
+
+要设置这些条件，请在字段中输入金额并从下拉菜单中选择合适的比较方式。
+
+<Note>
+  输入商店货币中的金额。设置 > 商店详情 > 商店货币
+</Note>
+
+> 例如，`小于或等于 50` → 匹配已选择的配送方式价格为 50 或更少的订单。
+
+<img
+  src="/images/essentials/condition-sets/selected-shipping-method-price.webp"
+  alt="已选择的配送方式价格"
+/>
+
+<SelectedShippingTypeShipPickup />
+<ShippingMethodPrice />
+<ShippingMethodsAvailable />
+
+## 本地化
+<UserLanguage />
+
+## 收货地址
+
+<ShippingAddressIsEmpty />
+<ShippingAddressIsNotEmpty />
+<FullNameFirstNameLastName />
+<FirstName />
+<LastName />
+<Company />
+<PhoneNumber />
+<CityArea />
+<ProvinceCodeStateCode />
+<Country />
+<ZipCodePostalCode />

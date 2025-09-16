@@ -1,0 +1,121 @@
+---
+title: "重新排序支付方式"
+description: "在给定条件下，重新排列结账时显示的支付方式。"
+icon: "shuffle"
+---
+
+## 规则概述
+
+此规则允许您更改支付方式在结账时出现的顺序。您可以根据条件（例如购物车总额、配送国家或产品标签等）优先选择特定支付选项。
+
+这有助于简化客户体验，优先显示最常用或最相关的支付方式。
+
+## 示例配置
+
+以下步骤展示如何使用应用程序创建和配置 **重新排序支付方式** 规则。
+
+### 创建新规则
+
+从您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用) 打开应用程序。在侧边栏中，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+然后，您将被重定向到 **选择结账规则类型** 页面。选择 _类别 "支付" → 选择结账规则类型 "重新排序支付方式" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/payment/select-reorder-payment-methods.webp"
+  alt="选择重新排序支付方式"
+/>
+
+接着，在 **模板选择** 中，根据您的需求选择一个选项。在大多数情况下，您可以选择空规则作为起点并根据需要修改它。即使您选择了预填充的模板，稍后也可以进行修改。
+
+<img
+  src="/images/essentials/payment/select-rule-template-reorder-payment-methods.webp"
+  alt="选择规则模板"
+/>
+
+接下来，您将进入 **创建新的重新排序支付方式规则** 页面，在此处可以配置您的规则。
+
+### 规则配置
+
+要配置规则，首先我们可以选择性地添加一个名称，例如 "重新排序支付方式" 来描述它的作用。然后，选择规则 [地位](/guides/zh/get-started/concepts#地位)：测试中、启用或停用。
+
+这里我们选择 **测试中** 地位，这样我们可以快速测试规则，而不会影响实际客户的结账。
+
+<img
+  src="/images/essentials/payment/rule-configure-1-reorder-payment-methods.webp"
+  alt="规则配置 1"
+/>
+
+接着，在同一页面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+
+> 例如，我们选择默认的条件集 1，将规则设置为始终运行，并选择操作 **字母顺序**，通过选择 **名称 A 到 Z（升序）** 来重新排序支付方式。
+
+<img
+  src="/images/essentials/payment/condition-set-reorder-payment-methods.webp"
+  alt="条件集"
+/>
+
+在动作部分，您有两个选项可供选择：
+
+- **字母顺序** – 这允许您按字母顺序重新排序支付方式。您可以选择 **名称 A-Z（升序）** 或 **名称 Z-A（降序）**。
+
+<img
+  src="/images/essentials/payment/action-alphabetical-order-reorder-payment-methods.webp"
+  alt="动作 字母顺序"
+/>
+
+- **固定排序** – 此选项允许您通过为每种支付方式分配固定的排名（例如 1、2、3 等）来手动设置支付方式的顺序，这样您可以精确控制每种方式出现的位置。
+
+<img
+  src="/images/essentials/payment/action-fixed-ranking-reorder-payment-methods.webp"
+  alt="动作 固定排序"
+/>
+
+最后，点击顶部的 <b>保存</b> 按钮以创建并保存您的规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则设置为测试地位，我们必须使用 `test@testing.com` 作为邮箱，而不是实际邮箱，在结账时运行规则。
+
+<Warning>
+  下图显示了在使用测试邮箱地址 <b>之前</b> 的结账页面。请注意支付方式的顺序。
+</Warning>
+
+<img
+  src="/images/essentials/payment/before-rule-apply-payment-methods.webp"
+  alt="规则应用前"
+/>
+
+例如，在设置邮箱后，结账规则运行，**支付方式已重新排序**。
+
+<img
+  src="/images/essentials/payment/after-rule-apply-reorder-payment-methods.webp"
+  alt="规则应用后"
+/>
+
+## 设置默认预选支付方式
+
+默认情况下，Shopify 会始终将顶部的支付方式作为默认预选支付方式。因此，通过使用此规则，您可以将任何支付方式设为默认预选支付方式，只需将其设置为顶部支付方式即可。
+
+为此，例如，您可以使用 **固定排序** 选项，并将您想设为默认预选支付方式的排名设置为 1。请确保 "所有其他支付方式将在此之后显示" 被设置为 "显示在最后"。
+
+<Warning>
+  请注意，要测试这一点，您需要激活规则，然后清除浏览器的 cookies/缓存，以确保默认预选支付方式不是您之前选择的支付方式（Shopify 可能会在浏览器缓存中保存此选择）。或者您也可以使用不同的浏览器，以查看客户将看到的效果。
+</Warning>
+
+## 激活规则
+
+测试完成后，我们可以激活规则，以便它开始在结账时对实际客户生效。只有已激活的规则才能对所有客户的结账产生影响。
+
+点击侧边栏中的 **规则** 查看所有规则。选择您要激活的规则，然后点击 **激活** 按钮以激活它。
+
+<Warning>
+  规则激活仅适用于付费计划。如果您尚未升级计划，请按照
+  [此处](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+
+<img
+  src="/images/essentials/payment/activate-the-rule-reorder-payment-methods.webp"
+  alt="激活规则"
+/>

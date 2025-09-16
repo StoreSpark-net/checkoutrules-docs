@@ -1,0 +1,152 @@
+---
+title: "概念"
+description: "了解 BeSure 结账规则如何运作的关键概念，以自定义和控制您的 Shopify 结账体验。"
+icon: "puzzle-piece"
+---
+
+## 什么是规则？
+
+**结账规则** 是一组逻辑，用于定义在结账过程中 **应该发生什么** 以及 **何时发生**。
+
+## 规则基础
+
+这些是每个规则的基本部分，用于定义其目的、运行时间、执行内容，以及这些操作的组织方式。
+
+### 地位
+
+表示规则的当前地位，无论是测试中、已激活还是已停用。这有助于控制规则何时生效。
+
+<Tip>
+  建议从测试模式开始，以确保规则按预期工作而不影响客户。测试完成后您可以切换到激活模式。
+</Tip>
+
+<img src="/images/concepts/rule-status.webp" alt="规则地位" />
+
+下面是一个在结账页面开启测试模式的示例。
+
+<Frame>
+  <img src="/images/concepts/testing.webp" alt="测试模式" />
+</Frame>
+
+### 条件集
+
+您可以使用任何适合您需求的条件集，如果不确定，可以从条件集 1 开始，或者使用搜索框查找您需要的条件所在的条件集并切换至该条件集。
+
+> 例如，如果您想基于产品元字段隐藏配送方式，则应切换到条件集 4，这样您就可以使用产品元字段条件。
+
+<Warning>
+  条件集选择仅在创建规则时可用。规则创建后无法更改条件集。如果需要不同的条件集，请创建新规则。
+</Warning>
+
+<img src="/images/concepts/condition-set.webp" alt="条件集" />
+
+在[这里](/guides/zh/essentials/condition-sets/introduction)获取更多关于条件集的信息，或在下方了解每个条件集的更多内容。
+
+<CardGroup cols={3}>
+  <Card
+    title="条件集 1"
+    icon="1"
+    href="/guides/zh/essentials/condition-sets/condition-set-1"
+  >
+    了解更多关于条件集 1 的信息。
+  </Card>
+  <Card
+    title="条件集 2"
+    icon="2"
+    href="/guides/zh/essentials/condition-sets/condition-set-2"
+  >
+    了解更多关于条件集 2 的信息。
+  </Card>
+  <Card
+    title="条件集 3"
+    icon="3"
+    href="/guides/zh/essentials/condition-sets/condition-set-3"
+  >
+    了解更多关于条件集 3 的信息。
+  </Card>
+  <Card
+    title="条件集 4"
+    icon="4"
+    href="/guides/zh/essentials/condition-sets/condition-set-4"
+  >
+    了解更多关于条件集 4 的信息。
+  </Card>
+  <Card
+    title="条件集 5"
+    icon="5"
+    href="/guides/zh/essentials/condition-sets/condition-set-5"
+  >
+    了解更多关于条件集 5 的信息。
+  </Card>
+  <Card
+    title="条件集 6"
+    icon="6"
+    href="/guides/zh/essentials/condition-sets/condition-set-6"
+  >
+    了解更多关于条件集 6 的信息。
+  </Card>
+</CardGroup>
+
+### 条件（“何时”）
+
+条件基于所选条件集，定义必须满足的标准才能触发规则。使用 AND（所有条件都为真）、OR（任一条件为真）来分组相关逻辑以处理复杂情况。
+
+> 例如，下方示例中规则将在以下两种情况下运行：当日期为 2025 年 8 月 4 日且当天是星期一时，规则将运行；或者，每天时间为 00:00 时运行，这实际上意味着每天午夜执行。
+
+<img src="/images/concepts/condition.webp" alt="条件" />
+
+### 动作（“做什么”）
+
+当“何时”部分的条件成立时，系统将执行您定义的动作。每个动作仅在其特定标准（动作条件和操作）也满足时才会执行。
+
+> 例如，下方示例中动作被设置为以固定方式重新排序配送方式，将“次日送达”放在顶部，并将其他配送方式放在其下方。
+
+<img src="/images/concepts/action.webp" alt="动作" />
+
+### 区块
+
+**条件**（“何时”）和 **动作**（“做什么”）共同组成一个 **规则区块**。您可以在一个规则中使用 **多个区块** 来轻松处理复杂场景。
+
+<img src="/images/concepts/block.webp" alt="区块" />
+
+## 附加选项（适用于某些规则）
+
+这些可选部分出现在特定类型的规则中，提供了更多控制规则应用方式和在特殊情况下的行为。
+
+### 目标
+
+定义规则的适用范围（例如：配送或自提）。仅用于配送规则。
+
+<img src="/images/concepts/target.webp" alt="目标" />
+
+### 组合
+
+控制规则折扣是否可以与产品、订单或配送折扣叠加。仅用于 **折扣** 规则。
+
+<img src="/images/concepts/combinations.webp" alt="组合" />
+
+### 策略
+
+如果折扣规则包含多个区块，则会涉及策略选择。它决定如何应用这些规则区块（例如：第一个有效的，或最高值）。仅用于 **订单金额折扣** 规则。
+
+<img src="/images/concepts/strategy.webp" alt="策略" />
+
+### 触发器
+
+指定哪个步骤会触发规则（例如：当客户正在与结账交互或完成结账时，或两者皆是）。仅用于 **验证或阻止结账** 规则。
+
+<img src="/images/concepts/trigger.webp" alt="触发器" />
+
+### 回退
+
+定义在少见情况下（例如应用在结账中出现问题时）会发生什么（例如：允许或阻止结账）。仅用于 **验证或阻止结账** 规则。
+
+<img src="/images/concepts/fallback.webp" alt="回退" />
+
+### 折扣最大使用次数
+
+定义折扣在所有客户中 **可使用的总次数**。还可以选择限制为 **每位客户仅使用一次**。仅适用于使用折扣码的情况，不适用于自动折扣。仅用于 **折扣** 规则。
+
+> 例如，如果使用限制 **设置为 1** 且 **“限制为每位客户一次使用”** 未勾选，则只有一位客户能够使用该折扣码。之后，该折扣码对其他所有人都无效。
+
+<img src="/images/concepts/maximum-discount-uses.webp" alt="回退" />

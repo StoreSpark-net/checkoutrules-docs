@@ -1,0 +1,116 @@
+---
+title: "常见问题"
+description: "在您的 Shopify 商店中使用 BeSure 结账规则应用时，查找最常见问题的答案。"
+icon: "info"
+---
+
+如果您找不到需要的内容，请[联系我们](https://checkoutrules.com/contact/)。  
+
+<AccordionGroup>
+  <Accordion title="什么是结账规则？">
+    它是一种为客户自定义结账体验的方式。例如，配送结账规则将帮助您修改结账时显示的配送选项。同样，支付结账规则将帮助您修改结账时显示的支付选项。
+  </Accordion>
+
+  <Accordion title="如何创建结账规则？">
+    您可以通过点击规则页面上的 **创建规则** 按钮来创建结账规则。然后选择您要创建的规则类型，并按照说明操作。
+
+    <img src="/images/faqs/create_rule-Bjcq8flN.webp" alt="如何创建规则" />
+  </Accordion>
+
+  <Accordion title="我应该选择空规则吗？">
+    有时当您选择一个规则时，它可能会显示 **“空规则”** 与 **“预定义模板”** 的选择。如果找不到合适的模板，您可以选择 **“空规则”**。这样您就可以创建一个完全按需自定义的规则。如果找到合适的模板，也可以选择任何 **“预定义模板”**，这将让您从模板开始创建规则，但之后仍然可以进行修改。
+    <img src="/images/faqs/empty_rule_templates-DlBCQK7n.webp" alt="空规则或模板" />
+  </Accordion>
+
+  <Accordion title="如何测试结账规则？">
+    您可以将结账规则设置为 **测试** 地位。这样您可以看到规则如何更改结账，而不会影响真实客户。创建规则后，只需打开商店的结账页面，然后使用测试邮箱地址即可查看更改。
+
+    <img src="/images/faqs/rule_testing-Dp4kiMTw.webp" alt="测试规则" />
+  </Accordion>
+
+  <Accordion title="我应该使用哪个条件集？">
+   您可以使用任何适合您需求的条件集。如果不确定，可以先使用 **条件集 1**，或者使用搜索框查找包含所需条件的条件集并切换到它。例如，如果您想基于产品元字段隐藏配送方式，那么可以使用条件集 4。条件集选择仅在创建规则时可用，规则创建后无法更改。
+    <img src="/images/faqs/condition_set_selection-jOo749bC.webp" alt="条件集选择" />
+  </Accordion>
+
+  <Accordion title="结账规则的基本结构是什么？">
+    结账规则由条件（或一组条件）和操作（或多个操作）组成。条件用于检查是否应用规则，操作用于修改结账。例如，如果我们设置一个规则，当订单总额小于 \$50 时隐藏 UPS 配送，那么条件将检查订单总额是否小于 \$50。如果在结账时满足条件，则执行操作，UPS 配送将在结账中被隐藏。
+    <img src="/images/faqs/basic_rule_structure-LbDRaUUy.webp" alt="基本规则结构" />
+  </Accordion>
+
+  <Accordion title="结账规则中的区块是什么？">
+  一个区块由区块条件和区块操作组成。当您开始创建一个新的空规则时，系统会自动添加第一个区块。您可以在规则中添加多个区块。每个区块可以有自己的一组条件和一个操作。区块会按照添加顺序依次评估。如果区块条件为真，则执行对应的操作。然后继续评估下一个区块，依此类推。
+    <img src="/images/faqs/rule_blocks-DkeFb4UF.webp" alt="规则区块" />
+  </Accordion>
+</AccordionGroup>
+
+<br />
+
+<AccordionGroup>
+  <Accordion title="该应用是否支持一页结账？">
+    是的，该应用适用于 **一页** 和 **三页** 结账，因为它使用 Shopify 原生 API。
+  </Accordion>
+
+  <Accordion title="该应用是否只适用于 Shopify Plus？">
+    不是，该应用适用于所有 Shopify 套餐。您可以在所有套餐中使用该应用自定义结账。
+  </Accordion>
+
+  <Accordion title="该应用是否适用于发票结账（当客户通过发票打开结账时）？">
+   是的，该应用适用于基于发票的结账。目前只有折扣规则不支持发票结账，但您可以在发送发票之前手动将自动折扣规则应用到草稿订单。
+    <img src="/images/faqs/draft_order_apply_discounts-Bzc-zA93.webp" alt="发票结账" />
+  </Accordion>
+
+  <Accordion title="我可以自定义哪些规则在发票结账时运行吗（当客户通过发票打开结账时）？">
+  是的，可以启用/禁用该发票的规则。例如，您可以在共享结账链接或发送发票之前选择“忽略验证规则”。自动折扣规则不会自动应用到发票结账，但您可以在发送发票之前手动将自动折扣规则应用到草稿订单。如果您在发送发票之前为客户选择了配送选项，则配送规则不会在该发票结账中运行。如果您选择了“稍后付款”选项并发送发票，则支付规则将在发票结账中运行。
+    <img src="/images/faqs/invoice_admin_view-C9KJI8JV.webp" alt="发票自定义" />
+  </Accordion>
+
+  <Accordion title="该应用是否适用于从后台创建的草稿订单？">
+  它适用于部分规则类别。验证规则可用，但也有选项可以忽略它们。自动折扣规则可以手动应用到草稿订单。当您点击“添加折扣”按钮时，会显示“应用所有符合条件的自动折扣”选项，选择后即可应用自动折扣规则。配送和支付规则在后台草稿订单中不起作用。
+    <img src="/images/faqs/admin_view_draft_orders-BQ3pRIeY.webp" alt="草稿订单" />
+  </Accordion>
+
+  <Accordion title="我可以使用通配符（如 *）来选择配送或支付方式吗？">
+    您可以使用 * 来选择所有配送或支付方式。您还可以这样使用 * 或 ?，例如，要选择所有以“标准”开头的方法，可以使用“标准*”。要选择所有以“标准”结尾的方法，可以使用“\*标准”。要选择所有以“新”开头并以“方式”结尾的方法，可以使用“新\*方式”。同样，您可以使用 ? 来匹配单个字符。
+  </Accordion>
+
+  <Accordion title="不同规则中使用的 “等于” 和 “包含” 有什么区别？">
+  “等于” 条件用于精确匹配值。“包含” 条件用于部分匹配值。例如，“等于” 只会匹配 “标准” 与 “标准”，而 “包含” 会匹配 “标准” 与 “标准配送” 或 “标准交付”。
+  </Accordion>
+
+  <Accordion title="如何在结账页面添加备注或修改显示的文本？">
+    您可以按照[这里](https://checkoutrules.com/blog/shopify-easily-customize-checkout-text/?utm_source=app&utm_medium=help_page&utm_campaign=app_help)的步骤在结账页面添加备注或修改文本。
+  </Accordion>
+</AccordionGroup>
+
+## 重新排序配送方式
+
+<AccordionGroup>
+  <Accordion title="如何设置默认预选的配送方式？">
+   您可以通过将配送方式排在结账页面的最上方来设置默认预选的配送方式。这样它将被预先选中。请注意，如果您之前已经开始过结账，Shopify 会缓存您之前选择的配送方式并将其预先选中。您可以通过使用隐身浏览模式、使用不同浏览器或使用不同购物车内容开始新的结账来清除缓存。您的客户不会遇到此问题。
+  </Accordion>
+</AccordionGroup>
+
+## 重新排序支付方式
+
+<AccordionGroup>
+  <Accordion title="如何设置默认预选的支付方式？">
+  您可以通过将支付方式排在结账页面的最上方来设置默认预选的支付方式（这并不总是有效，请阅读下面的常见问题）。请注意，如果您之前已经开始过结账，Shopify 会缓存您之前选择的支付方式并将其预先选中。您可以通过使用隐身浏览模式、使用不同浏览器或使用不同购物车内容开始新的结账来清除缓存。您的客户不会遇到此问题。
+  </Accordion>
+
+  <Accordion title="为什么最上方的支付方式没有被设置为默认预选支付方式？">
+   通常情况下，当您将支付方式重新排序到最上方时，它会成为默认预选支付方式，但该默认预选由 Shopify 和您使用的支付服务商控制。此应用只能让您重新排序支付方式。有些支付网关（如 Klarna 和 iDeal）始终希望自己被首先选择。在这种情况下，您只能尝试解决方法，例如仅在特定区域显示这些支付网关，并在其他区域隐藏它们。一旦它们被隐藏，就可能将最上方的支付方式设置为默认预选支付方式。
+  </Accordion>
+</AccordionGroup>
+
+## 验证 / 阻止结账
+
+<AccordionGroup>
+  <Accordion title="该应用如何检测邮政信箱地址？">
+    当您在规则中使用“邮政信箱地址”条件时，结账地址中所有形式的输入（如 P.O. box、P O box 或 P.o b o x 等）都会被应用自动检测到。如果您想检测自定义词或短语，可以使用“地址行”条件，在其中指定要检测的词或短语。
+  </Accordion>
+
+  <Accordion title="如何检测其他语言中的邮政信箱地址？">
+   如果您想检测其他语言的邮政信箱词或短语，可以使用“地址（line1 + line2）”条件，在其中指定要检测的词或短语。例如，德语中的 “Packstation”。您可以为每个词添加多个此类条件，并在它们之间使用 OR 运算符。
+  </Accordion>
+</AccordionGroup>
