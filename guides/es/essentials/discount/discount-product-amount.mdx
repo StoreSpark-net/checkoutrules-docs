@@ -1,0 +1,151 @@
+---
+title: "Cantidad de descuento de producto"
+description: "Cantidad de descuento de producto según las condiciones dadas."
+icon: "badge-percent"
+---
+
+## Resumen de la regla
+
+Esta regla te permite aplicar descuentos a precios específicos de productos en el pago según las condiciones definidas. Puedes ofrecer un descuento porcentual, un monto fijo de descuento, o establecer un precio fijo específico utilizando criterios como etiquetas de clientes, colecciones, SKUs de productos u otras condiciones.
+
+Puedes crear un código de descuento o un descuento automático. Los clientes deben ingresar el código en el pago para recibir el descuento si se crea un código de descuento. Si se selecciona un descuento automático, se aplicará automáticamente a los productos elegibles cuando se cumplan las condiciones configuradas.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla de **Cantidad de descuento de producto** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [administración de Shopify](/guides/es/get-started/installation#ir-a-la-aplicación), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#crear-una-regla-de-ejemplo) y haz clic en _"Crear regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Descuento" → seleccionar tipo de regla de checkout "Cantidad de descuento de producto" → haz clic en “Seleccionar regla”_.
+
+<img
+  src="/images/essentials/discount/select-discount-product-amount.webp"
+  alt="Seleccionar Cantidad de Descuento de Producto"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de descuento de producto**, donde podrás configurar tu regla.
+
+### Configuración de la regla
+
+Para configurar la regla, primero añade opcionalmente un nombre como "Cantidad de descuento de producto" para describir su función si deseas aplicar un **"Descuento automático"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-product-amount.webp"
+  alt="Nombre de Descuento Automático"
+/>
+
+O, si prefieres aplicar el descuento mediante un código, haz clic en **"Código de descuento"** e ingresa el código que desees o genera uno aleatorio haciendo clic en **"Generar código aleatorio"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-product-amount.webp"
+  alt="Código de descuento"
+/>
+
+Luego, en la misma pantalla, selecciona el [estado](/guides/es/get-started/concepts#estado) de la regla: Prueba, Activa o Desactivada. Aquí elegiremos el estado **Prueba**, para poder probar la regla rápidamente sin afectar el checkout de clientes reales.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Estado de la regla"
+/>
+
+Después, en la misma pantalla, configura los ajustes de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento de producto interactúa con otros descuentos. Puedes elegir permitir que se combine con:
+
+- **Descuentos de productos** – Esto permite que se apliquen varios descuentos a nivel de producto juntos. Asegúrate de que otros descuentos de productos también estén configurados para combinarse con descuentos de productos.
+
+- **Descuentos de pedido** – Esto permite que el descuento de producto funcione junto con los descuentos generales a nivel de pedido. Asegúrate de que los descuentos de pedido también estén configurados para permitir combinaciones con descuentos de productos.
+
+- **Descuentos de envío** – Esto permite que el descuento de producto se use junto con los descuentos a nivel de envío. Confirma que los descuentos de envío también estén configurados para combinarse con descuentos de productos.
+
+<img
+  src="/images/essentials/discount/combinations-discount-product-amount.webp"
+  alt="Combinaciones"
+/>
+
+A continuación, en la misma pantalla, configura los ajustes de [Estrategia](/guides/es/get-started/concepts#estrategia) para controlar cómo el sistema maneja múltiples bloques de descuento. Puedes elegir **Primero**, que aplica solo el primer descuento que cumpla las condiciones, ignorando cualquier descuento mejor que pueda aparecer después, o **Todos**, que aplica el descuento a cada producto elegible en el carrito, o **Máximo**, que evalúa todos los bloques de descuento y aplica el que tenga la mayor reducción.
+
+<img
+  src="/images/essentials/discount/strategy-discount-product-amount.webp"
+  alt="Estrategia"
+/>
+
+Luego, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-“cuándo”) y la [acción](/guides/es/get-started/concepts#acción-el-“qué”) correspondientes.
+
+> Por ejemplo, aquí estamos configurando la regla para que se ejecute **Siempre** y aplicando un **12% de descuento** usando la opción **Porcentaje**. El mensaje de descuento **"12% OFF"** se mostrará a los clientes en el checkout. Luego seleccionamos el producto **The 3D Modeled Snowboard** para aplicar el descuento a ese producto.
+
+<img
+  src="/images/essentials/discount/condition-action-discount-product-amount.webp"
+  alt="Condición + Acción"
+/>
+
+En la sección Acción, puedes elegir aplicar el descuento usando **Porcentaje, Monto fijo, Establecer monto fijo, o Establecer todos los productos gratis**, según tus necesidades.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Tipo de acción de descuento"
+/>
+
+Luego, ingresa el valor del descuento y el mensaje del descuento. A continuación, selecciona un producto o varios productos en el popup para aplicar el descuento. Debes agregar al menos un producto para que el descuento tenga efecto.
+
+<Warning>
+  Ten en cuenta que <b>Establecer todos los productos gratis</b> no muestra
+  ningún valor de descuento, mensaje ni selección de producto porque todos los
+  productos son gratis.
+</Warning>
+
+<img
+  src="/images/essentials/discount/product-selection.webp"
+  alt="Selección de producto"
+/>
+
+Luego, en la misma pantalla, en la sección [Usos máximos de descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Usos máximos de descuento"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Guardar regla" />
+
+## Probar la regla
+
+Dado que la regla está configurada en estado de prueba, debemos usar `test@testing.com` como correo electrónico, en lugar del correo real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen a continuación muestra la página de checkout <b>antes</b> de usar la
+  dirección de correo electrónico de prueba. Ten en cuenta que el descuento del
+  producto aún no se ha aplicado.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-product-amount.webp"
+  alt="Antes de aplicar la regla"
+/>
+
+Después de configurar el correo electrónico, la regla de checkout se ejecuta y aplica el descuento de producto configurado. Podemos verificar que el **12% de descuento** es visible en los productos seleccionados durante el checkout, como se muestra a continuación.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product-amount.webp"
+  alt="Después de aplicar la regla"
+/>
+
+## Activar la regla
+
+Una vez finalizada la prueba, podemos activar la regla para que comience a realizar cambios en el checkout para clientes reales. Solo las reglas activadas pueden modificar el checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que deseas activar y luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes de pago. Si aún no has
+  actualizado tu plan, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#actualizar-tu-plan) para
+  actualizar.
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-product-amount.webp"
+  alt="Activar la regla"
+/>

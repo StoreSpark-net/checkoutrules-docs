@@ -15,8 +15,7 @@ icon: "badge-percent"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es Ihnen, bestimmte Versandtarife beim Checkout basierend auf definierten Bedingungen zu rabattieren.  
-Sie können Prozentrabatte, festen Betrag abziehen, Prozentsatz des Zwischensummenwerts, festen Preis festlegen oder alle Versandkosten kostenlos setzen usw. anwenden – mithilfe von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktattributen usw.
+Diese Regel ermöglicht es, bestimmte Versandkosten an der Kasse basierend auf definierten Bedingungen zu rabattieren. Sie können Rabatte als Prozentsatz, festen Betrag, Prozentsatz der Zwischensumme, festen Preis oder alle Versandkosten kostenlos anwenden, basierend auf Kriterien wie Versandadresse, Kundentags, Produkt-Tags usw.
 
 Mit dieser Regel können Sie einen Rabattcode erstellen oder einen automatischen Rabatt anlegen.  
 Wenn die Regel einen Rabattcode erstellt, kann der Kunde den Rabattcode beim Checkout verwenden, um den Rabatt zu erhalten.  
@@ -39,7 +38,7 @@ Wählen Sie _Kategorie "Versand" → Checkout-Regeltyp "Versandmethoden rabattie
   alt="Versandmethoden rabattieren auswählen"
 />
 
-Als Nächstes gelangen Sie zum Bildschirm **Neue Versandmethoden-rabattieren-Regel erstellen**, wo Sie Ihre Regel konfigurieren können.
+Als Nächstes gelangen Sie zum Bildschirm **„Neue Versandrabattregel erstellen“**, auf dem Sie Ihre Regel konfigurieren können.
 
 ### Regelkonfiguration
 
@@ -57,8 +56,8 @@ Oder, wenn Sie den Rabatt lieber über einen Rabattcode anwenden möchten, klick
   alt="Rabattcode"
 />
 
-Als Nächstes wählen Sie auf demselben Bildschirm den [Status](/guides/de/get-started/concepts#status) der Regel: Testing, Aktiv oder Deaktiviert.  
-Hier wählen wir den Status **Testing**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+Als Nächstes wählen Sie auf demselben Bildschirm den [Status](/guides/de/get-started/concepts#status) der Regel: **Testen**, **Aktiv** oder **Deaktiviert**.
+Hier wählen wir den Status **Testen**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
 
 <img
   src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
@@ -76,14 +75,20 @@ Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Kombinationen](/gu
   alt="Kombinationen Versandmethoden rabattieren"
 />
 
-Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#bedingungsset), die [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und die [Aktion](/guides/de/get-started/concepts#aktion-das-“was”).
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Strategie](/guides/de/get-started/concepts#strategie)-Einstellungen, um zu steuern, wie das System mehrere Rabattblöcke verarbeitet. Derzeit ist nur **Erste** verfügbar und standardmäßig ausgewählt. Diese Option wendet nur den ersten Rabatt an, der die Bedingungen erfüllt, und ignoriert mögliche bessere Rabatte, die später kommen.
 
-> Als Beispiel verwenden wir hier das Standard-**Bedingungsset 1**, stellen die Regel so ein, dass sie **Immer** ausgeführt wird, und konfigurieren sie so, dass ein **10%-Rabatt** auf alle Versandmethoden angewendet wird, indem wir die Option **Prozentsatz** verwenden.  
-> Die Rabattnachricht **"10% RABATT"** wird den Kunden beim Checkout angezeigt.
+<img
+  src="/images/essentials/shipping/strategy-shipping-discount.webp"
+  alt="Strategie Versandrabatt"
+/>
+
+Anschließend wählen Sie auf demselben Bildschirm die entsprechende [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus.
+
+> Beispiel: Hier setzen wir die Regel auf **Stets** und konfigurieren sie so, dass ein **10%-Rabatt** auf alle Versandmethoden mit der Option **Prozentsatz** angewendet wird. Die Rabattnachricht **„10% OFF“** wird den Kunden an der Kasse angezeigt.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
-  alt="Bedingungsset Versandmethoden rabattieren"
+  alt="Bedingung für Versandrabatt festlegen"
 />
 
 Im Abschnitt Aktion können Sie den Rabatt mit **Prozentsatz, festem Betrag abziehen, Zwischensummen-Prozentsatz, festen Preis festlegen oder alle Versandkosten kostenlos** anwenden – je nach Ihren Anforderungen.

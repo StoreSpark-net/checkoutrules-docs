@@ -1,0 +1,236 @@
+---
+title: "Descuento general"
+description: "Aplica múltiples tipos de descuento juntos, por ejemplo, sobre el pedido, producto o envío según las condiciones dadas."
+icon: "badge-percent"
+---
+
+## Resumen de la regla
+
+Esta regla te permite aplicar múltiples tipos de descuentos juntos según las condiciones definidas. Puedes combinar descuentos de pedido, producto y envío dentro de una sola regla, dependiendo de los criterios configurados. Cada tipo de descuento se puede personalizar para aplicar una reducción porcentual, un monto fijo de descuento u otros formatos de descuento compatibles.
+
+La regla evalúa las condiciones especificadas, como etiquetas de clientes, etiquetas de productos, dirección de envío u otras condiciones configuradas, y aplica todos los descuentos elegibles en consecuencia. Esto proporciona flexibilidad para crear ofertas promocionales completas que afecten diferentes partes del checkout simultáneamente, mientras se mantiene un control total sobre cómo se aplican los descuentos.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla de **Descuento general** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [administración de Shopify](/guides/es/get-started/installation#ir-a-la-aplicación), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#crear-una-regla-de-ejemplo) y haz clic en _"Crear regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Descuento" → seleccionar tipo de regla de checkout "Descuento general" → haz clic en “Seleccionar regla”_.
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="Seleccionar Descuento General"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de descuento**, donde podrás configurar tu regla.
+
+### Configuración de la regla
+
+Para configurar la regla, primero añade opcionalmente un nombre como "Descuento general" para describir su función si deseas aplicar un **"Descuento automático"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="Nombre de Descuento Automático"
+/>
+
+O, si prefieres aplicar el descuento mediante un código, haz clic en **"Código de descuento"** e ingresa el código que desees o genera uno aleatorio haciendo clic en **"Generar código aleatorio"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="Código de descuento"
+/>
+
+Luego, en la misma pantalla, selecciona el [estado](/guides/es/get-started/concepts#estado) de la regla: Prueba, Activo o Desactivado. Aquí elegiremos el estado **Prueba**, para poder probar la regla rápidamente sin afectar el checkout de clientes reales.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Estado de la regla"
+/>
+
+Después, en la misma pantalla, configura los ajustes de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento interactúa con otros descuentos. Puedes permitir que se combine con:
+
+- **Descuentos de productos** – Esto permite que la regla Descuento general se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de productos también estén configurados para combinarse con todos los descuentos.
+
+- **Descuentos de pedido** – Esto permite que la regla Descuento general funcione junto con descuentos generales a nivel de pedido. Asegúrate de que los descuentos de pedido también estén configurados para combinarse con todos los descuentos.
+
+- **Descuentos de envío** – Esto permite que la regla Descuento general se use junto con descuentos a nivel de envío. Asegúrate de que los descuentos de envío también estén configurados para combinarse con todos los descuentos.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinaciones Descuento General"
+/>
+
+Luego, en la misma pantalla, configura los ajustes de [Estrategia](/guides/es/get-started/concepts#estrategia) para controlar cómo el sistema maneja múltiples bloques de descuento. Puedes elegir **Primero**, que aplica solo el primer descuento que cumpla las condiciones, ignorando cualquier descuento mejor que pueda aparecer después, o **Máximo**, que evalúa todos los bloques de descuento y aplica el que tenga la mayor reducción.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Estrategia de descuento de pedido"
+/>
+
+Luego, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-“cuándo”) y la [acción](/guides/es/get-started/concepts#acción-el-“qué”) correspondientes. Elige la condición relevante del desplegable.
+
+> Por ejemplo, aquí estamos configurando la condición para que esta regla se ejecute **Siempre**, por lo que se aplicará en todas las situaciones.
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="Establecer condición"
+/>
+
+Después de elegir la condición, marca las casillas de descuento de pedido, producto o envío según tus necesidades. Puedes seleccionar una o varias casillas según sea necesario.
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="Casillas de acción"
+/>
+
+Luego, debes seleccionar la acción para ese **tipo de descuento**.
+
+**Descuento de pedido:**
+
+Puedes elegir aplicar el descuento usando **Porcentaje** o **Monto fijo** sin necesidad de seleccionar productos específicos. Todos los demás métodos **Porcentaje excluyendo estos productos, Porcentaje solo para estos productos, Monto fijo excluyendo estos productos y Monto fijo solo para estos productos** requieren que selecciones productos para que el descuento funcione.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Tipo de acción de descuento"
+/>
+
+Luego, ingresa el valor del descuento y el mensaje del descuento.
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="Operaciones de descuento de pedido"
+/>
+
+> Por ejemplo, aquí estamos configurando el valor del descuento al **14%** usando la opción **Porcentaje**. El mensaje de descuento **14% OFF** se mostrará a los clientes en el checkout. Este 14% se aplica al pedido. Puedes ver la configuración en la imagen a continuación.
+
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="Ejemplo de descuento de pedido"
+/>
+
+**Descuento de producto:**
+
+Puedes elegir aplicar el descuento usando **Porcentaje, Monto fijo, Establecer monto fijo o Establecer todos los productos gratis** según tus necesidades.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Tipo de acción de descuento de producto"
+/>
+
+Luego, ingresa el valor del descuento y el mensaje. A continuación, selecciona un producto o varios productos en el popup para aplicar el descuento. Debes agregar al menos un producto para que el descuento tenga efecto.
+
+<Warning>
+  Ten en cuenta que <b>Establecer todos los productos gratis</b> no muestra
+  ningún valor de descuento, mensaje ni selección de producto porque todos los
+  productos son gratis.
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="Operaciones de descuento de producto"
+/>
+
+> Por ejemplo, aquí estamos configurando el valor del descuento a **15** usando la opción **Monto fijo**. El mensaje de descuento **15$ OFF** se mostrará a los clientes en el checkout. Luego seleccionamos el producto **"The Collection Snowboard: Liquid"** para aplicar el descuento a ese producto. Puedes ver la configuración en la imagen a continuación.
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="Ejemplo de descuento de producto"
+/>
+
+**Descuento de envío:**
+
+Puedes elegir aplicar el descuento usando **Porcentaje, Monto fijo, Porcentaje del subtotal, Establecer precio fijo o Establecer envío gratis** según tus necesidades.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Tipo de acción de descuento de envío"
+/>
+
+El descuento también se puede aplicar solo a métodos de envío específicos seleccionando **"Aplicar este descuento solo a estos métodos de envío"** en lugar de "Aplicar este descuento a todos los métodos de envío", e ingresando los **nombres** de los métodos de envío a los que quieres que se aplique el descuento.
+
+<Warning>
+  Ten en cuenta que <b>Establecer envío gratis</b> no muestra ningún valor de
+  descuento, mensaje ni selección de método de envío porque todos los métodos de
+  envío son gratis.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Selección de métodos de envío"
+/>
+
+> Por ejemplo, aquí estamos configurando el valor del descuento al **16%** usando la opción **Porcentaje**. El mensaje de descuento **16% OFF** se mostrará a los clientes en el checkout. También hemos configurado **Aplicar este descuento a todos los métodos de envío** para aplicar el descuento a todos los métodos de envío. Este 16% se aplica a los métodos de envío. Puedes ver la configuración en la imagen a continuación.
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="Ejemplo de descuento de envío"
+/>
+
+Luego, en la misma pantalla, en la sección [Usos máximos de descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente o aplicar ambos si se selecciona un código de descuento.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Usos máximos de descuento"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Guardar regla" />
+
+## Probar la regla
+
+Dado que la regla está configurada en estado de prueba, debemos usar `test@testing.com` como correo electrónico, en lugar del correo real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen a continuación muestra la página de checkout <b>antes</b> de usar la
+  dirección de correo electrónico de prueba. Ten en cuenta que aún no se han
+  aplicado descuentos.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="Antes de aplicar la regla"
+/>
+
+Después de configurar el correo electrónico, la regla de checkout se ejecuta y aplica los descuentos configurados.  
+Podemos verificar que el **14% de descuento en el pedido** se ha aplicado en el checkout, como se muestra a continuación.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="Después de aplicar la regla"
+/>
+
+El **descuento de producto de 15$** también se ha aplicado en el checkout sobre el producto **"The Collection Snowboard: Liquid"**, como se muestra a continuación.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="Después de aplicar la regla"
+/>
+
+El **16% de descuento en envío** se ha aplicado en el checkout a **todos los métodos de envío**, como se muestra a continuación.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="Después de aplicar la regla"
+/>
+
+## Activar la regla
+
+Una vez finalizada la prueba, podemos activar la regla para que comience a realizar cambios en el checkout para clientes reales. Solo las reglas activadas pueden modificar el checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que deseas activar y luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes de pago. Si aún no has
+  actualizado tu plan, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#actualizar-tu-plan) para
+  actualizar.
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="Activar la regla"
+/>

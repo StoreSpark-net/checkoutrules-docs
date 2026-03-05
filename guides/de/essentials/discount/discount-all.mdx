@@ -1,0 +1,237 @@
+---
+title: "Alles rabattieren"
+description: "Mehrere Rabattarten zusammen anwenden, z. B. Bestell-, Produkt- oder Versandrabatt basierend auf den angegebenen Bedingungen."
+icon: "badge-percent"
+---
+
+## Regelübersicht
+
+Mit dieser Regel können Sie mehrere Rabattarten gleichzeitig basierend auf definierten Bedingungen anwenden. Sie können Bestell-, Produkt- und Versandrabatte innerhalb einer einzigen Regel kombinieren, je nach den konfigurierten Kriterien. Jede Rabattart kann individuell angepasst werden, um einen prozentualen Nachlass, einen festen Betrag oder andere unterstützte Rabattformate anzuwenden.
+
+Die Regel bewertet die angegebenen Bedingungen, wie Kundentags, Produkt-Tags, Versandadresse oder andere konfigurierte Bedingungen, und wendet alle berechtigten Rabatte entsprechend an. Dies bietet die Flexibilität, umfassende Aktionsangebote zu erstellen, die verschiedene Bereiche des Checkouts gleichzeitig betreffen, während Sie die volle Kontrolle darüber behalten, wie Rabatte angewendet werden.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie Sie mit der App eine **Alles rabattieren**-Regel erstellen und konfigurieren.
+
+### Neue Regel erstellen
+
+Öffnen Sie in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#app-öffnen) die App. Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#erstellen-einer-beispielregel) und klicken Sie auf _„Regel erstellen“_.
+
+Anschließend werden Sie zum Bildschirm **„Checkout-Regeltyp auswählen“** weitergeleitet. Wählen Sie _Kategorie „Rabatt“ → Checkout-Regeltyp „Alles rabattieren“ → klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="Alles rabattieren auswählen"
+/>
+
+Danach gelangen Sie zum Bildschirm **„Neue Rabattregel erstellen“**, auf dem Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, geben Sie optional zunächst einen Namen wie „Alles rabattieren“ ein, um zu beschreiben, was die Regel bewirkt, wenn Sie einen **„Automatischen Rabatt“** anwenden möchten.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="Name des automatischen Rabatts"
+/>
+
+Alternativ können Sie den Rabatt über einen Rabattcode anwenden. Klicken Sie dazu auf **„Rabattcode“** und geben Sie Ihren gewünschten Code ein oder erzeugen Sie einen zufälligen Code, indem Sie auf **„Zufälligen Code generieren“** klicken.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="Rabattcode"
+/>
+
+Wählen Sie anschließend auf demselben Bildschirm den [Status](/guides/de/get-started/concepts#status) der Regel aus: **Testen**, **Aktiv** oder **Deaktiviert**.  
+Hier wählen wir den Status **Testen**, damit wir die Regel schnell überprüfen können, ohne den Checkout für tatsächliche Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Regelstatus"
+/>
+
+Konfigurieren Sie anschließend auf demselben Bildschirm die Einstellungen für [Kombinationen](/guides/de/get-started/concepts#kombinationen), um festzulegen, wie dieser Rabatt mit anderen Rabatten interagiert. Sie können auswählen, dass er kombinierbar ist mit:
+
+- **Produktrabatten** – Ermöglicht, dass die „Alles rabattieren“-Regel zusammen mit Rabatten auf Produktebene verwendet werden kann. Stellen Sie sicher, dass auch die Produkt-Rabatte für die Kombination mit allen Rabatten aktiviert sind.
+
+- **Bestellrabatten** – Ermöglicht, dass die „Alles rabattieren“-Regel zusammen mit Rabatten auf Bestellebene angewendet wird. Stellen Sie sicher, dass auch die Bestellrabatte die Kombination mit allen Rabatten erlauben.
+
+- **Versandrabatten** – Ermöglicht, dass die „Alles rabattieren“-Regel zusammen mit Versandrabatten verwendet wird. Stellen Sie sicher, dass auch die Versandrabatte die Kombination mit allen Rabatten erlauben.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Kombinationen Rabatt Alles"
+/>
+
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die Einstellungen für die [Strategie](/guides/de/get-started/concepts#strategie), um zu steuern, wie das System mehrere Rabattblöcke verarbeitet. Sie können **Erste** wählen, wodurch nur der erste Rabatt angewendet wird, der die Bedingungen erfüllt, wobei bessere Rabatte, die später kommen, ignoriert werden, oder **Maximal**, wodurch alle Rabattblöcke bewertet und der Rabatt mit der höchsten Reduzierung angewendet wird.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Strategie Bestellrabatt"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm die entsprechende [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus. Wählen Sie die relevante Bedingung aus dem Dropdown-Menü.
+
+> Beispiel: Hier setzen wir die Bedingung für diese Regel auf **Stets**, sodass sie in allen Situationen ausgeführt wird.
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="Bedingung festlegen"
+/>
+
+Nachdem Sie eine Bedingung ausgewählt haben, aktivieren Sie die Kontrollkästchen für Bestell-, Produkt- oder Versandrabatte entsprechend Ihren Anforderungen. Sie können ein oder mehrere Kontrollkästchen auswählen.
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="Aktion Kontrollkästchen"
+/>
+
+Nach der Auswahl der Kontrollkästchen müssen Sie die Aktion für diesen **Rabatt-Typ** auswählen.
+
+**Bestellrabatt:**
+
+Sie können wählen, ob der Rabatt über **Prozentsatz** oder **Fester Rabattbetrag** angewendet wird, ohne bestimmte Produkte auswählen zu müssen. Alle anderen Methoden **Prozentsatz ohne diese Produkte, Prozentsatz nur für diese Produkte, Fester Rabattbetrag ausgenommen diese Produkte und Fester Rabatt nur für diese Produkte** erfordern die Produktauswahl, damit der Rabatt funktioniert.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Aktionstyp Bestellrabatt"
+/>
+
+Geben Sie anschließend den Rabattwert und die Rabattnachricht ein.
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="Aktion Bestellrabatt Operationen"
+/>
+
+> Beispiel: Hier setzen wir den Rabattwert auf **14%** mit der Option **Prozentsatz**. Die Rabattnachricht **14% OFF** wird den Kunden an der Kasse angezeigt. Dieser 14%-Rabatt gilt für die Bestellung. Die Einstellungen sehen Sie im Bild unten.
+
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="Beispiel Bestellrabatt"
+/>
+
+**Produktrabatt:**
+
+Sie können wählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Legen Sie einen festen Betrag fest** oder **Geben Sie alle Produkte kostenlos frei** angewendet wird, je nach Ihren Anforderungen.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Aktionstyp Produktrabatt"
+/>
+
+Geben Sie anschließend den Rabattwert und die Rabattnachricht ein. Wählen Sie dann ein oder mehrere Produkte aus dem Popup aus, auf die der Rabatt angewendet werden soll. Mindestens ein Produkt muss hinzugefügt werden, damit der Rabatt wirksam wird.
+
+<Warning>
+  Bitte beachten Sie, dass bei <b>Geben Sie alle Produkte kostenlos frei</b>{" "}
+  kein Rabattwert, keine Nachricht und keine Produktauswahl angezeigt werden, da
+  alle Produkte kostenlos sind.
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="Aktion Produktrabatt Operationen"
+/>
+
+> Beispiel: Hier setzen wir den Rabattwert auf **15** mit der Option **Fester Rabattbetrag**. Die Rabattnachricht **15$ OFF** wird den Kunden an der Kasse angezeigt. Anschließend wählen wir das Produkt **"The Collection Snowboard: Liquid"**, auf das der Rabatt angewendet wird. Die Einstellungen sehen Sie im Bild unten.
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="Beispiel Produktrabatt"
+/>
+
+**Versandrabatt:**
+
+Sie können wählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Zwischensummenprozentsatz, Festpreis festlegen** oder **Alle Versandkosten kostenlos** angewendet wird, je nach Ihren Anforderungen.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Aktionstyp Versandrabatt"
+/>
+
+Der Rabatt kann auch nur auf bestimmte Versandmethoden angewendet werden, indem Sie **„Diesen Rabatt nur auf diese Versandmethoden anwenden“** statt „Diesen Rabatt auf alle Versandmethoden anwenden“ auswählen und anschließend die **Namen** der Versandmethoden eingeben, auf die der Rabatt angewendet werden soll.
+
+<Warning>
+  Bitte beachten Sie, dass bei <b>Alle Versandkosten kostenlos</b> kein
+  Rabattwert, keine Nachricht und keine Versandmethodenauswahl angezeigt werden,
+  da alle Versandmethoden kostenlos sind.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Versandmethoden Auswahl"
+/>
+
+> Beispiel: Hier setzen wir den Rabattwert auf **16%** mit der Option **Prozentsatz**. Die Rabattnachricht **16% OFF** wird den Kunden an der Kasse angezeigt. Wir haben außerdem **Diesen Rabatt auf alle Versandmethoden anwenden** ausgewählt, damit der Rabatt auf alle Versandmethoden angewendet wird. Dieser 16%-Rabatt gilt für die Versandmethoden. Die Einstellungen sehen Sie im Bild unten.
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="Beispiel Versandrabatt"
+/>
+
+Als Nächstes können Sie auf demselben Bildschirm im Abschnitt [Maximale Rabattverwendungen](/guides/de/get-started/concepts#maximale-rabattnutzung) optional eine Nutzungsbegrenzung für den Rabattcode aktivieren, ihn auf eine Verwendung pro Kunde beschränken oder beides anwenden, sofern ein Rabattcode ausgewählt wurde.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Maximale Rabattverwendungen"
+/>
+
+Klicken Sie abschließend oben auf die Schaltfläche <b>Speichern</b>, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf den Status „Testen“ gesetzt ist, müssen Sie anstelle Ihrer tatsächlichen E-Mail-Adresse `test@testing.com` verwenden, um die Regel an der Kasse auszuführen.
+
+<Warning>
+  Das folgende Bild zeigt die Checkout-Seite <b>bevor</b> die
+  Test-E-Mail-Adresse verwendet wurde. Bitte beachten Sie, dass bisher noch
+  keine Rabatte angewendet wurden.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="Vor Anwendung der Regel"
+/>
+
+Nach Eingabe der E-Mail-Adresse wird die Checkout-Regel ausgeführt und die konfigurierten Rabatte werden angewendet.  
+Wir können überprüfen, dass der **14%-Bestellrabatt** an der Kasse angewendet wurde, wie unten dargestellt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="Nach Anwendung der Regel"
+/>
+
+Der **15$-Produktrabatt** wurde ebenfalls an der Kasse für das Produkt **"The Collection Snowboard: Liquid"** angewendet, wie unten dargestellt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="Nach Anwendung der Regel"
+/>
+
+Der **16%-Versandrabatt** wurde an der Kasse auf **alle Versandmethoden** angewendet, wie unten dargestellt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="Nach Anwendung der Regel"
+/>
+
+## Regel aktivieren
+
+Sobald die Tests abgeschlossen sind, können Sie die Regel aktivieren, damit sie für tatsächliche Kunden im Checkout wirksam wird. Nur aktivierte Regeln können Änderungen für alle Kunden vornehmen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie anschließend auf die Schaltfläche **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Aktivierung von Regeln ist nur in kostenpflichtigen Plänen verfügbar. Wenn
+  Sie Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#plan-aktualisieren), um ein Upgrade
+  durchzuführen.
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="Regel aktivieren"
+/>

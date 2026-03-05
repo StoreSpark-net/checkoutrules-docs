@@ -1,0 +1,151 @@
+---
+title: "Montant de la remise sur le produit"
+description: "Montant de la remise sur le produit en fonction des conditions données."
+icon: "badge-percent"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet d’appliquer des remises à des prix de produits spécifiques lors du paiement en fonction des conditions définies. Vous pouvez offrir un pourcentage de remise, un montant fixe, ou définir un prix fixe spécifique en utilisant des critères tels que les tags clients, les collections, les SKU de produits ou d’autres conditions.
+
+Vous pouvez créer soit un code de réduction, soit une remise automatique. Les clients doivent saisir le code lors du paiement pour bénéficier de la réduction si un code de réduction est créé. Si une remise automatique est sélectionnée, elle sera appliquée automatiquement aux produits éligibles lorsque les conditions configurées seront remplies.
+
+## Exemple de configuration
+
+Les étapes suivantes montrent comment créer et configurer une règle **Montant de la remise sur le produit** en utilisant l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [administration Shopify](/guides/fr/get-started/installation#accéder-à-l’application), ouvrez l’application. Dans la barre latérale, allez dans la section [Règles](/guides/fr/get-started/quickstart#créer-une-règle-d’exemple) et cliquez sur _"Créer une règle"_.
+
+Vous serez ensuite redirigé vers l’écran **Sélectionner le type de règle de paiement**. Choisissez _catégorie "Remise" → sélectionnez le type de règle de paiement "Montant de la remise sur le produit" → cliquez sur “Sélectionner la règle”_.
+
+<img
+  src="/images/essentials/discount/select-discount-product-amount.webp"
+  alt="Sélectionner Montant de la remise sur le produit"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de remise produit**, où vous pourrez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, ajoutez éventuellement un nom tel que "Montant de la remise sur le produit" pour décrire son fonctionnement si vous souhaitez appliquer une **"Remise automatique"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-product-amount.webp"
+  alt="Nom de la remise automatique"
+/>
+
+Ou, si vous préférez appliquer la remise avec un code de réduction, cliquez sur **"Code de réduction"** et saisissez le code souhaité ou générez-en un aléatoirement en cliquant sur **"Générer un code aléatoire"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-product-amount.webp"
+  alt="Code de réduction"
+/>
+
+Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/concepts#statut) de la règle : Test, Actif ou Désactivé. Ici, nous allons choisir le statut **Test**, afin de pouvoir tester rapidement la règle sans affecter le paiement des clients réels.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Statut de la règle"
+/>
+
+Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette remise produit interagit avec d’autres remises. Vous pouvez choisir de la combiner avec :
+
+- **Remises sur les produits** – Cela permet d’appliquer plusieurs remises au niveau produit ensemble. Assurez-vous que les autres remises produit sont également configurées pour se combiner avec les remises produit.
+
+- **Remises sur la commande** – Cela permet à la remise produit de fonctionner avec les remises globales sur la commande. Assurez-vous que les remises sur la commande permettent également les combinaisons avec les remises produit.
+
+- **Remises sur la livraison** – Cela permet à la remise produit d’être utilisée avec les remises sur la livraison. Vérifiez que les remises sur la livraison sont également configurées pour se combiner avec les remises produit.
+
+<img
+  src="/images/essentials/discount/combinations-discount-product-amount.webp"
+  alt="Combinaisons"
+/>
+
+Ensuite, sur le même écran, configurez les paramètres de [Stratégie](/guides/fr/get-started/concepts#stratégie) pour contrôler comment le système gère plusieurs blocs de remise. Vous pouvez choisir **Premier**, qui applique uniquement la première remise qui répond aux conditions, en ignorant les remises plus avantageuses qui pourraient suivre, ou **Toutes**, qui applique la remise à chaque produit éligible dans le panier, ou **Maximum**, qui évalue tous les blocs de remise et applique celui avec la réduction la plus élevée.
+
+<img
+  src="/images/essentials/discount/strategy-discount-product-amount.webp"
+  alt="Stratégie"
+/>
+
+Ensuite, sur le même écran, sélectionnez la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes.
+
+> Par exemple, ici nous configurons la règle pour qu’elle s’exécute **Toujours** et appliquons une **remise de 12%** en utilisant l’option **Pourcentage**. Le message de remise **"12% OFF"** sera affiché aux clients lors du paiement. Nous sélectionnons ensuite le produit **The 3D Modeled Snowboard** pour appliquer la remise à ce produit.
+
+<img
+  src="/images/essentials/discount/condition-action-discount-product-amount.webp"
+  alt="Condition + Action"
+/>
+
+Dans la section Action, vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Définir un montant fixe, ou Offrir tous les produits gratuitement** selon vos besoins.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Type d’action de remise"
+/>
+
+Ensuite, saisissez la valeur et le message de remise. Sélectionnez ensuite un ou plusieurs produits depuis la popup pour appliquer la remise. Vous devez ajouter au moins un produit pour que la remise prenne effet.
+
+<Warning>
+  Veuillez noter que <b>Offrir tous les produits gratuitement</b> n’affiche
+  aucune valeur, message ou sélection de produit car tous les produits sont
+  gratuits.
+</Warning>
+
+<img
+  src="/images/essentials/discount/product-selection.webp"
+  alt="Sélection du produit"
+/>
+
+Ensuite, sur le même écran, dans la section [Utilisations maximales de la remise](/guides/fr/get-started/concepts#nombre-maximal-d’utilisations-de-la-réduction), vous pouvez éventuellement activer une limite d’utilisation pour le code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est sélectionné.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Utilisations maximales de la remise"
+/>
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et sauvegarder votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Tester la règle
+
+Comme la règle est configurée en statut Test, nous devons utiliser `test@testing.com` comme adresse e-mail, au lieu de l’e-mail réel, pour exécuter la règle lors du paiement.
+
+<Warning>
+  L’image ci-dessous montre la page de paiement <b>avant</b> l’utilisation de
+  l’adresse e-mail de test. Veuillez noter que la remise produit n’a pas encore
+  été appliquée.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-product-amount.webp"
+  alt="Avant application de la règle"
+/>
+
+Après avoir configuré l’e-mail, la règle de paiement s’exécute et applique la remise produit configurée. Nous pouvons vérifier que la **remise de 12%** est visible sur les produits sélectionnés lors du paiement, comme illustré ci-dessous.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product-amount.webp"
+  alt="Après application de la règle"
+/>
+
+## Activer la règle
+
+Une fois les tests terminés, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au paiement pour les clients réels. Seules les règles activées peuvent modifier le processus de paiement pour tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer** pour l’activer.
+
+<Warning>
+  L’activation des règles n’est disponible que dans les plans payants. Si vous
+  n’avez pas encore mis à jour votre plan, suivez les instructions
+  [ici](/guides/fr/get-started/installation#mettre-à-niveau-votre-forfait) pour
+  effectuer la mise à niveau.
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-product-amount.webp"
+  alt="Activer la règle"
+/>

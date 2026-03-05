@@ -1,0 +1,263 @@
+---
+title: "すべて割引"
+description: "指定された条件に基づき、注文・商品・配送など複数の種類の割引を同時に適用します。"
+icon: "badge-percent"
+---
+
+## ルール概要
+
+このルールでは、定義された条件に基づいて、複数の種類の割引を同時に適用できます。設定した条件に応じて、注文割引、商品割引、配送割引を1つのルール内で組み合わせることが可能です。各割引タイプは、パーセンテージ割引、固定金額割引、または対応しているその他の割引形式で個別に設定できます。
+
+このルールは、顧客タグ、商品タグ、配送先住所、その他の設定された条件などを評価し、該当するすべての割引を適用します。これにより、チェックアウトの複数の要素に同時に影響を与える包括的なプロモーション施策を柔軟に作成しつつ、割引の適用方法を完全に制御できます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **すべて割引** ルールを作成および設定する方法を説明します。
+
+### 新しいルールの作成
+
+[Shopify管理画面](/guides/ja/get-started/installation#アプリを開く) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#サンプルルールを作成) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+その後、**チェックアウトルールタイプ選択画面** に移動します。  
+_カテゴリー「割引」 → チェックアウトルールタイプ「すべて割引」を選択 → 「ルールを選択」をクリック_ します。
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="すべて割引の選択"
+/>
+
+次に、**新しい割引ルール作成画面** に移動し、ルールを設定します。
+
+### ルール設定
+
+まず任意でルール名（例: 「すべて割引」）を入力できます。これは **自動割引** を適用する場合に使用されます。
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="自動割引の名前入力"
+/>
+
+割引コードを使用する場合は **「割引コード」** をクリックし、コードを入力するか **「ランダムコード生成」** をクリックして作成します。
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="割引コードの入力"
+/>
+
+同じ画面で、ルールの [ステータス](/guides/ja/get-started/concepts#ステータス) を選択します（テスト中、有効、無効）。ここでは **テスト中** を選択します。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="ルールのステータス選択"
+/>
+
+### 組み合わせ設定
+
+[組み合わせ](/guides/ja/get-started/concepts#組み合わせ) を設定し、他の割引との併用方法を制御します。
+
+- **商品割引** – 商品レベルの割引と併用可能にします。
+- **注文割引** – 注文全体の割引と併用可能にします。
+- **配送割引** – 配送レベルの割引と併用可能にします。
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="すべて割引の組み合わせ設定"
+/>
+
+### 戦略設定
+
+[戦略](/guides/ja/get-started/concepts#ストラテジー) を設定します。
+
+- **最初** – 条件を満たす最初の割引のみ適用します。
+- **最大** – すべての割引を評価し、最も大きい割引を適用します。
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="割引戦略の設定"
+/>
+
+### 条件とアクションの設定
+
+[条件](/guides/ja/get-started/concepts#コンディション（「いつ」）) と [アクション](/guides/ja/get-started/concepts#アクション（「何を」）) を選択します。
+
+> 例として、このルールの条件を **常に実行** に設定します。
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="条件の設定画面"
+/>
+
+条件を選択後、必要に応じて **注文割引・商品割引・配送割引** のチェックボックスを選択します。
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="割引タイプのチェックボックス選択"
+/>
+
+**注文割引：**
+
+以下の方法を選択できます。
+
+- **パーセンテージ割引**
+- **固定金額割引**
+
+以下の方法は商品選択が必要です。
+
+- 特定商品を除外したパーセンテージ割引
+- 特定商品のみのパーセンテージ割引
+- 特定商品を除外した固定金額割引
+- 特定商品のみの固定金額割引
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="注文割引タイプの選択"
+/>
+
+割引値と割引メッセージを入力します。
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="注文割引の入力設定"
+/>
+
+> 例として、**パーセンテージ割引** を使用して **14%** を設定します。  
+> 割引メッセージ **「14% OFF」** がチェックアウト画面に表示されます。
+
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="注文割引の設定例"
+/>
+
+**商品割引：**
+
+以下から選択できます。
+
+- パーセンテージ割引
+- 固定金額割引
+- 固定価格設定
+- 全商品無料
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="商品割引タイプの選択"
+/>
+
+割引値と割引メッセージを入力し、対象商品を選択します。少なくとも1つの商品を追加する必要があります。
+
+<Warning>
+  <b>全商品無料</b>を選択した場合、割引値・メッセージ・商品選択は表示されません。
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="商品割引の入力設定"
+/>
+
+> 例として、**固定金額割引** を使用して **15** を設定します。  
+> 割引メッセージ **「15$ OFF」** が表示され、  
+> 商品 **"The Collection Snowboard: Liquid"** に適用されます。
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="商品割引の設定例"
+/>
+
+**配送割引：**
+
+以下から選択できます。
+
+- パーセンテージ割引
+- 固定金額割引
+- 小計に対するパーセンテージ割引
+- 固定価格設定
+- すべての配送を無料
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="配送割引タイプの選択"
+/>
+
+特定の配送方法のみに適用することも可能です。
+
+<Warning>
+  <b>すべての配送を無料</b>を選択した場合、割引値・メッセージ・配送方法の選択は表示されません。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="配送方法の選択設定"
+/>
+
+> 例として、**パーセンテージ割引** を使用して **16%** を設定します。  
+> 割引メッセージ **「16% OFF」** が表示され、  
+> すべての配送方法に適用されます。
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="配送割引の設定例"
+/>
+
+同じ画面の [最大割引使用回数](/guides/ja/get-started/concepts#割引の最大利用回数) セクションで、割引コードの使用回数制限を設定できます。
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="最大割引使用回数の設定"
+/>
+
+最後に、画面上部の <b>保存</b> ボタンをクリックしてルールを作成・保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルールの保存" />
+
+## ルールのテスト
+
+ルールが「テスト中」ステータスに設定されているため、チェックアウトでルールを実行するには、実際のメールアドレスの代わりに `test@testing.com` を使用する必要があります。
+
+<Warning>
+  下の画像は、テスト用メールアドレスを使用する<b>前</b>
+  のチェックアウトページを示しています。 まだ割引は適用されていません。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="テストメール使用前のチェックアウト画面"
+/>
+
+メールアドレスを設定すると、チェックアウトルールが実行され、設定した割引が適用されます。  
+以下のように、**14%の注文割引**がチェックアウトで適用されていることを確認できます。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="14%の注文割引が適用されたチェックアウト画面"
+/>
+
+また、**15ドルの商品割引**も商品 **"The Collection Snowboard: Liquid"** に対してチェックアウトで適用されています。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="15ドルの商品割引が適用されたチェックアウト画面"
+/>
+
+さらに、**16%の配送割引**が**すべての配送方法**に対してチェックアウトで適用されています。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="16%の配送割引が適用されたチェックアウト画面"
+/>
+
+## ルールの有効化
+
+テストが完了したら、実際の顧客のチェックアウトに変更を適用できるよう、ルールを有効化します。有効化されたルールのみが、すべての顧客のチェックアウトに変更を加えることができます。
+
+サイドバーの **ルール** をクリックして、すべてのルールを表示します。有効化したいルールを選択し、**有効化** ボタンをクリックしてください。
+
+<Warning>
+  ルールの有効化は有料プランでのみ利用可能です。
+  まだプランをアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#プランをアップグレード)
+  の手順に従ってアップグレードしてください。
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="ディスカウントオールルールの有効化画面"
+/>
