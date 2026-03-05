@@ -21,3 +21,6 @@ config/tunnel.pid
 
 # vite build output
 dist/
+
+# Ignore all Zone.Identifier metadata files
+*Zone.Identifier

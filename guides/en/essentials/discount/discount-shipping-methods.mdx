@@ -15,7 +15,7 @@ icon: "badge-percent"
 
 ## Rule overview
 
-This rule allows you to discount specific shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like cart total, shipping address, customer tags, or product attributes, etc.
+This rule allows you to discount specific shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like shipping address, customer tags, product tags, etc.
 
 Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the selected shipping methods based on the configured conditions.
 
@@ -27,14 +27,14 @@ The following steps show how to create and configure a **Discount Shipping Metho
 
 From your [Shopify admin](/guides/en/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/en/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
 
-Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Discount Shipping Methods" → click “Select Rule”_.
+Then, you’ll be redirected to the **Select checkout rule type screen**. Choose _category "Shipping" → select checkout rule type "Discount shipping methods" → click “Select Rule”_.
 
 <img
   src="/images/essentials/shipping/select-discount-shipping-methods.webp"
   alt="Select Discount Shipping Methods"
 />
 
-Next, you’ll land on the **Create new discount shipping methods rule** screen, where you can configure your rule.
+Next, you’ll land on the **Create new shipping discount rule** screen, where you can configure your rule.
 
 ### Rule configuration
 
@@ -70,9 +70,16 @@ Next, on the same screen, configure the [Combinations](/guides/en/get-started/co
   alt="Combinations Disount Shipping Methods"
 />
 
-Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
+Next, on the same screen, configure the [Strategy](/guides/en/get-started/concepts#strategy) settings to control how the system handles multiple discount blocks. Currently, only **First** is available and selected by default. This option applies only the first discount that meets the conditions, ignoring any better discounts that may come later.
 
-> As an example, here we are using the default **Condition set 1**, setting the rule to run **Always**, and configuring it to apply a **10% discount** to all shipping methods using the **Percentage** option. The discount message **"10% OFF"** will be shown to customers at checkout.
+<img
+  src="/images/essentials/shipping/strategy-shipping-discount.webp"
+  alt="Strategy Shipping Discount"
+/>
+
+Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what).
+
+> As an example, here we are setting the rule to run **Always** and configuring it to apply a **10% discount** to all shipping methods using the **Percentage** option. The discount message **"10% OFF"** will be shown to customers at checkout.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"

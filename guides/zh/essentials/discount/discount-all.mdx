@@ -1,0 +1,229 @@
+---
+title: "全部折扣"
+description: "根据给定条件，对订单、产品或运费等多种类型同时应用折扣。"
+icon: "badge-percent"
+---
+
+## 规则概览
+
+此规则允许您根据定义的条件，同时应用多种类型的折扣。您可以在单个规则中组合订单折扣、产品折扣和运费折扣，具体取决于配置的条件。每种折扣类型都可以自定义为百分比折扣、固定金额折扣或其他支持的折扣形式。
+
+规则会评估指定条件，例如客户标签、产品标签、收货地址或其他已配置的条件，并相应地应用所有符合条件的折扣。这提供了灵活性，使您能够创建覆盖结账不同部分的综合促销活动，同时保持对折扣应用方式的完全控制。
+
+## 示例配置
+
+以下步骤展示了如何使用应用创建和配置 **全部折扣** 规则。
+
+### 创建新规则
+
+在您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用) 打开应用。在侧边栏中，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+接下来，您将被重定向到 **选择结账规则类型** 页面。选择 _类别 "折扣" → 选择结账规则类型 "全部折扣" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="选择全部折扣"
+/>
+
+接下来，您将进入 **创建新折扣规则** 页面，在此可以配置规则。
+
+### 规则配置
+
+要配置规则，首先可选地为其添加名称，例如 "全部折扣"，用于描述规则作用（如果您选择应用 **自动折扣**）。
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="自动折扣名称"
+/>
+
+如果您希望通过折扣码应用折扣，请点击 **"折扣码"**，输入所需代码，或点击 **"生成随机代码"** 自动生成。
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="折扣码"
+/>
+
+接下来，在同一页面上，选择规则 [状态](/guides/zh/get-started/concepts#地位)：测试、激活或停用。这里我们选择 **测试** 状态，以便快速测试规则，而不会影响实际客户结账。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="规则状态"
+/>
+
+在同一页面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此规则折扣与其他折扣的交互方式。您可以选择允许其与以下折扣组合：
+
+- **产品折扣** – 允许“全部折扣”规则与产品级折扣同时使用。确保产品折扣也设置为可与全部折扣组合。
+- **订单折扣** – 允许“全部折扣”规则与整体订单级折扣叠加。确保订单折扣也设置为可与全部折扣组合。
+- **运费折扣** – 允许“全部折扣”规则与运费折扣叠加。确保运费折扣也设置为可与全部折扣组合。
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="组合 全部折扣"
+/>
+
+在同一页面上，配置 [策略](/guides/zh/get-started/concepts#策略) 设置，以控制系统如何处理多个折扣块。您可以选择 **首个**，只应用第一个符合条件的折扣；或 **最大**，评估所有折扣块并应用折扣金额最高的那个。
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="策略 订单折扣"
+/>
+
+在同一页面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。从下拉列表中选择条件。
+
+> 例如，这里我们将条件设置为 **始终**，规则将始终生效。
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="设置条件"
+/>
+
+选择条件后，根据需求勾选订单、产品或运费折扣复选框。您可以根据需要选择一个或多个复选框。
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="操作复选框"
+/>
+
+勾选复选框后，需要为每种 **折扣类型** 选择具体操作。
+
+**订单折扣：**
+
+您可以选择使用 **百分比** 或 **固定金额折扣**，无需选择具体产品。其他方法 **排除特定产品的百分比折扣、仅限特定产品的百分比折扣、排除特定产品的固定金额折扣、仅限特定产品的固定金额折扣** 需要选择产品才能生效。
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="操作类型 订单折扣"
+/>
+
+然后输入折扣值和折扣信息。
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="订单折扣操作"
+/>
+
+> 例如，这里我们将折扣值设置为 **14%**，使用 **百分比** 选项。折扣信息 **14% 折扣** 将显示在结账页面。此 14% 折扣应用于订单。如下图所示。
+
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="订单折扣示例"
+/>
+
+**产品折扣：**
+
+您可以选择使用 **百分比、固定金额折扣、设置固定金额，或设置所有产品免费** 来应用折扣。
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="操作类型 产品折扣"
+/>
+
+然后输入折扣值和折扣信息。接着从弹窗中选择一个或多个产品来应用折扣。必须至少添加一个产品，折扣才会生效。
+
+<Warning>
+  请注意，<b>设置所有产品免费</b>{" "}
+  不会显示折扣值、信息或产品选择，因为所有产品都是免费的。
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="产品折扣操作"
+/>
+
+> 例如，这里我们将折扣金额设置为 **15**，使用 **固定金额折扣** 选项。折扣信息 **$15 OFF** 将显示在结账页面。然后选择产品 系列滑雪板：液态（The Collection Snowboard: Liquid）以应用折扣，如下图所示。
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="产品折扣示例"
+/>
+
+**运费折扣：**
+
+您可以选择使用 **百分比、固定金额折扣、小计百分比、设置固定价格，或设置所有运费免费** 来应用折扣。
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="操作类型 运费折扣"
+/>
+
+折扣也可以仅应用于特定运送方式，通过选择 **"仅将此折扣应用于这些运送方式"** 而非 "将此折扣应用于所有运送方式"，然后输入希望折扣生效的运送方式 **名称**。
+
+<Warning>
+  请注意，<b>设置所有运费免费</b>{" "}
+  不会显示折扣值、信息或运送方式选择，因为所有运送方式都是免费的。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="运送方式选择"
+/>
+
+> 例如，这里我们将折扣值设置为 **16%**，使用 **百分比** 选项。折扣信息 **16% 折扣** 将显示在结账页面。我们同时设置 **应用此折扣至所有运送方式**，折扣将应用于所有运送方式。此 16% 折扣应用于运送方式。如下图所示。
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="运费折扣示例"
+/>
+
+在同一页面上，在 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择性启用折扣码使用限制，限制每位客户使用一次，或两者同时应用（如果选择了折扣码）。
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="最大折扣使用次数"
+/>
+
+最后，点击页面顶部的 <b>保存</b> 按钮来创建并保存规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则处于测试状态，我们需要使用 `test@testing.com` 作为电子邮箱，而不是实际邮箱，以便在结账时运行规则。
+
+<Warning>
+  下图显示的是在使用测试邮箱地址之前的结账页面 <b>效果</b>。
+  请注意，此时尚未应用任何折扣。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="规则应用前"
+/>
+
+设置测试邮箱后，结账规则会运行并应用配置的折扣。
+我们可以验证 **14% 订单折扣** 已在结账时生效，如下图所示。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="规则应用后"
+/>
+
+**$15 产品折扣** 也已在结账时应用于产品 **"The Collection Snowboard: Liquid"**，如下图所示。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="规则应用后"
+/>
+
+**16% 运费折扣** 已在结账时应用于 **所有运送方式**，如下图所示。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="规则应用后"
+/>
+
+## 激活规则
+
+测试完成后，我们可以激活规则，以便它开始对实际客户的结账生效。只有激活的规则才能对所有客户的结账进行修改。
+
+在侧边栏点击 **规则** 查看所有规则。选择要激活的规则，然后点击 **激活** 按钮进行激活。
+
+<Warning>
+  规则激活仅适用于付费计划。如果您尚未升级计划，请按照
+  [此处](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="激活规则"
+/>

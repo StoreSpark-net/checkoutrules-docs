@@ -1,0 +1,232 @@
+---
+title: "Discount all"
+description: "Discount multiple types together, e-g, order or product or shipping amount based on the given conditions."
+icon: "badge-percent"
+---
+
+## Rule overview
+
+This rule allows you to apply multiple types of discounts together based on defined conditions. You can combine order, product, and shipping discounts within a single rule, depending on the configured criteria. Each discount type can be customized to apply a percentage reduction, a fixed amount off, or other supported discount formats.
+
+The rule evaluates the specified conditions, such as customer tags, product tags, shipping address, or any other configured conditions, and applies all eligible discounts accordingly. This provides flexibility to create comprehensive promotional offers that affect different parts of the checkout simultaneously while maintaining full control over how discounts are applied.
+
+## Sample configuration
+
+The following steps show how to create and configure a **Discount All** rule using the app.
+
+### Create a new rule
+
+From your [Shopify admin](/guides/en/get-started/installation#go-to-the-app), open the app. In the sidebar, go to the [Rules](/guides/en/get-started/quickstart#create-a-sample-rule) section and click _"Create Rule"_.
+
+Then, You’ll be redirected to the **Select checkout rule type screen**. Choose _category "Discount" → select checkout rule type "Discount all" → click “Select Rule”_.
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="Select Discount All"
+/>
+
+Next, you’ll land on the **Create new discount rule** screen, where you can configure your rule.
+
+### Rule configuration
+
+To configure the rule, first optionally add a name such as "Discount all" to describe what it does if you want to apply an **"Automatic discount"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="Automatic Discount Name"
+/>
+
+Or, if you prefer to apply the discount using a discount code, click **"Discount code"** and enter your desired code or generate one randomly by clicking **"Generate random code"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="Discount Code"
+/>
+
+Next, on the same screen, select the rule [status](/guides/en/get-started/concepts#status): Testing, Active, or Deactivated. Here we are going to choose **Testing** status, so we can quickly test the rule without affecting the checkout for actual customers.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Rule Status"
+/>
+
+Next, on the same screen, configure the [Combinations](/guides/en/get-started/concepts#combinations) settings to control how this rule’s discount interacts with other discounts. You can choose to allow it to combine with:
+
+- **Product discounts** – This lets the discount all rule be used alongside any product level discounts. Make sure product discounts are also set to combine with all discounts.
+
+- **Order discounts** – This enables the discount all rule to work together with overall order level discounts. Make sure order discounts are also set to combine with all discounts.
+
+- **Shipping discounts** – This allows the discount all rule to be used together with shipping level discounts. Make sure shipping discounts are also set to combine with all discounts.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinations Discount All"
+/>
+
+Next, on the same screen, configure the [Strategy](/guides/en/get-started/concepts#strategy) settings to control how the system handles multiple discount blocks. You can choose **First**, which applies only the first discount that meets the conditions, ignoring any better discounts that may come later, or **Maximum**, which evaluates all discount blocks and applies the one with the highest reduction.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Strategy Order Discount"
+/>
+
+Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what). Choose the relevant condition from the dropdown.
+
+> As an example, here we are setting the condition for this rule to **Always**, so it will run in all situations.
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="Set Condition"
+/>
+
+After choosing a condition, check the order, product, or shipping discount checkboxes according to your requirements. You can select one or multiple checkboxes as needed.
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="Action Checkboxes"
+/>
+
+After choosing the checkboxes, you need to select the action for that **discount type**.
+
+**Order Discount:**
+
+You can choose to apply the discount using **Percentage** or **Fixed amount off** without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Action Type Discount"
+/>
+
+Then enter the discount value and discount message.
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="Action Order Discount Operations"
+/>
+
+> As an example, here we are setting the discount value to **14%** using the **Percentage** option. The discount message **14% OFF** will be shown to customers at checkout. This 14% discount applies to the order. You can see the settings in the image below.
+
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="Action Example Discount Order Amount"
+/>
+
+**Product Discount:**
+
+You can choose to apply the discount using **Percentage, Fixed amount off, Set fixed amount, or Set all products free** based on your requirements.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Action Type Discount"
+/>
+
+Then enter the discount value and discount message. Next, select a product or multiple products from the popup to apply the discount. You must add at least one product for the discount to take effect.
+
+<Warning>
+  Please note that <b>Set all products free</b> does not show any discount
+  value, message, or product selection because all products are free.
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="Action Product Discount Operations"
+/>
+
+> As an example, here we are setting the discount amount to **15** using the **Fixed amount off** option. The discount message **15$ OFF** will be shown to customers at checkout. We then select the product **"The Collection Snowboard: Liquid"** to apply the discount to that product. You can see the settings in the image below.
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="Action Example Discount Product Amount"
+/>
+
+**Shipping Discount:**
+
+You can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, or Set all shipping free** based on your requirements.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Action Type Discount"
+/>
+
+The discount can also be applied only to specific shipping methods by selecting **"Apply this discount to only these shipping methods"** instead of "Apply this discount to all shipping methods", and then by entering the **names** of the shipping methods you want the discount to apply to.
+
+<Warning>
+  Please note that <b>Set all shipping free</b> does not show any discount
+  value, message, or shipping method selection because all shipping methods are
+  free.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Action Shipping Methods Selection"
+/>
+
+> As an example, here we are setting the discount value to **16%** using the **Percentage** option. The discount message **16% OFF** will be shown to customers at checkout. We have also set **Apply this discount to all shipping methods** to apply the discount to all shipping methods. This 16% discount applies to the shipping methods. You can see the settings in the image below.
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="Action Example Discount Shipping Methods"
+/>
+
+Next, on the same screen, in the [Maximum Discount Uses](/guides/en/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Maximum Discount Uses"
+/>
+
+Finally, click the <b>Save</b> button at the top to create and save your rule.
+
+<img src="/images/shared/save-rule.webp" alt="Rule Save" />
+
+## Test the rule
+
+Since, the rule is set to testing status, we have to use `test@testing.com` as the email, instead of the actual email, to run the rule at checkout.
+
+<Warning>
+  The image below shows the checkout page <b>before</b> the testing email
+  address was used. Please note that no discounts have been applied yet.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="Before Rule Apply"
+/>
+
+After setting the email, the checkout rule runs and applies the configured discounts.
+We can verify that the **14% order discount** has been applied at checkout, as shown below.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="After Rule Apply"
+/>
+
+The **15$ product discount** has also been applied at checkout on the product **"The Collection Snowboard: Liquid"**, as shown below.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="After Rule Apply"
+/>
+
+The **16% shipping discount** has been applied at checkout to **all shipping methods**, as shown below.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="After Rule Apply"
+/>
+
+## Activate the rule
+
+Once testing is done, we can activate the rule, so it can start making changes to the checkout for actual customers. Only activated rules can make changes to the checkout for all customers.
+
+Click on **Rules** in the sidebar to view all rules. Select the rule you want to activate, then click the **Activate** button to activate it.
+
+<Warning>
+  Rule activation is only available on paid plans. If you haven't upgraded your
+  plan yet, follow the instructions
+  [here](/guides/en/get-started/installation#upgrade-your-plan) to upgrade.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="Activate The Rule"
+/>

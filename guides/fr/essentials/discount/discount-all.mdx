@@ -1,0 +1,231 @@
+---
+title: "Remise globale"
+description: "Appliquez plusieurs types de remises ensemble, par exemple sur la commande, le produit ou la livraison, en fonction des conditions définies."
+icon: "badge-percent"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet d’appliquer plusieurs types de remises ensemble en fonction des conditions définies. Vous pouvez combiner des remises sur la commande, le produit et la livraison au sein d’une seule règle, selon les critères configurés. Chaque type de remise peut être personnalisé pour appliquer un pourcentage de réduction, un montant fixe ou d’autres formats de remise pris en charge.
+
+La règle évalue les conditions spécifiées, telles que les tags clients, les tags produits, l’adresse de livraison ou toute autre condition configurée, et applique toutes les remises éligibles en conséquence. Cela offre la flexibilité de créer des offres promotionnelles complètes qui affectent différentes parties du paiement simultanément tout en conservant un contrôle total sur la manière dont les remises sont appliquées.
+
+## Exemple de configuration
+
+Les étapes suivantes montrent comment créer et configurer une règle **Remise globale** en utilisant l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [administration Shopify](/guides/fr/get-started/installation#accéder-à-l’application), ouvrez l’application. Dans la barre latérale, allez dans la section [Règles](/guides/fr/get-started/quickstart#créer-une-règle-d’exemple) et cliquez sur _"Créer une règle"_.
+
+Vous serez ensuite redirigé vers l’écran **Sélectionner le type de règle de paiement**. Choisissez _catégorie "Remise" → sélectionnez le type de règle de paiement "Remise globale" → cliquez sur “Sélectionner la règle”_.
+
+<img
+  src="/images/essentials/discount/select-discount-all.webp"
+  alt="Sélectionner Remise globale"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de remise**, où vous pourrez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, ajoutez éventuellement un nom tel que "Remise globale" pour décrire son fonctionnement si vous souhaitez appliquer une **"Remise automatique"**.
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-all.webp"
+  alt="Nom de la remise automatique"
+/>
+
+Ou, si vous préférez appliquer la remise avec un code de réduction, cliquez sur **"Code de réduction"** et saisissez le code souhaité ou générez-en un aléatoirement en cliquant sur **"Générer un code aléatoire"**.
+
+<img
+  src="/images/essentials/discount/discount-code-discount-all.webp"
+  alt="Code de réduction"
+/>
+
+Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/concepts#statut) de la règle : Test, Actif ou Désactivé. Ici, nous allons choisir le statut **Test**, afin de pouvoir tester rapidement la règle sans affecter le paiement des clients réels.
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="Statut de la règle"
+/>
+
+Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette règle interagit avec d’autres remises. Vous pouvez choisir de la combiner avec :
+
+- **Remises sur les produits** – Cela permet à la règle Remise globale d’être utilisée avec toutes les remises au niveau produit. Assurez-vous que les remises produit sont également configurées pour se combiner avec toutes les remises.
+
+- **Remises sur la commande** – Cela permet à la règle Remise globale de fonctionner avec les remises globales sur la commande. Assurez-vous que les remises sur la commande sont également configurées pour se combiner avec toutes les remises.
+
+- **Remises sur la livraison** – Cela permet à la règle Remise globale d’être utilisée avec les remises sur la livraison. Assurez-vous que les remises sur la livraison sont également configurées pour se combiner avec toutes les remises.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinaisons Remise globale"
+/>
+
+Ensuite, sur le même écran, configurez les paramètres de [Stratégie](/guides/fr/get-started/concepts#stratégie) pour contrôler comment le système gère plusieurs blocs de remise. Vous pouvez choisir **Premier**, qui applique uniquement la première remise qui répond aux conditions, en ignorant les remises plus avantageuses qui pourraient suivre, ou **Maximum**, qui évalue tous les blocs de remise et applique celui avec la réduction la plus élevée.
+
+<img
+  src="/images/essentials/discount/strategy-order-discount.webp"
+  alt="Stratégie Remise commande"
+/>
+
+Ensuite, sur le même écran, sélectionnez la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes. Choisissez la condition appropriée dans le menu déroulant.
+
+> Par exemple, ici nous configurons la condition de cette règle sur **Toujours**, afin qu’elle s’exécute dans toutes les situations.
+
+<img
+  src="/images/essentials/discount/set-condition-set-discount-all.webp"
+  alt="Définir la condition"
+/>
+
+Après avoir choisi une condition, cochez les cases de remise sur la commande, le produit ou la livraison selon vos besoins. Vous pouvez sélectionner une ou plusieurs cases selon vos besoins.
+
+<img
+  src="/images/essentials/discount/action-checkboxes.webp"
+  alt="Cases à cocher pour l’action"
+/>
+
+Après avoir choisi les cases, vous devez sélectionner l’action pour ce **type de remise**.
+
+**Remise sur la commande :**
+
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage** ou **Montant fixe** sans avoir besoin de sélectionner des produits spécifiques. Toutes les autres méthodes **Pourcentage excluant ces produits, Pourcentage pour ces produits uniquement, Montant fixe excluant ces produits et Montant fixe pour ces produits uniquement** nécessitent de sélectionner des produits pour que la remise fonctionne.
+
+<img
+  src="/images/essentials/discount/action-type-discount-order-amount.webp"
+  alt="Type d’action Remise commande"
+/>
+
+Ensuite, saisissez la valeur et le message de remise.
+
+<img
+  src="/images/essentials/discount/action-order-discount-operations.webp"
+  alt="Opérations Remise commande"
+/>
+
+> Par exemple, ici nous configurons la valeur de la remise à **14%** en utilisant l’option **Pourcentage**. Le message de remise **14% OFF** sera affiché aux clients lors du paiement. Cette remise de 14% s’applique à la commande. Vous pouvez voir les paramètres dans l’image ci-dessous.
+
+**Remise sur le produit :**
+
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Définir un montant fixe, ou Offrir tous les produits gratuitement** selon vos besoins.
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="Type d’action Remise produit"
+/>
+
+Ensuite, saisissez la valeur et le message de remise. Sélectionnez un ou plusieurs produits depuis la popup pour appliquer la remise. Vous devez ajouter au moins un produit pour que la remise prenne effet.
+
+<Warning>
+  Veuillez noter que <b>Offrir tous les produits gratuitement</b> n’affiche
+  aucune valeur, message ou sélection de produit car tous les produits sont
+  gratuits.
+</Warning>
+
+<img
+  src="/images/essentials/discount/action-product-discount-operations.webp"
+  alt="Opérations Remise produit"
+/>
+
+> Par exemple, ici nous configurons la valeur de la remise à **15** en utilisant l’option **Montant fixe**. Le message de remise **15$ OFF** sera affiché aux clients lors du paiement. Nous sélectionnons ensuite le produit **"The Collection Snowboard: Liquid"** pour appliquer la remise à ce produit. Vous pouvez voir les paramètres dans l'image ci-dessous.
+
+<img
+  src="/images/essentials/discount/action-example-discount-product-amount.webp"
+  alt="Exemple Remise produit"
+/>
+
+**Remise sur la livraison :**
+
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Pourcentage du sous-total, Définir un prix fixe, ou Offrir toute la livraison gratuitement** selon vos besoins.
+
+<img
+  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
+  alt="Type d’action Remise livraison"
+/>
+
+La remise peut également être appliquée uniquement à certains modes de livraison en sélectionnant **"Appliquer cette remise uniquement à ces modes de livraison"** au lieu de "Appliquer cette remise à tous les modes de livraison", puis en saisissant les **noms** des modes de livraison concernés.
+
+<Warning>
+  Veuillez noter que <b>Offrir toute la livraison gratuitement</b> n’affiche
+  aucune valeur, message ou sélection de mode de livraison car tous les modes de
+  livraison sont gratuits.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
+  alt="Sélection des modes de livraison"
+/>
+
+> Par exemple, ici nous configurons la valeur de la remise à **16%** en utilisant l’option **Pourcentage**. Le message de remise **16% OFF** sera affiché aux clients lors du paiement. Nous avons également activé **Appliquer cette remise à tous les modes de livraison**. Cette remise de 16% s’applique aux modes de livraison. Vous pouvez voir les paramètres dans l’image ci-dessous.
+
+<img
+  src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
+  alt="Exemple Remise livraison"
+/>
+
+Ensuite, sur le même écran, dans la section [Utilisations maximales de la remise](/guides/fr/get-started/concepts#nombre-maximal-d’utilisations-de-la-réduction), vous pouvez éventuellement activer une limite d’utilisation pour le code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est sélectionné.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Utilisations maximales de la remise"
+/>
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et sauvegarder votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Tester la règle
+
+Comme la règle est configurée en statut Test, nous devons utiliser `test@testing.com` comme adresse e-mail, au lieu de l’e-mail réel, pour exécuter la règle lors du paiement.
+
+<Warning>
+  L’image ci-dessous montre la page de paiement <b>avant</b> l’utilisation de
+  l’adresse e-mail de test. Veuillez noter qu’aucune remise n’a encore été
+  appliquée.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-all.webp"
+  alt="Avant application de la règle"
+/>
+
+Après avoir configuré l’e-mail, la règle de paiement s’exécute et applique les remises configurées.  
+Nous pouvons vérifier que la **remise de 14% sur la commande** a été appliquée lors du paiement, comme illustré ci-dessous.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-order.webp"
+  alt="Après application de la remise sur la commande"
+/>
+
+La **remise de 15$ sur le produit** a également été appliquée lors du paiement pour le produit **"The Collection Snowboard: Liquid"**, comme illustré ci-dessous.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product.webp"
+  alt="Après application de la remise sur le produit"
+/>
+
+La **remise de 16% sur la livraison** a été appliquée lors du paiement à **tous les modes de livraison**, comme illustré ci-dessous.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="Après application de la remise sur la livraison"
+/>
+
+## Activer la règle
+
+Une fois les tests terminés, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au paiement pour les clients réels. Seules les règles activées peuvent modifier le processus de paiement pour tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer** pour l’activer.
+
+<Warning>
+  L’activation des règles n’est disponible que dans les plans payants. Si vous
+  n’avez pas encore mis à jour votre plan, suivez les instructions
+  [ici](/guides/fr/get-started/installation#mettre-à-niveau-votre-forfait) pour
+  effectuer la mise à niveau.
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-all.webp"
+  alt="Activer la règle"
+/>

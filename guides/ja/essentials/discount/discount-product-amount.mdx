@@ -1,0 +1,148 @@
+---
+title: "商品割引額"
+description: "指定された条件に基づく商品の割引額。"
+icon: "badge-percent"
+---
+
+## ルール概要
+
+このルールでは、定義された条件に基づき、チェックアウト時に特定の商品の価格に割引を適用できます。パーセント割引、固定金額割引、または特定の固定価格を、顧客タグ、コレクション、商品SKU、その他の条件に応じて設定することが可能です。
+
+割引は、割引コードまたは自動割引のいずれかを作成できます。割引コードを作成した場合、顧客はチェックアウト時にコードを入力することで割引を受けられます。自動割引を選択した場合は、設定された条件を満たす対象商品に対して自動的に割引が適用されます。
+
+## サンプル設定
+
+以下の手順では、アプリを使用して **商品割引額** ルールを作成および設定する方法を示します。
+
+### 新しいルールの作成
+
+[Shopify管理画面](/guides/ja/get-started/installation#アプリを開く) からアプリを開きます。サイドバーの [ルール](/guides/ja/get-started/quickstart#サンプルルールを作成) セクションに移動し、_「ルールを作成」_ をクリックします。
+
+その後、**チェックアウトルールタイプ選択画面** にリダイレクトされます。_カテゴリー「割引」 → チェックアウトルールタイプ「商品割引額」を選択 → 「ルールを選択」をクリック_ してください。
+
+<img
+  src="/images/essentials/discount/select-discount-product-amount.webp"
+  alt="商品割引額を選択"
+/>
+
+次に、**新しい商品割引ルール作成画面** に移動し、ルールを設定します。
+
+### ルール設定
+
+ルールを設定するには、まず任意で名前を追加できます（例: "商品割引額"）。これは **自動割引** を適用する場合に、ルールの内容を説明するものです。
+
+<img
+  src="/images/essentials/discount/automatic-discount-name-discount-product-amount.webp"
+  alt="自動割引の名前設定"
+/>
+
+または、割引コードで割引を適用する場合は **「割引コード」** をクリックし、希望のコードを入力するか、**「ランダムコード生成」** をクリックして生成できます。
+
+<img
+  src="/images/essentials/discount/discount-code-discount-product-amount.webp"
+  alt="割引コード入力"
+/>
+
+同じ画面で、ルールの [ステータス](/guides/ja/get-started/concepts#ステータス) を選択します: テスト中、有効、無効。ここでは **テスト中** を選択して、実際の顧客のチェックアウトに影響を与えずにルールを確認します。
+
+<img
+  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
+  alt="ルールのステータス選択"
+/>
+
+同じ画面で、[組み合わせ](/guides/ja/get-started/concepts#組み合わせ) 設定を行い、他の割引との併用方法を制御します。以下の組み合わせを許可できます:
+
+- **商品割引** – 複数の商品レベル割引を同時に適用可能にします。その他の商品割引も商品割引との組み合わせを許可する必要があります。
+- **注文割引** – 注文全体レベルの割引と組み合わせて商品割引を適用可能にします。注文割引も商品割引との組み合わせを許可してください。
+- **配送割引** – 配送レベルの割引と併用可能にします。配送割引も商品割引との組み合わせが許可されていることを確認してください。
+
+<img
+  src="/images/essentials/discount/combinations-discount-product-amount.webp"
+  alt="割引の組み合わせ設定"
+/>
+
+同じ画面で、[戦略](/guides/ja/get-started/concepts#ストラテジー) 設定を構成し、複数の割引ブロックの処理方法を制御します。選択肢は以下の通りです:
+
+- **最初** – 条件を満たす最初の割引のみ適用し、後からより良い割引は無視されます。
+- **すべて** – カート内の対象商品すべてに割引を適用します。
+- **最大** – すべての割引ブロックを評価し、最も大きな割引を適用します。
+
+<img
+  src="/images/essentials/discount/strategy-discount-product-amount.webp"
+  alt="割引戦略の選択"
+/>
+
+同じ画面で、該当する [条件](/guides/ja/get-started/concepts#コンディション（「いつ」）) と [アクション](/guides/ja/get-started/concepts#アクション（「何を」）) を選択します。
+
+> 例として、このルールを **常に実行** するように設定し、**パーセンテージ割引** を使って **12% の割引** を適用します。割引メッセージ **「12% OFF」** がチェックアウト時に表示されます。その後、割引を適用する商品として **The 3D Modeled Snowboard** を選択します。
+
+<img
+  src="/images/essentials/discount/condition-action-discount-product-amount.webp"
+  alt="条件とアクションの設定"
+/>
+
+アクションセクションでは、要件に応じて **パーセンテージ割引、固定金額割引、固定価格設定、または全商品無料** を選択できます。
+
+<img
+  src="/images/essentials/discount/action-type-discount-product-amount.webp"
+  alt="割引の種類選択"
+/>
+
+次に、割引値と割引メッセージを入力します。ポップアップで1つまたは複数の商品を選択して割引を適用します。割引を有効にするには、少なくとも1つの商品を追加する必要があります。
+
+<Warning>
+  注意: <b>全商品無料</b>は割引値、メッセージ、商品選択を表示しません。すべての商品が無料になるためです。
+</Warning>
+
+<img
+  src="/images/essentials/discount/product-selection.webp"
+  alt="割引適用商品の選択"
+/>
+
+同じ画面で、[最大割引使用回数](/guides/ja/get-started/concepts#割引の最大利用回数) セクションにて、割引コードの使用制限を有効にしたり、顧客1人あたり1回の使用に制限したり、両方を適用したりできます。
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="最大割引使用回数の設定"
+/>
+
+最後に、画面上部の <b>保存</b> ボタンをクリックして、ルールを作成・保存します。
+
+<img src="/images/shared/save-rule.webp" alt="ルールの保存" />
+
+## ルールのテスト
+
+ルールが **テスト中** に設定されているため、チェックアウト時にルールを実行する際は、実際のメールではなく `test@testing.com` を使用する必要があります。
+
+<Warning>
+  下の画像は、テスト用メールアドレスを使用する<b>前</b>のチェックアウト画面です。商品割引はまだ適用されていません。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-discount-product-amount.webp"
+  alt="ルール適用前のチェックアウト画面"
+/>
+
+メールを設定すると、チェックアウトルールが実行され、設定された商品割引が適用されます。選択した商品に **12% の割引** がチェックアウト画面に表示されることを確認できます。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-discount-product-amount.webp"
+  alt="ルール適用後のチェックアウト画面"
+/>
+
+## ルールの有効化
+
+テストが完了したら、ルールを有効化して、実際の顧客のチェックアウトに反映させます。有効化されたルールのみが、すべての顧客に対してチェックアウトを変更できます。
+
+サイドバーの **ルール** をクリックして、すべてのルールを表示します。有効化したいルールを選択し、**有効化** ボタンをクリックしてルールを有効にします。
+
+<Warning>
+  ルールの有効化は、有料プランでのみ可能です。まだプランをアップグレードしていない場合は、
+  [こちら](/guides/ja/get-started/installation#プランをアップグレード)
+  の手順に従ってアップグレードしてください。
+</Warning>
+
+<img
+  src="/images/essentials/discount/activate-the-rule-discount-product-amount.webp"
+  alt="ルールの有効化"
+/>

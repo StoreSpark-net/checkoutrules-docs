@@ -15,8 +15,7 @@ icon: "badge-percent"
 
 ## Aperçu de la règle
 
-Cette règle vous permet d’appliquer une remise sur le sous-total de la commande en fonction des conditions définies.  
-Vous pouvez offrir des remises sous forme de pourcentage, montant fixe, pourcentage excluant certains produits, pourcentage appliqué uniquement à certains produits, montant fixe excluant certains produits, ou montant fixe appliqué uniquement à certains produits, en utilisant des critères tels que le total du panier, les balises client, l’adresse d’expédition ou les attributs produit, etc.
+Cette règle vous permet d’appliquer une remise au sous-total de la commande en fonction des conditions définies. Vous pouvez proposer des remises sous forme de pourcentage, montant fixe, pourcentage excluant certains produits, pourcentage uniquement pour certains produits, montant fixe excluant certains produits, ou montant fixe uniquement pour certains produits, en utilisant des critères tels que le montant total de la commande, les tags clients, l’adresse de livraison, les tags produits, etc.
 
 Avec cette règle, vous pouvez créer un code de réduction ou une remise automatique.  
 Si la règle crée un code de réduction, alors le client peut l’utiliser au passage en caisse pour obtenir la remise.  
@@ -57,8 +56,8 @@ Ou, si vous préférez appliquer la remise avec un code de réduction, cliquez s
   alt="Code de Réduction"
 />
 
-Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/concepts#statut) de la règle : Mise à l’essai, Actif ou Désactivé.  
-Ici, nous allons choisir le statut **Mise à l’essai**, afin de tester rapidement la règle sans affecter le passage en caisse des clients réels.
+Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/concepts#statut) de la règle : Test, Actif ou Désactivé.
+Ici, nous allons choisir le statut **Test**, afin de tester rapidement la règle sans affecter le passage en caisse des clients réels.
 
 <img
   src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
@@ -86,7 +85,7 @@ Vous pouvez choisir **Première**, qui applique uniquement la première remise r
 
 Ensuite, sélectionnez la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes.
 
-> Par exemple, ici nous définissons la règle pour s’exécuter **Toujours** et la configurons pour appliquer une **remise de 10 %** en utilisant l’option **Pourcentage**. Le message de réduction **« 10 % DE REMISE »** sera affiché aux clients au passage en caisse.
+> Par exemple, ici nous définissons la règle pour s’exécuter **Toujours** et la configurons pour appliquer une **remise de 10 %** en utilisant l’option **Pourcentage**. Le message de réduction **"10% OFF"** sera affiché aux clients au passage en caisse.
 
 <img
   src="/images/essentials/discount/condition-set-discount-order-amount.webp"
@@ -109,11 +108,12 @@ Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et enregistr
 
 ## Tester la règle
 
-Comme la règle est définie au statut mise à l’essai, nous devons utiliser `test@testing.com` comme e-mail, au lieu de l’adresse réelle, pour exécuter la règle au passage en caisse.
+Comme la règle est définie au statut Test, nous devons utiliser `test@testing.com` comme e-mail, au lieu de l’adresse réelle, pour exécuter la règle au passage en caisse.
 
 <Warning>
-  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que l’e-mail
-  de test ne soit utilisé. Veuillez noter qu’aucune remise n’a encore été appliquée.
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que
+  l’e-mail de test ne soit utilisé. Veuillez noter qu’aucune remise n’a encore
+  été appliquée.
 </Warning>
 
 <img
@@ -122,7 +122,7 @@ Comme la règle est définie au statut mise à l’essai, nous devons utiliser `
 />
 
 Après avoir défini l’e-mail, la règle de passage en caisse s’exécute et applique la **remise de 10 %** configurée en utilisant l’option Pourcentage.  
-Nous pouvons vérifier que le message de réduction **« 10 % DE REMISE »** est visible au passage en caisse, comme montré ci-dessous.
+Nous pouvons vérifier que le message de réduction **"10% OFF"** est visible au passage en caisse, comme montré ci-dessous.
 
 <img
   src="/images/essentials/discount/after-rule-apply-discount-order-amount.webp"
@@ -131,16 +131,17 @@ Nous pouvons vérifier que le message de réduction **« 10 % DE REMISE »** est
 
 ## Activer la règle
 
-Une fois la mise à l’essai terminée, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des clients réels.  
+Une fois les tests terminés, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des clients réels.
 Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
 
 Cliquez sur **Règles** dans la barre latérale pour voir toutes les règles.  
 Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer**.
 
 <Warning>
-  L’activation des règles n’est disponible que dans les forfaits payants.  
-  Si vous n’avez pas encore mis à niveau votre forfait, suivez les instructions
-  [ici](/guides/fr/get-started/installation#mettre-à-niveau-votre-forfait) pour le mettre à niveau.
+  L’activation des règles n’est disponible que dans les forfaits payants. Si
+  vous n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#mettre-à-niveau-votre-forfait) pour
+  le mettre à niveau.
 </Warning>
 
 <img
