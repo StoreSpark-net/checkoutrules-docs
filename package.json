@@ -1,0 +1,28 @@
+{
+  "name": "checkoutrules-docs",
+  "version": "1.0.0",
+  "description": "This is the documentation for the Checkout Rules App.",
+  "main": "index.js",
+  "scripts": {
+    "sync-gleap": "node scripts/sync-to-gleap.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoreSpark-net/checkoutrules-docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/StoreSpark-net/checkoutrules-docs/issues"
+  },
+  "homepage": "https://github.com/StoreSpark-net/checkoutrules-docs#readme",
+  "dependencies": {
+    "entities": "^7.0.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.4",
+    "node-html-parser": "^7.1.0"
+  }
+}
