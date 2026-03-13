@@ -20,14 +20,14 @@
  *                             If unset, derived from DOCS_BASE_URL only when hostname starts with "docs."
  */
 
-import { readFileSync, existsSync } from "node:fs";
-import { resolve, dirname, relative, isAbsolute } from "node:path";
-import { createHash } from "node:crypto";
-import { fileURLToPath } from "node:url";
+import { decodeHTML } from "entities";
 import matter from "gray-matter";
 import { marked } from "marked";
-import { decodeHTML } from "entities";
 import { parse } from "node-html-parser";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, isAbsolute, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
