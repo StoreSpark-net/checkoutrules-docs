@@ -15,9 +15,30 @@ icon: "badge-percent"
 
 ## Rule overview
 
-This rule allows you to discount specific shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like cart total, shipping address, customer tags, or product attributes, etc.
+This rule allows you to discount specific shipping rates at checkout based on defined conditions. You can apply percentage, fixed amount off, set fixed price, set all shipping free, subtotal percentage, or fixed price subtotal percentage using criteria like cart total, shipping address, customer tags, or product attributes, etc.
 
 Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the selected shipping methods based on the configured conditions.
+
+## Supported operations
+
+| Operation | Behavior |
+| --- | --- |
+| **Percentage** | Applies a percentage discount to selected shipping method(s). |
+| **Fixed amount off** | Applies a fixed currency amount discount to selected shipping method(s). |
+| **Set fixed price** | Sets each selected shipping method to a target fixed price. |
+| **Set all shipping free** | Makes all shipping methods free. |
+| **Subtotal percentage** | Discount amount is `order subtotal × percent / 100`, then applied to selected shipping method(s). |
+| **Fixed price subtotal percentage** | Sets each selected shipping method price to `order subtotal × percent / 100`. |
+
+<Note>
+  If you choose **Apply this discount to only these shipping methods**, method
+  matching supports:
+
+  - **contains**, **does not contain**, **is**, **is not**
+  - case-insensitive matching
+  - `*` wildcard in user input (for example: `Standard*`, `*Express*`, `*Pickup`)
+  - OR behavior across multiple method rows (any matching row can apply)
+</Note>
 
 ## Sample configuration
 
@@ -81,12 +102,23 @@ Next, on the same screen, select the relevant [condition set](/guides/en/get-sta
 
 In the Action section, you can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, or Set all shipping free** based on your requirements.
 
+You can also use **Fixed price subtotal percentage** if you want shipping price to be calculated from order subtotal.
+
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Action Type Discount"
 />
 
-The discount can also be applied only to specific shipping methods by selecting **"Apply this discount to only these shipping methods"** instead of "Apply this discount to all shipping methods", and then by entering the **names** of the shipping methods you want the discount to apply to.
+<Warning>
+  Shopify may show USPS-prefixed names at checkout. For method matching, remove
+  the USPS prefix in your input. Example: use `Ground Advantage` instead of
+  `USPS Ground Advantage`.
+</Warning>
+
+The discount can be scoped in two ways:
+
+- **Apply this discount to all shipping methods**: applies the operation to every available shipping method.
+- **Apply this discount to only these shipping methods**: applies only to methods that match the entered method-name rules.
 
 <img
   src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"

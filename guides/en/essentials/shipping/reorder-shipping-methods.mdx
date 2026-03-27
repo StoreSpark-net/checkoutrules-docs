@@ -18,7 +18,25 @@ icon: "shuffle"
 This rule allows you to automatically change the order in which shipping methods appear at checkout.
 You can prioritize specific shipping options based on conditions like cart total, delivery address, or product tags, etc.
 
-This helps streamline the customer experience by showing the most relevant or cost effective shipping methods first.
+This helps streamline the customer experience by showing the most relevant or cost-effective shipping methods first.
+
+## Supported operations
+
+- **Fixed ranking**: manually rank selected methods with **contains / does not contain / is / is not** matching.
+- **Shipping price**: sort by price low to high or high to low.
+- **Alphabetical order**: sort names A to Z or Z to A.
+- **Shipping price + Alphabetical order**: sort by price first and break same-price ties alphabetically in any of the 4 available direction combinations.
+- **Delivery type**: reorder by selected delivery types in your chosen order.
+
+<Note>
+  For method-name matching in **Fixed ranking**:
+
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Standard*`, `*Express*`, `*Pickup`).
+  - **contains** / **does not contain** use partial matching.
+  - **is** / **is not** support exact text and wildcard patterns.
+  - If you add multiple method rows, they are evaluated as OR (any matching row can apply).
+</Note>
 
 ## Sample configuration
 
@@ -54,9 +72,9 @@ Here, as an example, we are going to choose **Testing** status, so we can quickl
 
 Next, on the same screen, select the appropriate [Target](/guides/en/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to reorder shipping methods shown after a **shipping address** is entered. Then, we can select:
 
-- **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
+- **All shipments except subscriptions** – applies the rule to non-subscription shipments (including split shipments) while ignoring subscription shipment(s). This is useful because Shopify can automatically choose the cheapest shipping method for subscription shipments and hide others. Hiding that cheapest method can cause a "no shipping available" error.
 
-- **All shipments** – applies the rule to every order, including those with subscription items.
+- **All shipments** – applies the rule to all shipments, including split shipments and subscription shipment(s).
 
 Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to pickup methods shown when a customer selects **"Pickup in store"** during checkout.
 
@@ -69,6 +87,12 @@ Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to picku
 </Info>
 
 Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
+
+<Warning>
+  Shopify may show USPS-prefixed names at checkout. For method matching, remove
+  the USPS prefix in your input. Example: use `Ground Advantage` instead of
+  `USPS Ground Advantage`.
+</Warning>
 
 > As an example here we are going to choose the default condition set, then set the rule to always run, and select the operation to reorder the shipping methods from shipping prices highest to lowest.
 
@@ -103,7 +127,7 @@ To do this, as an example, you can use the **Fixed ranking** option, and set the
   Please note, to test this, you will need to activate the rule, and then clear
   out the cookies/cache of the browser, so the default preselected shipping
   method is not your previously selected shipping method (Shopify can save this
-  selection in cache for your browser). Or you can use a different brwoser as
+  selection in cache for your browser). Or you can use a different browser as
   well to see what your customers will see.
 </Warning>
 
