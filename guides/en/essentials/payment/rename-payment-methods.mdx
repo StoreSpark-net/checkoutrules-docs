@@ -1,6 +1,6 @@
 ---
 title: "Rename payment methods"
-description: "Rename/Translate or add a message to the selected payment methods at the checkout under given conditions."
+description: "Rename/Translate payment method labels, or add prefix/suffix text, under given conditions."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Rule overview
 
-This rule allows you to rename, translate, or add a message to specific payment methods at the checkout based on defined conditions. You can customize the displayed payment method labels using criteria such as cart value, shipping address, customer tags, or product details, etc.
+This rule allows you to rename or translate specific payment methods at checkout, or keep the original label and add a prefix/suffix. You can customize the displayed payment method labels using criteria such as cart value, shipping address, customer tags, or product details, etc.
 
 This helps enhance clarity, support localization, and improve the overall checkout experience for customers.
 
@@ -49,9 +49,33 @@ Here we are going to choose **Testing** status, so we can quickly test the rule 
 
 Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
-> As an example, We are using **Condition set 1**, setting the rule to run **Always**, and configuring it to rename the payment method **"Cash on Delivery (COD)"** to **"Pay Cash"**.
+> As an example, we are using **Condition set 1**, setting the rule to run **Always**, and configuring it to rename the payment method **"Cash on Delivery (COD)"** to **"Pay Cash"**.
 
-Alternatively, we can set the “Rename to” option to “Add message” to append a custom message to the payment method name instead of fully renaming it.
+For each matched method, you can choose one output mode:
+
+- **Rename to**: fully replace the original method name.
+- **Add prefix**: keep the original name and add text before it.
+- **Add suffix**: keep the original name and add text after it.
+
+<Note>
+  For payment-method matching in this rule:
+
+  - Supported operators are **contains**, **does not contain**, **is**, and
+    **is not**.
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Cash*`, `*Pay*`,
+    `*Card`).
+  - If you add multiple method rows, they are evaluated as OR (any matching row
+    can apply).
+
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure fallback:
+
+  - **Do nothing**: the rule does not run any rename action when time/date or
+    customer location context cannot be determined.
+  - **Do this action**: the rule runs the fallback operation you define instead
+    of the regular rename operation.
+</Note>
 
 <img
   src="/images/essentials/payment/condition-set-rename-payment-methods.webp"

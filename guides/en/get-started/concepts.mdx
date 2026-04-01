@@ -140,7 +140,13 @@ Controls whether the rule discount can be combined with product, order, or shipp
 
 ### Strategy
 
-If the discount rule has multiple blocks, then strategy selection comes into play. It determines how those rule blocks are applied (e.g., first valid one or highest value). Used only in **Discount Order Amount** rule.
+Strategy controls how matching discount blocks are applied:
+
+- **Order discount strategy**: First or Maximum (depending on enabled discount type and rule context).
+- **Product discount strategy**: First, All, or Maximum (depending on enabled discount type and rule context).
+- **Shipping discount behavior**: First.
+
+Used in current discount flows (including **Discount all** and order/product discount configurations).
 
 <img src="/images/concepts/strategy.webp" alt="Strategy" />
 
@@ -152,9 +158,19 @@ Specifies which step will trigger the rule (e.g., when the customer is interacti
 
 ### Fallback
 
-Defines what happens in the rare circumstance, when the app has an issue on the checkout (e.g., allow or block checkout). Used only in **Validate or Block Checkout** rule.
+Defines what should happen if the app cannot determine **time/date** or **customer location** at checkout for rules using those conditions.
+
+- **Do nothing**: no action is applied by the rule in that case.
+- **Do this action**: the fallback action you configure is applied instead.
+
+Used in rules that support **Date Time** or **Customer location (using GeoIP)** conditions.
 
 <img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+This fallback is different from the **Validation block-on-failure** setting:
+
+- **Fallback (this section)**: what action to run when Date Time / GeoIP context is unavailable.
+- **Validation block-on-failure**: whether checkout is allowed or blocked if the app experiences a runtime issue.
 
 ### Maximum discount uses
 

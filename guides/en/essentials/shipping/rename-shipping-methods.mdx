@@ -1,6 +1,6 @@
 ---
 title: "Rename shipping methods"
-description: "Rename/Translate or add a message to the selected shipping methods at the checkout under given conditions."
+description: "Rename/Translate or add prefix/suffix text to selected shipping methods at checkout under given conditions."
 icon: "pencil"
 ---
 
@@ -24,7 +24,8 @@ This helps enhance clarity for customers, support localization, and improve the 
 - **Rename these shipping methods** with method-name match operators: **contains**, **does not contain**, **is**, **is not**.
 - For each matched method, choose one output mode:
   - **Rename to**: fully replace the method name.
-  - **Add message**: append a custom message after the original method name.
+  - **Add prefix**: add custom text before the original method name.
+  - **Add suffix**: add custom text after the original method name.
 
 <Note>
   For method-name matching in this rule:
@@ -84,13 +85,23 @@ Next, on the same screen, select the relevant [condition set](/guides/en/get-sta
 
   - For method matching, remove the USPS prefix in your input. Example: use
     `Ground Advantage` instead of `USPS Ground Advantage`.
-  - Prefixes like `USPS`, `UPS`, or `Canada Post` at the start of shipping
+  - Prefixes like `USPS`, `UPS®`, or `Canada Post` at the start of shipping
     names cannot be removed or renamed.
 </Warning>
 
 > As an example, we are using **Condition set 1**, setting the rule to run **Always**, and configuring it to rename shipping methods that contain **"International Shipping"** to **"Local Shipping"**.
 
-Alternatively, we can change the “Rename to” option to “Add message” to append a custom message to the shipping method name instead of fully renaming it.
+Alternatively, instead of **Rename to**, you can choose **Add prefix** or **Add suffix** to keep the original method name and add custom text before or after it.
+
+<Note>
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure **Fallback**:
+
+  - **Do nothing**: the rule does not apply any action when time/date or customer
+    location context cannot be determined.
+  - **Do this action**: the rule runs the fallback action you define instead of
+    the regular action.
+</Note>
 
 <img
   src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"

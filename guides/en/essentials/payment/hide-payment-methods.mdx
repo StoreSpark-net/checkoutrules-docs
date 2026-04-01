@@ -79,6 +79,26 @@ In the **action section**, you have three options to manage payment methods at c
   alt="Action Only Show These Payment Methods"
 />
 
+<Note>
+  For payment-method matching in this rule:
+
+  - Supported operators are **contains**, **does not contain**, **is**, and
+    **is not**.
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Cash*`, `*Pay*`,
+    `*Card`).
+  - If you add multiple method rows, they are evaluated as OR (any matching row
+    can apply).
+
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure fallback:
+
+  - **Do nothing**: the rule does not run any hide/show action when time/date
+    or customer location context cannot be determined.
+  - **Do this action**: the rule runs the fallback operation you define instead
+    of the regular hide/show operation.
+</Note>
+
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 
 <img src="/images/shared/save-rule.webp" alt="Rule Save" />

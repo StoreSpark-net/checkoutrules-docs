@@ -79,15 +79,24 @@ This gives you control over where the error message appears, helping you place i
   alt="Action Target Dropdown"
 />
 
-Next, on the same screen, select how the system should behave in the rare case, if the app fails or experiences a problem during checkout. This is a fallback option, and in most cases you would want to allow the customer to complete the checkout, which is the default option. You’ll find two options:
+Next, on the same screen, select how the system should behave if the app fails or experiences a runtime problem during checkout. In most cases, the safe default is to allow customers to complete checkout. You’ll find two options:
 
-- **Allow customer to complete checkout** : This ensures that even if the app encounters an issue, the customer can still proceed with their purchase without interruption.
+- **Allow customer to complete checkout**: even if the app encounters an issue, the customer can still proceed with purchase.
 
-- **Block customer from completing checkout**: This will stop the customer from checking out if the app fails, potentially preventing transactions.
+- **Block customer from completing checkout**: checkout is blocked if the app fails.
 
 Choose the option that aligns best with your desired customer experience and risk tolerance.
 
 <img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+<Note>
+  This setting is different from rule-level **Date Time / GeoIP fallback**:
+
+  - This page's setting controls what happens if the app itself fails at runtime.
+  - Date Time / GeoIP fallback controls what action to run when the app cannot
+    determine time/date or customer location context for conditions that use
+    those values.
+</Note>
 
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 

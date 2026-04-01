@@ -82,6 +82,16 @@ Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to picku
 
 Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
+<Note>
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure **Fallback**:
+
+  - **Do nothing**: the rule does not apply any action when time/date or customer
+    location context cannot be determined.
+  - **Do this action**: the rule runs the fallback action you define instead of
+    the regular action.
+</Note>
+
 <Warning>
   Shopify may show USPS-prefixed names at checkout. For method matching, remove
   the USPS prefix in your input. Example: use `Ground Advantage` instead of
