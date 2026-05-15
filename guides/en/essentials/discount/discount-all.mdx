@@ -83,9 +83,14 @@ Configure [Combinations](/guides/en/get-started/concepts#combinations).
 
 Configure [Strategy](/guides/en/get-started/concepts#strategy):
 
-- If only one discount type is enabled in a block, that type uses its strategy options.
-- If both order and product discounts are enabled, each can have separate strategy settings.
-- Shipping discount behavior uses **First**.
+- **Shipping discount**: always uses **First**.
+- **Order discount only**: **First** or **Maximum**.
+- **Product discount only**: **First**, **All**, or **Maximum**.
+- **Order + Product together**:
+  - You can keep one shared strategy for both using **Apply the same strategy to product and order discounts**.
+  - Or uncheck that option to configure separate strategies:
+    - Order: **First** or **Maximum**
+    - Product: **First**, **All**, or **Maximum**
 
 <img
   src="/images/essentials/discount/strategy-order-discount.webp"
@@ -164,6 +169,8 @@ Subscription deliveries can be configured when shipping discount is enabled:
 - Limit discount to first delivery
 - First delivery discounted + recurring deliveries free (limited)
 - First delivery discounted + all recurring deliveries free
+- In limited recurring mode, **Discount limit** is the number of free recurring
+  deliveries.
 
 ### Fallback behavior for Date Time / GeoIP conditions
 

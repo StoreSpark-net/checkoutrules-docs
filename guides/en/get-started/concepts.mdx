@@ -142,9 +142,14 @@ Controls whether the rule discount can be combined with product, order, or shipp
 
 Strategy controls how matching discount blocks are applied:
 
-- **Order discount strategy**: First or Maximum (depending on enabled discount type and rule context).
-- **Product discount strategy**: First, All, or Maximum (depending on enabled discount type and rule context).
+- **Order discount strategy**: First or Maximum.
+- **Product discount strategy**: First, All, or Maximum.
 - **Shipping discount behavior**: First.
+- When both **Order** and **Product** discounts are enabled in Discount all, you
+  can either:
+  - keep one shared strategy using **Apply the same strategy to product and
+    order discounts**
+  - or configure order and product strategies separately.
 
 Used in current discount flows (including **Discount all** and order/product discount configurations).
 

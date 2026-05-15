@@ -86,6 +86,26 @@ Or, if you selected **3 page checkout** in the previous step, you will need to c
   alt="Setup"
 />
 
+<Note>
+  In this rule, payment-method matching uses the same semantics as other
+  payment method rules:
+
+  - Supported operators are **contains**, **does not contain**, **is**, and
+    **is not**.
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Pay*`, `*Express*`,
+    `*Pay`).
+  - If you add multiple method rows, they are evaluated as OR (any matching row
+    can apply).
+
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure fallback:
+
+  - **Do nothing**: no express-hide action runs when time/date or location
+    context cannot be determined.
+  - **Do this action**: the configured fallback action runs instead.
+</Note>
+
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 
 <img src="/images/shared/save-rule.webp" alt="Rule Save" />
