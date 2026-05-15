@@ -11,6 +11,7 @@ import RepeatCustomer from "/snippets/condition-set/en/repeat-customer.mdx";
 import CustomerTotalPreviousSpent from "/snippets/condition-set/en/customer-total-previous-spent.mdx";
 import EmailAddress from "/snippets/condition-set/en/email-address.mdx";
 import CustomerTags from "/snippets/condition-set/en/customer-tags.mdx";
+import CustomerLocationUsingGeoIP from "/snippets/condition-set/en/customer-location-using-geoip.mdx";
 import OrderTotalAmount from "/snippets/condition-set/en/order-total-amount.mdx";
 import OrderSubtotalAmount from "/snippets/condition-set/en/order-subtotal-amount.mdx";
 import SKU from "/snippets/condition-set/en/sku.mdx";
@@ -96,6 +97,20 @@ When setting up any **Date Time** condition, additional setup is required. Follo
     Now, after creating the rule, empty your cart first. Then, add a new product to the cart and proceed to checkout to test if the rule is working as expected.
   </Step>
 </Steps>
+
+<Note>
+  For **Customer location (using GeoIP)** conditions, enable the
+  <strong>BeSure Embed Block</strong> and save your theme. Timezone selection is
+  not required for customer location.
+</Note>
+
+<Info>
+  In rule types that support it, when you use **Date Time** or **Customer
+  location (using GeoIP)** conditions, you can also configure **Fallback** in
+  the action area:
+  <br />
+  <strong>Do nothing</strong> or <strong>Do this action</strong>.
+</Info>
 
 ### Date
 
@@ -206,6 +221,7 @@ To set these conditions, select a day and time as the starting point and another
 <CustomerTotalPreviousSpent />
 <EmailAddress />
 <CustomerTags />
+<CustomerLocationUsingGeoIP />
 
 ## Order Details
 
