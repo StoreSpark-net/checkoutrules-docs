@@ -34,6 +34,13 @@ Then, You’ll be redirected to the **Select checkout rule type screen**. Choose
   alt="Select Validation Block Rule"
 />
 
+Then, in the **template selection**, choose an option based on your requirements. In most cases, you can choose the empty rule as a starting point and modify it to your needs. Even if you choose a prefilled template, you will be able to modify it later.
+
+<img
+  src="/images/essentials/validation/select-rule-template-validate-block-checkout.webp"
+  alt="Select Rule Template"
+/>
+
 Next, you’ll land on the **Create new validate/block checkout rule** screen, where you can configure your rule.
 
 ### Rule configuration
@@ -47,7 +54,7 @@ Here we are going to choose **Testing** status, so we can quickly test the rule 
   alt="Rule Configure 1"
 />
 
-Next, on the same screen, select at least one option under [Trigger this rule](/guides/en/get-started/concepts#trigger). You can choose **Interacting with the checkout**, which runs the rule while the customer is in the checkout process, and **Completing the checkout** which runs the rule when the customer finishes the checkout. By default, you should select both options to ensure the rule always runs when it needs to.
+Next, on the same screen, select the appropriate [Behavior](/guides/en/get-started/concepts#behavior) for the rule. You can choose to **Block checkout and show error message**, **Show warning message without blocking checkout**, or **Block checkout only when customer tries to complete order**, depending on how you want the rule to affect the checkout process.
 
 <Info>
   If you are unsure about what to choose for any rule settings, many times the
@@ -55,11 +62,11 @@ Next, on the same screen, select at least one option under [Trigger this rule](/
   default option and modify it later.
 </Info>
 
-<img src="/images/concepts/trigger.webp" alt="Trigger" />
+<img src="/images/concepts/behavior.webp" alt="Behavior" />
 
 Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
-> As an example, here we are using the default **Condition set 1**, setting the rule to trigger when the **"Address line 2 (Apartment, suite, etc)"** field is **empty**, and configuring it to block checkout. The error message **"Enter complete address"** will be displayed under the **Address line 2** field at the checkout, requiring customers to provide their complete address before proceeding.
+> As an example, here we are using the default **Condition set 1**, setting the rule to trigger when the **"Address line 2 (Apartment, suite, etc)"** field is **empty**, and configuring it to block checkout. The error message **"Enter complete address"** will be displayed under the **Shipping address line 2** field at the checkout, requiring customers to provide their complete address before proceeding.
 
 <img
   src="/images/essentials/validation/condition-set-validation-block-rule.webp"
@@ -70,7 +77,7 @@ In the **Action** section, you can choose the **target location** where your cus
 
 - Under the **General** category, you can select **"Top of the checkout page"** to display the action at the very top.
 
-- Under **Below these Input fields**, you can select to show the action below specific input fields, such as: Email, Customer phone number, Country, First name, Last name, Company, Address (Address line 1), Apartment, City, Province / state, Zip code / Postal code, Shipping phone number.
+- Under **Below these Input fields**, you can select to show the action below specific input fields, such as: Email, Customer phone number, Shipping country, Shipping first name, Shipping last name, Shipping company, Shipping address (Address line 1), Shipping address apartment, suite, etc (Address line 2), Shipping city, Shipping province / state, Shipping zip code / Postal code, Shipping phone number, Billing country, Billing first name, Billing last name, Billing company, Billing address (Address line 1), Billing address apartment, suite, etc (Address line 2), Billing city, Billing province / state, Billing zip code / postal code, and Billing phone number.
 
 This gives you control over where the error message appears, helping you place it in the most relevant section of the checkout form.
 
@@ -114,7 +121,7 @@ Since, the rule is set to testing status, we have to use `test@testing.com` as t
   every keystroke.
 </Note>
 
-After leaving the Address line 2 (Apartment, suite, etc) field **empty**, the checkout rule runs and blocks the checkout process. We can verify that the error message **"Enter complete address"** is displayed under the **Address line 2** field at the checkout, as shown below.
+After leaving the Address line 2 (Apartment, suite, etc) field **empty**, the checkout rule runs and blocks the checkout process. We can verify that the error message **"Enter complete address"** is displayed under the **Shipping address line 2** field at the checkout, as shown below.
 
 <img
   src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"
