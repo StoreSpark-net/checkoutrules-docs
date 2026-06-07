@@ -1,0 +1,124 @@
+---
+title: "拒绝折扣码"
+description: "根据给定条件不允许使用某些折扣码。"
+icon: "badge-percent"
+---
+
+## 规则概述
+
+此规则允许您根据定义的条件在结账时拒绝某些折扣码。您可以使用订单总金额、客户标签、收货地址、产品标签等条件来阻止特定折扣码被应用。
+
+当客户输入符合配置条件的折扣码时，规则会阻止该码被应用，并在结账时显示自定义拒绝消息。这有助于执行折扣政策、保护利润，并防止折扣码在不应适用的情况下被使用。
+
+## 示例配置
+
+以下步骤展示了如何使用应用程序创建和配置 **拒绝折扣码** 规则。
+
+### 创建新规则
+
+在您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用) 中打开应用。在侧边栏中，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
+
+然后，您将被重定向到 **选择结账规则类型界面**。选择 _类别 "折扣" → 选择结账规则类型 "拒绝折扣码" → 点击 “选择规则”_。
+
+<img
+  src="/images/essentials/discount/select-reject-discount-codes.webp"
+  alt="选择拒绝折扣码"
+/>
+
+接下来，您将进入 **创建新订单折扣规则** 界面，在此配置您的规则。
+
+### 规则配置
+
+要配置规则，首先可以选填一个名称，例如 "拒绝折扣码"，以描述其功能。然后，选择规则的 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活、停用或已计划。
+
+在此示例中，我们将选择 **测试中** 地位，以便快速测试规则而不影响实际客户的结账。
+
+<img
+  src="/images/essentials/discount/select-rule-status-reject-discount-codes.webp"
+  alt="选择拒绝折扣码规则地位"
+/>
+
+作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制激活规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以设置规则开始的时间。可选勾选 **设置结束日期**，选择规则自动停用的结束日期和时间。
+
+> 如果在规则设置为 **激活** 时选择了计划日期，地位将变为 **已计划** 而非激活。规则将从开始日期和时间运行至结束日期和时间（如已设置结束日期）。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="拒绝折扣码计划"
+/>
+
+<Note>在此示例中，我们不使用计划，并保持 **测试中** 地位。</Note>
+
+接下来，在同一界面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此订单折扣如何与**其他折扣**交互。您可以选择允许其与以下折扣组合使用：
+
+- **产品折扣** – 允许订单折扣与任何产品级折扣一起使用。请确保产品折扣也配置为可与订单折扣组合。
+
+- **订单折扣** – 允许多个订单级折扣同时应用。请确保其他订单折扣也设置为可与订单折扣组合。
+
+- **运费折扣** – 允许订单折扣与运费级折扣一起使用。请确认运费折扣也设置为可与订单折扣组合。
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="组合"
+/>
+
+接下来，在同一界面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+
+> 作为示例，此处我们选择默认条件集 1。然后将规则设置为在 **订单小计金额** **大于或等于** **300** 时运行，并配置为拒绝折扣码 **"SAVE10"**。当客户尝试应用时，拒绝消息 **"This discount code cannot be used on this order"** 将在结账时显示。
+
+<img
+  src="/images/essentials/discount/condition-reject-discount-codes.webp"
+  alt="拒绝折扣码条件"
+/>
+
+此外，您可以通过点击 **添加翻译** 并选择要翻译消息的语言，为拒绝消息添加多种语言的可选翻译。主拒绝消息将成为 **默认消息**，当没有与客户语言匹配的翻译时，将在结账时显示。
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="拒绝折扣码消息翻译"
+/>
+
+最后，点击顶部的 <b>保存</b> 按钮以创建并保存您的规则。
+
+<img src="/images/shared/save-rule.webp" alt="保存规则" />
+
+## 测试规则
+
+由于规则设置为测试状态，我们需要使用 `test@testing.com` 作为电子邮件地址，而不是实际电子邮件，才能在结账时运行规则。
+
+<Warning>
+  下图显示了使用测试电子邮件地址 <b>之前</b>
+  的结账页面。请注意，折扣码尚未被拒绝。
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-reject-discount-codes.webp"
+  alt="规则应用前"
+/>
+
+设置电子邮件后，当 **订单小计金额** **大于或等于** **300** 时，结账规则会运行，并在客户尝试应用折扣码 **"SAVE10"** 时将其拒绝。如下所示，我们可以验证拒绝消息 **"This discount code cannot be used on this order"** 在结账时可见。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes.webp"
+  alt="规则应用后"
+/>
+
+## 激活规则
+
+测试完成后，我们可以激活规则，使其开始对实际客户的结账进行更改。只有已激活的规则才能对所有客户的结账进行更改。
+
+点击侧边栏中的 **规则** 查看所有规则。选择要激活的规则，然后点击 **激活** 按钮进行激活。
+
+<Warning>
+  规则激活仅在付费套餐中可用。如果您尚未升级套餐，请按照
+  [此处](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
+</Warning>
+<img
+  src="/images/essentials/discount/activate-reject-discount-codes.webp"
+  alt="激活规则"
+/>
+
+## 限制
+
+- 此规则与基于草稿订单的结账以及使用草稿订单结账的应用不兼容。
+- 如果您的结账 URL 包含 `.../checkouts/do/...`，`do` 表示草稿订单。此规则不会在该结账上运行。

@@ -1,0 +1,130 @@
+---
+title: "Rechazar códigos de descuento"
+description: "No permitir ciertos códigos de descuento según las condiciones dadas."
+icon: "badge-percent"
+---
+
+## Visión general de la regla
+
+Esta regla te permite rechazar ciertos códigos de descuento en el checkout según las condiciones definidas. Puedes bloquear códigos de descuento específicos usando criterios como el monto total del pedido, etiquetas de clientes, dirección de envío, etiquetas de productos, etc.
+
+Cuando un cliente ingresa un código de descuento que coincide con las condiciones configuradas, la regla impide que se aplique el código y muestra un mensaje de rechazo personalizado en el checkout. Esto ayuda a hacer cumplir las políticas de descuento, proteger márgenes y evitar que los códigos de descuento se usen en situaciones donde no deberían aplicarse.
+
+## Configuración de ejemplo
+
+Los siguientes pasos muestran cómo crear y configurar una regla **Rechazar códigos de descuento** usando la aplicación.
+
+### Crear una nueva regla
+
+Desde tu [admin de Shopify](/guides/es/get-started/installation#ir-a-la-aplicación), abre la aplicación. En la barra lateral, ve a la sección [Reglas](/guides/es/get-started/quickstart#crear-una-regla-de-ejemplo) y haz clic en _"Crear Regla"_.
+
+Luego, serás redirigido a la pantalla **Seleccionar tipo de regla de checkout**. Elige _categoría "Descuento" → selecciona el tipo de regla de checkout "Rechazar códigos de descuento" → haz clic en "Seleccionar regla"_.
+
+<img
+  src="/images/essentials/discount/select-reject-discount-codes.webp"
+  alt="Seleccionar Rechazar códigos de descuento"
+/>
+
+A continuación, llegarás a la pantalla **Crear nueva regla de descuento de pedido**, donde podrás configurar tu regla.
+
+### Configuración de la regla
+
+Para configurar la regla, primero puedes agregar opcionalmente un nombre como "Rechazar códigos de descuento" para describir lo que hace. Luego, selecciona el [estado](/guides/es/get-started/concepts#estado) de la regla: Prueba, Activo, Desactivado o Programado.
+
+Aquí, como ejemplo, vamos a elegir el estado **Prueba**, para que podamos probar rápidamente la regla sin afectar el checkout de clientes reales.
+
+<img
+  src="/images/essentials/discount/select-rule-status-reject-discount-codes.webp"
+  alt="Seleccionar estado de la regla Rechazar códigos de descuento"
+/>
+
+Como parte de la configuración del [estado](/guides/es/get-started/concepts#estado), la sección opcional **Programación** te permite controlar cuándo comienza y termina una regla activa. Selecciona una **Fecha de inicio** y **Hora de inicio** para cuando la regla deba comenzar. Opcionalmente, marca **Establecer fecha de finalización** para elegir una fecha y hora de finalización cuando la regla deba desactivarse automáticamente.
+
+> Si seleccionas fechas de programación mientras la regla está configurada como **Activo**, el estado cambia a **Programado** en lugar de Activo. La regla se ejecutará desde la fecha y hora de inicio hasta la fecha y hora de finalización, si se establece una.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Programación Rechazar códigos de descuento"
+/>
+
+<Note>
+  Para este ejemplo, no estamos usando una programación y mantenemos el estado
+  **Prueba**.
+</Note>
+
+A continuación, en la misma pantalla, configura los ajustes de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento de pedido interactúa con **otros descuentos**. Puedes elegir permitir que se combine con:
+
+- **Descuentos de producto** – Esto permite que el descuento de pedido se use junto con descuentos a nivel de producto. Asegúrate de que los descuentos de producto también estén configurados para combinarse con descuentos de pedido.
+
+- **Descuentos de pedido** – Esto permite que se apliquen varios descuentos a nivel de pedido juntos. Asegúrate de que los otros descuentos de pedido también estén configurados para combinarse con descuentos de pedido.
+
+- **Descuentos de envío** – Esto permite que el descuento de pedido se use junto con descuentos a nivel de envío. Confirma que los descuentos de envío también estén configurados para combinarse con descuentos de pedido.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinaciones"
+/>
+
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#conjunto-de-condiciones), [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes.
+
+> Como ejemplo, aquí vamos a elegir el conjunto de condiciones 1 predeterminado. Luego estamos configurando la regla para que se ejecute cuando el **Monto del subtotal del pedido** sea **mayor o igual a** **300**, y la configuramos para rechazar el código de descuento **"SAVE10"**. El mensaje de rechazo **"This discount code cannot be used on this order"** se mostrará a los clientes en el checkout cuando intenten aplicarlo.
+
+<img
+  src="/images/essentials/discount/condition-reject-discount-codes.webp"
+  alt="Condición Rechazar códigos de descuento"
+/>
+
+Además, puedes agregar opcionalmente traducciones para el mensaje de rechazo en varios idiomas haciendo clic en **Agregar traducción** y luego seleccionando los idiomas en los que deseas traducir el mensaje. El mensaje de rechazo principal se convierte en el **mensaje predeterminado** y se muestra en el checkout cuando ninguna traducción coincide con el idioma del cliente.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Traducciones de mensaje Rechazar códigos de descuento"
+/>
+
+Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
+
+<img src="/images/shared/save-rule.webp" alt="Guardar regla" />
+
+## Probar la regla
+
+Como la regla está configurada en estado de prueba, debemos usar `test@testing.com` como correo electrónico, en lugar del correo real, para ejecutar la regla en el checkout.
+
+<Warning>
+  La imagen a continuación muestra la página de checkout <b>antes</b> de usar la
+  dirección de correo de prueba. Ten en cuenta que el código de descuento aún no
+  ha sido rechazado.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-reject-discount-codes.webp"
+  alt="Antes de aplicar la regla"
+/>
+
+Después de establecer el correo electrónico, la regla de checkout se ejecuta cuando el **Monto del subtotal del pedido** es **mayor o igual a** **300** y rechaza el código de descuento **"SAVE10"** cuando el cliente intenta aplicarlo. Podemos verificar que el mensaje de rechazo **"This discount code cannot be used on this order"** es visible en el checkout, como se muestra a continuación.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes.webp"
+  alt="Después de aplicar la regla"
+/>
+
+## Activar la regla
+
+Una vez completadas las pruebas, podemos activar la regla para que comience a realizar cambios en el checkout para clientes reales. Solo las reglas activadas pueden realizar cambios en el checkout para todos los clientes.
+
+Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona la regla que deseas activar y luego haz clic en el botón **Activar** para activarla.
+
+<Warning>
+  La activación de reglas solo está disponible en planes de pago. Si aún no has
+  actualizado tu plan, sigue las instrucciones
+  [aquí](/guides/es/get-started/installation#actualizar-tu-plan) para
+  actualizarlo.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-reject-discount-codes.webp"
+  alt="Activar la regla"
+/>
+
+## Limitaciones
+
+- Esta regla no es compatible con checkouts basados en pedidos preliminares ni con aplicaciones que usan checkout de pedidos preliminares.
+- Si la URL de tu checkout incluye `.../checkouts/do/...`, `do` significa pedido preliminar. Esta regla no se ejecutará en ese checkout.

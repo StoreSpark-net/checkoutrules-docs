@@ -1,0 +1,130 @@
+---
+title: "Rejeter les codes de réduction"
+description: "Ne pas autoriser certains codes de réduction selon les conditions données."
+icon: "badge-percent"
+---
+
+## Aperçu de la règle
+
+Cette règle vous permet de rejeter certains codes de réduction au passage en caisse en fonction des conditions définies. Vous pouvez bloquer l’application de codes de réduction spécifiques en utilisant des critères tels que le montant total de la commande, les tags clients, l’adresse de livraison, les tags produits, etc.
+
+Lorsqu’un client saisit un code de réduction qui correspond aux conditions configurées, la règle empêche l’application du code et affiche un message de rejet personnalisé au passage en caisse. Cela permet d’appliquer les politiques de réduction, de protéger les marges et d’empêcher l’utilisation de codes de réduction dans des situations où ils ne devraient pas s’appliquer.
+
+## Configuration d’exemple
+
+Les étapes suivantes montrent comment créer et configurer une règle **Rejeter les codes de réduction** à l’aide de l’application.
+
+### Créer une nouvelle règle
+
+Depuis votre [administration Shopify](/guides/fr/get-started/installation#accéder-à-l’application), ouvrez l’application. Dans la barre latérale, allez à la section [Règles](/guides/fr/get-started/quickstart#créer-une-règle-d’exemple) et cliquez sur _« Créer une règle »_.
+
+Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle de passage en caisse**. Choisissez _catégorie « Remise » → sélectionnez le type de règle « Rejeter les codes de réduction » → cliquez sur « Sélectionner la règle »_.
+
+<img
+  src="/images/essentials/discount/select-reject-discount-codes.webp"
+  alt="Sélectionner Rejeter les codes de réduction"
+/>
+
+Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de remise sur commande**, où vous pourrez configurer votre règle.
+
+### Configuration de la règle
+
+Pour configurer la règle, commencez par ajouter éventuellement un nom tel que « Rejeter les codes de réduction » pour décrire ce qu’elle fait. Ensuite, sélectionnez le [statut](/guides/fr/get-started/concepts#statut) de la règle : Test, Actif, Désactivé ou Planifié.
+
+Ici, à titre d’exemple, nous allons choisir le statut **Test**, afin de tester rapidement la règle sans affecter le passage en caisse des clients réels.
+
+<img
+  src="/images/essentials/discount/select-rule-status-reject-discount-codes.webp"
+  alt="Sélectionner le statut de la règle Rejeter les codes de réduction"
+/>
+
+Dans le cadre des paramètres de [statut](/guides/fr/get-started/concepts#statut), la section optionnelle **Planification** vous permet de contrôler quand une règle active commence et s’arrête. Sélectionnez une **Date de début** et une **Heure de début** pour le moment où la règle doit commencer. Facultativement, cochez **Définir une date de fin** pour choisir une date et une heure de fin lorsque la règle doit se désactiver automatiquement.
+
+> Si vous sélectionnez des dates de planification alors que la règle est définie sur **Actif**, le statut devient **Planifié** au lieu d’Actif. La règle s’exécutera de la date et de l’heure de début jusqu’à la date et l’heure de fin, si une date de fin est définie.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Planification Rejeter les codes de réduction"
+/>
+
+<Note>
+  Pour cet exemple, nous n’utilisons pas de planification et conservons le
+  statut **Test**.
+</Note>
+
+Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette remise sur commande interagit avec **d’autres remises**. Vous pouvez autoriser sa combinaison avec :
+
+- **Remises produit** – Cela permet d’utiliser la remise de commande avec des remises au niveau produit. Assurez-vous que les remises produit sont également configurées pour se combiner avec les remises de commande.
+
+- **Remises de commande** – Cela permet d’appliquer plusieurs remises au niveau de la commande en même temps. Assurez-vous que les autres remises de commande autorisent également la combinaison.
+
+- **Remises d’expédition** – Cela permet d’utiliser la remise de commande avec des remises au niveau de l’expédition. Vérifiez que les remises d’expédition autorisent aussi la combinaison avec les remises de commande.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Combinaisons"
+/>
+
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions), la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes.
+
+> Par exemple, ici nous choisissons l’ensemble de conditions 1 par défaut. Ensuite, nous définissons la règle pour qu’elle s’exécute lorsque le **Montant du sous-total de la commande** est **supérieur ou égal à** **300**, et nous la configurons pour rejeter le code de réduction **"SAVE10"**. Le message de rejet **"This discount code cannot be used on this order"** sera affiché aux clients au passage en caisse lorsqu’ils essaieront de l’appliquer.
+
+<img
+  src="/images/essentials/discount/condition-reject-discount-codes.webp"
+  alt="Condition Rejeter les codes de réduction"
+/>
+
+De plus, vous pouvez éventuellement ajouter des traductions pour le message de rejet en plusieurs langues en cliquant sur **Ajouter une traduction**, puis en sélectionnant les langues dans lesquelles vous souhaitez traduire le message. Le message de rejet principal devient le **message par défaut** et est affiché au passage en caisse lorsqu’aucune traduction ne correspond à la langue du client.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Traductions de message Rejeter les codes de réduction"
+/>
+
+Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et enregistrer votre règle.
+
+<img src="/images/shared/save-rule.webp" alt="Enregistrer la règle" />
+
+## Tester la règle
+
+Comme la règle est définie au statut Test, nous devons utiliser `test@testing.com` comme e-mail, au lieu de l’adresse réelle, pour exécuter la règle au passage en caisse.
+
+<Warning>
+  L’image ci-dessous montre la page de passage en caisse <b>avant</b> que
+  l’e-mail de test ne soit utilisé. Veuillez noter que le code de réduction n’a
+  pas encore été rejeté.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-reject-discount-codes.webp"
+  alt="Avant application de la règle"
+/>
+
+Après avoir défini l’e-mail, la règle de passage en caisse s’exécute lorsque le **Montant du sous-total de la commande** est **supérieur ou égal à** **300** et rejette le code de réduction **"SAVE10"** lorsque le client essaie de l’appliquer. Nous pouvons vérifier que le message de rejet **"This discount code cannot be used on this order"** est visible au passage en caisse, comme montré ci-dessous.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes.webp"
+  alt="Après application de la règle"
+/>
+
+## Activer la règle
+
+Une fois les tests terminés, nous pouvons activer la règle afin qu’elle commence à apporter des modifications au passage en caisse des clients réels. Seules les règles activées peuvent modifier le passage en caisse de tous les clients.
+
+Cliquez sur **Règles** dans la barre latérale pour voir toutes les règles. Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton **Activer**.
+
+<Warning>
+  L’activation des règles n’est disponible que dans les forfaits payants. Si
+  vous n’avez pas encore mis à niveau votre forfait, suivez les instructions
+  [ici](/guides/fr/get-started/installation#mettre-à-niveau-votre-forfait) pour
+  le mettre à niveau.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-reject-discount-codes.webp"
+  alt="Activer la règle"
+/>
+
+## Limitations
+
+- Cette règle n’est pas compatible avec les checkouts de commandes provisoires ni avec les applications qui utilisent ce type de checkout.
+- Si l’URL de votre checkout contient `…/checkouts/do/…`, `do` signifie « commande provisoire ». Cette règle ne s’appliquera pas à ce checkout.

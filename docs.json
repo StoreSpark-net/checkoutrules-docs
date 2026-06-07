@@ -106,6 +106,7 @@
                   "guides/en/essentials/discount/discount-order-amount",
                   "guides/en/essentials/discount/discount-product-amount",
                   "guides/en/essentials/discount/discount-shipping-methods",
+                  "guides/en/essentials/discount/reject-discount-codes",
                   "guides/en/essentials/discount/discount-all"
                 ]
               }
@@ -190,6 +191,7 @@
                   "guides/es/essentials/discount/discount-order-amount",
                   "guides/es/essentials/discount/discount-product-amount",
                   "guides/es/essentials/discount/discount-shipping-methods",
+                  "guides/es/essentials/discount/reject-discount-codes",
                   "guides/es/essentials/discount/discount-all"
                 ]
               }
@@ -274,6 +276,7 @@
                   "guides/fr/essentials/discount/discount-order-amount",
                   "guides/fr/essentials/discount/discount-product-amount",
                   "guides/fr/essentials/discount/discount-shipping-methods",
+                  "guides/fr/essentials/discount/reject-discount-codes",
                   "guides/fr/essentials/discount/discount-all"
                 ]
               }
@@ -358,6 +361,7 @@
                   "guides/de/essentials/discount/discount-order-amount",
                   "guides/de/essentials/discount/discount-product-amount",
                   "guides/de/essentials/discount/discount-shipping-methods",
+                  "guides/de/essentials/discount/reject-discount-codes",
                   "guides/de/essentials/discount/discount-all"
                 ]
               }
@@ -442,6 +446,7 @@
                   "guides/ja/essentials/discount/discount-order-amount",
                   "guides/ja/essentials/discount/discount-product-amount",
                   "guides/ja/essentials/discount/discount-shipping-methods",
+                  "guides/ja/essentials/discount/reject-discount-codes",
                   "guides/ja/essentials/discount/discount-all"
                 ]
               }
@@ -526,6 +531,7 @@
                   "guides/zh/essentials/discount/discount-order-amount",
                   "guides/zh/essentials/discount/discount-product-amount",
                   "guides/zh/essentials/discount/discount-shipping-methods",
+                  "guides/zh/essentials/discount/reject-discount-codes",
                   "guides/zh/essentials/discount/discount-all"
                 ]
               }
