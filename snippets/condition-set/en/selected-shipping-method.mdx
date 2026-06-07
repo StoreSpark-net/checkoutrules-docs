@@ -2,13 +2,18 @@
 
 This condition checks the customer’s **selected shipping method** against specific criteria, based on one of the following sub-conditions:
 
-- **contains** (The selected shipping method includes the entered value)
-- **does not contain** (The selected shipping method does not include the entered value)
+- **contains** (Matches when the selected shipping method includes the entered value as partial text)
+- **does not contain** (Matches when the selected shipping method does not include the entered value as partial text)
 
-- **is** (The selected shipping method exactly matches the entered value)
-- **is not** (The selected shipping method does not exactly match the entered value)
+- **is** (Matches exact text, or wildcard pattern if `*` is used)
+- **is not** (Matches when exact text or wildcard pattern does not match)
 
 To set these conditions, enter the value in the field and choose the appropriate comparison from the dropdown.
+
+<Note>
+  Method-name matching is case-insensitive. You can use `*` wildcard in input
+  (for example: `Standard*`, `*Express*`, `*Pickup`).
+</Note>
 
 > For example, `contains Express` → Matches any selected shipping method that includes “Express”.
 

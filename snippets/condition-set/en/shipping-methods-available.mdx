@@ -12,8 +12,9 @@ Used to check if the given shipping methods are actually available on the checko
 For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
 
 <Note>
-  Use * wildcard to match partial shipping method names. For example, Stand*
-  will match Standard, standard shipping etc.
+  Shipping method-name matching is case-insensitive. Use `*` wildcard to match
+  partial names. For example, `Stand*` will match `Standard`, `standard
+  shipping`, etc.
 </Note>
 
 > For example, `Has any of these values: Express Delivery, Standard Shipping` → Matches if at least one of the selected shipping methods is available.

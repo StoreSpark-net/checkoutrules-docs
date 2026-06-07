@@ -79,6 +79,26 @@ In the action section, you have two options to choose from:
   alt="Action Fixed Ranking Reorder"
 />
 
+<Note>
+  For payment-method matching in **Fixed ranking**:
+
+  - Supported operators are **contains**, **does not contain**, **is**, and
+    **is not**.
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Cash*`, `*Pay*`,
+    `*Card`).
+  - If you add multiple method rows, they are evaluated as OR (any matching row
+    can apply).
+
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure fallback:
+
+  - **Do nothing**: the rule does not run any reorder action when time/date or
+    customer location context cannot be determined.
+  - **Do this action**: the rule runs the fallback operation you define instead
+    of the regular reorder operation.
+</Note>
+
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 
 <img src="/images/shared/save-rule.webp" alt="Rule Save" />
@@ -114,7 +134,7 @@ To do this, as an example, you can use the **Fixed ranking** option, and set the
   Please note, to test this, you will need to activate the rule, and then clear
   out the cookies/cache of the browser, so the default preselected payment
   method is not your previously selected payment method (Shopify can save this
-  selection in cache for your browser). Or you can use a different brwoser as
+  selection in cache for your browser). Or you can use a different browser as
   well to see what your customers will see.
 </Warning>
 

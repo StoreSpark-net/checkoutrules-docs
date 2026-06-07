@@ -19,6 +19,22 @@ This rule allows you to automatically hide specific shipping or pickup methods a
 
 This helps streamline the checkout experience by removing irrelevant or unavailable delivery options, reducing confusion and improving conversion rates.
 
+## Supported operations
+
+- **Hide these shipping methods**: hides only the methods that match your method-name rules.
+- **Only show these shipping methods**: keeps only the matched methods and hides the rest.
+- **Hide all shipping methods**: hides all shipping methods whenever the condition block matches.
+
+<Note>
+  For method-name matching in this rule:
+
+  - Matching is case-insensitive.
+  - `*` wildcard is supported in user input (for example: `Standard*`, `*Express*`, `*Pickup`).
+  - **contains** / **does not contain** use partial matching.
+  - **is** / **is not** support exact text and wildcard patterns.
+  - If you add multiple method rows, they are evaluated as OR (any matching row can apply).
+</Note>
+
 ## Sample configuration
 
 The following steps show how to create and configure a **Hide Shipping Methods** rule using the app.
@@ -56,15 +72,31 @@ Here we are going to choose **Testing** status, so we can quickly test the rule 
 
 Next, on the same screen, select the appropriate [Target](/guides/en/get-started/concepts#target) to define where the rule should apply. We can choose _"Ship"_ to hide shipping methods shown after a **shipping address** is entered. Then, we can select:
 
-- **All shipments except subscriptions** – applies the rule only to regular shipments and skips any orders containing subscription products. This is useful, as Shopify can automatically choose the cheapest shipping method for subscription products and hide all other shipping methods. Hiding this cheapest shipping method can cause "no shipping available" error. This is why we recommend using this option if you have subscription products to avoid this error.
+- **All shipments except subscriptions** – applies the rule to non-subscription shipments (including split shipments) while ignoring subscription shipment(s). This is useful because Shopify can automatically choose the cheapest shipping method for subscription shipments and hide others. Hiding that cheapest method can cause a "no shipping available" error.
 
-- **All shipments** – applies the rule to every order, including those with subscription items.
+- **All shipments** – applies the rule to all shipments, including split shipments and subscription shipment(s).
 
 Or, we can choose _"Pick Up"_ if we want the rule to apply specifically to pickup methods shown when a customer selects **"Pickup in store"** during checkout.
 
 <img src="/images/essentials/shipping/select-target.webp" alt="Select Target" />
 
 Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
+
+<Note>
+  If your rule uses **Date Time** or **Customer location (using GeoIP)**
+  conditions, configure **Fallback**:
+
+  - **Do nothing**: the rule does not apply any action when time/date or customer
+    location context cannot be determined.
+  - **Do this action**: the rule runs the fallback action you define instead of
+    the regular action.
+</Note>
+
+<Warning>
+  Shopify may show USPS-prefixed names at checkout. For method matching, remove
+  the USPS prefix in your input. Example: use `Ground Advantage` instead of
+  `USPS Ground Advantage`.
+</Warning>
 
 > As an example, here we are using the default **Condition set 1**, setting the rule to run **Always**, and configuring it to **hide shipping methods** that contain **"Express Worldwide"**.
 

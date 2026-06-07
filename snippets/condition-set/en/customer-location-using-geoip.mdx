@@ -1,0 +1,19 @@
+### Customer location (using GeoIP)
+
+This condition checks the customer location detected from checkout context (GeoIP), and compares it against the values you provide.
+
+It becomes true based on one of the following sub-conditions:
+
+- **Has any of these values**
+- **Does not have any of these values**
+- **Has any other value besides these values**
+- **Does not have any other value besides these values**
+
+For these options, enter one or more values to match and separate multiple values with commas.
+
+<Note>
+  Customer-location matching is case-insensitive. You can use `*` wildcard in
+  input for partial matching (for example: `United*`, `*States`, `*land*`).
+</Note>
+
+> **Example:** `Has any of these values: US, CA` → Matches when detected customer location is US or CA.
