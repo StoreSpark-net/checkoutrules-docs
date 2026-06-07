@@ -1,0 +1,130 @@
+---
+title: "Rabattcodes ablehnen"
+description: "Bestimmte Rabattcodes basierend auf den angegebenen Bedingungen nicht zulassen."
+icon: "badge-percent"
+---
+
+## Regelübersicht
+
+Diese Regel ermöglicht es, bestimmte Rabattcodes beim Checkout basierend auf den definierten Bedingungen abzulehnen. Sie können das Anwenden bestimmter Rabattcodes blockieren, indem Sie Kriterien wie Bestellsumme, Kundentags, Versandadresse, Produkt-Tags usw. verwenden.
+
+Wenn ein Kunde einen Rabattcode eingibt, der den konfigurierten Bedingungen entspricht, verhindert die Regel die Anwendung des Codes und zeigt eine benutzerdefinierte Ablehnungsnachricht beim Checkout an. Dies hilft, Rabattrichtlinien durchzusetzen, Margen zu schützen und zu verhindern, dass Rabattcodes in Situationen verwendet werden, in denen sie nicht gelten sollten.
+
+## Beispielkonfiguration
+
+Die folgenden Schritte zeigen, wie Sie mithilfe der App eine **Rabattcodes ablehnen**-Regel erstellen und konfigurieren.
+
+### Neue Regel erstellen
+
+Öffnen Sie die App in Ihrem [Shopify-Adminbereich](/guides/de/get-started/installation#app-öffnen). Gehen Sie in der Seitenleiste zum Abschnitt [Regeln](/guides/de/get-started/quickstart#erstellen-einer-beispielregel) und klicken Sie auf _"Regel erstellen"_.
+
+Dann werden Sie zum Bildschirm **Checkout-Regeltyp auswählen** weitergeleitet. Wählen Sie _Kategorie "Rabatt" → Checkout-Regeltyp "Rabattcodes ablehnen" → Klicken Sie auf „Regel auswählen“_.
+
+<img
+  src="/images/essentials/discount/select-reject-discount-codes.webp"
+  alt="Rabattcodes ablehnen auswählen"
+/>
+
+Als Nächstes gelangen Sie zum Bildschirm **Neue Bestellrabattregel erstellen**, auf dem Sie Ihre Regel konfigurieren können.
+
+### Regelkonfiguration
+
+Um die Regel zu konfigurieren, fügen Sie zunächst optional einen Namen wie "Rabattcodes ablehnen" hinzu, um zu beschreiben, was sie tut. Wählen Sie dann den [Status](/guides/de/get-started/concepts#status) der Regel: Testen, Aktiv, Deaktiviert oder Geplant.
+
+Hier wählen wir als Beispiel den Status **Testen**, damit wir die Regel schnell testen können, ohne den Checkout für echte Kunden zu beeinflussen.
+
+<img
+  src="/images/essentials/discount/select-rule-status-reject-discount-codes.webp"
+  alt="Regelstatus Rabattcodes ablehnen auswählen"
+/>
+
+Als Teil der [Status](/guides/de/get-started/concepts#status)-Einstellungen ermöglicht Ihnen der optionale Abschnitt **Zeitplan**, zu steuern, wann eine aktive Regel beginnt und endet. Wählen Sie ein **Startdatum** und eine **Startzeit** für den Beginn der Regel. Optional können Sie **Enddatum festlegen** aktivieren, um ein Enddatum und eine Endzeit auszuwählen, zu der die Regel automatisch deaktiviert werden soll.
+
+> Wenn Sie Zeitplandaten auswählen, während die Regel auf **Aktiv** gesetzt ist, wird der Status **Geplant** anstelle von Aktiv. Die Regel wird vom Startdatum und der Startzeit bis zum Enddatum und der Endzeit ausgeführt, sofern ein Enddatum festgelegt ist.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Zeitplan Rabattcodes ablehnen"
+/>
+
+<Note>
+  In diesem Beispiel verwenden wir keinen Zeitplan und behalten den Status
+  **Testen** bei.
+</Note>
+
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Kombinationen](/guides/de/get-started/concepts#kombinationen)-Einstellungen, um zu steuern, wie dieser Bestellrabatt mit **anderen Rabatten** interagiert. Sie können zulassen, dass er kombiniert wird mit:
+
+- **Produktrabatten** – Dadurch kann der Bestellrabatt zusammen mit produktspezifischen Rabatten verwendet werden. Stellen Sie sicher, dass Produktrabatte auch so konfiguriert sind, dass sie mit Bestellrabatten kombiniert werden können.
+
+- **Bestellrabatten** – Dadurch können mehrere Bestellrabatte gleichzeitig angewendet werden. Stellen Sie sicher, dass die anderen Bestellrabatte ebenfalls so eingestellt sind, dass sie mit Bestellrabatten kombiniert werden.
+
+- **Versandrabatten** – Dadurch kann der Bestellrabatt zusammen mit Rabatten auf Versandebene verwendet werden. Bestätigen Sie, dass Versandrabatte ebenfalls so eingestellt sind, dass sie mit Bestellrabatten kombiniert werden.
+
+<img
+  src="/images/essentials/discount/combinations-discount-order-amount.webp"
+  alt="Kombinationen"
+/>
+
+Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#bedingungsset), die [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktion](/guides/de/get-started/concepts#aktion-das-“was”).
+
+> Als Beispiel wählen wir hier das standardmäßige Bedingungsset 1. Dann stellen wir die Regel so ein, dass sie ausgeführt wird, wenn der **Bestell-Zwischensummenbetrag** **größer oder gleich** **300** ist, und konfigurieren sie so, dass der Rabattcode **"SAVE10"** abgelehnt wird. Die Ablehnungsnachricht **"This discount code cannot be used on this order"** wird Kunden beim Checkout angezeigt, wenn sie versuchen, ihn anzuwenden.
+
+<img
+  src="/images/essentials/discount/condition-reject-discount-codes.webp"
+  alt="Bedingung Rabattcodes ablehnen"
+/>
+
+Außerdem können Sie optional Übersetzungen für die Ablehnungsnachricht in mehreren Sprachen hinzufügen, indem Sie auf **Übersetzung hinzufügen** klicken und dann die Sprachen auswählen, in die Sie die Nachricht übersetzen möchten. Die Hauptablehnungsnachricht wird zur **Standardnachricht** und wird beim Checkout angezeigt, wenn keine Übersetzung mit der Sprache des Kunden übereinstimmt.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Nachrichtenübersetzungen Rabattcodes ablehnen"
+/>
+
+Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
+
+<img src="/images/shared/save-rule.webp" alt="Regel speichern" />
+
+## Regel testen
+
+Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Mail-Adresse verwenden, anstatt der tatsächlichen E-Mail, um die Regel beim Checkout auszuführen.
+
+<Warning>
+  Das Bild unten zeigt die Checkout-Seite <b>vor</b> der Verwendung der
+  Test-E-Mail-Adresse. Bitte beachten Sie, dass der Rabattcode noch nicht
+  abgelehnt wurde.
+</Warning>
+
+<img
+  src="/images/essentials/discount/before-rule-apply-reject-discount-codes.webp"
+  alt="Vor Regelanwendung"
+/>
+
+Nachdem die E-Mail-Adresse gesetzt wurde, läuft die Checkout-Regel, wenn der **Bestell-Zwischensummenbetrag** **größer oder gleich** **300** ist, und lehnt den Rabattcode **"SAVE10"** ab, wenn der Kunde versucht, ihn anzuwenden. Wir können überprüfen, dass die Ablehnungsnachricht **"This discount code cannot be used on this order"** beim Checkout sichtbar ist, wie unten gezeigt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes.webp"
+  alt="Nach Regelanwendung"
+/>
+
+## Regel aktivieren
+
+Nach dem Testen können wir die Regel aktivieren, damit sie Änderungen am Checkout für echte Kunden vornehmen kann. Nur aktivierte Regeln können Änderungen am Checkout für alle Kunden durchführen.
+
+Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf **Aktivieren**, um sie zu aktivieren.
+
+<Warning>
+  Die Regelaktivierung ist nur in kostenpflichtigen Plänen verfügbar. Wenn Sie
+  Ihren Plan noch nicht aktualisiert haben, folgen Sie den Anweisungen
+  [hier](/guides/de/get-started/installation#plan-aktualisieren), um ein Upgrade
+  durchzuführen.
+</Warning>
+<img
+  src="/images/essentials/discount/activate-reject-discount-codes.webp"
+  alt="Regel aktivieren"
+/>
+
+## Einschränkungen
+
+- Diese Regel ist nicht kompatibel mit Draft-Order-basierten Checkouts oder mit Apps, die Draft-Order-Checkouts verwenden.
+- Wenn Ihre Checkout-URL den Begriff `.../checkouts/do/...` enthält, steht `do` für Draft Order. Diese Regel wird bei diesem Checkout nicht ausgeführt.

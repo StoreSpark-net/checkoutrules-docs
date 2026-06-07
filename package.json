@@ -4,7 +4,9 @@
   "description": "This is the documentation for the Checkout Rules App.",
   "main": "index.js",
   "scripts": {
-    "dev": "mintlify dev",
+    "dev": "mint dev",
+    "validate": "mint validate",
+    "broken-links": "mint broken-links",
     "sync-gleap": "node scripts/sync-to-gleap.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
