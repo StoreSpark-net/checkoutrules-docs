@@ -59,6 +59,20 @@ Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/c
   alt="Statut de la règle"
 />
 
+Dans le cadre des paramètres de [statut](/guides/fr/get-started/concepts#statut), la section facultative **Planification** vous permet de contrôler quand une règle active démarre et s’arrête. Sélectionnez une **Date de début** et une **Heure de début** pour indiquer quand la règle doit commencer. Cochez éventuellement **Définir une date de fin** pour choisir une date et une heure de fin auxquelles la règle sera automatiquement désactivée.
+
+> Si vous sélectionnez des dates de planification alors que la règle est définie sur **Actif**, le statut devient **Programmée** au lieu d’Actif. La règle s’exécutera de la date et de l’heure de début jusqu’à la date et de l’heure de fin, si une date de fin est définie.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Planification Rejeter les codes de réduction"
+/>
+
+<Note>
+  Pour cet exemple, nous n’utilisons pas de planification et conservons le statut
+  **Test**.
+</Note>
+
 Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette règle interagit avec d’autres remises. Vous pouvez choisir de la combiner avec :
 
 - **Remises sur les produits** – Cela permet à la règle Remise globale d’être utilisée avec toutes les remises au niveau produit. Assurez-vous que les remises produit sont également configurées pour se combiner avec toutes les remises.
@@ -79,9 +93,9 @@ Ensuite, sur le même écran, configurez les paramètres de [Stratégie](/guides
   alt="Stratégie Remise commande"
 />
 
-Ensuite, sur le même écran, sélectionnez la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes. Choisissez la condition appropriée dans le menu déroulant.
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-»). Choisissez la condition appropriée dans le menu déroulant.
 
-> Par exemple, ici nous configurons la condition de cette règle sur **Toujours**, afin qu’elle s’exécute dans toutes les situations.
+> Par exemple, nous choisirons l’**Ensemble de conditions 1** par défaut. Ensuite, nous configurerons la condition de cette règle sur **Toujours**, afin qu’elle s’exécute dans toutes les situations.
 
 <img
   src="/images/essentials/discount/set-condition-set-discount-all.webp"
@@ -99,7 +113,7 @@ Après avoir choisi les cases, vous devez sélectionner l’action pour ce **typ
 
 **Remise sur la commande :**
 
-Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage** ou **Montant fixe** sans avoir besoin de sélectionner des produits spécifiques. Toutes les autres méthodes **Pourcentage excluant ces produits, Pourcentage pour ces produits uniquement, Montant fixe excluant ces produits et Montant fixe pour ces produits uniquement** nécessitent de sélectionner des produits pour que la remise fonctionne.
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage**, **Montant fixe** ou **Pourcentage du sous-total à prix fixe** sans avoir besoin de sélectionner des produits spécifiques. Toutes les autres méthodes **Pourcentage excluant ces produits, Pourcentage pour ces produits uniquement, Montant fixe excluant ces produits et Montant fixe pour ces produits uniquement** nécessitent de sélectionner des produits pour que la remise fonctionne.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -115,9 +129,14 @@ Ensuite, saisissez la valeur et le message de remise.
 
 > Par exemple, ici nous configurons la valeur de la remise à **14%** en utilisant l’option **Pourcentage**. Le message de remise **14% OFF** sera affiché aux clients lors du paiement. Cette remise de 14% s’applique à la commande. Vous pouvez voir les paramètres dans l’image ci-dessous.
 
+<img
+  src="/images/essentials/discount/action-example-discount-order-amount.webp"
+  alt="Exemple Remise sur la commande"
+/>
+
 **Remise sur le produit :**
 
-Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Définir un montant fixe, ou Offrir tous les produits gratuitement** selon vos besoins.
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage**, **Montant fixe**, **Définir un montant fixe**, **Offrir tous les produits gratuitement** ou **Pourcentage du sous-total à prix fixe**, selon vos besoins.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"
@@ -146,31 +165,97 @@ Ensuite, saisissez la valeur et le message de remise. Sélectionnez un ou plusie
 
 **Remise sur la livraison :**
 
-Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Pourcentage du sous-total, Définir un prix fixe, ou Offrir toute la livraison gratuitement** selon vos besoins.
+Vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage**, **Montant fixe**, **Pourcentage du sous-total**, **Définir un prix fixe**, **Offrir toute l’expédition gratuitement** ou **Pourcentage du sous-total à prix fixe**, selon vos besoins.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Type d’action Remise livraison"
 />
 
-La remise peut également être appliquée uniquement à certains modes de livraison en sélectionnant **"Appliquer cette remise uniquement à ces modes de livraison"** au lieu de "Appliquer cette remise à tous les modes de livraison", puis en saisissant les **noms** des modes de livraison concernés.
+Vous pouvez également choisir plusieurs options pour appliquer la remise. Les options disponibles sont :
 
-<Warning>
-  Veuillez noter que <b>Offrir toute la livraison gratuitement</b> n’affiche
-  aucune valeur, message ou sélection de mode de livraison car tous les modes de
-  livraison sont gratuits.
-</Warning>
+- **Méthodes d’expédition sélectionnées**  
+  Appliquez la remise uniquement à des méthodes d’expédition spécifiques en saisissant les **noms** des méthodes d’expédition à inclure.
 
-<img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Sélection des modes de livraison"
-/>
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Méthodes d’expédition sélectionnées"
+  />
 
-> Par exemple, ici nous configurons la valeur de la remise à **16%** en utilisant l’option **Pourcentage**. Le message de remise **16% OFF** sera affiché aux clients lors du paiement. Nous avons également activé **Appliquer cette remise à tous les modes de livraison**. Cette remise de 16% s’applique aux modes de livraison. Vous pouvez voir les paramètres dans l’image ci-dessous.
+- **Toutes les méthodes d’expédition**  
+  Appliquez la remise à toutes les méthodes d’expédition disponibles.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Toutes les méthodes d’expédition"
+  />
+
+- **Méthode d’expédition au prix le plus élevé**  
+  Appliquez la remise à la méthode d’expédition dont le prix est le plus élevé.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Méthode d’expédition au prix le plus élevé"
+  />
+
+- **Méthode d’expédition au prix le plus bas**  
+  Appliquez la remise à la méthode d’expédition dont le prix est le plus bas.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Méthode d’expédition au prix le plus bas"
+  />
+
+- **Méthode d’expédition avec prix**  
+  Appliquez la remise en fonction d’un montant saisi, avec la possibilité de cibler les méthodes d’expédition dont le prix est supérieur ou inférieur à la valeur indiquée.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Méthode d’expédition avec prix"
+  />
+
+> Par exemple, ici nous configurons la valeur de la remise à **16%** en utilisant l’option **Pourcentage**. Le message de remise **16% OFF** sera affiché aux clients lors du paiement. Nous avons également défini **Toutes les méthodes d’expédition** pour appliquer la remise à toutes les méthodes d’expédition. Cette remise de 16% s’applique aux méthodes d’expédition. Vous pouvez voir les paramètres dans l’image ci-dessous.
 
 <img
   src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
   alt="Exemple Remise livraison"
+/>
+
+**Rejeter les codes de réduction :**
+
+Sélectionnez un ou plusieurs codes de réduction et saisissez un message de rejet pertinent.
+
+<img
+  src="/images/essentials/discount/action-reject-discount-codes.webp"
+  alt="Action Rejeter les codes de réduction"
+/>
+
+Vous pouvez également ajouter des traductions pour le message de rejet dans plusieurs langues en cliquant sur **Ajouter une traduction**, puis en sélectionnant les langues dans lesquelles vous souhaitez traduire le message. Le message de rejet principal devient le **message par défaut** et s’affiche au passage en caisse lorsqu’aucune traduction ne correspond à la langue du client.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Traductions du message Rejeter les codes de réduction"
+/>
+
+> Par exemple, nous configurons la règle pour rejeter le code de réduction **"SAVE20"**. Le message de rejet **"Ce code de réduction n’est pas disponible pour le moment"** sera affiché aux clients au passage en caisse lorsqu’ils tentent d’appliquer le code de réduction.
+
+<img
+  src="/images/essentials/discount/action-example-reject-discount-codes.webp"
+  alt="Exemple Rejeter les codes de réduction"
+/>
+
+Ensuite, sur le même écran, si l’option de remise d’expédition est cochée, la section **Livraisons d’abonnement** est également disponible. Pour les produits d’expédition par abonnement, vous pouvez choisir de limiter la remise d’expédition à la première livraison uniquement, de limiter la remise d’expédition à la première livraison et de rendre les livraisons récurrentes gratuites, ou de limiter la remise d’expédition à la première livraison et de rendre toutes les livraisons récurrentes gratuites.
+
+<Warning>
+  Les options de la section **Livraisons d’abonnement** s’appliquent uniquement aux
+  produits d’expédition qui ont un abonnement. Pour les livraisons de produits
+  normaux (sans abonnement), vous n’avez pas besoin de sélectionner d’option. Le
+  paramètre par défaut fonctionnera comme prévu.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Livraisons d’abonnement"
 />
 
 Ensuite, sur le même écran, dans la section [Utilisations maximales de la remise](/guides/fr/get-started/concepts#nombre-maximal-d’utilisations-de-la-réduction), vous pouvez éventuellement activer une limite d’utilisation pour le code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est sélectionné.
@@ -214,11 +299,18 @@ La **remise de 15$ sur le produit** a également été appliquée lors du paieme
   alt="Après application de la remise sur le produit"
 />
 
-La **remise de 16% sur la livraison** a été appliquée lors du paiement à **tous les modes de livraison**, comme illustré ci-dessous.
+La **remise de 16% sur la livraison** a été appliquée lors du paiement à **toutes les méthodes d’expédition**, comme illustré ci-dessous.
 
 <img
   src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
   alt="Après application de la remise sur la livraison"
+/>
+
+Lorsque le client saisit et applique le code de réduction **SAVE20**, celui-ci est rejeté et le message **"Ce code de réduction n’est pas disponible pour le moment"** s’affiche.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes2.webp"
+  alt="Après application de la règle"
 />
 
 ## Activer la règle

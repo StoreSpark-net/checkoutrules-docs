@@ -60,6 +60,20 @@ Hier wählen wir den Status **Testen**, damit wir die Regel schnell überprüfen
   alt="Regelstatus"
 />
 
+Als Teil der [Status](/guides/de/get-started/concepts#status)-Einstellungen ermöglicht der optionale Abschnitt **Zeitplan** die Steuerung, wann eine aktive Regel startet und stoppt. Wählen Sie ein **Startdatum** und eine **Startzeit** für den Regelbeginn. Optional aktivieren Sie **Enddatum festlegen**, um ein Enddatum und eine Endzeit für die automatische Deaktivierung zu wählen.
+
+> Wenn Sie Zeitplandaten auswählen, während die Regel auf **Aktiv** gesetzt ist, wird der Status **Geplant** statt Aktiv. Die Regel läuft vom Startdatum und der Startzeit bis zum Enddatum und der Endzeit, sofern festgelegt.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Zeitplan Rabattcodes ablehnen"
+/>
+
+<Note>
+  Für dieses Beispiel verwenden wir keinen Zeitplan und behalten den Status
+  **Testen** bei.
+</Note>
+
 Konfigurieren Sie anschließend auf demselben Bildschirm die Einstellungen für [Kombinationen](/guides/de/get-started/concepts#kombinationen), um festzulegen, wie dieser Rabatt mit anderen Rabatten interagiert. Sie können auswählen, dass er kombinierbar ist mit:
 
 - **Produktrabatten** – Ermöglicht, dass die „Alles rabattieren“-Regel zusammen mit Rabatten auf Produktebene verwendet werden kann. Stellen Sie sicher, dass auch die Produkt-Rabatte für die Kombination mit allen Rabatten aktiviert sind.
@@ -80,9 +94,9 @@ Als Nächstes konfigurieren Sie auf demselben Bildschirm die Einstellungen für 
   alt="Strategie Bestellrabatt"
 />
 
-Als Nächstes wählen Sie auf demselben Bildschirm die entsprechende [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus. Wählen Sie die relevante Bedingung aus dem Dropdown-Menü.
+Als Nächstes wählen Sie auf demselben Bildschirm das entsprechende [Bedingungsset](/guides/de/get-started/concepts#bedingungsset), die [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und die [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus. Wählen Sie die relevante Bedingung aus dem Dropdown-Menü.
 
-> Beispiel: Hier setzen wir die Bedingung für diese Regel auf **Stets**, sodass sie in allen Situationen ausgeführt wird.
+> Beispiel: Wir wählen das Standard-**Bedingungsset 1**. Anschließend konfigurieren wir die Bedingung für diese Regel auf **Stets**, sodass sie in allen Situationen ausgeführt wird.
 
 <img
   src="/images/essentials/discount/set-condition-set-discount-all.webp"
@@ -100,7 +114,7 @@ Nach der Auswahl der Kontrollkästchen müssen Sie die Aktion für diesen **Raba
 
 **Bestellrabatt:**
 
-Sie können wählen, ob der Rabatt über **Prozentsatz** oder **Fester Rabattbetrag** angewendet wird, ohne bestimmte Produkte auswählen zu müssen. Alle anderen Methoden **Prozentsatz ohne diese Produkte, Prozentsatz nur für diese Produkte, Fester Rabattbetrag ausgenommen diese Produkte und Fester Rabatt nur für diese Produkte** erfordern die Produktauswahl, damit der Rabatt funktioniert.
+Sie können wählen, ob der Rabatt über **Prozentsatz**, **Fester Rabattbetrag** oder **Festpreis-Zwischensummen-Prozentsatz** angewendet wird, ohne bestimmte Produkte auswählen zu müssen. Alle anderen Methoden **Prozentsatz ohne diese Produkte, Prozentsatz nur für diese Produkte, Fester Rabattbetrag ausgenommen diese Produkte und Fester Rabatt nur für diese Produkte** erfordern die Produktauswahl, damit der Rabatt funktioniert.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -123,7 +137,7 @@ Geben Sie anschließend den Rabattwert und die Rabattnachricht ein.
 
 **Produktrabatt:**
 
-Sie können wählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Legen Sie einen festen Betrag fest** oder **Geben Sie alle Produkte kostenlos frei** angewendet wird, je nach Ihren Anforderungen.
+Sie können wählen, ob der Rabatt über **Prozentsatz**, **Fester Rabattbetrag**, **Legen Sie einen festen Betrag fest**, **Geben Sie alle Produkte kostenlos frei** oder **Festpreis-Zwischensummen-Prozentsatz** angewendet wird, je nach Ihren Anforderungen.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"
@@ -152,31 +166,97 @@ Geben Sie anschließend den Rabattwert und die Rabattnachricht ein. Wählen Sie 
 
 **Versandrabatt:**
 
-Sie können wählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Zwischensummenprozentsatz, Festpreis festlegen** oder **Alle Versandkosten kostenlos** angewendet wird, je nach Ihren Anforderungen.
+Sie können wählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Zwischensummenprozentsatz, Festpreis festlegen, Alle Versandkosten kostenlos oder Festpreis-Zwischensummen-Prozentsatz** angewendet wird, je nach Ihren Anforderungen.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Aktionstyp Versandrabatt"
 />
 
-Der Rabatt kann auch nur auf bestimmte Versandmethoden angewendet werden, indem Sie **„Diesen Rabatt nur auf diese Versandmethoden anwenden“** statt „Diesen Rabatt auf alle Versandmethoden anwenden“ auswählen und anschließend die **Namen** der Versandmethoden eingeben, auf die der Rabatt angewendet werden soll.
+Sie können auch mehrere Optionen auswählen, um den Rabatt anzuwenden. Die verfügbaren Optionen sind:
 
-<Warning>
-  Bitte beachten Sie, dass bei <b>Alle Versandkosten kostenlos</b> kein
-  Rabattwert, keine Nachricht und keine Versandmethodenauswahl angezeigt werden,
-  da alle Versandmethoden kostenlos sind.
-</Warning>
+- **Ausgewählte Versandmethoden**  
+  Wenden Sie den Rabatt nur auf bestimmte Versandmethoden an, indem Sie die **Namen** der Versandmethoden eingeben, die einbezogen werden sollen.
 
-<img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Versandmethoden Auswahl"
-/>
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Ausgewählte Versandmethoden"
+  />
 
-> Beispiel: Hier setzen wir den Rabattwert auf **16%** mit der Option **Prozentsatz**. Die Rabattnachricht **16% OFF** wird den Kunden an der Kasse angezeigt. Wir haben außerdem **Diesen Rabatt auf alle Versandmethoden anwenden** ausgewählt, damit der Rabatt auf alle Versandmethoden angewendet wird. Dieser 16%-Rabatt gilt für die Versandmethoden. Die Einstellungen sehen Sie im Bild unten.
+- **Alle Versandmethoden**  
+  Wenden Sie den Rabatt auf alle verfügbaren Versandmethoden an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Alle Versandmethoden"
+  />
+
+- **Versandmethode mit dem höchsten Preis**  
+  Wenden Sie den Rabatt auf die Versandmethode mit dem höchsten Preis an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Versandmethode mit höchstem Preis"
+  />
+
+- **Versandmethode mit dem niedrigsten Preis**  
+  Wenden Sie den Rabatt auf die Versandmethode mit dem niedrigsten Preis an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Versandmethode mit niedrigstem Preis"
+  />
+
+- **Versandmethode mit Preis**  
+  Wenden Sie den Rabatt basierend auf einem eingegebenen Betrag an, mit der Option, Versandmethoden anzuvisieren, die entweder größer oder kleiner als der angegebene Wert sind.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Versandmethode mit Preis"
+  />
+
+> Beispiel: Hier setzen wir den Rabattwert auf **16%** mit der Option **Prozentsatz**. Die Rabattnachricht **16% OFF** wird den Kunden an der Kasse angezeigt. Wir haben außerdem **Alle Versandmethoden** ausgewählt, damit der Rabatt auf alle Versandmethoden angewendet wird. Dieser 16%-Rabatt gilt für die Versandmethoden. Die Einstellungen sehen Sie im Bild unten.
 
 <img
   src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
   alt="Beispiel Versandrabatt"
+/>
+
+**Rabattcodes ablehnen:**
+
+Wählen Sie einen oder mehrere Rabattcodes aus und geben Sie eine relevante Ablehnungsnachricht ein.
+
+<img
+  src="/images/essentials/discount/action-reject-discount-codes.webp"
+  alt="Aktion Rabattcodes ablehnen"
+/>
+
+Optional können Sie Übersetzungen für die Ablehnungsnachricht in mehreren Sprachen hinzufügen, indem Sie auf **Übersetzung hinzufügen** klicken und dann die Sprachen auswählen, in die Sie die Nachricht übersetzen möchten. Die Hauptablehnungsnachricht wird zur **Standardnachricht** und wird an der Kasse angezeigt, wenn keine Übersetzung der Kundensprache entspricht.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Nachrichtenübersetzungen Rabattcodes ablehnen"
+/>
+
+> Beispiel: Wir konfigurieren die Regel so, dass der Rabattcode **"SAVE20"** abgelehnt wird. Die Ablehnungsnachricht **"Dieser Rabattcode ist derzeit nicht verfügbar"** wird den Kunden an der Kasse angezeigt, wenn sie versuchen, den Rabattcode anzuwenden.
+
+<img
+  src="/images/essentials/discount/action-example-reject-discount-codes.webp"
+  alt="Beispiel Rabattcodes ablehnen"
+/>
+
+Als Nächstes können Sie auf demselben Bildschirm, wenn die Versandrabattoption aktiviert ist, auch den Abschnitt **Abonnement-Lieferungen** verwenden. Für Versandprodukte mit Abonnement können Sie wählen, ob der Versandrabatt nur auf die erste Lieferung beschränkt wird, auf die erste Lieferung beschränkt wird und wiederkehrende Lieferungen kostenlos werden, oder auf die erste Lieferung beschränkt wird und alle wiederkehrenden Lieferungen kostenlos werden.
+
+<Warning>
+  Die Optionen im Abschnitt **Abonnement-Lieferungen** gelten nur für
+  Versandprodukte mit Abonnement. Bei normalen (nicht abonnementbasierten)
+  Produktlieferungen müssen Sie keine Option auswählen. Die Standardeinstellung
+  funktioniert wie erwartet.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Abonnement-Lieferungen"
 />
 
 Als Nächstes können Sie auf demselben Bildschirm im Abschnitt [Maximale Rabattverwendungen](/guides/de/get-started/concepts#maximale-rabattnutzung) optional eine Nutzungsbegrenzung für den Rabattcode aktivieren, ihn auf eine Verwendung pro Kunde beschränken oder beides anwenden, sofern ein Rabattcode ausgewählt wurde.
@@ -224,6 +304,13 @@ Der **16%-Versandrabatt** wurde an der Kasse auf **alle Versandmethoden** angewe
 
 <img
   src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="Nach Anwendung der Regel"
+/>
+
+Wenn der Kunde den Rabattcode **SAVE20** eingibt und anwendet, wird dieser abgelehnt und die Meldung **„Dieser Rabattcode ist derzeit nicht verfügbar“** wird angezeigt.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes2.webp"
   alt="Nach Anwendung der Regel"
 />
 

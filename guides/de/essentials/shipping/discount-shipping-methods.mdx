@@ -59,6 +59,20 @@ Wählen Sie anschließend auf demselben Bildschirm den [Status](/guides/de/get-s
   alt="Regelstatus"
 />
 
+Als Teil der [Status](/guides/de/get-started/concepts#status)-Einstellungen ermöglicht der optionale Abschnitt **Zeitplan** die Steuerung, wann eine aktive Regel startet und stoppt. Wählen Sie ein **Startdatum** und eine **Startzeit** für den Regelbeginn. Optional aktivieren Sie **Enddatum festlegen**, um ein Enddatum und eine Endzeit für die automatische Deaktivierung zu wählen.
+
+> Wenn Sie Zeitplandaten auswählen, während die Regel auf **Aktiv** gesetzt ist, wird der Status **Geplant** statt Aktiv. Die Regel läuft vom Startdatum und der Startzeit bis zum Enddatum und der Endzeit, sofern festgelegt.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Zeitplan Rabattcodes ablehnen"
+/>
+
+<Note>
+  Für dieses Beispiel verwenden wir keinen Zeitplan und behalten den Status
+  **Testen** bei.
+</Note>
+
 Konfigurieren Sie anschließend die [Kombinationen](/guides/de/get-started/concepts#kombinationen), um zu steuern, wie dieser Versandrabatt mit anderen Rabatten interagiert. Sie können wählen, ob er kombiniert werden darf mit:
 
 - **Produktrabatten** – Ermöglicht die Verwendung des Versandrabatts zusammen mit allen Produkt-Rabatten. Stellen Sie sicher, dass auch Produkt-Rabatte für die Kombination mit Versandrabatten konfiguriert sind.
@@ -70,30 +84,91 @@ Konfigurieren Sie anschließend die [Kombinationen](/guides/de/get-started/conce
   alt="Kombinationen Versandrabatte"
 />
 
+Als Nächstes konfigurieren Sie auf demselben Bildschirm die [Strategie](/guides/de/get-started/concepts#strategie)-Einstellungen, um zu steuern, wie das System mehrere Rabattblöcke verarbeitet. Derzeit ist nur **Erste** verfügbar und standardmäßig ausgewählt. Diese Option wendet nur den ersten Rabatt an, der die Bedingungen erfüllt, und ignoriert mögliche bessere Rabatte, die später kommen.
+
+<img
+  src="/images/essentials/shipping/strategy-shipping-discount.webp"
+  alt="Strategie Versandrabatt"
+/>
+
 Wählen Sie anschließend die relevanten [Bedingungssätze](/guides/de/get-started/concepts#bedingungsset), [Bedingungen](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktionen](/guides/de/get-started/concepts#aktion-das-“was”) aus.
 
-> Als Beispiel verwenden wir hier den Standard **Bedingungssatz 1**, setzen die Regel auf **Immer** auszuführen und konfigurieren sie so, dass ein **10%-Rabatt** auf alle Versandmethoden mit der **Prozentoption** angewendet wird. Die Rabattmeldung **"10% RABATT"** wird den Kunden beim Checkout angezeigt.
+> Beispiel: Wir wählen das Standard-**Bedingungsset 1**. Anschließend konfigurieren wir die Regel so, dass sie **Stets** ausgeführt wird und einen **10%-Rabatt** auf alle Versandmethoden mit der Option **Prozentsatz** anwendet. Die Rabattnachricht **„10% OFF“** wird den Kunden an der Kasse angezeigt.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
   alt="Bedingungssatz Versandrabatte"
 />
 
-Im Abschnitt Aktion können Sie auswählen, wie der Rabatt angewendet werden soll: **Prozent, Fester Betrag, Prozentsatz vom Zwischensumme, Fester Preis festlegen oder Alle Versandkosten kostenlos** basierend auf Ihren Anforderungen.
+Im Abschnitt Aktion können Sie den Rabatt mit **Prozentsatz, festem Betrag abziehen, Zwischensummen-Prozentsatz, festen Preis festlegen, alle Versandkosten kostenlos oder Festpreis-Zwischensummen-Prozentsatz** anwenden – je nach Ihren Anforderungen.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Aktionstyp Rabatt"
 />
 
-Der Rabatt kann auch nur auf bestimmte Versandmethoden angewendet werden, indem Sie **"Diesen Rabatt nur auf diese Versandmethoden anwenden"** anstelle von "Diesen Rabatt auf alle Versandmethoden anwenden" auswählen und dann die **Namen** der Versandmethoden eingeben, auf die der Rabatt angewendet werden soll.
+Sie können auch mehrere Optionen auswählen, um den Rabatt anzuwenden. Die verfügbaren Optionen sind:
+
+- **Ausgewählte Versandmethoden**  
+  Wenden Sie den Rabatt nur auf bestimmte Versandmethoden an, indem Sie die **Namen** der Versandmethoden eingeben, die einbezogen werden sollen.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Ausgewählte Versandmethoden"
+  />
+
+- **Alle Versandmethoden**  
+  Wenden Sie den Rabatt auf alle verfügbaren Versandmethoden an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Alle Versandmethoden"
+  />
+
+- **Versandmethode mit dem höchsten Preis**  
+  Wenden Sie den Rabatt auf die Versandmethode mit dem höchsten Preis an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Versandmethode mit höchstem Preis"
+  />
+
+- **Versandmethode mit dem niedrigsten Preis**  
+  Wenden Sie den Rabatt auf die Versandmethode mit dem niedrigsten Preis an.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Versandmethode mit niedrigstem Preis"
+  />
+
+- **Versandmethode mit Preis**  
+  Wenden Sie den Rabatt basierend auf einem eingegebenen Betrag an, mit der Option, Versandmethoden anzuvisieren, die entweder größer oder kleiner als der angegebene Wert sind.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Versandmethode mit Preis"
+  />
+
+Als Nächstes können Sie auf demselben Bildschirm im Abschnitt [Abonnement-Lieferungen](/guides/de/get-started/concepts#abonnement-lieferungen) für Versandprodukte mit Abonnement wählen, ob der Versandrabatt nur auf die erste Lieferung beschränkt wird, auf die erste Lieferung beschränkt wird und wiederkehrende Lieferungen kostenlos werden, oder auf die erste Lieferung beschränkt wird und alle wiederkehrenden Lieferungen kostenlos werden.
+
+<Warning>
+  Die Optionen im Abschnitt **Abonnement-Lieferungen** gelten nur für
+  Versandprodukte mit Abonnement. Bei normalen (nicht abonnementbasierten)
+  Produktlieferungen müssen Sie keine Option auswählen. Die Standardeinstellung
+  funktioniert wie erwartet.
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Versandmethoden-Auswahl"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Abonnement-Lieferungen"
 />
 
 Im Abschnitt [Maximale Rabattverwendungen](/guides/de/get-started/concepts#maximale-rabattnutzung) können Sie optional ein Nutzungslimit für den Rabattcode aktivieren, ihn auf einmal pro Kunde beschränken oder beides anwenden, wenn ein Rabattcode ausgewählt ist.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Maximale Rabattverwendungen"
+/>
 
 Klicken Sie abschließend auf die <b>Speichern</b>-Schaltfläche oben, um Ihre Regel zu erstellen und zu speichern.
 

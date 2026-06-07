@@ -151,6 +151,31 @@ Spécifie quelle étape déclenchera la règle (par ex. lorsque le client intera
 
 <img src="/images/concepts/trigger.webp" alt="Déclencheur" />
 
+### Livraisons d’abonnement
+
+Contrôlez la façon dont les remises d’expédition s’appliquent aux commandes par abonnement. Choisissez si la remise doit s’appliquer uniquement à la première livraison ou s’étendre aux livraisons récurrentes.
+
+**Limiter la remise d’expédition à la première livraison**  
+Applique la remise d’expédition uniquement à la première livraison d’abonnement. Les livraisons récurrentes utiliseront les tarifs d’expédition standard.
+
+**Limiter la remise d’expédition à la première livraison et rendre la livraison récurrente gratuite**  
+Applique la remise d’expédition à la première livraison et offre la livraison gratuite pour les livraisons récurrentes.
+
+**Limiter la remise d’expédition à la première livraison et rendre toutes les livraisons récurrentes gratuites**  
+Offre la livraison gratuite pour toutes les livraisons récurrentes d’abonnement après le premier envoi.
+
+<Warning>
+  Les options de la section **Livraisons d’abonnement** s’appliquent uniquement
+  aux produits d’expédition qui ont un abonnement. Pour les livraisons de
+  produits normaux (sans abonnement), vous n’avez pas besoin de sélectionner
+  d’option. Le paramètre par défaut fonctionnera comme prévu.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Livraisons d’abonnement"
+/>
+
 ### Solution de secours
 
 Définit ce qui se passe dans le cas rare où l’application rencontre un problème lors du passage à la caisse (par ex. autoriser ou bloquer le passage à la caisse). Utilisé uniquement dans la règle **Valider ou bloquer le passage à la caisse**.

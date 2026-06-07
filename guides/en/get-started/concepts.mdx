@@ -150,6 +150,31 @@ Specifies which step will trigger the rule (e.g., when the customer is interacti
 
 <img src="/images/concepts/trigger.webp" alt="Trigger" />
 
+### Subscription Deliveries
+
+Control how shipping discounts apply to subscription orders. Choose whether the discount should apply only to the first delivery or extend to recurring deliveries.
+
+**Limit shipping discount to first delivery**  
+Applies the shipping discount only to the first subscription delivery. Recurring deliveries will use standard shipping rates.
+
+**Limit shipping discount to first delivery and set recurring delivery free**  
+Applies the shipping discount to the first delivery and provides free shipping for recurring deliveries.
+
+**Limit shipping discount to first delivery and set all recurring deliveries free**  
+Provides free shipping for all recurring subscription deliveries after the first shipment.
+
+<Warning>
+  The **Subscription Deliveries** section options apply only to shipping
+  products that have a subscription. For normal (non-subscription) product
+  deliveries, you do not need to select any option. The default setting will
+  work as expected.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Subscription Deliveries"
+/>
+
 ### Fallback
 
 Defines what happens in the rare circumstance, when the app has an issue on the checkout (e.g., allow or block checkout). Used only in **Validate or Block Checkout** rule.

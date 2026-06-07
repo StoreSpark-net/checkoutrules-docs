@@ -59,6 +59,20 @@ A continuación, en la misma pantalla, selecciona el [estado](/guides/es/get-sta
   alt="Rule Status"
 />
 
+Como parte de la configuración del [estado](/guides/es/get-started/concepts#estado), la sección opcional **Programación** te permite controlar cuándo una regla activa comienza y termina. Selecciona una **Fecha de inicio** y una **Hora de inicio** para cuando la regla debe comenzar. Opcionalmente, marca **Establecer fecha de fin** para elegir una fecha y hora de fin cuando la regla debe desactivarse automáticamente.
+
+> Si seleccionas fechas de programación mientras la regla está configurada como **Activo**, el estado se convierte en **Programado** en lugar de Activo. La regla se ejecutará desde la fecha y hora de inicio hasta la fecha y hora de fin, si se establece una.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Programación rechazar códigos de descuento"
+/>
+
+<Note>
+  Para este ejemplo, no estamos usando una programación y mantenemos el estado
+  **Prueba**.
+</Note>
+
 A continuación, en la misma pantalla, configura las configuraciones de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento de envío interactúa con otros descuentos. Puedes elegir permitir que se combine con:
 
 - **Descuentos de producto** – Esto permite que el descuento de envío se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de producto también estén configurados para combinarse con descuentos de envío.
@@ -77,30 +91,84 @@ Luego, en la misma pantalla, configura los ajustes de [Estrategia](/guides/es/ge
   alt="Estrategia de descuento de envío"
 />
 
-Luego, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-“cuándo”) y la [acción](/guides/es/get-started/concepts#acción-el-“qué”) correspondientes.
+Luego, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#conjunto-de-condiciones), [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes.
 
-> Por ejemplo, aquí estamos configurando la regla para que se ejecute **Siempre** y aplicando un **10% de descuento** a todos los métodos de envío usando la opción **Porcentaje**. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
+> Como ejemplo, elegiremos el **Conjunto de condiciones 1** predeterminado. Luego, configuraremos la regla para ejecutarse **Siempre** y la configuraremos para aplicar un **descuento del 10%** a todos los métodos de envío usando la opción **Porcentaje**. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
   alt="Configurar condición para descuento en métodos de envío"
 />
 
-En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaje, Cantidad fija de descuento, Porcentaje del subtotal, Establecer precio fijo, o Establecer todo el envío gratis** basándote en tus requerimientos.
+En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaje, Cantidad fija de descuento, Porcentaje del subtotal, Establecer precio fijo, Establecer todo el envío gratis o Porcentaje del subtotal a precio fijo** basándote en tus requerimientos.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Action Type Discount"
 />
 
-El descuento también puede aplicarse solo a métodos de envío específicos seleccionando **"Aplicar este descuento solo a estos métodos de envío"** en lugar de "Aplicar este descuento a todos los métodos de envío", y luego ingresando los **nombres** de los métodos de envío a los que quieres que se aplique el descuento.
+También puedes elegir varias opciones para aplicar el descuento. Las opciones disponibles son:
+
+- **Métodos de envío seleccionados**  
+  Aplica el descuento solo a métodos de envío específicos ingresando los **nombres** de los métodos de envío que quieres incluir.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Métodos de envío seleccionados"
+  />
+
+- **Todos los métodos de envío**  
+  Aplica el descuento a todos los métodos de envío disponibles.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Todos los métodos de envío"
+  />
+
+- **Método de envío con precio más alto**  
+  Aplica el descuento al método de envío con el precio más alto.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Método de envío con precio más alto"
+  />
+
+- **Método de envío con precio más bajo**  
+  Aplica el descuento al método de envío con el precio más bajo.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Método de envío con precio más bajo"
+  />
+
+- **Método de envío con precio**  
+  Aplica el descuento según un monto ingresado, con la opción de dirigirse a métodos de envío que sean mayores o menores que el valor especificado.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Método de envío con precio"
+  />
+
+A continuación, en la misma pantalla, en la sección [Entregas de suscripción](/guides/es/get-started/concepts#entregas-de-suscripción), para productos de envío con suscripción, puedes elegir limitar el descuento de envío solo a la primera entrega, limitar el descuento de envío a la primera entrega y hacer que las entregas recurrentes sean gratuitas, o limitar el descuento de envío a la primera entrega y hacer que todas las entregas recurrentes sean gratuitas.
+
+<Warning>
+  Las opciones de la sección **Entregas de suscripción** solo se aplican a
+  productos de envío que tienen una suscripción. Para entregas de productos
+  normales (sin suscripción), no necesitas seleccionar ninguna opción. La
+  configuración predeterminada funcionará como se espera.
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Action Shipping Methods Selection"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Entregas de suscripción"
 />
 
 A continuación, en la misma pantalla, en la sección [Usos Máximos de Descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Usos máximos del descuento"
+/>
 
 Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
 

@@ -59,6 +59,20 @@ Next, on the same screen, select the rule [status](/guides/en/get-started/concep
   alt="Rule Status"
 />
 
+As part of the [status](/guides/en/get-started/concepts#status) settings, the optional **Schedule** section lets you control when an active rule starts and stops. Select a **Start date** and **Start time** for when the rule should begin. Optionally, check **Set end date** to choose an end date and time when the rule should automatically deactivate.
+
+> If you select schedule dates while the rule is set to **Active**, the status becomes **Scheduled** instead of Active. The rule will run from the start date and time until the end date and time, if one is set.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Schedule Reject Discount Codes"
+/>
+
+<Note>
+  For this example, we are not using a schedule and are keeping **Testing**
+  status.
+</Note>
+
 Next, on the same screen, configure the [Combinations](/guides/en/get-started/concepts#combinations) settings to control how this product discount interacts with other discounts. You can choose to allow it to combine with:
 
 - **Product discounts** – This enables multiple product level discounts to be applied together. Ensure the other product discounts are also set to combine with product discounts.
@@ -79,16 +93,16 @@ Next, on the same screen, configure the [Strategy](/guides/en/get-started/concep
   alt="Strategy"
 />
 
-Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what).
+Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
-> As an example, here we are setting the rule to run **Always** and configuring it to apply a **12% discount** using the **Percentage** option. The discount message **"12% OFF"** will be shown to customers at checkout. We then select the product **The 3D Modeled Snowboard** to apply the discount to that product.
+> As an example, we will choose the default **Condition set 1**. Then, we will configure the rule to run **Always** and configure it to apply a **12% discount** using the **Percentage** option. The discount message **"12% OFF"** will be shown to customers at checkout. We then select the product **The 3D Modeled Snowboard** to apply the discount to that product.
 
 <img
   src="/images/essentials/discount/condition-action-discount-product-amount.webp"
   alt="Condition + Action"
 />
 
-In the Action section, you can choose to apply the discount using **Percentage, Fixed amount off, Set fixed amount, or Set all products free** based on your requirements.
+In the **Action** section, you can choose to apply the discount using **Percentage**, **Fixed amount off**, **Set fixed amount**, **Set all products free**, or **Fixed price subtotal percentage**, depending on your requirements.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"

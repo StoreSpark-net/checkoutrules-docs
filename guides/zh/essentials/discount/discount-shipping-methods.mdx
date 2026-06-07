@@ -59,6 +59,19 @@ icon: "badge-percent"
   alt="规则地位"
 />
 
+作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制活动规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以指定规则应何时开始。可选地，勾选 **设置结束日期** 以选择规则应自动停用的结束日期和时间。
+
+> 如果在规则设置为 **激活** 时选择了计划日期，状态将变为 **已计划** 而不是激活。如果设置了结束日期和时间，规则将从开始日期和时间运行到结束日期和时间。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="计划 拒绝折扣码"
+/>
+
+<Note>
+  在此示例中，我们不使用计划，并保持 **测试中** 状态。
+</Note>
+
 接下来，在同一界面下，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此配送折扣如何与其他折扣交互。您可以选择允许其与以下折扣组合使用：
 
 - **产品折扣** – 允许配送折扣与任何产品级折扣一起使用。请确保产品折扣也配置为允许与配送折扣组合使用。
@@ -77,30 +90,81 @@ icon: "badge-percent"
   alt="运费折扣策略"
 />
 
-接下来，在同一页面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+接下来，在同一页面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。
 
-> 例如，这里我们将规则设置为 **始终**，并使用 **百分比** 选项为所有运送方式应用 **10% 折扣**。折扣信息 **“10% 折扣”** 将在客户结账时显示。
+> 例如，我们将选择默认的 **条件集 1**。然后，我们将规则配置为 **始终** 运行，并使用 **百分比** 选项为所有配送方式应用 **10% 折扣**。折扣信息 **"10% OFF"** 将在结账时显示给客户。
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
   alt="设置运费折扣条件"
 />
 
-在 **操作** 部分，您可以选择根据需求使用 **百分比、固定金额减免、小计百分比、设定固定价格或设置所有配送免费** 来应用折扣。
+在 **动作** 部分，您可以根据需求选择使用 **百分比、固定金额减免、小计百分比、设置固定价格、设置所有配送免费，或固定价格小计百分比** 来应用折扣。
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="操作类型折扣"
 />
 
-折扣还可以仅应用于特定配送方式。选择 **"仅将此折扣应用于这些配送方式"** 而不是 "将此折扣应用于所有配送方式"，然后输入您希望应用折扣的配送方式的 **名称**。
+您还可以选择多个选项来应用折扣。可用选项包括：
+
+- **选定的配送方式**  
+  通过输入要包含的配送方式的 **名称**，将折扣仅应用于特定配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="选定的配送方式"
+  />
+
+- **所有配送方式**  
+  将折扣应用于所有可用的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="所有配送方式"
+  />
+
+- **价格最高的配送方式**  
+  将折扣应用于价格最高的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="价格最高的配送方式"
+  />
+
+- **价格最低的配送方式**  
+  将折扣应用于价格最低的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="价格最低的配送方式"
+  />
+
+- **按价格筛选的配送方式**  
+  根据输入的金额应用折扣，并可选择针对高于或低于指定值的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="按价格筛选的配送方式"
+  />
+
+接下来，在同一界面的 [订阅配送](/guides/zh/get-started/concepts#订阅配送) 部分，对于订阅配送产品，您可以选择将运费折扣限制为仅首次配送、限制为首次配送并使定期配送免费，或限制为首次配送并使所有定期配送免费。
+
+<Warning>
+  **订阅配送** 部分的选项仅适用于具有订阅的配送产品。对于普通（非订阅）产品配送，您无需选择任何选项。默认设置将按预期工作。
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="操作配送方式选择"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="订阅配送"
 />
 
-接着，在同一界面下，在 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择启用折扣码的使用次数限制，将其限制为每个客户只能使用一次，或者在选择折扣码时同时应用这两个限制。
+接下来，在同一界面的 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择启用折扣码的使用次数限制，将其限制为每个客户只能使用一次，或者在选择折扣码时同时应用这两个限制。
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="最大折扣使用次数"
+/>
 
 最后，点击顶部的 <b>保存</b> 按钮来创建并保存您的规则。
 

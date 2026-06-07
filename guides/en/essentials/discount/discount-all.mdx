@@ -59,6 +59,20 @@ Next, on the same screen, select the rule [status](/guides/en/get-started/concep
   alt="Rule Status"
 />
 
+As part of the [status](/guides/en/get-started/concepts#status) settings, the optional **Schedule** section lets you control when an active rule starts and stops. Select a **Start date** and **Start time** for when the rule should begin. Optionally, check **Set end date** to choose an end date and time when the rule should automatically deactivate.
+
+> If you select schedule dates while the rule is set to **Active**, the status becomes **Scheduled** instead of Active. The rule will run from the start date and time until the end date and time, if one is set.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Schedule Reject Discount Codes"
+/>
+
+<Note>
+  For this example, we are not using a schedule and are keeping **Testing**
+  status.
+</Note>
+
 Next, on the same screen, configure the [Combinations](/guides/en/get-started/concepts#combinations) settings to control how this rule’s discount interacts with other discounts. You can choose to allow it to combine with:
 
 - **Product discounts** – This lets the discount all rule be used alongside any product level discounts. Make sure product discounts are also set to combine with all discounts.
@@ -79,9 +93,9 @@ Next, on the same screen, configure the [Strategy](/guides/en/get-started/concep
   alt="Strategy Order Discount"
 />
 
-Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what). Choose the relevant condition from the dropdown.
+Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what). Choose the relevant condition from the dropdown.
 
-> As an example, here we are setting the condition for this rule to **Always**, so it will run in all situations.
+> As an example, we will choose the default **Condition Set 1**. Then, we will configure the condition for this rule to **Always**, so it runs in all situations.
 
 <img
   src="/images/essentials/discount/set-condition-set-discount-all.webp"
@@ -99,7 +113,7 @@ After choosing the checkboxes, you need to select the action for that **discount
 
 **Order Discount:**
 
-You can choose to apply the discount using **Percentage** or **Fixed amount off** without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
+You can choose to apply the discount using **Percentage**, **Fixed amount off**, or **Fixed price subtotal percentage**, without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -122,7 +136,7 @@ Then enter the discount value and discount message.
 
 **Product Discount:**
 
-You can choose to apply the discount using **Percentage, Fixed amount off, Set fixed amount, or Set all products free** based on your requirements.
+You can choose to apply the discount using **Percentage**, **Fixed amount off**, **Set fixed amount**, **Set all products free**, or **Fixed price subtotal percentage** based on your requirements.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"
@@ -150,31 +164,97 @@ Then enter the discount value and discount message. Next, select a product or mu
 
 **Shipping Discount:**
 
-You can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, or Set all shipping free** based on your requirements.
+You can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, Set all shipping free, or Fixed price subtotal percentage** based on your requirements.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Action Type Discount"
 />
 
-The discount can also be applied only to specific shipping methods by selecting **"Apply this discount to only these shipping methods"** instead of "Apply this discount to all shipping methods", and then by entering the **names** of the shipping methods you want the discount to apply to.
+You can also choose multiple options to apply the discount. The available options are:
 
-<Warning>
-  Please note that <b>Set all shipping free</b> does not show any discount
-  value, message, or shipping method selection because all shipping methods are
-  free.
-</Warning>
+- **Selected shipping methods**  
+  Apply the discount only to specific shipping methods by entering the **names** of the shipping methods you want to include.
 
-<img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Action Shipping Methods Selection"
-/>
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Selected shipping methods"
+  />
 
-> As an example, here we are setting the discount value to **16%** using the **Percentage** option. The discount message **16% OFF** will be shown to customers at checkout. We have also set **Apply this discount to all shipping methods** to apply the discount to all shipping methods. This 16% discount applies to the shipping methods. You can see the settings in the image below.
+- **All shipping methods**  
+  Apply the discount to all available shipping methods.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="All shipping methods"
+  />
+
+- **Highest price shipping method**  
+  Apply the discount to the shipping method with the highest price.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Highest price shipping method"
+  />
+
+- **Lowest price shipping method**  
+  Apply the discount to the shipping method with the lowest price.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Lowest price shipping method"
+  />
+
+- **Shipping method with price**  
+   Apply the discount based on an entered amount, with an option to target shipping methods that are either greater than or lower than the specified value.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Shipping method with price"
+  />
+
+> As an example, here we are setting the discount value to **16%** using the **Percentage** option. The discount message **16% OFF** will be shown to customers at checkout. We have also set **All shipping methods** to apply the discount to all shipping methods. This 16% discount applies to the shipping methods. You can see the settings in the image below.
 
 <img
   src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
   alt="Action Example Discount Shipping Methods"
+/>
+
+**Reject discount codes:**
+
+Select one or more discount codes and enter a relevant rejection message.
+
+<img
+  src="/images/essentials/discount/action-reject-discount-codes.webp"
+  alt="Action Reject Discount Codes"
+/>
+
+Also, you can optionally add translations for the rejection message in multiple languages by clicking **Add translation** and then selecting the languages you want to translate the message into. The main rejection message becomes the **default message** and is shown at checkout when no translation matches the customer’s language.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Message Translations Reject Discount Codes"
+/>
+
+> As an example, we are configuring the rule to reject the discount code **"SAVE20"**. The rejection message **"This discount code is not available right now"** will be displayed to customers at checkout when they attempt to apply the discount code.
+
+<img
+  src="/images/essentials/discount/action-example-reject-discount-codes.webp"
+  alt="Action Example Reject Discount Codes"
+/>
+
+Next, on the same screen, if the shipping discount option is checked, the **Subscription Deliveries** section is also available. For subscription shipping products, you can choose to limit the shipping discount to the first delivery only, limit the shipping discount to the first delivery and make the recurring deliveries free, or limit the shipping discount to the first delivery and make all recurring deliveries free.
+
+<Warning>
+  The **Subscription Deliveries** section options apply only to shipping
+  products that have a subscription. For normal (non-subscription) product
+  deliveries, you do not need to select any option. The default setting will
+  work as expected.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Subscription Deliveries"
 />
 
 Next, on the same screen, in the [Maximum Discount Uses](/guides/en/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
@@ -221,6 +301,13 @@ The **16% shipping discount** has been applied at checkout to **all shipping met
 
 <img
   src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
+  alt="After Rule Apply"
+/>
+
+When the customer enters and applies the discount code **SAVE20**, it is rejected and the message **"This discount code is not available right now"** is displayed.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes2.webp"
   alt="After Rule Apply"
 />
 
