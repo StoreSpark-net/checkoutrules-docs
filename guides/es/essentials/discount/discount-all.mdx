@@ -59,6 +59,20 @@ Luego, en la misma pantalla, selecciona el [estado](/guides/es/get-started/conce
   alt="Estado de la regla"
 />
 
+Como parte de la configuración del [estado](/guides/es/get-started/concepts#estado), la sección opcional **Programación** te permite controlar cuándo una regla activa comienza y termina. Selecciona una **Fecha de inicio** y una **Hora de inicio** para cuando la regla debe comenzar. Opcionalmente, marca **Establecer fecha de fin** para elegir una fecha y hora de fin cuando la regla debe desactivarse automáticamente.
+
+> Si seleccionas fechas de programación mientras la regla está configurada como **Activo**, el estado se convierte en **Programado** en lugar de Activo. La regla se ejecutará desde la fecha y hora de inicio hasta la fecha y hora de fin, si se establece una.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Programación rechazar códigos de descuento"
+/>
+
+<Note>
+  Para este ejemplo, no estamos usando una programación y mantenemos el estado
+  **Prueba**.
+</Note>
+
 Después, en la misma pantalla, configura los ajustes de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento interactúa con otros descuentos. Puedes permitir que se combine con:
 
 - **Descuentos de productos** – Esto permite que la regla Descuento general se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de productos también estén configurados para combinarse con todos los descuentos.
@@ -79,9 +93,9 @@ Luego, en la misma pantalla, configura los ajustes de [Estrategia](/guides/es/ge
   alt="Estrategia de descuento de pedido"
 />
 
-Luego, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-“cuándo”) y la [acción](/guides/es/get-started/concepts#acción-el-“qué”) correspondientes. Elige la condición relevante del desplegable.
+Luego, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#conjunto-de-condiciones), [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes. Elige la condición relevante del desplegable.
 
-> Por ejemplo, aquí estamos configurando la condición para que esta regla se ejecute **Siempre**, por lo que se aplicará en todas las situaciones.
+> Como ejemplo, elegiremos el **Conjunto de condiciones 1** predeterminado. Luego, configuraremos la condición de esta regla como **Siempre**, para que se ejecute en todas las situaciones.
 
 <img
   src="/images/essentials/discount/set-condition-set-discount-all.webp"
@@ -99,7 +113,7 @@ Luego, debes seleccionar la acción para ese **tipo de descuento**.
 
 **Descuento de pedido:**
 
-Puedes elegir aplicar el descuento usando **Porcentaje** o **Monto fijo** sin necesidad de seleccionar productos específicos. Todos los demás métodos **Porcentaje excluyendo estos productos, Porcentaje solo para estos productos, Monto fijo excluyendo estos productos y Monto fijo solo para estos productos** requieren que selecciones productos para que el descuento funcione.
+Puedes elegir aplicar el descuento usando **Porcentaje**, **Cantidad fija de descuento** o **Porcentaje del subtotal a precio fijo** sin necesidad de seleccionar productos específicos. Todos los demás métodos **Porcentaje excluyendo estos productos, Porcentaje solo para estos productos, Cantidad fija de descuento excluyendo estos productos y Cantidad fija de descuento solo para estos productos** requieren que selecciones productos para que el descuento funcione.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -122,7 +136,7 @@ Luego, ingresa el valor del descuento y el mensaje del descuento.
 
 **Descuento de producto:**
 
-Puedes elegir aplicar el descuento usando **Porcentaje, Monto fijo, Establecer monto fijo o Establecer todos los productos gratis** según tus necesidades.
+Puedes elegir aplicar el descuento usando **Porcentaje**, **Cantidad fija de descuento**, **Establecer monto fijo**, **Establecer todos los productos gratis** o **Porcentaje del subtotal a precio fijo** según tus necesidades.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"
@@ -151,31 +165,97 @@ Luego, ingresa el valor del descuento y el mensaje. A continuación, selecciona 
 
 **Descuento de envío:**
 
-Puedes elegir aplicar el descuento usando **Porcentaje, Monto fijo, Porcentaje del subtotal, Establecer precio fijo o Establecer envío gratis** según tus necesidades.
+Puedes elegir aplicar el descuento usando **Porcentaje, Cantidad fija de descuento, Porcentaje del subtotal, Establecer precio fijo, Establecer todo el envío gratis o Porcentaje del subtotal a precio fijo** según tus necesidades.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Tipo de acción de descuento de envío"
 />
 
-El descuento también se puede aplicar solo a métodos de envío específicos seleccionando **"Aplicar este descuento solo a estos métodos de envío"** en lugar de "Aplicar este descuento a todos los métodos de envío", e ingresando los **nombres** de los métodos de envío a los que quieres que se aplique el descuento.
+También puedes elegir varias opciones para aplicar el descuento. Las opciones disponibles son:
 
-<Warning>
-  Ten en cuenta que <b>Establecer envío gratis</b> no muestra ningún valor de
-  descuento, mensaje ni selección de método de envío porque todos los métodos de
-  envío son gratis.
-</Warning>
+- **Métodos de envío seleccionados**  
+  Aplica el descuento solo a métodos de envío específicos ingresando los **nombres** de los métodos de envío que quieres incluir.
 
-<img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Selección de métodos de envío"
-/>
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Métodos de envío seleccionados"
+  />
 
-> Por ejemplo, aquí estamos configurando el valor del descuento al **16%** usando la opción **Porcentaje**. El mensaje de descuento **16% OFF** se mostrará a los clientes en el checkout. También hemos configurado **Aplicar este descuento a todos los métodos de envío** para aplicar el descuento a todos los métodos de envío. Este 16% se aplica a los métodos de envío. Puedes ver la configuración en la imagen a continuación.
+- **Todos los métodos de envío**  
+  Aplica el descuento a todos los métodos de envío disponibles.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Todos los métodos de envío"
+  />
+
+- **Método de envío con precio más alto**  
+  Aplica el descuento al método de envío con el precio más alto.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Método de envío con precio más alto"
+  />
+
+- **Método de envío con precio más bajo**  
+  Aplica el descuento al método de envío con el precio más bajo.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Método de envío con precio más bajo"
+  />
+
+- **Método de envío con precio**  
+  Aplica el descuento según un monto ingresado, con la opción de dirigirse a métodos de envío que sean mayores o menores que el valor especificado.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Método de envío con precio"
+  />
+
+> Por ejemplo, aquí estamos configurando el valor del descuento al **16%** usando la opción **Porcentaje**. El mensaje de descuento **16% OFF** se mostrará a los clientes en el checkout. También hemos configurado **Todos los métodos de envío** para aplicar el descuento a todos los métodos de envío. Este 16% se aplica a los métodos de envío. Puedes ver la configuración en la imagen a continuación.
 
 <img
   src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
   alt="Ejemplo de descuento de envío"
+/>
+
+**Rechazar códigos de descuento:**
+
+Selecciona uno o más códigos de descuento e ingresa un mensaje de rechazo relevante.
+
+<img
+  src="/images/essentials/discount/action-reject-discount-codes.webp"
+  alt="Acción rechazar códigos de descuento"
+/>
+
+También puedes agregar opcionalmente traducciones del mensaje de rechazo en varios idiomas haciendo clic en **Agregar traducción** y luego seleccionando los idiomas a los que quieres traducir el mensaje. El mensaje de rechazo principal se convierte en el **mensaje predeterminado** y se muestra en el checkout cuando ninguna traducción coincide con el idioma del cliente.
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="Traducciones de mensaje rechazar códigos de descuento"
+/>
+
+> Por ejemplo, estamos configurando la regla para rechazar el código de descuento **"SAVE20"**. El mensaje de rechazo **"Este código de descuento no está disponible en este momento"** se mostrará a los clientes en el checkout cuando intenten aplicar el código de descuento.
+
+<img
+  src="/images/essentials/discount/action-example-reject-discount-codes.webp"
+  alt="Ejemplo rechazar códigos de descuento"
+/>
+
+A continuación, en la misma pantalla, si la opción de descuento de envío está marcada, también está disponible la sección **Entregas de suscripción**. Para productos de envío con suscripción, puedes elegir limitar el descuento de envío solo a la primera entrega, limitar el descuento de envío a la primera entrega y hacer que las entregas recurrentes sean gratuitas, o limitar el descuento de envío a la primera entrega y hacer que todas las entregas recurrentes sean gratuitas.
+
+<Warning>
+  Las opciones de la sección **Entregas de suscripción** solo se aplican a
+  productos de envío que tienen una suscripción. Para entregas de productos
+  normales (sin suscripción), no necesitas seleccionar ninguna opción. La
+  configuración predeterminada funcionará como se espera.
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Entregas de suscripción"
 />
 
 Luego, en la misma pantalla, en la sección [Usos máximos de descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente o aplicar ambos si se selecciona un código de descuento.
@@ -224,6 +304,13 @@ El **16% de descuento en envío** se ha aplicado en el checkout a **todos los m�
 <img
   src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
   alt="Después de aplicar la regla"
+/>
+
+Cuando el cliente ingresa y aplica el código de descuento **SAVE20**, se rechaza y se muestra el mensaje **"Este código de descuento no está disponible en este momento"**.
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes2.webp"
+  alt="Después de aplicar la regla rechazar códigos"
 />
 
 ## Activar la regla

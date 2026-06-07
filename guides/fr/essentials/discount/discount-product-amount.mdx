@@ -59,6 +59,20 @@ Ensuite, sur le même écran, sélectionnez le [statut](/guides/fr/get-started/c
   alt="Statut de la règle"
 />
 
+Dans le cadre des paramètres de [statut](/guides/fr/get-started/concepts#statut), la section facultative **Planification** vous permet de contrôler quand une règle active démarre et s’arrête. Sélectionnez une **Date de début** et une **Heure de début** pour indiquer quand la règle doit commencer. Cochez éventuellement **Définir une date de fin** pour choisir une date et une heure de fin auxquelles la règle sera automatiquement désactivée.
+
+> Si vous sélectionnez des dates de planification alors que la règle est définie sur **Actif**, le statut devient **Programmée** au lieu d’Actif. La règle s’exécutera de la date et de l’heure de début jusqu’à la date et de l’heure de fin, si une date de fin est définie.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Planification Rejeter les codes de réduction"
+/>
+
+<Note>
+  Pour cet exemple, nous n’utilisons pas de planification et conservons le statut
+  **Test**.
+</Note>
+
 Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette remise produit interagit avec d’autres remises. Vous pouvez choisir de la combiner avec :
 
 - **Remises sur les produits** – Cela permet d’appliquer plusieurs remises au niveau produit ensemble. Assurez-vous que les autres remises produit sont également configurées pour se combiner avec les remises produit.
@@ -79,16 +93,16 @@ Ensuite, sur le même écran, configurez les paramètres de [Stratégie](/guides
   alt="Stratégie"
 />
 
-Ensuite, sur le même écran, sélectionnez la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-») pertinentes.
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-»).
 
-> Par exemple, ici nous configurons la règle pour qu’elle s’exécute **Toujours** et appliquons une **remise de 12%** en utilisant l’option **Pourcentage**. Le message de remise **"12% OFF"** sera affiché aux clients lors du paiement. Nous sélectionnons ensuite le produit **The 3D Modeled Snowboard** pour appliquer la remise à ce produit.
+> Par exemple, nous choisirons l’**Ensemble de conditions 1** par défaut. Ensuite, nous configurerons la règle pour qu’elle s’exécute **Toujours** et appliquons une **remise de 12%** en utilisant l’option **Pourcentage**. Le message de remise **"12% OFF"** sera affiché aux clients lors du paiement. Nous sélectionnons ensuite le produit **The 3D Modeled Snowboard** pour appliquer la remise à ce produit.
 
 <img
   src="/images/essentials/discount/condition-action-discount-product-amount.webp"
   alt="Condition + Action"
 />
 
-Dans la section Action, vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage, Montant fixe, Définir un montant fixe, ou Offrir tous les produits gratuitement** selon vos besoins.
+Dans la section **Action**, vous pouvez choisir d’appliquer la remise en utilisant **Pourcentage**, **Montant fixe**, **Définir un montant fixe**, **Offrir tous les produits gratuitement** ou **Pourcentage du sous-total à prix fixe**, selon vos besoins.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"

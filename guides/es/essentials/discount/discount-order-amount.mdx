@@ -59,6 +59,20 @@ A continuación, en la misma pantalla, selecciona el [estado](/guides/es/get-sta
   alt="Rule Status"
 />
 
+Como parte de la configuración del [estado](/guides/es/get-started/concepts#estado), la sección opcional **Programación** te permite controlar cuándo una regla activa comienza y termina. Selecciona una **Fecha de inicio** y una **Hora de inicio** para cuando la regla debe comenzar. Opcionalmente, marca **Establecer fecha de fin** para elegir una fecha y hora de fin cuando la regla debe desactivarse automáticamente.
+
+> Si seleccionas fechas de programación mientras la regla está configurada como **Activo**, el estado se convierte en **Programado** en lugar de Activo. La regla se ejecutará desde la fecha y hora de inicio hasta la fecha y hora de fin, si se establece una.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Programación rechazar códigos de descuento"
+/>
+
+<Note>
+  Para este ejemplo, no estamos usando una programación y mantenemos el estado
+  **Prueba**.
+</Note>
+
 A continuación, en la misma pantalla, configura los ajustes de [Combinaciones](/guides/es/get-started/concepts#combinaciones) para controlar cómo este descuento de pedido interactúa con **otros descuentos**. Puedes elegir permitir que se combine con:
 
 - **Descuentos de producto** – Esto permite que el descuento de pedido se use junto con cualquier descuento a nivel de producto. Asegúrate de que los descuentos de producto también estén configurados para combinarse con descuentos de pedido.
@@ -79,16 +93,16 @@ A continuación, en la misma pantalla, configura las configuraciones de [Estrate
   alt="Strategy Order Discount"
 />
 
-A continuación, en la misma pantalla, selecciona la [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes.
+A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/guides/es/get-started/concepts#conjunto-de-condiciones), [condición](/guides/es/get-started/concepts#condiciones-el-cuándo) y [acción](/guides/es/get-started/concepts#acción-el-qué) relevantes.
 
-> Como ejemplo, aquí estamos configurando la regla para ejecutarse Siempre y configurándola para aplicar un **descuento del 10%** usando la opción Porcentaje. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
+> Como ejemplo, elegiremos el **Conjunto de condiciones 1** predeterminado. Luego, configuraremos la regla para ejecutarse **Siempre** y la configuraremos para aplicar un **descuento del 10%** usando la opción **Porcentaje**. El mensaje de descuento **"10% OFF"** se mostrará a los clientes en el checkout.
 
 <img
   src="/images/essentials/discount/condition-set-discount-order-amount.webp"
   alt="Condition Set Discount"
 />
 
-En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaje** o **Cantidad fija de descuento** sin necesidad de seleccionar productos específicos. Todos los otros métodos **Porcentaje excluyendo estos productos, Porcentaje solo para estos productos, Cantidad fija de descuento excluyendo estos productos, y Cantidad fija de descuento solo para estos productos** requieren que selecciones productos para que el descuento funcione.
+En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaje**, **Cantidad fija de descuento** o **Porcentaje del subtotal a precio fijo** sin necesidad de seleccionar productos específicos. Todos los otros métodos **Porcentaje excluyendo estos productos, Porcentaje solo para estos productos, Cantidad fija de descuento excluyendo estos productos, y Cantidad fija de descuento solo para estos productos** requieren que selecciones productos para que el descuento funcione.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -96,6 +110,11 @@ En la sección de Acción, puedes elegir aplicar el descuento usando **Porcentaj
 />
 
 A continuación, en la misma pantalla, en la sección [Usos Máximos de Descuento](/guides/es/get-started/concepts#usos-máximos-de-descuento), puedes opcionalmente habilitar un límite de uso para el código de descuento, limitarlo a un uso por cliente, o aplicar ambos si se selecciona un código de descuento.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Usos máximos del descuento"
+/>
 
 Finalmente, haz clic en el botón <b>Guardar</b> en la parte superior para crear y guardar tu regla.
 

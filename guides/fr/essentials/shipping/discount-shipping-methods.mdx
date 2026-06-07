@@ -60,41 +60,115 @@ Ici, nous allons choisir le statut **Mise à l’essai**, afin de tester rapidem
   alt="Statut de la règle"
 />
 
-Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette réduction d’expédition interagit avec d’autres réductions. Vous pouvez choisir de l’autoriser à se combiner avec :
+Dans le cadre des paramètres de [statut](/guides/fr/get-started/concepts#statut), la section facultative **Planification** vous permet de contrôler quand une règle active démarre et s’arrête. Sélectionnez une **Date de début** et une **Heure de début** pour indiquer quand la règle doit commencer. Cochez éventuellement **Définir une date de fin** pour choisir une date et une heure de fin auxquelles la règle sera automatiquement désactivée.
 
-- **Réductions sur les produits** – Cela permet d’utiliser la réduction sur l’expédition en même temps que toute réduction au niveau produit. Assurez-vous que les réductions produit soient également configurées pour se combiner avec les réductions d’expédition.
+> Si vous sélectionnez des dates de planification alors que la règle est définie sur **Actif**, le statut devient **Programmée** au lieu d’Actif. La règle s’exécutera de la date et de l’heure de début jusqu’à la date et de l’heure de fin, si une date de fin est définie.
 
-- **Réductions sur les commandes** – Cela permet d’utiliser la réduction sur l’expédition en même temps que les réductions globales au niveau commande. Assurez-vous que les réductions de commande soient aussi configurées pour se combiner avec les réductions d’expédition.
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Planification Rejeter les codes de réduction"
+/>
+
+<Note>
+  Pour cet exemple, nous n’utilisons pas de planification et conservons le statut
+  **Test**.
+</Note>
+
+Ensuite, sur le même écran, configurez les paramètres de [Combinaisons](/guides/fr/get-started/concepts#combinaisons) pour contrôler comment cette remise d’expédition interagit avec d’autres remises. Vous pouvez autoriser sa combinaison avec :
+
+- **Remises produit** – Cela permet d’utiliser la remise d’expédition avec des remises au niveau produit. Assurez-vous que les remises produit sont également configurées pour se combiner avec les remises d’expédition.
+- **Remises de commande** – Cela permet d’utiliser la remise d’expédition avec des remises au niveau de la commande. Assurez-vous que les remises de commande autorisent également la combinaison avec les remises d’expédition.
 
 <img
   src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
-  alt="Combinaisons Réduction sur les méthodes d’expédition"
+  alt="Combinaisons Réduction Expédition"
 />
 
-Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-»), et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-»).
+Ensuite, sur le même écran, configurez les paramètres de [Stratégie](/guides/fr/get-started/concepts#stratégie) pour contrôler comment le système gère plusieurs blocs de remise. Actuellement, seule l’option **Premier** est disponible et sélectionnée par défaut. Cette option applique uniquement la première remise qui répond aux conditions, en ignorant toute remise plus avantageuse qui pourrait suivre.
 
-> Par exemple, ici nous utilisons l’**Ensemble de conditions 1** par défaut, définissons la règle pour qu’elle s’exécute **Toujours**, et la configurons pour appliquer une **réduction de 10 %** sur toutes les méthodes d’expédition en utilisant l’option **Pourcentage**. Le message de réduction **"10% OFF"** sera affiché aux clients lors du passage en caisse.
+<img
+  src="/images/essentials/shipping/strategy-shipping-discount.webp"
+  alt="Stratégie Remise Livraison"
+/>
+
+Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-»).
+
+> Par exemple, nous choisirons l’**Ensemble de conditions 1** par défaut. Ensuite, nous configurerons la règle pour qu’elle s’exécute **Toujours** et appliquons une **remise de 10%** sur tous les modes de livraison en utilisant l’option **Pourcentage**. Le message de remise **"10% OFF"** sera affiché aux clients lors du paiement.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
-  alt="Ensemble de conditions Réduction sur les méthodes d’expédition"
+  alt="Définir la condition Remise Livraison"
 />
 
-Dans la section Action, vous pouvez choisir d’appliquer la réduction en utilisant **Pourcentage, Montant fixe, Pourcentage du sous-total, Définir un prix fixe, ou Rendre toute l’expédition gratuite** en fonction de vos besoins.
+Dans la section **Action**, vous pouvez appliquer la remise en utilisant **Pourcentage**, **Montant fixe**, **Pourcentage du sous-total**, **Définir un prix fixe**, **Offrir toute l’expédition gratuitement** ou **Pourcentage du sous-total à prix fixe**, selon vos besoins.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
-  alt="Type d’action Réduction"
+  alt="Type d’Action Réduction"
 />
 
-La réduction peut également être appliquée uniquement à certaines méthodes d’expédition en sélectionnant **"Appliquer cette réduction uniquement à ces méthodes d’expédition"** au lieu de "Appliquer cette réduction à toutes les méthodes d’expédition", puis en saisissant les **noms** des méthodes d’expédition auxquelles vous voulez que la réduction s’applique.
+Vous pouvez également choisir plusieurs options pour appliquer la remise. Les options disponibles sont :
+
+- **Méthodes d’expédition sélectionnées**  
+  Appliquez la remise uniquement à des méthodes d’expédition spécifiques en saisissant les **noms** des méthodes d’expédition à inclure.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Méthodes d’expédition sélectionnées"
+  />
+
+- **Toutes les méthodes d’expédition**  
+  Appliquez la remise à toutes les méthodes d’expédition disponibles.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="Toutes les méthodes d’expédition"
+  />
+
+- **Méthode d’expédition au prix le plus élevé**  
+  Appliquez la remise à la méthode d’expédition dont le prix est le plus élevé.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Méthode d’expédition au prix le plus élevé"
+  />
+
+- **Méthode d’expédition au prix le plus bas**  
+  Appliquez la remise à la méthode d’expédition dont le prix est le plus bas.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Méthode d’expédition au prix le plus bas"
+  />
+
+- **Méthode d’expédition avec prix**  
+  Appliquez la remise en fonction d’un montant saisi, avec la possibilité de cibler les méthodes d’expédition dont le prix est supérieur ou inférieur à la valeur indiquée.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Méthode d’expédition avec prix"
+  />
+
+Ensuite, sur le même écran, dans la section [Livraisons d’abonnement](/guides/fr/get-started/concepts#livraisons-d’abonnement), pour les produits d’expédition par abonnement, vous pouvez choisir de limiter la remise d’expédition à la première livraison uniquement, de limiter la remise d’expédition à la première livraison et de rendre les livraisons récurrentes gratuites, ou de limiter la remise d’expédition à la première livraison et de rendre toutes les livraisons récurrentes gratuites.
+
+<Warning>
+  Les options de la section **Livraisons d’abonnement** s’appliquent uniquement aux
+  produits d’expédition qui ont un abonnement. Pour les livraisons de produits
+  normaux (sans abonnement), vous n’avez pas besoin de sélectionner d’option. Le
+  paramètre par défaut fonctionnera comme prévu.
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Sélection des méthodes d’expédition pour l’action"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Livraisons d’abonnement"
 />
 
-Ensuite, sur le même écran, dans la section [Utilisations maximales de la réduction](/guides/fr/get-started/concepts#nombre-maximal-d’utilisations-de-la-réduction), vous pouvez éventuellement activer une limite d’utilisation pour le code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est sélectionné.
+Ensuite, sur le même écran, dans la section [Nombre maximum d’utilisations de la remise](/guides/fr/get-started/concepts#nombre-maximal-d’utilisations-de-la-réduction), vous pouvez éventuellement définir une limite d’utilisation du code de réduction, la limiter à une utilisation par client, ou appliquer les deux si un code de réduction est choisi.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Utilisations maximales de la réduction"
+/>
 
 Enfin, cliquez sur le bouton <b>Enregistrer</b> en haut pour créer et enregistrer votre règle.
 

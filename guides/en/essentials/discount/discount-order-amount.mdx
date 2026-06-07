@@ -59,6 +59,20 @@ Next, on the same screen, select the rule [status](/guides/en/get-started/concep
   alt="Rule Status"
 />
 
+As part of the [status](/guides/en/get-started/concepts#status) settings, the optional **Schedule** section lets you control when an active rule starts and stops. Select a **Start date** and **Start time** for when the rule should begin. Optionally, check **Set end date** to choose an end date and time when the rule should automatically deactivate.
+
+> If you select schedule dates while the rule is set to **Active**, the status becomes **Scheduled** instead of Active. The rule will run from the start date and time until the end date and time, if one is set.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Schedule Reject Discount Codes"
+/>
+
+<Note>
+  For this example, we are not using a schedule and are keeping **Testing**
+  status.
+</Note>
+
 Next, on the same screen, configure the [Combinations](/guides/en/get-started/concepts#combinations) settings to control how this order discount interacts with **other discounts**. You can choose to allow it to combine with:
 
 - **Product discounts** – This lets the order discount be used alongside any product level discounts. Make sure product discounts are also configured to combine with order discounts.
@@ -79,16 +93,16 @@ Next, on the same screen, configure the [Strategy](/guides/en/get-started/concep
   alt="Strategy Order Discount"
 />
 
-Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what).
+Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
-> As an example, here we are setting the rule to run Always and configuring it to apply a **10% discount** using the Percentage option. The discount message **"10% OFF"** will be shown to customers at checkout.
+> As an example, we will choose default **Condition set 1**. Then, we will configure the rule to run **Always** and set it to apply a **10% discount** using the **Percentage** option. The discount message **"10% OFF"** will be displayed to customers at checkout.
 
 <img
   src="/images/essentials/discount/condition-set-discount-order-amount.webp"
   alt="Condition Set Discount"
 />
 
-In the Action section, you can choose to apply the discount using **Percentage** or **Fixed amount off** without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
+In the Action section, you can choose to apply the discount using **Percentage**, **Fixed amount off**, or **Fixed price subtotal percentage** without needing to select specific products. All other methods **Percentage excluding these products, Percentage for only these products, Fixed amount off excluding these products, and Fixed amount off for only these products** require you to select products for the discount to work.
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -96,6 +110,11 @@ In the Action section, you can choose to apply the discount using **Percentage**
 />
 
 Next, on the same screen, in the [Maximum Discount Uses](/guides/en/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Maximum Discount Uses"
+/>
 
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 

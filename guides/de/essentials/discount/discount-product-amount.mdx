@@ -60,6 +60,20 @@ Hier wählen wir den Status **Testen**, damit wir die Regel schnell überprüfen
   alt="Regelstatus"
 />
 
+Als Teil der [Status](/guides/de/get-started/concepts#status)-Einstellungen ermöglicht der optionale Abschnitt **Zeitplan** die Steuerung, wann eine aktive Regel startet und stoppt. Wählen Sie ein **Startdatum** und eine **Startzeit** für den Regelbeginn. Optional aktivieren Sie **Enddatum festlegen**, um ein Enddatum und eine Endzeit für die automatische Deaktivierung zu wählen.
+
+> Wenn Sie Zeitplandaten auswählen, während die Regel auf **Aktiv** gesetzt ist, wird der Status **Geplant** statt Aktiv. Die Regel läuft vom Startdatum und der Startzeit bis zum Enddatum und der Endzeit, sofern festgelegt.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Zeitplan Rabattcodes ablehnen"
+/>
+
+<Note>
+  Für dieses Beispiel verwenden wir keinen Zeitplan und behalten den Status
+  **Testen** bei.
+</Note>
+
 Konfigurieren Sie anschließend auf demselben Bildschirm die Einstellungen für [Kombinationen](/guides/de/get-started/concepts#kombinationen), um festzulegen, wie dieser Produktrabatt mit anderen Rabatten interagiert. Sie können auswählen, dass er kombinierbar ist mit:
 
 - **Produktrabatten** – Ermöglicht, dass mehrere Rabatte auf Produktebene gleichzeitig angewendet werden. Stellen Sie sicher, dass die anderen Produktrabatte ebenfalls für die Kombination mit Produktrabatten aktiviert sind.
@@ -80,16 +94,16 @@ Als Nächstes konfigurieren Sie auf demselben Bildschirm die Einstellungen für 
   alt="Strategie"
 />
 
-Als Nächstes wählen Sie auf demselben Bildschirm die entsprechende [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus.
+Als Nächstes wählen Sie auf demselben Bildschirm das entsprechende [Bedingungsset](/guides/de/get-started/concepts#bedingungsset), die [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und die [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus.
 
-> Beispiel: Hier setzen wir die Regel auf **Stets** und konfigurieren sie so, dass ein **12 % Rabatt** mit der Option **Prozentsatz** angewendet wird. Die Rabattnachricht **„12% OFF“** wird den Kunden an der Kasse angezeigt. Anschließend wählen wir das Produkt **The 3D Modeled Snowboard** aus, um den Rabatt auf dieses Produkt anzuwenden.
+> Beispiel: Wir wählen das Standard-**Bedingungsset 1**. Anschließend konfigurieren wir die Regel so, dass sie **Stets** ausgeführt wird und einen **12%-Rabatt** mit der Option **Prozentsatz** anwendet. Die Rabattnachricht **„12% OFF“** wird den Kunden an der Kasse angezeigt. Anschließend wählen wir das Produkt **The 3D Modeled Snowboard** aus, um den Rabatt auf dieses Produkt anzuwenden.
 
 <img
   src="/images/essentials/discount/condition-action-discount-product-amount.webp"
   alt="Bedingung + Aktion"
 />
 
-Im Abschnitt **Aktion** können Sie je nach Bedarf auswählen, ob der Rabatt über **Prozentsatz, Fester Rabattbetrag, Legen Sie einen festen Betrag fest** oder **Geben Sie alle Produkte kostenlos frei** angewendet werden soll.
+Im Abschnitt **Aktion** können Sie je nach Bedarf auswählen, ob der Rabatt über **Prozentsatz**, **Fester Rabattbetrag**, **Legen Sie einen festen Betrag fest**, **Geben Sie alle Produkte kostenlos frei** oder **Festpreis-Zwischensummen-Prozentsatz** angewendet werden soll.
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"

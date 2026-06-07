@@ -59,42 +59,115 @@ icon: "badge-percent"
   alt="ルールステータス"
 />
 
-同じ画面で、[組み合わせ](/guides/ja/get-started/concepts#組み合わせ) の設定を行い、この配送割引が他の割引とどのように連動するかを制御します。以下の組み合わせが可能です:
+[ステータス](/guides/ja/get-started/concepts#ステータス) 設定の一部として、オプションの **スケジュール** セクションでは、アクティブなルールの開始と停止のタイミングを制御できます。**開始日** と **開始時刻** を選択して、ルールが開始するタイミングを指定します。オプションで **終了日を設定** にチェックを入れ、ルールが自動的に無効になる終了日と時刻を選択できます。
 
-- **商品割引** – 商品レベルの割引と併用できます。商品割引も配送割引と組み合わせ可能に設定してください。
-- **注文割引** – 注文全体の割引と併用できます。注文割引も配送割引と組み合わせ可能に設定してください。
+> ルールが **アクティブ** に設定されている状態でスケジュールの日付を選択すると、ステータスはアクティブの代わりに **予定** になります。終了日時が設定されている場合、ルールは開始日時から終了日時まで実行されます。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="スケジュール 割引コード拒否"
+/>
+
+<Note>
+  この例ではスケジュールを使用せず、**テスト** ステータスのままにします。
+</Note>
+
+次に、同じ画面で、[組み合わせ設定](/guides/ja/get-started/concepts#組み合わせ) を設定し、この配送割引が他の割引とどのように組み合わせられるかを制御します。次の組み合わせが可能です：
+
+- **商品割引** – 配送割引が商品レベルの割引と併用できるようにします。商品割引も配送割引との組み合わせを許可するように設定してください。
+
+- **注文割引** – 配送割引が全体の注文割引と併用できるようにします。注文割引も配送割引との組み合わせを許可するように設定してください。
 
 <img
   src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
-  alt="組み合わせ設定"
+  alt="配送割引の組み合わせ"
 />
 
-次に、同じ画面で関連する [条件セット](/guides/ja/get-started/concepts#コンディションセット)、[条件](/guides/ja/get-started/concepts#コンディション（「いつ」）)、および [アクション](/guides/ja/get-started/concepts#アクション（「何を」）) を選択します。
+次に、同じ画面で [戦略](/guides/ja/get-started/concepts#ストラテジー) の設定を行い、システムが複数の割引ブロックをどのように処理するかを制御します。  
+現在、使用可能なオプションは **最初** のみで、デフォルトで選択されています。このオプションは、条件を満たす最初の割引のみを適用し、より大きな割引は無視します。
 
-> ここでは例として、デフォルトの **条件セット1** を使用し、ルールを常に実行するように設定し、**パーセンテージ** オプションで全配送方法に **10%割引** を適用します。割引メッセージ **「10% OFF」** がチェックアウトで顧客に表示されます。
+<img
+  src="/images/essentials/shipping/strategy-shipping-discount.webp"
+  alt="配送割引戦略の設定"
+/>
+
+次に、同じ画面で、関連する [条件セット](/guides/ja/get-started/concepts#コンディションセット)、[条件](/guides/ja/get-started/concepts#コンディション（「いつ」）)、および [アクション](/guides/ja/get-started/concepts#アクション（「何を」）) を選択します。
+
+> 例として、デフォルトの **条件セット 1** を選択します。次に、このルールを **常に** 実行するよう設定し、**パーセンテージ** オプションを使用してすべての配送方法に **10% 割引** を適用します。割引メッセージ **「10% OFF」** がチェックアウト画面に表示されます。
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
-  alt="条件セット配送方法の割引"
+  alt="配送割引条件とアクションの設定"
 />
 
-アクションセクションでは、必要に応じて **パーセンテージ、固定金額、サブトータルパーセンテージ、固定価格設定、またはすべての配送を無料にする** オプションを選択できます。
+アクションセクションでは、必要に応じて **パーセンテージ、固定額割引、小計のパーセンテージ、固定価格設定、すべての配送無料、または定価小計パーセンテージ** で割引を適用できます。
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
-  alt="アクションタイプ割引"
+  alt="アクションタイプ 割引"
 />
 
-割引は特定の配送方法のみに適用することも可能です。**「この割引を特定の配送方法のみに適用」** を選択し、割引を適用する配送方法の **名前** を入力します。
+割引の適用には、複数のオプションを選択することもできます。利用可能なオプションは次のとおりです。
+
+- **選択した配送方法**  
+  含める配送方法の **名前** を入力して、特定の配送方法にのみ割引を適用します。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="選択した配送方法"
+  />
+
+- **すべての配送方法**  
+  利用可能なすべての配送方法に割引を適用します。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="すべての配送方法"
+  />
+
+- **最も高い価格の配送方法**  
+  最も高い価格の配送方法に割引を適用します。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="最も高い価格の配送方法"
+  />
+
+- **最も低い価格の配送方法**  
+  最も低い価格の配送方法に割引を適用します。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="最も低い価格の配送方法"
+  />
+
+- **価格付き配送方法**  
+  入力した金額に基づいて割引を適用し、指定した値より大きいか小さい配送方法を対象にするオプションを選択できます。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="価格付き配送方法"
+  />
+
+次に、同じ画面の [定期配送](/guides/ja/get-started/concepts#定期配送) セクションでは、サブスクリプション配送商品について、配送割引を初回配送のみに限定する、初回配送のみに限定して定期配送を無料にする、または初回配送のみに限定してすべての定期配送を無料にする、のいずれかを選択できます。
+
+<Warning>
+  **定期配送** セクションのオプションは、サブスクリプションがある配送商品にのみ適用されます。通常の（非サブスクリプション）商品配送では、オプションを選択する必要はありません。デフォルト設定で期待どおりに動作します。
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="配送方法選択"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="定期配送"
 />
 
-同じ画面で、[最大割引使用回数](/guides/ja/get-started/concepts#割引の最大利用回数) セクションにて、割引コードの使用制限を有効にしたり、顧客ごとに1回までに制限したり、両方を設定することもできます。
+次に、同じ画面の [割引の最大使用回数](/guides/ja/get-started/concepts#割引の最大利用回数) セクションにて、割引コードの使用制限を有効化したり、顧客ごとに1回までに制限したり、割引コードが選択されている場合は両方を適用できます。
 
-最後に、画面上部の <b>保存</b> ボタンをクリックしてルールを作成および保存します。
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="割引の最大使用回数"
+/>
+
+最後に、画面上部の <b>保存</b> ボタンをクリックして、ルールを作成および保存します。
 
 <img src="/images/shared/save-rule.webp" alt="ルール保存" />
 

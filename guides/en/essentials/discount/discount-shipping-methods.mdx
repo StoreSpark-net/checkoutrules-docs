@@ -59,6 +59,20 @@ Next, on the same screen, select the rule [status](/guides/en/get-started/concep
   alt="Rule Status"
 />
 
+As part of the [status](/guides/en/get-started/concepts#status) settings, the optional **Schedule** section lets you control when an active rule starts and stops. Select a **Start date** and **Start time** for when the rule should begin. Optionally, check **Set end date** to choose an end date and time when the rule should automatically deactivate.
+
+> If you select schedule dates while the rule is set to **Active**, the status becomes **Scheduled** instead of Active. The rule will run from the start date and time until the end date and time, if one is set.
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="Schedule Reject Discount Codes"
+/>
+
+<Note>
+  For this example, we are not using a schedule and are keeping **Testing**
+  status.
+</Note>
+
 Next, on the same screen, configure the [Combinations](/guides/en/get-started/concepts#combinations) settings to control how this shipping discount interacts with other discounts. You can choose to allow it to combine with:
 
 - **Product discounts** – This lets the shipping discount be used alongside any product level discounts. Make sure product discounts are also configured to combine with shipping discounts.
@@ -77,30 +91,84 @@ Next, on the same screen, configure the [Strategy](/guides/en/get-started/concep
   alt="Strategy Shipping Discount"
 />
 
-Next, on the same screen, select the relevant [condition](/guides/en/get-started/concepts#conditions-when) and [action](/guides/en/get-started/concepts#action-what).
+Next, on the same screen, select the relevant [condition set](/guides/en/get-started/concepts#condition-set), [condition](/guides/en/get-started/concepts#conditions-when), and [action](/guides/en/get-started/concepts#action-what).
 
-> As an example, here we are setting the rule to run **Always** and configuring it to apply a **10% discount** to all shipping methods using the **Percentage** option. The discount message **"10% OFF"** will be shown to customers at checkout.
+> As an example, we will choose the default **Condition set 1**. Then, we will configure the rule to run **Always** and configure it to apply a **10% discount** to all shipping methods using the **Percentage** option. The discount message **"10% OFF"** will be shown to customers at checkout.
 
 <img
   src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
   alt="Condition Set Discount Shipping Methods"
 />
 
-In the Action section, you can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, or Set all shipping free** based on your requirements.
+In the Action section, you can choose to apply the discount using **Percentage, Fixed amount off, Subtotal percentage, Set fixed price, Set all shipping free, or Fixed price subtotal percentage** based on your requirements.
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="Action Type Discount"
 />
 
-The discount can also be applied only to specific shipping methods by selecting **"Apply this discount to only these shipping methods"** instead of "Apply this discount to all shipping methods", and then by entering the **names** of the shipping methods you want the discount to apply to.
+You can also choose multiple options to apply the discount. The available options are:
+
+- **Selected shipping methods**  
+  Apply the discount only to specific shipping methods by entering the **names** of the shipping methods you want to include.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="Selected shipping methods"
+  />
+
+- **All shipping methods**  
+  Apply the discount to all available shipping methods.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="All shipping methods"
+  />
+
+- **Highest price shipping method**  
+  Apply the discount to the shipping method with the highest price.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="Highest price shipping method"
+  />
+
+- **Lowest price shipping method**  
+  Apply the discount to the shipping method with the lowest price.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="Lowest price shipping method"
+  />
+
+- **Shipping method with price**  
+   Apply the discount based on an entered amount, with an option to target shipping methods that are either greater than or lower than the specified value.
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="Shipping method with price"
+  />
+
+Next, on the same screen, in the [Subscription Deliveries](/guides/en/get-started/concepts#subscription-deliveries) section, for subscription shipping products, you can choose to limit the shipping discount to the first delivery only, limit the shipping discount to the first delivery and make the recurring deliveries free, or limit the shipping discount to the first delivery and make all recurring deliveries free.
+
+<Warning>
+  The **Subscription Deliveries** section options apply only to shipping
+  products that have a subscription. For normal (non-subscription) product
+  deliveries, you do not need to select any option. The default setting will
+  work as expected.
+</Warning>
 
 <img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="Action Shipping Methods Selection"
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="Subscription Deliveries"
 />
 
 Next, on the same screen, in the [Maximum Discount Uses](/guides/en/get-started/concepts#maximum-discount-uses) section, you can optionally enable a usage limit for the discount code, limit it to one use per customer, or apply both if a discount code is selected.
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="Maximum Discount Uses"
+/>
 
 Finally, click the <b>Save</b> button at the top to create and save your rule.
 

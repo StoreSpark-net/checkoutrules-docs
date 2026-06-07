@@ -59,6 +59,19 @@ icon: "badge-percent"
   alt="规则地位"
 />
 
+作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制活动规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以指定规则应何时开始。可选地，勾选 **设置结束日期** 以选择规则应自动停用的结束日期和时间。
+
+> 如果在规则设置为 **激活** 时选择了计划日期，状态将变为 **已计划** 而不是激活。如果设置了结束日期和时间，规则将从开始日期和时间运行到结束日期和时间。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="计划 拒绝折扣码"
+/>
+
+<Note>
+  在此示例中，我们不使用计划，并保持 **测试中** 状态。
+</Note>
+
 接下来，在同一界面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此订单折扣如何与**其他折扣**交互。您可以选择允许其与以下折扣组合使用：
 
 - **产品折扣** – 这使订单折扣可以与任何产品级别的折扣一起使用。请确保产品折扣也被配置为允许与订单折扣组合。
@@ -79,16 +92,16 @@ icon: "badge-percent"
   alt="策略订单折扣"
 />
 
-接下来，在同一界面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+接下来，在同一界面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。
 
-> 例如，在这里我们设置规则为始终运行，并将其配置为使用百分比选项应用 **10% 折扣**。折扣信息 **"10% 折扣"** 将在结账时显示给客户。
+> 例如，我们将选择默认的 **条件集 1**。然后，我们将规则配置为 **始终** 运行，并使用 **百分比** 选项应用 **10% 折扣**。折扣信息 **"10% OFF"** 将在结账时显示给客户。
 
 <img
   src="/images/essentials/discount/condition-set-discount-order-amount.webp"
   alt="条件集折扣"
 />
 
-在操作部分，您可以选择使用 **百分比** 或 **固定金额减免** 来应用折扣，而无需选择特定产品。其他方法 **排除这些产品的百分比、仅针对这些产品的百分比、排除这些产品的固定金额减免、仅针对这些产品的固定金额减免** 则需要您选择产品才能生效。
+在 **动作** 部分，您可以选择使用 **百分比**、**固定金额减免** 或 **固定价格小计百分比** 来应用折扣，而无需选择特定产品。其他方法 **排除这些产品的百分比、仅针对这些产品的百分比、排除这些产品的固定金额减免、仅针对这些产品的固定金额减免** 则需要您选择产品才能生效。
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -96,6 +109,11 @@ icon: "badge-percent"
 />
 
 接下来，在同一界面中，在 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择性地启用折扣码的使用限制、限制为每个客户一次，或者在选择折扣码时同时应用这两者。
+
+<img
+  src="/images/essentials/discount/maximum-discount-uses.webp"
+  alt="最大折扣使用次数"
+/>
 
 最后，点击顶部的 <b>保存</b> 按钮来创建并保存您的规则。
 

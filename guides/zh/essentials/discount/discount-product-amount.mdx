@@ -52,14 +52,27 @@ icon: "badge-percent"
   alt="折扣码"
 />
 
-接下来，在同一页面上，选择规则 [状态](/guides/zh/get-started/concepts#地位)：测试、激活或停用。这里我们选择 **测试** 状态，以便快速测试规则，而不会影响实际客户的结账。
+接下来，在同一页面上，选择规则的 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活或停用。这里我们选择 **测试中** 状态，以便快速测试规则，而不会影响实际客户的结账。
 
 <img
   src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
-  alt="规则状态"
+  alt="规则地位"
 />
 
-在同一页面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此产品折扣与其他折扣的交互方式。您可以选择允许其与以下折扣组合：
+作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制活动规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以指定规则应何时开始。可选地，勾选 **设置结束日期** 以选择规则应自动停用的结束日期和时间。
+
+> 如果在规则设置为 **激活** 时选择了计划日期，状态将变为 **已计划** 而不是激活。如果设置了结束日期和时间，规则将从开始日期和时间运行到结束日期和时间。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="计划 拒绝折扣码"
+/>
+
+<Note>
+  在此示例中，我们不使用计划，并保持 **测试中** 状态。
+</Note>
+
+接下来，在同一页面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此产品折扣与其他折扣的交互方式。您可以选择允许其与以下折扣组合：
 
 - **产品折扣** – 允许多个产品级别折扣叠加。确保其他产品折扣也设置为可与产品折扣组合。
 - **订单折扣** – 允许产品折扣与整体订单级折扣叠加。确保订单折扣也允许与产品折扣组合。
@@ -70,23 +83,23 @@ icon: "badge-percent"
   alt="组合"
 />
 
-在同一页面上，配置 [策略](/guides/zh/get-started/concepts#策略) 设置，以控制系统如何处理多个折扣块。您可以选择 **首个**，只应用第一个符合条件的折扣；或 **全部**，对购物车中每个符合条件的产品应用折扣；或 **最大 (Maximum)**，评估所有折扣块并应用折扣金额最高的那一个。
+接下来，在同一页面上，配置 [策略](/guides/zh/get-started/concepts#策略) 设置，以控制系统如何处理多个折扣块。您可以选择 **首个**，只应用第一个符合条件的折扣，忽略后续可能更优的折扣；或 **全部**，对购物车中每个符合条件的产品应用折扣；或 **最大**，评估所有折扣块并应用减免最大的一项。
 
 <img
   src="/images/essentials/discount/strategy-discount-product-amount.webp"
   alt="策略"
 />
 
-接下来，在同一页面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
+接下来，在同一页面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。
 
-> 例如，这里我们设置规则 **始终运行**，并配置 **12% 折扣** 使用 **百分比** 选项。折扣信息 **"12% OFF"** 将显示给客户。然后选择产品 **3D 模型滑雪板 (The 3D Modeled Snowboard)** 以应用折扣。
+> 例如，我们将选择默认的 **条件集 1**。然后，我们将规则配置为 **始终** 运行，并使用 **百分比** 选项应用 **12% 折扣**。折扣信息 **"12% OFF"** 将在结账时显示给客户。然后选择产品 **The 3D Modeled Snowboard** 以应用折扣。
 
 <img
   src="/images/essentials/discount/condition-action-discount-product-amount.webp"
   alt="条件 + 操作"
 />
 
-在操作部分，您可以根据需求选择使用 **百分比、固定金额折扣、设置固定金额，或设置所有产品免费** 来应用折扣。
+在 **动作** 部分，您可以根据需求选择使用 **百分比、固定金额减免、设置固定金额、设置所有产品免费，或固定价格小计百分比** 来应用折扣。
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"

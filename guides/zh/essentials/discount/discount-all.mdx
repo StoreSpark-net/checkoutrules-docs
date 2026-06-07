@@ -52,14 +52,27 @@ icon: "badge-percent"
   alt="折扣码"
 />
 
-接下来，在同一页面上，选择规则 [状态](/guides/zh/get-started/concepts#地位)：测试、激活或停用。这里我们选择 **测试** 状态，以便快速测试规则，而不会影响实际客户结账。
+接下来，在同一页面上，选择规则的 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活或停用。这里我们选择 **测试中** 状态，以便快速测试规则，而不会影响实际客户的结账。
 
 <img
   src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
-  alt="规则状态"
+  alt="规则地位"
 />
 
-在同一页面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此规则折扣与其他折扣的交互方式。您可以选择允许其与以下折扣组合：
+作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制活动规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以指定规则应何时开始。可选地，勾选 **设置结束日期** 以选择规则应自动停用的结束日期和时间。
+
+> 如果在规则设置为 **激活** 时选择了计划日期，状态将变为 **已计划** 而不是激活。如果设置了结束日期和时间，规则将从开始日期和时间运行到结束日期和时间。
+
+<img
+  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
+  alt="计划 拒绝折扣码"
+/>
+
+<Note>
+  在此示例中，我们不使用计划，并保持 **测试中** 状态。
+</Note>
+
+接下来，在同一页面上，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此规则折扣与其他折扣的交互方式。您可以选择允许其与以下折扣组合：
 
 - **产品折扣** – 允许“全部折扣”规则与产品级折扣同时使用。确保产品折扣也设置为可与全部折扣组合。
 - **订单折扣** – 允许“全部折扣”规则与整体订单级折扣叠加。确保订单折扣也设置为可与全部折扣组合。
@@ -77,9 +90,9 @@ icon: "badge-percent"
   alt="策略 订单折扣"
 />
 
-在同一页面上，选择相关的 [条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。从下拉列表中选择条件。
+接下来，在同一页面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。从下拉列表中选择相关条件。
 
-> 例如，这里我们将条件设置为 **始终**，规则将始终生效。
+> 例如，我们将选择默认的 **条件集 1**。然后，我们将此规则的条件配置为 **始终**，以便在所有情况下运行。
 
 <img
   src="/images/essentials/discount/set-condition-set-discount-all.webp"
@@ -97,7 +110,7 @@ icon: "badge-percent"
 
 **订单折扣：**
 
-您可以选择使用 **百分比** 或 **固定金额折扣**，无需选择具体产品。其他方法 **排除特定产品的百分比折扣、仅限特定产品的百分比折扣、排除特定产品的固定金额折扣、仅限特定产品的固定金额折扣** 需要选择产品才能生效。
+您可以选择使用 **百分比**、**固定金额减免** 或 **固定价格小计百分比** 来应用折扣，而无需选择具体产品。其他方法 **排除这些产品的百分比、仅针对这些产品的百分比、排除这些产品的固定金额减免、仅针对这些产品的固定金额减免** 需要选择产品才能生效。
 
 <img
   src="/images/essentials/discount/action-type-discount-order-amount.webp"
@@ -120,7 +133,7 @@ icon: "badge-percent"
 
 **产品折扣：**
 
-您可以选择使用 **百分比、固定金额折扣、设置固定金额，或设置所有产品免费** 来应用折扣。
+您可以根据需求选择使用 **百分比、固定金额减免、设置固定金额、设置所有产品免费，或固定价格小计百分比** 来应用折扣。
 
 <img
   src="/images/essentials/discount/action-type-discount-product-amount.webp"
@@ -148,33 +161,97 @@ icon: "badge-percent"
 
 **运费折扣：**
 
-您可以选择使用 **百分比、固定金额折扣、小计百分比、设置固定价格，或设置所有运费免费** 来应用折扣。
+您可以根据需求选择使用 **百分比、固定金额减免、小计百分比、设置固定价格、设置所有配送免费，或固定价格小计百分比** 来应用折扣。
 
 <img
   src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
   alt="操作类型 运费折扣"
 />
 
-折扣也可以仅应用于特定运送方式，通过选择 **"仅将此折扣应用于这些运送方式"** 而非 "将此折扣应用于所有运送方式"，然后输入希望折扣生效的运送方式 **名称**。
+您还可以选择多个选项来应用折扣。可用选项包括：
 
-<Warning>
-  请注意，<b>设置所有运费免费</b>{" "}
-  不会显示折扣值、信息或运送方式选择，因为所有运送方式都是免费的。
-</Warning>
+- **选定的配送方式**  
+  通过输入要包含的配送方式的 **名称**，将折扣仅应用于特定配送方式。
 
-<img
-  src="/images/essentials/shipping/action-shipping-methods-selection-discount-shipping-methods.webp"
-  alt="运送方式选择"
-/>
+  <img
+    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
+    alt="选定的配送方式"
+  />
 
-> 例如，这里我们将折扣值设置为 **16%**，使用 **百分比** 选项。折扣信息 **16% 折扣** 将显示在结账页面。我们同时设置 **应用此折扣至所有运送方式**，折扣将应用于所有运送方式。此 16% 折扣应用于运送方式。如下图所示。
+- **所有配送方式**  
+  将折扣应用于所有可用的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
+    alt="所有配送方式"
+  />
+
+- **价格最高的配送方式**  
+  将折扣应用于价格最高的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
+    alt="价格最高的配送方式"
+  />
+
+- **价格最低的配送方式**  
+  将折扣应用于价格最低的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
+    alt="价格最低的配送方式"
+  />
+
+- **按价格筛选的配送方式**  
+  根据输入的金额应用折扣，并可选择针对高于或低于指定值的配送方式。
+
+  <img
+    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
+    alt="按价格筛选的配送方式"
+  />
+
+> 例如，这里我们使用 **百分比** 选项将折扣值设置为 **16%**。折扣信息 **"16% OFF"** 将在结账时显示给客户。我们还设置了 **所有配送方式**，以将折扣应用于所有配送方式。此 16% 折扣适用于配送方式。如下图所示。
 
 <img
   src="/images/essentials/discount/action-example-discount-shipping-methods.webp"
   alt="运费折扣示例"
 />
 
-在同一页面上，在 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择性启用折扣码使用限制，限制每位客户使用一次，或两者同时应用（如果选择了折扣码）。
+**拒绝折扣码：**
+
+选择一个或多个折扣码并输入相关的拒绝信息。
+
+<img
+  src="/images/essentials/discount/action-reject-discount-codes.webp"
+  alt="动作 拒绝折扣码"
+/>
+
+此外，您可以点击 **添加翻译** 并选择要将信息翻译成的语言，以可选方式为拒绝信息添加多种语言的翻译。主要拒绝信息将成为 **默认信息**，当没有与客户语言匹配的翻译时，将在结账时显示。
+
+<img
+  src="/images/essentials/discount/message-translations-reject-discount-codes.webp"
+  alt="信息翻译 拒绝折扣码"
+/>
+
+> 例如，我们配置规则以拒绝折扣码 **"SAVE20"**。当客户尝试应用该折扣码时，拒绝信息 **"此折扣码目前不可用"** 将在结账时显示。
+
+<img
+  src="/images/essentials/discount/action-example-reject-discount-codes.webp"
+  alt="拒绝折扣码示例"
+/>
+
+接下来，如果勾选了运费折扣选项，同一界面上还提供 **订阅配送** 部分。对于订阅配送产品，您可以选择将运费折扣限制为仅首次配送、限制为首次配送并使定期配送免费，或限制为首次配送并使所有定期配送免费。
+
+<Warning>
+  **订阅配送** 部分的选项仅适用于具有订阅的配送产品。对于普通（非订阅）产品配送，您无需选择任何选项。默认设置将按预期工作。
+</Warning>
+
+<img
+  src="/images/essentials/shipping/subscription-deliveries.webp"
+  alt="订阅配送"
+/>
+
+接下来，在同一界面的 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，如果选择了折扣码，您可以选择性启用折扣码使用限制，限制每位客户使用一次，或两者同时应用。
 
 <img
   src="/images/essentials/discount/maximum-discount-uses.webp"
@@ -214,11 +291,18 @@ icon: "badge-percent"
   alt="规则应用后"
 />
 
-**16% 运费折扣** 已在结账时应用于 **所有运送方式**，如下图所示。
+**16% 运费折扣** 已在结账时应用于 **所有配送方式**，如下图所示。
 
 <img
   src="/images/essentials/discount/after-rule-apply-discount-shipping.webp"
   alt="规则应用后"
+/>
+
+当客户输入并应用折扣码 **SAVE20** 时，该折扣码会被拒绝，并显示信息 **"此折扣码目前不可用"**。
+
+<img
+  src="/images/essentials/discount/after-rule-apply-reject-discount-codes2.webp"
+  alt="拒绝折扣码后"
 />
 
 ## 激活规则
