@@ -29,7 +29,6 @@ import ShippingMethodsAvailable from "/snippets/condition-set/ja/shipping-method
 import SelectedShippingTypeShipPickup from "/snippets/condition-set/ja/selected-shipping-type-ship-pickup.mdx";
 import ShippingMethodPrice from "/snippets/condition-set/ja/shipping-method-price.mdx";
 import UserLanguage from "/snippets/condition-set/ja/user-language.mdx";
-import Market from "/snippets/condition-set/ja/market.mdx";
 import ShippingAddressIsEmpty from "/snippets/condition-set/ja/shipping-address-is-empty.mdx";
 import ShippingAddressIsNotEmpty from "/snippets/condition-set/ja/shipping-address-is-not-empty.mdx";
 import FullNameFirstNameLastName from "/snippets/condition-set/ja/full-name-first-name-last-name.mdx";
@@ -46,6 +45,8 @@ import CityArea from "/snippets/condition-set/ja/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/ja/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/ja/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -147,51 +148,8 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 
 <OrderSubtotalAmountPerProductTag />
 <OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
-
-### 商品タグごとの数量
-
-この条件は **特定の商品タグが付いた商品の数量** を次のいずれかの基準と比較して判定します:
-
-- **数量が以上**（指定した商品タグの商品の数量が入力した数以上の場合に一致）
-- **数量が以下**（指定した商品タグの商品の数量が入力した数以下の場合に一致）
-- **数量が割り切れる**（指定した商品タグの商品の数量が入力した数の倍数の場合に一致）
-- **数量が割り切れない**（指定した商品タグの商品の数量が入力した数の倍数でない場合に一致）
-
-これらの条件を設定するには:
-
-<Steps>
-  <Step title="商品タグを入力">
-    「商品タグを入力」フィールドに <strong>商品タグ</strong> を入力します。
-  </Step>
-
-  <Step title="数量を入力">
-    「数量を入力」フィールドに <strong>数量</strong> を入力します。
-  </Step>
-
-  <Step title="比較オプションを選択">
-    ドロップダウンから比較オプションを選択します。
-  </Step>
-</Steps>
-
-> **「数量が以上」の例**:  
-> 商品タグ: `SummerCollection`  
-> 数量: `3`  
-> → `SummerCollection` タグ付きの商品が 3 個以上ある注文に一致。
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
-  alt="商品タグごとの数量が以上"
-/>
-
-> **「数量が割り切れる」の例**:  
-> 商品タグ: `SummerCollection`  
-> 数量: `2`  
-> → `SummerCollection` タグ付き商品の数量が 2, 4, 6, 8 … の場合に一致。
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
-  alt="商品タグごとの数量が割り切れる"
-/>
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## カートに商品が含まれる
 
@@ -235,8 +193,8 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <ShippingMethodsAvailable />
 
 ## ローカライズ
+
 <UserLanguage />
-<Market />
 
 ## 配送先住所
 

@@ -1,0 +1,44 @@
+### Menge pro Produkt-Tag
+
+Diese Bedingung prüft die **Menge der Produkte mit einem bestimmten Produkt-Tag** in der Bestellung anhand definierter Kriterien, basierend auf einer der folgenden Unterbedingungen:
+
+- **Menge ist größer oder gleich** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag größer oder gleich der eingegebenen Zahl ist)
+- **Menge ist kleiner oder gleich** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag kleiner oder gleich der eingegebenen Zahl ist)
+- **Menge ist teilbar durch** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag ein Vielfaches der eingegebenen Zahl ist)
+- **Menge ist nicht teilbar durch** (Passt, wenn die Menge der Produkte mit dem angegebenen Produkt-Tag kein Vielfaches der eingegebenen Zahl ist)
+
+Um diese Bedingungen festzulegen:
+
+<Steps>
+  <Step title="Produkt-Tag eingeben">
+    Geben Sie den <strong>Produkt-Tag</strong> im Feld „Produkt-Tag eingeben“ ein.
+  </Step>
+
+<Step title="Menge eingeben">
+  Geben Sie die <strong>Menge</strong> im Feld „Menge eingeben“ ein.
+</Step>
+
+  <Step title="Vergleichsoption auswählen">
+    Wählen Sie die Vergleichsoption aus dem Dropdown-Menü.
+  </Step>
+</Steps>
+
+> Beispiel für „Menge ist größer oder gleich“:  
+> Produkt-Tag: `SummerCollection`  
+> Menge: `3`  
+> → Passt zu Bestellungen, bei denen 3 oder mehr Einheiten von Produkten mit dem Tag `SummerCollection` enthalten sind.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="Menge pro Produkt-Tag größer oder gleich"
+/>
+
+> Beispiel für „Menge ist teilbar durch“:  
+> Produkt-Tag: `SummerCollection`  
+> Menge: `2`  
+> → Passt zu Bestellungen, bei denen die Menge der Produkte mit dem Tag `SummerCollection` 2, 4, 6, 8 usw. beträgt.
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="Menge pro Produkt-Tag teilbar durch"
+/>

@@ -35,6 +35,8 @@ import CityArea from "/snippets/condition-set/ja/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/ja/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/ja/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -56,6 +58,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="タイムゾーンを選択"
     />
+
   </Step>
 
   <Step title="テーマで BeSure 埋め込みブロックを有効にする">
@@ -67,30 +70,31 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
     />
 
     - テーマエディタで、<em>アプリ埋め込み</em> の下にある <strong>BeSure 埋め込みブロック</strong> を見つけて有効にします。
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="ブロックを探して有効化"
     />
+
   </Step>
 
-  <Step title="テーマを保存する">
-    ブロックを有効にした後、テーマを保存してください。<strong>保存</strong> ボタンは右上にあります。
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="テーマを保存"
-    />
-  </Step>
+<Step title="テーマを保存する">
+  ブロックを有効にした後、テーマを保存してください。<strong>保存</strong>{" "}
+  ボタンは右上にあります。
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="テーマを保存"
+  />
+</Step>
 
-  <Step title="完了としてマーク (任意)">
-    すべてのステップが完了したら <strong>"完了としてマーク"</strong> をクリックし、ルールを保存してください。
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="完了としてマーク"
-    />
-  </Step>
+<Step title="完了としてマーク (任意)">
+  すべてのステップが完了したら <strong>"完了としてマーク"</strong>{" "}
+  をクリックし、ルールを保存してください。
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="完了としてマーク"
+  />
+</Step>
 
   <Step title="ルールをテストする">
     ルールを作成した後、まずカートを空にします。その後、新しい商品をカートに追加し、チェックアウトに進んでルールが期待通りに動作するか確認してください。
@@ -110,7 +114,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 
 **は**、**ではない**、**より前**、**より後** の場合、カレンダーピッカーから単一の日付を選択します。
 
-> 例: `より前 2025年8月11日` → 2025年8月11日より前の日付に一致。
+> 例: `より前 2026年8月11日` → 2026年8月11日より前の日付に一致。
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,7 +123,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 
 **の間にある** と **の間にない** の場合は、開始日と終了日の両方をカレンダーピッカーから選択します。
 
-> 例: `の間にある 2025年8月11日 と 2025年8月19日` → 2025年8月11日から2025年8月19日までの日付に一致。
+> 例: `の間にある 2026年8月11日 と 2026年8月19日` → 2026年8月11日から2026年8月19日までの日付に一致。
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
@@ -212,6 +216,11 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 
+## カートの詳細
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
+
 ## カートに商品が含まれる
 
 <SKU />
@@ -224,6 +233,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <SelectedShippingTypeShipPickup />
 
 ## ローカリゼーション
+
 <UserLanguage />
 
 ## 配送先住所

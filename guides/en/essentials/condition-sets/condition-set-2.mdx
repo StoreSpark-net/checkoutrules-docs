@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/en/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/en/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ Matches if the customer does not have an active account session and is checking 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -100,9 +103,9 @@ To set these conditions:
     Enter the <strong>attribute key</strong> in the “Enter key” field.
   </Step>
 
-  <Step title="Enter value(s)">
-    Enter the <strong>value(s)</strong> to match (where applicable).
-  </Step>
+<Step title="Enter value(s)">
+  Enter the <strong>value(s)</strong> to match (where applicable).
+</Step>
 
   <Step title="Choose comparison option">
     Choose the comparison option from the dropdown.
@@ -117,10 +120,10 @@ For **Has any of these values** and **Does not have any of these values**, enter
 </Note>
 
 > **Example for “Has any of these values”**:  
-Key: `delivery_method`  
-Values: `express, pickup`  
-→ Matches carts where the `delivery_method` attribute is either `express`
-or `pickup`.
+> Key: `delivery_method`  
+> Values: `express, pickup`  
+> → Matches carts where the `delivery_method` attribute is either `express`
+> or `pickup`.
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -154,9 +157,9 @@ To set these conditions:
     Enter the <strong>SKU</strong> in the “Enter SKU” field.
   </Step>
 
-  <Step title="Enter quantity">
-    Enter the <strong>quantity</strong> in the “Enter quantity” field.
-  </Step>
+<Step title="Enter quantity">
+  Enter the <strong>quantity</strong> in the “Enter quantity” field.
+</Step>
 
   <Step title="Select comparison option">
     Select the comparison option from the dropdown.
@@ -199,9 +202,9 @@ To set these conditions:
     Enter the <strong>SKU</strong> to exclude in the “Enter SKU” field.
   </Step>
 
-  <Step title="Enter quantity">
-    Enter the <strong>quantity</strong> in the “Enter quantity” field.
-  </Step>
+<Step title="Enter quantity">
+  Enter the <strong>quantity</strong> in the “Enter quantity” field.
+</Step>
 
   <Step title="Select comparison option">
     Select the comparison option from the dropdown.
@@ -287,6 +290,10 @@ For **Has number of values greater than or equals** and **Has number of values l
   alt="Product Variant Metafield Greater Value Or Equals"
 />
 
+## Discount
+
+<DiscountCodes />
+
 ## Shipping
 
 <SelectedShippingMethod />
@@ -294,9 +301,11 @@ For **Has number of values greater than or equals** and **Has number of values l
 <SelectedShippingTypeShipPickup />
 
 ## Localization
+
 <UserLanguage />
 
 ## Shipping Address
+
 <ShippingAddressIsEmpty />
 <ShippingAddressIsNotEmpty />
 <FullNameFirstNameLastName />
@@ -333,9 +342,10 @@ To set these conditions:
     Enter the <strong>SKU code</strong> for the first product in the <strong>Enter SKU1</strong> field.
   </Step>
 
-  <Step title="Enter SKU for second product">
-    Enter the <strong>SKU code</strong> for the second product in the <strong>Enter SKU2</strong> field.
-  </Step>
+<Step title="Enter SKU for second product">
+  Enter the <strong>SKU code</strong> for the second product in the{" "}
+  <strong>Enter SKU2</strong> field.
+</Step>
 
   <Step title="Choose comparison option">
     Choose the comparison option from the dropdown.

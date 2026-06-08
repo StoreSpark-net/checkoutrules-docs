@@ -35,6 +35,8 @@ import CityArea from "/snippets/condition-set/de/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/de/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/de/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/de/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -56,6 +58,7 @@ Bei der Einrichtung einer **Datum & Uhrzeit**-Bedingung ist eine zusätzliche Ei
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Zeitzone auswählen"
     />
+
   </Step>
 
   <Step title="Aktivieren Sie den BeSure Embed Block in Ihrem Theme">
@@ -67,30 +70,31 @@ Bei der Einrichtung einer **Datum & Uhrzeit**-Bedingung ist eine zusätzliche Ei
     />
 
     - Suchen Sie im Theme-Editor unter <em>App embeds</em> den <strong>BeSure Embed Block</strong> und aktivieren Sie ihn.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Block suchen und aktivieren"
     />
+
   </Step>
 
-  <Step title="Speichern Sie Ihr Theme">
-    Nachdem Sie den Block aktiviert haben, speichern Sie bitte Ihr Theme. Der <strong>Speichern</strong>-Button befindet sich oben rechts.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Theme speichern"
-    />
-  </Step>
+<Step title="Speichern Sie Ihr Theme">
+  Nachdem Sie den Block aktiviert haben, speichern Sie bitte Ihr Theme. Der{" "}
+  <strong>Speichern</strong>-Button befindet sich oben rechts.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Theme speichern"
+  />
+</Step>
 
-  <Step title="Als erledigt markieren (Optional)">
-    Klicken Sie auf <strong>"Als erledigt markieren"</strong>, wenn alle Schritte abgeschlossen sind, und speichern Sie dann die Regel.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Als erledigt markieren"
-    />
-  </Step>
+<Step title="Als erledigt markieren (Optional)">
+  Klicken Sie auf <strong>"Als erledigt markieren"</strong>, wenn alle Schritte
+  abgeschlossen sind, und speichern Sie dann die Regel.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Als erledigt markieren"
+  />
+</Step>
 
   <Step title="Testen Sie Ihre Regel">
     Leeren Sie zuerst Ihren Warenkorb. Fügen Sie dann ein neues Produkt hinzu und gehen Sie zur Kasse, um zu testen, ob die Regel wie erwartet funktioniert.
@@ -110,7 +114,7 @@ Wird verwendet, um das Checkout-Datum des Kunden mit einem ausgewählten Datum o
 
 Für **ist**, **ist nicht**, **ist vor** und **ist nach** wählen Sie ein einzelnes Datum im Kalender-Picker aus.
 
-> Zum Beispiel: `ist vor 11. August 2025` → Passt zu allen Daten vor dem 11. August 2025.
+> Zum Beispiel: `ist vor 11. August 2026` → Passt zu allen Daten vor dem 11. August 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,7 +123,7 @@ Für **ist**, **ist nicht**, **ist vor** und **ist nach** wählen Sie ein einzel
 
 Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl ein Start- als auch ein Enddatum im Kalender-Picker aus.
 
-> Zum Beispiel: `liegt zwischen 11. August 2025 und 19. August 2025` → Passt zu Daten zwischen dem 11. August 2025 und 19. August 2025.
+> Zum Beispiel: `liegt zwischen 11. August 2026 und 19. August 2026` → Passt zu Daten zwischen dem 11. August 2026 und 19. August 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
@@ -139,7 +143,10 @@ Für **ist** und **ist nicht** wählen Sie einen einzelnen Tag aus dem Dropdown 
 
 > Zum Beispiel: `ist Montag` → Passt zum Montag.
 
-<img src="/images/essentials/condition-sets/single-day.webp" alt="Einzelner Tag" />
+<img
+  src="/images/essentials/condition-sets/single-day.webp"
+  alt="Einzelner Tag"
+/>
 
 Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl einen Start- als auch einen Endtag aus dem Dropdown aus.
 
@@ -206,7 +213,13 @@ Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und ei
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 
+## Warenkorb-Details
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
+
 ## Warenkorb enthält Elemente
+
 <SKU />
 <ProductTags />
 <Collections />
@@ -217,6 +230,7 @@ Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und ei
 <SelectedShippingTypeShipPickup />
 
 ## Lokalisierung
+
 <UserLanguage />
 
 ## Versandadresse

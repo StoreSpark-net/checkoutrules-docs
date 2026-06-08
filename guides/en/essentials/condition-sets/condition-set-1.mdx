@@ -35,6 +35,9 @@ import CityArea from "/snippets/condition-set/en/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/en/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/en/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -56,6 +59,7 @@ When setting up any **Date Time** condition, additional setup is required. Follo
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Select Timezone"
     />
+
   </Step>
 
   <Step title="Enable the BeSure Embed Block in your theme">
@@ -67,37 +71,38 @@ When setting up any **Date Time** condition, additional setup is required. Follo
     />
 
     - In the theme editor, locate the <strong>BeSure Embed Block</strong> under <em>App embeds</em> and enable it.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Locate And Enable Block"
     />
+
   </Step>
 
-  <Step title="Save your theme">
-    After enabling the block, please save your theme. The <strong>Save</strong> button is located in the top-right corner.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Save Theme"
-    />
-  </Step>
+<Step title="Save your theme">
+  After enabling the block, please save your theme. The <strong>Save</strong>{" "}
+  button is located in the top-right corner.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Save Theme"
+  />
+</Step>
 
-  <Step title="Mark as done (Optional)">
-    Click <strong>"Mark as done"</strong> when all steps are completed, then save the rule.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Mark As Done"
-    />
-  </Step>
+<Step title="Mark as done (Optional)">
+  Click <strong>"Mark as done"</strong> when all steps are completed, then save
+  the rule.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Mark As Done"
+  />
+</Step>
 
   <Step title="Test your rule">
     Now, after creating the rule, empty your cart first. Then, add a new product to the cart and proceed to checkout to test if the rule is working as expected.
   </Step>
 </Steps>
 
-### Date
+### Date(s)
 
 Used to compare the customer’s checkout date with a selected date or range of dates, based on one of the following sub-conditions:
 
@@ -107,10 +112,14 @@ Used to compare the customer’s checkout date with a selected date or range of 
 - **is after** (The customer’s checkout date is later than the selected date)
 - **is in between** (The customer’s checkout date is within the selected start and end dates)
 - **is not in between** (The customer’s checkout date is outside the selected start and end dates)
+- **are** (The customer’s checkout date matches any of the selected dates)
+- **are not** (The customer’s checkout date does not match any of the selected dates)
+- **are (only day and month)** (The customer’s checkout day and month match any of the selected day-and-month values, regardless of the year)
+- **are not (only day and month)** (The customer’s checkout day and month do not match any of the selected day-and-month values, regardless of the year)
 
 For **is**, **is not**, **is before**, and **is after**, select a single date from the calendar picker.
 
-> For example, `is before August 11, 2025` → Matches date before August 11, 2025.
+> For example, `is before August 11, 2026` → Matches date before August 11, 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,11 +128,29 @@ For **is**, **is not**, **is before**, and **is after**, select a single date fr
 
 For **is in between** and **is not in between**, select both a start date and an end date from the calendar picker.
 
-> For example, `is in between August 11, 2025 and August 19, 2025` → Matches date between August 11, 2025 and August 19, 2025.
+> For example, `is in between August 11, 2026 and August 19, 2026` → Matches date between August 11, 2026 and August 19, 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
   alt="Multiple Dates"
+/>
+
+For **are** and **are not**, enter one or more dates in `MM-DD-YYYY` format, separated by commas.
+
+> For example, `are 08-11-2026,12-25-2026,01-01-2027` → Matches if the checkout date is August 11, 2026, December 25, 2026, or January 1, 2027.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-dates.webp"
+  alt="Are Multiple Dates"
+/>
+
+For **are (only day and month)** and **are not (only day and month)**, enter one or more dates in `MM-DD` format, separated by commas. The year is ignored when evaluating the condition.
+
+> For example, `are (only day and month) 08-11,12-25` → Matches if the checkout date falls on August 11 or December 25 in any year.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-day-month.webp"
+  alt="Are Multiple Day Month"
 />
 
 ### Day of the week
@@ -199,6 +226,27 @@ To set these conditions, select a day and time as the starting point and another
   alt="Days And Times"
 />
 
+### Fallback
+
+If the app fails to determine the time or date, a fallback action will be executed based on the selected option:
+
+- If **"Do nothing"** is selected, no action will be performed when the app fails to determine the time or date.
+- If **"Do this action"** is selected, the configured action will be executed when the app fails to determine the time or date.
+
+> For example, if **"Do this action"** is selected and the configured rule is **"Reorder shipping methods"**, an operation will reorder based on **Alphabetical order (Name A–Z, ascending)** whenever the app is unable to determine the time or date.
+
+<Warning>
+  Each rule has its own operation. For example, the "Hide Payment Methods" rule
+  operations include "Hide all payment methods" or "Hide these payment methods"
+  etc. Therefore, select the fallback operation according to the rule you are
+  working on.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Date Time Location"
+/>
+
 ## Customer
 
 <NewCustomer />
@@ -207,15 +255,64 @@ To set these conditions, select a day and time as the starting point and another
 <EmailAddress />
 <CustomerTags />
 
+### Customer location (using GeoIP)
+
+This condition checks the country in which the customer opens the shop and evaluates it against specific criteria based on one of the following sub-conditions:
+
+- **Has any of these values** ( The condition is satisfied if the customer's country matches at least one of the selected values)
+- **Does not have any of these values** ( The condition is satisfied if the customer's country does not match any of the selected values)
+- **Has any other value besides these values** ( The condition is satisfied if the customer's country is different from the selected values)
+- **Does not have any other value besides these values** ( The condition is satisfied if the customer's country matches only the selected values and no others)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas or select from the dropdown.
+
+> For example, `Does not have any of these values: Canada, United States` → Matches customer location other than “Canada” or “United States”.
+
+<img
+  src="/images/essentials/condition-sets/customer-location-using-GeoIP.webp"
+  alt="Customer Location Using GeoIP"
+/>
+
+**Fallback**
+
+If the app fails to determine the customer location, a fallback action will be executed based on the selected option:
+
+- If **"Do nothing"** is selected, no action will be performed when the app fails to determine the customer location.
+- If **"Do this action"** is selected, the configured action will be executed when the app fails to determine the customer location.
+
+> For example, if **"Do this action"** is selected and the configured rule is **"Reorder shipping methods"**, an operation will reorder based on **Alphabetical order (Name A–Z, ascending)** whenever the app is unable to determine the customer location.
+
+<Warning>
+  Each rule has its own operation. For example, the "Hide Payment Methods" rule
+  operations include "Hide all payment methods" or "Hide these payment methods"
+  etc. Therefore, select the fallback operation according to the rule you are
+  working on.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Date Time Location"
+/>
+
 ## Order Details
 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 
+## Cart Details
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
+
 ## Cart Has Any Items
+
 <SKU />
 <ProductTags />
 <Collections />
+
+## Discount
+
+<DiscountCodes />
 
 ## Shipping
 
@@ -223,6 +320,7 @@ To set these conditions, select a day and time as the starting point and another
 <SelectedShippingTypeShipPickup />
 
 ## Localization
+
 <UserLanguage />
 
 ## Shipping Address

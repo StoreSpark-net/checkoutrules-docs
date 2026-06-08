@@ -1,0 +1,25 @@
+### Discount code
+
+This condition evaluates discount codes used at checkout against selected values and determines whether the rule is satisfied based on the chosen logic.
+
+- **Has any of these values** (The condition is satisfied if at least one entered discount code matches one or more of the selected values )
+
+- **Does not have any of these values** ( The condition is satisfied if none of the entered discount codes match any of the selected values )
+
+- **Has any other value besides these values** ( The condition is satisfied if at least one entered discount code is different from the selected values )
+
+- **Does not have any other value besides these values** ( The condition is satisfied only if all entered discount codes exactly match the selected values and no additional discount codes are present )
+
+<Note>
+  Please use * wildcard to match multiple discount codes. For example, FREE*
+  will match FREE12, free-590 etc. Use ? to match to any single character.
+</Note>
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas or select from the dropdown.
+
+> For example, `Does not have any of these values: SAVE10, ORDER20%OFF` → Matches discount codes other than “SAVE10” or “ORDER20%OFF”.
+
+<img
+  src="/images/essentials/condition-sets/discount-codes.webp"
+  alt="Discount Codes"
+/>

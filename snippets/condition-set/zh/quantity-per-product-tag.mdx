@@ -1,0 +1,44 @@
+### 每个产品标签的数量
+
+此条件检查 **具有特定产品标签的产品数量** 是否符合定义的标准，基于以下子条件之一：
+
+- **数量大于或等于**（当具有指定产品标签的产品数量大于或等于输入数字时匹配）
+- **数量小于或等于**（当具有指定产品标签的产品数量小于或等于输入数字时匹配）
+- **数量可被整除**（当具有指定产品标签的产品数量是输入数字的倍数时匹配）
+- **数量不可被整除**（当具有指定产品标签的产品数量不是输入数字的倍数时匹配）
+
+要设置这些条件：
+
+<Steps>
+  <Step title="输入产品标签">
+    在“输入产品标签”字段中输入<strong>产品标签</strong>。
+  </Step>
+
+<Step title="输入数量">
+  在“输入数量”字段中输入<strong>数量</strong>。
+</Step>
+
+  <Step title="选择比较选项">
+    从下拉菜单中选择比较选项。
+  </Step>
+</Steps>
+
+> **“数量大于或等于”的示例**:  
+> 产品标签: `SummerCollection`  
+> 数量: `3`  
+> → 匹配具有 `SummerCollection` 标签的产品数量为 3 或更多的订单。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
+  alt="产品标签数量大于等于"
+/>
+
+> **“数量可被整除”的示例**:  
+> 产品标签: `SummerCollection`  
+> 数量: `2`  
+> → 匹配具有 `SummerCollection` 标签的产品数量为 2、4、6、8 等的订单。
+
+<img
+  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
+  alt="产品标签数量可被整除"
+/>

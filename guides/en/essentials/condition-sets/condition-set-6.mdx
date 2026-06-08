@@ -40,6 +40,7 @@ import CityArea from "/snippets/condition-set/en/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
 
 <Always />
 
@@ -51,6 +52,48 @@ import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.m
 <RepeatCustomer />
 <CustomerTotalPreviousSpent />
 <EmailAddress />
+
+### Customer metafield
+
+This condition checks a **customer metafield** you specify by **namespace** and **key**, then evaluates it using one of the following sub-conditions:
+
+- **Has any of these values** (Matches if the metafield has at least one of the entered values)
+- **Does not have any of these values** (Matches if the metafield has none of the entered values)
+- **Has any other value besides these values** (Matches if the metafield has a value that is not among the entered values)
+- **Does not have any other value besides these values** (Matches if the metafield has only the entered values and no others)
+- **Has empty value** (Matches if the metafield has no value)
+- **Does not have empty value** (Matches if the metafield contains any value)
+- **Has number greater than or equal to** (Matches if the metafield’s numeric value is greater than or equal to the entered number)
+- **Has number less than or equal to** (Matches if the metafield’s numeric value is less than or equal to the entered number)
+- **Has number of values greater than or equals** (Matches if the **count** of values in the metafield is greater than or equal to the entered number)
+- **Has number of values less than or equals** (Matches if the **count** of values in the metafield is less than or equal to the entered number)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas.
+
+> For example, `Namespace: custom` · `Key: new` · `Has any of these values: vip` → Matches if the customer metafield contains the value vip.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-contains-these-values.webp"
+  alt="Customer Metafield Does Not Contains"
+/>
+
+For **Has number greater than or equal to** and **Has number less than or equal to**, enter a single numeric value in the field to match against the metafield’s numeric value.
+
+> For example, `Namespace: custom` · `Key: new` · `Has number greater than or equal to 60` → Matches if the metafield’s numeric value is 60 or more.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value.webp"
+  alt="Customer Metafield Greater Value"
+/>
+
+For **Has number of values greater than or equals** and **Has number of values less than or equals**, enter a single numeric value in the field to match against the count of values in the metafield.
+
+> For example, `Namespace: custom` · `Key: new` · `Has number of values greater than or equals 4` → Matches if there are four or more values in the metafield.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value-or-equals.webp"
+  alt="Customer Metafield Greater Value Or Equals"
+/>
 
 ## Order Details
 
@@ -177,6 +220,53 @@ To set these conditions, enter the percentage in the field and choose the approp
   alt="Order Total Discount Percentage"
 />
 
+### Retail location
+
+This condition checks the retail location from where the order is initiated against specific criteria, based on one of the following sub-conditions:
+
+- **Has any of these values** (Matches when the retail location matches one or more of the specified values)
+- **Does not have any of these values** (Matches when the retail location does not match any of the specified values)
+- **Has any other value besides these values** (Matches when the retail location has any value except the entered ones)
+- **Does not have any other value besides these values** (Matches when the retail location has only the entered value and no other)
+- **Is empty** (Matches when no retail location is present)
+- **Is not empty** (Matches when a retail location value exists)
+
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, and **Does not have any other value besides these values**, enter one or more values into the field. Separate multiple values with commas or select location from the dropdown.
+
+> For example, `Has any of these values: Store A, Store B` → Matches checkouts initiated from Store A or Store B.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-selected.webp"
+  alt="Retail Location Selected"
+/>
+
+For **Is empty** and **Is not empty**, no value entry is needed.
+
+> For example, `Is empty` → Matches checkouts where no retail location is recorded.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-empty.webp"
+  alt="Retail Location Empty"
+/>
+
+### Order location is retail (POS)
+
+This condition becomes true if the order is initiated through a retail **Point of Sale (POS)** location rather than an online store.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-pos.webp"
+  alt="Retail Location POS"
+/>
+
+### Order location is not retail (POS)
+
+This condition becomes true if the order is not initiated through a retail **Point of Sale (POS)** location and instead originates from an online store.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-not-pos.webp"
+  alt="Retail Location Not POS"
+/>
+
 ## Cart Details
 
 <AnyProductDiscountAmount />
@@ -191,6 +281,10 @@ To set these conditions, enter the percentage in the field and choose the approp
 <LineItemProperty />
 <CartHasOneTimePurchaseProduct />
 <CartHasNoOneTimePurchaseProduct />
+
+## Discount
+
+<DiscountCodes />
 
 ## Shipping
 
@@ -222,6 +316,7 @@ To set these conditions, enter the amount in the field and choose the appropriat
 <ShippingMethodsAvailable />
 
 ## Localization
+
 <UserLanguage />
 
 ## Shipping Address

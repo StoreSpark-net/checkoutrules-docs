@@ -35,6 +35,8 @@ import CityArea from "/snippets/condition-set/fr/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/fr/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/fr/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/fr/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -56,6 +58,7 @@ Lors de la configuration de toute condition **Date et heure**, une configuration
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Sélectionner le fuseau horaire"
     />
+
   </Step>
 
   <Step title="Activez le bloc intégré BeSure dans votre thème">
@@ -67,30 +70,31 @@ Lors de la configuration de toute condition **Date et heure**, une configuration
     />
 
     - Dans l’éditeur de thème, localisez le <strong>BeSure Embed Block</strong> sous <em>App embeds</em> et activez-le.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Localiser et activer le bloc"
     />
+
   </Step>
 
-  <Step title="Enregistrez votre thème">
-    Après avoir activé le bloc, veuillez enregistrer votre thème. Le bouton <strong>Enregistrer</strong> se trouve en haut à droite.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Enregistrer le thème"
-    />
-  </Step>
+<Step title="Enregistrez votre thème">
+  Après avoir activé le bloc, veuillez enregistrer votre thème. Le bouton{" "}
+  <strong>Enregistrer</strong> se trouve en haut à droite.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Enregistrer le thème"
+  />
+</Step>
 
-  <Step title="Marquer comme terminé (Optionnel)">
-    Cliquez sur <strong>"Marquer comme terminé"</strong> lorsque toutes les étapes sont terminées, puis enregistrez la règle.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Marquer comme terminé"
-    />
-  </Step>
+<Step title="Marquer comme terminé (Optionnel)">
+  Cliquez sur <strong>"Marquer comme terminé"</strong> lorsque toutes les étapes
+  sont terminées, puis enregistrez la règle.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Marquer comme terminé"
+  />
+</Step>
 
   <Step title="Testez votre règle">
     Maintenant, après avoir créé la règle, videz d’abord votre panier. Ensuite, ajoutez un nouveau produit au panier et procédez au paiement pour tester si la règle fonctionne comme prévu.
@@ -101,25 +105,25 @@ Lors de la configuration de toute condition **Date et heure**, une configuration
 
 Utilisée pour comparer la date de passage en caisse du client avec une date ou une plage de dates sélectionnée, selon l’une des sous-conditions suivantes :
 
-- **est** (La date de passage en caisse du client correspond à la date sélectionnée)  
-- **n’est pas** (La date de passage en caisse du client ne correspond pas à la date sélectionnée)  
-- **est avant** (La date de passage en caisse du client est antérieure à la date sélectionnée)  
-- **est après** (La date de passage en caisse du client est postérieure à la date sélectionnée)  
-- **est comprise entre** (La date de passage en caisse du client se situe entre la date de début et la date de fin sélectionnées)  
-- **n’est pas comprise entre** (La date de passage en caisse du client se situe en dehors de la plage de dates sélectionnée)  
+- **est** (La date de passage en caisse du client correspond à la date sélectionnée)
+- **n’est pas** (La date de passage en caisse du client ne correspond pas à la date sélectionnée)
+- **est avant** (La date de passage en caisse du client est antérieure à la date sélectionnée)
+- **est après** (La date de passage en caisse du client est postérieure à la date sélectionnée)
+- **est comprise entre** (La date de passage en caisse du client se situe entre la date de début et la date de fin sélectionnées)
+- **n’est pas comprise entre** (La date de passage en caisse du client se situe en dehors de la plage de dates sélectionnée)
 
-Pour **est**, **n’est pas**, **est avant** et **est après**, sélectionnez une seule date dans le sélecteur de calendrier.  
+Pour **est**, **n’est pas**, **est avant** et **est après**, sélectionnez une seule date dans le sélecteur de calendrier.
 
-> Par exemple, `est avant le 11 août 2025` → Correspond aux dates avant le 11 août 2025.
+> Par exemple, `est avant le 11 août 2026` → Correspond aux dates avant le 11 août 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
   alt="Date unique"
 />
 
-Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une date de début et une date de fin dans le sélecteur de calendrier.  
+Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une date de début et une date de fin dans le sélecteur de calendrier.
 
-> Par exemple, `est comprise entre le 11 août 2025 et le 19 août 2025` → Correspond aux dates comprises entre le 11 août 2025 et le 19 août 2025.
+> Par exemple, `est comprise entre le 11 août 2026 et le 19 août 2026` → Correspond aux dates comprises entre le 11 août 2026 et le 19 août 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
@@ -130,18 +134,21 @@ Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à 
 
 Utilisé pour comparer le jour de passage en caisse du client avec un jour ou une plage de jours sélectionné(s), selon l’une des sous-conditions suivantes :
 
-- **est** (Le jour de passage en caisse du client correspond au jour sélectionné)  
-- **n’est pas** (Le jour de passage en caisse du client ne correspond pas au jour sélectionné)  
-- **est compris entre** (Le jour de passage en caisse du client se situe entre les jours de début et de fin sélectionnés)  
-- **n’est pas compris entre** (Le jour de passage en caisse du client ne se situe pas entre les jours de début et de fin sélectionnés)  
+- **est** (Le jour de passage en caisse du client correspond au jour sélectionné)
+- **n’est pas** (Le jour de passage en caisse du client ne correspond pas au jour sélectionné)
+- **est compris entre** (Le jour de passage en caisse du client se situe entre les jours de début et de fin sélectionnés)
+- **n’est pas compris entre** (Le jour de passage en caisse du client ne se situe pas entre les jours de début et de fin sélectionnés)
 
-Pour **est** et **n’est pas**, sélectionnez un seul jour dans le menu déroulant.  
+Pour **est** et **n’est pas**, sélectionnez un seul jour dans le menu déroulant.
 
 > Par exemple, `est lundi` → Correspond au jour lundi.
 
-<img src="/images/essentials/condition-sets/single-day.webp" alt="Jour unique" />
+<img
+  src="/images/essentials/condition-sets/single-day.webp"
+  alt="Jour unique"
+/>
 
-Pour **est compris entre** et **n’est pas compris entre**, sélectionnez à la fois un jour de début et un jour de fin dans le menu déroulant.  
+Pour **est compris entre** et **n’est pas compris entre**, sélectionnez à la fois un jour de début et un jour de fin dans le menu déroulant.
 
 > Par exemple, `est compris entre lundi et vendredi` → Correspond aux jours entre lundi et vendredi.
 
@@ -154,12 +161,12 @@ Pour **est compris entre** et **n’est pas compris entre**, sélectionnez à la
 
 Utilisée pour comparer l’heure de passage en caisse du client avec une heure ou une plage d’heures sélectionnée(s), selon l’une des sous-conditions suivantes :
 
-- **est** (L’heure de passage en caisse du client correspond à l’heure sélectionnée)  
-- **n’est pas** (L’heure de passage en caisse du client ne correspond pas à l’heure sélectionnée)  
-- **est comprise entre** (L’heure de passage en caisse du client se situe entre les heures de début et de fin sélectionnées)  
-- **n’est pas comprise entre** (L’heure de passage en caisse du client ne se situe pas entre les heures de début et de fin sélectionnées)  
+- **est** (L’heure de passage en caisse du client correspond à l’heure sélectionnée)
+- **n’est pas** (L’heure de passage en caisse du client ne correspond pas à l’heure sélectionnée)
+- **est comprise entre** (L’heure de passage en caisse du client se situe entre les heures de début et de fin sélectionnées)
+- **n’est pas comprise entre** (L’heure de passage en caisse du client ne se situe pas entre les heures de début et de fin sélectionnées)
 
-Pour **est** et **n’est pas**, sélectionnez une seule heure dans le menu déroulant.  
+Pour **est** et **n’est pas**, sélectionnez une seule heure dans le menu déroulant.
 
 > Par exemple, `est 02:30` → Correspond exactement à 2h30.
 
@@ -168,7 +175,7 @@ Pour **est** et **n’est pas**, sélectionnez une seule heure dans le menu dér
   alt="Heure unique"
 />
 
-Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une heure de début et une heure de fin dans le menu déroulant.  
+Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à la fois une heure de début et une heure de fin dans le menu déroulant.
 
 > Par exemple, `n’est pas comprise entre 01:30 et 05:00` → Correspond aux heures non comprises entre 1h30 et 5h00.
 
@@ -181,10 +188,10 @@ Pour **est comprise entre** et **n’est pas comprise entre**, sélectionnez à 
 
 Utilisé pour comparer le jour et l’heure de passage en caisse du client avec une plage sélectionnée, selon l’une des conditions suivantes :
 
-- **est comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse se situent entre les valeurs de début et de fin sélectionnées)  
-- **n’est pas comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse ne se situent pas entre les valeurs de début et de fin sélectionnées)  
+- **est comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse se situent entre les valeurs de début et de fin sélectionnées)
+- **n’est pas comprise entre** (Correspond lorsque le jour et l’heure du passage en caisse ne se situent pas entre les valeurs de début et de fin sélectionnées)
 
-Pour définir ces conditions, sélectionnez un jour et une heure comme point de départ et un autre jour et une autre heure comme point de fin dans les menus déroulants.  
+Pour définir ces conditions, sélectionnez un jour et une heure comme point de départ et un autre jour et une autre heure comme point de fin dans les menus déroulants.
 
 > Par exemple, `est comprise entre lundi 00:00 et mercredi 12:00` → Correspond aux passages en caisse effectués entre le lundi à minuit et le mercredi à midi.
 
@@ -206,7 +213,13 @@ Pour définir ces conditions, sélectionnez un jour et une heure comme point de 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 
+## Détails du panier
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
+
 ## Le panier contient des articles
+
 <SKU />
 <ProductTags />
 <Collections />
@@ -217,6 +230,7 @@ Pour définir ces conditions, sélectionnez un jour et une heure comme point de 
 <SelectedShippingTypeShipPickup />
 
 ## Localisation
+
 <UserLanguage />
 
 ## Adresse de expédition

@@ -35,6 +35,8 @@ import CityArea from "/snippets/condition-set/es/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/es/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/es/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/es/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -56,6 +58,7 @@ Al configurar cualquier condición de **Fecha y Hora**, se requiere una configur
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Seleccionar Zona Horaria"
     />
+
   </Step>
 
   <Step title="Habilita el bloque BeSure Embed en tu tema">
@@ -67,30 +70,31 @@ Al configurar cualquier condición de **Fecha y Hora**, se requiere una configur
     />
 
     - En el editor de temas, localiza el <strong>BeSure Embed Block</strong> en <em>App embeds</em> y habilítalo.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Localizar y habilitar bloque"
     />
+
   </Step>
 
-  <Step title="Guarda tu tema">
-    Después de habilitar el bloque, guarda tu tema. El botón <strong>Guardar</strong> se encuentra en la esquina superior derecha.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Guardar Tema"
-    />
-  </Step>
+<Step title="Guarda tu tema">
+  Después de habilitar el bloque, guarda tu tema. El botón{" "}
+  <strong>Guardar</strong> se encuentra en la esquina superior derecha.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Guardar Tema"
+  />
+</Step>
 
-  <Step title="Marcar como hecho (Opcional)">
-    Haz clic en <strong>"Marcar como hecho"</strong> cuando todos los pasos estén completados, luego guarda la regla.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Marcar como Hecho"
-    />
-  </Step>
+<Step title="Marcar como hecho (Opcional)">
+  Haz clic en <strong>"Marcar como hecho"</strong> cuando todos los pasos estén
+  completados, luego guarda la regla.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Marcar como Hecho"
+  />
+</Step>
 
   <Step title="Prueba tu regla">
     Ahora, después de crear la regla, vacía primero tu carrito. Luego, agrega un nuevo producto al carrito y procede al checkout para probar si la regla funciona como se espera.
@@ -101,16 +105,16 @@ Al configurar cualquier condición de **Fecha y Hora**, se requiere una configur
 
 Se utiliza para comparar la fecha del checkout del cliente con una fecha seleccionada o un rango de fechas, en base a una de las siguientes sub-condiciones:
 
-- **es** (La fecha del checkout coincide con la fecha seleccionada)  
-- **no es** (La fecha del checkout no coincide con la fecha seleccionada)  
-- **es antes de** (La fecha del checkout es anterior a la fecha seleccionada)  
-- **es después de** (La fecha del checkout es posterior a la fecha seleccionada)  
-- **está entre** (La fecha del checkout está dentro del rango de fechas seleccionadas)  
+- **es** (La fecha del checkout coincide con la fecha seleccionada)
+- **no es** (La fecha del checkout no coincide con la fecha seleccionada)
+- **es antes de** (La fecha del checkout es anterior a la fecha seleccionada)
+- **es después de** (La fecha del checkout es posterior a la fecha seleccionada)
+- **está entre** (La fecha del checkout está dentro del rango de fechas seleccionadas)
 - **no está entre** (La fecha del checkout está fuera del rango de fechas seleccionadas)
 
 Para **es**, **no es**, **es antes de** y **es después de**, selecciona una sola fecha en el calendario.
 
-> Por ejemplo, `es antes de 11 de agosto de 2025` → Coincide con fechas anteriores al 11 de agosto de 2025.
+> Por ejemplo, `es antes de 11 de agosto de 2026` → Coincide con fechas anteriores al 11 de agosto de 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,7 +123,7 @@ Para **es**, **no es**, **es antes de** y **es después de**, selecciona una sol
 
 Para **está entre** y **no está entre**, selecciona tanto una fecha de inicio como una fecha de fin en el calendario.
 
-> Por ejemplo, `está entre 11 de agosto de 2025 y 19 de agosto de 2025` → Coincide con fechas entre el 11 y el 19 de agosto de 2025.
+> Por ejemplo, `está entre 11 de agosto de 2026 y 19 de agosto de 2026` → Coincide con fechas entre el 11 y el 19 de agosto de 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
@@ -130,9 +134,9 @@ Para **está entre** y **no está entre**, selecciona tanto una fecha de inicio 
 
 Se utiliza para comparar el día del checkout del cliente con un día o rango de días seleccionados, en base a una de las siguientes sub-condiciones:
 
-- **es** (El día del checkout coincide con el día seleccionado)  
-- **no es** (El día del checkout no coincide con el día seleccionado)  
-- **está entre** (El día del checkout cae entre los días seleccionados de inicio y fin)  
+- **es** (El día del checkout coincide con el día seleccionado)
+- **no es** (El día del checkout no coincide con el día seleccionado)
+- **está entre** (El día del checkout cae entre los días seleccionados de inicio y fin)
 - **no está entre** (El día del checkout no cae entre los días seleccionados de inicio y fin)
 
 Para **es** y **no es**, selecciona un solo día del menú desplegable.
@@ -154,9 +158,9 @@ Para **está entre** y **no está entre**, selecciona un día de inicio y un dí
 
 Se utiliza para comparar la hora del checkout del cliente con una hora o rango de horas seleccionadas, en base a una de las siguientes sub-condiciones:
 
-- **es** (La hora del checkout coincide con la hora seleccionada)  
-- **no es** (La hora del checkout no coincide con la hora seleccionada)  
-- **está entre** (La hora del checkout cae entre las horas seleccionadas de inicio y fin)  
+- **es** (La hora del checkout coincide con la hora seleccionada)
+- **no es** (La hora del checkout no coincide con la hora seleccionada)
+- **está entre** (La hora del checkout cae entre las horas seleccionadas de inicio y fin)
 - **no está entre** (La hora del checkout no cae entre las horas seleccionadas de inicio y fin)
 
 Para **es** y **no es**, selecciona una sola hora del menú desplegable.
@@ -181,7 +185,7 @@ Para **está entre** y **no está entre**, selecciona tanto una hora de inicio c
 
 Se utiliza para comparar el día y la hora del checkout del cliente con un rango seleccionado, en base a una de las siguientes condiciones:
 
-- **está entre** (Coincide cuando el día y la hora del checkout están dentro del rango seleccionado)  
+- **está entre** (Coincide cuando el día y la hora del checkout están dentro del rango seleccionado)
 - **no está entre** (Coincide cuando el día y la hora del checkout no están dentro del rango seleccionado)
 
 Para configurar estas condiciones, selecciona un día y hora como punto de inicio y otro día y hora como punto final en los menús desplegables.
@@ -205,6 +209,11 @@ Para configurar estas condiciones, selecciona un día y hora como punto de inici
 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
+
+## Detalles del carrito
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## El carrito tiene algún artículo
 

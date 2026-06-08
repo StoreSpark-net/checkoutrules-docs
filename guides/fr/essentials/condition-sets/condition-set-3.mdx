@@ -29,7 +29,6 @@ import ShippingMethodsAvailable from "/snippets/condition-set/fr/shipping-method
 import SelectedShippingTypeShipPickup from "/snippets/condition-set/fr/selected-shipping-type-ship-pickup.mdx";
 import ShippingMethodPrice from "/snippets/condition-set/fr/shipping-method-price.mdx";
 import UserLanguage from "/snippets/condition-set/fr/user-language.mdx";
-import Market from "/snippets/condition-set/fr/market.mdx";
 import ShippingAddressIsEmpty from "/snippets/condition-set/fr/shipping-address-is-empty.mdx";
 import ShippingAddressIsNotEmpty from "/snippets/condition-set/fr/shipping-address-is-not-empty.mdx";
 import FullNameFirstNameLastName from "/snippets/condition-set/fr/full-name-first-name-last-name.mdx";
@@ -46,6 +45,8 @@ import CityArea from "/snippets/condition-set/fr/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/fr/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/fr/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/fr/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -147,51 +148,8 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 
 <OrderSubtotalAmountPerProductTag />
 <OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
-
-### Quantité par étiquette de produit
-
-Cette condition vérifie la **quantité de produits avec une étiquette de produit spécifique** dans la commande par rapport aux critères définis, selon l’une des sous-conditions suivantes :
-
-- **la quantité est supérieure ou égale à** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est supérieure ou égale au nombre saisi)
-- **la quantité est inférieure ou égale à** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est inférieure ou égale au nombre saisi)
-- **la quantité est divisible par** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée est un multiple exact du nombre saisi)
-- **la quantité n’est pas divisible par** (Correspond lorsque la quantité de produits avec l’étiquette de produit spécifiée n’est pas un multiple du nombre saisi)
-
-Pour définir ces conditions :
-
-<Steps>
-  <Step title="Saisir l’étiquette de produit">
-    Saisissez l’<strong>étiquette de produit</strong> dans le champ “Saisir l’étiquette de produit”.
-  </Step>
-
-  <Step title="Saisir la quantité">
-    Saisissez la <strong>quantité</strong> dans le champ “Saisir la quantité”.
-  </Step>
-
-  <Step title="Sélectionner l’option de comparaison">
-    Sélectionnez l’option de comparaison dans la liste déroulante.
-  </Step>
-</Steps>
-
-> **Exemple pour “la quantité est supérieure ou égale à”** :  
-> Étiquette de produit : `SummerCollection`  
-> Quantité : `3`  
-> → Correspond aux commandes où il y a 3 unités ou plus de produits étiquetés `SummerCollection`.
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
-  alt="Quantité par étiquette de produit avec valeur supérieure"
-/>
-
-> **Exemple pour “la quantité est divisible par”** :  
-> Étiquette de produit : `SummerCollection`  
-> Quantité : `2`  
-> → Correspond aux commandes où la quantité de produits étiquetés `SummerCollection` est 2, 4, 6, 8, etc.
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
-  alt="Quantité par étiquette de produit divisible par"
-/>
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## Le panier contient des articles
 
@@ -235,8 +193,8 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 <ShippingMethodsAvailable />
 
 ## Localisation
+
 <UserLanguage />
-<Market />
 
 ## Adresse de expédition
 

@@ -32,6 +32,7 @@ import CityArea from "/snippets/condition-set/en/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
 
 <Always />
 
@@ -241,9 +242,9 @@ To set these conditions:
     Enter the <strong>SKU</strong> in the “Enter SKU” field.
   </Step>
 
-  <Step title="Enter amount">
-    Enter the <strong>amount</strong> in the “Enter amount” field.
-  </Step>
+<Step title="Enter amount">
+  Enter the <strong>amount</strong> in the “Enter amount” field.
+</Step>
 
   <Step title="Select comparison option">
     Select the comparison option from the dropdown.
@@ -321,12 +322,17 @@ For **Has number of values greater than or equals** and **Has number of values l
   alt="Product Metafield Greater Values Count"
 />
 
+## Discount
+
+<DiscountCodes />
+
 ## Shipping
 
 <ShippingMethodsAvailable />
 <SelectedShippingTypeShipPickup />
 
 ## Localization
+
 <UserLanguage />
 
 ## Shipping Address

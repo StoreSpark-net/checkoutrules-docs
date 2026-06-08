@@ -29,7 +29,6 @@ import ShippingMethodsAvailable from "/snippets/condition-set/en/shipping-method
 import SelectedShippingTypeShipPickup from "/snippets/condition-set/en/selected-shipping-type-ship-pickup.mdx";
 import ShippingMethodPrice from "/snippets/condition-set/en/shipping-method-price.mdx";
 import UserLanguage from "/snippets/condition-set/en/user-language.mdx";
-import Market from "/snippets/condition-set/en/market.mdx";
 import ShippingAddressIsEmpty from "/snippets/condition-set/en/shipping-address-is-empty.mdx";
 import ShippingAddressIsNotEmpty from "/snippets/condition-set/en/shipping-address-is-not-empty.mdx";
 import FullNameFirstNameLastName from "/snippets/condition-set/en/full-name-first-name-last-name.mdx";
@@ -46,6 +45,10 @@ import CityArea from "/snippets/condition-set/en/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/en/physical-product-total-quantity.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/en/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/en/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -147,55 +150,14 @@ To set these conditions, enter the amount in the field and choose the appropriat
 
 <OrderTotalQuantity />
 
+<PhysicalProductTotalQuantity />
+
 ## Cart Details
 
 <OrderSubtotalAmountPerProductTag />
 <OrderSubtotalAmountMinusOrderSubtotalAmountPerProductTag />
-
-### Quantity per product tag
-
-This condition checks the **quantity of products with a specific product tag** in the order against defined criteria, based on one of the following sub-conditions:
-
-- **quantity is greater than or equals** (Matches when the quantity of products with the specified product tag is greater than or equal to the entered number)
-- **quantity is less than or equals** (Matches when the quantity of products with the specified product tag is less than or equal to the entered number)
-- **quantity is divisible by** (Matches when the quantity of products with the specified product tag is an exact multiple of the entered number)
-- **quantity is not divisible by** (Matches when the quantity of products with the specified product tag is not a multiple of the entered number)
-
-To set these conditions:
-
-<Steps>
-  <Step title="Enter product tag">
-    Enter the <strong>product tag</strong> in the “Enter product tag” field.
-  </Step>
-
-  <Step title="Enter quantity">
-    Enter the <strong>quantity</strong> in the “Enter quantity” field.
-  </Step>
-
-  <Step title="Select comparison option">
-    Select the comparison option from the dropdown.
-  </Step>
-</Steps>
-
-> **Example for “quantity is greater than or equals”**:  
-> Product Tag: `SummerCollection`  
-> Quantity: `3`  
-> → Matches orders where there are 3 or more units of products tagged `SummerCollection`.
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-has-greater-value.webp"
-  alt="Quantity per Product Tag Has Greater Value"
-/>
-
-> **Example for “quantity is divisible by”**:  
-> Product Tag: `SummerCollection`  
-> Quantity: `2`  
-> → Matches orders where the quantity of products tagged `SummerCollection` is 2, 4, 6, 8, etc.
-
-<img
-  src="/images/essentials/condition-sets/quantity-per-product-tag-divisible-by.webp"
-  alt="Quantity per Product Tag Divisible By"
-/>
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## Cart Has Any Items
 
@@ -233,6 +195,10 @@ To set these conditions, enter the amount in the field and choose the appropriat
   alt="Any Product Cost Per Quantity"
 />
 
+## Discount
+
+<DiscountCodes />
+
 ## Shipping
 
 <ShippingMethodPrice />
@@ -240,8 +206,8 @@ To set these conditions, enter the amount in the field and choose the appropriat
 <ShippingMethodsAvailable />
 
 ## Localization
+
 <UserLanguage />
-<Market />
 
 ## Shipping Address
 
