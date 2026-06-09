@@ -34,6 +34,13 @@ Ensuite, vous serez redirigé vers l’écran **Sélectionner le type de règle 
   alt="Sélectionner la règle de validation/blocage"
 />
 
+Ensuite, dans la **sélection de modèle**, choisissez une option selon vos besoins. Dans la plupart des cas, vous pouvez choisir la règle vide comme point de départ et la modifier selon vos besoins. Même si vous choisissez un modèle prérempli, vous pourrez le modifier plus tard.
+
+<img
+  src="/images/essentials/validation/select-rule-template-validate-block-checkout.webp"
+  alt="Sélectionner le modèle de règle"
+/>
+
 Ensuite, vous arriverez sur l’écran **Créer une nouvelle règle de validation/blocage du passage en caisse**, où vous pouvez configurer votre règle.
 
 ### Configuration de la règle
@@ -47,7 +54,7 @@ Ici, nous allons choisir le statut **Mise à l’essai**, afin de pouvoir rapide
   alt="Configuration de la règle 1"
 />
 
-Ensuite, sur le même écran, sélectionnez au moins une option sous [Déclencher cette règle](/guides/fr/get-started/concepts#déclencheur). Vous pouvez choisir **Interagir avec le passage en caisse**, qui exécute la règle pendant que le client est dans le processus de passage en caisse, et **Terminer le passage en caisse**, qui exécute la règle lorsque le client termine le passage en caisse. Par défaut, vous devriez sélectionner les deux options pour vous assurer que la règle s’exécute toujours lorsque nécessaire.
+Ensuite, sur le même écran, sélectionnez le [comportement](/guides/fr/get-started/concepts#comportement) approprié pour la règle. Vous pouvez choisir **Bloquer le passage en caisse et afficher un message d’erreur**, **Afficher un message d’avertissement sans bloquer le passage en caisse** ou **Bloquer le passage en caisse uniquement lorsque le client tente de finaliser la commande**, selon la façon dont vous souhaitez que la règle affecte le processus de passage en caisse.
 
 <Info>
   Si vous n’êtes pas sûr de ce qu’il faut choisir pour certains paramètres de
@@ -56,11 +63,11 @@ Ensuite, sur le même écran, sélectionnez au moins une option sous [Déclenche
   tard.
 </Info>
 
-<img src="/images/concepts/trigger.webp" alt="Déclencheur" />
+<img src="/images/concepts/behavior.webp" alt="Comportement" />
 
 Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides/fr/get-started/concepts#ensemble-de-conditions) pertinent, la [condition](/guides/fr/get-started/concepts#conditions-le-«-quand-») et l’[action](/guides/fr/get-started/concepts#action-le-«-quoi-»).
 
-> Par exemple, ici nous utilisons l’**Ensemble de conditions 1** par défaut, en définissant la règle pour qu’elle se déclenche lorsque le champ **"Ligne d’adresse 2 (Appartement, suite, etc)"** est **vide**, et en la configurant pour bloquer le passage en caisse. Le message d’erreur **"Entrez une adresse complète"** sera affiché sous le champ **Ligne d’adresse 2** lors du passage en caisse, obligeant les clients à fournir leur adresse complète avant de continuer.
+> Par exemple, ici nous utilisons l’**Ensemble de conditions 1** par défaut, en définissant la règle pour qu’elle se déclenche lorsque le champ **"Ligne d’adresse 2 (Appartement, suite, etc)"** est **vide**, et en la configurant pour bloquer le passage en caisse. Le message d’erreur **"Entrez une adresse complète"** sera affiché sous le champ **Ligne d’adresse 2 de livraison** lors du passage en caisse, obligeant les clients à fournir leur adresse complète avant de continuer.
 
 <img
   src="/images/essentials/validation/condition-set-validation-block-rule.webp"
@@ -71,7 +78,7 @@ Dans la section **Action**, vous pouvez choisir l’**emplacement cible** où vo
 
 - Sous la catégorie **Général**, vous pouvez sélectionner **"Haut de la page de passage en caisse"** pour afficher l’action tout en haut.
 
-- Sous **Sous ces champs de saisie**, vous pouvez choisir d’afficher l’action sous des champs spécifiques, tels que : E-mail, Numéro de téléphone du client, Pays, Prénom, Nom, Société, Adresse (Ligne d’adresse 1), Appartement, Ville, Province/État, Code postal, Numéro de téléphone pour la livraison.
+- Sous **Sous ces champs de saisie**, vous pouvez choisir d’afficher l’action sous des champs spécifiques, tels que : E-mail, Numéro de téléphone du client, Pays de livraison, Prénom de livraison, Nom de livraison, Société de livraison, Adresse de livraison (Ligne d’adresse 1), Appartement, suite, etc. de livraison (Ligne d’adresse 2), Ville de livraison, Province/État de livraison, Code postal de livraison, Téléphone de livraison, Pays de facturation, Prénom de facturation, Nom de facturation, Société de facturation, Adresse de facturation (Ligne d’adresse 1), Appartement, suite, etc. de facturation (Ligne d’adresse 2), Ville de facturation, Province/État de facturation, Code postal de facturation et Téléphone de facturation.
 
 Cela vous donne le contrôle de l’endroit où le message d’erreur apparaît, vous aidant à le placer dans la section la plus pertinente du formulaire de passage en caisse.
 
@@ -116,7 +123,7 @@ Comme la règle est définie sur le statut mise à l’essai, nous devons utilis
   d’éviter d’exécuter la règle à chaque frappe.
 </Note>
 
-Après avoir laissé le champ Ligne d’adresse 2 (Appartement, suite, etc) **vide**, la règle de passage en caisse s’exécute et bloque le processus de passage en caisse. Nous pouvons vérifier que le message d’erreur **"Entrez une adresse complète"** est affiché sous le champ **Ligne d’adresse 2** lors du passage en caisse, comme indiqué ci-dessous.
+Après avoir laissé le champ Ligne d’adresse 2 (Appartement, suite, etc) **vide**, la règle de passage en caisse s’exécute et bloque le processus de passage en caisse. Nous pouvons vérifier que le message d’erreur **"Entrez une adresse complète"** est affiché sous le champ **Ligne d’adresse 2 de livraison** lors du passage en caisse, comme indiqué ci-dessous.
 
 <img
   src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"

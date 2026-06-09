@@ -37,6 +37,13 @@ Wählen Sie _Kategorie "Validierung" → Checkout-Regeltyp "Checkout validieren/
   alt="Validierung Block-Regel auswählen"
 />
 
+Wählen Sie dann in der **Vorlagenauswahl** eine Option entsprechend Ihren Anforderungen. In den meisten Fällen können Sie die leere Regel als Ausgangspunkt wählen und sie nach Ihren Bedürfnissen anpassen. Auch wenn Sie eine vorausgefüllte Vorlage wählen, können Sie sie später ändern.
+
+<img
+  src="/images/essentials/validation/select-rule-template-validate-block-checkout.webp"
+  alt="Regelvorlage auswählen"
+/>
+
 Als Nächstes gelangen Sie zum Bildschirm **Neue Checkout validieren/blockieren-Regel erstellen**, wo Sie Ihre Regel konfigurieren können.
 
 ### Regelkonfiguration
@@ -51,8 +58,7 @@ Hier wählen wir den Status **Testen**, damit wir die Regel schnell testen könn
   alt="Regel konfigurieren 1"
 />
 
-Als Nächstes wählen Sie auf demselben Bildschirm mindestens eine Option unter [Diese Regel auslösen](/guides/de/get-started/concepts#auslöser).  
-Sie können **Mit dem Checkout interagieren** auswählen, wodurch die Regel ausgeführt wird, während sich der Kunde im Checkout-Prozess befindet, und **Checkout abschließen**, wodurch die Regel ausgeführt wird, wenn der Kunde den Checkout beendet. Standardmäßig sollten Sie beide Optionen auswählen, um sicherzustellen, dass die Regel immer dann ausgeführt wird, wenn es nötig ist.
+Als Nächstes wählen Sie auf demselben Bildschirm das passende [Verhalten](/guides/de/get-started/concepts#verhalten) für die Regel. Sie können **Checkout blockieren und Fehlermeldung anzeigen**, **Warnmeldung anzeigen, ohne den Checkout zu blockieren** oder **Checkout nur blockieren, wenn der Kunde versucht, die Bestellung abzuschließen** – je nachdem, wie die Regel den Checkout-Prozess beeinflussen soll.
 
 <Info>
   Wenn Sie unsicher sind, was Sie für eine beliebige Regel-Einstellung wählen
@@ -60,12 +66,12 @@ Sie können **Mit dem Checkout interagieren** auswählen, wodurch die Regel ausg
   Sie können immer mit der Standardoption beginnen und diese später ändern.
 </Info>
 
-<img src="/images/concepts/trigger.webp" alt="Auslöser" />
+<img src="/images/concepts/behavior.webp" alt="Verhalten" />
 
 Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset](/guides/de/get-started/concepts#bedingungsset), die [Bedingung](/guides/de/get-started/concepts#bedingungen-das-“wann”) und die [Aktion](/guides/de/get-started/concepts#aktion-das-“was”) aus.
 
 > Als Beispiel verwenden wir hier das Standard-**Bedingungsset 1**, stellen die Regel so ein, dass sie ausgelöst wird, wenn das Feld **"Adresszeile 2 (Wohnung, Suite usw.)"** **leer** ist, und konfigurieren sie so, dass der Checkout blockiert wird.  
-> Die Fehlermeldung **"Vollständige Adresse eingeben"** wird unter dem Feld **Adresszeile 2** beim Checkout angezeigt, wodurch Kunden ihre vollständige Adresse angeben müssen, bevor sie fortfahren können.
+> Die Fehlermeldung **"Vollständige Adresse eingeben"** wird unter dem Feld **Versandadresse Zeile 2** beim Checkout angezeigt, wodurch Kunden ihre vollständige Adresse angeben müssen, bevor sie fortfahren können.
 
 <img
   src="/images/essentials/validation/condition-set-validation-block-rule.webp"
@@ -77,7 +83,7 @@ Das Dropdown-Menü bietet eine Liste von Platzierungsoptionen:
 
 - Unter der Kategorie **Allgemein** können Sie **"Oben auf der Checkout-Seite"** auswählen, um die Aktion ganz oben anzuzeigen.
 
-- Unter **Unter diesen Eingabefeldern** können Sie auswählen, die Aktion unter bestimmten Eingabefeldern anzuzeigen, wie z. B.: E-Mail, Telefonnummer des Kunden, Land, Vorname, Nachname, Firma, Adresse (Adresszeile 1), Wohnung, Stadt, Bundesland / Kanton, Postleitzahl, Telefonnummer für den Versand.
+- Unter **Unter diesen Eingabefeldern** können Sie auswählen, die Aktion unter bestimmten Eingabefeldern anzuzeigen, wie z. B.: E-Mail, Telefonnummer des Kunden, Versandland, Versand-Vorname, Versand-Nachname, Versand-Firma, Versandadresse (Adresszeile 1), Versandadresse Wohnung, Suite usw. (Adresszeile 2), Versandstadt, Versand-Bundesland / Kanton, Versand-Postleitzahl, Versand-Telefonnummer, Rechnungsland, Rechnungs-Vorname, Rechnungs-Nachname, Rechnungs-Firma, Rechnungsadresse (Adresszeile 1), Rechnungsadresse Wohnung, Suite usw. (Adresszeile 2), Rechnungsstadt, Rechnungs-Bundesland / Kanton, Rechnungs-Postleitzahl und Rechnungs-Telefonnummer.
 
 Dies gibt Ihnen die Kontrolle darüber, wo die Fehlermeldung angezeigt wird, und hilft Ihnen, sie im relevantesten Abschnitt des Checkout-Formulars zu platzieren.
 
@@ -125,7 +131,7 @@ Da die Regel auf Teststatus gesetzt ist, müssen wir `test@testing.com` als E-Ma
 </Note>
 
 Nachdem das Feld Adresszeile 2 (Wohnung, Suite usw.) **leer** gelassen wurde, läuft die Checkout-Regel und blockiert den Checkout-Prozess.  
-Wir können überprüfen, dass die Fehlermeldung **"Vollständige Adresse eingeben"** unter dem Feld **Adresszeile 2** beim Checkout angezeigt wird, wie unten dargestellt.
+Wir können überprüfen, dass die Fehlermeldung **"Vollständige Adresse eingeben"** unter dem Feld **Versandadresse Zeile 2** beim Checkout angezeigt wird, wie unten dargestellt.
 
 <img
   src="/images/essentials/validation/after-rule-apply-validation-block-rule.webp"
