@@ -27,5 +27,8 @@
     "gray-matter": "^4.0.3",
     "marked": "^17.0.4",
     "node-html-parser": "^7.1.0"
+  },
+  "devDependencies": {
+    "mint": "^4.2.647"
   }
 }
