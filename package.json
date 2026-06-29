@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "This is the documentation for the Checkout Rules App.",
   "main": "index.js",
+  "packageManager": "pnpm@11.2.2",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11 <12"
+  },
   "scripts": {
     "dev": "mint dev",
     "validate": "mint validate",

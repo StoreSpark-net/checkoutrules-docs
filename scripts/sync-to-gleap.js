@@ -8,7 +8,7 @@
  *
  * Usage:
  *   node scripts/sync-to-gleap.js
- *   npm run sync-gleap
+ *   pnpm run sync-gleap
  *
  * Required env vars (set in .env or environment):
  *   GLEAP_API_KEY      — Gleap API key (Project Settings → Security → API Key)
