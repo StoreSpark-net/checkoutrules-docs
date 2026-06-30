@@ -1,0 +1,31 @@
+### Cantidad total de productos físicos
+
+Esta condición comprueba la **cantidad total de artículos físicos en un pedido** según criterios específicos, basándose en una de las siguientes subcondiciones:
+
+- **es mayor o igual que** (Coincide cuando la cantidad total de artículos físicos es mayor o igual que el número introducido)
+- **es menor o igual que** (Coincide cuando la cantidad total de artículos físicos es menor o igual que el número introducido)
+- **es múltiplo de** (Coincide cuando la cantidad total de artículos físicos es un múltiplo exacto del número introducido)
+- **no es múltiplo de** (Coincide cuando la cantidad total de artículos físicos no es un múltiplo del número introducido)
+
+Para configurar estas condiciones, introduzca una cantidad en el campo y elija la comparación adecuada en el menú desplegable.
+
+<Note>
+  La cantidad se refiere a la **suma de todas las cantidades de artículos
+  físicos** en el pedido, no al número de productos distintos.
+</Note>
+
+> **Ejemplo de «es múltiplo de»**:
+> `es múltiplo de 5` → Coincide con pedidos con cantidades totales como 5, 10, 15, 20, etc.
+
+<img
+  src="/images/essentials/condition-sets/is-multiple-of-physical-product-total-quantity.webp"
+  alt="Es múltiplo de la cantidad total de productos físicos"
+/>
+
+> **Ejemplo de «es mayor o igual que»**:
+> `es mayor o igual que 3` → Coincide con pedidos con 3 o más artículos físicos.
+
+<img
+  src="/images/essentials/condition-sets/physical-product-total-is-greater-value.webp"
+  alt="Cantidad total de productos físicos mayor o igual"
+/>

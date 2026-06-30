@@ -1,0 +1,26 @@
+### Código de descuento
+
+Esta condición evalúa los códigos de descuento utilizados en el checkout frente a valores seleccionados y determina si la regla se cumple según la lógica elegida.
+
+- **Tiene alguno de estos valores** (La condición se cumple si al menos un código de descuento introducido coincide con uno o más de los valores seleccionados)
+
+- **No tiene ninguno de estos valores** (La condición se cumple si ninguno de los códigos de descuento introducidos coincide con los valores seleccionados)
+
+- **Tiene algún otro valor además de estos valores** (La condición se cumple si al menos un código de descuento introducido es diferente de los valores seleccionados)
+
+- **No tiene ningún otro valor además de estos valores** (La condición solo se cumple si todos los códigos de descuento introducidos coinciden exactamente con los valores seleccionados y no hay códigos adicionales)
+
+<Note>
+  Utilice el comodín `*` para coincidir con varios códigos de descuento. Por ejemplo,
+  `FREE*` coincidirá con FREE12, free-590, etc. Use `?` para coincidir con un solo
+  carácter.
+</Note>
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores** y **No tiene ningún otro valor además de estos valores**, introduzca uno o más valores en el campo. Separe varios valores con comas o selecciónelos del menú desplegable.
+
+> Por ejemplo, `No tiene ninguno de estos valores: SAVE10, ORDER20%OFF` → Coincide con códigos de descuento distintos de «SAVE10» o «ORDER20%OFF».
+
+<img
+  src="/images/essentials/condition-sets/discount-codes.webp"
+  alt="Códigos de descuento"
+/>

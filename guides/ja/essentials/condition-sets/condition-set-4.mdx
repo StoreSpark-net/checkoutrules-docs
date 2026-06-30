@@ -32,6 +32,7 @@ import CityArea from "/snippets/condition-set/ja/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/ja/discount-codes.mdx";
 
 <Always />
 
@@ -159,7 +160,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 **これらのいずれかの値を持つ**、**これらのいずれかの値を持たない**、**これら以外の値を持つ**、**これら以外の値を持たない** の場合、1 つ以上の商品販売元名を入力します。複数の値はカンマで区切ります。
 
 <Note>
-  複数の値に一致させるには * ワイルドカードを使用できます。例: Drop* → Dropship、drop-590 などに一致します。  
+  複数の値に一致させるには * ワイルドカードを使用できます。例: Drop* → Dropship、drop-590 などに一致します。
   任意の 1 文字に一致させるには ? を使用します。
 </Note>
 
@@ -250,13 +251,13 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 </Steps>
 
 <Note>
-  金額はストアの通貨で入力してください。  
+  金額はストアの通貨で入力してください。
   設定 > ストアの詳細 > ストア通貨
 </Note>
 
-> **「金額が以上である」の例**:  
-> SKU: `ABC123`  
-> 金額: `777`  
+> **「金額が以上である」の例**:
+> SKU: `ABC123`
+> 金額: `777`
 > → SKU `ABC123` の商品の小計金額が 777 以上の場合に一致します。
 
 <img
@@ -319,6 +320,10 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   src="/images/essentials/condition-sets/product-metafield-greater-values-count.webp"
   alt="商品メタフィールドが値の数以上"
 />
+
+## 割引
+
+<DiscountCodes />
 
 ## 配送
 

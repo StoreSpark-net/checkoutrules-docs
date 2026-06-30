@@ -40,6 +40,7 @@ import CityArea from "/snippets/condition-set/ja/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/ja/discount-codes.mdx";
 
 <Always />
 
@@ -51,6 +52,48 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <RepeatCustomer />
 <CustomerTotalPreviousSpent />
 <EmailAddress />
+
+### 顧客のメタフィールド
+
+この条件では、指定した **namespace** と **key** の **顧客メタフィールド** をチェックし、以下のいずれかのサブ条件で評価します:
+
+- **これらの値のいずれかを持つ**（入力された値のうち少なくとも 1 つを持っている場合に一致）
+- **これらの値のいずれも持たない**（入力された値のいずれも持っていない場合に一致）
+- **これらの値以外の値を持つ**（入力された値以外の値を持っている場合に一致）
+- **これらの値以外の値を持たない**（入力された値のみを持ち、それ以外は持っていない場合に一致）
+- **空の値を持つ**（メタフィールドに値がない場合に一致）
+- **空の値を持たない**（メタフィールドに何らかの値がある場合に一致）
+- **数値が以上である**（メタフィールドの数値が入力された数値以上である場合に一致）
+- **数値が以下である**（メタフィールドの数値が入力された数値以下である場合に一致）
+- **値の数が以上である**（メタフィールド内の値の数が入力された数値以上である場合に一致）
+- **値の数が以下である**（メタフィールド内の値の数が入力された数値以下である場合に一致）
+
+**これらの値のいずれかを持つ**, **これらの値のいずれも持たない**, **これらの値以外の値を持つ**, **これらの値以外の値を持たない** の場合、1 つ以上の値を入力欄に入力してください。複数の値はカンマで区切ります。
+
+> 例: `Namespace: custom` · `Key: new` · `これらの値のいずれかを持つ: vip` → 顧客メタフィールドに vip が含まれていれば一致します。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-contains-these-values.webp"
+  alt="顧客メタフィールドがこれらの値を含む"
+/>
+
+**数値が以上である** と **数値が以下である** の場合、1 つの数値を入力欄に入力して、メタフィールドの数値と照合します。
+
+> 例: `Namespace: custom` · `Key: new` · `数値が 60 以上` → メタフィールドの数値が 60 以上の場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value.webp"
+  alt="顧客メタフィールド数値が以上"
+/>
+
+**値の数が以上である** と **値の数が以下である** の場合、1 つの数値を入力欄に入力して、メタフィールド内の値の数と照合します。
+
+> 例: `Namespace: custom` · `Key: new` · `値の数が 4 以上` → メタフィールドに 4 つ以上の値がある場合に一致します。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value-or-equals.webp"
+  alt="顧客メタフィールド値の数"
+/>
 
 ## 注文の詳細
 
@@ -173,6 +216,53 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="注文合計割引率"
 />
 
+### 小売店舗
+
+この条件は、注文が開始された小売店舗を、以下のいずれかのサブ条件に基づいて特定の基準と照合します:
+
+- **これらの値のいずれかを持つ**（小売店舗が指定された値の 1 つ以上と一致する場合に一致）
+- **これらの値のいずれも持たない**（小売店舗が指定された値のいずれとも一致しない場合に一致）
+- **これらの値以外の値を持つ**（小売店舗が入力された値以外の値を持つ場合に一致）
+- **これらの値以外の値を持たない**（小売店舗が入力された値のみを持ち、それ以外はない場合に一致）
+- **空である**（小売店舗が存在しない場合に一致）
+- **空でない**（小売店舗の値が存在する場合に一致）
+
+**これらの値のいずれかを持つ**, **これらの値のいずれも持たない**, **これらの値以外の値を持つ**, **これらの値以外の値を持たない** の場合、1 つ以上の値を入力欄に入力してください。複数の値はカンマで区切るか、ドロップダウンから店舗を選択します。
+
+> 例: `これらの値のいずれかを持つ: Store A, Store B` → Store A または Store B から開始されたチェックアウトに一致します。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-selected.webp"
+  alt="小売店舗が選択されている"
+/>
+
+**空である** および **空でない** の場合は、値の入力は不要です。
+
+> 例: `空である` → 小売店舗が記録されていないチェックアウトに一致します。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-empty.webp"
+  alt="小売店舗が空"
+/>
+
+### 注文場所は小売店舗（POS）
+
+この条件は、注文がオンラインストアではなく、小売 **Point of Sale (POS)** 店舗を通じて開始された場合に真になります。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-pos.webp"
+  alt="小売店舗 POS"
+/>
+
+### 注文場所は小売店舗ではない（POS）
+
+この条件は、注文が小売 **Point of Sale (POS)** 店舗を通じて開始されず、オンラインストアから開始された場合に真になります。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-not-pos.webp"
+  alt="注文場所が POS ではない"
+/>
+
 ## カートの詳細
 
 <AnyProductDiscountAmount />
@@ -187,6 +277,10 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <LineItemProperty />
 <CartHasOneTimePurchaseProduct />
 <CartHasNoOneTimePurchaseProduct />
+
+## 割引
+
+<DiscountCodes />
 
 ## 配送
 

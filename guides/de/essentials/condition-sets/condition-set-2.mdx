@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/de/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/de/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/de/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/de/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ Passt, wenn der Kunde keine aktive Kontositzung hat und als Gast auscheckt.
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -115,10 +118,10 @@ Für **Hat einen dieser Werte** und **Hat keinen dieser Werte** geben Sie einen 
   Verwenden Sie * als Platzhalter, um Teilwerte zu matchen. Zum Beispiel: value* → value123, VALUETEST etc.
 </Note>
 
-> **Beispiel für „Hat einen dieser Werte“**:  
-Schlüssel: `delivery_method`  
-Werte: `express, pickup`  
-→ Passt zu Warenkörben, bei denen das `delivery_method`-Attribut entweder `express` oder `pickup` ist.
+> **Beispiel für „Hat einen dieser Werte“**:
+> Schlüssel: `delivery_method`
+> Werte: `express, pickup`
+> → Passt zu Warenkörben, bei denen das `delivery_method`-Attribut entweder `express` oder `pickup` ist.
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -127,8 +130,8 @@ Werte: `express, pickup`
 
 Für **Hat leeren Wert** und **Hat keinen leeren Wert** ist keine Wertangabe erforderlich.
 
-> **Beispiel für „Hat keinen leeren Wert“**:  
-> Schlüssel: `gift_message`  
+> **Beispiel für „Hat keinen leeren Wert“**:
+> Schlüssel: `gift_message`
 > → Passt zu Warenkörben, bei denen ein `gift_message`-Attribut existiert und einen Text enthält (z. B. „Alles Gute zum Geburtstag!“).
 
 <img
@@ -161,9 +164,9 @@ Um diese Bedingungen festzulegen:
   </Step>
 </Steps>
 
-> **Beispiel für „Menge ist größer oder gleich“**:  
-> SKU: `ABC123`  
-> Menge: `3`  
+> **Beispiel für „Menge ist größer oder gleich“**:
+> SKU: `ABC123`
+> Menge: `3`
 > → Passt zu Bestellungen, bei denen 3 oder mehr Einheiten von `ABC123` enthalten sind.
 
 <img
@@ -171,9 +174,9 @@ Um diese Bedingungen festzulegen:
   alt="Produktmenge pro SKU größer oder gleich"
 />
 
-> **Beispiel für „Menge ist teilbar durch“**:  
-> SKU: `ABC123`  
-> Menge: `2`  
+> **Beispiel für „Menge ist teilbar durch“**:
+> SKU: `ABC123`
+> Menge: `2`
 > → Passt zu Bestellungen, bei denen die Menge von `ABC123` 2, 4, 6, 8 usw. beträgt.
 
 <img
@@ -206,9 +209,9 @@ Um diese Bedingungen festzulegen:
   </Step>
 </Steps>
 
-> **Beispiel für „Menge ist größer oder gleich“**:  
-> SKU: `ABC123`  
-> Menge: `5`  
+> **Beispiel für „Menge ist größer oder gleich“**:
+> SKU: `ABC123`
+> Menge: `5`
 > → Passt zu Bestellungen, bei denen die Gesamtmenge aller Produkte außer `ABC123` 5 oder mehr beträgt.
 
 <img
@@ -216,9 +219,9 @@ Um diese Bedingungen festzulegen:
   alt="Gesamtmenge – Produktmenge einer SKU größer oder gleich"
 />
 
-> **Beispiel für „Menge ist teilbar durch“**:  
-> SKU: `ABC123`  
-> Menge: `3`  
+> **Beispiel für „Menge ist teilbar durch“**:
+> SKU: `ABC123`
+> Menge: `3`
 > → Passt zu Bestellungen, bei denen die Gesamtmenge aller Produkte außer `ABC123` 3, 6, 9 usw. beträgt.
 
 <img
@@ -285,6 +288,10 @@ Für **Hat Anzahl von Werten größer oder gleich** und **Hat Anzahl von Werten 
   alt="Produktvarianten-Metafeld Wert größer oder gleich"
 />
 
+## Rabatt
+
+<DiscountCodes />
+
 ## Versand
 
 <SelectedShippingMethod />
@@ -340,9 +347,9 @@ Um diese Bedingungen festzulegen:
   </Step>
 </Steps>
 
-> **Beispiel für „hat Menge, die größer oder gleich ist“**:  
-> SKU1: `SKU-ABC`  
-> SKU2: `SKU-XYZ`  
+> **Beispiel für „hat Menge, die größer oder gleich ist“**:
+> SKU1: `SKU-ABC`
+> SKU2: `SKU-XYZ`
 > → Passt, wenn die Menge von `SKU-ABC` im Warenkorb größer oder gleich der Menge von `SKU-XYZ` ist.
 
 <img
@@ -350,10 +357,10 @@ Um diese Bedingungen festzulegen:
   alt="SKU-Menge größer oder gleich"
 />
 
-> **Beispiel für „hat Menge, die ein Vielfaches ist“**:  
-> SKU1: `SKU-A`  
-> SKU2: `SKU-B`  
-> Vielfaches: `2`  
+> **Beispiel für „hat Menge, die ein Vielfaches ist“**:
+> SKU1: `SKU-A`
+> SKU2: `SKU-B`
+> Vielfaches: `2`
 > → Passt, wenn die Menge von `SKU-A` genau 2×, 4×, 6× usw. der Menge von `SKU-B` entspricht (z. B. `SKU-A` 6 Einheiten, `SKU-B` 3 Einheiten).
 
 <img

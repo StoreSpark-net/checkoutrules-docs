@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/en/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/en/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/en/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/en/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/en/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/en/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ Matches if the customer does not have an active account session and is checking 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -100,9 +103,9 @@ To set these conditions:
     Enter the <strong>attribute key</strong> in the “Enter key” field.
   </Step>
 
-  <Step title="Enter value(s)">
-    Enter the <strong>value(s)</strong> to match (where applicable).
-  </Step>
+<Step title="Enter value(s)">
+  Enter the <strong>value(s)</strong> to match (where applicable).
+</Step>
 
   <Step title="Choose comparison option">
     Choose the comparison option from the dropdown.
@@ -116,11 +119,11 @@ For **Has any of these values** and **Does not have any of these values**, enter
   value123, VALUETEST etc.
 </Note>
 
-> **Example for “Has any of these values”**:  
-Key: `delivery_method`  
-Values: `express, pickup`  
-→ Matches carts where the `delivery_method` attribute is either `express`
-or `pickup`.
+> **Example for “Has any of these values”**:
+> Key: `delivery_method`
+> Values: `express, pickup`
+> → Matches carts where the `delivery_method` attribute is either `express`
+> or `pickup`.
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -129,8 +132,8 @@ or `pickup`.
 
 For **Has empty value** and **Does not have empty value**, no value entry is required.
 
-> **Example for “Does not have empty value”**:  
-> Key: `gift_message`  
+> **Example for “Does not have empty value”**:
+> Key: `gift_message`
 > → Matches carts where a `gift_message` attribute exists and contains some text (e.g., “Happy Birthday!”).
 
 <img
@@ -154,18 +157,18 @@ To set these conditions:
     Enter the <strong>SKU</strong> in the “Enter SKU” field.
   </Step>
 
-  <Step title="Enter quantity">
-    Enter the <strong>quantity</strong> in the “Enter quantity” field.
-  </Step>
+<Step title="Enter quantity">
+  Enter the <strong>quantity</strong> in the “Enter quantity” field.
+</Step>
 
   <Step title="Select comparison option">
     Select the comparison option from the dropdown.
   </Step>
 </Steps>
 
-> **Example for “quantity is greater than or equals”**:  
-> SKU: `ABC123`  
-> Quantity: `3`  
+> **Example for “quantity is greater than or equals”**:
+> SKU: `ABC123`
+> Quantity: `3`
 > → Matches orders where there are 3 or more units of product `ABC123`.
 
 <img
@@ -173,9 +176,9 @@ To set these conditions:
   alt="Product Quantity per SKU Has Greater Value"
 />
 
-> **Example for “quantity is divisible by”**:  
-> SKU: `ABC123`  
-> Quantity: `2`  
+> **Example for “quantity is divisible by”**:
+> SKU: `ABC123`
+> Quantity: `2`
 > → Matches orders where the quantity of product `ABC123` is 2, 4, 6, 8, etc.
 
 <img
@@ -199,18 +202,18 @@ To set these conditions:
     Enter the <strong>SKU</strong> to exclude in the “Enter SKU” field.
   </Step>
 
-  <Step title="Enter quantity">
-    Enter the <strong>quantity</strong> in the “Enter quantity” field.
-  </Step>
+<Step title="Enter quantity">
+  Enter the <strong>quantity</strong> in the “Enter quantity” field.
+</Step>
 
   <Step title="Select comparison option">
     Select the comparison option from the dropdown.
   </Step>
 </Steps>
 
-> **Example for “quantity is greater than or equals”**:  
-> SKU: `ABC123`  
-> Quantity: `5`  
+> **Example for “quantity is greater than or equals”**:
+> SKU: `ABC123`
+> Quantity: `5`
 > → Matches orders where the total quantity of all products except `ABC123` is 5 or more.
 
 <img
@@ -218,9 +221,9 @@ To set these conditions:
   alt="Total Quantity – Product Quantity of SKU Has Greater Value"
 />
 
-> **Example for “quantity is divisible by”**:  
-> SKU: `ABC123`  
-> Quantity: `3`  
+> **Example for “quantity is divisible by”**:
+> SKU: `ABC123`
+> Quantity: `3`
 > → Matches orders where the total quantity of all products except `ABC123` is 3, 6, 9, etc.
 
 <img
@@ -287,6 +290,10 @@ For **Has number of values greater than or equals** and **Has number of values l
   alt="Product Variant Metafield Greater Value Or Equals"
 />
 
+## Discount
+
+<DiscountCodes />
+
 ## Shipping
 
 <SelectedShippingMethod />
@@ -294,9 +301,11 @@ For **Has number of values greater than or equals** and **Has number of values l
 <SelectedShippingTypeShipPickup />
 
 ## Localization
+
 <UserLanguage />
 
 ## Shipping Address
+
 <ShippingAddressIsEmpty />
 <ShippingAddressIsNotEmpty />
 <FullNameFirstNameLastName />
@@ -333,18 +342,19 @@ To set these conditions:
     Enter the <strong>SKU code</strong> for the first product in the <strong>Enter SKU1</strong> field.
   </Step>
 
-  <Step title="Enter SKU for second product">
-    Enter the <strong>SKU code</strong> for the second product in the <strong>Enter SKU2</strong> field.
-  </Step>
+<Step title="Enter SKU for second product">
+  Enter the <strong>SKU code</strong> for the second product in the{" "}
+  <strong>Enter SKU2</strong> field.
+</Step>
 
   <Step title="Choose comparison option">
     Choose the comparison option from the dropdown.
   </Step>
 </Steps>
 
-> **Example for “has quantity which is greater than or equals to”**:  
-> SKU1: `SKU-ABC`  
-> SKU2: `SKU-XYZ`  
+> **Example for “has quantity which is greater than or equals to”**:
+> SKU1: `SKU-ABC`
+> SKU2: `SKU-XYZ`
 > → Matches when the quantity of `SKU-ABC` in the cart is greater than or equal to the quantity of `SKU-XYZ`.
 
 <img
@@ -352,10 +362,10 @@ To set these conditions:
   alt="SKU Quantity Greater Equals"
 />
 
-> **Example for “has quantity which is multiple of”**:  
-> SKU1: `SKU-A`  
-> SKU2: `SKU-B`  
-> Multiple: `2`  
+> **Example for “has quantity which is multiple of”**:
+> SKU1: `SKU-A`
+> SKU2: `SKU-B`
+> Multiple: `2`
 > → Matches when the quantity of `SKU-A` is exactly 2×, 4×, 6×, etc., the quantity of `SKU-B` (e.g., `SKU-A` has 6 units and `SKU-B` has 3 units).
 
 <img

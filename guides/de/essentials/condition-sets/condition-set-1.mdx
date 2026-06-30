@@ -35,6 +35,9 @@ import CityArea from "/snippets/condition-set/de/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/de/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/de/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/de/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/de/discount-codes.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/de/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/de/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -49,55 +52,57 @@ Bei der Einrichtung einer **Datum & Uhrzeit**-Bedingung ist eine zusätzliche Ei
 <Steps>
   <Step title="Wählen Sie Ihre Zeitzone">
     Wählen Sie im Dropdown <strong>Bitte wählen Sie Ihre Zeitzone</strong> die Zeitzone Ihres Shops aus und klicken Sie auf <strong>"Speichern"</strong>, um sie anzuwenden.
-    
+
     > Zum Beispiel: Wählen Sie <strong>Vancouver</strong>, wenn Sie Pacific Time (PT) verwenden möchten.
 
     <img
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Zeitzone auswählen"
     />
+
   </Step>
 
   <Step title="Aktivieren Sie den BeSure Embed Block in Ihrem Theme">
     - Klicken Sie auf den Link <strong>BeSure Embed Block</strong>, um den Block in Ihrem Theme zu aktivieren.
-    
+
     <img
       src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
       alt="Auf BeSure Embed Block klicken"
     />
 
     - Suchen Sie im Theme-Editor unter <em>App embeds</em> den <strong>BeSure Embed Block</strong> und aktivieren Sie ihn.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Block suchen und aktivieren"
     />
+
   </Step>
 
-  <Step title="Speichern Sie Ihr Theme">
-    Nachdem Sie den Block aktiviert haben, speichern Sie bitte Ihr Theme. Der <strong>Speichern</strong>-Button befindet sich oben rechts.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Theme speichern"
-    />
-  </Step>
+<Step title="Speichern Sie Ihr Theme">
+  Nachdem Sie den Block aktiviert haben, speichern Sie bitte Ihr Theme. Der{" "}
+  <strong>Speichern</strong>-Button befindet sich oben rechts.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Theme speichern"
+  />
+</Step>
 
-  <Step title="Als erledigt markieren (Optional)">
-    Klicken Sie auf <strong>"Als erledigt markieren"</strong>, wenn alle Schritte abgeschlossen sind, und speichern Sie dann die Regel.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Als erledigt markieren"
-    />
-  </Step>
+<Step title="Als erledigt markieren (Optional)">
+  Klicken Sie auf <strong>"Als erledigt markieren"</strong>, wenn alle Schritte
+  abgeschlossen sind, und speichern Sie dann die Regel.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Als erledigt markieren"
+  />
+</Step>
 
   <Step title="Testen Sie Ihre Regel">
     Leeren Sie zuerst Ihren Warenkorb. Fügen Sie dann ein neues Produkt hinzu und gehen Sie zur Kasse, um zu testen, ob die Regel wie erwartet funktioniert.
   </Step>
 </Steps>
 
-### Datum
+### Datum(e)
 
 Wird verwendet, um das Checkout-Datum des Kunden mit einem ausgewählten Datum oder Datumsbereich zu vergleichen, basierend auf einer der folgenden Unterbedingungen:
 
@@ -107,10 +112,14 @@ Wird verwendet, um das Checkout-Datum des Kunden mit einem ausgewählten Datum o
 - **ist nach** (Das Checkout-Datum des Kunden liegt nach dem ausgewählten Datum)
 - **liegt zwischen** (Das Checkout-Datum des Kunden liegt innerhalb des ausgewählten Start- und Enddatums)
 - **liegt nicht zwischen** (Das Checkout-Datum des Kunden liegt außerhalb des ausgewählten Start- und Enddatums)
+- **sind** (Das Checkout-Datum des Kunden entspricht einem der ausgewählten Daten)
+- **sind nicht** (Das Checkout-Datum des Kunden entspricht keinem der ausgewählten Daten)
+- **sind (nur Tag und Monat)** (Tag und Monat des Checkout-Datums des Kunden entsprechen einem der ausgewählten Tag-und-Monat-Werte, unabhängig vom Jahr)
+- **sind nicht (nur Tag und Monat)** (Tag und Monat des Checkout-Datums des Kunden entsprechen keinem der ausgewählten Tag-und-Monat-Werte, unabhängig vom Jahr)
 
 Für **ist**, **ist nicht**, **ist vor** und **ist nach** wählen Sie ein einzelnes Datum im Kalender-Picker aus.
 
-> Zum Beispiel: `ist vor 11. August 2025` → Passt zu allen Daten vor dem 11. August 2025.
+> Zum Beispiel: `ist vor 11. August 2026` → Passt zu allen Daten vor dem 11. August 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,11 +128,29 @@ Für **ist**, **ist nicht**, **ist vor** und **ist nach** wählen Sie ein einzel
 
 Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl ein Start- als auch ein Enddatum im Kalender-Picker aus.
 
-> Zum Beispiel: `liegt zwischen 11. August 2025 und 19. August 2025` → Passt zu Daten zwischen dem 11. August 2025 und 19. August 2025.
+> Zum Beispiel: `liegt zwischen 11. August 2026 und 19. August 2026` → Passt zu Daten zwischen dem 11. August 2026 und 19. August 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
   alt="Mehrere Daten"
+/>
+
+Für **sind** und **sind nicht** geben Sie ein oder mehrere Daten im Format `MM-DD-YYYY` ein, getrennt durch Kommas.
+
+> Zum Beispiel: `sind 08-11-2026,12-25-2026,01-01-2027` → Passt, wenn das Checkout-Datum der 11. August 2026, der 25. Dezember 2026 oder der 1. Januar 2027 ist.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-dates.webp"
+  alt="Mehrere Daten sind"
+/>
+
+Für **sind (nur Tag und Monat)** und **sind nicht (nur Tag und Monat)** geben Sie ein oder mehrere Daten im Format `MM-DD` ein, getrennt durch Kommas. Das Jahr wird bei der Auswertung der Bedingung ignoriert.
+
+> Zum Beispiel: `sind (nur Tag und Monat) 08-11,12-25` → Passt, wenn das Checkout-Datum auf den 11. August oder 25. Dezember in einem beliebigen Jahr fällt.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-day-month.webp"
+  alt="Mehrere Tag-Monat-Werte sind"
 />
 
 ### Wochentag
@@ -139,7 +166,10 @@ Für **ist** und **ist nicht** wählen Sie einen einzelnen Tag aus dem Dropdown 
 
 > Zum Beispiel: `ist Montag` → Passt zum Montag.
 
-<img src="/images/essentials/condition-sets/single-day.webp" alt="Einzelner Tag" />
+<img
+  src="/images/essentials/condition-sets/single-day.webp"
+  alt="Einzelner Tag"
+/>
 
 Für **liegt zwischen** und **liegt nicht zwischen** wählen Sie sowohl einen Start- als auch einen Endtag aus dem Dropdown aus.
 
@@ -193,6 +223,24 @@ Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und ei
   alt="Tage und Zeiten"
 />
 
+### Fallback
+
+Wenn die App die Uhrzeit oder das Datum nicht ermitteln kann, wird basierend auf der ausgewählten Option eine Fallback-Aktion ausgeführt:
+
+- Wenn **„Nichts tun“** ausgewählt ist, wird keine Aktion ausgeführt, wenn die App die Uhrzeit oder das Datum nicht ermitteln kann.
+- Wenn **„Diese Aktion ausführen“** ausgewählt ist, wird die konfigurierte Aktion ausgeführt, wenn die App die Uhrzeit oder das Datum nicht ermitteln kann.
+
+> Zum Beispiel: Wenn **„Diese Aktion ausführen“** ausgewählt ist und die konfigurierte Regel **„Versandmethoden neu ordnen“** lautet, wird eine Operation basierend auf **Alphabetische Reihenfolge (Name A–Z, aufsteigend)** ausgeführt, sobald die App die Uhrzeit oder das Datum nicht ermitteln kann.
+
+<Warning>
+  Jede Regel hat ihre eigene Operation. Beispielsweise umfasst die Regel „Zahlungsmethoden ausblenden“ Operationen wie „Alle Zahlungsmethoden ausblenden“ oder „Diese Zahlungsmethoden ausblenden“ usw. Wählen Sie daher die Fallback-Operation entsprechend der Regel aus, an der Sie arbeiten.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Datum Uhrzeit Standort"
+/>
+
 ## Kunde
 
 <NewCustomer />
@@ -201,15 +249,61 @@ Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und ei
 <EmailAddress />
 <CustomerTags />
 
+### Kundenstandort (mit GeoIP)
+
+Diese Bedingung prüft das Land, in dem der Kunde den Shop öffnet, und wertet es anhand definierter Kriterien aus, basierend auf einer der folgenden Unterbedingungen:
+
+- **Hat einen dieser Werte** (Die Bedingung ist erfüllt, wenn das Land des Kunden mindestens einem der ausgewählten Werte entspricht)
+- **Hat keinen dieser Werte** (Die Bedingung ist erfüllt, wenn das Land des Kunden keinem der ausgewählten Werte entspricht)
+- **Hat einen anderen Wert als diese Werte** (Die Bedingung ist erfüllt, wenn das Land des Kunden von den ausgewählten Werten abweicht)
+- **Hat keinen anderen Wert als diese Werte** (Die Bedingung ist erfüllt, wenn das Land des Kunden nur den ausgewählten Werten und keinen anderen entspricht)
+
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte in das Feld ein. Trennen Sie mehrere Werte durch Kommas oder wählen Sie aus dem Dropdown.
+
+> Zum Beispiel: `Hat keinen dieser Werte: Kanada, Vereinigte Staaten` → Passt zu Kundenstandorten außer „Kanada“ oder „Vereinigte Staaten“.
+
+<img
+  src="/images/essentials/condition-sets/customer-location-using-GeoIP.webp"
+  alt="Kundenstandort mit GeoIP"
+/>
+
+### Fallback
+
+Wenn die App den Kundenstandort nicht ermitteln kann, wird basierend auf der ausgewählten Option eine Fallback-Aktion ausgeführt:
+
+- Wenn **„Nichts tun“** ausgewählt ist, wird keine Aktion ausgeführt, wenn die App den Kundenstandort nicht ermitteln kann.
+- Wenn **„Diese Aktion ausführen“** ausgewählt ist, wird die konfigurierte Aktion ausgeführt, wenn die App den Kundenstandort nicht ermitteln kann.
+
+> Zum Beispiel: Wenn **„Diese Aktion ausführen“** ausgewählt ist und die konfigurierte Regel **„Versandmethoden neu ordnen“** lautet, wird eine Operation basierend auf **Alphabetische Reihenfolge (Name A–Z, aufsteigend)** ausgeführt, sobald die App den Kundenstandort nicht ermitteln kann.
+
+<Warning>
+  Jede Regel hat ihre eigene Operation. Beispielsweise umfasst die Regel „Zahlungsmethoden ausblenden“ Operationen wie „Alle Zahlungsmethoden ausblenden“ oder „Diese Zahlungsmethoden ausblenden“ usw. Wählen Sie daher die Fallback-Operation entsprechend der Regel aus, an der Sie arbeiten.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Datum Uhrzeit Standort"
+/>
+
 ## Bestelldetails
 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 
+## Warenkorb-Details
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
+
 ## Warenkorb enthält Elemente
+
 <SKU />
 <ProductTags />
 <Collections />
+
+## Rabatt
+
+<DiscountCodes />
 
 ## Versand
 
@@ -217,6 +311,7 @@ Wählen Sie einen Tag und eine Zeit als Startpunkt und einen weiteren Tag und ei
 <SelectedShippingTypeShipPickup />
 
 ## Lokalisierung
+
 <UserLanguage />
 
 ## Versandadresse

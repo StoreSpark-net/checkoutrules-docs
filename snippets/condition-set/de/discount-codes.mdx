@@ -1,0 +1,26 @@
+### Rabattcode
+
+Diese Bedingung wertet die beim Checkout verwendeten Rabattcodes anhand ausgewählter Werte aus und bestimmt, ob die Regel erfüllt ist, basierend auf der gewählten Logik.
+
+- **Hat einen der angegebenen Werte** (Die Bedingung ist erfüllt, wenn mindestens ein eingegebener Rabattcode mit einem oder mehreren der ausgewählten Werte übereinstimmt)
+
+- **Hat keinen der angegebenen Werte** (Die Bedingung ist erfüllt, wenn keiner der eingegebenen Rabattcodes mit einem der ausgewählten Werte übereinstimmt)
+
+- **Hat einen anderen Wert als diese Werte** (Die Bedingung ist erfüllt, wenn mindestens ein eingegebener Rabattcode von den ausgewählten Werten abweicht)
+
+- **Hat keinen anderen Wert als diese Werte** (Die Bedingung ist nur erfüllt, wenn alle eingegebenen Rabattcodes exakt den ausgewählten Werten entsprechen und keine weiteren Rabattcodes vorhanden sind)
+
+<Note>
+  Verwenden Sie den Platzhalter `*`, um mehrere Rabattcodes abzugleichen. Zum Beispiel
+  passt `FREE*` zu FREE12, free-590 usw. Verwenden Sie `?`, um ein einzelnes
+  beliebiges Zeichen abzugleichen.
+</Note>
+
+Für **Hat einen der angegebenen Werte**, **Hat keinen der angegebenen Werte**, **Hat einen anderen Wert als diese Werte** und **Hat keinen anderen Wert als diese Werte** geben Sie einen oder mehrere Werte in das Feld ein. Trennen Sie mehrere Werte mit Kommas oder wählen Sie aus dem Dropdown.
+
+> Zum Beispiel, `Hat keinen der angegebenen Werte: SAVE10, ORDER20%OFF` → Passt zu Rabattcodes außer „SAVE10“ oder „ORDER20%OFF“.
+
+<img
+  src="/images/essentials/condition-sets/discount-codes.webp"
+  alt="Rabattcodes"
+/>

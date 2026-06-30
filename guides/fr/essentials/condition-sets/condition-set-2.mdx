@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/fr/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/fr/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/fr/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/fr/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ Correspond si le client n’a pas de session de compte active et procède au pai
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -88,10 +91,10 @@ Correspond si le client n’a pas de session de compte active et procède au pai
 
 Cette condition vérifie les **attributs attachés au panier** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **A l’une de ces valeurs** (Correspond lorsque l’attribut du panier contient au moins l’une des valeurs saisies)  
-- **N’a aucune de ces valeurs** (Correspond lorsque l’attribut du panier ne contient aucune des valeurs saisies)  
-- **A une valeur vide** (Correspond lorsque l’attribut du panier existe mais n’a pas de valeur)  
-- **N’a pas de valeur vide** (Correspond lorsque l’attribut du panier existe et contient une valeur)  
+- **A l’une de ces valeurs** (Correspond lorsque l’attribut du panier contient au moins l’une des valeurs saisies)
+- **N’a aucune de ces valeurs** (Correspond lorsque l’attribut du panier ne contient aucune des valeurs saisies)
+- **A une valeur vide** (Correspond lorsque l’attribut du panier existe mais n’a pas de valeur)
+- **N’a pas de valeur vide** (Correspond lorsque l’attribut du panier existe et contient une valeur)
 
 Pour configurer ces conditions :
 
@@ -112,14 +115,14 @@ Pour configurer ces conditions :
 Pour **A l’une de ces valeurs** et **N’a aucune de ces valeurs**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules.
 
 <Note>
-  Utilisez * comme caractère générique pour correspondre à des valeurs partielles.  
+  Utilisez * comme caractère générique pour correspondre à des valeurs partielles.
   Par exemple, valeur* correspondra à valeur123, VALEURTEST, etc.
 </Note>
 
-> **Exemple pour “A l’une de ces valeurs”** :  
-Clé : `delivery_method`  
-Valeurs : `express, pickup`  
-→ Correspond aux paniers où l’attribut `delivery_method` est soit `express` soit `pickup`.
+> **Exemple pour “A l’une de ces valeurs”** :
+> Clé : `delivery_method`
+> Valeurs : `express, pickup`
+> → Correspond aux paniers où l’attribut `delivery_method` est soit `express` soit `pickup`.
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -128,8 +131,8 @@ Valeurs : `express, pickup`
 
 Pour **A une valeur vide** et **N’a pas de valeur vide**, aucune saisie de valeur n’est requise.
 
-> **Exemple pour “N’a pas de valeur vide”** :  
-> Clé : `gift_message`  
+> **Exemple pour “N’a pas de valeur vide”** :
+> Clé : `gift_message`
 > → Correspond aux paniers où un attribut `gift_message` existe et contient du texte (par ex. “Joyeux anniversaire !”).
 
 <img
@@ -141,10 +144,10 @@ Pour **A une valeur vide** et **N’a pas de valeur vide**, aucune saisie de val
 
 Cette condition vérifie la **quantité d’un produit spécifique (par SKU)** dans la commande selon des critères définis, selon l’une des sous-conditions suivantes :
 
-- **la quantité est supérieure ou égale à** (Correspond lorsque la quantité du SKU spécifié est supérieure ou égale au nombre saisi)  
-- **la quantité est inférieure ou égale à** (Correspond lorsque la quantité du SKU spécifié est inférieure ou égale au nombre saisi)  
-- **la quantité est divisible par** (Correspond lorsque la quantité du SKU spécifié est un multiple exact du nombre saisi)  
-- **la quantité n’est pas divisible par** (Correspond lorsque la quantité du SKU spécifié n’est pas un multiple du nombre saisi)  
+- **la quantité est supérieure ou égale à** (Correspond lorsque la quantité du SKU spécifié est supérieure ou égale au nombre saisi)
+- **la quantité est inférieure ou égale à** (Correspond lorsque la quantité du SKU spécifié est inférieure ou égale au nombre saisi)
+- **la quantité est divisible par** (Correspond lorsque la quantité du SKU spécifié est un multiple exact du nombre saisi)
+- **la quantité n’est pas divisible par** (Correspond lorsque la quantité du SKU spécifié n’est pas un multiple du nombre saisi)
 
 Pour configurer ces conditions :
 
@@ -162,9 +165,9 @@ Pour configurer ces conditions :
   </Step>
 </Steps>
 
-> **Exemple pour “la quantité est supérieure ou égale à”** :  
-> SKU : `ABC123`  
-> Quantité : `3`  
+> **Exemple pour “la quantité est supérieure ou égale à”** :
+> SKU : `ABC123`
+> Quantité : `3`
 > → Correspond aux commandes où il y a 3 unités ou plus du produit `ABC123`.
 
 <img
@@ -172,9 +175,9 @@ Pour configurer ces conditions :
   alt="Quantité de produit par SKU supérieure"
 />
 
-> **Exemple pour “la quantité est divisible par”** :  
-> SKU : `ABC123`  
-> Quantité : `2`  
+> **Exemple pour “la quantité est divisible par”** :
+> SKU : `ABC123`
+> Quantité : `2`
 > → Correspond aux commandes où la quantité du produit `ABC123` est 2, 4, 6, 8, etc.
 
 <img
@@ -207,9 +210,9 @@ Pour définir ces conditions :
   </Step>
 </Steps>
 
-> **Exemple pour “la quantité est supérieure ou égale à”** :  
-> SKU : `ABC123`  
-> Quantité : `5`  
+> **Exemple pour “la quantité est supérieure ou égale à”** :
+> SKU : `ABC123`
+> Quantité : `5`
 > → Correspond aux commandes où la quantité totale de tous les produits sauf `ABC123` est de 5 ou plus.
 
 <img
@@ -217,9 +220,9 @@ Pour définir ces conditions :
   alt="Quantité totale hors SKU supérieure"
 />
 
-> **Exemple pour “la quantité est divisible par”** :  
-> SKU : `ABC123`  
-> Quantité : `3`  
+> **Exemple pour “la quantité est divisible par”** :
+> SKU : `ABC123`
+> Quantité : `3`
 > → Correspond aux commandes où la quantité totale de tous les produits sauf `ABC123` est 3, 6, 9, etc.
 
 <img
@@ -286,6 +289,10 @@ Pour le nombre de valeurs, entrez un seul nombre pour comparer avec le compte de
   alt="Métachamp variante produit nombre de valeurs supérieur"
 />
 
+## Remise
+
+<DiscountCodes />
+
 ## Expédition
 
 <SelectedShippingMethod />
@@ -341,9 +348,9 @@ Pour configurer ces conditions :
   </Step>
 </Steps>
 
-> **Exemple pour “a une quantité supérieure ou égale à”** :  
-> SKU1 : `SKU-ABC`  
-> SKU2 : `SKU-XYZ`  
+> **Exemple pour “a une quantité supérieure ou égale à”** :
+> SKU1 : `SKU-ABC`
+> SKU2 : `SKU-XYZ`
 > → Correspond lorsque la quantité de `SKU-ABC` dans le panier est supérieure ou égale à celle de `SKU-XYZ`.
 
 <img
@@ -351,10 +358,10 @@ Pour configurer ces conditions :
   alt="Quantité SKU supérieure ou égale"
 />
 
-> **Exemple pour “a une quantité multiple de”** :  
-> SKU1 : `SKU-A`  
-> SKU2 : `SKU-B`  
-> Multiple : `2`  
+> **Exemple pour “a une quantité multiple de”** :
+> SKU1 : `SKU-A`
+> SKU2 : `SKU-B`
+> Multiple : `2`
 > → Correspond lorsque la quantité de `SKU-A` est exactement 2×, 4×, 6×, etc., la quantité de `SKU-B` (par ex. `SKU-A` a 6 unités et `SKU-B` en a 3).
 
 <img

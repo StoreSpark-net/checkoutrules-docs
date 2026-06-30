@@ -40,6 +40,7 @@ import CityArea from "/snippets/condition-set/zh/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/zh/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/zh/discount-codes.mdx";
 
 <Always />
 
@@ -51,6 +52,48 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
 <RepeatCustomer />
 <CustomerTotalPreviousSpent />
 <EmailAddress />
+
+### 客户元字段
+
+此条件会检查您指定的 **客户自定义字段**（通过 **命名空间** 和 **键**），然后使用以下子条件之一进行评估：
+
+- **具有以下任意值**（如果自定义字段至少有一个输入的值，则匹配）
+- **不具有以下任意值**（如果自定义字段没有输入的任何值，则匹配）
+- **具有除以下值以外的其他值**（如果自定义字段的值不在输入值中，则匹配）
+- **不具有除以下值以外的其他值**（如果自定义字段只有输入的值而没有其他值，则匹配）
+- **为空值**（如果自定义字段没有值，则匹配）
+- **不为空值**（如果自定义字段有任意值，则匹配）
+- **数值大于或等于**（如果自定义字段的数值大于或等于输入的数字，则匹配）
+- **数值小于或等于**（如果自定义字段的数值小于或等于输入的数字，则匹配）
+- **值的数量大于或等于**（如果自定义字段中值的数量大于或等于输入的数字，则匹配）
+- **值的数量小于或等于**（如果自定义字段中值的数量小于或等于输入的数字，则匹配）
+
+对于 **具有以下任意值**、**不具有以下任意值**、**具有除以下值以外的其他值** 和 **不具有除以下值以外的其他值**，请输入一个或多个值到字段中。多个值用逗号分隔。
+
+> 例如，`命名空间: custom` · `键: new` · `具有以下任意值: vip` → 如果客户自定义字段包含 vip，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-contains-these-values.webp"
+  alt="客户元字段包含这些值"
+/>
+
+对于 **数值大于或等于** 和 **数值小于或等于**，请输入单个数值以与自定义字段的数值进行匹配。
+
+> 例如，`命名空间: custom` · `键: new` · `数值大于或等于 60` → 如果自定义字段的数值为 60 或更多，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value.webp"
+  alt="客户元字段数值比较"
+/>
+
+对于 **值的数量大于或等于** 和 **值的数量小于或等于**，请输入单个数值以与自定义字段中的值数量进行匹配。
+
+> 例如，`命名空间: custom` · `键: new` · `值的数量大于或等于 4` → 如果元字段中有四个或更多值，则匹配。
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value-or-equals.webp"
+  alt="客户元字段值数量"
+/>
 
 ## 订单详情
 
@@ -173,6 +216,53 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   alt="订单总折扣百分比"
 />
 
+### 零售地点
+
+此条件根据以下子条件检查订单发起的**零售地点**是否符合特定标准：
+
+- **具有以下任意值**（当零售地点与指定值中的一个或多个匹配时匹配）
+- **不具有以下任意值**（当零售地点与指定值中的任何一个都不匹配时匹配）
+- **具有除以下值以外的其他值**（当零售地点具有除输入值以外的任何值时匹配）
+- **不具有除以下值以外的其他值**（当零售地点只有输入的值而没有其他值时匹配）
+- **为空**（当不存在零售地点时匹配）
+- **不为空**（当存在零售地点值时匹配）
+
+对于 **具有以下任意值**、**不具有以下任意值**、**具有除以下值以外的其他值** 和 **不具有除以下值以外的其他值**，请输入一个或多个值到字段中。多个值用逗号分隔，或从下拉菜单中选择地点。
+
+> 例如，`具有以下任意值: Store A, Store B` → 匹配从 Store A 或 Store B 发起的结账。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-selected.webp"
+  alt="已选择零售地点"
+/>
+
+对于 **为空** 和 **不为空**，无需输入值。
+
+> 例如，`为空` → 匹配未记录零售地点的结账。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-empty.webp"
+  alt="零售地点为空"
+/>
+
+### 订单地点为零售（POS）
+
+如果订单是通过零售 **Point of Sale (POS)** 地点而非在线商店发起的，则此条件为真。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-pos.webp"
+  alt="零售地点 POS"
+/>
+
+### 订单地点非零售（POS）
+
+如果订单不是通过零售 **Point of Sale (POS)** 地点发起，而是来自在线商店，则此条件为真。
+
+<img
+  src="/images/essentials/condition-sets/retail-location-not-pos.webp"
+  alt="订单地点非 POS"
+/>
+
 ## 购物车详情
 
 <AnyProductDiscountAmount />
@@ -187,6 +277,10 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
 <LineItemProperty />
 <CartHasOneTimePurchaseProduct />
 <CartHasNoOneTimePurchaseProduct />
+
+## 折扣
+
+<DiscountCodes />
 
 ## 配送
 
