@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/ja/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/ja/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/ja/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -115,10 +118,10 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   部分一致には * ワイルドカードを使用してください。例えば、value* は value123 や VALUETEST などに一致します。
 </Note>
 
-> **「これらの値のいずれかを持つ」の例**:  
-キー: `delivery_method`  
-値: `express, pickup`  
-→ `delivery_method` 属性が `express` または `pickup` の場合に一致します。
+> **「これらの値のいずれかを持つ」の例**:
+> キー: `delivery_method`
+> 値: `express, pickup`
+> → `delivery_method` 属性が `express` または `pickup` の場合に一致します。
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -127,8 +130,8 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 
 **空の値を持つ** および **空の値を持たない** の場合は、値の入力は不要です。
 
-> **「空の値を持たない」の例**:  
-> キー: `gift_message`  
+> **「空の値を持たない」の例**:
+> キー: `gift_message`
 > → `gift_message` 属性が存在し、何らかのテキストを含む場合（例：「Happy Birthday!」）に一致します。
 
 <img
@@ -161,9 +164,9 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **「数量が以上」の例**:  
-> SKU: `ABC123`  
-> 数量: `3`  
+> **「数量が以上」の例**:
+> SKU: `ABC123`
+> 数量: `3`
 > → 商品 `ABC123` が3個以上ある注文に一致します。
 
 <img
@@ -171,9 +174,9 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="SKUごとの商品数量が以上"
 />
 
-> **「数量が割り切れる」の例**:  
-> SKU: `ABC123`  
-> 数量: `2`  
+> **「数量が割り切れる」の例**:
+> SKU: `ABC123`
+> 数量: `2`
 > → 商品 `ABC123` の数量が2, 4, 6, 8... の場合に一致します。
 
 <img
@@ -206,9 +209,9 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **「数量が以上」の例**:  
-> SKU: `ABC123`  
-> 数量: `5`  
+> **「数量が以上」の例**:
+> SKU: `ABC123`
+> 数量: `5`
 > → `ABC123` を除いた合計数量が5以上の場合に一致します。
 
 <img
@@ -216,9 +219,9 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="合計数量 – SKUの商品数量が以上"
 />
 
-> **「数量が割り切れる」の例**:  
-> SKU: `ABC123`  
-> 数量: `3`  
+> **「数量が割り切れる」の例**:
+> SKU: `ABC123`
+> 数量: `3`
 > → `ABC123` を除いた合計数量が3, 6, 9... の場合に一致します。
 
 <img
@@ -285,6 +288,10 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="商品バリアントメタフィールドの値の数が以上"
 />
 
+## 割引
+
+<DiscountCodes />
+
 ## 配送
 
 <SelectedShippingMethod />
@@ -340,9 +347,9 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **「数量が以上」の例**:  
-> SKU1: `SKU-ABC`  
-> SKU2: `SKU-XYZ`  
+> **「数量が以上」の例**:
+> SKU1: `SKU-ABC`
+> SKU2: `SKU-XYZ`
 > → カート内の `SKU-ABC` の数量が `SKU-XYZ` の数量以上の場合に一致します。
 
 <img
@@ -350,11 +357,11 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="SKU 数量が以上"
 />
 
-> **「数量が倍数である」の例**:  
-> SKU1: `SKU-A`  
-> SKU2: `SKU-B`  
-> 倍数: `2`  
-> → `SKU-A` の数量が `SKU-B` の数量のちょうど 2 倍、4 倍、6 倍 … の場合に一致します  
+> **「数量が倍数である」の例**:
+> SKU1: `SKU-A`
+> SKU2: `SKU-B`
+> 倍数: `2`
+> → `SKU-A` の数量が `SKU-B` の数量のちょうど 2 倍、4 倍、6 倍 … の場合に一致します
 > （例: `SKU-A` が 6 個、`SKU-B` が 3 個の場合）。
 
 <img

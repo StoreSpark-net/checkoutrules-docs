@@ -40,6 +40,7 @@ import CityArea from "/snippets/condition-set/es/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/es/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/es/discount-codes.mdx";
 
 <Always />
 
@@ -52,6 +53,48 @@ import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.m
 <CustomerTotalPreviousSpent />
 <EmailAddress />
 
+### Metacampo del cliente
+
+Esta condición verifica un **metacampo del cliente** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
+
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)
+- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)
+- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)
+- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
+
+> Por ejemplo, `Namespace: custom` · `Key: new` · `Tiene alguno de estos valores: vip` → Coincide si el metacampo del cliente contiene el valor vip.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-contains-these-values.webp"
+  alt="Metacampo del Cliente Contiene Estos Valores"
+/>
+
+Para **Tiene un número mayor o igual a** y **Tiene un número menor o igual a**, ingresa un único valor numérico en el campo para comparar con el valor numérico del metacampo.
+
+> Por ejemplo, `Namespace: custom` · `Key: new` · `Tiene un número mayor o igual a 60` → Coincide si el valor numérico del metacampo es 60 o más.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value.webp"
+  alt="Metacampo del Cliente Valor Mayor"
+/>
+
+Para **Tiene un número de valores mayor o igual a** y **Tiene un número de valores menor o igual a**, ingresa un único valor numérico en el campo para comparar con el conteo de valores en el metacampo.
+
+> Por ejemplo, `Namespace: custom` · `Key: new` · `Tiene un número de valores mayor o igual a 4` → Coincide si hay cuatro o más valores en el metacampo.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value-or-equals.webp"
+  alt="Metacampo del Cliente Conteo de Valores Mayor o Igual"
+/>
+
 ## Detalles del pedido
 
 <OrderTotalAmount />
@@ -61,16 +104,16 @@ import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.m
 
 Esta condición verifica el **monto de impuestos del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el monto de impuestos del pedido es mayor o igual al monto ingresado)  
-- **es menor o igual a** (Coincide cuando el monto de impuestos del pedido es menor o igual al monto ingresado)  
+- **es mayor o igual a** (Coincide cuando el monto de impuestos del pedido es mayor o igual al monto ingresado)
+- **es menor o igual a** (Coincide cuando el monto de impuestos del pedido es menor o igual al monto ingresado)
 
-Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
 
 <Note>
   Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
 </Note>
 
-> Por ejemplo, `es mayor o igual a 50` → Coincide con pedidos con un monto de impuestos de 50 o más.  
+> Por ejemplo, `es mayor o igual a 50` → Coincide con pedidos con un monto de impuestos de 50 o más.
 
 <img
   src="/images/essentials/condition-sets/order-tax-amount.webp"
@@ -81,16 +124,16 @@ Para establecer estas condiciones, ingresa el monto en el campo y elige la compa
 
 Esta condición verifica el **monto de aranceles del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el monto de aranceles del pedido es mayor o igual al monto ingresado)  
-- **es menor o igual a** (Coincide cuando el monto de aranceles del pedido es menor o igual al monto ingresado)  
+- **es mayor o igual a** (Coincide cuando el monto de aranceles del pedido es mayor o igual al monto ingresado)
+- **es menor o igual a** (Coincide cuando el monto de aranceles del pedido es menor o igual al monto ingresado)
 
-Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
 
 <Note>
   Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
 </Note>
 
-> Por ejemplo, `es mayor o igual a 80` → Coincide con pedidos con un monto de aranceles de 80 o más.  
+> Por ejemplo, `es mayor o igual a 80` → Coincide con pedidos con un monto de aranceles de 80 o más.
 
 <img
   src="/images/essentials/condition-sets/order-duty-amount.webp"
@@ -105,16 +148,16 @@ Para establecer estas condiciones, ingresa el monto en el campo y elige la compa
 
 Esta condición verifica el **monto total de descuento** en el pedido (cualquier descuento de producto o pedido) contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el monto total de descuento es mayor o igual al monto ingresado)  
-- **es menor o igual a** (Coincide cuando el monto total de descuento es menor o igual al monto ingresado)  
+- **es mayor o igual a** (Coincide cuando el monto total de descuento es mayor o igual al monto ingresado)
+- **es menor o igual a** (Coincide cuando el monto total de descuento es menor o igual al monto ingresado)
 
-Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
 
 <Note>
   Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
 </Note>
 
-> Por ejemplo, `es menor o igual a 50` → Coincide si el monto total de descuento del pedido (cualquier tipo) es 50 o menos.  
+> Por ejemplo, `es menor o igual a 50` → Coincide si el monto total de descuento del pedido (cualquier tipo) es 50 o menos.
 
 <img
   src="/images/essentials/condition-sets/total-discount-amount.webp"
@@ -125,12 +168,12 @@ Para establecer estas condiciones, ingresa el monto en el campo y elige la compa
 
 Esta condición verifica el **porcentaje total de descuento** en el pedido (cualquier descuento de producto o pedido) contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es mayor o igual al porcentaje ingresado)  
-- **es menor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es menor o igual al porcentaje ingresado)  
+- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es mayor o igual al porcentaje ingresado)
+- **es menor o igual a** (Coincide cuando el porcentaje total de descuento de cualquier tipo en el pedido es menor o igual al porcentaje ingresado)
 
-Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.
 
-> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento de cualquier tipo en el pedido es 15% o menos.  
+> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento de cualquier tipo en el pedido es 15% o menos.
 
 <img
   src="/images/essentials/condition-sets/total-discount-percentage.webp"
@@ -141,16 +184,16 @@ Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la 
 
 Esta condición verifica el **monto total de descuento del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el monto total de descuento del pedido es mayor o igual al monto ingresado)  
-- **es menor o igual a** (Coincide cuando el monto total de descuento del pedido es menor o igual al monto ingresado)  
+- **es mayor o igual a** (Coincide cuando el monto total de descuento del pedido es mayor o igual al monto ingresado)
+- **es menor o igual a** (Coincide cuando el monto total de descuento del pedido es menor o igual al monto ingresado)
 
-Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
 
 <Note>
   Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
 </Note>
 
-> Por ejemplo, `es menor o igual a 75` → Coincide si el monto total de descuento de todo el pedido es 75 o menos.  
+> Por ejemplo, `es menor o igual a 75` → Coincide si el monto total de descuento de todo el pedido es 75 o menos.
 
 <img
   src="/images/essentials/condition-sets/order-total-discount-amount.webp"
@@ -161,16 +204,63 @@ Para establecer estas condiciones, ingresa el monto en el campo y elige la compa
 
 Esta condición verifica el **porcentaje total de descuento del pedido** contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es mayor o igual al porcentaje ingresado)  
-- **es menor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es menor o igual al porcentaje ingresado)  
+- **es mayor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es mayor o igual al porcentaje ingresado)
+- **es menor o igual a** (Coincide cuando el porcentaje total de descuento aplicado a todo el pedido es menor o igual al porcentaje ingresado)
 
-Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la comparación adecuada en el menú desplegable.
 
-> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento aplicado en el pedido es 15% o menos.  
+> Por ejemplo, `es menor o igual a 15` → Coincide si el porcentaje total de descuento aplicado en el pedido es 15% o menos.
 
 <img
   src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
   alt="Porcentaje Total de Descuento del Pedido"
+/>
+
+### Ubicación de venta al por menor
+
+Esta condición verifica la ubicación de venta al por menor desde donde se inicia el pedido contra criterios específicos, según una de las siguientes subcondiciones:
+
+- **tiene alguno de estos valores** (Coincide cuando la ubicación de venta al por menor coincide con uno o más de los valores especificados)
+- **no tiene ninguno de estos valores** (Coincide cuando la ubicación de venta al por menor no coincide con ninguno de los valores especificados)
+- **tiene algún otro valor además de estos valores** (Coincide cuando la ubicación de venta al por menor tiene un valor distinto a los ingresados)
+- **no tiene ningún otro valor además de estos valores** (Coincide cuando la ubicación de venta al por menor tiene solo el valor ingresado y ningún otro)
+- **está vacío** (Coincide cuando no hay ubicación de venta al por menor presente)
+- **no está vacío** (Coincide cuando existe un valor de ubicación de venta al por menor)
+
+Para **tiene alguno de estos valores**, **no tiene ninguno de estos valores**, **tiene algún otro valor además de estos valores**, y **no tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas o selecciona la ubicación en el menú desplegable.
+
+> Por ejemplo, `tiene alguno de estos valores: Store A, Store B` → Coincide con checkouts iniciados desde Store A o Store B.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-selected.webp"
+  alt="Ubicación de Venta al por Menor Seleccionada"
+/>
+
+Para **está vacío** y **no está vacío**, no es necesario ingresar un valor.
+
+> Por ejemplo, `está vacío` → Coincide con checkouts donde no se registra ninguna ubicación de venta al por menor.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-empty.webp"
+  alt="Ubicación de Venta al por Menor Vacía"
+/>
+
+### La ubicación del pedido es venta al por menor (POS)
+
+Esta condición se cumple si el pedido se inicia a través de una ubicación de venta al por menor **Point of Sale (POS)** en lugar de una tienda en línea.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-pos.webp"
+  alt="Ubicación de Venta al por Menor POS"
+/>
+
+### La ubicación del pedido no es venta al por menor (POS)
+
+Esta condición se cumple si el pedido no se inicia a través de una ubicación de venta al por menor **Point of Sale (POS)** y en su lugar proviene de una tienda en línea.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-not-pos.webp"
+  alt="Ubicación del Pedido No es POS"
 />
 
 ## Detalles del carrito
@@ -188,6 +278,10 @@ Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la 
 <CartHasOneTimePurchaseProduct />
 <CartHasNoOneTimePurchaseProduct />
 
+## Descuento
+
+<DiscountCodes />
+
 ## Envío
 
 <SelectedShippingMethod />
@@ -196,16 +290,16 @@ Para establecer estas condiciones, ingresa el porcentaje en el campo y elige la 
 
 Esta condición verifica el **precio del método de envío seleccionado** contra criterios específicos, según una de las siguientes subcondiciones:
 
-- **es mayor o igual a** (Coincide cuando el precio del método de envío seleccionado es mayor o igual al monto ingresado)  
-- **es menor o igual a** (Coincide cuando el precio del método de envío seleccionado es menor o igual al monto ingresado)  
+- **es mayor o igual a** (Coincide cuando el precio del método de envío seleccionado es mayor o igual al monto ingresado)
+- **es menor o igual a** (Coincide cuando el precio del método de envío seleccionado es menor o igual al monto ingresado)
 
-Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.  
+Para establecer estas condiciones, ingresa el monto en el campo y elige la comparación adecuada en el menú desplegable.
 
 <Note>
   Ingresa el monto en la moneda de tu tienda. Configuración > Detalles de la tienda > Moneda de la tienda
 </Note>
 
-> Por ejemplo, `es menor o igual a 50` → Coincide con pedidos donde el precio del método de envío seleccionado es 50 o menos.  
+> Por ejemplo, `es menor o igual a 50` → Coincide con pedidos donde el precio del método de envío seleccionado es 50 o menos.
 
 <img
   src="/images/essentials/condition-sets/selected-shipping-method-price.webp"

@@ -35,6 +35,9 @@ import CityArea from "/snippets/condition-set/es/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/es/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/es/discount-codes.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/es/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/es/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -49,68 +52,74 @@ Al configurar cualquier condición de **Fecha y Hora**, se requiere una configur
 <Steps>
   <Step title="Elige tu zona horaria">
     En el menú desplegable <strong>Por favor elige tu zona horaria</strong>, selecciona la zona horaria de tu tienda y haz clic en <strong>"Guardar"</strong> para aplicarla.
-    
+
     > Por ejemplo, selecciona <strong>Vancouver</strong> si quieres la Hora del Pacífico (PT).
 
     <img
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="Seleccionar Zona Horaria"
     />
+
   </Step>
 
   <Step title="Habilita el bloque BeSure Embed en tu tema">
     - Haz clic en el enlace <strong>BeSure Embed Block</strong> para habilitar el bloque en tu tema.
-    
+
     <img
       src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
       alt="Clic en BeSure Embed Block"
     />
 
     - En el editor de temas, localiza el <strong>BeSure Embed Block</strong> en <em>App embeds</em> y habilítalo.
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="Localizar y habilitar bloque"
     />
+
   </Step>
 
-  <Step title="Guarda tu tema">
-    Después de habilitar el bloque, guarda tu tema. El botón <strong>Guardar</strong> se encuentra en la esquina superior derecha.
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="Guardar Tema"
-    />
-  </Step>
+<Step title="Guarda tu tema">
+  Después de habilitar el bloque, guarda tu tema. El botón{" "}
+  <strong>Guardar</strong> se encuentra en la esquina superior derecha.
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="Guardar Tema"
+  />
+</Step>
 
-  <Step title="Marcar como hecho (Opcional)">
-    Haz clic en <strong>"Marcar como hecho"</strong> cuando todos los pasos estén completados, luego guarda la regla.
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="Marcar como Hecho"
-    />
-  </Step>
+<Step title="Marcar como hecho (Opcional)">
+  Haz clic en <strong>"Marcar como hecho"</strong> cuando todos los pasos estén
+  completados, luego guarda la regla.
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="Marcar como Hecho"
+  />
+</Step>
 
   <Step title="Prueba tu regla">
     Ahora, después de crear la regla, vacía primero tu carrito. Luego, agrega un nuevo producto al carrito y procede al checkout para probar si la regla funciona como se espera.
   </Step>
 </Steps>
 
-### Fecha
+### Fecha(s)
 
 Se utiliza para comparar la fecha del checkout del cliente con una fecha seleccionada o un rango de fechas, en base a una de las siguientes sub-condiciones:
 
-- **es** (La fecha del checkout coincide con la fecha seleccionada)  
-- **no es** (La fecha del checkout no coincide con la fecha seleccionada)  
-- **es antes de** (La fecha del checkout es anterior a la fecha seleccionada)  
-- **es después de** (La fecha del checkout es posterior a la fecha seleccionada)  
-- **está entre** (La fecha del checkout está dentro del rango de fechas seleccionadas)  
+- **es** (La fecha del checkout coincide con la fecha seleccionada)
+- **no es** (La fecha del checkout no coincide con la fecha seleccionada)
+- **es antes de** (La fecha del checkout es anterior a la fecha seleccionada)
+- **es después de** (La fecha del checkout es posterior a la fecha seleccionada)
+- **está entre** (La fecha del checkout está dentro del rango de fechas seleccionadas)
 - **no está entre** (La fecha del checkout está fuera del rango de fechas seleccionadas)
+- **son** (La fecha del checkout coincide con cualquiera de las fechas seleccionadas)
+- **no son** (La fecha del checkout no coincide con ninguna de las fechas seleccionadas)
+- **son (solo día y mes)** (El día y mes del checkout coinciden con cualquiera de los valores de día y mes seleccionados, independientemente del año)
+- **no son (solo día y mes)** (El día y mes del checkout no coinciden con ninguno de los valores de día y mes seleccionados, independientemente del año)
 
 Para **es**, **no es**, **es antes de** y **es después de**, selecciona una sola fecha en el calendario.
 
-> Por ejemplo, `es antes de 11 de agosto de 2025` → Coincide con fechas anteriores al 11 de agosto de 2025.
+> Por ejemplo, `es antes de 11 de agosto de 2026` → Coincide con fechas anteriores al 11 de agosto de 2026.
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,20 +128,38 @@ Para **es**, **no es**, **es antes de** y **es después de**, selecciona una sol
 
 Para **está entre** y **no está entre**, selecciona tanto una fecha de inicio como una fecha de fin en el calendario.
 
-> Por ejemplo, `está entre 11 de agosto de 2025 y 19 de agosto de 2025` → Coincide con fechas entre el 11 y el 19 de agosto de 2025.
+> Por ejemplo, `está entre 11 de agosto de 2026 y 19 de agosto de 2026` → Coincide con fechas entre el 11 y el 19 de agosto de 2026.
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
   alt="Fechas Múltiples"
 />
 
+Para **son** y **no son**, ingresa una o más fechas en formato `MM-DD-YYYY`, separadas por comas.
+
+> Por ejemplo, `son 08-11-2026,12-25-2026,01-01-2027` → Coincide si la fecha del checkout es el 11 de agosto de 2026, el 25 de diciembre de 2026 o el 1 de enero de 2027.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-dates.webp"
+  alt="Son Fechas Múltiples"
+/>
+
+Para **son (solo día y mes)** y **no son (solo día y mes)**, ingresa una o más fechas en formato `MM-DD`, separadas por comas. El año se ignora al evaluar la condición.
+
+> Por ejemplo, `son (solo día y mes) 08-11,12-25` → Coincide si la fecha del checkout cae el 11 de agosto o el 25 de diciembre en cualquier año.
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-day-month.webp"
+  alt="Son Día y Mes Múltiples"
+/>
+
 ### Día de la semana
 
 Se utiliza para comparar el día del checkout del cliente con un día o rango de días seleccionados, en base a una de las siguientes sub-condiciones:
 
-- **es** (El día del checkout coincide con el día seleccionado)  
-- **no es** (El día del checkout no coincide con el día seleccionado)  
-- **está entre** (El día del checkout cae entre los días seleccionados de inicio y fin)  
+- **es** (El día del checkout coincide con el día seleccionado)
+- **no es** (El día del checkout no coincide con el día seleccionado)
+- **está entre** (El día del checkout cae entre los días seleccionados de inicio y fin)
 - **no está entre** (El día del checkout no cae entre los días seleccionados de inicio y fin)
 
 Para **es** y **no es**, selecciona un solo día del menú desplegable.
@@ -154,9 +181,9 @@ Para **está entre** y **no está entre**, selecciona un día de inicio y un dí
 
 Se utiliza para comparar la hora del checkout del cliente con una hora o rango de horas seleccionadas, en base a una de las siguientes sub-condiciones:
 
-- **es** (La hora del checkout coincide con la hora seleccionada)  
-- **no es** (La hora del checkout no coincide con la hora seleccionada)  
-- **está entre** (La hora del checkout cae entre las horas seleccionadas de inicio y fin)  
+- **es** (La hora del checkout coincide con la hora seleccionada)
+- **no es** (La hora del checkout no coincide con la hora seleccionada)
+- **está entre** (La hora del checkout cae entre las horas seleccionadas de inicio y fin)
 - **no está entre** (La hora del checkout no cae entre las horas seleccionadas de inicio y fin)
 
 Para **es** y **no es**, selecciona una sola hora del menú desplegable.
@@ -181,7 +208,7 @@ Para **está entre** y **no está entre**, selecciona tanto una hora de inicio c
 
 Se utiliza para comparar el día y la hora del checkout del cliente con un rango seleccionado, en base a una de las siguientes condiciones:
 
-- **está entre** (Coincide cuando el día y la hora del checkout están dentro del rango seleccionado)  
+- **está entre** (Coincide cuando el día y la hora del checkout están dentro del rango seleccionado)
 - **no está entre** (Coincide cuando el día y la hora del checkout no están dentro del rango seleccionado)
 
 Para configurar estas condiciones, selecciona un día y hora como punto de inicio y otro día y hora como punto final en los menús desplegables.
@@ -193,6 +220,24 @@ Para configurar estas condiciones, selecciona un día y hora como punto de inici
   alt="Días y Horas"
 />
 
+### Respaldo
+
+Si la app no puede determinar la hora o la fecha, se ejecutará una acción de respaldo según la opción seleccionada:
+
+- Si se selecciona **"No hacer nada"**, no se realizará ninguna acción cuando la app no pueda determinar la hora o la fecha.
+- Si se selecciona **"Ejecutar esta acción"**, se ejecutará la acción configurada cuando la app no pueda determinar la hora o la fecha.
+
+> Por ejemplo, si se selecciona **"Ejecutar esta acción"** y la regla configurada es **"Reordenar métodos de envío"**, una operación reordenará según **Orden alfabético (Nombre A–Z, ascendente)** siempre que la app no pueda determinar la hora o la fecha.
+
+<Warning>
+  Cada regla tiene su propia operación. Por ejemplo, la regla "Ocultar métodos de pago" incluye operaciones como "Ocultar todos los métodos de pago" u "Ocultar estos métodos de pago", etc. Por lo tanto, selecciona la operación de respaldo según la regla en la que estés trabajando.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Respaldo Fecha Hora Ubicación"
+/>
+
 ## Cliente
 
 <NewCustomer />
@@ -201,16 +246,61 @@ Para configurar estas condiciones, selecciona un día y hora como punto de inici
 <EmailAddress />
 <CustomerTags />
 
+### Ubicación del cliente (usando GeoIP)
+
+Esta condición comprueba el país en el que el cliente abre la tienda y lo evalúa según criterios específicos, en base a una de las siguientes sub-condiciones:
+
+- **Tiene alguno de estos valores** (La condición se cumple si el país del cliente coincide con al menos uno de los valores seleccionados)
+- **No tiene ninguno de estos valores** (La condición se cumple si el país del cliente no coincide con ninguno de los valores seleccionados)
+- **Tiene algún otro valor además de estos valores** (La condición se cumple si el país del cliente es diferente de los valores seleccionados)
+- **No tiene ningún otro valor además de estos valores** (La condición se cumple si el país del cliente coincide solo con los valores seleccionados y con ningún otro)
+
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores** y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas o selecciona del menú desplegable.
+
+> Por ejemplo, `No tiene ninguno de estos valores: Canadá, Estados Unidos` → Coincide con ubicaciones de clientes distintas de "Canadá" o "Estados Unidos".
+
+<img
+  src="/images/essentials/condition-sets/customer-location-using-GeoIP.webp"
+  alt="Ubicación del Cliente Usando GeoIP"
+/>
+
+### Respaldo
+
+Si la app no puede determinar la ubicación del cliente, se ejecutará una acción de respaldo según la opción seleccionada:
+
+- Si se selecciona **"No hacer nada"**, no se realizará ninguna acción cuando la app no pueda determinar la ubicación del cliente.
+- Si se selecciona **"Ejecutar esta acción"**, se ejecutará la acción configurada cuando la app no pueda determinar la ubicación del cliente.
+
+> Por ejemplo, si se selecciona **"Ejecutar esta acción"** y la regla configurada es **"Reordenar métodos de envío"**, una operación reordenará según **Orden alfabético (Nombre A–Z, ascendente)** siempre que la app no pueda determinar la ubicación del cliente.
+
+<Warning>
+  Cada regla tiene su propia operación. Por ejemplo, la regla "Ocultar métodos de pago" incluye operaciones como "Ocultar todos los métodos de pago" u "Ocultar estos métodos de pago", etc. Por lo tanto, selecciona la operación de respaldo según la regla en la que estés trabajando.
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Respaldo Fecha Hora Ubicación"
+/>
+
 ## Detalles del Pedido
 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
+
+## Detalles del carrito
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## El carrito tiene algún artículo
 
 <SKU />
 <ProductTags />
 <Collections />
+
+## Descuento
+
+<DiscountCodes />
 
 ## Envío
 

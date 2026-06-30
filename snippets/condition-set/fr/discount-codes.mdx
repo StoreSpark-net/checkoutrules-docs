@@ -1,0 +1,26 @@
+### Code de réduction
+
+Cette condition évalue les codes de réduction utilisés au paiement par rapport aux valeurs sélectionnées et détermine si la règle est satisfaite selon la logique choisie.
+
+- **À l'une de ces valeurs** (La condition est satisfaite si au moins un code de réduction saisi correspond à une ou plusieurs des valeurs sélectionnées)
+
+- **N'a aucune de ces valeurs** (La condition est satisfaite si aucun des codes de réduction saisis ne correspond aux valeurs sélectionnées)
+
+- **À une autre valeur que ces valeurs** (La condition est satisfaite si au moins un code de réduction saisi est différent des valeurs sélectionnées)
+
+- **N'a aucune autre valeur que ces valeurs** (La condition n'est satisfaite que si tous les codes de réduction saisis correspondent exactement aux valeurs sélectionnées et qu'aucun code supplémentaire n'est présent)
+
+<Note>
+  Utilisez le caractère générique `*` pour faire correspondre plusieurs codes de
+  réduction. Par exemple, `FREE*` correspondra à FREE12, free-590, etc. Utilisez
+  `?` pour faire correspondre un seul caractère.
+</Note>
+
+Pour **À l'une de ces valeurs**, **N'a aucune de ces valeurs**, **À une autre valeur que ces valeurs** et **N'a aucune autre valeur que ces valeurs**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules ou sélectionnez-les dans le menu déroulant.
+
+> Par exemple, `N'a aucune de ces valeurs : SAVE10, ORDER20%OFF` → La condition est satisfaite uniquement si aucun code de réduction saisi n'est « SAVE10 » ou « ORDER20%OFF ».
+
+<img
+  src="/images/essentials/condition-sets/discount-codes.webp"
+  alt="Codes de réduction"
+/>

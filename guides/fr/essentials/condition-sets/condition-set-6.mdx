@@ -40,6 +40,7 @@ import CityArea from "/snippets/condition-set/fr/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/fr/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/fr/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/fr/discount-codes.mdx";
 
 <Always />
 
@@ -52,6 +53,48 @@ import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.m
 <CustomerTotalPreviousSpent />
 <EmailAddress />
 
+### Métachamp client
+
+Cette condition vérifie un **métachamp client** que vous spécifiez par **espace de noms** et **clé**, puis l’évalue en utilisant l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond si le métachamp contient au moins l’une des valeurs saisies)
+- **N’a aucune de ces valeurs** (Correspond si le métachamp ne contient aucune des valeurs saisies)
+- **A une autre valeur que celles-ci** (Correspond si le métachamp a une valeur qui n’est pas parmi les valeurs saisies)
+- **N’a pas d’autre valeur que celles-ci** (Correspond si le métachamp contient uniquement les valeurs saisies et aucune autre)
+- **A une valeur vide** (Correspond si le métachamp n’a aucune valeur)
+- **N’a pas de valeur vide** (Correspond si le métachamp contient une valeur quelconque)
+- **A un nombre supérieur ou égal à** (Correspond si la valeur numérique du métachamp est supérieure ou égale au nombre saisi)
+- **A un nombre inférieur ou égal à** (Correspond si la valeur numérique du métachamp est inférieure ou égale au nombre saisi)
+- **A un nombre de valeurs supérieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est supérieur ou égal au nombre saisi)
+- **A un nombre de valeurs inférieur ou égal à** (Correspond si le **nombre** de valeurs dans le métachamp est inférieur ou égal au nombre saisi)
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules.
+
+> Par exemple, `Namespace: custom` · `Key: new` · `A l’une de ces valeurs: vip` → Correspond si le métachamp client contient la valeur vip.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-contains-these-values.webp"
+  alt="Métachamp client contient ces valeurs"
+/>
+
+Pour **A un nombre supérieur ou égal à** et **A un nombre inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer à la valeur numérique du métachamp.
+
+> Par exemple, `Namespace: custom` · `Key: new` · `A un nombre supérieur ou égal à 60` → Correspond si la valeur numérique du métachamp est de 60 ou plus.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value.webp"
+  alt="Métachamp client valeur numérique"
+/>
+
+Pour **A un nombre de valeurs supérieur ou égal à** et **A un nombre de valeurs inférieur ou égal à**, saisissez une seule valeur numérique dans le champ pour comparer au nombre de valeurs dans le métachamp.
+
+> Par exemple, `Namespace: custom` · `Key: new` · `A un nombre de valeurs supérieur ou égal à 4` → Correspond s’il y a quatre valeurs ou plus dans le métachamp.
+
+<img
+  src="/images/essentials/condition-sets/customer-metafield-greater-value-or-equals.webp"
+  alt="Métachamp client nombre de valeurs"
+/>
+
 ## Détails de la commande
 
 <OrderTotalAmount />
@@ -61,16 +104,16 @@ import ZipCodePostalCode from "/snippets/condition-set/fr/zip-code-postal-code.m
 
 Cette condition vérifie le **montant de la taxe de la commande** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le montant de la taxe de la commande est supérieur ou égal au montant saisi)  
-- **est inférieur ou égal à** (Correspond si le montant de la taxe de la commande est inférieur ou égal au montant saisi)  
+- **est supérieur ou égal à** (Correspond si le montant de la taxe de la commande est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond si le montant de la taxe de la commande est inférieur ou égal au montant saisi)
 
-Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
 <Note>
   Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
 </Note>
 
-> Par exemple, `est supérieur ou égal à 50` → Correspond aux commandes avec un montant de taxe de 50 ou plus.  
+> Par exemple, `est supérieur ou égal à 50` → Correspond aux commandes avec un montant de taxe de 50 ou plus.
 
 <img
   src="/images/essentials/condition-sets/order-tax-amount.webp"
@@ -81,16 +124,16 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 
 Cette condition vérifie le **montant des droits de la commande** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le montant des droits de la commande est supérieur ou égal au montant saisi)  
-- **est inférieur ou égal à** (Correspond si le montant des droits de la commande est inférieur ou égal au montant saisi)  
+- **est supérieur ou égal à** (Correspond si le montant des droits de la commande est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond si le montant des droits de la commande est inférieur ou égal au montant saisi)
 
-Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
 <Note>
   Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
 </Note>
 
-> Par exemple, `est supérieur ou égal à 80` → Correspond aux commandes avec un montant de droits de 80 ou plus.  
+> Par exemple, `est supérieur ou égal à 80` → Correspond aux commandes avec un montant de droits de 80 ou plus.
 
 <img
   src="/images/essentials/condition-sets/order-duty-amount.webp"
@@ -105,16 +148,16 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 
 Cette condition vérifie le **montant total de la remise** dans la commande (tout produit ou remise sur la commande) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le montant total de la remise est supérieur ou égal au montant saisi)  
-- **est inférieur ou égal à** (Correspond si le montant total de la remise est inférieur ou égal au montant saisi)  
+- **est supérieur ou égal à** (Correspond si le montant total de la remise est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond si le montant total de la remise est inférieur ou égal au montant saisi)
 
-Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
 <Note>
   Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
 </Note>
 
-> Par exemple, `est inférieur ou égal à 50` → Correspond si le montant total des remises de la commande (tout type) est de 50 ou moins.  
+> Par exemple, `est inférieur ou égal à 50` → Correspond si le montant total des remises de la commande (tout type) est de 50 ou moins.
 
 <img
   src="/images/essentials/condition-sets/total-discount-amount.webp"
@@ -125,12 +168,12 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 
 Cette condition vérifie le **pourcentage total de la remise** dans la commande (tout produit ou remise sur la commande) par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le pourcentage total de remise de tout type dans la commande est supérieur ou égal au pourcentage saisi)  
-- **est inférieur ou égal à** (Correspond si le pourcentage total de remise de tout type dans la commande est inférieur ou égal au pourcentage saisi)  
+- **est supérieur ou égal à** (Correspond si le pourcentage total de remise de tout type dans la commande est supérieur ou égal au pourcentage saisi)
+- **est inférieur ou égal à** (Correspond si le pourcentage total de remise de tout type dans la commande est inférieur ou égal au pourcentage saisi)
 
-Pour définir ces conditions, saisissez le pourcentage dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le pourcentage dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
-> Par exemple, `est inférieur ou égal à 15` → Correspond si le pourcentage total de remise de tout type dans la commande est de 15 % ou moins.  
+> Par exemple, `est inférieur ou égal à 15` → Correspond si le pourcentage total de remise de tout type dans la commande est de 15 % ou moins.
 
 <img
   src="/images/essentials/condition-sets/total-discount-percentage.webp"
@@ -141,16 +184,16 @@ Pour définir ces conditions, saisissez le pourcentage dans le champ et choisiss
 
 Cette condition vérifie le **montant total de la remise sur la commande** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le montant total de la remise sur la commande est supérieur ou égal au montant saisi)  
-- **est inférieur ou égal à** (Correspond si le montant total de la remise sur la commande est inférieur ou égal au montant saisi)  
+- **est supérieur ou égal à** (Correspond si le montant total de la remise sur la commande est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond si le montant total de la remise sur la commande est inférieur ou égal au montant saisi)
 
-Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
 <Note>
   Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
 </Note>
 
-> Par exemple, `est inférieur ou égal à 75` → Correspond si le montant total de la remise pour l’ensemble de la commande est de 75 ou moins.  
+> Par exemple, `est inférieur ou égal à 75` → Correspond si le montant total de la remise pour l’ensemble de la commande est de 75 ou moins.
 
 <img
   src="/images/essentials/condition-sets/order-total-discount-amount.webp"
@@ -161,16 +204,63 @@ Pour définir ces conditions, saisissez le montant dans le champ et choisissez l
 
 Cette condition vérifie le **pourcentage total de la remise sur la commande** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le pourcentage global de remise appliqué à l’ensemble de la commande est supérieur ou égal au pourcentage saisi)  
-- **est inférieur ou égal à** (Correspond si le pourcentage global de remise appliqué à l’ensemble de la commande est inférieur ou égal au pourcentage saisi)  
+- **est supérieur ou égal à** (Correspond si le pourcentage global de remise appliqué à l’ensemble de la commande est supérieur ou égal au pourcentage saisi)
+- **est inférieur ou égal à** (Correspond si le pourcentage global de remise appliqué à l’ensemble de la commande est inférieur ou égal au pourcentage saisi)
 
-Pour définir ces conditions, saisissez le pourcentage dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le pourcentage dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
-> Par exemple, `est inférieur ou égal à 15` → Correspond si le pourcentage total de remise appliqué à la commande est de 15 % ou moins.  
+> Par exemple, `est inférieur ou égal à 15` → Correspond si le pourcentage total de remise appliqué à la commande est de 15 % ou moins.
 
 <img
   src="/images/essentials/condition-sets/order-total-discount-percentage.webp"
   alt="Pourcentage total de la remise sur la commande"
+/>
+
+### Emplacement de vente au détail
+
+Cette condition vérifie l’emplacement de vente au détail à partir duquel la commande est initiée, par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
+
+- **A l’une de ces valeurs** (Correspond lorsque l’emplacement de vente au détail correspond à une ou plusieurs des valeurs spécifiées)
+- **N’a aucune de ces valeurs** (Correspond lorsque l’emplacement de vente au détail ne correspond à aucune des valeurs spécifiées)
+- **A une autre valeur que celles-ci** (Correspond lorsque l’emplacement de vente au détail a une valeur autre que celles saisies)
+- **N’a pas d’autre valeur que celles-ci** (Correspond lorsque l’emplacement de vente au détail n’a que la valeur saisie et aucune autre)
+- **est vide** (Correspond lorsqu’aucun emplacement de vente au détail n’est présent)
+- **n’est pas vide** (Correspond lorsqu’une valeur d’emplacement de vente au détail existe)
+
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, et **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs dans le champ. Séparez plusieurs valeurs par des virgules ou sélectionnez l’emplacement dans le menu déroulant.
+
+> Par exemple, `A l’une de ces valeurs: Store A, Store B` → Correspond aux checkouts initiés depuis Store A ou Store B.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-selected.webp"
+  alt="Emplacement de vente au détail sélectionné"
+/>
+
+Pour **est vide** et **n’est pas vide**, aucune valeur n’est requise.
+
+> Par exemple, `est vide` → Correspond aux checkouts où aucun emplacement de vente au détail n’est enregistré.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-empty.webp"
+  alt="Emplacement de vente au détail vide"
+/>
+
+### L’emplacement de la commande est une vente au détail (POS)
+
+Cette condition est remplie si la commande est initiée via un emplacement de vente au détail **Point of Sale (POS)** plutôt que via une boutique en ligne.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-pos.webp"
+  alt="Emplacement de vente au détail POS"
+/>
+
+### L’emplacement de la commande n’est pas une vente au détail (POS)
+
+Cette condition est remplie si la commande n’est pas initiée via un emplacement de vente au détail **Point of Sale (POS)** et provient plutôt d’une boutique en ligne.
+
+<img
+  src="/images/essentials/condition-sets/retail-location-not-pos.webp"
+  alt="Emplacement de la commande non POS"
 />
 
 ## Détails du panier
@@ -188,6 +278,10 @@ Pour définir ces conditions, saisissez le pourcentage dans le champ et choisiss
 <CartHasOneTimePurchaseProduct />
 <CartHasNoOneTimePurchaseProduct />
 
+## Remise
+
+<DiscountCodes />
+
 ## Expédition
 
 <SelectedShippingMethod />
@@ -196,16 +290,16 @@ Pour définir ces conditions, saisissez le pourcentage dans le champ et choisiss
 
 Cette condition vérifie le **prix de la méthode d’expédition sélectionnée** par rapport à des critères spécifiques, selon l’une des sous-conditions suivantes :
 
-- **est supérieur ou égal à** (Correspond si le prix de la méthode d’expédition sélectionnée est supérieur ou égal au montant saisi)  
-- **est inférieur ou égal à** (Correspond si le prix de la méthode d’expédition sélectionnée est inférieur ou égal au montant saisi)  
+- **est supérieur ou égal à** (Correspond si le prix de la méthode d’expédition sélectionnée est supérieur ou égal au montant saisi)
+- **est inférieur ou égal à** (Correspond si le prix de la méthode d’expédition sélectionnée est inférieur ou égal au montant saisi)
 
-Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.  
+Pour définir ces conditions, saisissez le montant dans le champ et choisissez la comparaison appropriée dans le menu déroulant.
 
 <Note>
   Saisissez le montant dans la devise de votre boutique. Paramètres > Détails de la boutique > Devise de la boutique
 </Note>
 
-> Par exemple, `est inférieur ou égal à 50` → Correspond aux commandes où le prix de la méthode d’expédition sélectionnée est de 50 ou moins.  
+> Par exemple, `est inférieur ou égal à 50` → Correspond aux commandes où le prix de la méthode d’expédition sélectionnée est de 50 ou moins.
 
 <img
   src="/images/essentials/condition-sets/selected-shipping-method-price.webp"

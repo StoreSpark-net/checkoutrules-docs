@@ -21,7 +21,6 @@ import ProductTags from "/snippets/condition-set/es/product-tags.mdx";
 import ShippingMethodsAvailable from "/snippets/condition-set/es/shipping-methods-available.mdx";
 import SelectedShippingTypeShipPickup from "/snippets/condition-set/es/selected-shipping-type-ship-pickup.mdx";
 import UserLanguage from "/snippets/condition-set/es/user-language.mdx";
-import Market from "/snippets/condition-set/es/market.mdx";
 import ShippingAddressIsEmpty from "/snippets/condition-set/es/shipping-address-is-empty.mdx";
 import ShippingAddressIsNotEmpty from "/snippets/condition-set/es/shipping-address-is-not-empty.mdx";
 import FullNameFirstNameLastName from "/snippets/condition-set/es/full-name-first-name-last-name.mdx";
@@ -33,6 +32,7 @@ import CityArea from "/snippets/condition-set/es/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/es/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/es/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/es/discount-codes.mdx";
 
 <Always />
 
@@ -53,16 +53,16 @@ import ZipCodePostalCode from "/snippets/condition-set/es/zip-code-postal-code.m
 
 Esta condición verifica un **metacampo de empresa compradora** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
 
-- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)  
-- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)  
-- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)  
-- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)  
-- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)  
-- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)  
-- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)  
-- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)  
-- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)  
-- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)  
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)
+- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)
+- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)
+- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)
 
 Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
 
@@ -95,16 +95,16 @@ Para **Tiene un número de valores mayor o igual a** y **Tiene un número de val
 
 Esta condición verifica un **metacampo de ubicación de empresa compradora** que especifiques por **namespace** y **key**, luego lo evalúa usando una de las siguientes subcondiciones:
 
-- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)  
-- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)  
-- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)  
-- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)  
-- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)  
-- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)  
-- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)  
-- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)  
-- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)  
-- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)  
+- **Tiene alguno de estos valores** (Coincide si el metacampo tiene al menos uno de los valores ingresados)
+- **No tiene ninguno de estos valores** (Coincide si el metacampo no tiene ninguno de los valores ingresados)
+- **Tiene algún otro valor además de estos valores** (Coincide si el metacampo tiene un valor que no está entre los valores ingresados)
+- **No tiene ningún otro valor además de estos valores** (Coincide si el metacampo tiene solo los valores ingresados y ningún otro)
+- **Tiene valor vacío** (Coincide si el metacampo no tiene valor)
+- **No tiene valor vacío** (Coincide si el metacampo contiene algún valor)
+- **Tiene un número mayor o igual a** (Coincide si el valor numérico del metacampo es mayor o igual al número ingresado)
+- **Tiene un número menor o igual a** (Coincide si el valor numérico del metacampo es menor o igual al número ingresado)
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de valores en el metacampo es mayor o igual al número ingresado)
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de valores en el metacampo es menor o igual al número ingresado)
 
 Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores en el campo. Separa múltiples valores con comas.
 
@@ -149,12 +149,12 @@ Para **Tiene un número de valores mayor o igual a** y **Tiene un número de val
 
 Esta condición verifica las **Opciones de Variantes de Producto** contra criterios específicos. Si algún producto en el carrito tiene el valor de la Opción de Variante de Producto ingresado, basado en una de las siguientes subcondiciones:
 
-- **Tiene alguno de estos valores** (Coincide si las Opciones de Variantes de Producto tienen al menos uno de los valores ingresados)  
-- **No tiene ninguno de estos valores** (Coincide si las Opciones de Variantes de Producto no tienen ninguno de los valores ingresados)  
-- **Tiene algún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen un valor que no está entre los valores ingresados)  
-- **No tiene ningún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen solo los valores ingresados y ningún otro)  
-- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es mayor o igual al número ingresado)  
-- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es menor o igual al número ingresado)  
+- **Tiene alguno de estos valores** (Coincide si las Opciones de Variantes de Producto tienen al menos uno de los valores ingresados)
+- **No tiene ninguno de estos valores** (Coincide si las Opciones de Variantes de Producto no tienen ninguno de los valores ingresados)
+- **Tiene algún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen un valor que no está entre los valores ingresados)
+- **No tiene ningún otro valor además de estos valores** (Coincide si las Opciones de Variantes de Producto tienen solo los valores ingresados y ningún otro)
+- **Tiene un número de valores mayor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es mayor o igual al número ingresado)
+- **Tiene un número de valores menor o igual a** (Coincide si el **conteo** de Opciones de Variantes de Producto es menor o igual al número ingresado)
 
 Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene algún otro valor además de estos valores**, y **No tiene ningún otro valor además de estos valores**, ingresa uno o más valores de Opciones de Variantes de Producto en el campo. Separa múltiples valores con comas.
 
@@ -174,6 +174,10 @@ Para **Tiene un número de valores mayor o igual a** y **Tiene un número de val
   alt="Conteo de Opciones de Variantes de Producto"
 />
 
+## Descuento
+
+<DiscountCodes />
+
 ## Envío
 
 <SelectedShippingTypeShipPickup />
@@ -181,7 +185,6 @@ Para **Tiene un número de valores mayor o igual a** y **Tiene un número de val
 
 ## Localización
 <UserLanguage />
-<Market />
 
 ## Dirección de Envío
 

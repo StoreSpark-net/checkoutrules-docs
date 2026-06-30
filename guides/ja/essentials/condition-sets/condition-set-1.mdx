@@ -35,6 +35,9 @@ import CityArea from "/snippets/condition-set/ja/city-area.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/ja/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/ja/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/ja/discount-codes.mdx";
+import QuantityPerProductTag from "/snippets/condition-set/ja/quantity-per-product-tag.mdx";
+import QuantityPerEachProduct from "/snippets/condition-set/ja/quantity-per-each-product.mdx";
 
 <Always />
 
@@ -49,48 +52,50 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <Steps>
   <Step title="タイムゾーンを選択する">
     <strong>タイムゾーンを選択してください</strong> ドロップダウンから店舗のタイムゾーンを選択し、<strong>"保存"</strong> をクリックして適用します。
-    
+
     > 例えば、太平洋時間 (PT) を使用する場合は、<strong>バンクーバー</strong> を選択します。
 
     <img
       src="/images/essentials/condition-sets/select-timezone.webp"
       alt="タイムゾーンを選択"
     />
+
   </Step>
 
   <Step title="テーマで BeSure 埋め込みブロックを有効にする">
     - <strong>BeSure 埋め込みブロック</strong> リンクをクリックして、テーマでブロックを有効にします。
-    
+
     <img
       src="/images/essentials/condition-sets/click-on-BeSure-Embed-Block.webp"
       alt="BeSure 埋め込みブロックをクリック"
     />
 
     - テーマエディタで、<em>アプリ埋め込み</em> の下にある <strong>BeSure 埋め込みブロック</strong> を見つけて有効にします。
-    
+
     <img
       src="/images/essentials/condition-sets/locate-and-enable-block.webp"
       alt="ブロックを探して有効化"
     />
+
   </Step>
 
-  <Step title="テーマを保存する">
-    ブロックを有効にした後、テーマを保存してください。<strong>保存</strong> ボタンは右上にあります。
-    
-    <img
-      src="/images/essentials/condition-sets/save-theme.webp"
-      alt="テーマを保存"
-    />
-  </Step>
+<Step title="テーマを保存する">
+  ブロックを有効にした後、テーマを保存してください。<strong>保存</strong>{" "}
+  ボタンは右上にあります。
+  <img
+    src="/images/essentials/condition-sets/save-theme.webp"
+    alt="テーマを保存"
+  />
+</Step>
 
-  <Step title="完了としてマーク (任意)">
-    すべてのステップが完了したら <strong>"完了としてマーク"</strong> をクリックし、ルールを保存してください。
-    
-    <img
-      src="/images/essentials/condition-sets/mark-as-done.webp"
-      alt="完了としてマーク"
-    />
-  </Step>
+<Step title="完了としてマーク (任意)">
+  すべてのステップが完了したら <strong>"完了としてマーク"</strong>{" "}
+  をクリックし、ルールを保存してください。
+  <img
+    src="/images/essentials/condition-sets/mark-as-done.webp"
+    alt="完了としてマーク"
+  />
+</Step>
 
   <Step title="ルールをテストする">
     ルールを作成した後、まずカートを空にします。その後、新しい商品をカートに追加し、チェックアウトに進んでルールが期待通りに動作するか確認してください。
@@ -107,10 +112,14 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 - **より後** (顧客のチェックアウト日が選択した日付より後の場合)
 - **の間にある** (顧客のチェックアウト日が開始日と終了日の間にある場合)
 - **の間にない** (顧客のチェックアウト日が開始日と終了日の間にない場合)
+- **いずれかに一致** (顧客のチェックアウト日が選択した日付のいずれかと一致する場合)
+- **いずれにも一致しない** (顧客のチェックアウト日が選択した日付のいずれとも一致しない場合)
+- **いずれかに一致 (日と月のみ)** (顧客のチェックアウト日の日と月が選択した日付のいずれかと一致する場合。年は無視されます)
+- **いずれにも一致しない (日と月のみ)** (顧客のチェックアウト日の日と月が選択した日付のいずれとも一致しない場合。年は無視されます)
 
 **は**、**ではない**、**より前**、**より後** の場合、カレンダーピッカーから単一の日付を選択します。
 
-> 例: `より前 2025年8月11日` → 2025年8月11日より前の日付に一致。
+> 例: `より前 2026年8月11日` → 2026年8月11日より前の日付に一致。
 
 <img
   src="/images/essentials/condition-sets/single-date.webp"
@@ -119,11 +128,29 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 
 **の間にある** と **の間にない** の場合は、開始日と終了日の両方をカレンダーピッカーから選択します。
 
-> 例: `の間にある 2025年8月11日 と 2025年8月19日` → 2025年8月11日から2025年8月19日までの日付に一致。
+> 例: `の間にある 2026年8月11日 と 2026年8月19日` → 2026年8月11日から2026年8月19日までの日付に一致。
 
 <img
   src="/images/essentials/condition-sets/multiple-dates.webp"
   alt="複数の日付"
+/>
+
+**いずれかに一致** と **いずれにも一致しない** の場合、`MM-DD-YYYY` 形式で 1 つ以上の日付をカンマ区切りで入力します。
+
+> 例: `いずれかに一致 08-11-2026,12-25-2026,01-01-2027` → チェックアウト日が 2026 年 8 月 11 日、2026 年 12 月 25 日、または 2027 年 1 月 1 日の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-dates.webp"
+  alt="複数の日付に一致"
+/>
+
+**いずれかに一致 (日と月のみ)** と **いずれにも一致しない (日と月のみ)** の場合、`MM-DD` 形式で 1 つ以上の日付をカンマ区切りで入力します。条件の評価時には年は無視されます。
+
+> 例: `いずれかに一致 (日と月のみ) 08-11,12-25` → チェックアウト日が任意の年の 8 月 11 日または 12 月 25 日の場合に一致。
+
+<img
+  src="/images/essentials/condition-sets/are-multiple-day-month.webp"
+  alt="日と月のみで複数一致"
 />
 
 ### 曜日
@@ -199,6 +226,24 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
   alt="曜日と時刻"
 />
 
+### フォールバック
+
+アプリが時刻または日付を判定できない場合、選択したオプションに基づいてフォールバックアクションが実行されます:
+
+- **「何もしない」** が選択されている場合、アプリが時刻または日付を判定できないときは何も実行されません。
+- **「このアクションを実行する」** が選択されている場合、アプリが時刻または日付を判定できないときに設定されたアクションが実行されます。
+
+> 例: **「このアクションを実行する」** が選択され、設定されたルールが **「配送方法の並べ替え」** の場合、アプリが時刻または日付を判定できないたびに **アルファベット順 (名前 A→Z、昇順)** に基づいて並べ替え操作が実行されます。
+
+<Warning>
+  各ルールには独自の操作があります。例えば、「支払い方法を非表示にする」ルールの操作には「すべての支払い方法を非表示にする」や「これらの支払い方法を非表示にする」などがあります。作業中のルールに応じてフォールバック操作を選択してください。
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="フォールバック 日付 時刻 所在地"
+/>
+
 ## 顧客
 
 <NewCustomer />
@@ -207,10 +252,51 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <EmailAddress />
 <CustomerTags />
 
+### 顧客の所在地 (GeoIP を使用)
+
+この条件は、顧客がショップを開いた国を確認し、以下のサブ条件のいずれかに基づいて特定の基準に対して評価します:
+
+- **これらの値のいずれかを持つ** (顧客の国が選択した値の少なくとも 1 つと一致する場合に条件を満たす)
+- **これらの値のいずれも持たない** (顧客の国が選択した値のいずれとも一致しない場合に条件を満たす)
+- **これらの値以外の値を持つ** (顧客の国が選択した値と異なる場合に条件を満たす)
+- **これらの値以外の値を持たない** (顧客の国が選択した値のみと一致し、それ以外と一致しない場合に条件を満たす)
+
+**これらの値のいずれかを持つ**、**これらの値のいずれも持たない**、**これらの値以外の値を持つ**、**これらの値以外の値を持たない** の場合、1 つ以上の値を入力欄に入力してください。複数の値はカンマで区切るか、ドロップダウンから選択します。
+
+> 例: `これらの値のいずれも持たない: Canada, United States` → 「Canada」または「United States」以外の顧客所在地に一致。
+
+<img
+  src="/images/essentials/condition-sets/customer-location-using-GeoIP.webp"
+  alt="GeoIP を使用した顧客の所在地"
+/>
+
+### フォールバック
+
+アプリが顧客の所在地を判定できない場合、選択したオプションに基づいてフォールバックアクションが実行されます:
+
+- **「何もしない」** が選択されている場合、アプリが顧客の所在地を判定できないときは何も実行されません。
+- **「このアクションを実行する」** が選択されている場合、アプリが顧客の所在地を判定できないときに設定されたアクションが実行されます。
+
+> 例: **「このアクションを実行する」** が選択され、設定されたルールが **「配送方法の並べ替え」** の場合、アプリが顧客の所在地を判定できないたびに **アルファベット順 (名前 A→Z、昇順)** に基づいて並べ替え操作が実行されます。
+
+<Warning>
+  各ルールには独自の操作があります。例えば、「支払い方法を非表示にする」ルールの操作には「すべての支払い方法を非表示にする」や「これらの支払い方法を非表示にする」などがあります。作業中のルールに応じてフォールバック操作を選択してください。
+</Warning>
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="フォールバック 日付 時刻 所在地"
+/>
+
 ## 注文の詳細
 
 <OrderTotalAmount />
 <OrderSubtotalAmount />
+
+## カートの詳細
+
+<QuantityPerProductTag />
+<QuantityPerEachProduct />
 
 ## カートに商品が含まれる
 
@@ -218,12 +304,17 @@ import ZipCodePostalCode from "/snippets/condition-set/ja/zip-code-postal-code.m
 <ProductTags />
 <Collections />
 
+## 割引
+
+<DiscountCodes />
+
 ## 配送
 
 <ShippingMethodsAvailable />
 <SelectedShippingTypeShipPickup />
 
 ## ローカリゼーション
+
 <UserLanguage />
 
 ## 配送先住所

@@ -45,6 +45,8 @@ import PhoneNumber from "/snippets/condition-set/zh/phone-number.mdx";
 import ProvinceCodeStateCode from "/snippets/condition-set/zh/province-code-state-code.mdx";
 import Country from "/snippets/condition-set/zh/country.mdx";
 import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.mdx";
+import DiscountCodes from "/snippets/condition-set/zh/discount-codes.mdx";
+import PhysicalProductTotalQuantity from "/snippets/condition-set/zh/physical-product-total-quantity.mdx";
 
 <Always />
 
@@ -78,6 +80,7 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
 <OrderTotalAmount />
 <OrderSubtotalAmount />
 <OrderTotalQuantity />
+<PhysicalProductTotalQuantity />
 <OrderTotalWeight />
 <OrderTotalOneTimePurchaseWeight />
 <OrderTotalSubscriptionWeight />
@@ -115,10 +118,10 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   使用 * 通配符匹配部分值。例如，value* 将匹配 value123、VALUETEST 等。
 </Note>
 
-> **“包含以下任意值”的示例**：  
-键: `delivery_method`  
-值: `express, pickup`  
-→ 匹配 `delivery_method` 属性为 `express` 或 `pickup` 的购物车。
+> **“包含以下任意值”的示例**：
+> 键: `delivery_method`
+> 值: `express, pickup`
+> → 匹配 `delivery_method` 属性为 `express` 或 `pickup` 的购物车。
 
 <img
   src="/images/essentials/condition-sets/cart-attribute-has-any-values.webp"
@@ -127,8 +130,8 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
 
 对于 **值为空** 和 **值不为空**，无需输入值。
 
-> **“值不为空”的示例**：  
-> 键: `gift_message`  
+> **“值不为空”的示例**：
+> 键: `gift_message`
 > → 匹配存在 `gift_message` 属性并包含一些文本（例如，“生日快乐！”）的购物车。
 
 <img
@@ -161,9 +164,9 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **“数量大于或等于”的示例**：  
-> SKU: `ABC123`  
-> 数量: `3`  
+> **“数量大于或等于”的示例**：
+> SKU: `ABC123`
+> 数量: `3`
 > → 匹配订单中产品 `ABC123` 的数量为 3 或更多的情况。
 
 <img
@@ -171,9 +174,9 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   alt="每个 SKU 的产品数量大于或等于"
 />
 
-> **“数量可被整除”的示例**：  
-> SKU: `ABC123`  
-> 数量: `2`  
+> **“数量可被整除”的示例**：
+> SKU: `ABC123`
+> 数量: `2`
 > → 匹配订单中产品 `ABC123` 的数量为 2、4、6、8 等的情况。
 
 <img
@@ -206,9 +209,9 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **“数量大于或等于”的示例**：  
-> SKU: `ABC123`  
-> 数量: `5`  
+> **“数量大于或等于”的示例**：
+> SKU: `ABC123`
+> 数量: `5`
 > → 匹配订单中除 `ABC123` 外的所有产品总数量大于或等于 5 的情况。
 
 <img
@@ -216,9 +219,9 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   alt="总数量 – 排除 SKU 的产品数量大于或等于"
 />
 
-> **“数量可被整除”的示例**：  
-> SKU: `ABC123`  
-> 数量: `3`  
+> **“数量可被整除”的示例**：
+> SKU: `ABC123`
+> 数量: `3`
 > → 匹配订单中除 `ABC123` 外的所有产品总数量为 3、6、9 等的情况。
 
 <img
@@ -285,6 +288,10 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   alt="产品变体元字段值的数量大于或等于"
 />
 
+## 折扣
+
+<DiscountCodes />
+
 ## 配送
 
 <SelectedShippingMethod />
@@ -340,9 +347,9 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   </Step>
 </Steps>
 
-> **“数量大于或等于”的示例**：  
-> SKU1: `SKU-ABC`  
-> SKU2: `SKU-XYZ`  
+> **“数量大于或等于”的示例**：
+> SKU1: `SKU-ABC`
+> SKU2: `SKU-XYZ`
 > → 匹配当购物车中 `SKU-ABC` 的数量大于或等于 `SKU-XYZ` 的数量时。
 
 <img
@@ -350,10 +357,10 @@ import ZipCodePostalCode from "/snippets/condition-set/zh/zip-code-postal-code.m
   alt="SKU 数量大于或等于"
 />
 
-> **“数量是…的倍数”的示例**：  
-> SKU1: `SKU-A`  
-> SKU2: `SKU-B`  
-> 倍数: `2`  
+> **“数量是…的倍数”的示例**：
+> SKU1: `SKU-A`
+> SKU2: `SKU-B`
+> 倍数: `2`
 > → 匹配当 `SKU-A` 的数量正好是 `SKU-B` 的 2 倍、4 倍、6 倍等时（例如，`SKU-A` 有 6 件，`SKU-B` 有 3 件）。
 
 <img
