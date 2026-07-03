@@ -49,6 +49,12 @@ So funktioniert es Schritt für Schritt:
   </Step>
 </Steps>
 
+<Note>
+  Methodennamen in diesen Beispielen werden ohne Berücksichtigung der Groß- und
+  Kleinschreibung abgeglichen, sodass `worldwide`, `Worldwide` und `WORLDWIDE`
+  gleich behandelt werden.
+</Note>
+
 ## Beispielanwendung
 
 Angenommen, Sie möchten **bestimmte Versandmethoden ausblenden** basierend auf der Postleitzahl des Kunden.  
@@ -157,6 +163,8 @@ So können wir sicherstellen, dass Regel 1 und Regel 2 unabhängig voneinander s
 
 <Tip>
 Als allgemeiner Tipp sollten wir **Nur diese Versandmethoden anzeigen** immer mit der Bedingung **Versandmethode verfügbar** als Unterbedingung kombinieren und denselben Wert in beiden verwenden.
+
+Der Abgleich von Methodennamen unterscheidet an beiden Stellen nicht zwischen Groß- und Kleinschreibung. Verwenden Sie daher denselben Methodennamen-Text, auch wenn die Groß- und Kleinschreibung keine Rolle spielt.
 
 > **Beispiel:** Regel → Nur die Versandmethode `DHL Express Worldwide` anzeigen, wenn Postleitzahl 2005 oder beginnt mit 100 _UND_ Unterbedingung **Versandmethode verfügbar** enthält einen dieser Werte: _DHL Express Worldwide_ Dies stellt sicher, dass _DHL Express Worldwide_ tatsächlich für diesen Checkout verfügbar ist, bevor wir versuchen, alle anderen Versandmethoden auszublenden.
 

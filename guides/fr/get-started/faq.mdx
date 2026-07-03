@@ -134,7 +134,9 @@ Si vous ne trouvez pas ce que vous cherchez, [contactez-nous](https://checkoutru
   finissant par « Standard », vous pouvez utiliser « \*Standard ». Pour
   sélectionner toutes les méthodes commençant par « New » et finissant par « Way
   », vous pouvez utiliser « New*Way ». De même, vous pouvez utiliser ? pour
-  correspondre à un seul caractère.
+  correspondre à un seul caractère. La correspondance des noms de méthodes avec
+  des jokers est également insensible à la casse, donc `standard*`,
+  `Standard*` et `STANDARD*` sont traités de la même façon.
 </Accordion>
 
 <Accordion title="Quelle est la différence entre « est » et « contient » utilisés dans différentes règles ?">
@@ -142,7 +144,10 @@ Si vous ne trouvez pas ce que vous cherchez, [contactez-nous](https://checkoutru
   condition « contient » est utilisée pour correspondre partiellement. Par
   exemple, « est » correspondra uniquement entre « Standard » et « Standard »,
   tandis que « contient » correspondra entre « Standard » et « Standard Shipping
-  » ou « Standard Delivery ».
+  » ou « Standard Delivery ». La correspondance des noms de méthodes est
+  insensible à la casse, donc `visa`, `Visa` et `VISA` sont traités de la même
+  façon. Une correspondance exacte exige toujours le nom complet de la méthode ;
+  la casse n’a pas d’importance.
 </Accordion>
 
   <Accordion title="Comment ajouter une note ou modifier le texte affiché lors du passage en caisse ?">

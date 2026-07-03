@@ -52,6 +52,12 @@ Voici comment cela fonctionne étape par étape :
   </Step>
 </Steps>
 
+<Note>
+  Les valeurs de noms de méthodes dans ces exemples sont comparées sans tenir
+  compte de la casse, donc `worldwide`, `Worldwide` et `WORLDWIDE` sont traités
+  de la même façon.
+</Note>
+
 ## Exemple de cas d’utilisation
 
 Supposons que vous vouliez **masquer certaines méthodes d’expédition** en fonction du code postal du client.  
@@ -162,6 +168,8 @@ De cette façon, nous pouvons garantir que la Règle 1 et la Règle 2 sont indé
 
 <Tip>
 De manière générale, nous devrions toujours associer **N’afficher que ces méthodes d’expédition** avec la condition **Méthode d’expédition disponible** en tant que sous-condition, et utiliser les mêmes valeurs dans les deux.
+
+La correspondance des noms de méthodes est insensible à la casse aux deux endroits, donc utilisez le même texte de nom de méthode même si la casse n’a pas d’importance.
 
 > **Exemple :**  
 > Règle → N’afficher que la méthode d’expédition `DHL Express Worldwide` lorsque le code postal est 2005 ou commence par 100 _ET_ sous-condition **Méthode d’expédition disponible** contient l’une de ces valeurs : _DHL Express Worldwide_.  

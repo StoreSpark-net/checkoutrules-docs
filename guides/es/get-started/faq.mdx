@@ -128,14 +128,19 @@ Si no puedes encontrar lo que buscas, [contáctanos](https://checkoutrules.com/c
   seleccionar todos los métodos que terminan con 'Standard', puedes usar
   '*Standard'. Para seleccionar todos los métodos que comienzan con 'New' y
   terminan con 'Way', puedes usar 'New*Way'. De manera similar, puedes usar ?
-  para coincidir con un solo carácter.
+  para coincidir con un solo carácter. La coincidencia de nombres de métodos
+  con comodines no distingue entre mayúsculas y minúsculas, por lo que
+  `standard*`, `Standard*` y `STANDARD*` se tratan igual.
 </Accordion>
 
 <Accordion title="¿Cuál es la diferencia entre 'is' y 'contains' usadas en diferentes reglas?">
   La condición 'is' se usa para coincidir con el valor exacto. La condición
   'contains' se usa para coincidir parcialmente con el valor. Por ejemplo, 'is'
   coincidirá 'Standard' solo con 'Standard', mientras que 'contains' coincidirá
-  'Standard' con 'Standard Shipping' o 'Standard Delivery'.
+  'Standard' con 'Standard Shipping' o 'Standard Delivery'. La coincidencia de
+  nombres de métodos no distingue entre mayúsculas y minúsculas, por lo que
+  `visa`, `Visa` y `VISA` se tratan igual. La coincidencia exacta sigue
+  requiriendo el nombre completo del método; las mayúsculas no importan.
 </Accordion>
 
   <Accordion title="¿Cómo agregar una nota o modificar el texto que se muestra en el checkout?">

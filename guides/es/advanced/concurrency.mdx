@@ -49,6 +49,12 @@ Así es como funciona paso a paso:
   </Step>
 </Steps>
 
+<Note>
+  Los valores de nombres de métodos en estos ejemplos se comparan sin distinguir
+  entre mayúsculas y minúsculas, por lo que `worldwide`, `Worldwide` y
+  `WORLDWIDE` se tratan igual.
+</Note>
+
 ## Caso de uso de ejemplo
 
 Digamos que quieres **ocultar ciertos métodos de envío** basándose en el código postal del cliente.  
@@ -157,6 +163,8 @@ De esta manera, podemos asegurar que Regla 1 y Regla 2 sean independientes entre
 
 <Tip>
 Como consejo general, siempre debemos tratar de emparejar **Solo mostrar estos métodos de envío** con la condición **Método de Envío Disponible** como subcondición, y usar el(los) mismo(s) valor(es) en ambos.
+
+La coincidencia de nombres de métodos no distingue entre mayúsculas y minúsculas en ambos lugares, así que usa el mismo texto de nombre de método aunque las mayúsculas no importen.
 
 > **Ejemplo:** Regla → Solo mostrar método de envío `DHL Express Worldwide` cuando el código postal es 2005 o comienza con 100 _AND_ subcondición **Método de Envío Disponible** tiene cualquiera de estos valores: _DHL Express Worldwide_ Esto asegurará que _DHL Express Worldwide_ esté realmente disponible para ese checkout antes de que intentemos ocultar todos los otros métodos de envío.
 

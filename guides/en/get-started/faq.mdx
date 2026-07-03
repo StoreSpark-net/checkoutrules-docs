@@ -124,14 +124,18 @@ If you can’t find what you’re looking for, [get in touch](https://checkoutru
   'Standard', you can use 'Standard*'. To select all methods that end with
   'Standard', you can use '\*Standard'. To select all methods that start with
   'New' and end with 'Way', you can use 'New*Way'. Similarly, you can use ? to
-  match with a single character.
+  match with a single character. Wildcard method-name matching is also
+  case-insensitive, so `standard*`, `Standard*`, and `STANDARD*` are treated the
+  same.
 </Accordion>
 
 <Accordion title="What is the difference between 'is' and 'contains' used in different rules?">
   The 'is' condition is used to match the exact value. The 'contains' condition
   is used to match the value partially. For example, 'is' will match 'Standard'
   with 'Standard' only, while 'contains' will match 'Standard' with 'Standard
-  Shipping' or 'Standard Delivery'.
+  Shipping' or 'Standard Delivery'. Method-name matching is case-insensitive, so
+  `visa`, `Visa`, and `VISA` are treated the same. Exact matching still requires
+  the full method name; capitalization does not matter.
 </Accordion>
 
   <Accordion title="How to add a note or modify text displayed on the checkout?">

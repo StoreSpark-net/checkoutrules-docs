@@ -9,11 +9,13 @@ Se utiliza para comprobar si los métodos de envío indicados están realmente d
 - **Tiene un número de valores mayor o igual que** (Coincide si el número de métodos de envío disponibles en la página de pago es mayor o igual al número especificado)
 - **Tiene un número de valores menor o igual que** (Coincide si el número de métodos de envío disponibles en la página de pago es menor o igual al número especificado)
 
-Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, o **No tiene ningún otro valor además de estos valores**, introduce uno o más valores para que coincidan. Separa varios valores con comas.
+Para **Tiene alguno de estos valores**, **No tiene ninguno de estos valores**, **Tiene cualquier otro valor además de estos valores**, o **No tiene ningún otro valor además de estos valores**, introduce uno o más valores para que coincidan. Separa varios valores con comas. La coincidencia de nombres de métodos no distingue entre mayúsculas y minúsculas, por lo que `express shipping`, `Express Shipping` y `EXPRESS SHIPPING` se tratan igual.
 
 <Note>
   Usa el comodín * para coincidir con nombres parciales de métodos de envío.  
-  Por ejemplo, Stand* coincidirá con Standard, standard shipping, etc.
+  Por ejemplo, Stand* coincidirá con Standard, standard shipping, etc. La
+  coincidencia de nombres de métodos con comodines tampoco distingue entre
+  mayúsculas y minúsculas.
 </Note>
 
 > Por ejemplo, `Tiene alguno de estos valores: Express Delivery, Standard Shipping` → Coincide si al menos uno de los métodos de envío seleccionados está disponible.

@@ -130,7 +130,10 @@ Wenn Sie nicht finden, wonach Sie suchen, [kontaktieren Sie uns](https://checkou
   verwenden. Um alle Methoden auszuwählen, die mit 'Standard' enden, können Sie
   \*Standard verwenden. Um alle Methoden auszuwählen, die mit 'Neu' beginnen und
   mit 'Weg' enden, können Sie 'Neu*Weg' verwenden. Ebenso können Sie ?
-  verwenden, um ein einzelnes Zeichen abzugleichen.
+  verwenden, um ein einzelnes Zeichen abzugleichen. Der Abgleich von
+  Methodennamen mit Wildcards unterscheidet ebenfalls nicht zwischen Groß- und
+  Kleinschreibung, sodass `standard*`, `Standard*` und `STANDARD*` gleich
+  behandelt werden.
 </Accordion>
 
 <Accordion title="Was ist der Unterschied zwischen 'ist' und 'enthält', die in verschiedenen Regeln verwendet werden?">
@@ -138,7 +141,10 @@ Wenn Sie nicht finden, wonach Sie suchen, [kontaktieren Sie uns](https://checkou
   Bedingung 'enthält' wird verwendet, um den Wert teilweise abzugleichen. Zum
   Beispiel wird 'ist' 'Standard' nur mit 'Standard' abgleichen, während
   'enthält' 'Standard' mit 'Standard Shipping' oder 'Standard Lieferung'
-  abgleicht.
+  abgleicht. Der Abgleich von Methodennamen unterscheidet nicht zwischen Groß-
+  und Kleinschreibung, sodass `visa`, `Visa` und `VISA` gleich behandelt werden.
+  Ein exakter Abgleich erfordert weiterhin den vollständigen Methodennamen; die
+  Groß- und Kleinschreibung spielt keine Rolle.
 </Accordion>
 
   <Accordion title="Wie füge ich eine Notiz hinzu oder ändere den im Checkout angezeigten Text?">

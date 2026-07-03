@@ -9,11 +9,13 @@ Utilisé pour vérifier si les méthodes d’expédition données sont réelleme
 - **A un nombre de valeurs supérieur ou égal** (Correspond si le nombre de méthodes d’expédition disponibles sur la page de paiement est supérieur ou égal au nombre spécifié)
 - **A un nombre de valeurs inférieur ou égal** (Correspond si le nombre de méthodes d’expédition disponibles sur la page de paiement est inférieur ou égal au nombre spécifié)
 
-Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, ou **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs à faire correspondre. Séparez plusieurs valeurs par des virgules.
+Pour **A l’une de ces valeurs**, **N’a aucune de ces valeurs**, **A une autre valeur que celles-ci**, ou **N’a pas d’autre valeur que celles-ci**, saisissez une ou plusieurs valeurs à faire correspondre. Séparez plusieurs valeurs par des virgules. La correspondance des noms de méthodes est insensible à la casse, donc `express shipping`, `Express Shipping` et `EXPRESS SHIPPING` sont traités de la même façon.
 
 <Note>
   Utilisez le caractère générique * pour correspondre à des noms partiels de méthodes d’expédition.  
-  Par exemple, Stand* correspondra à Standard, standard shipping, etc.
+  Par exemple, Stand* correspondra à Standard, standard shipping, etc. La
+  correspondance des noms de méthodes avec des jokers est également insensible à
+  la casse.
 </Note>
 
 > Par exemple, `A l’une de ces valeurs : Livraison Express, Livraison Standard` → Correspond si au moins une des méthodes d’expédition sélectionnées est disponible.

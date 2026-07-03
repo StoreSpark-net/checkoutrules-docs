@@ -9,11 +9,12 @@ Used to check if the given shipping methods are actually available on the checko
 - **Has number of values greater than or equals** (Matches if the number of shipping methods available on the checkout page is greater than or equal to the specified number)
 - **Has number of values less than or equals** (Matches if the number of shipping methods available on the checkout page is less than or equal to the specified number)
 
-For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas.
+For **Has any of these values**, **Does not have any of these values**, **Has any other value besides these values**, or **Does not have any other value besides these values**, enter one or more values to match. Separate multiple values with commas. Method-name matching is case-insensitive, so `express shipping`, `Express Shipping`, and `EXPRESS SHIPPING` are treated the same.
 
 <Note>
   Use * wildcard to match partial shipping method names. For example, Stand*
-  will match Standard, standard shipping etc.
+  will match Standard, standard shipping etc. Wildcard method-name matching is
+  also case-insensitive.
 </Note>
 
 > For example, `Has any of these values: Express Delivery, Standard Shipping` → Matches if at least one of the selected shipping methods is available.

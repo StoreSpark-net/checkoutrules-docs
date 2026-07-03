@@ -9,11 +9,12 @@ Wird verwendet, um zu prüfen, ob die angegebenen Versandmethoden auf der Checko
 - **Anzahl der Werte ist größer oder gleich** (Trifft zu, wenn die Anzahl der auf der Checkout-Seite verfügbaren Versandmethoden größer oder gleich der angegebenen Zahl ist)
 - **Anzahl der Werte ist kleiner oder gleich** (Trifft zu, wenn die Anzahl der auf der Checkout-Seite verfügbaren Versandmethoden kleiner oder gleich der angegebenen Zahl ist)
 
-Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** oder **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere Werte ein, um abzugleichen. Mehrere Werte durch Kommas trennen.
+Für **Hat einen dieser Werte**, **Hat keinen dieser Werte**, **Hat einen anderen Wert als diese Werte** oder **Hat keinen anderen Wert als diese Werte**, geben Sie einen oder mehrere Werte ein, um abzugleichen. Mehrere Werte durch Kommas trennen. Der Abgleich von Methodennamen unterscheidet nicht zwischen Groß- und Kleinschreibung, sodass `express shipping`, `Express Shipping` und `EXPRESS SHIPPING` gleich behandelt werden.
 
 <Note>
   Verwenden Sie das * Wildcard-Zeichen, um Teile von Versandmethodennamen abzugleichen. Zum Beispiel, Stand* 
-  entspricht Standard, Standardversand usw.
+  entspricht Standard, Standardversand usw. Der Abgleich von Methodennamen mit
+  Wildcards unterscheidet ebenfalls nicht zwischen Groß- und Kleinschreibung.
 </Note>
 
 > Zum Beispiel, `Hat einen dieser Werte: Express Lieferung, Standardversand` → Trifft zu, wenn mindestens eine der ausgewählten Versandmethoden verfügbar ist.

@@ -49,6 +49,11 @@ Here’s how it works step by step:
   </Step>
 </Steps>
 
+<Note>
+  Method-name values in these examples are matched case-insensitively, so
+  `worldwide`, `Worldwide`, and `WORLDWIDE` are treated the same.
+</Note>
+
 ## Example use case
 
 Let’s say you want to **hide certain shipping methods** based on the customer’s zip code.  
@@ -157,6 +162,8 @@ In this way, we can ensure Rule 1 and Rule 2 are independent of each other. Rule
 
 <Tip>
 As a general tip, we should always try to pair **Only show these shipping methods** with the **Shipping Method Available** condition as a sub-condition, and use the same value(s) in both.
+
+Method-name matching is case-insensitive in both places, so use the same method name text even though capitalization does not matter.
 
 > **Example:** Rule → Only show `DHL Express Worldwide` shipping method when zip code is 2005 or starts with 100 _AND_ sub-condition **Shipping Method Available** has any of these values: _DHL Express Worldwide_ This will make sure that _DHL Express Worldwide_ is actually available for that checkout before we try to hide all other shipping methods.
 

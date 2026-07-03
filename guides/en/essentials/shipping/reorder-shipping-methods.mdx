@@ -99,6 +99,8 @@ By default, Shopify will always make the top shipping method the default presele
 
 To do this, as an example, you can use the **Fixed ranking** option, and set the rank to 1 for the shipping method you want to be the default preselected shipping method. Please make sure, "All other shipping methods will appear here after the above" is set to "Show in end".
 
+Method-name matching is case-insensitive, so `express shipping`, `Express Shipping`, and `EXPRESS SHIPPING` are treated the same.
+
 <Warning>
   Please note, to test this, you will need to activate the rule, and then clear
   out the cookies/cache of the browser, so the default preselected shipping
