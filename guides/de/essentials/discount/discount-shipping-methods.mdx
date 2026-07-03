@@ -1,6 +1,6 @@
 ---
 title: "Versandmethoden rabattieren"
-description: "Bestimmte Versandtarife basierend auf den angegebenen Bedingungen rabattieren."
+description: "Versandtarife basierend auf den angegebenen Bedingungen rabattieren."
 icon: "badge-percent"
 ---
 
@@ -15,11 +15,22 @@ icon: "badge-percent"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es, bestimmte Versandkosten an der Kasse basierend auf definierten Bedingungen zu rabattieren. Sie können Rabatte als Prozentsatz, festen Betrag, Prozentsatz der Zwischensumme, festen Preis oder alle Versandkosten kostenlos anwenden, basierend auf Kriterien wie Versandadresse, Kundentags, Produkt-Tags usw.
+Diese Regel ermöglicht es, Versandtarife an der Kasse basierend auf definierten Bedingungen zu rabattieren. Sie können Rabatte als Prozentsatz, festen Betrag, Prozentsatz der Zwischensumme, festen Preis oder alle Versandkosten kostenlos anwenden, basierend auf Kriterien wie Versandadresse, Kundentags, Produkt-Tags usw.
 
 Mit dieser Regel können Sie einen Rabattcode erstellen oder einen automatischen Rabatt anlegen.  
 Wenn die Regel einen Rabattcode erstellt, kann der Kunde den Rabattcode beim Checkout verwenden, um den Rabatt zu erhalten.  
 Andernfalls, wenn ein automatischer Rabatt ausgewählt ist, kann die Regel automatisch einen Rabatt auf die ausgewählten Versandmethoden anwenden, basierend auf den konfigurierten Bedingungen.
+
+## Unterstützte Operationen
+
+| Operation                           | Verhalten                                                                                          |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Prozentsatz**                     | Wendet einen prozentualen Rabatt auf ausgewählte Versandmethode(n) an.                              |
+| **Fester Rabattbetrag**            | Wendet einen festen Währungsbetrag als Rabatt auf ausgewählte Versandmethode(n) an.                |
+| **Festpreis festlegen**             | Setzt jede ausgewählte Versandmethode auf einen festen Zielpreis.                                  |
+| **Alle Versandkosten kostenlos**    | Macht alle Versandmethoden kostenlos.                                                              |
+| **Zwischensummenprozentsatz**       | Der Rabattbetrag ist `Bestell-Zwischensumme × Prozent / 100` und wird auf ausgewählte Versandmethode(n) angewendet. |
+| **Festpreis-Zwischensummen-Prozentsatz** | Setzt den Preis jeder ausgewählten Versandmethode auf `Bestell-Zwischensumme × Prozent / 100`. |
 
 ## Beispielkonfiguration
 
@@ -224,4 +235,4 @@ Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf
 ## Einschränkungen
 
 - Diese Regel ist nicht kompatibel mit Draft-Order-basierten Checkouts oder mit Apps, die Draft-Order-Checkouts verwenden.
-- Wenn Ihre Checkout-URL den Begriff .../checkouts/do/... enthält, steht 'do' für Draft Order. Diese Regeln werden bei diesem Checkout nicht ausgeführt.
+- Wenn die Checkout-URL `.../checkouts/do/...` enthält, bedeutet `do` Entwurfsbestellung und diese Regel wird nicht ausgeführt.

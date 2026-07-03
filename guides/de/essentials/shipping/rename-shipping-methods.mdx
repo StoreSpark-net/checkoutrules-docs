@@ -1,6 +1,6 @@
 ---
 title: "Versandmethoden umbenennen"
-description: "Umbenennen/Übersetzen oder eine Nachricht zu den ausgewählten Versandmethoden beim Checkout unter bestimmten Bedingungen hinzufügen."
+description: "Benennen Sie ausgewählte Versandmethoden um oder fügen Sie ein Präfix oder Suffix hinzu, oder übersetzen Sie Versandmethodennamen an der Kasse unter den angegebenen Bedingungen."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es Ihnen, die Bezeichnungen von Versand- und Abholmöglichkeiten beim Checkout basierend auf bestimmten Bedingungen umzubenennen oder zu übersetzen. Sie können die angezeigten Namen mithilfe von Kriterien wie Warenkorbwert, Kundentags, Versandadresse oder Produktdetails usw. anpassen.
+Diese Regel ermöglicht es Ihnen, Versandmethoden an der Kasse basierend auf bestimmten Bedingungen umzubenennen, ein Präfix oder Suffix hinzuzufügen oder sie zu übersetzen. Sie können die angezeigten Namen mithilfe von Kriterien wie Warenkorbwert, Kundentags, Versandadresse, Produktdetails und mehr anpassen.
 
 Dies trägt dazu bei, die Klarheit für Kunden zu verbessern, die Lokalisierung zu unterstützen und das gesamte Checkout-Erlebnis zu optimieren.
 
@@ -64,7 +64,24 @@ Wählen Sie anschließend den relevanten [Bedingungssatz](/guides/de/get-started
 
 > Als Beispiel verwenden wir **Bedingungssatz 1**, setzen die Regel auf **Immer** ausführen und konfigurieren sie so, dass Versandmethoden, die **"International Shipping"** enthalten, in **"Local Shipping"** umbenannt werden.
 
-Alternativ können wir die Option „Umbenennen in“ auf „Nachricht hinzufügen“ ändern, um dem Namen der Versandmethode eine benutzerdefinierte Nachricht hinzuzufügen, anstatt sie vollständig umzubenennen.
+**Diese Versandmethoden umbenennen** mit Methoden-Namen-Abgleichsoperatoren: **enthält**, **enthält nicht**, **ist**, **ist nicht**.
+
+Wählen Sie für jede übereinstimmende Methode einen Ausgabemodus:
+
+- **Umbenennen in**: Ersetzt den Methodennamen vollständig.
+- **Präfix hinzufügen**: Fügt benutzerdefinierten Text vor dem ursprünglichen Methodennamen hinzu.
+- **Suffix hinzufügen**: Fügt benutzerdefinierten Text nach dem ursprünglichen Methodennamen hinzu.
+
+<Note>
+  Für den Methoden-Namen-Abgleich in dieser Regel:
+
+    - Der Abgleich ist nicht case-sensitiv.
+    - Der Platzhalter `*` wird in der Benutzereingabe unterstützt (zum Beispiel: `Standard*`, `*Express*`, `*Pickup`).
+    - **enthält** / **enthält nicht** verwenden Teilübereinstimmung.
+    - **ist** / **ist nicht** unterstützen exakten Text und Platzhaltermuster.
+    - Wenn Sie mehrere Methodenzeilen hinzufügen, werden diese als ODER ausgewertet (jede übereinstimmende Zeile kann angewendet werden).
+
+</Note>
 
 <img
   src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"

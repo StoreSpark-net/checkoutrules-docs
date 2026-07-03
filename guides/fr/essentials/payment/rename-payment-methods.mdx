@@ -1,6 +1,6 @@
 ---
 title: "Renommer les modes de paiement"
-description: "Renommer/Traduire ou ajouter un message aux modes de paiement sélectionnés lors du passage en caisse selon des conditions données."
+description: "Renommer ou ajouter un préfixe ou un suffixe aux modes de paiement sélectionnés, ou traduire les noms des modes de paiement au passage en caisse, selon les conditions spécifiées."
 icon: "pencil"
 ---
 
@@ -15,8 +15,8 @@ icon: "pencil"
 
 ## Aperçu de la règle
 
-Cette règle vous permet de renommer, traduire ou ajouter un message à des modes de paiement spécifiques lors du passage en caisse, en fonction de conditions définies.  
-Vous pouvez personnaliser les libellés affichés des modes de paiement en utilisant des critères tels que la valeur du panier, l’adresse de livraison, les balises client ou les détails du produit, etc.
+Cette règle vous permet de renommer, ou d’ajouter un préfixe, un suffixe, ou de traduire les modes de paiement au passage en caisse en fonction de conditions définies.
+Vous pouvez personnaliser l’affichage des libellés des modes de paiement en utilisant des critères tels que la valeur du panier, l’adresse de livraison, les balises client, les détails du produit, et plus encore.
 
 Cela permet d’améliorer la clarté, de faciliter la localisation et d’optimiser l’expérience de passage en caisse des clients.
 
@@ -52,7 +52,24 @@ Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides
 
 > À titre d’exemple, nous utilisons **l’ensemble de conditions 1**, définissons la règle pour s’exécuter **Toujours**, et la configurons pour renommer le mode de paiement **"Paiement à la livraison (COD)"** en **"Payer en espèces"**.
 
-Alternativement, nous pouvons définir l’option “Renommer en” sur “Ajouter un message” afin d’ajouter un message personnalisé au nom du mode de paiement au lieu de le renommer complètement.
+**Renommer ces modes de paiement** avec les opérateurs de correspondance de nom de méthode : **contient**, **ne contient pas**, **est**, **n’est pas**.
+
+Pour chaque méthode correspondante, choisissez un mode de sortie :
+
+- **Renommer en** : remplace entièrement le nom de la méthode.
+- **Ajouter un préfixe** : ajoute du texte personnalisé avant le nom original de la méthode.
+- **Ajouter un suffixe** : ajoute du texte personnalisé après le nom original de la méthode.
+
+<Note>
+  Pour la correspondance de nom de méthode dans cette règle :
+
+    - La correspondance est insensible à la casse.
+    - Le joker `*` est pris en charge dans la saisie utilisateur (par exemple : `Standard*`, `*Express*`, `*Pickup`).
+    - **contient** / **ne contient pas** utilisent une correspondance partielle.
+    - **est** / **n’est pas** prennent en charge le texte exact et les modèles avec joker.
+    - Si vous ajoutez plusieurs lignes de méthode, elles sont évaluées en OU (toute ligne correspondante peut s’appliquer).
+
+</Note>
 
 <img
   src="/images/essentials/payment/condition-set-rename-payment-methods.webp"

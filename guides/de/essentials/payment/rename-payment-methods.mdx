@@ -1,6 +1,6 @@
 ---
 title: "Zahlungsmethoden umbenennen"
-description: "Benennen/Übersetzen oder fügen Sie eine Nachricht zu den ausgewählten Zahlungsmethoden beim Checkout unter bestimmten Bedingungen hinzu."
+description: "Benennen Sie ausgewählte Zahlungsmethoden um oder fügen Sie ein Präfix oder Suffix hinzu, oder übersetzen Sie Zahlungsmethodennamen an der Kasse unter den angegebenen Bedingungen."
 icon: "pencil"
 ---
 
@@ -15,8 +15,7 @@ icon: "pencil"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es Ihnen, bestimmte Zahlungsmethoden beim Checkout basierend auf definierten Bedingungen umzubenennen, zu übersetzen oder eine Nachricht hinzuzufügen.  
-Sie können die angezeigten Bezeichnungen für Zahlungsmethoden mithilfe von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktdetails anpassen.
+Diese Regel ermöglicht es Ihnen, Zahlungsmethoden an der Kasse basierend auf definierten Bedingungen umzubenennen oder ein Präfix, Suffix hinzuzufügen bzw. sie zu übersetzen. Sie können anpassen, wie Bezeichnungen für Zahlungsmethoden angezeigt werden, mithilfe von Kriterien wie Warenkorbwert, Versandadresse, Kundentags, Produktdetails und mehr.
 
 Dies trägt dazu bei, die Klarheit zu verbessern, die Lokalisierung zu unterstützen und das gesamte Checkout-Erlebnis für Kunden zu optimieren.
 
@@ -52,7 +51,24 @@ Als Nächstes wählen Sie auf demselben Bildschirm das relevante [Bedingungsset]
 
 > Als Beispiel verwenden wir **Bedingungsset 1**, stellen die Regel so ein, dass sie **immer** ausgeführt wird, und konfigurieren sie so, dass die Zahlungsmethode **"Nachnahme (COD)"** in **"Bar bezahlen"** umbenannt wird.
 
-Alternativ können wir die Option „Umbenennen in“ auf „Nachricht hinzufügen“ setzen, um eine benutzerdefinierte Nachricht an den Namen der Zahlungsmethode anzuhängen, anstatt ihn vollständig umzubenennen.
+**Diese Zahlungsmethoden umbenennen** mit Methoden-Namen-Abgleichsoperatoren: **enthält**, **enthält nicht**, **ist**, **ist nicht**.
+
+Wählen Sie für jede übereinstimmende Methode einen Ausgabemodus:
+
+- **Umbenennen in**: Ersetzt den Methodennamen vollständig.
+- **Präfix hinzufügen**: Fügt benutzerdefinierten Text vor dem ursprünglichen Methodennamen hinzu.
+- **Suffix hinzufügen**: Fügt benutzerdefinierten Text nach dem ursprünglichen Methodennamen hinzu.
+
+<Note>
+  Für den Methoden-Namen-Abgleich in dieser Regel:
+
+    - Der Abgleich ist nicht case-sensitiv.
+    - Der Platzhalter `*` wird in der Benutzereingabe unterstützt (zum Beispiel: `Standard*`, `*Express*`, `*Pickup`).
+    - **enthält** / **enthält nicht** verwenden Teilübereinstimmung.
+    - **ist** / **ist nicht** unterstützen exakten Text und Platzhaltermuster.
+    - Wenn Sie mehrere Methodenzeilen hinzufügen, werden diese als ODER ausgewertet (jede übereinstimmende Zeile kann angewendet werden).
+
+</Note>
 
 <img
   src="/images/essentials/payment/condition-set-rename-payment-methods.webp"

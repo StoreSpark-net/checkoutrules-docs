@@ -20,6 +20,25 @@ Sie können bestimmte Versandoptionen priorisieren, basierend auf Bedingungen wi
 
 Dies hilft, das Kundenerlebnis zu optimieren, indem die relevantesten oder kostengünstigsten Versandmethoden zuerst angezeigt werden.
 
+## Unterstützte Operationen
+
+- **Feste Rangfolge**: Ordnet ausgewählte Methoden manuell mit **enthält / enthält nicht / ist / ist nicht**-Abgleich.
+- **Versandpreis**: Sortiert nach Preis aufsteigend oder absteigend.
+- **Alphabetische Reihenfolge**: Sortiert Namen A bis Z oder Z bis A.
+- **Versandpreis + Alphabetische Reihenfolge**: Sortiert zuerst nach Preis und löst Gleichstände bei gleichem Preis alphabetisch in einer der 4 verfügbaren Richtungskombinationen.
+- **Lieferart**: Ordnet nach ausgewählten Lieferarten in der von Ihnen gewählten Reihenfolge neu.
+
+<Note>
+  Für den Methoden-Namen-Abgleich bei **Fester Rangfolge**:
+
+    - Der Abgleich ist nicht case-sensitiv.
+    - Der Platzhalter `*` wird in der Benutzereingabe unterstützt (zum Beispiel: `Standard*`, `*Express*`, `*Pickup`).
+    - **enthält** / **enthält nicht** verwenden Teilübereinstimmung.
+    - **ist** / **ist nicht** unterstützen exakten Text und Platzhaltermuster.
+    - Wenn Sie mehrere Methodenzeilen hinzufügen, werden diese als ODER ausgewertet (jede übereinstimmende Zeile kann angewendet werden).
+
+</Note>
+
 ## Beispielkonfiguration
 
 Die folgenden Schritte zeigen, wie man eine **Versandmethoden neu anordnen-Regel** mithilfe der App erstellt und konfiguriert.

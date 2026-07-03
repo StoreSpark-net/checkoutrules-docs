@@ -19,6 +19,16 @@ Cette règle vous permet d’appliquer des remises à des prix de produits spéc
 
 Vous pouvez créer soit un code de réduction, soit une remise automatique. Les clients doivent saisir le code lors du paiement pour bénéficier de la réduction si un code de réduction est créé. Si une remise automatique est sélectionnée, elle sera appliquée automatiquement aux produits éligibles lorsque les conditions configurées seront remplies.
 
+## Opérations prises en charge
+
+| Opération                           | Comportement                                                                  |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| **Pourcentage**                     | Applique un pourcentage de remise aux produits sélectionnés.                  |
+| **Montant fixe**                    | Applique une remise en montant fixe aux produits sélectionnés.                |
+| **Définir un montant fixe**         | Définit les produits sélectionnés à un montant cible fixe.                    |
+| **Offrir tous les produits gratuitement** | Rend les produits sélectionnés gratuits.                                  |
+| **Pourcentage du sous-total à prix fixe** | Définit le prix des produits sélectionnés à `sous-total de la commande × pourcentage / 100`. |
+
 ## Exemple de configuration
 
 Les étapes suivantes montrent comment créer et configurer une règle **Montant de la remise sur le produit** en utilisant l’application.
@@ -178,4 +188,4 @@ Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles
 ## Limitations
 
 - Cette règle n’est pas compatible avec les checkouts de commandes provisoires ni avec les applications qui utilisent ce type de checkout.
-- Si l’URL de votre checkout contient `…/checkouts/do/…`, `do` signifie « commande provisoire ». Cette règle ne s’appliquera pas à ce checkout.
+- Si l’URL de checkout contient `.../checkouts/do/...`, `do` signifie commande provisoire et cette règle ne s’exécutera pas.

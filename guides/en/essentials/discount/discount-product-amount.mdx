@@ -19,6 +19,16 @@ This rule allows you to apply discounts to specific product prices at checkout b
 
 You can create either a discount code or an automatic discount. Customers must enter the code at checkout to receive a discount if a discount code is created. If an automatic discount is selected, it will be applied automatically to eligible products when the configured conditions are met.
 
+## Supported operations
+
+| Operation                           | Behavior                                                         |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| **Percentage**                      | Applies percentage discount to selected products.                |
+| **Fixed amount off**                | Applies fixed currency discount to selected products.            |
+| **Set fixed amount**                | Sets selected products to a fixed target amount.                 |
+| **Set all products free**           | Makes selected products free.                                    |
+| **Fixed price subtotal percentage** | Sets selected product price to `order subtotal × percent / 100`. |
+
 ## Sample configuration
 
 The following steps show how to create and configure a **Discount Product Amount** rule using the app.
@@ -175,4 +185,4 @@ Click on **Rules** in the sidebar to view all rules. Select the rule you want to
 ## Limitations
 
 - This rule is incompatible with draft-order-based checkout and apps that use draft-order checkout.
-- If your checkout URL includes `.../checkouts/do/...`, `do` stands for draft order. This rule won't run on that checkout.
+- If checkout URL contains `.../checkouts/do/...`, `do` means draft order and this rule will not run.

@@ -1,213 +1,25 @@
 ---
 title: "折扣配送方式"
-description: "根据给定条件为特定运费提供折扣。"
+description: "规范指南已迁移。请前往折扣版块页面查看最新的运费折扣文档。"
 icon: "badge-percent"
 ---
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/tYwhP_57i7Q?si=aqId7JSLiXQjsXCJ"
-  title="BeSure 折扣配送方式"
-  style={{ border: 0 }}
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+## 规范页面
 
-## 规则概览
+本指南现维护于：
 
-此规则允许您在结账时根据定义的条件为特定运费提供折扣。您可以使用购物车总额、配送地址、客户标签或产品属性等条件，应用百分比、固定金额减免、小计百分比、设置固定价格或设置所有配送免费等折扣。
+<Card
+  title="折扣配送方式（规范页面）"
+  icon="arrow-up-right-from-square"
+  href="/guides/zh/essentials/discount/discount-shipping-methods"
+>
+  打开最新的运费折扣指南。
+</Card>
 
-使用此规则，您可以创建折扣码，或创建自动折扣。如果规则创建了折扣码，那么客户可以在结账时使用该折扣码以获得折扣。否则，如果选择了自动折扣，那么规则可以根据配置的条件自动将折扣应用于所选的配送方式。
+使用上述规范页面获取最新详情，包括：
 
-## 示例配置
-
-以下步骤展示了如何使用应用程序创建和配置一个 **折扣配送方式** 规则。
-
-### 创建新规则
-
-从您的 [Shopify 管理后台](/guides/zh/get-started/installation#前往应用)，打开应用程序。在侧边栏，进入 [规则](/guides/zh/get-started/quickstart#创建示例规则) 部分并点击 _"创建规则"_。
-
-然后，您将被重定向到 **选择结账规则类型页面**。选择 _类别 "配送" → 选择结账规则类型 "折扣配送方式" → 点击 “选择规则”_。
-
-<img
-  src="/images/essentials/shipping/select-discount-shipping-methods.webp"
-  alt="选择折扣配送方式"
-/>
-
-接着，您将进入 **创建新折扣配送方式规则** 页面，在这里您可以配置规则。
-
-### 规则配置
-
-要配置规则，首先可以选择性地添加一个名称，例如 "折扣配送方式"，以描述它的作用，如果您想应用 **"自动折扣"**。
-
-<img
-  src="/images/essentials/shipping/automatic-discount-name-discount-shipping-methods.webp"
-  alt="自动折扣名称"
-/>
-
-或者，如果您更倾向于通过折扣码应用折扣，请点击 **"折扣码"** 并输入所需的代码，或点击 **"生成随机码"** 随机生成一个。
-
-<img
-  src="/images/essentials/shipping/discount-code-discount-shipping-methods.webp"
-  alt="折扣码"
-/>
-
-接下来，在同一页面上，选择规则 [地位](/guides/zh/get-started/concepts#地位)：测试中、激活或已停用。这里我们选择 **测试中** 地位，以便快速测试规则而不影响实际客户的结账。
-
-<img
-  src="/images/essentials/shipping/rule-status-discount-shipping-methods.webp"
-  alt="规则地位"
-/>
-
-作为 [地位](/guides/zh/get-started/concepts#地位) 设置的一部分，可选的 **计划** 部分可让您控制活动规则的启动和停止时间。选择 **开始日期** 和 **开始时间** 以指定规则应何时开始。可选地，勾选 **设置结束日期** 以选择规则应自动停用的结束日期和时间。
-
-> 如果在规则设置为 **激活** 时选择了计划日期，状态将变为 **已计划** 而不是激活。如果设置了结束日期和时间，规则将从开始日期和时间运行到结束日期和时间。
-
-<img
-  src="/images/essentials/discount/schedule-reject-discount-codes.webp"
-  alt="计划 拒绝折扣码"
-/>
-
-<Note>
-  在此示例中，我们不使用计划，并保持 **测试中** 状态。
-</Note>
-
-接下来，在同一界面下，配置 [组合](/guides/zh/get-started/concepts#组合) 设置，以控制此配送折扣如何与其他折扣交互。您可以选择允许其与以下折扣组合使用：
-
-- **产品折扣** – 允许配送折扣与任何产品级折扣一起使用。请确保产品折扣也配置为允许与配送折扣组合使用。
-
-- **订单折扣** – 允许配送折扣与整体订单级折扣一起使用。请确保订单折扣也设置为允许与配送折扣组合使用。
-
-<img
-  src="/images/essentials/shipping/combinations-disount-shipping-methods.webp"
-  alt="组合折扣配送方式"
-/>
-
-接下来，在同一页面上，配置 [策略](/guides/zh/get-started/concepts#策略) 设置，以控制系统如何处理多个折扣块。目前仅提供 **第一个** 选项，并且默认已选中。此选项只会应用第一个满足条件的折扣，并忽略之后可能出现的更优折扣。
-
-<img
-  src="/images/essentials/shipping/strategy-shipping-discount.webp"
-  alt="运费折扣策略"
-/>
-
-接下来，在同一页面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件（“何时”）) 和 [动作](/guides/zh/get-started/concepts#动作（“做什么”）)。
-
-> 例如，我们将选择默认的 **条件集 1**。然后，我们将规则配置为 **始终** 运行，并使用 **百分比** 选项为所有配送方式应用 **10% 折扣**。折扣信息 **"10% OFF"** 将在结账时显示给客户。
-
-<img
-  src="/images/essentials/shipping/condition-set-discount-shipping-methods.webp"
-  alt="设置运费折扣条件"
-/>
-
-在 **动作** 部分，您可以根据需求选择使用 **百分比、固定金额减免、小计百分比、设置固定价格、设置所有配送免费，或固定价格小计百分比** 来应用折扣。
-
-<img
-  src="/images/essentials/shipping/action-type-discount-shipping-methods.webp"
-  alt="操作类型折扣"
-/>
-
-您还可以选择多个选项来应用折扣。可用选项包括：
-
-- **选定的配送方式**  
-  通过输入要包含的配送方式的 **名称**，将折扣仅应用于特定配送方式。
-
-  <img
-    src="/images/essentials/shipping/apply-discount-to-selected-shipping-methods.webp"
-    alt="选定的配送方式"
-  />
-
-- **所有配送方式**  
-  将折扣应用于所有可用的配送方式。
-
-  <img
-    src="/images/essentials/shipping/apply-discount-to-all-shipping-methods.webp"
-    alt="所有配送方式"
-  />
-
-- **价格最高的配送方式**  
-  将折扣应用于价格最高的配送方式。
-
-  <img
-    src="/images/essentials/shipping/apply-discount-to-highest-price-shipping-method.webp"
-    alt="价格最高的配送方式"
-  />
-
-- **价格最低的配送方式**  
-  将折扣应用于价格最低的配送方式。
-
-  <img
-    src="/images/essentials/shipping/apply-discount-to-lowest-price-shipping-method.webp"
-    alt="价格最低的配送方式"
-  />
-
-- **按价格筛选的配送方式**  
-  根据输入的金额应用折扣，并可选择针对高于或低于指定值的配送方式。
-
-  <img
-    src="/images/essentials/shipping/apply-discount-to-shipping-method-with-price.webp"
-    alt="按价格筛选的配送方式"
-  />
-
-接下来，在同一界面的 [订阅配送](/guides/zh/get-started/concepts#订阅配送) 部分，对于订阅配送产品，您可以选择将运费折扣限制为仅首次配送、限制为首次配送并使定期配送免费，或限制为首次配送并使所有定期配送免费。
-
-<Warning>
-  **订阅配送** 部分的选项仅适用于具有订阅的配送产品。对于普通（非订阅）产品配送，您无需选择任何选项。默认设置将按预期工作。
-</Warning>
-
-<img
-  src="/images/essentials/shipping/subscription-deliveries.webp"
-  alt="订阅配送"
-/>
-
-接下来，在同一界面的 [最大折扣使用次数](/guides/zh/get-started/concepts#折扣最大使用次数) 部分，您可以选择启用折扣码的使用次数限制，将其限制为每个客户只能使用一次，或者在选择折扣码时同时应用这两个限制。
-
-<img
-  src="/images/essentials/discount/maximum-discount-uses.webp"
-  alt="最大折扣使用次数"
-/>
-
-最后，点击顶部的 <b>保存</b> 按钮来创建并保存您的规则。
-
-<img src="/images/shared/save-rule.webp" alt="保存规则" />
-
-## 测试规则
-
-由于规则设置为测试地位，我们必须使用 `test@testing.com` 作为电子邮件，而不是实际的电子邮件，才能在结账时运行该规则。
-
-<Warning>
-  下图显示了在使用测试电子邮件地址 <b>之前</b> 的结账页面。
-  请注意，所有配送选项尚未打折。
-</Warning>
-
-<img
-  src="/images/essentials/shipping/before-rule-apply-shipping-methods.webp"
-  alt="应用规则之前"
-/>
-
-设置电子邮件后，结账规则运行并应用已配置的配送折扣。我们可以验证在结账时所选的配送方式显示了 **10% 折扣**，如下所示。
-
-<img
-  src="/images/essentials/shipping/after-rule-apply-discount-shipping-methods.webp"
-  alt="应用规则之后"
-/>
-
-## 激活规则
-
-测试完成后，我们可以激活规则，以便它开始对实际客户的结账产生影响。只有已激活的规则才能对所有客户的结账进行更改。
-
-点击侧边栏中的 **规则** 查看所有规则。选择您要激活的规则，然后点击 **激活** 按钮来激活它。
-
-<Warning>
-  规则激活仅适用于付费计划。如果您尚未升级计划，请按照
-  [这里](/guides/zh/get-started/installation#升级您的套餐) 的说明进行升级。
-</Warning>
-
-<img
-  src="/images/essentials/shipping/activate-the-rule-discount-shipping-methods.webp"
-  alt="激活规则"
-/>
-
-## 限制
-
-- 此规则与基于草稿订单的结账或使用草稿订单结账的应用不兼容。
-- 如果你的结账 URL 中包含 .../checkouts/do/...，这里的 'do' 表示草稿订单。此规则无法在该结账中运行。
+- 支持的运费折扣操作
+- 方式匹配行为（包含/等于、通配符、不区分大小写）
+- 订阅配送设置
+- 日期时间 / GeoIP 条件的回退行为
+- 当前限制和设置说明

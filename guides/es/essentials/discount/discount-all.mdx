@@ -1,6 +1,6 @@
 ---
 title: "Descuento general"
-description: "Aplica múltiples tipos de descuento juntos, por ejemplo, sobre el pedido, producto o envío según las condiciones dadas."
+description: "Configura descuentos de pedido, producto y envío juntos en una sola regla."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,44 @@ icon: "badge-percent"
 
 ## Resumen de la regla
 
-Esta regla te permite aplicar múltiples tipos de descuentos juntos según las condiciones definidas. Puedes combinar descuentos de pedido, producto y envío dentro de una sola regla, dependiendo de los criterios configurados. Cada tipo de descuento se puede personalizar para aplicar una reducción porcentual, un monto fijo de descuento u otros formatos de descuento compatibles.
+Esta es la regla de descuento principal en el flujo actual de la aplicación. Te permite combinar descuentos de **pedido**, **producto** y **envío**, así como **rechazar códigos de descuento**, en una sola regla, cada uno con sus propias opciones de operación.
 
-La regla evalúa las condiciones especificadas, como etiquetas de clientes, etiquetas de productos, dirección de envío u otras condiciones configuradas, y aplica todos los descuentos elegibles en consecuencia. Esto proporciona flexibilidad para crear ofertas promocionales completas que afecten diferentes partes del checkout simultáneamente, mientras se mantiene un control total sobre cómo se aplican los descuentos.
+Para cada bloque, defines las condiciones y luego habilitas uno o más tipos de descuento (**pedido**, **producto**, **envío** o **rechazar códigos de descuento**). La aplicación aplica los descuentos elegibles según la configuración de estrategia seleccionada.
+
+## Operaciones compatibles
+
+### Operaciones de descuento de pedido
+
+| Operación                                              | Comportamiento                                                                                         |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| **Porcentaje**                                         | Aplica un descuento porcentual al monto del pedido.                                                    |
+| **Cantidad fija de descuento**                         | Aplica un descuento de moneda fija al monto del pedido.                                                |
+| **Porcentaje excluyendo estos productos**              | Aplica un descuento porcentual al monto del pedido excluyendo los productos seleccionados.             |
+| **Porcentaje solo para estos productos**               | Aplica un descuento porcentual basado solo en los productos seleccionados.                             |
+| **Cantidad fija de descuento excluyendo estos productos** | Aplica un descuento de monto fijo excluyendo los productos seleccionados.                          |
+| **Cantidad fija de descuento solo para estos productos**  | Aplica un descuento de monto fijo basado solo en los productos seleccionados.                      |
+| **Porcentaje del subtotal a precio fijo**              | Establece el monto del pedido en `subtotal del pedido × porcentaje / 100` (excluyendo envío e impuestos). |
+
+### Operaciones de descuento de producto
+
+| Operación                           | Comportamiento                                                              |
+| ----------------------------------- | --------------------------------------------------------------------------- |
+| **Porcentaje**                      | Aplica un descuento porcentual a los productos seleccionados.               |
+| **Cantidad fija de descuento**      | Aplica un descuento de moneda fija a los productos seleccionados.           |
+| **Establecer monto fijo**           | Establece los productos seleccionados en un monto objetivo fijo.            |
+| **Establecer todos los productos gratis** | Hace que los productos seleccionados sean gratis.                       |
+| **Porcentaje del subtotal a precio fijo** | Establece el precio del producto seleccionado en `subtotal del pedido × porcentaje / 100`. |
+
+### Operaciones de descuento de envío
+
+| Operación                           | Comportamiento                                                                                                      |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Porcentaje**                      | Aplica un descuento porcentual a los métodos de envío seleccionados.                                                |
+| **Cantidad fija de descuento**      | Aplica un descuento de moneda fija a los métodos de envío seleccionados.                                            |
+| **Establecer precio fijo**          | Establece cada método de envío seleccionado en un precio fijo objetivo.                                            |
+| **Establecer todo el envío gratis** | Hace que todos los métodos de envío sean gratis.                                                                    |
+| **Porcentaje del subtotal**         | El monto del descuento es `subtotal del pedido × porcentaje / 100`, luego se aplica a los métodos de envío seleccionados. |
+| **Porcentaje del subtotal a precio fijo** | Establece el precio de cada método de envío seleccionado en `subtotal del pedido × porcentaje / 100`.         |
 
 ## Configuración de ejemplo
 
@@ -336,4 +371,4 @@ Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona
 ## Limitaciones
 
 - Esta regla no es compatible con el checkout basado en pedidos borrador ni con las aplicaciones que usan checkout de pedido borrador.
-- Si la URL de tu checkout incluye el término .../checkouts/do/..., aquí 'do' significa pedido borrador. Estas reglas no se ejecutarán en ese checkout.
+- Si la URL de checkout contiene `.../checkouts/do/...`, `do` significa pedido borrador y esta regla no se ejecutará.

@@ -178,9 +178,20 @@ Offre la livraison gratuite pour toutes les livraisons récurrentes d’abonneme
 
 ### Solution de secours
 
-Définit ce qui se passe dans le cas rare où l’application rencontre un problème lors du passage à la caisse (par ex. autoriser ou bloquer le passage à la caisse). Utilisé uniquement dans la règle **Valider ou bloquer le passage à la caisse**.
+Définit ce qui se passe si l’application ne peut pas évaluer une règle au passage en caisse.
+
+- Pour la règle **Valider ou bloquer le passage à la caisse**, ce paramètre détermine si le passage en caisse est autorisé ou bloqué si l’application rencontre un problème inattendu lors du traitement de la règle.
 
 <img src="/images/concepts/fallback.webp" alt="Solution de secours" />
+
+- Pour les règles qui utilisent des conditions **Date et heure** ou **Localisation du client (via GeoIP)**, ce paramètre définit ce qui se passe si l’application ne peut pas déterminer l’heure/la date ou la localisation du client requise :
+  - **Ne rien faire** : aucune action n’est appliquée par la règle.
+  - **Exécuter cette action** : l’action de secours configurée est appliquée à la place.
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Solution de secours Date Heure Localisation"
+/>
 
 ### Nombre maximal d’utilisations de la réduction
 

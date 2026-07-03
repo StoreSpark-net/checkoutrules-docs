@@ -15,9 +15,26 @@ icon: "eye-slash"
 
 ## Rule overview
 
-This rule allows you to automatically hide specific shipping or pickup methods at the checkout based on defined conditions. You can control visibility using criteria such as cart total, shipping address, customer tags, or product details, etc.
+This rule allows you to automatically hide shipping methods at the checkout based on defined conditions. You can control visibility using criteria such as cart total, shipping address, customer tags, or product details, etc.
 
 This helps streamline the checkout experience by removing irrelevant or unavailable delivery options, reducing confusion and improving conversion rates.
+
+## Supported operations
+
+- **Hide these shipping methods**: hides only the methods that match your method-name rules.
+- **Only show these shipping methods**: keeps only the matched methods and hides the rest.
+- **Hide all shipping methods**: hides all shipping methods whenever the condition block matches.
+
+<Note>
+  For method-name matching in this rule:
+
+    - Matching is case-insensitive.
+    - `*` wildcard is supported in user input (for example: `Standard*`, `*Express*`, `*Pickup`).
+    - **contains** / **does not contain** use partial matching.
+    - **is** / **is not** support exact text and wildcard patterns.
+    - If you add multiple method rows, they are evaluated as OR (any matching row can apply).
+
+</Note>
 
 ## Sample configuration
 

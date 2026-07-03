@@ -1,6 +1,6 @@
 ---
 title: "Discount order amount"
-description: "Discount order subtotal amount based on the given conditions."
+description: "Discount order amount based on the given conditions."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,21 @@ icon: "badge-percent"
 
 ## Rule overview
 
-This rule allows you to apply a discount to the order subtotal based on the defined conditions. You can offer discounts as a percentage, fixed amount off, percentage excluding specific products, percentage for only specific products, fixed amount off excluding specific products, or fixed amount off for only specific products using criteria such as order total amount, customer tags, shipping address, product tags, etc.
+This rule allows you to apply a discount to the order amount based on the defined conditions. You can offer discounts as a percentage, fixed amount off, percentage excluding specific products, percentage for only specific products, fixed amount off excluding specific products, or fixed amount off for only specific products using criteria such as order total amount, customer tags, shipping address, product tags, etc.
 
 Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the order subtotal based on the configured conditions. This helps incentivize purchases, reward specific customers, and drive higher conversion rates.
+
+## Supported operations
+
+| Operation                                     | Behavior                                                                            |
+| --------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Percentage**                                | Applies percentage discount to order amount.                                        |
+| **Fixed amount off**                          | Applies fixed currency discount to order amount.                                    |
+| **Percentage excluding these products**       | Applies percentage discount to order amount while excluding selected products.      |
+| **Percentage for only these products**        | Applies percentage discount based only on selected products.                        |
+| **Fixed amount off excluding these products** | Applies fixed amount discount while excluding selected products.                    |
+| **Fixed amount off for only these products**  | Applies fixed amount discount based only on selected products.                      |
+| **Fixed price subtotal percentage**           | Sets order amount to `order subtotal × percent / 100` (excluding shipping and tax). |
 
 ## Sample configuration
 
@@ -160,4 +172,4 @@ Click on **Rules** in the sidebar to view all rules. Select the rule you want to
 ## Limitations
 
 - This rule is incompatible with draft-order-based checkout and apps that use draft-order checkout.
-- If your checkout URL includes `.../checkouts/do/...`, `do` stands for draft order. This rule won't run on that checkout.
+- If checkout URL contains `.../checkouts/do/...`, `do` means draft order and this rule will not run.

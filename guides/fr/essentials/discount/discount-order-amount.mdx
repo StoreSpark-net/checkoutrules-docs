@@ -1,6 +1,6 @@
 ---
 title: "Remise sur le montant de la commande"
-description: "Appliquer une remise sur le sous-total de la commande en fonction des conditions données."
+description: "Appliquer une remise sur le montant de la commande en fonction des conditions données."
 icon: "badge-percent"
 ---
 
@@ -15,11 +15,23 @@ icon: "badge-percent"
 
 ## Aperçu de la règle
 
-Cette règle vous permet d’appliquer une remise au sous-total de la commande en fonction des conditions définies. Vous pouvez proposer des remises sous forme de pourcentage, montant fixe, pourcentage excluant certains produits, pourcentage uniquement pour certains produits, montant fixe excluant certains produits, ou montant fixe uniquement pour certains produits, en utilisant des critères tels que le montant total de la commande, les tags clients, l’adresse de livraison, les tags produits, etc.
+Cette règle vous permet d’appliquer une remise au montant de la commande en fonction des conditions définies. Vous pouvez proposer des remises sous forme de pourcentage, montant fixe, pourcentage excluant certains produits, pourcentage uniquement pour certains produits, montant fixe excluant certains produits, ou montant fixe uniquement pour certains produits, en utilisant des critères tels que le montant total de la commande, les tags clients, l’adresse de livraison, les tags produits, etc.
 
 Avec cette règle, vous pouvez créer un code de réduction ou une remise automatique.  
 Si la règle crée un code de réduction, alors le client peut l’utiliser au passage en caisse pour obtenir la remise.  
 Sinon, si la remise automatique est sélectionnée, la règle peut appliquer automatiquement une remise sur le sous-total de la commande en fonction des conditions configurées. Cela permet d’encourager les achats, de récompenser certains clients et d’augmenter le taux de conversion.
+
+## Opérations prises en charge
+
+| Opération                                     | Comportement                                                                                    |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Pourcentage**                               | Applique un pourcentage de remise au montant de la commande.                                    |
+| **Montant fixe**                              | Applique une remise en montant fixe au montant de la commande.                                  |
+| **Pourcentage excluant ces produits**         | Applique un pourcentage de remise au montant de la commande en excluant les produits sélectionnés. |
+| **Pourcentage pour ces produits uniquement**  | Applique un pourcentage de remise basé uniquement sur les produits sélectionnés.                |
+| **Montant fixe excluant ces produits**        | Applique une remise en montant fixe en excluant les produits sélectionnés.                      |
+| **Montant fixe pour ces produits uniquement** | Applique une remise en montant fixe basée uniquement sur les produits sélectionnés.             |
+| **Pourcentage du sous-total à prix fixe**     | Définit le montant de la commande à `sous-total de la commande × pourcentage / 100` (hors livraison et taxes). |
 
 ## Configuration d’exemple
 
@@ -171,4 +183,4 @@ Sélectionnez la règle que vous souhaitez activer, puis cliquez sur le bouton *
 ## Limitations
 
 - Cette règle n’est pas compatible avec les checkouts de commandes provisoires ni avec les applications qui utilisent ce type de checkout.
-- Si l’URL de votre checkout contient `…/checkouts/do/…`, `do` signifie « commande provisoire ». Cette règle ne s’appliquera pas à ce checkout.
+- Si l’URL de checkout contient `.../checkouts/do/...`, `do` signifie commande provisoire et cette règle ne s’exécutera pas.

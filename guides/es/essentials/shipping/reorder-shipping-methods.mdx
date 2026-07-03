@@ -20,6 +20,25 @@ Puedes priorizar opciones de envío específicas basándote en condiciones como 
 
 Esto ayuda a simplificar la experiencia del cliente mostrando los métodos de envío más relevantes o rentables primero.
 
+## Operaciones compatibles
+
+- **Clasificación fija**: clasifica manualmente los métodos seleccionados con coincidencia **contiene / no contiene / es / no es**.
+- **Precio de envío**: ordena por precio de menor a mayor o de mayor a menor.
+- **Orden alfabético**: ordena los nombres de la A a la Z o de la Z a la A.
+- **Precio de envío + Orden alfabético**: ordena primero por precio y desempata los precios iguales alfabéticamente en cualquiera de las 4 combinaciones de dirección disponibles.
+- **Tipo de entrega**: reordena por los tipos de entrega seleccionados en el orden que elijas.
+
+<Note>
+  Para la coincidencia de nombres de método en **Clasificación fija**:
+
+    - La coincidencia no distingue entre mayúsculas y minúsculas.
+    - El comodín `*` es compatible en la entrada del usuario (por ejemplo: `Standard*`, `*Express*`, `*Pickup`).
+    - **contiene** / **no contiene** usan coincidencia parcial.
+    - **es** / **no es** admiten texto exacto y patrones de comodín.
+    - Si añades varias filas de métodos, se evalúan como OR (cualquier fila coincidente puede aplicarse).
+
+</Note>
+
 ## Configuración de ejemplo
 
 Los siguientes pasos muestran cómo crear y configurar una regla **Reordenar Métodos de Envío** usando la aplicación.

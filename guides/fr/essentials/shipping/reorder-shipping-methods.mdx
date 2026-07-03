@@ -20,6 +20,25 @@ Vous pouvez donner la priorité à certaines options d’expédition en fonction
 
 Cela aide à simplifier l’expérience client en affichant d’abord les méthodes d’expédition les plus pertinentes ou les plus rentables.
 
+## Opérations prises en charge
+
+- **Classement fixe** : classe manuellement les méthodes sélectionnées avec correspondance **contient / ne contient pas / est / n’est pas**.
+- **Prix de livraison** : tri par prix du plus bas au plus élevé ou inversement.
+- **Ordre alphabétique** : tri des noms de A à Z ou de Z à A.
+- **Prix de livraison + Ordre alphabétique** : tri par prix d’abord, puis par ordre alphabétique en cas d’égalité de prix, dans l’une des 4 combinaisons de direction disponibles.
+- **Type de livraison** : réorganise par types de livraison sélectionnés dans l’ordre de votre choix.
+
+<Note>
+  Pour la correspondance de nom de méthode dans le **Classement fixe** :
+
+    - La correspondance est insensible à la casse.
+    - Le joker `*` est pris en charge dans la saisie utilisateur (par exemple : `Standard*`, `*Express*`, `*Pickup`).
+    - **contient** / **ne contient pas** utilisent une correspondance partielle.
+    - **est** / **n’est pas** prennent en charge le texte exact et les modèles avec joker.
+    - Si vous ajoutez plusieurs lignes de méthode, elles sont évaluées en OU (toute ligne correspondante peut s’appliquer).
+
+</Note>
+
 ## Exemple de configuration
 
 Les étapes suivantes montrent comment créer et configurer une règle **Réorganiser les modes d’expédition** à l’aide de l’application.

@@ -1,6 +1,6 @@
 ---
 title: "Alles rabattieren"
-description: "Mehrere Rabattarten zusammen anwenden, z. B. Bestell-, Produkt- oder Versandrabatt basierend auf den angegebenen Bedingungen."
+description: "Konfigurieren Sie Bestell-, Produkt- und Versandrabatte gemeinsam in einer Regel."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,44 @@ icon: "badge-percent"
 
 ## Regelübersicht
 
-Mit dieser Regel können Sie mehrere Rabattarten gleichzeitig basierend auf definierten Bedingungen anwenden. Sie können Bestell-, Produkt- und Versandrabatte innerhalb einer einzigen Regel kombinieren, je nach den konfigurierten Kriterien. Jede Rabattart kann individuell angepasst werden, um einen prozentualen Nachlass, einen festen Betrag oder andere unterstützte Rabattformate anzuwenden.
+Dies ist die primäre Rabattregel im aktuellen App-Ablauf. Sie ermöglicht es Ihnen, **Bestell-**, **Produkt-** und **Versandrabatte** sowie das **Ablehnen von Rabattcodes** in einer einzigen Regel zu kombinieren, jeweils mit eigenen Operationsoptionen.
 
-Die Regel bewertet die angegebenen Bedingungen, wie Kundentags, Produkt-Tags, Versandadresse oder andere konfigurierte Bedingungen, und wendet alle berechtigten Rabatte entsprechend an. Dies bietet die Flexibilität, umfassende Aktionsangebote zu erstellen, die verschiedene Bereiche des Checkouts gleichzeitig betreffen, während Sie die volle Kontrolle darüber behalten, wie Rabatte angewendet werden.
+Für jeden Block definieren Sie die Bedingungen und aktivieren dann einen oder mehrere Rabatttypen (**Bestellung**, **Produkt**, **Versand** oder **Rabattcodes ablehnen**). Die App wendet berechtigte Rabatte gemäß Ihren ausgewählten Strategieeinstellungen an.
+
+## Unterstützte Operationen
+
+### Bestellrabatt-Operationen
+
+| Operation                                     | Verhalten                                                                            |
+| --------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Prozentsatz**                               | Wendet einen prozentualen Rabatt auf den Bestellbetrag an.                            |
+| **Fester Rabattbetrag**                       | Wendet einen festen Währungsrabatt auf den Bestellbetrag an.                         |
+| **Prozentsatz ohne diese Produkte**           | Wendet einen prozentualen Rabatt auf den Bestellbetrag an und schließt ausgewählte Produkte aus. |
+| **Prozentsatz nur für diese Produkte**        | Wendet einen prozentualen Rabatt nur auf ausgewählte Produkte an.                    |
+| **Fester Rabattbetrag ausgenommen diese Produkte** | Wendet einen festen Betragsrabatt an und schließt ausgewählte Produkte aus.      |
+| **Fester Rabatt nur für diese Produkte**      | Wendet einen festen Betragsrabatt nur auf ausgewählte Produkte an.                   |
+| **Festpreis-Zwischensummen-Prozentsatz**      | Setzt den Bestellbetrag auf `Bestell-Zwischensumme × Prozent / 100` (ohne Versand und Steuern). |
+
+### Produktrabatt-Operationen
+
+| Operation                           | Verhalten                                                         |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| **Prozentsatz**                     | Wendet einen prozentualen Rabatt auf ausgewählte Produkte an.     |
+| **Fester Rabattbetrag**             | Wendet einen festen Währungsrabatt auf ausgewählte Produkte an.   |
+| **Legen Sie einen festen Betrag fest** | Setzt ausgewählte Produkte auf einen festen Zielbetrag.        |
+| **Geben Sie alle Produkte kostenlos frei** | Macht ausgewählte Produkte kostenlos.                        |
+| **Festpreis-Zwischensummen-Prozentsatz** | Setzt den Preis ausgewählter Produkte auf `Bestell-Zwischensumme × Prozent / 100`. |
+
+### Versandrabatt-Operationen
+
+| Operation                           | Verhalten                                                                                          |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Prozentsatz**                     | Wendet einen prozentualen Rabatt auf ausgewählte Versandmethode(n) an.                              |
+| **Fester Rabattbetrag**            | Wendet einen festen Währungsbetrag als Rabatt auf ausgewählte Versandmethode(n) an.                |
+| **Festpreis festlegen**             | Setzt jede ausgewählte Versandmethode auf einen festen Zielpreis.                                  |
+| **Alle Versandkosten kostenlos**    | Macht alle Versandmethoden kostenlos.                                                              |
+| **Zwischensummenprozentsatz**       | Der Rabattbetrag ist `Bestell-Zwischensumme × Prozent / 100` und wird auf ausgewählte Versandmethode(n) angewendet. |
+| **Festpreis-Zwischensummen-Prozentsatz** | Setzt den Preis jeder ausgewählten Versandmethode auf `Bestell-Zwischensumme × Prozent / 100`. |
 
 ## Beispielkonfiguration
 
@@ -337,4 +372,4 @@ Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wähl
 ## Einschränkungen
 
 - Diese Regel ist nicht kompatibel mit Draft-Order-basierten Checkouts oder mit Apps, die Draft-Order-Checkouts verwenden.
-- Wenn Ihre Checkout-URL den Begriff .../checkouts/do/... enthält, steht 'do' für Draft Order. Diese Regeln werden bei diesem Checkout nicht ausgeführt.
+- Wenn die Checkout-URL `.../checkouts/do/...` enthält, bedeutet `do` Entwurfsbestellung und diese Regel wird nicht ausgeführt.

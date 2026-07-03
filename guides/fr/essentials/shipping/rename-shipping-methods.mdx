@@ -1,6 +1,6 @@
 ---
 title: "Renommer les modes d’expédition"
-description: "Renommer/Traduire ou ajouter un message aux modes d’expédition sélectionnés au paiement selon des conditions données."
+description: "Renommer ou ajouter un préfixe ou un suffixe aux modes d’expédition sélectionnés, ou traduire les noms des modes d’expédition au paiement, selon les conditions spécifiées."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Aperçu de la règle
 
-Cette règle vous permet de renommer ou de traduire les libellés des modes d’expédition et de retrait au paiement en fonction de conditions spécifiques. Vous pouvez personnaliser les noms affichés à l’aide de critères tels que la valeur du panier, les balises clients, l’adresse de livraison ou les détails du produit, etc.
+Cette règle vous permet de renommer, d’ajouter un préfixe ou un suffixe à, ou de traduire les modes d’expédition au paiement en fonction de conditions spécifiques. Vous pouvez personnaliser les noms affichés à l’aide de critères tels que la valeur du panier, les balises clients, l’adresse de livraison, les détails du produit, et plus encore.
 
 Cela aide à améliorer la clarté pour les clients, à prendre en charge la localisation et à améliorer l’expérience globale de paiement.
 
@@ -64,7 +64,24 @@ Ensuite, sur le même écran, sélectionnez l’[ensemble de conditions](/guides
 
 > Par exemple, nous utilisons l’**Ensemble de conditions 1**, configurons la règle pour s’exécuter **Toujours**, et la configurons pour renommer les modes d’expédition qui contiennent **"International Shipping"** en **"Local Shipping"**.
 
-Alternativement, nous pouvons modifier l’option “Renommer en” en “Ajouter un message” pour ajouter un message personnalisé au nom du mode d’expédition au lieu de le renommer complètement.
+**Renommer ces modes d’expédition** avec les opérateurs de correspondance de nom de méthode : **contient**, **ne contient pas**, **est**, **n’est pas**.
+
+Pour chaque méthode correspondante, choisissez un mode de sortie :
+
+- **Renommer en** : remplace entièrement le nom de la méthode.
+- **Ajouter un préfixe** : ajoute du texte personnalisé avant le nom original de la méthode.
+- **Ajouter un suffixe** : ajoute du texte personnalisé après le nom original de la méthode.
+
+<Note>
+  Pour la correspondance de nom de méthode dans cette règle :
+
+    - La correspondance est insensible à la casse.
+    - Le joker `*` est pris en charge dans la saisie utilisateur (par exemple : `Standard*`, `*Express*`, `*Pickup`).
+    - **contient** / **ne contient pas** utilisent une correspondance partielle.
+    - **est** / **n’est pas** prennent en charge le texte exact et les modèles avec joker.
+    - Si vous ajoutez plusieurs lignes de méthode, elles sont évaluées en OU (toute ligne correspondante peut s’appliquer).
+
+</Note>
 
 <img
   src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"

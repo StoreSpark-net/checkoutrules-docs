@@ -15,9 +15,26 @@ icon: "eye-slash"
 
 ## Aperçu de la règle
 
-Cette règle vous permet de masquer automatiquement certains modes d’expédition ou de retrait au paiement en fonction de conditions définies. Vous pouvez contrôler la visibilité à l’aide de critères tels que le total du panier, l’adresse de livraison, les balises clients ou les détails du produit, etc.
+Cette règle vous permet de masquer automatiquement les modes d’expédition au paiement en fonction de conditions définies. Vous pouvez contrôler la visibilité à l’aide de critères tels que le total du panier, l’adresse de livraison, les balises clients ou les détails du produit, etc.
 
 Cela aide à simplifier l’expérience de paiement en supprimant les options de livraison non pertinentes ou indisponibles, réduisant ainsi la confusion et améliorant les taux de conversion.
+
+## Opérations prises en charge
+
+- **Masquer ces modes d’expédition** : masque uniquement les méthodes qui correspondent à vos règles de nom de méthode.
+- **Afficher uniquement ces modes d’expédition** : conserve uniquement les méthodes correspondantes et masque le reste.
+- **Masquer tous les modes d’expédition** : masque tous les modes d’expédition lorsque le bloc de conditions est satisfait.
+
+<Note>
+  Pour la correspondance de nom de méthode dans cette règle :
+
+    - La correspondance est insensible à la casse.
+    - Le joker `*` est pris en charge dans la saisie utilisateur (par exemple : `Standard*`, `*Express*`, `*Pickup`).
+    - **contient** / **ne contient pas** utilisent une correspondance partielle.
+    - **est** / **n’est pas** prennent en charge le texte exact et les modèles avec joker.
+    - Si vous ajoutez plusieurs lignes de méthode, elles sont évaluées en OU (toute ligne correspondante peut s’appliquer).
+
+</Note>
 
 ## Exemple de configuration
 
