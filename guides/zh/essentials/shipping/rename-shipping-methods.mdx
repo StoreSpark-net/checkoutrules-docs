@@ -62,13 +62,34 @@ icon: "pencil"
 
 接下来，在同一界面上，选择相关的 [条件集](/guides/zh/get-started/concepts#条件集)、[条件](/guides/zh/get-started/concepts#条件) 和 [操作](/guides/zh/get-started/concepts#动作（“做什么”）)。
 
-> 例如，我们使用 **条件集 1**，将规则设置为 **始终运行**，并配置它将包含 **"国际配送"** 的配送方式重命名为 **"本地配送"**。
+> 例如，我们使用 **条件集 1**，将规则设置为 **始终运行**，并配置它将包含 **"International Shipping"** 的配送方式重命名为 **"Local Shipping"**。
 
 或者，我们可以将 “重命名为” 选项更改为 “添加消息”，以便在配送方式名称后附加自定义消息，而不是完全重命名。
 
 <img
   src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"
   alt="条件集 重命名配送方式"
+/>
+
+您可以选择点击 **添加翻译图标** 来为 **重命名**、**前缀** 和 **后缀** 添加翻译。
+
+<img
+  src="/images/essentials/shipping/rename-shipping-translation-icon.webp"
+  alt="翻译图标"
+/>
+
+然后，从下拉菜单中选择一种语言，并输入所选语言的翻译消息。在第一行输入的文本将用作默认文本，并在没有可用翻译时显示。
+
+<img
+  src="/images/essentials/shipping/rename-shipping-translation.webp"
+  alt="翻译"
+/>
+
+您还可以通过点击 **添加翻译** 按钮并为每种语言重复相同的过程来添加多个翻译。
+
+<img
+  src="/images/essentials/shipping/rename-shipping-multiple-translations.webp"
+  alt="多个翻译"
 />
 
 最后，点击顶部的 <b>保存</b> 按钮以创建并保存规则。
@@ -80,7 +101,7 @@ icon: "pencil"
 由于规则设置为测试地位，我们必须使用 `test@testing.com` 作为邮箱，而不是实际邮箱，来在结账时运行规则。
 
 <Warning>
-  下图显示了在使用测试邮箱地址 <b>之前</b> 的结账页面。请注意，<i>国际配送</i> 配送方式可用，且尚未被重命名。
+  下图显示了在使用测试邮箱地址 <b>之前</b> 的结账页面。请注意，<i>International Shipping</i> 配送方式可用，且尚未被重命名。
 </Warning>
 
 <img
@@ -88,7 +109,7 @@ icon: "pencil"
   alt="应用规则前"
 />
 
-设置邮箱后，结账规则运行并重命名了指定的配送方式。我们可以验证 **"国际配送"** 方式现在显示为 **"本地配送"**，如下所示。
+设置邮箱后，结账规则运行并重命名了指定的配送方式。我们可以验证 **"International Shipping"** 方式现在显示为 **"Local Shipping"**，如下所示。
 
 <img
   src="/images/essentials/shipping/after-rule-apply-rename-shipping-methods.webp"
