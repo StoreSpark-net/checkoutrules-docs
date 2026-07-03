@@ -1,6 +1,6 @@
 ---
 title: "Remise globale"
-description: "Appliquez plusieurs types de remises ensemble, par exemple sur la commande, le produit ou la livraison, en fonction des conditions définies."
+description: "Configurez les remises sur la commande, le produit et la livraison ensemble dans une seule règle."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,44 @@ icon: "badge-percent"
 
 ## Aperçu de la règle
 
-Cette règle vous permet d’appliquer plusieurs types de remises ensemble en fonction des conditions définies. Vous pouvez combiner des remises sur la commande, le produit et la livraison au sein d’une seule règle, selon les critères configurés. Chaque type de remise peut être personnalisé pour appliquer un pourcentage de réduction, un montant fixe ou d’autres formats de remise pris en charge.
+C’est la règle de remise principale dans le flux actuel de l’application. Elle vous permet de combiner les remises sur la **commande**, le **produit** et la **livraison**, ainsi que le **rejet des codes de réduction**, dans une seule règle, chacune avec ses propres options d’opération.
 
-La règle évalue les conditions spécifiées, telles que les tags clients, les tags produits, l’adresse de livraison ou toute autre condition configurée, et applique toutes les remises éligibles en conséquence. Cela offre la flexibilité de créer des offres promotionnelles complètes qui affectent différentes parties du paiement simultanément tout en conservant un contrôle total sur la manière dont les remises sont appliquées.
+Pour chaque bloc, vous définissez les conditions, puis activez un ou plusieurs types de remise (**commande**, **produit**, **livraison** ou **rejet des codes de réduction**). L’application applique les remises éligibles selon vos paramètres de stratégie sélectionnés.
+
+## Opérations prises en charge
+
+### Opérations de remise sur la commande
+
+| Opération                                     | Comportement                                                                                    |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Pourcentage**                               | Applique un pourcentage de remise au montant de la commande.                                    |
+| **Montant fixe**                              | Applique une remise en montant fixe au montant de la commande.                                  |
+| **Pourcentage excluant ces produits**         | Applique un pourcentage de remise au montant de la commande en excluant les produits sélectionnés. |
+| **Pourcentage pour ces produits uniquement**  | Applique un pourcentage de remise basé uniquement sur les produits sélectionnés.                |
+| **Montant fixe excluant ces produits**        | Applique une remise en montant fixe en excluant les produits sélectionnés.                      |
+| **Montant fixe pour ces produits uniquement** | Applique une remise en montant fixe basée uniquement sur les produits sélectionnés.             |
+| **Pourcentage du sous-total à prix fixe**     | Définit le montant de la commande à `sous-total de la commande × pourcentage / 100` (hors livraison et taxes). |
+
+### Opérations de remise sur le produit
+
+| Opération                           | Comportement                                                                  |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| **Pourcentage**                     | Applique un pourcentage de remise aux produits sélectionnés.                  |
+| **Montant fixe**                    | Applique une remise en montant fixe aux produits sélectionnés.                |
+| **Définir un montant fixe**         | Définit les produits sélectionnés à un montant cible fixe.                    |
+| **Offrir tous les produits gratuitement** | Rend les produits sélectionnés gratuits.                                  |
+| **Pourcentage du sous-total à prix fixe** | Définit le prix des produits sélectionnés à `sous-total de la commande × pourcentage / 100`. |
+
+### Opérations de remise sur la livraison
+
+| Opération                           | Comportement                                                                                          |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Pourcentage**                     | Applique un pourcentage de remise aux méthodes d’expédition sélectionnées.                            |
+| **Montant fixe**                    | Applique une remise en montant fixe aux méthodes d’expédition sélectionnées.                          |
+| **Définir un prix fixe**            | Définit chaque méthode d’expédition sélectionnée à un prix fixe cible.                                |
+| **Offrir toute l’expédition gratuitement** | Rend toutes les méthodes d’expédition gratuites.                                               |
+| **Pourcentage du sous-total**       | Le montant de la remise est `sous-total de la commande × pourcentage / 100`, puis appliqué aux méthodes d’expédition sélectionnées. |
+| **Pourcentage du sous-total à prix fixe** | Définit le prix de chaque méthode d’expédition sélectionnée à `sous-total de la commande × pourcentage / 100`. |
 
 ## Exemple de configuration
 
@@ -336,4 +371,4 @@ Cliquez sur **Règles** dans la barre latérale pour afficher toutes les règles
 ## Limitations
 
 - Cette règle n’est pas compatible avec les checkouts de commandes provisoires ni avec les applications qui utilisent ce type de checkout.
-- Si l’URL de votre checkout contient `…/checkouts/do/…`, `do` signifie « commande provisoire ». Cette règle ne s’appliquera pas à ce checkout.
+- Si l’URL de checkout contient `…/checkouts/do/…`, `do` signifie commande provisoire et cette règle ne s’exécutera pas.

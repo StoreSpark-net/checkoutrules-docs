@@ -1,6 +1,6 @@
 ---
 title: "Renombrar métodos de pago"
-description: "Renombra/Traduce o añade un mensaje a los métodos de pago seleccionados en el checkout bajo condiciones dadas."
+description: "Renombra o añade un prefijo o sufijo a los métodos de pago seleccionados, o traduce los nombres de los métodos de pago en el checkout, bajo las condiciones especificadas."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Visión general de la regla
 
-Esta regla te permite renombrar, traducir o añadir un mensaje a métodos de pago específicos en el checkout basándose en condiciones definidas. Puedes personalizar las etiquetas de métodos de pago mostradas usando criterios como valor del carrito, dirección de envío, etiquetas de cliente o detalles del producto, etc.
+Esta regla te permite renombrar, o añadir un prefijo, sufijo o traducir métodos de pago en el checkout según condiciones definidas. Puedes personalizar cómo se muestran las etiquetas de los métodos de pago usando criterios como valor del carrito, dirección de envío, etiquetas de cliente, detalles del producto y más.
 
 Esto ayuda a mejorar la claridad, apoyar la localización y mejorar la experiencia general de checkout para los clientes.
 
@@ -51,7 +51,24 @@ A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/
 
 > Como ejemplo, estamos usando el **Conjunto de condiciones 1**, configurando la regla para ejecutarse **Siempre**, y configurándola para renombrar el método de pago **"Contra Entrega (COD)"** a **"Pagar en Efectivo"**.
 
-Alternativamente, podemos configurar la opción "Renombrar a" a "Añadir mensaje" para agregar un mensaje personalizado al nombre del método de pago en lugar de renombrarlo completamente.
+**Renombrar estos métodos de pago** con operadores de coincidencia de nombre de método: **contiene**, **no contiene**, **es**, **no es**.
+
+Para cada método coincidente, elige un modo de salida:
+
+- **Renombrar a**: reemplaza completamente el nombre del método.
+- **Añadir prefijo**: añade texto personalizado antes del nombre original del método.
+- **Añadir sufijo**: añade texto personalizado después del nombre original del método.
+
+<Note>
+  Para la coincidencia de nombres de método en esta regla:
+
+    - La coincidencia no distingue entre mayúsculas y minúsculas.
+    - El comodín `*` es compatible en la entrada del usuario (por ejemplo: `Standard*`, `*Express*`, `*Pickup`).
+    - **contiene** / **no contiene** usan coincidencia parcial.
+    - **es** / **no es** admiten texto exacto y patrones de comodín.
+    - Si añades varias filas de métodos, se evalúan como OR (cualquier fila coincidente puede aplicarse).
+
+</Note>
 
 <img
   src="/images/essentials/payment/condition-set-rename-payment-methods.webp"

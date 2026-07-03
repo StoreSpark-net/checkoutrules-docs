@@ -19,6 +19,16 @@ Mit dieser Regel können Sie an der Kasse Rabatte auf bestimmte Produktpreise ba
 
 Sie können entweder einen Rabattcode oder einen automatischen Rabatt erstellen. Wird ein Rabattcode erstellt, müssen Kunden diesen an der Kasse eingeben, um den Rabatt zu erhalten. Wird ein automatischer Rabatt ausgewählt, wird dieser automatisch auf berechtigte Produkte angewendet, sobald die konfigurierten Bedingungen erfüllt sind.
 
+## Unterstützte Operationen
+
+| Operation                           | Verhalten                                                         |
+| ----------------------------------- | ----------------------------------------------------------------- |
+| **Prozentsatz**                     | Wendet einen prozentualen Rabatt auf ausgewählte Produkte an.     |
+| **Fester Rabattbetrag**             | Wendet einen festen Währungsrabatt auf ausgewählte Produkte an.   |
+| **Legen Sie einen festen Betrag fest** | Setzt ausgewählte Produkte auf einen festen Zielbetrag.        |
+| **Geben Sie alle Produkte kostenlos frei** | Macht ausgewählte Produkte kostenlos.                        |
+| **Festpreis-Zwischensummen-Prozentsatz** | Setzt den Preis ausgewählter Produkte auf `Bestell-Zwischensumme × Prozent / 100`. |
+
 ## Beispielkonfiguration
 
 Die folgenden Schritte zeigen, wie Sie mit der App eine Regel für **Produktbetrag rabattieren** erstellen und konfigurieren.
@@ -179,4 +189,4 @@ Klicken Sie in der Seitenleiste auf **Regeln**, um alle Regeln anzuzeigen. Wähl
 ## Einschränkungen
 
 - Diese Regel ist nicht kompatibel mit Draft-Order-basierten Checkouts oder mit Apps, die Draft-Order-Checkouts verwenden.
-- Wenn Ihre Checkout-URL den Begriff .../checkouts/do/... enthält, steht 'do' für Draft Order. Diese Regeln werden bei diesem Checkout nicht ausgeführt.
+- Wenn die Checkout-URL `.../checkouts/do/...` enthält, bedeutet `do` Entwurfsbestellung und diese Regel wird nicht ausgeführt.

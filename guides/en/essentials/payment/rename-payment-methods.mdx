@@ -1,6 +1,6 @@
 ---
 title: "Rename payment methods"
-description: "Rename/Translate or add a message to the selected payment methods at the checkout under given conditions."
+description: "Rename or add a prefix or suffix to the selected payment methods, or translate payment method names at checkout, under the specified conditions."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Rule overview
 
-This rule allows you to rename, translate, or add a message to specific payment methods at the checkout based on defined conditions. You can customize the displayed payment method labels using criteria such as cart value, shipping address, customer tags, or product details, etc.
+This rule allows you to rename, or add a prefix, suffix, or translate payment methods at checkout based on defined conditions. You can customize how payment method labels are displayed using criteria such as cart value, shipping address, customer tags, product details, and more.
 
 This helps enhance clarity, support localization, and improve the overall checkout experience for customers.
 
@@ -51,7 +51,24 @@ Next, on the same screen, select the relevant [condition set](/guides/en/get-sta
 
 > As an example, We are using **Condition set 1**, setting the rule to run **Always**, and configuring it to rename the payment method **"Cash on Delivery (COD)"** to **"Pay Cash"**.
 
-Alternatively, we can set the “Rename to” option to “Add message” to append a custom message to the payment method name instead of fully renaming it.
+**Rename these payment methods** with method-name match operators: **contains**, **does not contain**, **is**, **is not**.
+
+For each matched method, choose one output mode:
+
+- **Rename to**: fully replace the method name.
+- **Add prefix**: add custom text before the original method name.
+- **Add suffix**: add custom text after the original method name.
+
+<Note>
+  For method-name matching in this rule:
+
+    - Matching is case-insensitive.
+    - `*` wildcard is supported in user input (for example: `Standard*`, `*Express*`, `*Pickup`).
+    - **contains** / **does not contain** use partial matching.
+    - **is** / **is not** support exact text and wildcard patterns.
+    - If you add multiple method rows, they are evaluated as OR (any matching row can apply).
+
+</Note>
 
 <img
   src="/images/essentials/payment/condition-set-rename-payment-methods.webp"

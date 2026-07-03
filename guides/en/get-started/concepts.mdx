@@ -177,9 +177,20 @@ Provides free shipping for all recurring subscription deliveries after the first
 
 ### Fallback
 
-Defines what happens in the rare circumstance, when the app has an issue on the checkout (e.g., allow or block checkout). Used only in **Validate or Block Checkout** rule.
+Defines what happens if the app cannot evaluate a rule at checkout.
+
+- For the **Validate or Block Checkout** rule, this setting determines whether checkout is allowed or blocked if the app encounters an unexpected issue while processing the rule.
 
 <img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+- For rules that use **Date Time** or **Customer location (using GeoIP)** conditions, this setting defines what happens if the app cannot determine the required time/date or customer location:
+  - **Do nothing**: No action is applied by the rule.
+  - **Do this action**: The configured fallback action is applied instead.
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Date Time Location"
+/>
 
 ### Maximum discount uses
 

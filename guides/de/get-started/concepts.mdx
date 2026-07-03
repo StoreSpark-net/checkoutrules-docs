@@ -173,9 +173,20 @@ Bietet kostenlosen Versand für alle wiederkehrenden Abonnement-Lieferungen nach
 
 ### Zurückgreifen
 
-Definiert, was in dem seltenen Fall passiert, dass die App ein Problem im Checkout hat (z. B. Checkout erlauben oder blockieren). Wird nur in **Checkout validieren oder blockieren**-Regeln verwendet.
+Definiert, was passiert, wenn die App eine Regel an der Kasse nicht auswerten kann.
+
+- Für die Regel **Checkout validieren oder blockieren** bestimmt diese Einstellung, ob der Checkout erlaubt oder blockiert wird, wenn die App beim Verarbeiten der Regel auf ein unerwartetes Problem stößt.
 
 <img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+- Für Regeln, die **Datum & Uhrzeit**- oder **Kundenstandort (mit GeoIP)**-Bedingungen verwenden, definiert diese Einstellung, was passiert, wenn die App die erforderliche Zeit/Datum oder den Kundenstandort nicht ermitteln kann:
+  - **Nichts tun**: Die Regel wendet keine Aktion an.
+  - **Diese Aktion ausführen**: Stattdessen wird die konfigurierte Fallback-Aktion angewendet.
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Fallback Datum Uhrzeit Standort"
+/>
 
 ### Maximale Rabattnutzung
 

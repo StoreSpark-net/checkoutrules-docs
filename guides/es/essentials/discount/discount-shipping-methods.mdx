@@ -1,6 +1,6 @@
 ---
 title: "Descontar métodos de envío"
-description: "Descuenta tarifas de envío específicas basándose en las condiciones dadas."
+description: "Descuenta tarifas de envío según las condiciones dadas."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,20 @@ icon: "badge-percent"
 
 ## Visión general de la regla
 
-Esta regla te permite aplicar un descuento a tarifas de envío específicas en el checkout según las condiciones definidas. Puedes aplicar porcentaje, monto fijo, porcentaje del subtotal, establecer un precio fijo o hacer que todos los envíos sean gratuitos, usando criterios como dirección de envío, etiquetas de clientes, etiquetas de productos, etc.
+Esta regla te permite aplicar un descuento a tarifas de envío en el checkout según las condiciones definidas. Puedes aplicar porcentaje, monto fijo, porcentaje del subtotal, establecer un precio fijo o hacer que todos los envíos sean gratuitos, usando criterios como dirección de envío, etiquetas de clientes, etiquetas de productos, etc.
 
 Usando esta regla puedes crear un código de descuento, o crear un descuento automático. Si la regla crea un código de descuento, entonces el cliente puede usar el código de descuento en el checkout para obtener el descuento. De lo contrario, si se selecciona descuento automático, entonces la regla puede aplicar un descuento automáticamente a los métodos de envío seleccionados basándose en las condiciones configuradas.
+
+## Operaciones compatibles
+
+| Operación                           | Comportamiento                                                                                                      |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Porcentaje**                      | Aplica un descuento porcentual a los métodos de envío seleccionados.                                                |
+| **Cantidad fija de descuento**      | Aplica un descuento de moneda fija a los métodos de envío seleccionados.                                            |
+| **Establecer precio fijo**          | Establece cada método de envío seleccionado en un precio fijo objetivo.                                            |
+| **Establecer todo el envío gratis** | Hace que todos los métodos de envío sean gratis.                                                                    |
+| **Porcentaje del subtotal**         | El monto del descuento es `subtotal del pedido × porcentaje / 100`, luego se aplica a los métodos de envío seleccionados. |
+| **Porcentaje del subtotal a precio fijo** | Establece el precio de cada método de envío seleccionado en `subtotal del pedido × porcentaje / 100`.         |
 
 ## Configuración de ejemplo
 
@@ -216,4 +227,4 @@ Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona
 ## Limitaciones
 
 - Esta regla no es compatible con el checkout basado en pedidos borrador ni con las aplicaciones que usan checkout de pedido borrador.
-- Si la URL de tu checkout incluye el término .../checkouts/do/..., aquí 'do' significa pedido borrador. Estas reglas no se ejecutarán en ese checkout.
+- Si la URL de checkout contiene `.../checkouts/do/...`, `do` significa pedido borrador y esta regla no se ejecutará.

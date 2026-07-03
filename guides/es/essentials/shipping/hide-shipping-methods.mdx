@@ -15,9 +15,26 @@ icon: "eye-slash"
 
 ## Visión general de la regla
 
-Esta regla te permite ocultar automáticamente métodos específicos de envío o recogida en el checkout basándose en condiciones definidas. Puedes controlar la visibilidad usando criterios como total del carrito, dirección de envío, etiquetas de cliente o detalles del producto, etc.
+Esta regla te permite ocultar automáticamente métodos de envío en el checkout según condiciones definidas. Puedes controlar la visibilidad usando criterios como total del carrito, dirección de envío, etiquetas de cliente o detalles del producto, etc.
 
 Esto ayuda a simplificar la experiencia de checkout removiendo opciones de entrega irrelevantes o no disponibles, reduciendo la confusión y mejorando las tasas de conversión.
+
+## Operaciones compatibles
+
+- **Ocultar estos métodos de envío**: oculta solo los métodos que coincidan con tus reglas de nombre de método.
+- **Solo mostrar estos métodos de envío**: mantiene solo los métodos coincidentes y oculta el resto.
+- **Ocultar todos los métodos de envío**: oculta todos los métodos de envío cuando el bloque de condiciones coincide.
+
+<Note>
+  Para la coincidencia de nombres de método en esta regla:
+
+    - La coincidencia no distingue entre mayúsculas y minúsculas.
+    - El comodín `*` es compatible en la entrada del usuario (por ejemplo: `Standard*`, `*Express*`, `*Pickup`).
+    - **contiene** / **no contiene** usan coincidencia parcial.
+    - **es** / **no es** admiten texto exacto y patrones de comodín.
+    - Si añades varias filas de métodos, se evalúan como OR (cualquier fila coincidente puede aplicarse).
+
+</Note>
 
 ## Configuración de ejemplo
 

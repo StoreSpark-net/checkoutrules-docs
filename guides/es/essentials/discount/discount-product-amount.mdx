@@ -19,6 +19,16 @@ Esta regla te permite aplicar descuentos a precios específicos de productos en 
 
 Puedes crear un código de descuento o un descuento automático. Los clientes deben ingresar el código en el pago para recibir el descuento si se crea un código de descuento. Si se selecciona un descuento automático, se aplicará automáticamente a los productos elegibles cuando se cumplan las condiciones configuradas.
 
+## Operaciones compatibles
+
+| Operación                           | Comportamiento                                                              |
+| ----------------------------------- | --------------------------------------------------------------------------- |
+| **Porcentaje**                      | Aplica un descuento porcentual a los productos seleccionados.               |
+| **Cantidad fija de descuento**      | Aplica un descuento de moneda fija a los productos seleccionados.           |
+| **Establecer monto fijo**           | Establece los productos seleccionados en un monto objetivo fijo.            |
+| **Establecer todos los productos gratis** | Hace que los productos seleccionados sean gratis.                       |
+| **Porcentaje del subtotal a precio fijo** | Establece el precio del producto seleccionado en `subtotal del pedido × porcentaje / 100`. |
+
 ## Configuración de ejemplo
 
 Los siguientes pasos muestran cómo crear y configurar una regla de **Cantidad de descuento de producto** usando la aplicación.
@@ -178,4 +188,4 @@ Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona
 ## Limitaciones
 
 - Esta regla no es compatible con el checkout basado en pedidos borrador ni con las aplicaciones que usan checkout de pedido borrador.
-- Si la URL de tu checkout incluye el término .../checkouts/do/..., aquí 'do' significa pedido borrador. Estas reglas no se ejecutarán en ese checkout.
+- Si la URL de checkout contiene `.../checkouts/do/...`, `do` significa pedido borrador y esta regla no se ejecutará.

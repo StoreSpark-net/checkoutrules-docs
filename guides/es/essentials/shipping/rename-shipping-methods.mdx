@@ -1,6 +1,6 @@
 ---
 title: "Renombrar métodos de envío"
-description: "Renombra/Traduce o añade un mensaje a los métodos de envío seleccionados en el checkout bajo condiciones dadas."
+description: "Renombra o añade un prefijo o sufijo a los métodos de envío seleccionados, o traduce los nombres de los métodos de envío en el checkout, bajo las condiciones especificadas."
 icon: "pencil"
 ---
 
@@ -15,7 +15,7 @@ icon: "pencil"
 
 ## Visión general de la regla
 
-Esta regla te permite renombrar o traducir las etiquetas de métodos de envío y recogida en el checkout basándose en condiciones específicas. Puedes personalizar los nombres mostrados usando criterios como valor del carrito, etiquetas de cliente, dirección de envío o detalles del producto, etc.
+Esta regla te permite renombrar, añadir un prefijo o sufijo, o traducir métodos de envío en el checkout según condiciones específicas. Puedes personalizar los nombres mostrados usando criterios como valor del carrito, etiquetas de cliente, dirección de envío, detalles del producto y más.
 
 Esto ayuda a mejorar la claridad para los clientes, apoyar la localización y mejorar la experiencia general de checkout.
 
@@ -64,7 +64,24 @@ A continuación, en la misma pantalla, selecciona el [conjunto de condiciones](/
 
 > Como ejemplo, estamos usando el **Conjunto de condiciones 1**, configurando la regla para ejecutarse **Siempre**, y configurándola para renombrar métodos de envío que contengan **"International Shipping"** a **"Local Shipping"**.
 
-Alternativamente, podemos cambiar la opción "Renombrar a" a "Añadir mensaje" para agregar un mensaje personalizado al nombre del método de envío en lugar de renombrarlo completamente.
+**Renombrar estos métodos de envío** con operadores de coincidencia de nombre de método: **contiene**, **no contiene**, **es**, **no es**.
+
+Para cada método coincidente, elige un modo de salida:
+
+- **Renombrar a**: reemplaza completamente el nombre del método.
+- **Añadir prefijo**: añade texto personalizado antes del nombre original del método.
+- **Añadir sufijo**: añade texto personalizado después del nombre original del método.
+
+<Note>
+  Para la coincidencia de nombres de método en esta regla:
+
+    - La coincidencia no distingue entre mayúsculas y minúsculas.
+    - El comodín `*` es compatible en la entrada del usuario (por ejemplo: `Standard*`, `*Express*`, `*Pickup`).
+    - **contiene** / **no contiene** usan coincidencia parcial.
+    - **es** / **no es** admiten texto exacto y patrones de comodín.
+    - Si añades varias filas de métodos, se evalúan como OR (cualquier fila coincidente puede aplicarse).
+
+</Note>
 
 <img
   src="/images/essentials/shipping/condition-set-rename-shipping-methods.webp"

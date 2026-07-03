@@ -20,6 +20,25 @@ You can prioritize specific shipping options based on conditions like cart total
 
 This helps streamline the customer experience by showing the most relevant or cost effective shipping methods first.
 
+## Supported operations
+
+- **Fixed ranking**: manually rank selected methods with **contains / does not contain / is / is not** matching.
+- **Shipping price**: sort by price low to high or high to low.
+- **Alphabetical order**: sort names A to Z or Z to A.
+- **Shipping price + Alphabetical order**: sort by price first and break same-price ties alphabetically in any of the 4 available direction combinations.
+- **Delivery type**: reorder by selected delivery types in your chosen order.
+
+<Note>
+  For method-name matching in **Fixed ranking**:
+
+    - Matching is case-insensitive.
+    - `*` wildcard is supported in user input (for example: `Standard*`, `*Express*`, `*Pickup`).
+    - **contains** / **does not contain** use partial matching.
+    - **is** / **is not** support exact text and wildcard patterns.
+    - If you add multiple method rows, they are evaluated as OR (any matching row can apply).
+
+</Note>
+
 ## Sample configuration
 
 The following steps show how to create and configure a **Reorder Shipping Methods** rule using the app.
@@ -41,8 +60,8 @@ Then, in the **template selection**, choose an option based on your requirements
   src="/images/shared/select-rule-template.webp"
   alt="Select Rule Template"
 />
-Next, you’ll land on the **Create new reorder shipping methods rule** screen, where
-you can configure your rule.
+Next, you’ll land on the **Create new reorder shipping methods rule** screen,
+where you can configure your rule.
 
 ### Rule configuration
 

@@ -15,9 +15,26 @@ icon: "eye-slash"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es Ihnen, bestimmte Versand- oder Abholmöglichkeiten beim Checkout automatisch basierend auf definierten Bedingungen auszublenden. Sie können die Sichtbarkeit anhand von Kriterien wie Warenkorbwert, Versandadresse, Kundentags oder Produktdetails usw. steuern.
+Diese Regel ermöglicht es Ihnen, Versandmethoden an der Kasse automatisch basierend auf definierten Bedingungen auszublenden. Sie können die Sichtbarkeit anhand von Kriterien wie Warenkorbwert, Versandadresse, Kundentags, Produktdetails usw. steuern.
 
 Dies hilft, den Checkout-Prozess zu optimieren, indem irrelevante oder nicht verfügbare Lieferoptionen entfernt werden, Verwirrung reduziert und die Konversionsrate verbessert wird.
+
+## Unterstützte Operationen
+
+- **Diese Versandmethoden ausblenden**: Blendet nur die Methoden aus, die Ihren Methoden-Namen-Regeln entsprechen.
+- **Nur diese Versandmethoden anzeigen**: Behält nur die übereinstimmenden Methoden und blendet den Rest aus.
+- **Alle Versandmethoden ausblenden**: Blendet alle Versandmethoden aus, wenn der Bedingungsblock übereinstimmt.
+
+<Note>
+  Für den Methoden-Namen-Abgleich in dieser Regel:
+
+    - Der Abgleich ist nicht case-sensitiv.
+    - Der Platzhalter `*` wird in der Benutzereingabe unterstützt (zum Beispiel: `Standard*`, `*Express*`, `*Pickup`).
+    - **enthält** / **enthält nicht** verwenden Teilübereinstimmung.
+    - **ist** / **ist nicht** unterstützen exakten Text und Platzhaltermuster.
+    - Wenn Sie mehrere Methodenzeilen hinzufügen, werden diese als ODER ausgewertet (jede übereinstimmende Zeile kann angewendet werden).
+
+</Note>
 
 ## Beispielkonfiguration
 

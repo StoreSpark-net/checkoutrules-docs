@@ -1,6 +1,6 @@
 ---
 title: "Bestellbetrag rabattieren"
-description: "Rabatt auf den Bestell-Zwischensummenbetrag basierend auf den angegebenen Bedingungen."
+description: "Rabatt auf den Bestellbetrag basierend auf den angegebenen Bedingungen."
 icon: "badge-percent"
 ---
 
@@ -15,12 +15,24 @@ icon: "badge-percent"
 
 ## Regelübersicht
 
-Diese Regel ermöglicht es, einen Rabatt auf die Zwischensumme der Bestellung basierend auf den definierten Bedingungen anzuwenden. Sie können Rabatte als Prozentsatz, festen Betrag, Prozentsatz ohne bestimmte Produkte, Prozentsatz nur für bestimmte Produkte, festen Betrag ohne bestimmte Produkte oder festen Betrag nur für bestimmte Produkte anbieten, basierend auf Kriterien wie Bestellsumme, Kundentags, Versandadresse, Produkt-Tags usw.
+Diese Regel ermöglicht es, einen Rabatt auf den Bestellbetrag basierend auf den definierten Bedingungen anzuwenden. Sie können Rabatte als Prozentsatz, festen Betrag, Prozentsatz ohne bestimmte Produkte, Prozentsatz nur für bestimmte Produkte, festen Betrag ohne bestimmte Produkte oder festen Betrag nur für bestimmte Produkte anbieten, basierend auf Kriterien wie Bestellsumme, Kundentags, Versandadresse, Produkt-Tags usw.
 
 Mit dieser Regel können Sie einen Rabattcode erstellen oder einen automatischen Rabatt anlegen.  
 Wenn die Regel einen Rabattcode erstellt, kann der Kunde den Rabattcode beim Checkout verwenden, um den Rabatt zu erhalten.  
 Andernfalls, wenn ein automatischer Rabatt ausgewählt ist, kann die Regel automatisch einen Rabatt auf die Bestell-Zwischensumme anwenden, basierend auf den konfigurierten Bedingungen.  
 Dies hilft, Käufe zu fördern, bestimmte Kunden zu belohnen und die Conversion-Rate zu erhöhen.
+
+## Unterstützte Operationen
+
+| Operation                                     | Verhalten                                                                            |
+| --------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Prozentsatz**                               | Wendet einen prozentualen Rabatt auf den Bestellbetrag an.                            |
+| **Fester Rabattbetrag**                       | Wendet einen festen Währungsrabatt auf den Bestellbetrag an.                         |
+| **Prozentsatz ohne diese Produkte**           | Wendet einen prozentualen Rabatt auf den Bestellbetrag an und schließt ausgewählte Produkte aus. |
+| **Prozentsatz nur für diese Produkte**        | Wendet einen prozentualen Rabatt nur auf ausgewählte Produkte an.                    |
+| **Fester Rabattbetrag ausgenommen diese Produkte** | Wendet einen festen Betragsrabatt an und schließt ausgewählte Produkte aus.      |
+| **Fester Rabatt nur für diese Produkte**      | Wendet einen festen Betragsrabatt nur auf ausgewählte Produkte an.                   |
+| **Festpreis-Zwischensummen-Prozentsatz**      | Setzt den Bestellbetrag auf `Bestell-Zwischensumme × Prozent / 100` (ohne Versand und Steuern). |
 
 ## Beispielkonfiguration
 
@@ -173,4 +185,4 @@ Wählen Sie die Regel aus, die Sie aktivieren möchten, und klicken Sie dann auf
 ## Einschränkungen
 
 - Diese Regel ist nicht kompatibel mit Draft-Order-basierten Checkouts oder mit Apps, die Draft-Order-Checkouts verwenden.
-- Wenn Ihre Checkout-URL den Begriff .../checkouts/do/... enthält, steht 'do' für Draft Order. Diese Regeln werden bei diesem Checkout nicht ausgeführt.
+- Wenn die Checkout-URL `.../checkouts/do/...` enthält, bedeutet `do` Entwurfsbestellung und diese Regel wird nicht ausgeführt.

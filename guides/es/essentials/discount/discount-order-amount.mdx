@@ -1,6 +1,6 @@
 ---
 title: "Descuento en monto de pedido"
-description: "Descuenta el subtotal del pedido basándose en las condiciones dadas."
+description: "Descuenta el monto del pedido según las condiciones dadas."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,21 @@ icon: "badge-percent"
 
 ## Visión general de la regla
 
-Esta regla te permite aplicar un descuento al subtotal del pedido según las condiciones definidas. Puedes ofrecer descuentos como porcentaje, monto fijo, porcentaje excluyendo productos específicos, porcentaje solo para productos específicos, monto fijo excluyendo productos específicos o monto fijo solo para productos específicos, usando criterios como el total del pedido, etiquetas de clientes, dirección de envío, etiquetas de productos, etc.
+Esta regla te permite aplicar un descuento al monto del pedido según las condiciones definidas. Puedes ofrecer descuentos como porcentaje, monto fijo, porcentaje excluyendo productos específicos, porcentaje solo para productos específicos, monto fijo excluyendo productos específicos o monto fijo solo para productos específicos, usando criterios como el total del pedido, etiquetas de clientes, dirección de envío, etiquetas de productos, etc.
 
 Usando esta regla puedes crear un código de descuento, o crear un descuento automático. Si la regla crea un código de descuento, entonces el cliente puede usar el código de descuento en el checkout para obtener el descuento. De lo contrario, si se selecciona descuento automático, entonces la regla puede aplicar un descuento automáticamente al subtotal del pedido basándose en las condiciones configuradas. Esto ayuda a incentivar compras, recompensar clientes específicos y aumentar las tasas de conversión.
+
+## Operaciones compatibles
+
+| Operación                                              | Comportamiento                                                                                         |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| **Porcentaje**                                         | Aplica un descuento porcentual al monto del pedido.                                                    |
+| **Cantidad fija de descuento**                         | Aplica un descuento de moneda fija al monto del pedido.                                                |
+| **Porcentaje excluyendo estos productos**              | Aplica un descuento porcentual al monto del pedido excluyendo los productos seleccionados.             |
+| **Porcentaje solo para estos productos**               | Aplica un descuento porcentual basado solo en los productos seleccionados.                             |
+| **Cantidad fija de descuento excluyendo estos productos** | Aplica un descuento de monto fijo excluyendo los productos seleccionados.                          |
+| **Cantidad fija de descuento solo para estos productos**  | Aplica un descuento de monto fijo basado solo en los productos seleccionados.                      |
+| **Porcentaje del subtotal a precio fijo**              | Establece el monto del pedido en `subtotal del pedido × porcentaje / 100` (excluyendo envío e impuestos). |
 
 ## Configuración de ejemplo
 
@@ -162,4 +174,4 @@ Haz clic en **Reglas** en la barra lateral para ver todas las reglas. Selecciona
 ## Limitaciones
 
 - Esta regla no es compatible con el checkout basado en pedidos borrador ni con las aplicaciones que usan checkout de pedido borrador.
-- Si la URL de tu checkout incluye el término .../checkouts/do/..., aquí 'do' significa pedido borrador. Estas reglas no se ejecutarán en ese checkout.
+- Si la URL de checkout contiene `.../checkouts/do/...`, `do` significa pedido borrador y esta regla no se ejecutará.

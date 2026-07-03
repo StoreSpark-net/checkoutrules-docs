@@ -1,6 +1,6 @@
 ---
 title: "Réduction sur les méthodes d’expédition"
-description: "Réduire des tarifs d’expédition spécifiques en fonction des conditions données."
+description: "Réduire les tarifs d’expédition en fonction des conditions données."
 icon: "badge-percent"
 ---
 
@@ -15,11 +15,22 @@ icon: "badge-percent"
 
 ## Aperçu de la règle
 
-Cette règle vous permet d’appliquer une remise sur des tarifs de livraison spécifiques lors du paiement en fonction des conditions définies. Vous pouvez appliquer un pourcentage, un montant fixe, un pourcentage du sous-total, définir un prix fixe ou offrir toute la livraison gratuitement, etc., en utilisant des critères tels que l’adresse de livraison, les tags clients, les tags produits, etc.
+Cette règle vous permet d’appliquer une remise sur des tarifs de livraison lors du paiement en fonction des conditions définies. Vous pouvez appliquer un pourcentage, un montant fixe, un pourcentage du sous-total, définir un prix fixe ou offrir toute la livraison gratuitement, etc., en utilisant des critères tels que l’adresse de livraison, les tags clients, les tags produits, etc.
 
 Avec cette règle, vous pouvez créer un code de réduction ou une remise automatique.  
 Si la règle crée un code de réduction, alors le client peut l’utiliser au passage en caisse pour obtenir la remise.  
 Sinon, si la remise automatique est sélectionnée, la règle peut appliquer automatiquement une réduction aux méthodes d’expédition sélectionnées selon les conditions configurées.
+
+## Opérations prises en charge
+
+| Opération                           | Comportement                                                                                          |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Pourcentage**                     | Applique un pourcentage de remise aux méthodes d’expédition sélectionnées.                            |
+| **Montant fixe**                    | Applique une remise en montant fixe aux méthodes d’expédition sélectionnées.                          |
+| **Définir un prix fixe**            | Définit chaque méthode d’expédition sélectionnée à un prix fixe cible.                                |
+| **Offrir toute l’expédition gratuitement** | Rend toutes les méthodes d’expédition gratuites.                                               |
+| **Pourcentage du sous-total**       | Le montant de la remise est `sous-total de la commande × pourcentage / 100`, puis appliqué aux méthodes d’expédition sélectionnées. |
+| **Pourcentage du sous-total à prix fixe** | Définit le prix de chaque méthode d’expédition sélectionnée à `sous-total de la commande × pourcentage / 100`. |
 
 ## Configuration d’exemple
 
@@ -220,4 +231,4 @@ Cliquez sur **Règles** dans la barre latérale pour voir toutes les règles. S�
 ## Limitations
 
 - Cette règle n’est pas compatible avec les checkouts de commandes provisoires ni avec les applications qui utilisent ce type de checkout.
-- Si l’URL de votre checkout contient `…/checkouts/do/…`, `do` signifie « commande provisoire ». Cette règle ne s’appliquera pas à ce checkout.
+- Si l’URL de checkout contient `.../checkouts/do/...`, `do` signifie commande provisoire et cette règle ne s’exécutera pas.

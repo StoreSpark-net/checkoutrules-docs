@@ -1,6 +1,6 @@
 ---
 title: "Discount shipping methods"
-description: "Discount specific shipping rates based on the given conditions."
+description: "Discount shipping rates based on the given conditions."
 icon: "badge-percent"
 ---
 
@@ -15,9 +15,20 @@ icon: "badge-percent"
 
 ## Rule overview
 
-This rule allows you to discount specific shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like shipping address, customer tags, product tags, etc.
+This rule allows you to discount shipping rates at the checkout based on defined conditions. You can apply percentage, fixed amount off, subtotal percentage, set fixed price, or set all shipping free, etc. using criteria like shipping address, customer tags, product tags, etc.
 
 Using this rule you can create a discount code, or create an automatic discount. If the rule creates a discount code, then customer can use the discount code at the checkout to get the discount. Otherwise, if automatic discount is selected, then the rule can apply a discount automatically to the selected shipping methods based on the configured conditions.
+
+## Supported operations
+
+| Operation                           | Behavior                                                                                          |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Percentage**                      | Applies a percentage discount to selected shipping method(s).                                     |
+| **Fixed amount off**                | Applies a fixed currency amount discount to selected shipping method(s).                          |
+| **Set fixed price**                 | Sets each selected shipping method to a target fixed price.                                       |
+| **Set all shipping free**           | Makes all shipping methods free.                                                                  |
+| **Subtotal percentage**             | Discount amount is `order subtotal × percent / 100`, then applied to selected shipping method(s). |
+| **Fixed price subtotal percentage** | Sets each selected shipping method price to `order subtotal × percent / 100`.                     |
 
 ## Sample configuration
 
@@ -215,4 +226,4 @@ Click on **Rules** in the sidebar to view all rules. Select the rule you want to
 ## Limitations
 
 - This rule is incompatible with draft-order-based checkout and apps that use draft-order checkout.
-- If your checkout URL includes `.../checkouts/do/...`, `do` stands for draft order. This rule won't run on that checkout.
+- If checkout URL contains `.../checkouts/do/...`, `do` means draft order and this rule will not run.

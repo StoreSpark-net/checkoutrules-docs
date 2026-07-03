@@ -177,9 +177,20 @@ Ofrece envío gratis para todas las entregas recurrentes de suscripción despué
 
 ### Respaldo
 
-Define qué sucede en la rara circunstancia, cuando la aplicación tiene un problema en el checkout (por ejemplo, permitir o bloquear checkout). Se usa solo en la regla **Validar o Bloquear Checkout**.
+Define qué sucede si la aplicación no puede evaluar una regla en el checkout.
+
+- Para la regla **Validar o Bloquear Checkout**, esta configuración determina si se permite o se bloquea el checkout si la aplicación encuentra un problema inesperado al procesar la regla.
 
 <img src="/images/concepts/fallback.webp" alt="Fallback" />
+
+- Para las reglas que usan condiciones de **Fecha y hora** o **Ubicación del cliente (usando GeoIP)**, esta configuración define qué sucede si la aplicación no puede determinar la hora/fecha o la ubicación del cliente requerida:
+  - **No hacer nada**: No se aplica ninguna acción de la regla.
+  - **Ejecutar esta acción**: Se aplica en su lugar la acción de respaldo configurada.
+
+<img
+  src="/images/essentials/condition-sets/fallback-date-time-location.webp"
+  alt="Respaldo Fecha Hora Ubicación"
+/>
 
 ### Usos máximos de descuento
 
