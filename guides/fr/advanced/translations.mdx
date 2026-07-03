@@ -1,28 +1,26 @@
 ---
 title: Traductions
-description: "Apprenez à configurer des règles de validation qui affichent des messages d’erreur dans différentes langues en fonction de la langue du client, avec une option de secours par défaut."
+description: "Apprenez à configurer des règles de validation qui affichent des messages d'erreur dans différentes langues en fonction de la langue du client, avec une option de secours par défaut."
 icon: "globe"
 ---
 
 <iframe
   className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/_0iAM5-zrUI?si=Uq4qZBUxi5q6ACz0"
+  src="https://www.youtube.com/embed/Eo6mwiIgVsI?si=66pK6qjkOuweqrqk"
   title="BeSure Traductions"
   style={{ border: 0 }}
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
 ></iframe>
 
-## Vue d’ensemble  
+## Vue d'ensemble
 
-Les traductions vous permettent de localiser les messages d’erreur de validation pour différentes langues clients. En combinant la condition **Langue de l’utilisateur** avec la logique de votre règle, vous pouvez afficher des messages d’erreur dans la langue préférée du client, et également définir un message de secours par défaut dans la langue de votre choix.  
-
-<Note>
-  La condition Langue de l’utilisateur est la clé des traductions. En l’utilisant, nous pouvons créer plusieurs blocs à l’intérieur de la règle pour gérer différentes langues.
-</Note>
+Les traductions vous permettent de localiser les messages d'erreur de validation pour différentes langues clients. En cliquant sur le bouton **Ajouter une traduction**, vous pouvez afficher des messages d'erreur en plusieurs langues au passage en caisse selon la langue du client. Vous pouvez également définir un message de secours par défaut dans la langue de votre choix, qui sera affiché lorsqu'une traduction n'est pas disponible.
 
 ## Comment configurer
+
 ### Créer une règle de validation
+
 Commencez par créer une règle avec la ou les conditions de votre choix.
 
 > Par exemple, Montant total de la commande inférieur ou égal à 100 $
@@ -32,92 +30,73 @@ Commencez par créer une règle avec la ou les conditions de votre choix.
   alt="Définir le montant de la commande"
 />
 
-### Ajouter une condition de langue  
-Ajoutez la **Langue de l’utilisateur** comme sous-condition et sélectionnez la langue souhaitée dans laquelle vous voulez traduire le message d’erreur.
+### Sélectionner la cible
 
-> Par exemple, nous voulons traduire le message d’erreur en "Français", donc nous choisissons **Langue de l’utilisateur** comme "Français".
-
-<img
-  src="/images/advanced/translations/set-user-language.webp"
-  alt="Définir la langue de l’utilisateur"
-/>
-
-### Localiser le message d’erreur
-Définissez la **Cible** pour l’endroit où le message d’erreur apparaît lors du passage à la caisse (soit en haut de la page de paiement, soit sur un champ spécifique comme Ligne d’adresse 1) et écrivez le message d’erreur dans la langue sélectionnée afin que les clients le voient localisé.
-
-> Par exemple, définissez **Cible** sur **Haut de la page de paiement** et définissez le message d’erreur en français : "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+Sélectionnez la **cible** où vous souhaitez que le message d'erreur
+soit affiché sur la page de passage en caisse.
 
 <img
-  src="/images/advanced/translations/set-error-message.webp"
-  alt="Définir le message d’erreur"
+  src="/images/essentials/validation/action-target-dropdown.webp"
+  alt="Menu déroulant de l'action"
 />
 
-### Dupliquer pour d’autres langues  
-Si vous voulez afficher le message d’erreur dans d’autres langues, copiez le bloc de règle (le bouton "Copier le bloc" en haut à droite) et collez-le en dessous, puis mettez à jour la condition **Langue de l’utilisateur** avec une autre langue (par exemple, **Allemand**), et remplacez le message d’erreur par la version traduite.
+### Définir le message d'erreur par défaut
 
-> Par exemple, ici nous avons ajouté le bloc copié et mis à jour la condition **Langue de l’utilisateur** en "Allemand" avec le message d’erreur traduit.
+Ajoutez le **message d'erreur** dans le champ. Ce message sera utilisé comme message d'erreur par défaut si aucune langue utilisateur n'est trouvée ou si aucune traduction n'a été ajoutée pour le message d'erreur. Vous pouvez le définir dans la langue de votre choix.
 
 <img
-  src="/images/advanced/translations/example-german-translation.webp"
-  alt="Exemple traduction allemande"
+  src="/images/advanced/translations/error-message-fallback.webp"
+  alt="Message d'erreur de secours"
 />
 
-### Ajouter un bloc de secours avec un message par défaut
-Enfin, ajoutez un dernier bloc avec la condition **Toutes les conditions précédentes invalides** ainsi que toute autre condition que vous aviez. Dans ce bloc, écrivez le message d’erreur par défaut (généralement en anglais). Cela garantit que les clients qui ne correspondent pas aux autres règles de langue voient toujours un message par défaut.  
+### Ajouter des traductions
 
-> Par exemple, ici nous avons ajouté le bloc de secours avec la condition **Toutes les conditions précédentes invalides** ainsi que la condition **Montant total de la commande** et défini le message d’erreur sur "Order amount is less than the required minimum order amount of $100".
+Cliquez sur le bouton **Ajouter une traduction**. Dans le menu déroulant, sélectionnez la langue souhaitée et saisissez le message d'erreur dans la langue sélectionnée. Répétez le même processus pour ajouter des traductions dans plusieurs langues.
 
 <img
-  src="/images/advanced/translations/example-fallback-english-translation.webp"
-  alt="Exemple traduction de secours en anglais"
+  src="/images/advanced/translations/add-translations.webp"
+  alt="Ajouter des traductions"
 />
 
-## Résumé
-Voici un résumé de la règle que nous avons créée dans l’exemple ci-dessus :
+### Résumé
 
-### Bloc 1 (Français)
-- Ajoutez la condition **Montant total de la commande** et définissez-la sur **inférieur ou égal à 99,99** pour déclencher une erreur si le montant de la commande est inférieur à 100.  
-- ET sous-condition **Langue de l’utilisateur** est **Français**.  
-- Définissez le message d’erreur :  
-  > "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+Voici un résumé de la règle que nous avons créée dans les étapes ci-dessus :
 
-### Bloc 2 (Allemand)
-- Ajoutez la condition **Montant total de la commande** et définissez-la sur **inférieur ou égal à 99,99** pour déclencher une erreur si le montant de la commande est inférieur à 100.  
-- ET sous-condition **Langue de l’utilisateur** est **Allemand**.  
-- Définissez le message d’erreur :  
-  > "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+> Nous avons défini la condition **« Montant total de la commande ≤ 99,99 »** et sélectionné la cible **« Haut de la page de paiement »**. Notre message par défaut est :
 
-### Bloc 3 (Secours par défaut – Anglais)
-- Ajoutez la condition **Montant total de la commande** et définissez-la sur **inférieur ou égal à 99,99** pour déclencher une erreur si le montant de la commande est inférieur à 100.  
-- Pour la **condition de secours / else**, ET sous-condition **Toutes les conditions précédentes invalides**.   
-- Définissez le message d’erreur :  
-  > "Order amount is less than the required minimum order amount of $100"
+> **« Order amount is less than the required minimum order amount of $100. »**
 
-Voici à quoi ressemble la règle :
+> Nous avons ensuite traduit le message d'erreur en français et en allemand :
+
+> - **Français :** "Le montant de la commande est inférieur au montant minimum requis de 100 $"
+> - **Allemand :** "Der Bestellbetrag liegt unter dem erforderlichen Mindestbestellwert von 100 $"
+
+> Voici comment vous pouvez le configurer :
 
 <img
-  src="/images/advanced/translations/full-rule.webp"
-  alt="Règle complète"
+  src="/images/advanced/translations/example-translations.webp"
+  alt="Exemple de traductions"
 />
 
-### Ce qui se passe à la caisse
-- Si la **langue du client est le français** et que le **montant de la commande est inférieur à 100 $**, il verra le **message d’erreur en français** lors du passage à la caisse.  
+## Ce qui se passe à la caisse
+
+- Si la **langue du client est le français** et que le **montant de la commande est inférieur à 100 $**, il verra le **message d'erreur en français** lors du passage en caisse.
 
 <img
   src="/images/advanced/translations/example-french-error-message.webp"
-  alt="Exemple message d’erreur en français"
+  alt="Exemple message d'erreur en français"
 />
 
-- Si la **langue du client est l’allemand** et que le **montant de la commande est inférieur à 100 $**, il verra le **message d’erreur en allemand** lors du passage à la caisse.  
+- Si la **langue du client est l'allemand** et que le **montant de la commande est inférieur à 100 $**, il verra le **message d'erreur en allemand** lors du passage en caisse.
 
 <img
   src="/images/advanced/translations/example-german-error-message.webp"
-  alt="Exemple message d’erreur en allemand"
+  alt="Exemple message d'erreur en allemand"
 />
 
-- Si la **langue du client est toute autre langue** et que le **montant de la commande est inférieur à 100 $**, il verra le message par défaut en **anglais** lors du passage à la caisse.
+- Si la **langue du client est toute autre langue** et que le **montant de la commande est inférieur à 100 $**, il verra le message par défaut en **anglais** lors du passage en caisse.
 
 <img
   src="/images/advanced/translations/example-english-error-message.webp"
-  alt="Exemple message d’erreur en anglais"
+  alt="Exemple message d'erreur en anglais"
 />
